@@ -33,6 +33,11 @@ export default{
             title:'Total',
             type: 'number'
         },
+        {
+            name: 'state',
+            title: 'State',
+            type: 'boolean'
+        },
          {
       name: 'registerDate',
       title: 'Register Date',
