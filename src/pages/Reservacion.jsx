@@ -1,18 +1,23 @@
 import { AppContext } from "@/context/StateContext";
 import React, { useState } from "react";
 
-function Facturacion() {
+import Calendario from "@/components/Reservacion/Calendario";
 
-  const {postFactura} = AppContext()
+function Reservacion() {
+
+  const {postReservacion} = AppContext()
 
   const [formData, setFormData] = useState({
     name: '',
     phone:'',
     email:'',
-    date:'',
-    rfc:'',
+    people:'',
+    begin:'',
+    end: '',
+    comments:'',
     total:''
   })
+  const [total, setTotal] = useState(0)
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -23,14 +28,17 @@ function Facturacion() {
     console.log(formData)
     postFactura(formData)
     setFormData({
-      name: '',
-    phone:'',
-    email:'',
-    date:'',
-    rfc:'',
-    total:''
+        name: '',
+        phone:'',
+        email:'',
+        people:'',
+        begin:'',
+        end: '',
+        comments:'',
+        total:''
     })
   }
+  const [value, onChange] = useState([new Date(), new Date()]);
 
   return (
     <div className="flex flex-col h-full w-full">
@@ -67,34 +75,17 @@ function Facturacion() {
       />
       <input
         type="date"
-        name="date"
-        id="date"
+        name="begin"
+        id="begin"
         className="border-2 mt-2"
-        placeholder="date"
+        placeholder="begin"
         onChange={handleInputChange}
-        value={formData.date}
+        value={formData.begin}
         required
       />
-      <input
-        type="text"
-        name="rfc"
-        id="rfc"
-        className="border-2 mt-2"
-        placeholder="rfc"
-        onChange={handleInputChange}
-        value={formData.rfc}
-        required
-      />
-      <input
-        type="number"
-        name="total"
-        id="total"
-        className="border-2 mt-2"
-        placeholder="total"
-        onChange={handleInputChange}
-        value={formData.total}
-        required
-      />
+      <div>
+      <Calendario/>
+    </div>
       <button
           className="w-full bg-black text-white text-sm uppercase font-semibold py-4 mt-4"
           onClick={handleSubmit}
@@ -107,4 +98,4 @@ function Facturacion() {
   );
 }
 
-export default Facturacion;
+export default Reservacion;

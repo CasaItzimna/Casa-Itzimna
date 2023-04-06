@@ -21,7 +21,7 @@ export default{
         {
             name: 'people',
             title: 'People',
-            type: 'string'
+            type: 'number'
         },
         {
             name: 'begin',
