@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
+import {RxCross2} from 'react-icons/rx'
 
-function Calendario() {
-  const [inicio, setInicio] = useState(null);
-  const [fin, setFin] = useState(null);
+function Calendario({inicio, fin, setInicio, setFin,setShow}) {
+
   const [actualMonth, setActualMonth] = useState(1);
 
   const monthNames = [
@@ -154,7 +154,13 @@ function Calendario() {
   }
 
   return (
-    <div className="flex flex-row w-full h-full lg:px-12 mt-4">
+    <div className="flex flex-col w-full h-full mt-4">
+      <div className=" w-full h-full flex flex-row justify-end ">
+        <RxCross2 className="mr-4 cursor-pointer"
+        onClick={()=>setShow(false)}
+        />
+      </div>
+      <div className="flex flex-row w-full h-full lg:px-12 mt-4">
       <div className="flex flex-col w-1/2 h-full border-r-2 border-black">
         <div className="flex flex-row justify-center mb-4">
           <div className="text-xl font-bold">
@@ -195,6 +201,7 @@ function Calendario() {
           {nextMonthEmptyCells}
           {nextMonthDays}
         </div>
+      </div>
       </div>
     </div>
   );
