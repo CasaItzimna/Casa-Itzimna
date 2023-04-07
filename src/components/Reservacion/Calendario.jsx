@@ -24,6 +24,7 @@ function Calendario() {
   console.log(today);
   console.log(today.getDay());
   console.log(today.getMonth());
+  console.log(today.getDate())
   const currentMonthName = monthNames[today.getMonth()];
   console.log(currentMonthName);
   const currentYear = today.getFullYear();
@@ -38,6 +39,7 @@ function Calendario() {
   console.log(daysInMonth);
 
   function handleDayClick(day) {
+    console.log(day)
     if (!inicio) {
       // Si no hay día de inicio seleccionado, establecerlo
       setInicio(day);
@@ -55,10 +57,10 @@ function Calendario() {
   for (let i = 1; i <= daysInMonth; i++) {
     days.push(
       <div
-        key={i}
+        key={new Date(currentYear, today.getMonth(), i)}
         className={`mb-2 mt-4 relative
         ${
-          i - 2 > today.getDay()
+          i  > today.getDate()
             ? "cursor-pointer lg:hover:bg-blue-200 lg:hover:mx-7 lg:hover:rounded-full"
             : "text-gray-200"
         }
@@ -67,10 +69,22 @@ function Calendario() {
               ? " text-white bg-gray-400 rounded-full mx-0 lg:mx-7 "
               : "text-black"
           } 
-        ${i === inicio ? "bg-blue-500 rounded-l-full" : null} 
-        ${i === fin ? "bg-blue-500 rounded-r-full" : null} 
-      ${inicio && fin && i > inicio && i < fin ? "bg-gray-400" : null}`}
-        onClick={() => handleDayClick(i)}
+        ${i === inicio?.getDate() && inicio?.getMonth() === today.getMonth() ? "bg-blue-500 rounded-l-full" : null} 
+        ${i === fin?.getDate()&& fin?.getMonth() === today.getMonth() ? "bg-blue-500 rounded-r-full" : null} 
+      ${inicio?.getDate() && fin?.getDate() && i > inicio?.getDate() && i < fin?.getDate()
+        && inicio?.getMonth() === today.getMonth()
+        
+        ? "bg-gray-400" : null}
+        ${inicio?.getDate() && fin?.getDate() &&
+          inicio?.getMonth() != fin?.getMonth()&&
+          i > inicio?.getDate()
+ 
+           ?
+            "bg-gray-400"
+             :
+              null}
+        `}
+        onClick={() => handleDayClick(new Date(currentYear, today.getMonth(), i))}
       >
         {i}
       </div>
@@ -103,13 +117,31 @@ function Calendario() {
   for (let i = 1; i <= nextMonthDaysInMonth; i++) {
     nextMonthDays.push(
       <div
-        key={i}
-        className={`mb-2 mt-4 relative
+        key={new Date(currentYear, today.getMonth(), i)}
+        className={`mb-2 mt-4 relative cursor-pointer lg:hover:bg-blue-200  lg:hover:mx-7 lg:hover:rounded-full
        
-        ${i === inicio ? "bg-blue-500 rounded-l-full" : null} 
-        ${i === fin ? "bg-blue-500 rounded-r-full" : null} 
-      ${inicio && fin && i > inicio && i < fin ? "bg-gray-400" : null}`}
-        onClick={() => handleDayClick(i)}
+        ${i === inicio?.getDate() && inicio?.getMonth() === today.getMonth()+1 ? "bg-blue-500 rounded-l-full" : null} 
+        ${i === fin?.getDate() && fin?.getMonth() === today.getMonth()+1 ? "bg-blue-500 rounded-r-full" : null} 
+      ${inicio?.getDate() && fin?.getDate() &&
+         i > inicio?.getDate() && i < fin?.getDate()
+         
+         && fin?.getMonth() === today.getMonth()+1
+          ?
+           "bg-gray-400"
+            :
+             null}
+      ${inicio?.getDate() && fin?.getDate() &&
+         inicio?.getMonth() != fin?.getMonth()&&
+         i < fin?.getDate()
+
+          ?
+           "bg-gray-400"
+            :
+             null}
+             
+             
+             `}
+      onClick={() => handleDayClick(new Date(currentYear, today.getMonth()+1, i))}
       >
         {i}
       </div>
