@@ -1,102 +1,103 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
+import { differenceInDays, isValid, formatISO } from "date-fns";
 import { client } from "../lib/client";
 
 const StateContext = createContext();
 
 export function StateContextProvider({ children }) {
+  const [facturas, setFacturas] = useState([]);
+  const [reservaciones, setReservaciones] = useState([]);
+  const [productos, setProductos] = useState([]);
 
-    const [facturas, setFacturas] = useState([])
-    const [reservaciones, setReservaciones] = useState([])
-    const [productos, setProductos] = useState([])
+  //Facturas
 
-    //Facturas
+  function postFactura(formData) {
+    console.log(formData);
+    client.create({
+      _type: "facturas",
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      date: formData.date,
+      rfc: formData.rfc,
+      total: parseInt(formData.total),
+      state: true,
+      registerDate: new Date(),
+    });
+  }
+  //TODO: getFacturas
+  async function getFacturas() {
+    const query = '*[_type == "facturas"]';
+    const resultado = await client.fetch(query);
+    setFacturas(resultado);
+  }
+  //TODO: updateFactura
+  function updateFactura(formData) {}
+  //TODO: deleteFactura
+  function deleteFactura(id) {}
 
-    function postFactura (formData) {
-        console.log(formData)
-        client
-        .create({
-        _type: 'facturas',
-        name: formData.name,
-        phone: formData.phone,
-        email: formData.email,
-        date: formData.date,
-        rfc: formData.rfc,
-        total: parseInt(formData.total),
-        state: true,
-        registerDate: new Date(),
-        })
-    }
-    //TODO: getFacturas
-    async function getFacturas (){
-        const query = '*[_type == "facturas"]'
-        const resultado = await client.fetch(query)
-        setFacturas(resultado)
-    }
-    //TODO: updateFactura
-    function updateFactura (formData){
+  //Reservaciones
 
-    }
-    //TODO: deleteFactura
-    function deleteFactura(id){
+  //TODO: postReservacion
+  function postReservacion(formData) {
+    console.log(formData);
+    client.create({
+      _type: "reservaciones",
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      people: parseInt(formData.people),
+      begin: formatISO(formData.begin).substring(0, 10),
+      end: formatISO(formData.end).substring(0, 10),
+      comments: formData.comments,
+      total: formData.total,
+      registerDate: new Date(),
+    });
+  }
 
-    }
+  //TODO: getReservaciones
+  async function getReservaciones() {
+    const query = '*[_type == "reservaciones"]';
+    const resultado = await client.fetch(query);
+    setReservaciones(resultado);
+  }
 
-    //Reservaciones
+  //TODO: updateReservacion
+  function updateReservacion() {}
 
-    //TODO: postReservacion
-    function postReservacion(data){
-      
-    }
+  //TODO: deleteReservacion
+  function deleteReservacion() {}
 
-    //TODO: getReservaciones
-   async function getReservaciones(){
-        const query = '*[_type == "reservaciones"]'
-        const resultado = await client.fetch(query)
-        setReservaciones(resultado)
-    }
+  //Productos
+  //TODO: getProductos
+  async function getProductos() {
+    const query = '*[_type == "productos"]';
+    const resultado = await client.fetch(query);
+    setProductos(resultado);
+  }
 
-    //TODO: updateReservacion
-    function updateReservacion(){
+  return (
+    <StateContext.Provider
+      value={{
+        postFactura,
+        getFacturas,
+        updateFactura,
+        deleteFactura,
+        postReservacion,
+        getReservaciones,
+        updateReservacion,
+        deleteReservacion,
+        getProductos,
+        facturas,
+        reservaciones,
+        productos,
+      }}
+    >
+      {children}
+    </StateContext.Provider>
+  );
+}
 
-    }
-
-    //TODO: deleteReservacion
-    function deleteReservacion(){
-
-    }
-
-    //Productos
-    //TODO: getProductos
-    async function getProductos(){
-        const query = '*[_type == "productos"]'
-        const resultado = await client.fetch(query)
-        setProductos(resultado)
-    }
-
-
-    return (
-        <StateContext.Provider
-        value={{
-            postFactura,
-            getFacturas,
-            updateFactura,
-            deleteFactura,
-            postReservacion,
-            getReservaciones,
-            updateReservacion,
-            deleteReservacion,
-            getProductos,
-            facturas,
-            reservaciones,
-            productos
-        }}
-        >
-          {children}
-        </StateContext.Provider>
-      );
-    }
-    
-    export function AppContext() {
-      return useContext(StateContext);
-    }
-    
+export function AppContext() {
+  return useContext(StateContext);
+}

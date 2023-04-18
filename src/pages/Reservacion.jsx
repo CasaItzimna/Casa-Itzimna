@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { AiOutlineCaretDown } from "react-icons/ai";
 
 import Calendario from "@/components/Reservacion/Calendario";
-import { differenceInDays } from "date-fns";
+import { differenceInDays, isValid } from "date-fns";
 
 function Reservacion() {
   const { postReservacion } = AppContext();
@@ -18,26 +18,14 @@ function Reservacion() {
     comments: "",
     total: "",
   });
-  const [total, setTotal] = useState(0);
-  const [precio, setPrecio] = useState(200)
+  const [precio, setPrecio] = useState(200);
+  const [error, setError] = useState(false);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = () => {
-    console.log(formData);
-    postFactura(formData);
-    setFormData({
-      name: "",
-      phone: "",
-      email: "",
-      people: "",
-
-      comments: "",
-    });
-  };
   const today = new Date();
 
   const [inicio, setInicio] = useState(null);
@@ -48,10 +36,11 @@ function Reservacion() {
   dateAfterThreeDays.setDate(today.getDate() + 3);
   const [despues, setDespues] = useState(dateAfterThreeDays);
 
+  const [total, setTotal] = useState(differenceInDays(despues, hoy) * precio);
+
+
   const [show, setShow] = useState(false);
   console.log(show);
-
-  
 
   const monthNames = [
     "Ene",
@@ -68,19 +57,46 @@ function Reservacion() {
     "Dic",
   ];
 
-
+  useEffect(() => {
+    if (inicio && fin) {
+      console.log('aqui anndo', inicio, fin)
+      setTotal(differenceInDays(fin, inicio) * precio);
+      
+    }
+  }, [inicio, fin]);
 
   useEffect(() => {
-    if(!inicio && !fin){
-      setTotal(differenceInDays(despues, hoy) * precio)
+    if (inicio) {
+      formData.begin = inicio;
     }
-    else{
-      setTotal(differenceInDays(fin, inicio) * precio)
+    if (fin) {
+      formData.end = fin;
     }
-  }, [inicio, fin, hoy, despues])
+    if (inicio && fin) {
+      formData.total = parseInt(total);
+    }
+  }, [inicio, fin,total]);
 
-  console.log(differenceInDays(despues, hoy))
-  
+  const handleSubmit = () => {
+    event.preventDefault();
+    console.log(formData);
+    if (formData.name && formData.phone && formData.email && formData.people && formData.begin && formData.end && formData.comments && formData.total) {
+      console.log('entre en el if',formData);
+
+      postReservacion(formData);
+      setFormData({
+        name: "",
+        phone: "",
+        email: "",
+        people: 0,
+        inicio: null,
+        fin: null,
+        comments: "",
+      }); 
+    } else {
+      setError(true);
+    }
+  };
 
   return (
     <div className="flex flex-col h-full w-full">
@@ -157,7 +173,7 @@ function Reservacion() {
         </label>
         <textarea
           type="text-area"
-          name="coomments"
+          name="comments"
           id="comments"
           className="border-2 mt-2 text-center lg:text-left"
           placeholder="Comentarios..."

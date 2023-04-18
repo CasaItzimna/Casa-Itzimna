@@ -42,7 +42,12 @@ export default{
             name: 'total',
             title:'Total',
             type: 'number'
-        }
+        },
+        {
+            name: 'registerDate',
+            title: 'Register Date',
+            type: 'datetime'
+          },
 
     ]
 }
