@@ -84,7 +84,11 @@ function Calendario({inicio, fin, setInicio, setFin,setShow}) {
              :
               null}
         `}
-        onClick={() => handleDayClick(new Date(currentYear, today.getMonth(), i))}
+        onClick={() => {
+          if (i > today.getDate()) {
+            handleDayClick(new Date(currentYear, today.getMonth(), i));
+          }
+        }}
       >
         {i}
       </div>
