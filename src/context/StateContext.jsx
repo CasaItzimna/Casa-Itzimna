@@ -2,6 +2,8 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 import { differenceInDays, isValid, formatISO } from "date-fns";
 import { client } from "../lib/client";
 
+import bcrypt from 'bcrypt';
+
 const StateContext = createContext();
 
 export function StateContextProvider({ children }) {
@@ -76,6 +78,45 @@ export function StateContextProvider({ children }) {
     setProductos(resultado);
   }
 
+  //checkPassword
+  async function checkPassword(plaintext, hash) {
+    return await bcrypt.compare(plaintext, hash);
+  }
+
+  //loginUser
+  async function loginUser(email, password) {
+    const query = `*[_type == "usuarios" && email == $email] `
+  
+    const params = { email };
+    const users = await sanityClient.fetch(query, params);
+  
+    if (users.length === 0) {
+      throw new Error('El correo electrónico no existe');
+    }
+  
+    const user = users[0];
+  
+    // Aquí debes verificar la contraseña usando la librería de tu elección
+    // Por ejemplo, bcrypt
+    const isPasswordCorrect = await checkPassword(password, user.password);
+  
+    if (!isPasswordCorrect) {
+      throw new Error('Contraseña incorrecta');
+    }
+  }
+    //postUser
+
+  async function postUser(name, email, password) {
+    console.log(name, email, password);
+    client.create({
+      _type: "usuarios",
+      name: name,
+      email: email,
+      password: password,
+      registerDate: new Date()
+    });
+  }
+
   return (
     <StateContext.Provider
       value={{
@@ -88,6 +129,8 @@ export function StateContextProvider({ children }) {
         updateReservacion,
         deleteReservacion,
         getProductos,
+        loginUser,
+        postUser,
         facturas,
         reservaciones,
         productos,

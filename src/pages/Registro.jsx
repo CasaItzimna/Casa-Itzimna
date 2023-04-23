@@ -1,11 +1,11 @@
 import { AppContext } from '@/context/StateContext';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react'
+import bcrypt from 'bcryptjs';
 
+function Registro() {
 
-function Login() {
-
-  const {loginUser} = AppContext()
+  const {postUser} = AppContext()
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -14,24 +14,23 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError(null);
 
     try {
-      // Aquí debes implementar la lógica de autenticación
-      // Puedes hacerlo con una función serverless o usando una API externa
-      const user = await loginUser(email, password);
+      const salt = await bcrypt.genSalt(10);
+      const hashedPassword = await bcrypt.hash(password, salt);
+    postUser(name, email, hashedPassword)
 
-      if (user) {
-        router.push('/dashboard');
-      }
-    } catch (error) {
-      setError(error.message);
+      router.push('/login');
+    } catch (err) {
+      setError('Error al crear el usuario.');
     }
   };
 
   return (
     <div className='w-full h-full grid grid-cols-1 place-items-center'>
       <div className='flex flex-col w-[350px] h-full border-2 rounded-xl'>
-        <h3 className='text-center'>Iniciar Sesión</h3>
+        <h3 className='text-center'>Crear Usuario</h3>
         {error && <p>{error}</p>}
         <form onSubmit={handleSubmit}>
           
@@ -59,4 +58,4 @@ function Login() {
   )
 }
 
-export default Login
+export default Registro
