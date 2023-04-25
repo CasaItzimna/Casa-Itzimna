@@ -35,7 +35,7 @@ const Dashboard = () => {
 
   const renderActiveComponent = () => {
     switch (activeComponent) {
-      case 'Facturacion':
+      case 'Facturas':
         return <Facturas />;
       case 'Reservaciones':
         return <Reservaciones />;
@@ -56,8 +56,8 @@ const Dashboard = () => {
         <div className="flex flex-col w-1/6 h-full">
           Sidebar
           <ul>
-            <li onClick={() => handleSidebarClick('Reservaciones')} >Reservaciones</li>
-            <li onClick={() => handleSidebarClick('Facturas')} >Facturas</li>
+            <li className="cursor-pointer" onClick={() => handleSidebarClick('Reservaciones')} >Reservaciones</li>
+            <li className="cursor-pointer" onClick={() => handleSidebarClick('Facturas')} >Facturas</li>
             <li>Menu</li>
           </ul>
         </div>
