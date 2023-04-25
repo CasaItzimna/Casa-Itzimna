@@ -1,8 +1,9 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { differenceInDays, isValid, formatISO } from "date-fns";
 import { client } from "../lib/client";
+import jwt from 'jsonwebtoken';
 
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 
 const StateContext = createContext();
 
@@ -80,15 +81,17 @@ export function StateContextProvider({ children }) {
 
   //checkPassword
   async function checkPassword(plaintext, hash) {
+    
     return await bcrypt.compare(plaintext, hash);
   }
 
   //loginUser
   async function loginUser(email, password) {
-    const query = `*[_type == "usuarios" && email == $email] `
+    console.log('loginuser', email, password);
+    const query = `*[_type == "usuarios" && email == $email] `;
   
     const params = { email };
-    const users = await sanityClient.fetch(query, params);
+    const users = await client.fetch(query, params);
   
     if (users.length === 0) {
       throw new Error('El correo electrónico no existe');
@@ -102,6 +105,33 @@ export function StateContextProvider({ children }) {
   
     if (!isPasswordCorrect) {
       throw new Error('Contraseña incorrecta');
+    }
+  
+    // Genera un token JWT
+    const tokenPayload = {
+      id: user._id,
+      email: user.email,
+    };
+  
+    console.log(process.env.NEXT_PUBLIC_JWT_SECRET);
+    const jwtSecret = process.env.NEXT_PUBLIC_JWT_SECRET;
+  
+    try {
+      const token = await new Promise((resolve, reject) => {
+        jwt.sign(tokenPayload, jwtSecret, { expiresIn: '1h' }, (err, token) => {
+          if (err) {
+            reject(err);
+          } else {
+            resolve(token);
+          }
+        });
+      });
+  
+      // Devuelve el usuario y el token JWT
+      return { user, token };
+    } catch (error) {
+      console.error('Error al firmar el token JWT:', error);
+      throw new Error('Error al firmar el token JWT');
     }
   }
     //postUser

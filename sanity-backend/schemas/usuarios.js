@@ -18,7 +18,12 @@ export default{
         title:'Password',
         type:'string'
 
-    }
+    },
+    {
+        name: 'registerDate',
+        title: 'Register Date',
+        type: 'datetime'
+      },
 
     ]
 }

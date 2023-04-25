@@ -7,6 +7,7 @@ function Registro() {
 
   const {postUser} = AppContext()
 
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -21,7 +22,7 @@ function Registro() {
       const hashedPassword = await bcrypt.hash(password, salt);
     postUser(name, email, hashedPassword)
 
-      router.push('/login');
+      router.push('/Login');
     } catch (err) {
       setError('Error al crear el usuario.');
     }
@@ -34,6 +35,12 @@ function Registro() {
         {error && <p>{error}</p>}
         <form onSubmit={handleSubmit}>
           
+        <label htmlFor="email">Nombre</label>
+        <input type="text"  className='border-2 border-gray-300 '
+        id="name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        />
         <label htmlFor="email">Usuario</label>
         <input type="text"  className='border-2 border-gray-300 '
         id="email"

@@ -1,31 +1,34 @@
 import { AppContext } from '@/context/StateContext';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react'
+import axios from 'axios'
 
 
 function Login() {
 
   const {loginUser} = AppContext()
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+ const [credentials, setCredentials] = useState({
+  email: '',
+  password:'',
+ })
+ const handleChange = (e) =>{
+  setCredentials({
+    ...credentials,
+    [e.target.name]: e.target.value
+  })
+ }
   const [error, setError] = useState('');
   const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    try {
-      // Aquí debes implementar la lógica de autenticación
-      // Puedes hacerlo con una función serverless o usando una API externa
-      const user = await loginUser(email, password);
-
-      if (user) {
-        router.push('/dashboard');
-      }
-    } catch (error) {
-      setError(error.message);
+    
+    const response = await axios.post('/api/auth/login', credentials)
+    if(response.status === 200 ){
+      router.push('/Dashboard')
     }
+
   };
 
   return (
@@ -36,21 +39,20 @@ function Login() {
         <form onSubmit={handleSubmit}>
           
         <label htmlFor="email">Usuario</label>
-        <input type="text"  className='border-2 border-gray-300 '
+        <input type="email"  className='border-2 border-gray-300 '
+        name='email'
         id="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        onChange={handleChange}
         />
         <label htmlFor="password">Contraseña</label>
         <input type="password" className='border-2 border-gray-300 ' 
-        
         id="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        name='password'
+        onChange={handleChange}
         />
         <div className='flex flex-col justify-center items-center'>
 
-        <button type="submit" className='bg-blue-500 w-[100px] px-4 py-2 mt-4 mb-4 rounded-lg'>Ingresar</button>
+        <button  className='bg-blue-500 w-[100px] px-4 py-2 mt-4 mb-4 rounded-lg'>Ingresar</button>
         </div>
       </form>
       </div>
