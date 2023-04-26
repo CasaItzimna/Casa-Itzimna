@@ -35,9 +35,43 @@ export function StateContextProvider({ children }) {
     setFacturas(resultado);
   }
   //TODO: updateFactura
-  function updateFactura(formData) {}
+  function updateFactura(facturaId, formData) {
+    console.log('Updating factura with ID:', facturaId);
+    console.log('New data:', formData);
+  
+    client
+      .patch(facturaId) // Utiliza el ID de la factura para identificar el documento que se actualizará
+      .set({ // Utiliza el método "set" para reemplazar los campos existentes con los nuevos datos
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        date: formData.date,
+        rfc: formData.rfc,
+        total: parseInt(formData.total),
+        state: true, // Suponiendo que deseas mantener el estado en "true"
+        registerDate: new Date(),
+      })
+      .commit() // Realiza la actualización en la base de datos
+      .then((updatedFactura) => {
+        console.log('Factura actualizada:', updatedFactura);
+      })
+      .catch((error) => {
+        console.error('Error actualizando factura:', error);
+      });
+  }
   //TODO: deleteFactura
-  function deleteFactura(id) {}
+  async function deleteFactura(facturaId) {
+    console.log('Deleting factura with ID:', facturaId);
+  
+    try {
+      await client.delete(facturaId);
+      console.log('Factura eliminada con éxito');
+      const updatedFacturas = facturas.filter((factura) => factura._id !== facturaId);
+      setFacturas(updatedFacturas);
+    } catch (error) {
+      console.error('Error eliminando factura:', error);
+    }
+  }
 
   //Reservaciones
 

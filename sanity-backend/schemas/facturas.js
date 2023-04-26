@@ -21,7 +21,7 @@ export default{
         {
             name: 'date',
             title: 'Date',
-            type: 'string'
+            type: 'date'
         },
         {
             name: 'rfc',
