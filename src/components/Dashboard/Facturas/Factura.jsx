@@ -4,7 +4,7 @@ import { AppContext } from '@/context/StateContext';
 
 function Factura({ factura}) {
 
-    const {updateFactura, deleteFactura} = AppContext()
+  const { getFacturas, updateFactura, deleteFactura, refreshFacturas } = AppContext();
     
   const [showModal, setShowModal] = useState(false);
 
@@ -30,11 +30,13 @@ function Factura({ factura}) {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = () =>{
-    console.log(formData)
-     updateFactura(factura._id,formData)
-    setShowModal(false); 
-  }
+  const handleSubmit = async () => {
+    console.log(formData);
+    await updateFactura(factura._id, formData); // Agrega 'await' aquí
+    setShowModal(false);
+    
+  };
+  
 
   const handleDeleteClick = async () => {
     try {

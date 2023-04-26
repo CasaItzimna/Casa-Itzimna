@@ -33,32 +33,48 @@ export function StateContextProvider({ children }) {
     const query = '*[_type == "facturas"]';
     const resultado = await client.fetch(query);
     setFacturas(resultado);
+    return resultado
   }
+
+
+
   //TODO: updateFactura
-  function updateFactura(facturaId, formData) {
-    console.log('Updating factura with ID:', facturaId);
-    console.log('New data:', formData);
+  async function updateFactura(facturaId, formData) {
+    console.log("Updating factura with ID:", facturaId);
+    console.log("New data:", formData);
   
-    client
-      .patch(facturaId) // Utiliza el ID de la factura para identificar el documento que se actualizará
-      .set({ // Utiliza el método "set" para reemplazar los campos existentes con los nuevos datos
-        name: formData.name,
-        phone: formData.phone,
-        email: formData.email,
-        date: formData.date,
-        rfc: formData.rfc,
-        total: parseInt(formData.total),
-        state: true, // Suponiendo que deseas mantener el estado en "true"
-        registerDate: new Date(),
-      })
-      .commit() // Realiza la actualización en la base de datos
-      .then((updatedFactura) => {
-        console.log('Factura actualizada:', updatedFactura);
-      })
-      .catch((error) => {
-        console.error('Error actualizando factura:', error);
-      });
+    let updatedFactura; // Declarar la variable aquí
+    try {
+      updatedFactura = await client
+        .patch(facturaId)
+        .set({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          date: formData.date,
+          rfc: formData.rfc,
+          total: parseInt(formData.total),
+          state: true,
+          registerDate: new Date(),
+        })
+        .commit();
+  
+      console.log("Factura actualizada:", updatedFactura);
+      const facturaIndex = facturas.findIndex((factura) => factura._id === facturaId);
+    if (facturaIndex !== -1) {
+      const facturasActualizadas = [...facturas];
+      facturasActualizadas[facturaIndex] = updatedFactura;
+      setFacturas(facturasActualizadas);
+    } else {
+      console.log('La factura no se encuentra en el arreglo');
+    }
+      
+  } catch (error) {
+    console.error("Error actualizando factura:", error);
   }
+}
+  
+  
   //TODO: deleteFactura
   async function deleteFactura(facturaId) {
     console.log('Deleting factura with ID:', facturaId);
@@ -187,10 +203,12 @@ export function StateContextProvider({ children }) {
         postFactura,
         getFacturas,
         updateFactura,
+       
         deleteFactura,
         postReservacion,
         getReservaciones,
         updateReservacion,
+        
         deleteReservacion,
         getProductos,
         loginUser,

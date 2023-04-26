@@ -5,10 +5,14 @@ import Factura from './Facturas/Factura';
 const Facturas = () => {
   const { getFacturas, facturas } = AppContext()
 
+
   useEffect(() => {
    getFacturas()
-  }, []);
+  }, [getFacturas]);
 
+  
+
+ 
 
   return (
     <div>

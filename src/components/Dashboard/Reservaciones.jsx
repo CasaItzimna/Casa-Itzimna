@@ -8,7 +8,7 @@ const Reservaciones = () => {
   useEffect(() => {
     getReservaciones()
   }, [])
-  console.log(reservaciones)
+ 
   
 
   return (
