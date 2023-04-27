@@ -17,6 +17,7 @@
     "date-fns": "^2.29.3",
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
+    "groq": "^3.9.1",
     "jose": "^4.14.1",
     "jsonwebtoken": "^9.0.0",
     "jwt-decode": "^3.1.2",
