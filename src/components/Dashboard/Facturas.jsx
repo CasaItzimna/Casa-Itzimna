@@ -1,20 +1,33 @@
-import { AppContext } from '@/context/StateContext';
-import { useEffect, useState } from 'react';
-import Factura from './Facturas/Factura';
-import { useRef } from 'react';
+import { AppContext } from "@/context/StateContext";
+import { useEffect, useState } from "react";
+import Factura from "./Facturas/Factura";
+import { useRef } from "react";
 
 const Facturas = () => {
-  const { getFacturas, facturas, isLoading} = AppContext()
-  const [localFacturas, setLocalFacturas] = useState([])
+  const { getFacturas, setIsLoading, isLoading, facturas } = AppContext();
 
-  const isMounted = useRef(true);
-  
+  const [facturasUpdated, setFacturasUpdated] = useState(false);
+  const [lastUpdated, setLastUpdated] = useState(Date.now());
+
+  const handleUpdated = () => {
+    setLastUpdated(Date.now());
+  };
 
   useEffect(() => {
-    getFacturas()
-  }, []);
-  
-  
+    getFacturas();
+  }, [facturasUpdated]);
+
+  useEffect(() => {
+    if (facturasUpdated) {
+      setFacturasUpdated(false);
+    }
+  }, [facturasUpdated]);
+
+  useEffect(() => {
+    getFacturas();
+  }, [lastUpdated]);
+
+  console.log(facturas);
 
   return (
     <div>
@@ -23,8 +36,13 @@ const Facturas = () => {
       {isLoading ? (
         <p>Cargando facturas...</p>
       ) : (
-        facturas.map((factura, index) => (
-          <Factura factura={factura} key={index} />
+        facturas?.map((factura, index) => (
+          <Factura
+            factura={factura}
+            key={index}
+            setFacturasUpdated={setFacturasUpdated}
+            handleUpdated={handleUpdated}
+          />
         ))
       )}
     </div>

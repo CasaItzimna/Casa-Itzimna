@@ -31,76 +31,72 @@ export function StateContextProvider({ children }) {
     });
   }
 
- 
-  
-  //TODO: getFacturas
-  async function getFacturas(onComplete) {
-    const query = '*[_type == "facturas"]';
-    const resultado = await client.fetch(query);
-    if(resultado){
-      setIsLoading(false)
-    }
-    console.log('getFacturas llamado', resultado);
-    setFacturas(resultado);
-    return resultado;
-  }
-
-  //TODO: updateFactura
-  async function updateFactura(facturaId, formData) {
-    console.log("Updating factura with ID:", facturaId);
-    console.log("New data:", formData);
-
-    let updatedFactura; // Declarar la variable aquí
+  //getFacturas
+  const getFacturas = async () => {
+    setIsLoading(true);
     try {
-      updatedFactura = await client
-        .patch(facturaId)
-        .set({
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email,
-          date: formData.date,
-          rfc: formData.rfc,
-          total: parseInt(formData.total),
-          state: true,
-          registerDate: new Date(),
-        })
-        .commit();
-
-      console.log("Factura actualizada:", updatedFactura);
-
-      const facturaIndex = facturas.findIndex(
-        (factura) => factura._id === facturaId
-      );
-      if (facturaIndex !== -1) {
-        console.log("ando en el index");
-        const facturasActualizadas = [...facturas];
-        facturasActualizadas[facturaIndex] = updatedFactura;
-        setFacturas(facturasActualizadas);
-        console.log("llegue hasta aca", facturasActualizadas);
+      const response = await fetch("/api/facturas/factura");
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+        setFacturas(data);
       } else {
-        console.log("La factura no se encuentra en el arreglo");
+        console.error("Error cargando facturas:", response.statusText);
       }
     } catch (error) {
-      console.error("Error actualizando factura:", error);
+      console.error("Error cargando facturas:", error);
+    } finally {
+      setIsLoading(false);
     }
-  }
-
-  //TODO: deleteFactura
-  async function deleteFactura(facturaId) {
-    console.log("Deleting factura with ID:", facturaId);
-
+  };
+  
+  //updateFactura
+  const updateFactura = async (facturaId, formData) => {
     try {
-      await client.delete(facturaId);
-      console.log("Factura eliminada con éxito");
-      const updatedFacturas = facturas.filter(
-        (factura) => factura._id !== facturaId
-      );
-      setFacturas(updatedFacturas);
+      const response = await fetch('/api/facturas/factura', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          _id: facturaId,
+        }),
+      });
+  
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+      } else {
+        console.error('Error actualizando factura:', response.statusText);
+      }
     } catch (error) {
-      console.error("Error eliminando factura:", error);
+      console.error('Error actualizando factura:', error);
     }
-  }
+  };
 
+  //deleteFactura
+  const deleteFactura = async (facturaId) => {
+    try {
+      const response = await fetch(`/api/facturas/factura`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ _id: facturaId }),
+      });
+  
+      if (response.ok) {
+        console.log('Factura eliminada con éxito');
+      } else {
+        console.error('Error eliminando factura:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error eliminando factura:', error);
+    }
+  };
+
+ 
   //Reservaciones
 
   //TODO: postReservacion
@@ -219,7 +215,6 @@ export function StateContextProvider({ children }) {
         postReservacion,
         getReservaciones,
         updateReservacion,
-
         deleteReservacion,
         getProductos,
         loginUser,
