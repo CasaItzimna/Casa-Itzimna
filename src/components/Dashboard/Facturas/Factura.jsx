@@ -3,6 +3,7 @@ import Modal from "./Modal";
 import { AppContext } from "@/context/StateContext";
 
 function Factura({ factura, setFacturasUpdated, handleUpdated }) {
+  console.log(factura.state);
   const { updateFactura, deleteFactura } = AppContext();
 
   const [showModal, setShowModal] = useState(false);
@@ -21,6 +22,7 @@ function Factura({ factura, setFacturasUpdated, handleUpdated }) {
     email: factura.email,
     date: factura.date,
     rfc: factura.rfc,
+    state: factura.state,
     total: factura.total,
   });
 
@@ -40,14 +42,6 @@ function Factura({ factura, setFacturasUpdated, handleUpdated }) {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log(formData);
-    await updateFactura(factura._id, formData);
-    setShowModal(false);
-    setFacturasUpdated(true); // Agrega esta línea para indicar que las facturas han sido actualizadas
-  };
-
   const handleDeleteClick = async () => {
     try {
       await deleteFactura(factura._id);
@@ -57,17 +51,36 @@ function Factura({ factura, setFacturasUpdated, handleUpdated }) {
     }
   };
 
+  const [isSwitchChecked, setIsSwitchChecked] = useState(factura.state);
+
+  const handleSwitchChange = (event) => {
+    setIsSwitchChecked(event.target.checked);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const updatedFormData = {
+      ...formData,
+      state: isSwitchChecked,
+    };
+    console.log(updatedFormData);
+    await updateFactura(factura._id, updatedFormData);
+    setShowModal(false);
+    setFacturasUpdated(true);
+  };
+
   return (
     <div className="flex flex-row justify-between">
       <span>Factura de {factura.name}</span>
-      <button>Enviada</button>
+      <button >
+        {factura.state === true ? "recibida" : "enviada"}
+      </button>
       <button onClick={handleEditClick}>Editar</button>
       <button onClick={handleDeleteClick}>Eliminar</button>
 
       <Modal show={showModal} onClose={handleCloseModal}>
         <div className="p-6">
           <h2 className="text-xl mb-4">Editar factura de {factura.name}</h2>
-          {/* Aquí puedes agregar el formulario para editar la factura */}
           <div>
             <form
               className="flex flex-col h-full w-full"
@@ -132,6 +145,17 @@ function Factura({ factura, setFacturasUpdated, handleUpdated }) {
                 onChange={handleInputChange}
                 value={formData.total}
                 required
+              />
+              <label htmlFor="switch">
+                {isSwitchChecked ? "Recibida" : "enviada"}
+              </label>
+              <input
+                type="checkbox"
+                name="switch"
+                id="switch"
+                className="mr-2"
+                onChange={handleSwitchChange}
+                checked={isSwitchChecked}
               />
             </form>
           </div>

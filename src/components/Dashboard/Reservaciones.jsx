@@ -4,6 +4,7 @@ import Reservacion from "./Reservaciones/Reservacion";
 
 const Reservaciones = () => {
 
+
   const {getReservaciones, reservaciones} = AppContext()
   useEffect(() => {
     getReservaciones()

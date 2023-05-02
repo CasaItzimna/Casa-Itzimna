@@ -4,6 +4,8 @@ import Factura from "./Facturas/Factura";
 import { useRef } from "react";
 
 const Facturas = () => {
+
+
   const { getFacturas, setIsLoading, isLoading, facturas } = AppContext();
 
   const [facturasUpdated, setFacturasUpdated] = useState(false);

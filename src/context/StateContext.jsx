@@ -52,6 +52,7 @@ export function StateContextProvider({ children }) {
   
   //updateFactura
   const updateFactura = async (facturaId, formData) => {
+    console.log('entre' ,formData)
     try {
       const response = await fetch('/api/facturas/factura', {
         method: 'PUT',

@@ -26,7 +26,8 @@ export default{
         {
             name: 'rfc',
             title: 'RFC',
-            type: 'string'
+            type: 'string',
+          
         },
         {
             name: 'total',
@@ -36,7 +37,9 @@ export default{
         {
             name: 'state',
             title: 'State',
-            type: 'boolean'
+            type: 'boolean',
+            initialValue: true
+            
         },
          {
       name: 'registerDate',
