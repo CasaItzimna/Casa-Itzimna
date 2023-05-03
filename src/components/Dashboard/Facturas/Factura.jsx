@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import Modal from "./Modal";
 import { AppContext } from "@/context/StateContext";
 
-function Factura({ factura, setFacturasUpdated, handleUpdated }) {
-  console.log(factura.state);
+
+function Factura({ factura, handleFacturaEliminada, setIsDeleting, isDeleting}) {
+
+  
   const { updateFactura, deleteFactura } = AppContext();
 
   const [showModal, setShowModal] = useState(false);
+  const{getFacturas} = AppContext()
 
   const handleEditClick = () => {
     setShowModal(true);
@@ -44,12 +47,15 @@ function Factura({ factura, setFacturasUpdated, handleUpdated }) {
 
   const handleDeleteClick = async () => {
     try {
+      
       await deleteFactura(factura._id);
-      handleUpdated(); // Llama a handleUpdated después de eliminar
+      console.log("Factura eliminada");
+      getFacturas()
     } catch (error) {
       console.error("Error al eliminar factura:", error);
     }
   };
+  
 
   const [isSwitchChecked, setIsSwitchChecked] = useState(factura.state);
 
@@ -64,19 +70,29 @@ function Factura({ factura, setFacturasUpdated, handleUpdated }) {
       state: isSwitchChecked,
     };
     console.log(updatedFormData);
-    await updateFactura(factura._id, updatedFormData);
-    setShowModal(false);
-    setFacturasUpdated(true);
+    try {
+      const respuesta = await updateFactura(factura._id, updatedFormData);
+      console.log('la respuesta fue', respuesta)
+      
+      setShowModal(false);
+      
+      
+    } catch (error) {
+      console.log(error)
+    }
+
+    await getFacturas()
+   
   };
 
   return (
     <div className="flex flex-row justify-between">
       <span>Factura de {factura.name}</span>
-      <button >
-        {factura.state === true ? "recibida" : "enviada"}
-      </button>
+      <button>{factura.state === true ? "recibida" : "enviada"}</button>
       <button onClick={handleEditClick}>Editar</button>
-      <button onClick={handleDeleteClick}>Eliminar</button>
+      <button onClick={handleDeleteClick} disabled={isDeleting}>
+  Eliminar
+</button>
 
       <Modal show={showModal} onClose={handleCloseModal}>
         <div className="p-6">

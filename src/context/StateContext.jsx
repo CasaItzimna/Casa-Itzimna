@@ -2,8 +2,6 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 import { differenceInDays, isValid, formatISO } from "date-fns";
 import { client } from "../lib/client";
 import jwt from "jsonwebtoken";
-import groq from 'groq';
-
 import bcrypt from "bcryptjs";
 
 const StateContext = createContext();
@@ -34,22 +32,30 @@ export function StateContextProvider({ children }) {
   //getFacturas
   const getFacturas = async () => {
     setIsLoading(true);
+  
     try {
-      const response = await fetch("/api/facturas/factura");
+      const response = await fetch('/api/facturas/factura', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+  
       if (response.ok) {
         const data = await response.json();
-        console.log(data);
-        setFacturas(data);
+        setFacturas(data); // Actualiza la lista de facturas con los datos obtenidos de la API
+        console.log('getFacturas respuesta', data);
       } else {
-        console.error("Error cargando facturas:", response.statusText);
+        console.error('Error al obtener facturas:', response.statusText);
       }
+  
+      setIsLoading(false);
     } catch (error) {
-      console.error("Error cargando facturas:", error);
-    } finally {
+      console.error('Error al obtener facturas:', error);
       setIsLoading(false);
     }
   };
-  
+
   //updateFactura
   const updateFactura = async (facturaId, formData) => {
     console.log('entre' ,formData)
@@ -57,6 +63,7 @@ export function StateContextProvider({ children }) {
       const response = await fetch('/api/facturas/factura', {
         method: 'PUT',
         headers: {
+          Accept: "application/json",
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
@@ -82,13 +89,26 @@ export function StateContextProvider({ children }) {
       const response = await fetch(`/api/facturas/factura`, {
         method: 'DELETE',
         headers: {
+          
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ _id: facturaId }),
       });
+      if(response){
+        
+        const index = facturas.findIndex((factura) => factura._id === facturaId);
+        if (index !== -1) {
+          facturas.splice(index, 1);
+        }
+
+      }
+
+      return response
   
       if (response.ok) {
+        
         console.log('Factura eliminada con éxito');
+       
       } else {
         console.error('Error eliminando factura:', response.statusText);
       }
@@ -223,7 +243,7 @@ export function StateContextProvider({ children }) {
         facturas,
         reservaciones,
         productos,
-        isLoading
+        isLoading,
       }}
     >
       {children}
