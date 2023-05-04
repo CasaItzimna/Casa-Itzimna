@@ -5,7 +5,7 @@ import Reservacion from "./Reservaciones/Reservacion";
 const Reservaciones = () => {
 
 
-  const {getReservaciones, reservaciones} = AppContext()
+  const {getReservaciones, reservaciones, isLoading} = AppContext()
   useEffect(() => {
     getReservaciones()
   }, [])
@@ -13,17 +13,21 @@ const Reservaciones = () => {
   
 
   return (
-    <div>
-      <h2>Reservaciones</h2>
-      <p>Aquí se muestra el contenido de Reservaciones.</p>
-      {
-        reservaciones.map((reservacion, index) =>(
-          <Reservacion reservacion= {reservacion}
-          key={index}
-          />
-        ))
-      }
-    </div>
+     <div>
+    <h2>Reservaciones</h2>
+    <p>Aquí se muestra el contenido de Reservaciones.</p>
+    {isLoading ? (
+  <p>Cargando Reservaciones...</p>
+) : (
+  reservaciones && reservaciones.length > 0 ? (
+    reservaciones.map((reservacion) => (
+      <Reservacion key={reservacion._id} reservacion={reservacion} />
+    ))
+  ) : (
+    <span>No hay reservaciones</span>
+  )
+)}
+  </div>
   );
 };
 

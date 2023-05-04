@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Modal from "./Modal";
+import Modal from "../Modal/Modal";
 import { AppContext } from "@/context/StateContext";
 
 
-function Factura({ factura, handleFacturaEliminada, setIsDeleting, isDeleting}) {
+function Factura({ factura,  }) {
 
   
   const { updateFactura, deleteFactura } = AppContext();
@@ -90,7 +90,7 @@ function Factura({ factura, handleFacturaEliminada, setIsDeleting, isDeleting}) 
       <span>Factura de {factura.name}</span>
       <button>{factura.state === true ? "recibida" : "enviada"}</button>
       <button onClick={handleEditClick}>Editar</button>
-      <button onClick={handleDeleteClick} disabled={isDeleting}>
+      <button onClick={handleDeleteClick} >
   Eliminar
 </button>
 
