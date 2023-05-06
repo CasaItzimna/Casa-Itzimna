@@ -145,10 +145,41 @@ export function StateContextProvider({ children }) {
   }
 
   //TODO: updateReservacion
-  function updateReservacion() {}
+  function updateReservacion(reservacionId, formData) {
+    console.log(formData);
+    client
+      .patch(id)
+      .set({
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        people: parseInt(formData.people),
+        begin: formatISO(formData.begin).substring(0, 10),
+        end: formatISO(formData.end).substring(0, 10),
+        comments: formData.comments,
+        total: formData.total,
+        registerDate: new Date(),
+      })
+      .commit()
+      .then((updatedReservacion) => {
+        console.log("Reservación actualizada:", updatedReservacion);
+      })
+      .catch((error) => {
+        console.error("Error al actualizar la reservación:", error);
+      });
+  }
 
   //TODO: deleteReservacion
-  function deleteReservacion() {}
+  function deleteReservacion(id) {
+    client
+      .delete(id)
+      .then((deletedReservacion) => {
+        console.log("Reservación eliminada:", deletedReservacion);
+      })
+      .catch((error) => {
+        console.error("Error al eliminar la reservación:", error);
+      });
+  }
 
   //Productos
   //TODO: getProductos

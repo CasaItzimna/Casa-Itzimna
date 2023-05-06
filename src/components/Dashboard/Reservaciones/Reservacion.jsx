@@ -71,7 +71,7 @@ function Reservacion({ reservacion, isDeleting}) {
     };
     console.log(updatedFormData);
     try {
-      const respuesta = await updateFactura(reservacion._id, updatedFormData);
+      const respuesta = await updateReservacion(reservacion._id, updatedFormData);
       console.log('la respuesta fue', respuesta)
       
       setShowModal(false);
