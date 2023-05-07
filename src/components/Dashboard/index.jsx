@@ -6,9 +6,13 @@ import dynamic from "next/dynamic";
 
 import Facturas from "./Facturas";
 import Reservaciones from "./Reservaciones";
+import { AppContext } from "@/context/StateContext";
 
 
 const Dashboard = () => {
+
+  const {getReservaciones} = AppContext()
+
   const [user, setUser] = useState({
     email: "",
     name: "",
@@ -54,6 +58,10 @@ const Dashboard = () => {
     localStorage.setItem("activeComponent", component);
     router.push(`/Dashboard/${component}`);
   };
+  useEffect(() => {
+    getReservaciones()
+  }, [])
+  
 
   useEffect(() => {
     const storedActiveComponent = localStorage.getItem("activeComponent");
@@ -63,6 +71,7 @@ const Dashboard = () => {
       setActiveComponent("Reservaciones");
     }
   }, []);
+  
   
   
   return (

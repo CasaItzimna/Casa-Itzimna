@@ -142,27 +142,32 @@ export function StateContextProvider({ children }) {
     const query = '*[_type == "reservaciones"]';
     const resultado = await client.fetch(query);
     setReservaciones(resultado);
+    setIsLoading(false)
   }
 
   //TODO: updateReservacion
   function updateReservacion(reservacionId, formData) {
     console.log(formData);
     client
-      .patch(id)
+      .patch(reservacionId)
       .set({
         name: formData.name,
         phone: formData.phone,
         email: formData.email,
         people: parseInt(formData.people),
-        begin: formatISO(formData.begin).substring(0, 10),
-        end: formatISO(formData.end).substring(0, 10),
+        //begin: formatISO(formData.begin).substring(0, 10),
+        //end: formatISO(formData.end).substring(0, 10),
+        begin: formData.begin,
+        end: formData.end,
         comments: formData.comments,
         total: formData.total,
         registerDate: new Date(),
       })
+      
       .commit()
       .then((updatedReservacion) => {
         console.log("Reservación actualizada:", updatedReservacion);
+        getReservaciones()
       })
       .catch((error) => {
         console.error("Error al actualizar la reservación:", error);
@@ -175,6 +180,7 @@ export function StateContextProvider({ children }) {
       .delete(id)
       .then((deletedReservacion) => {
         console.log("Reservación eliminada:", deletedReservacion);
+        getReservaciones()
       })
       .catch((error) => {
         console.error("Error al eliminar la reservación:", error);

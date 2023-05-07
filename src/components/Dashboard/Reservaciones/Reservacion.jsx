@@ -3,7 +3,7 @@ import { AppContext } from "@/context/StateContext";
 import Modal from "../Modal/Modal";
 
 
-function Reservacion({ reservacion, isDeleting}) {
+function Reservacion({ reservacion }) {
 
   
   const { updateReservacion, deleteReservacion } = AppContext();
@@ -23,9 +23,8 @@ function Reservacion({ reservacion, isDeleting}) {
     name: reservacion.name,
     phone: reservacion.phone,
     email: reservacion.email,
-    date: reservacion.date,
-    rfc: reservacion.rfc,
-    state: reservacion.state,
+    begin: reservacion.begin,
+    end: reservacion.end,
     total: reservacion.total,
   });
 
@@ -34,8 +33,8 @@ function Reservacion({ reservacion, isDeleting}) {
       name: reservacion.name,
       phone: reservacion.phone,
       email: reservacion.email,
-      date: reservacion.date,
-      rfc: reservacion.rfc,
+      begin: reservacion.begin,
+      end: reservacion.end,
       total: reservacion.total,
     });
   }, [reservacion]);
@@ -50,14 +49,12 @@ function Reservacion({ reservacion, isDeleting}) {
       
       await deleteReservacion(reservacion._id);
       console.log("Reservacion eliminada");
-      getReservacion()
+      getReservaciones()
     } catch (error) {
       console.error("Error al eliminar reservacion:", error);
     }
   };
   
-
-  const [isSwitchChecked, setIsSwitchChecked] = useState(reservacion.state);
 
   const handleSwitchChange = (event) => {
     setIsSwitchChecked(event.target.checked);
@@ -67,10 +64,11 @@ function Reservacion({ reservacion, isDeleting}) {
     e.preventDefault();
     const updatedFormData = {
       ...formData,
-      state: isSwitchChecked,
+     
     };
     console.log(updatedFormData);
     try {
+      console.log(reservacion._id)
       const respuesta = await updateReservacion(reservacion._id, updatedFormData);
       console.log('la respuesta fue', respuesta)
       
@@ -81,14 +79,13 @@ function Reservacion({ reservacion, isDeleting}) {
       console.log(error)
     }
 
-    await getReservacion()
+    await getReservaciones()
    
   };
 
   return (
     <div className="flex flex-row justify-between">
       <span>Reservacion de {reservacion.name}</span>
-      <button>{reservacion.state === true ? "recibida" : "enviada"}</button>
       <button onClick={handleEditClick}>Editar</button>
       <button onClick={handleDeleteClick} >
   Eliminar
