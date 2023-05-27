@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "APOLLO";
+    src: url("../assets/Typo/APOLLO.otf");
+  }
+@font-face {
+    font-family: "CINZELBOLD";
+    src: url("../assets/Typo/Cinzel-Bold.otf");
+  }
+@font-face {
+    font-family: "CINZELRegular";
+    src: url("../assets/Typo/Cinzel-Regular.otf");
+  }
+@font-face {
+    font-family: "ETHEREAL";
+    src: url("../assets/Typo/Ethereal-Thin.otf");
+  }

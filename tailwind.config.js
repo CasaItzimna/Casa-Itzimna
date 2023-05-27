@@ -9,7 +9,14 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        apollo: ['Apollo'],
+        cinzelRegular: ['CinzelRegular'],
+        cinzelBold: ['CinzelBold'],
+
+      }
+    },
   },
   plugins: [],
 }
