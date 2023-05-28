@@ -4,12 +4,17 @@ import slider1 from "../../../assets/Home/slider1.jpg";
 import hero1 from "../../../assets/Home/hero3.png";
 import {FaUsers} from 'react-icons/fa'
 import {BsCalendar3} from 'react-icons/bs'
+import AboutUs from '../AboutUs/AboutUs';
 
 function Hero() {
   return (
     <div className='w-full h-screen relative'>
+      <AboutUs/>
         <Image src={hero1} alt='fondo' className='absolute w-full h-full object-cover' />
+        
+
         <div className='flex flex-col justify-center h-screen w-full text-center items-center text-white absolute z-20'>
+        
             <div className=''>
 
             <h1 className='text-9xl font-cinzelRegular'>Casa Itzimná</h1>
@@ -29,9 +34,8 @@ function Hero() {
             <button className='w-[22%] h-[40px] bg-[#b4a692] ml-4  rounded-md cursor-pointer text-black text-xl'>CHECK NOW</button>
             </div>
         </div>
-        <div>
-
-        </div>
+        
+        
     </div>
   )
 }
