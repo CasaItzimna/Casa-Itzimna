@@ -14,6 +14,7 @@ module.exports = {
         apollo: ['Apollo'],
         cinzelRegular: ['CinzelRegular'],
         cinzelBold: ['CinzelBold'],
+        ethereal: ['Ethereal']
 
       }
     },

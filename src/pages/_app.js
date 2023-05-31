@@ -7,7 +7,7 @@ export default function App({ Component, pageProps }) {
   return(<StateContextProvider>
     <Navbar/>
     <Component {...pageProps} />
-    <Footer/>
+   
     </StateContextProvider>
   ) 
 }

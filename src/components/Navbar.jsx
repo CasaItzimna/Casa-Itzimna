@@ -28,25 +28,25 @@ function Navbar() {
 flex flex-row justify-center gap-10 font-apollo 
 '>
  <div className='flex flex-col'>
-    <Image src={logo} alt='logo' className='w-[150px] object-cover' />
+    <Image src={logo} alt='logo' className='w-[150px] object-cover cursor-pointer' />
  </div>
  <div className='flex flex-col justify-center text-white w-[50%]'>
     <div className='flex flex-row justify-center text-2xl text-center items-center mb-2'>
-      <span className='mr-4'>ES</span><span className='border-[1px] rounded-full px-2 py-1 '>EN</span>
+      <span className='mr-4 cursor-pointer'>ES</span><span className='border-[1px] rounded-full px-2 py-1 cursor-pointer '>EN</span>
     </div>
     <div className='flex flex-row justify-center'>
-      <ul className='flex flex-row text-center gap-20 text-xl'>
-        <li className=''>HOME</li>
-        <li className=''>ABOUT US</li>
-        <li className=''>HOUSE</li>
-        <li >EXPERIENCE</li>
+      <ul className='flex flex-row text-center gap-20 text-xl '>
+        <li className='cursor-pointer'>HOME</li>
+        <li className='cursor-pointer'>ABOUT US</li>
+        <li className='cursor-pointer'>HOUSE</li>
+        <li className='cursor-pointer'>EXPERIENCE</li>
       </ul>
     </div>
     <div className='flex flex-row justify-center'>
     <ul className='flex flex-row text-center gap-20 text-xl mt-2'>
-      <li className=''>SPACES</li>
-      <li className=''>BOUTIQUE</li>
-      <li >CONTACT</li>
+      <li className='cursor-pointer'>SPACES</li>
+      <li className='cursor-pointer'>BOUTIQUE</li>
+      <li className='cursor-pointer'>CONTACT</li>
     </ul>
     </div>
  </div>
