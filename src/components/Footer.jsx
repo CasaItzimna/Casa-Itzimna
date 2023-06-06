@@ -1,11 +1,12 @@
-import React from 'react'
-import { BsFacebook, BsInstagram, BsWhatsapp } from 'react-icons/bs'
-import logo from '../assets/Logo/LOGO1.png'
-import Image from 'next/image'
+import React from "react";
+import { BsFacebook, BsInstagram, BsWhatsapp } from "react-icons/bs";
+
+import Image from "next/image";
+import logo from "../assets/Logo/LOGOBLANCO.png";
 
 function Footer() {
   return (
-    <div className='w-full h-full flex flex-row justify-center bg-black text-white '>
+    /* <div className='w-full h-full flex flex-row justify-center bg-black text-white '>
        
         <div className=' h-full flex flex-col w-[500px]  '>
            
@@ -40,8 +41,66 @@ function Footer() {
     </div>
 </div>
 
+    </div> */
+    <div className="w-full h-[500px] flex flex-col justify-center bg-[#31302c]">
+      <div className=" flex flex-row justify-center ">
+        <div className="flex flex-col w-1/3   ">
+          <h3 className="font-cinzelBold text-2xl text-[#b4a692] mb-4">
+            CONTACT
+          </h3>
+          <ul className="font-apollo text-white text-sm h-[150px]">
+            <li>AVENIDA PÉREZ PONCE 120,</li>
+            <li>COLONIA ITZIMNÁ 07100, MÉRIDA, YUCATÁN</li>
+            <li>+52 55 2879 4515</li>
+            <li>CONTACTO@CASAITZIMNA.COM</li>
+          </ul>
+          <div className="w-full h-[2px] bg-[#b4a692] mb-4" />
+          <div className="uppercase flex flex-col w-full font-apollo text-white ">
+          copyright all rights reserved - casa itzimná hotel boutique
+        </div>
+        </div>
+        <div className="flex flex-col w-1/4 ">
+          <h3 className="font-cinzelBold text-2xl text-[#b4a692] mb-4">
+            PAGES
+          </h3>
+          <ul className="font-apollo text-white text-sm h-[150px]">
+            <li>ABOUT US</li>
+            <li>HOUSE</li>
+            <li>SPACES</li>
+            <li>EXPERIENCE</li>
+            <li>BOUTIQUE</li>
+            <li>CONTACT</li>
+          </ul>
+          <div className="w-full h-[2px] bg-[#b4a692]" />
+        </div>
+        <div className="flex flex-col text-right ">
+          <div className="flex flex-row justify-end">
+            <Image src={logo} alt="logo" className="w-[100px] h-[100px] " />
+          </div>
+          <h3 className="font-cinzelBold text-2xl text-[#b4a692] mb-4">
+            GET SOCIAL
+          </h3>
+          <ul className="font-apollo text-white text-sm h-[50px]">
+            <li>CASA ITZIMNÁ BOUTIQUE</li>
+            <li>CASAITZIMNÁ_BOUTIQUE</li>
+          </ul>
+          <div className="w-full h-[2px] bg-[#b4a692] mb-4" />
+          <div className="uppercase flex flex-row w-full font-apollo text-white  ">
+          Made by &nbsp; <span className="text-[#b4a692]">jaizmora digital media</span>
+          </div>
+        </div>
+      </div>
+     
+
+      <div className="flex flex-row justify-center text-white font-apollo ">
+       
+        <div className="flex flex-col w-1/4">
+
+        </div>
+        
+      </div>
     </div>
-  )
+  );
 }
 
-export default Footer
+export default Footer;
