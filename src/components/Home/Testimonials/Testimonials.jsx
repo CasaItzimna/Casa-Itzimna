@@ -5,10 +5,15 @@ import starsolid from "./star-solid.png";
 import florizq from "./florizq.png";
 import Image from "next/image";
 import flor from "../../../assets/flor.png";
+import iguana from './iguana.png'
+
 
 function Testimonials() {
   return (
-    <div className="w-full h-[800px] flex flex-col  text-center mt-4 ">
+    <div className="w-full h-[800px] flex flex-col  text-center mt-4 relative ">
+      <div className="absolute bottom-0 right-0">
+        <Image src={iguana} alt="iguana" className="w-[400px]"/>
+      </div>
       <h3 className="font-apollo text-2xl">WHAT OUR CUSTOMERS SAY</h3>
       <h2 className="font-cinzelBold text-5xl">TESTIMONIALS</h2>
       <div className="w-full flex flex-col items-center">
