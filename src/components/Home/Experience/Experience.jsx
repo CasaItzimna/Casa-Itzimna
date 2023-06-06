@@ -18,6 +18,7 @@ function Experience() {
             <h3 className="text-3xl  font-cinzelBold text-white text-right ">
               EXPERIENCE
             </h3>
+            
             <div className="w-[218px] h-[20px] flex flex-row relative mb-8 ">
               <Image
                 src={flor}
