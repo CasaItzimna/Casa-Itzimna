@@ -1,0 +1,50 @@
+{
+    "Navbar": {
+      "option1": "HOME",
+      "option2": "ABOUT US",
+      "option3": "HOUSE",
+      "option4": "EXPERIENCE",
+      "option5": "SPACES",
+      "option6": "BOUTIQUE",
+      "option7": "CONTACT"
+    },
+    "Footer": {
+        "option1": "ABOUT US",
+        "option2": "HOUSE",
+        "option3": "EXPERIENCE",
+        "option4": "SPACES",
+        "option5": "BOUTIQUE",
+        "option6": "CONTACT"
+    },
+    "Home": {
+      "calendarioInicio": "CHECK IN",
+      "calendarioFin": "CHECK OUT",
+      "calendarioPersonas": "GUESTS"
+    },
+    "About": {
+      "title": "About Us",
+      "text": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+    "buttonText": "READ MORE"
+    },
+    "Experience":{
+        "title": "Experience",
+      "text": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+      "buttonText": "DISCOVER"
+    },
+    "Accomodation":{
+        "title": "Accomodation",
+        "opcion1": "UNIQUE SPACES",
+        "opcion2": "LUXURE & COMFORT",
+        "opcion3": "GRACIOUS HOSPITALITY",
+      "text": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+      "buttonText": "SPACES"
+    },
+    "Testimonials":{
+        "title": "Testimonials",
+        "subtitle": "WHAT OUT CUSTOMERS SAY",
+        "titleText": "EXCELENT SERVICE & AMMENITIES",
+      "text1": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+      "text2": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+      "text3": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis."
+    }
+  }

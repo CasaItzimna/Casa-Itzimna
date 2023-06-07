@@ -11,6 +11,7 @@ export function StateContextProvider({ children }) {
   const [reservaciones, setReservaciones] = useState([]);
   const [productos, setProductos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [idioma, setIdioma] = useState('ingles')
 
   //Facturas
 
@@ -277,6 +278,8 @@ export function StateContextProvider({ children }) {
         getProductos,
         loginUser,
         postUser,
+        setIdioma,
+        idioma,
         facturas,
         reservaciones,
         productos,

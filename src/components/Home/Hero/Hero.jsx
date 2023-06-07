@@ -18,7 +18,7 @@ function Hero() {
       <div className="flex flex-col justify-center h-screen w-full text-center items-center text-white absolute z-20">
         <div className="">
           <h1 className="text-9xl font-cinzelRegular">Casa Itzimná</h1>
-          <h2 className="text-6xl font-cinzelRegular">Hotel Boutique</h2>
+          <h2 className="text-6xl font-cinzelRegular">Boutique</h2>
         </div>
 
         <div className="flex flex-row  w-[58%] h-[65px] bg-white/40 mt-14 justify-center items-center rounded-md ">

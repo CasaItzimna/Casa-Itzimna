@@ -1,0 +1,50 @@
+{
+    "Navbar": {
+      "option1": "Inicio",
+      "option2": "Acerca",
+      "option3": "Casa",
+      "option4": "Experiencia",
+      "option5": "Espacios",
+      "option6": "Boutique",
+      "option7": "Contacto"
+    },
+    "Footer": {
+        "option1": "Acerca",
+      "option2": "Casa",
+      "option3": "Experiencia",
+      "option4": "Espacios",
+      "option5": "Boutique",
+      "option6": "Contacto"
+    },
+    "Home": {
+      "calendarioInicio": "Inicio",
+      "calendarioFin": "Fin",
+      "calendarioPersonas": "Personas"
+    },
+    "About": {
+      "title": "Acerca de Nosotros",
+      "text": "espanol  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+    "buttonText": "VER MÁS"
+    },
+    "Experience":{
+        "title": "Acerca de Nosotros",
+      "text": "espanol  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+      "buttonText": "DESCUBRIR"
+    },
+    "Accomodation":{
+        "title": "Alojamiento",
+        "opcion1": "ESPACIOS UNICOS",
+        "opcion2": "LUJO & COMODIDAD",
+        "opcion3": "HOSPITALIDAD",
+      "text": "espanol  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+      "buttonText": "ESPACIOS"
+    },
+    "Testimonials":{
+        "title": "Testimonios",
+        "subtitle": "LO QUE NUESTROS CLIENTES DICEN",
+        "titleText": "EXCELENTE SERVICIO & AMENIDADES",
+      "text1": "espanol  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+      "text2": "espanol  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+      "text3": "espanol  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis."
+    }
+  }
