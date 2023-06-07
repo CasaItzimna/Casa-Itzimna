@@ -22,36 +22,36 @@ function Navbar() {
               <Link href='/'>HOME</Link>
             </li>
             <li className='cursor-pointer hover:text-[#b4a692]'>
-              <Link href='/about'>ABOUT US</Link>
+              <Link href='/AboutUs'>ABOUT US</Link>
             </li>
             <li className='cursor-pointer hover:text-[#b4a692]'>
-              <Link href='/house'>HOUSE</Link>
+              <Link href='/House'>HOUSE</Link>
             </li>
             <li className='cursor-pointer hover:text-[#b4a692]'>
-              <Link href='/experience'>EXPERIENCE</Link>
+              <Link href='/Experience'>EXPERIENCE</Link>
             </li>
           </ul>
         </div>
         <div className='flex flex-row justify-center'>
           <ul className='flex flex-row text-center gap-20 text-xl mt-2'>
             <li className='cursor-pointer hover:text-[#b4a692]'>
-              <Link href='/spaces'>SPACES</Link>
+              <Link href='/Spaces'>SPACES</Link>
             </li>
             <li className='cursor-pointer hover:text-[#b4a692]'>
-              <Link href='/boutique'>BOUTIQUE</Link>
+              <Link href='/Boutique'>BOUTIQUE</Link>
             </li>
             <li className='cursor-pointer hover:text-[#b4a692]'>
-              <Link href='/contact'>CONTACT</Link>
+              <Link href='/Contact'>CONTACT</Link>
             </li>
           </ul>
         </div>
       </div>
       <div className='flex flex-col justify-center'>
         <button className='border-2 border-white rounded-md text-white w-[120px] h-[35px] text-xl flex flex-col justify-center items-center'>
-          <Link href='/login'>LOG IN</Link>
+          <Link href='/Login'>LOG IN</Link>
         </button>
         <button className='bg-[#b4a692] rounded-md text-black w-[120px] h-[30px] mt-2 text-xl'>
-          <Link href='/booking'>BOOK NOW</Link>
+          <Link href='/Booking'>BOOK NOW</Link>
         </button>
       </div>
     </div>
