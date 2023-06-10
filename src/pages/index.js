@@ -8,10 +8,21 @@ import AboutUs from '@/components/Home/AboutUs/AboutUs'
 import Experience from '@/components/Home/Experience/Experience'
 import Accomodation from '@/components/Home/Accomodation/Accomodation'
 import Testimonials from '@/components/Home/Testimonials/Testimonials'
+import { AppContext } from '@/context/StateContext'
+import esJson from '../assets/JSON/es.json';
+import enJson from '../assets/JSON/en.json';
 
 const inter = Inter({ subsets: ['latin'] })
 
+
+
 export default function Home() {
+
+  const{idioma} = AppContext()
+
+
+  const json = idioma === 'espanol' ? esJson : enJson;
+
   return (
     <div>
 
@@ -20,12 +31,12 @@ export default function Home() {
     style={{ height: 'calc(70vh * 2)' }}>
      
 
-    <Hero/>
-    <AboutUs/>
+    <Hero json = {json}/>
+    <AboutUs json = {json}/>
       </div>
-      <Experience/>
-      <Accomodation/>
-      <Testimonials/>
+      <Experience json = {json}/>
+      <Accomodation json = {json}/>
+      <Testimonials json = {json}/>
       </div>
     
   )

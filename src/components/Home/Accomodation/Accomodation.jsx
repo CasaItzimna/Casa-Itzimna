@@ -5,8 +5,14 @@ import foto1 from "./foto1.png";
 import foto2 from "./foto2.png";
 import foto3 from "./foto3.png";
 import sol from "./sol.png";
+import { useState } from "react";
+import Link from "next/link";
 
-function Accomodation() {
+function Accomodation({json}) {
+
+  const [opcion, setOpcion] = useState('opcion1')
+  console.log(opcion)
+  
   return (
     <div className="h-full w-full relative">
         <div className="absolute left-0 top-[10%]">
@@ -16,7 +22,7 @@ function Accomodation() {
         <div className="w-[25%] h-full flex flex-col justify-center ">
             <div className="flex flex-col justify-center w-full">
 
-          <h3 className="text-3xl font-cinzelBold ">Accomodation</h3>
+          <h3 className="text-3xl font-cinzelBold ">{json.Accomodation.title}</h3>
           <div className="w-[270px] h-full flex flex-row relative mb-8">
             <div className="bg-[#b4a692] w-[260px] h-[2px]"></div>
             <Image
@@ -26,24 +32,31 @@ function Accomodation() {
               />
           </div>
           <div className="flex flex-row justify-between w-[90%] h-full font-ethereal uppercase text-[11px] ">
-            <h4>unique spaces</h4>
-            <h4>luxure & comfort</h4>
-            <h4>gracious hospitality</h4>
+            <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion1')}>{json.Accomodation.option1}</h4>
+            <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion2')}>{json.Accomodation.option2}</h4>
+            <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion3')}>{json.Accomodation.option3}</h4>
           </div>
           <div className="w-[90%] h-full flex flex-row relative mb-4">
             <div className="bg-[#b4a692] w-full h-[3px]"></div>
-            <div className="absolute bg-[#31302c] w-[20%] h-[3px]"></div>
+            <div  className={`absolute bg-[#31302c] w-[30%] h-[3px] ${
+      opcion === 'opcion1'
+        ? 'left-0'
+        : opcion === 'opcion2'
+        ? 'left-[30%]'
+        : opcion === 'opcion3'
+        ? 'right-0'
+        : ''
+    }`}></div>
           </div>
           <div>
             <p className="text-justify font-ethereal w-[90%] text-[17px] ">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-              ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
-              accumsan lacus vel facilisis.
+            {json.Accomodation.text}
             </p>
+            <Link href='/Spaces'>
             <button className="rounded-[4px] bg-[#b4a692] w-[150px] h-[37px] mt-8 font-apollo">
-              SPACES
+            {json.Accomodation.buttonText}
             </button>
+            </Link>
               </div>
           </div>
         </div>

@@ -1,25 +1,25 @@
 {
     "Navbar": {
-      "option1": "Inicio",
-      "option2": "Acerca",
-      "option3": "Casa",
-      "option4": "Experiencia",
-      "option5": "Espacios",
-      "option6": "Boutique",
-      "option7": "Contacto"
+      "option1": "INICIO",
+      "option2": "ACERCA",
+      "option3": "CASA",
+      "option4": "EXPERIENCIA",
+      "option5": "ESCPACIOS",
+      "option6": "BOUTIQUE",
+      "option7": "CONTACTO"
     },
     "Footer": {
-        "option1": "Acerca",
-      "option2": "Casa",
-      "option3": "Experiencia",
-      "option4": "Espacios",
-      "option5": "Boutique",
-      "option6": "Contacto"
+        "option1": "ACERCA",
+      "option2": "CASA",
+      "option3": "EXPERIENCIA",
+      "option4": "ESPACIOS",
+      "option5": "BOUTIQUE",
+      "option6": "CONTACTO"
     },
     "Home": {
-      "calendarioInicio": "Inicio",
-      "calendarioFin": "Fin",
-      "calendarioPersonas": "Personas"
+      "calendarioInicio": "INICIO",
+      "calendarioFin": "FIN",
+      "calendarioPersonas": "PERSONAS"
     },
     "About": {
       "title": "Acerca de Nosotros",
@@ -46,5 +46,33 @@
       "text1": "espanol  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
       "text2": "espanol  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
       "text3": "espanol  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis."
-    }
+    },
+    
+    "OurStory":{
+      "title": "Nuestra Historia",
+      "option1": "ACERCA",
+      "option2": "MISION",
+      "option3": "METAS",
+    "text": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis."
+    
+  },
+  "History":{
+    "title": "Historia",
+    "subtitle": "DESCUBRE EL LEGADO DE HOSPITALIDAD Y ELEGANCIA",
+    "titleText1": "ESTABLECIMIENTO",
+    "titleText2": "RESTAURACIÓN",
+    "titleText3": "BOUTIQUE",
+    "text1": "espanol  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "text2": "espanol  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "text3": "espanol  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+},
+"Why":{
+  "title": "Por qué Escogernos",
+  "question1":"LUJO Y CONFORT SIN IGUAL",
+  "question2":"EXPERIENCIAS GASTRONÓMICAS EXQUISITAS",
+  "question3":"SERVICIO Y ATENCIÓN IMPECABLE",
+  "answer1": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+  "answer2": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+  "answer3": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis."
+}
   }

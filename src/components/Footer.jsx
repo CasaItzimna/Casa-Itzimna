@@ -9,8 +9,14 @@ import { FaFacebookF, FaLocationDot } from "react-icons/fa";
 import { AiOutlineInstagram } from "react-icons/ai";
 import location from '../assets/location.png'
 import Link from "next/link";
+import { AppContext } from "@/context/StateContext";
+import esJson from '../assets/JSON/es.json';
+import enJson from '../assets/JSON/en.json';
 
 function Footer() {
+  const { idioma, setIdioma } = AppContext();
+  const json = idioma === 'espanol' ? esJson : enJson;
+
   return (
   
     <div className="w-full h-[500px] flex flex-col justify-center bg-[#31302c]">
@@ -38,12 +44,12 @@ function Footer() {
             PAGES
           </h3>
           <ul className="font-apollo text-white text-sm h-[150px]">
-            <li className="cursor-pointer hover:text-[#b4a692]"> <Link href='/about'>ABOUT US</Link></li>
-            <li className="cursor-pointer hover:text-[#b4a692]"><Link href='/house'>HOUSE</Link></li>
-            <li className="cursor-pointer hover:text-[#b4a692]"><Link href='/spaces'>SPACES</Link></li>
-            <li className="cursor-pointer hover:text-[#b4a692]"><Link href='/experience'>EXPERIENCE</Link></li>
-            <li className="cursor-pointer hover:text-[#b4a692]"><Link href='/boutique'>BOUTIQUE</Link></li>
-            <li className="cursor-pointer hover:text-[#b4a692]"><Link href='/contact'>CONTACT</Link></li>
+            <li className="cursor-pointer hover:text-[#b4a692]"> <Link href='/about'>{json.Footer.option1}</Link></li>
+            <li className="cursor-pointer hover:text-[#b4a692]"><Link href='/house'>{json.Footer.option2}</Link></li>
+            <li className="cursor-pointer hover:text-[#b4a692]"><Link href='/spaces'>{json.Footer.option3}</Link></li>
+            <li className="cursor-pointer hover:text-[#b4a692]"><Link href='/experience'>{json.Footer.option4}</Link></li>
+            <li className="cursor-pointer hover:text-[#b4a692]"><Link href='/boutique'>{json.Footer.option5}</Link></li>
+            <li className="cursor-pointer hover:text-[#b4a692]"><Link href='/contact'>{json.Footer.option6}</Link></li>
           </ul>
           <div className="w-full h-[2px] bg-[#b4a692]" />
         </div>

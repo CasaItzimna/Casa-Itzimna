@@ -33,9 +33,9 @@
     },
     "Accomodation":{
         "title": "Accomodation",
-        "opcion1": "UNIQUE SPACES",
-        "opcion2": "LUXURE & COMFORT",
-        "opcion3": "GRACIOUS HOSPITALITY",
+        "option1": "UNIQUE SPACES",
+        "option2": "LUXURE & COMFORT",
+        "option3": "GRACIOUS HOSPITALITY",
       "text": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
       "buttonText": "SPACES"
     },
@@ -46,5 +46,32 @@
       "text1": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
       "text2": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
       "text3": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis."
-    }
+    },
+    "OurStory":{
+      "title": "Our Story",
+      "option1": "ABOUT",
+      "option2": "MISSION",
+      "option3": "OUR GOALS",
+    "text": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis."
+    
+  },
+  "History":{
+    "title": "Our History",
+    "subtitle": "DISCOVER THE LEGACY OG HOSPITALITY AND ELEGANCE",
+    "titleText1": "ESTABLISHMENT",
+    "titleText2": "RESTORATION",
+    "titleText3": "BOUTIQUE",
+  "text1": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "text2": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "text3": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+},
+"Why":{
+  "question1":"UNPARALLED LUXURY AND COMFORT",
+  "question2":"EXQUISITE DINING EXPERIENCES",
+  "question3":"IMPECCABLE SERVICE AND ATTENTION",
+  "answer1": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+  "answer2": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+  "answer3": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis."
+}
+  
   }

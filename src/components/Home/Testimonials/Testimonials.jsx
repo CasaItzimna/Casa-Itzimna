@@ -8,14 +8,14 @@ import flor from "../../../assets/flor.png";
 import iguana from './iguana.png'
 
 
-function Testimonials() {
+function Testimonials({json}) {
   return (
     <div className="w-full h-[800px] flex flex-col  text-center mt-4 relative ">
       <div className="absolute bottom-0 right-0">
         <Image src={iguana} alt="iguana" className="w-[400px]"/>
       </div>
-      <h3 className="font-apollo text-2xl">WHAT OUR CUSTOMERS SAY</h3>
-      <h2 className="font-cinzelBold text-5xl">TESTIMONIALS</h2>
+      <h3 className="font-apollo text-2xl">{json.Testimonials.subtitle}</h3>
+      <h2 className="font-cinzelBold text-5xl">{json.Testimonials.title}</h2>
       <div className="w-full flex flex-col items-center">
 
       <div className="w-[440px] h-[70px] flex flex-row  relative mt-3">
@@ -46,13 +46,10 @@ function Testimonials() {
           </div>
           <div className=" absolute top-24 flex flex-col w-full h-full">
             <h3 className="text-[#31302c] text-2xl text-center px-8 font-apollo">
-              EXCELENT SERVICE & AMMENITIES
+            {json.Testimonials.titleText}
             </h3>
             <p className="font-apollo text-justify px-4 text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-              ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
-              accumsan lacus vel facilisis.
+            {json.Testimonials.text1}
             </p>
           </div>
         </div>
@@ -69,13 +66,10 @@ function Testimonials() {
           </div>
           <div className=" absolute top-24 flex flex-col w-full h-full">
             <h3 className="text-[#b4a692]v text-2xl text-center px-8 font-apollo">
-              EXCELENT SERVICE & AMMENITIES
+            {json.Testimonials.titleText}
             </h3>
             <p className="font-apollo text-justify px-4 text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-              ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
-              accumsan lacus vel facilisis.
+            {json.Testimonials.text2}
             </p>
           </div>
         </div>
@@ -92,13 +86,10 @@ function Testimonials() {
           </div>
           <div className=" absolute top-24 flex flex-col w-full h-full">
             <h3 className="text-[#31302c] text-2xl text-center px-8 font-apollo">
-              EXCELENT SERVICE & AMMENITIES
+            {json.Testimonials.titleText}
             </h3>
             <p className="font-apollo text-justify px-4 text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-              ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
-              accumsan lacus vel facilisis.
+            {json.Testimonials.text3}
             </p>
           </div>
         </div>

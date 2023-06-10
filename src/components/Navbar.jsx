@@ -3,10 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "../assets/Logo/LOGOBLANCO.png";
 import { AppContext } from "@/context/StateContext";
+import esJson from '../assets/JSON/es.json';
+import enJson from '../assets/JSON/en.json';
 
 function Navbar() {
   const { idioma, setIdioma } = AppContext();
   console.log(idioma);
+  const json = idioma === 'espanol' ? esJson : enJson;
 
   return (
     <div className="h-[150px] w-full absolute top-20 z-30 flex flex-row justify-center gap-10 font-apollo">
@@ -41,29 +44,29 @@ function Navbar() {
         <div className="flex flex-row justify-center">
           <ul className="flex flex-row text-center gap-20 text-xl">
             <li className="cursor-pointer hover:text-[#b4a692]">
-              <Link href="/">HOME</Link>
+              <Link href="/">{json.Navbar.option1}</Link>
             </li>
             <li className="cursor-pointer hover:text-[#b4a692]">
-              <Link href="/AboutUs">ABOUT US</Link>
+              <Link href="/AboutUs">{json.Navbar.option2}</Link>
             </li>
             <li className="cursor-pointer hover:text-[#b4a692]">
-              <Link href="/House">HOUSE</Link>
+              <Link href="/House">{json.Navbar.option3}</Link>
             </li>
             <li className="cursor-pointer hover:text-[#b4a692]">
-              <Link href="/Experience">EXPERIENCE</Link>
+              <Link href="/Experience">{json.Navbar.option4}</Link>
             </li>
           </ul>
         </div>
         <div className="flex flex-row justify-center">
           <ul className="flex flex-row text-center gap-20 text-xl mt-2">
             <li className="cursor-pointer hover:text-[#b4a692]">
-              <Link href="/Spaces">SPACES</Link>
+              <Link href="/Spaces">{json.Navbar.option5}</Link>
             </li>
             <li className="cursor-pointer hover:text-[#b4a692]">
-              <Link href="/Boutique">BOUTIQUE</Link>
+              <Link href="/Boutique">{json.Navbar.option6}</Link>
             </li>
             <li className="cursor-pointer hover:text-[#b4a692]">
-              <Link href="/Contact">CONTACT</Link>
+              <Link href="/Contact">{json.Navbar.option7}</Link>
             </li>
           </ul>
         </div>

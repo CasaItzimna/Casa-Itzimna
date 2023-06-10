@@ -5,8 +5,9 @@ import foto3 from "../../../assets/Home/AboutUs/3.png";
 import flor from "../../../assets/flor.png";
 import serpiente from "../../../assets/serpiente.png";
 import Image from "next/image";
+import Link from "next/link";
 
-function AboutUs() {
+function AboutUs({json}) {
   return (
     <div className="w-full h-full grid grid-cols-1 place-content-center bg-gradient-to-t from-white via-white to-transparent z-30 overflow-y-hidden relative ">
       <div className="absolute w-4/6 h-full right-0 -bottom-[30%]  ">
@@ -16,7 +17,7 @@ function AboutUs() {
         <div className="w-[25%] h-full flex flex-col text-left">
           <div className="w-full flex flex-col">
             <h3 className="text-3xl  font-cinzelBold text-[#31302c]  ">
-              ABOUT US
+              {json.About.title}
             </h3>
             <div className="w-[190px] h-full flex flex-row relative mb-8">
               <div className="bg-[#b4a692] w-[170px] h-[2px]"></div>
@@ -28,14 +29,13 @@ function AboutUs() {
             </div>
           </div>
           <p className="text-justify font-ethereal w-[90%] text-[#31302c]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-            ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
-            accumsan lacus vel facilisis.
+          {json.About.text}
           </p>
+          <Link href='/AboutUs'>
           <button className="rounded-[4px] bg-[#b4a692] w-[150px] h-[37px] mt-8 font-apollo">
-            READ MORE
+          {json.About.buttonText}
           </button>
+          </Link>
         </div>
         <div className="w-[500px] h-[410px] relative pr-10">
           <div className="absolute top-0 right-0 bg-white h-[250px] w-[300px]">

@@ -4,8 +4,9 @@ import spa from "./spa.png";
 import flor from "./flor.png";
 import serpiente from "../../../assets/serpiente.png";
 import React from "react";
+import Link from "next/link";
 
-function Experience() {
+function Experience({json}) {
   return (
     <div className="w-full h-[400px] relative ">
       <div className="absolute h-full w-full flex flex-row justify-center items-center z-10">
@@ -16,7 +17,7 @@ function Experience() {
         <div className="w-[25%] h-full flex flex-col justify-center items-end ">
           <div className="w-full  flex flex-col  items-end">
             <h3 className="text-3xl  font-cinzelBold text-white text-right ">
-              EXPERIENCE
+            {json.Experience.title}
             </h3>
             
             <div className="w-[218px] h-[20px] flex flex-row relative mb-8 ">
@@ -29,14 +30,13 @@ function Experience() {
             </div>
           </div>
           <p className="text-right font-ethereal w-[90%] text-white">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-            ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
-            accumsan lacus vel facilisis.
+          {json.Experience.text}
           </p>
+          <Link href='/Experience'>
           <button className="rounded-[4px] bg-[#31302c] text-white w-[150px] h-[37px] mt-8 font-apollo ">
-            DISCOVER
+          {json.Experience.buttonText}
           </button>
+          </Link>
         </div>
       </div>
       <div className="w-full h-full flex flex-row">
