@@ -26,9 +26,7 @@ export default function Home() {
   return (
     <div>
 
-    <div className=' w-full flex flex-col relative '
-    
-    style={{ height: 'calc(70vh * 2)' }}>
+    <div className=' w-full flex flex-col relative h-screen '>
      
 
     <Hero json = {json}/>

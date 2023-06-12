@@ -12,7 +12,10 @@ function Navbar() {
   const json = idioma === 'espanol' ? esJson : enJson;
 
   return (
-    <div className="h-[150px] w-full absolute top-20 z-30 flex flex-row justify-center gap-10 font-apollo">
+    <div className="w-full h-full flex flex-col items-center">
+
+    
+    <div className="h-[150px] max-w-[1920px] w-full absolute top-20 z-50 flex flex-row justify-around gap-10 font-apollo">
       <div className="flex flex-col">
         <Link href="/">
           <Image
@@ -79,6 +82,7 @@ function Navbar() {
           <Link href="/Booking">BOOK NOW</Link>
         </button>
       </div>
+    </div>
     </div>
   );
 }

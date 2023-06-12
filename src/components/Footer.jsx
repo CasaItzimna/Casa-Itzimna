@@ -19,7 +19,9 @@ function Footer() {
 
   return (
   
-    <div className="w-full h-[500px] flex flex-col justify-center bg-[#31302c]">
+    <div className="w-full h-full flex flex-col items-center bg-[#31302c]">
+
+    <div className="w-full h-[500px] max-w-[1920px] flex flex-col justify-center ">
       <div className=" flex flex-row justify-center ">
         <div className="flex flex-col w-1/3   ">
           <h3 className="font-cinzelBold text-2xl text-[#b4a692] mb-4">
@@ -73,6 +75,7 @@ function Footer() {
      
 
       
+    </div>
     </div>
   );
 }
