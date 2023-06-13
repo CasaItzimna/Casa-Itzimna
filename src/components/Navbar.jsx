@@ -15,7 +15,7 @@ function Navbar() {
     <div className="w-full h-full flex flex-col items-center">
 
     
-    <div className="h-[150px] max-w-[1920px] w-full absolute top-20 z-50 flex flex-row justify-around gap-10 font-apollo">
+    <div className="h-[150px] max-w-[1920px] w-full absolute top-20 z-50 flex flex-row justify-around xl:justify-center  font-apollo">
       <div className="flex flex-col">
         <Link href="/">
           <Image
@@ -46,29 +46,29 @@ function Navbar() {
         </div>
         <div className="flex flex-row justify-center">
           <ul className="flex flex-row text-center gap-20 text-xl">
-            <li className="cursor-pointer hover:text-[#b4a692]">
+            <li className="cursor-pointer hover:text-[#b4a692]  tracking-[6px]">
               <Link href="/">{json.Navbar.option1}</Link>
             </li>
-            <li className="cursor-pointer hover:text-[#b4a692]">
+            <li className="cursor-pointer hover:text-[#b4a692] tracking-[3px]">
               <Link href="/AboutUs">{json.Navbar.option2}</Link>
             </li>
-            <li className="cursor-pointer hover:text-[#b4a692]">
+            <li className="cursor-pointer hover:text-[#b4a692] tracking-[3px]">
               <Link href="/House">{json.Navbar.option3}</Link>
             </li>
-            <li className="cursor-pointer hover:text-[#b4a692]">
+            <li className="cursor-pointer hover:text-[#b4a692] tracking-[3px]">
               <Link href="/Experience">{json.Navbar.option4}</Link>
             </li>
           </ul>
         </div>
         <div className="flex flex-row justify-center">
           <ul className="flex flex-row text-center gap-20 text-xl mt-2">
-            <li className="cursor-pointer hover:text-[#b4a692]">
+            <li className="cursor-pointer hover:text-[#b4a692] tracking-[3px]">
               <Link href="/Spaces">{json.Navbar.option5}</Link>
             </li>
-            <li className="cursor-pointer hover:text-[#b4a692]">
+            <li className="cursor-pointer hover:text-[#b4a692] tracking-[3px]">
               <Link href="/Boutique">{json.Navbar.option6}</Link>
             </li>
-            <li className="cursor-pointer hover:text-[#b4a692]">
+            <li className="cursor-pointer hover:text-[#b4a692] tracking-[3px]">
               <Link href="/Contact">{json.Navbar.option7}</Link>
             </li>
           </ul>
