@@ -14,11 +14,11 @@ function OurStory({json}) {
   console.log(opcion)
   
   return (
-    <div className="h-full w-full relative">
+    <div className="h-full w-full relative z-20">
         <div className="absolute left-0 top-[10%]">
             <Image src={cabeza} alt="cabeza" className="w-[300px]" />
         </div>
-      <div className="flex flex-row justify-center w-full h-[800px] ">
+      <div className="flex flex-row justify-center w-full h-[700px] ">
         <div className="w-[25%] h-full flex flex-col justify-center ">
             <div className="flex flex-col justify-center w-full">
 
@@ -31,7 +31,7 @@ function OurStory({json}) {
               className="w-[20px] h-[20px] absolute right-0 -top-2"
               />
           </div>
-          <div className="flex flex-row justify-between w-[90%] h-full font-ethereal uppercase text-[11px] ">
+          <div className="flex flex-row justify-around w-[90%] h-full font-ethereal uppercase text-[11px] ">
             <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion1')}>{json.OurStory.option1}</h4>
             <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion2')}>{json.OurStory.option2}</h4>
             <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion3')}>{json.OurStory.option3}</h4>
