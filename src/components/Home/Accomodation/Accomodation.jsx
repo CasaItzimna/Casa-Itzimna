@@ -22,7 +22,7 @@ function Accomodation({json}) {
         <div className="w-[25%] h-full flex flex-col justify-center ">
             <div className="flex flex-col justify-center w-full">
 
-          <h3 className="text-3xl font-cinzelBold ">{json.Accomodation.title}</h3>
+          <h3 className="text-[40px] font-cinzelBold ">{json.Accomodation.title}</h3>
           <div className="w-[270px] h-full flex flex-row relative mb-8">
             <div className="bg-[#b4a692] w-[260px] h-[2px]"></div>
             <Image
@@ -49,11 +49,11 @@ function Accomodation({json}) {
     }`}></div>
           </div>
           <div>
-            <p className="text-justify font-ethereal w-[90%] text-[17px] ">
+            <p className="text-justify font-ethereal w-[90%] text-xl ">
             {json.Accomodation.text}
             </p>
             <Link href='/Spaces'>
-            <button className="rounded-[4px] bg-[#b4a692] w-[150px] h-[37px] mt-8 font-apollo">
+            <button className="rounded-[4px] bg-[#b4a692]  w-[200px] h-[45px] text-xl tracking-[4px] mt-8 font-apollo">
             {json.Accomodation.buttonText}
             </button>
             </Link>

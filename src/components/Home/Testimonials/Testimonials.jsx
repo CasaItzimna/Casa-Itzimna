@@ -10,7 +10,7 @@ import iguana from './iguana.png'
 
 function Testimonials({json}) {
   return (
-    <div className="w-full h-[800px] flex flex-col  text-center mt-4 relative ">
+    <div className="w-full h-[800px]   flex flex-col  text-center mt-4 relative ">
       <div className="absolute bottom-0 right-0">
         <Image src={iguana} alt="iguana" className="w-[400px]"/>
       </div>

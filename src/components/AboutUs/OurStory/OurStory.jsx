@@ -18,11 +18,11 @@ function OurStory({json}) {
         <div className="absolute left-0 top-[10%]">
             <Image src={cabeza} alt="cabeza" className="w-[300px]" />
         </div>
-      <div className="flex flex-row justify-center w-full h-[600px] ">
+      <div className="flex flex-row justify-center w-full h-[800px] ">
         <div className="w-[25%] h-full flex flex-col justify-center ">
             <div className="flex flex-col justify-center w-full">
 
-          <h3 className="text-3xl font-cinzelBold ">{json.OurStory.title}</h3>
+          <h3 className="text-[40px] font-cinzelBold  ">{json.OurStory.title}</h3>
           <div className="w-[270px] h-full flex flex-row relative mb-8">
             <div className="bg-[#b4a692] w-[260px] h-[2px]"></div>
             <Image
@@ -49,7 +49,7 @@ function OurStory({json}) {
     }`}></div>
           </div>
           <div>
-            <p className="text-justify font-ethereal w-[90%] text-[17px] ">
+            <p className="text-justify font-ethereal w-[90%] text-xl ">
             {json.OurStory.text}
             </p>
             

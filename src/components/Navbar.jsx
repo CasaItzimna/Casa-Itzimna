@@ -36,7 +36,7 @@ function Navbar() {
             ES
           </span>
           <span
-            className={`mr-4 ${
+            className={`mr-4  ${
               idioma === "ingles" ? "border-[1px] rounded-full px-2 py-1" : ""
             } cursor-pointer hover:text-[#b4a692]`}
             onClick={() => setIdioma("ingles")}

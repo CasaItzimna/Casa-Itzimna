@@ -18,7 +18,7 @@ function AboutUs() {
 
     <div className=' w-full flex flex-col relative '
     
-    style={{ height: 'calc(90vh * 2)' }}>
+    style={{ height: 'calc(60vh * 2)' }}>
      
 
     <Hero json = {json}/>

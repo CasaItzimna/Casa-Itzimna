@@ -15,7 +15,7 @@ function Hero({ json }) {
         className="absolute w-full h-screen object-cover"
       />
 
-      <div className="flex flex-row justify-center  h-screen w-full max-w-[1920px]  text-white absolute z-40">
+      <div className="flex flex-row justify-center  h-screen w-full   text-white absolute z-40">
         
           
           
