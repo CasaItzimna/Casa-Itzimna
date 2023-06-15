@@ -9,7 +9,7 @@ import Link from "next/link";
 
 function AboutUs({ json }) {
   return (
-    <div className="w-full h-full flex flex-col items-center bg-gradient-to-t from-white via-white to-transparent z-40 overflow-y-hidden relative">
+    <div className="w-full h-full flex flex-col items-center bg-gradient-to-t from-white via-white to-transparent z-30 overflow-y-hidden relative">
         <div className="absolute w-1/2 h-full right-0 -bottom-[30%]  ">
           <Image src={serpiente} alt="serpiente" className="w-full h-full" />
         </div>
