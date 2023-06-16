@@ -158,14 +158,15 @@ function Calendario({inicio, fin, setInicio, setFin,setShow}) {
   }
 
   return (
-    <div className="flex flex-col w-full h-full mt-4">
-      <div className=" w-full h-full flex flex-row justify-end ">
-        <RxCross2 className="mr-4 cursor-pointer"
-        onClick={()=>setShow(false)}
-        />
-      </div>
-      <div className="flex flex-row w-full h-full lg:px-12 mt-4">
-      <div className="flex flex-col w-1/2 h-full border-r-2 border-black">
+    <div className="flex flex-col w-full h-full  mt-4 relative z-10 ">
+      
+      <div className="flex flex-row  justify-center lg:px-12 mt-4">
+        <div className="flex flex-row 
+h-full w-[1000px] bg-white-200 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-30 border border-gray-100
+">
+          
+        
+      <div className="flex flex-col w-[500px] h-full border-r-2 border-black">
         <div className="flex flex-row justify-center mb-4">
           <div className="text-xl font-bold">
             {currentMonthName} {currentYear}
@@ -185,7 +186,12 @@ function Calendario({inicio, fin, setInicio, setFin,setShow}) {
           {days}
         </div>
       </div>
-      <div className="flex flex-col w-1/2 h-full">
+      <div className="flex flex-col w-[500px] h-full relative">
+      <div className=" w-full h-full  flex flex-row  justify-end absolute -top-4">
+        <RxCross2 className="mr-4 cursor-pointer text-2xl"
+        onClick={()=>setShow(false)}
+        />
+      </div>
         <div className="flex flex-row justify-center mb-4">
           <div> </div>
           <div className="text-xl font-bold">
@@ -205,6 +211,7 @@ function Calendario({inicio, fin, setInicio, setFin,setShow}) {
           {nextMonthEmptyCells}
           {nextMonthDays}
         </div>
+      </div>
       </div>
       </div>
     </div>

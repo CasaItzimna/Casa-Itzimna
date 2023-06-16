@@ -11,6 +11,8 @@ import Testimonials from '@/components/Home/Testimonials/Testimonials'
 import { AppContext } from '@/context/StateContext'
 import esJson from '../assets/JSON/es.json';
 import enJson from '../assets/JSON/en.json';
+import Calendario from '@/components/Reservacion/Calendario'
+import { useState } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,14 +25,30 @@ export default function Home() {
 
   const json = idioma === 'espanol' ? esJson : enJson;
 
+  const [show, setShow] = useState(false);
+  const [inicio, setInicio] = useState(null);
+  const [fin, setFin] = useState(null);
+
+
   return (
     <div>
 
-    <div className=' w-full flex flex-col relative '
-    style={{ height: 'calc(70vh * 2)' }}>
+    <div className=' w-full h-full flex flex-col relative ' 
+    style={{ height: show ? "calc(90vh * 2)" : "calc(70vh * 2)" }}>
      
 
-    <Hero json = {json}/>
+    <Hero
+    setShow = {setShow}
+    json = {json}/>
+    <div className={`mt-4 ${!show ? "hidden" : "block"}`}>
+          <Calendario
+            inicio={inicio}
+            fin={fin}
+            setInicio={setInicio}
+            setFin={setFin}
+            setShow={setShow}
+          />
+        </div>
     <AboutUs json = {json}/>
       </div>
       <Experience json = {json}/>

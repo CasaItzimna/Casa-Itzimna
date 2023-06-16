@@ -8,8 +8,8 @@ import AboutUs from "../AboutUs/AboutUs";
 import Calendario from "@/components/Reservacion/Calendario";
 import { useState } from "react";
 
-function Hero({ json }) {
-  const [show, setShow] = useState(false);
+function Hero({ setShow, json }) {
+  
   const [inicio, setInicio] = useState(null);
   const [fin, setFin] = useState(null);
 
@@ -58,15 +58,7 @@ function Hero({ json }) {
               CHECK NOW
             </button>
           </div>
-          <div className={`mt-4 ${!show ? "hidden" : "block"}`}>
-          <Calendario
-            inicio={inicio}
-            fin={fin}
-            setInicio={setInicio}
-            setFin={setFin}
-            setShow={setShow}
-          />
-        </div>
+          
         </div>
         
       </div>
