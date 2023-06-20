@@ -42,13 +42,17 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow }) {
     if (!inicio) {
       // Si no hay día de inicio seleccionado, establecerlo
       setInicio(day);
+      localStorage.setItem('inicio', day)
     } else if (!fin && day > inicio) {
       // Si hay día de inicio pero no hay día de fin y el día seleccionado es mayor que el día de inicio, establecerlo como día de fin
       setFin(day);
+      localStorage.setItem('fin', day)
     } else {
       // Si hay día de inicio, día de fin y se hace clic en un día diferente, reiniciar la selección
       setInicio(null);
+      localStorage.setItem('inicio', null)
       setFin(null);
+      localStorage.setItem('fin', null)
     }
   }
 
