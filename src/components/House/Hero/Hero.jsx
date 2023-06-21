@@ -4,19 +4,19 @@ import hero1 from './herohouse.png'
 
 function Hero({json}) {
     return (
-      <div className="w-full h-full flex flex-col relative ">
+      <div className="w-full h-screen flex flex-col relative ">
         <Image
           src={hero1}
           alt="fondo"
-          className="absolute w-full h-screen object-cover"
+          className="absolute w-full h-full object-cover"
         />
   
         <div className="flex flex-col justify-center h-screen w-full text-center items-center text-white absolute z-10">
-          <div className='h-[30%]'>
+          <div className='h-[0%]'>
 
           </div>
           <div className="h-[30%]">
-            <h1 className="text-9xl font-cinzelRegular">House</h1>
+            <h1 className="text-[150px] font-cinzelRegular">House</h1>
           </div>
           <div className='h-[30%]'>
 

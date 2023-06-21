@@ -16,9 +16,9 @@ function House() {
   return (
     <div>
 
-    <div className=' w-full flex flex-col relative '
+    <div className=' w-full flex flex-col relative h-[calc(80vh*2)]'
     
-    style={{ height: 'calc(70vh * 2)' }}>
+   >
      
 
     <Hero json = {json}/>

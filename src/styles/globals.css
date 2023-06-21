@@ -18,3 +18,7 @@
     font-family: "ETHEREAL";
     src: url("../assets/Typo/Ethereal-Thin.otf");
   }
+  @font-face {
+    font-family: "GEOMETRIA";
+    src: url("../assets/Typo/Geometria-Bold.ttf");
+  }

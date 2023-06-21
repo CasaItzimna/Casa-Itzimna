@@ -6,6 +6,15 @@ import foto2 from "./foto2.png";
 import foto3 from "./foto3.png";
 import { useState } from "react";
 import Link from "next/link";
+import pool from './icons/pool.png'
+import games from './icons/games.png'
+import fridge from './icons/fridge.png'
+import kitchen from './icons/kitchen.png'
+import parking from './icons/parking.png'
+import speakers from './icons/speakers.png'
+import tv from './icons/tv.png'
+import wifi from './icons/wifi.png'
+import check from './icons/check.png'
 
 function Facilities({json}) {
 
@@ -13,73 +22,97 @@ function Facilities({json}) {
   console.log(opcion)
   
   return (
-    <div className="h-full w-full relative z-20">
+    <div className="h-full w-full   relative z-20 ">
         
-      <div className="flex flex-row justify-center w-full h-[700px] ">
-        <div className="w-[25%] h-full flex flex-col  ">
-            <div className="font-PlayfairDisplay text-xl">
+      <div className="flex flex-row justify-center w-full h-[700px] gap-8 bg-gradient-to-b from-transparent from-20%  to-white to-30%  absolute -top-48  ">
+        <div className="w-[35%] h-full flex flex-col  ">
+            <div className="font-PlayfairDisplay text-[16px] text-justify tracking-wider">
                 {json.Facilities.texto1}
             </div>
             <div>
-                <ul className="list-disc">
-                    <li>{json.Facilities.list1}</li>
-                    <li>{json.Facilities.list2}</li>
-                    <li>{json.Facilities.list3}</li>
-                    <li>{json.Facilities.list4}</li>
+                <ul className="list-disc mt-4 mb-4 pl-8">
+                    <li className="font-PlayfairDisplay text-lg tracking-wider">{json.Facilities.list1}</li>
+                    <li className="font-PlayfairDisplay text-lg tracking-wider">{json.Facilities.list2}</li>
+                    <li className="font-PlayfairDisplay text-lg tracking-wider">{json.Facilities.list3}</li>
+                    <li className="font-PlayfairDisplay text-lg tracking-wider">{json.Facilities.list4}</li>
                 </ul>
             </div>
             <div>
-                <h2>{json.Facilities.title}</h2>
+                <h2 className="text-2xl font-apollo mt-4 tracking-[10px] underline">{json.Facilities.title}</h2>
             </div>
-            <div className="w-full flex flex-row ">
-                <div className="w-full flex flex-col">
-                    <div className=" w-full flex flex-row">
-                        <span></span><span>{json.Facilities.facility1}</span>
+            <div className="w-full flex flex-row gap-8 mt-6 mb-8 ">
+                <div className="w-full flex flex-col gap-3">
+                    <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#b4a692] ">
+                      <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#b4a692]">
+                      <Image src={pool} alt="pool" className="w-[30px] h-[30px]" />
+                      </div>
+                      <span className="flex flex-row w-full justify-center text-center text-sm  font-bold">{json.Facilities.facility1}</span>
                      </div>
-                    <div className=" w-full flex flex-row">
-                        <span></span><span>{json.Facilities.facility2}</span>
+                    <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#b4a692] ">
+                      <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#b4a692]">
+                      <Image src={parking} alt="parking lot" className="w-[25px] h-[25px]" />
+                      </div>
+                      <span className="flex flex-row w-full justify-center text-center text-sm font-bold">{json.Facilities.facility2}</span>
                      </div>
-                    <div className=" w-full flex flex-row">
-                        <span></span><span>{json.Facilities.facility3}</span>
+                    <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#b4a692] ">
+                      <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#b4a692]">
+                      <Image src={fridge} alt="fridge" className="w-[15px] h-[25px]" />
+                      </div>
+                      <span className="flex flex-row w-full justify-center text-center text-sm font-bold">{json.Facilities.facility3}</span>
                      </div>
-                    <div className=" w-full flex flex-row">
-                        <span></span><span>{json.Facilities.facility4}</span>
+                    <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#b4a692] ">
+                      <div className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#b4a692]">
+                      <Image src={games} alt="games" className="w-[28px] h-[25px]" />
+                      </div>
+                      <span className="flex flex-row w-full justify-center text-center text-sm font-bold">{json.Facilities.facility4}</span>
                      </div>
                 </div>
-                <div className="w-full flex flex-col">
-                    <div className=" w-full flex flex-row">
-                        <span></span><span>{json.Facilities.facility5}</span>
+                <div className="w-full flex flex-col gap-3">
+                    <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#b4a692] ">
+                      <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#b4a692]">
+                      <Image src={wifi} alt="wifi" className="w-[30px] h-[22px]" />
+                      </div>
+                      <span className="flex flex-row w-full justify-center text-center text-sm font-bold">{json.Facilities.facility5}</span>
                      </div>
-                    <div className=" w-full flex flex-row">
-                        <span></span><span>{json.Facilities.facility6}</span>
+                    <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#b4a692] ">
+                      <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#b4a692]">
+                      <Image src={tv} alt="tv" className="w-[30px] h-[25px]" />
+                      </div>
+                      <span className="flex flex-row w-full justify-center text-center text-sm font-bold">{json.Facilities.facility6}</span>
                      </div>
-                    <div className=" w-full flex flex-row">
-                        <span></span><span>{json.Facilities.facility7}</span>
+                    <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#b4a692] ">
+                      <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#b4a692]">
+                      <Image src={kitchen} alt="kitchen" className="w-[25px] h-[25px]" />
+                      </div>
+                      <span className="flex flex-row w-full justify-center text-center text-sm font-bold">{json.Facilities.facility7}</span>
                      </div>
-                    <div className=" w-full flex flex-row">
-                        <span></span><span>{json.Facilities.facility8}</span>
+                    <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#b4a692] ">
+                      <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#b4a692]">
+                      <Image src={speakers} alt="speakers" className="w-[15px] h-[22px]" />
+                      </div>
+                      <span className="flex flex-row w-full justify-center text-center text-sm font-bold">{json.Facilities.facility8}</span>
                      </div>
                 </div>
             </div>
-            <div>
-                <h3>{json.Facilities.termstitle}</h3>
+            <div className="w-[280px] flex flex-row justify-center h-full border-[1px] border-[#b4a692] rounded-[7px]">
+                <h3 className="text-lg tracking-[1px] px-4 py-1">{json.Facilities.termstitle}</h3>
             </div>
             <div>
-                <h3>{json.Facilities.checkin}</h3>
+                <h3 className="text-3xl font-apollo mt-8 mb-4 tracking-[8px]">{json.Facilities.checkin}</h3>
                 <ul>
-                    <li>{json.Facilities.checkinText1}</li>
-                    <li>{json.Facilities.checkinText2}</li>
+                <li className="flex flex-row text-[16px] tracking-[2px]  font-PlayfairDisplay"><Image src={check} alt="check" className=" w-[23px] h-[15px] mr-4 "/>{json.Facilities.checkinText1}</li>
+                <li className="flex flex-row text-[16px] tracking-[2px] mt-4 font-PlayfairDisplay"><Image src={check} alt="check" className=" w-[23px] h-[15px] mr-4 "/>{json.Facilities.checkinText2}</li>
                 </ul>
             </div>
             <div>
-                <h3>{json.Facilities.checkout}</h3>
+                <h3 className="text-3xl font-apollo mt-8 mb-4 tracking-[8px]">{json.Facilities.checkout}</h3>
                 <ul>
-                    <li>{json.Facilities.checkoutText1}</li>
-                    <li>{json.Facilities.checkoutText2}</li>
+                    <li className="flex flex-row text-[16px] tracking-[2px] mt-4 font-PlayfairDisplay"><Image src={check} alt="check" className=" w-[23px] h-[15px] mr-4 "/>{json.Facilities.checkoutText1}</li>
+                    <li className="flex flex-row text-[16px] tracking-[2px] mt-4 font-PlayfairDisplay"><Image src={check} alt="check" className=" w-[23px] h-[15px] mr-4 "/>{json.Facilities.checkoutText2}</li>
                 </ul>
             </div>
         </div>
-        <div className="w-[500px] h-full flex flex-col justify-start ">
+        <div className="w-[40%] h-full flex flex-col justify-start ">
             <div className="w-full flex flex-col justify-center">
 
           <div className=" bg-white h-[350px] w-full mb-2 shadow-2xl ">
@@ -106,10 +139,10 @@ function Facilities({json}) {
             </div>
                 </div>
           </div>
-          <div>
-            <p>{json.Facilities.exploreText}</p>
+          <div className="mt-4">
+            <p className="font-PlayfairDisplay font-[700] text-lg tracking-[4px] text-justify">{json.Facilities.exploreText}</p>
           </div>
-          <button>
+          <button className="font-Geometrica bg-[#b4a692] w-[150px] h-[35px] rounded-[7px] text-xl px-4 mt-4">
           {json.Facilities.galleryButton}
           </button>
         </div>

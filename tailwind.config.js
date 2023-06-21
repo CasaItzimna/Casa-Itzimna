@@ -15,7 +15,8 @@ module.exports = {
         cinzelRegular: ['CinzelRegular'],
         cinzelBold: ['CinzelBold'],
         ethereal: ['Ethereal'],
-        PlayfairDisplay: ['Playfair Display']
+        PlayfairDisplay: ['Playfair Display'],
+        Geometrica: ['Geometrica']
 
       }
     },
