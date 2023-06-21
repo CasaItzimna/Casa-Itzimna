@@ -3,9 +3,9 @@ import { AppContext } from '@/context/StateContext';
 import React from 'react'
 import esJson from '../assets/JSON/es.json';
 import enJson from '../assets/JSON/en.json';
-import OurStory from '@/components/AboutUs/OurStory/OurStory';
 import History from '@/components/AboutUs/History/History';
 import Why from '@/components/AboutUs/Why/Why';
+import Facilities from '@/components/House/Facilities/Facilities';
 
 function House() {
   const{idioma} = AppContext()
@@ -22,7 +22,7 @@ function House() {
      
 
     <Hero json = {json}/>
-    <OurStory json = {json}/>
+    <Facilities json = {json}/>
       </div>
        <History json = {json}/>
       <Why json = {json}/>

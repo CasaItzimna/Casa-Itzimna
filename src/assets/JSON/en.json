@@ -73,6 +73,61 @@
   "answer1": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
   "answer2": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
   "answer3": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis."
+},
+"Facilities":{
+  "texto1": "ingles Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+  "list1": "Lorem ipsum dolor sit amet",
+  "list2": "Lorem ipsum dolor sit amet",
+  "list3": "Lorem ipsum dolor sit amet",
+  "list4": "Lorem ipsum dolor sit amet",
+  "title": "FACILITIES",
+  "facility1": "SWIMMING POOL",
+  "facility2": "PARKING LOT",
+  "facility3": "FRIDGE",
+  "facility4": "BOARD GAMES",
+  "facility5": "WIFI",
+  "facility6": "SMART TV",
+  "facility7": "COOKWARE AND CROCKERY",
+  "facility8": "SPEAKERS",
+  "termstitle": "TERMS AND CONDITIONS",
+  "checkin": "CHECK IN",
+  "checkinText1": "Lorem ipsum dolor sit amet consectetur elit",
+  "checkinText2": "Lorem ipsum dolor sit amet consectetur elit",
+  "checkout": "CHECK OUT",
+  "checkoutText1": "Lorem ipsum dolor sit amet consectetur elit",
+  "checkoutText2": "Lorem ipsum dolor sit amet consectetur elit",
+  "exploreText": "Explore the luxury & beauty of Casa Itzimná in our gallery. Dive into our hotel's stunning spaces.",
+  "galleryButton": "GALLERY"
+},
+"Rates":{
+  "title": "RATES",
+  "option1": "SELECT",
+  "option1price": "1,054 USD",
+  "option2": "LUXURY",
+  "option3price": "1,288 USD",
+  "option4": "PREMIER",
+  "option4price": "1,464 USD",
+  "additional": "(6 to 8 people has additional charges)",
+  "detailsButton": "VIEW DETAILS",
+  "unforgettableTitle": "UNFORGETTABLE EXPERIENCES AWAIT",
+  "unforgettableText": "Make your stay truly memorable by choosing some of our exclusive experiences. Create cherished memories during your stay with us. ",
+  "experiencesButton": "EXPERIENCES"  
+},
+
+"Booking":{
+  "name": "NAME",
+  "phone": "PHONE NUMBER",
+  "checkin": "CHECK IN",
+  "checkout": "CHECK OUT",
+  "guests": "GUESTS",
+  "plan": "CHOOSE A PLAN",
+  "planOption1": "SELECT",
+  "planOption2": "LUXURY",
+  "planOption3": "PREMIER",
+  "addExperience" : "ADD AN EXPERIENCE",
+  "bookbutton": "BOOK NOW",
+  "consent": "Make your stay truly memorable by choosing some of our exclusive experiences. Create cherished memories during your stay with us. ",
+  "privacy": "privacy policy"
 }
   
   }

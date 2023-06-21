@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react'
-import hero1 from './herohouse.jpg'
+import hero1 from './herohouse.png'
 
 function Hero({json}) {
     return (
@@ -16,7 +16,7 @@ function Hero({json}) {
 
           </div>
           <div className="h-[30%]">
-            <h1 className="text-9xl font-cinzelRegular">About Us</h1>
+            <h1 className="text-9xl font-cinzelRegular">House</h1>
           </div>
           <div className='h-[30%]'>
 

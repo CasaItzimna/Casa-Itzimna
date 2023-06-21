@@ -26,8 +26,8 @@ export default function Home() {
   const json = idioma === 'espanol' ? esJson : enJson;
 
   const [show, setShow] = useState(false);
-  const [inicio, setInicio] = useState(null);
-  const [fin, setFin] = useState(null);
+  
+  const{inicio, fin, setInicio, setFin} = AppContext();
 
 
   return (

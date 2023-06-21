@@ -74,5 +74,60 @@
   "answer1": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
   "answer2": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
   "answer3": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis."
-}
+},
+"Facilities":{
+  "texto1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+  "list1": "Lorem ipsum dolor sit amet",
+  "list2": "Lorem ipsum dolor sit amet",
+  "list3": "Lorem ipsum dolor sit amet",
+  "list4": "Lorem ipsum dolor sit amet",
+  "title": "INSTALACIONES",
+  "facility1": "PISCINA",
+  "facility2": "ESTACIONAMIENTO",
+  "facility3": "REFRIGERADOR",
+  "facility4": "JUEGOS DE MESA",
+  "facility5": "WIFI",
+  "facility6": "SMART TV",
+  "facility7": "UTENSILIOS DE COCINA Y VAJILLA",
+  "facility8": "ALTAVOCES",
+  "termstitle": "TÉRMINOS Y CONDICIONES",
+  "checkin": "CHECK IN",
+  "checkinText1": "Lorem ipsum dolor sit amet consectetur elit",
+  "checkinText2": "Lorem ipsum dolor sit amet consectetur elit",
+  "checkout": "CHECK OUT",
+  "checkoutText1": "Lorem ipsum dolor sit amet consectetur elit",
+  "checkoutText2": "Lorem ipsum dolor sit amet consectetur elit",
+  "exploreText": "Explora el lujo y la belleza de Casa Itzimná en nuestra galería. Sumérgete en los impresionantes espacios de nuestro hotel.",
+  "galleryButton": "GALERÍA"
+  },
+  "Rates":{
+  "title": "TARIFAS",
+  "option1": "SELECCIONAR",
+  "option1price": "1,054 USD",
+  "option2": "LUJO",
+  "option3price": "1,288 USD",
+  "option4": "PREMIER",
+  "option4price": "1,464 USD",
+  "additional": "(6 a 8 personas tienen cargos adicionales)",
+  "detailsButton": "VER DETALLES",
+  "unforgettableTitle": "EXPERIENCIAS INOLVIDABLES TE ESPERAN",
+  "unforgettableText": "Haz que tu estadía sea realmente memorable eligiendo algunas de nuestras experiencias exclusivas. Crea recuerdos inolvidables durante tu estancia con nosotros.",
+  "experiencesButton": "EXPERIENCIAS"
+  },
+  
+  "Booking":{
+  "name": "NOMBRE",
+  "phone": "NÚMERO DE TELÉFONO",
+  "checkin": "CHECK IN",
+  "checkout": "CHECK OUT",
+  "guests": "HUÉSPEDES",
+  "plan": "ELIGE UN PLAN",
+  "planOption1": "SELECCIONAR",
+  "planOption2": "LUJO",
+  "planOption3": "PREMIER",
+  "addExperience" : "AGREGAR UNA EXPERIENCIA",
+  "bookbutton": "RESERVAR AHORA",
+  "consent": "Haz que tu estadía sea realmente memorable eligiendo algunas de nuestras experiencias exclusivas. Crea recuerdos inolvidables durante tu estancia con nosotros.",
+  "privacy": "política de privacidad"
+  }
   }

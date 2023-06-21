@@ -7,11 +7,29 @@ import { BsCalendar3 } from "react-icons/bs";
 import AboutUs from "../AboutUs/AboutUs";
 import Calendario from "@/components/Reservacion/Calendario";
 import { useState } from "react";
+import { useEffect } from "react";
+import { AppContext } from "@/context/StateContext";
 
 function Hero({ setShow, json }) {
   
-  const [inicio, setInicio] = useState(null);
-  const [fin, setFin] = useState(null);
+  const {inicio, fin} = AppContext();
+  console.log(inicio)
+
+  const monthNames = [
+    "Ene",
+    "Feb",
+    "Mar",
+    "Abr",
+    "May",
+    "Jun",
+    "Jul",
+    "Ago",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dic",
+  ];
+
 
   return (
     <div className="w-full h-full flex flex-col relative">
@@ -38,13 +56,14 @@ function Hero({ setShow, json }) {
                 className="text-[#736e6a] font-apollo text-xl flex flex-row justify-center gap-2 mt- text-center items-center "
                 onClick={() => setShow(true)}
               >
-                {json.Home.calendarioInicio}{" "}
+                {inicio ? `${inicio.getDate()} ${monthNames[inicio.getMonth()]}, ${inicio.getFullYear()}`: `${json.Home.calendarioInicio}`}
+
                 <BsCalendar3 className="mt-[4px] text-[#b4a692]" />
               </span>
             </div>
             <div className="w-[22%] h-[40px] bg-white ml-4 rounded-md cursor-pointer ">
               <span className="text-[#736e6a] font-apollo text-xl flex flex-row justify-center gap-2 mt-1 text-center items-center">
-                {json.Home.calendarioFin}{" "}
+              {fin ? `${fin.getDate()} ${monthNames[fin.getMonth()]}, ${fin.getFullYear()}` : `${json.Home.calendarioFin}`}
                 <BsCalendar3 className="mt-[4px] text-[#b4a692]" />
               </span>
             </div>
@@ -58,9 +77,7 @@ function Hero({ setShow, json }) {
               CHECK NOW
             </button>
           </div>
-          
         </div>
-        
       </div>
     </div>
   );
