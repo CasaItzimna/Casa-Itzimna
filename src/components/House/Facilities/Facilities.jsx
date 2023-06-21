@@ -17,11 +17,11 @@ function Facilities({json}) {
         
       <div className="flex flex-row justify-center w-full h-[700px] ">
         <div className="w-[25%] h-full flex flex-col  ">
-            <div>
+            <div className="font-PlayfairDisplay text-xl">
                 {json.Facilities.texto1}
             </div>
             <div>
-                <ul>
+                <ul className="list-disc">
                     <li>{json.Facilities.list1}</li>
                     <li>{json.Facilities.list2}</li>
                     <li>{json.Facilities.list3}</li>
