@@ -115,6 +115,7 @@
 },
 
 "Booking":{
+  "title": "Booking",
   "name": "NAME",
   "phone": "PHONE NUMBER",
   "checkin": "CHECK IN",

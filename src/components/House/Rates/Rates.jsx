@@ -20,9 +20,15 @@ function Rates({ json }) {
                 className="w-full h-[300px] object-cover rounded-tl-[25px] rounded-tr-[25px]"
               />
               <div className="w-full h-full flex flex-col text-center border-2">
-                <h3 className="text-3xl font-apollo tracking-[8px] mt-3">{json.Rates.option1}</h3>
-                <h4 className="text-xl font-apollo tracking-[2px]">{json.Rates.option1price}</h4>
-                <p className="font-PlayfairDisplay text-sm">{json.Rates.additional}</p>
+                <h3 className="text-3xl font-apollo tracking-[8px] mt-3">
+                  {json.Rates.option1}
+                </h3>
+                <h4 className="text-xl font-apollo tracking-[2px]">
+                  {json.Rates.option1price}
+                </h4>
+                <p className="font-PlayfairDisplay text-sm">
+                  {json.Rates.additional}
+                </p>
                 <div className="flex flex-row justify-center">
                   <button className="border-2 w-[150px] font-apollo text-md mb-4 mt-2">
                     {json.Rates.detailsButton}
@@ -36,10 +42,16 @@ function Rates({ json }) {
                 alt="plan2"
                 className="w-full h-[300px] object-cover rounded-tl-[25px] rounded-tr-[25px]"
               />
-               <div className="w-full h-full flex flex-col text-center border-2">
-                <h3 className="text-3xl font-apollo tracking-[8px] mt-3">{json.Rates.option2}</h3>
-                <h4 className="text-xl font-apollo tracking-[2px]">{json.Rates.option2price}</h4>
-                <p className="font-PlayfairDisplay text-sm">{json.Rates.additional}</p>
+              <div className="w-full h-full flex flex-col text-center border-2">
+                <h3 className="text-3xl font-apollo tracking-[8px] mt-3">
+                  {json.Rates.option2}
+                </h3>
+                <h4 className="text-xl font-apollo tracking-[2px]">
+                  {json.Rates.option2price}
+                </h4>
+                <p className="font-PlayfairDisplay text-sm">
+                  {json.Rates.additional}
+                </p>
                 <div className="flex flex-row justify-center">
                   <button className="border-2 w-[150px] font-apollo text-md mb-4 mt-2">
                     {json.Rates.detailsButton}
@@ -54,9 +66,15 @@ function Rates({ json }) {
                 className="w-full h-[300px] object-cover rounded-tl-[25px] rounded-tr-[25px] "
               />
               <div className="w-full h-full flex flex-col text-center border-2">
-                <h3 className="text-3xl font-apollo tracking-[8px] mt-3">{json.Rates.option3}</h3>
-                <h4 className="text-xl font-apollo tracking-[2px]">{json.Rates.option3price}</h4>
-                <p className="font-PlayfairDisplay text-sm">{json.Rates.additional}</p>
+                <h3 className="text-3xl font-apollo tracking-[8px] mt-3">
+                  {json.Rates.option3}
+                </h3>
+                <h4 className="text-xl font-apollo tracking-[2px]">
+                  {json.Rates.option3price}
+                </h4>
+                <p className="font-PlayfairDisplay text-sm">
+                  {json.Rates.additional}
+                </p>
                 <div className="flex flex-row justify-center">
                   <button className="border-2 w-[150px] font-apollo text-md mb-4 mt-2">
                     {json.Rates.detailsButton}
@@ -65,19 +83,32 @@ function Rates({ json }) {
               </div>
             </div>
           </div>
-          <div className="w-full flex flex-row justify-center">
-            <div className="w-[20%]">
-                <Image src={fototo1} alt="persona" />
-            </div>
-            <div className="w-[50%]">
-            <Image src={fototo2} alt="persona" />
-            </div>
-            <div className="w-[30%]">
-                <h3></h3>
-                <p></p>
-                <button></button>
-            </div>
 
+          <div className="w-full h-[300px] flex flex-col mt-14 ">
+            <div className="w-full max-w-[1920px] h-full  flex flex-row gap-8 justify-center">
+              <div className="w-[15%]  flex flex-row justify-center items-center">
+                <Image src={fototo1} alt="persona" className="h-full" />
+              </div>
+              <div className="w-[35%] flex flex-row justiy-center items-center">
+                <Image
+                  src={fototo2}
+                  alt="persona"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className=" w-[25%] h-full flex flex-col justify-center gap-2 text-left tracking-[4px]">
+                <h3 className="font-apollo text-3xl">
+                  {json.Rates.unforgettableTitle}
+                </h3>
+                <p className="font-apollo text-lg tracking-[1px]">{json.Rates.unforgettableText}</p>
+                <div className="flex flex-row justify-start ">
+
+                <button className="font-Geometrica bg-[#b4a692] w-[150px] h-[35px] rounded-[7px] text-xl px-2 mt-4">
+                  {json.Rates.experiencesButton}
+                </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

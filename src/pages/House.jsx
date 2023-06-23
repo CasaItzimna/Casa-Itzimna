@@ -5,6 +5,7 @@ import esJson from '../assets/JSON/es.json';
 import enJson from '../assets/JSON/en.json';
 import Facilities from '@/components/House/Facilities/Facilities';
 import Rates from '@/components/House/Rates/Rates';
+import Booking from '@/components/House/Booking/Booking';
 
 function House() {
   const{idioma} = AppContext()
@@ -23,6 +24,7 @@ function House() {
     <Facilities json = {json}/>
       </div>
       <Rates json={json} />
+      <Booking json={json} />
       
       </div>
     
