@@ -4,11 +4,11 @@ import hero1 from './herohouse.png'
 
 function Hero({json}) {
     return (
-      <div className="w-full h-screen flex flex-col relative ">
+      <div className="w-full h-full flex flex-col relative ">
         <Image
           src={hero1}
           alt="fondo"
-          className="absolute w-full h-full object-cover"
+          className="absolute w-full h-screen object-cover"
         />
   
         <div className="flex flex-col justify-center h-screen w-full text-center items-center text-white absolute z-10">

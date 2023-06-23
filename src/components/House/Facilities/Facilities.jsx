@@ -22,9 +22,9 @@ function Facilities({json}) {
   console.log(opcion)
   
   return (
-    <div className="h-full w-full   relative z-20 ">
+    <div className="h-full w-full flex flex-col items-center  relative z-10 ">
         
-      <div className="flex flex-row justify-center w-full h-[700px] gap-8 bg-gradient-to-b from-transparent from-20%  to-white to-30%  absolute -top-48  ">
+      <div className="max-w-[1920px] flex flex-row justify-center w-full  h-full gap-8 bg-gradient-to-b from-transparent from-20%  to-white to-30%   3xl:absolute 3xl:-top-48   ">
         <div className="w-[35%] h-full flex flex-col  ">
             <div className="font-PlayfairDisplay text-[16px] text-justify tracking-wider">
                 {json.Facilities.texto1}
