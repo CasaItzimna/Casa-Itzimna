@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../assets/Logo/LOGOBLANCO.png";
@@ -12,7 +12,8 @@ function Navbar() {
   const json = idioma === 'espanol' ? esJson : enJson;
 
   return (
-    <div className="w-full h-full flex flex-col items-center">
+    <Fragment>
+    <div className="w-full h-full hidden lg:flex flex-col items-center">
 
     
     <div className="h-[150px] max-w-[1920px] w-full absolute top-20 z-20 flex flex-row justify-around  font-apollo">
@@ -84,6 +85,11 @@ function Navbar() {
       </div>
     </div>
     </div>
+
+    <div className="lg:hidden flex flex-row justify-end absolute top-10 right-8 z-20 w-full text-white ">
+          Menu Movil
+    </div>
+    </Fragment>
   );
 }
 

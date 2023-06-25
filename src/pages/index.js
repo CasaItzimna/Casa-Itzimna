@@ -33,8 +33,7 @@ export default function Home() {
   return (
     <div>
 
-    <div className=' w-full h-full flex flex-col relative ' 
-    style={{ height: show ? "calc(90vh * 2)" : "calc(70vh * 2)" }}>
+<div className={`w-full flex flex-col  relative ${!show?"h-[calc(90vh*2)] md:h-[calc(70vh*2)]":"h-[calc(90vh*2)]"}`}>
      
 
     <Hero

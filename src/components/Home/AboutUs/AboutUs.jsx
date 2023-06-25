@@ -14,15 +14,15 @@ function AboutUs({ json }) {
           <Image src={serpiente} alt="serpiente" className="w-full h-full" />
         </div>
       <div className="w-full h-full max-w-[1920px]  overflow-y-hidden relative ">
-        <div className="w-full h-full flex flex-row  gap-0 ">
-          <div className="w-full h-full flex flex-col justify-center text-left ">
+        <div className="w-full h-full flex flex-col lg:flex-row  gap-0 ">
+          <div className="w-full h-full flex flex-col justify-center text-center md:text-left ">
             <div className="w-full flex flex-row justify-end">
 
             
             <div className="w-[500px] ">
 
            
-            <h3 className="text-[40px]  font-cinzelBold text-[#31302c]  ">
+            <h3 className="text-[35px] md:text-[40px]  font-cinzelBold text-[#31302c]  ">
               {json.About.title}
             </h3>
             <div className="w-[220px] flex flex-row relative mb-8">
