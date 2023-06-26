@@ -9,10 +9,10 @@ import fototo2 from "./foto2.png";
 function Rates({ json }) {
   return (
     <div className="w-full h-[1000px] flex flex-col  ">
-      <div className="w-full max-w-[1920px] flex flex-row justify-center items-center">
+      <div className="w-full  flex flex-row justify-center items-center">
         <div className="w-full flex flex-col items-center justify-center">
           <h3 className="text-4xl font-cinzelBold">{json.Rates.title}</h3>
-          <div className="w-full flex flex-row gap-8 justify-center items-center">
+          <div className="w-full max-w-[1920px] flex flex-row gap-8 justify-center items-center">
             <div className="w-[25%] h-full flex flex-col ">
               <Image
                 src={foto1}
@@ -85,7 +85,10 @@ function Rates({ json }) {
           </div>
 
           <div className="w-full h-[300px] flex flex-col mt-14 ">
-            <div className="w-full max-w-[1920px] h-full  flex flex-row gap-8 justify-center">
+            <div className="w-full  h-full  flex flex-row justify-center">
+              <div className="w-full max-w-[1920px] flex flex-row gap-8 justify-center">
+
+              
               <div className="w-[15%]  flex flex-row justify-center items-center">
                 <Image src={fototo1} alt="persona" className="h-full" />
               </div>
@@ -109,6 +112,7 @@ function Rates({ json }) {
                 </div>
               </div>
             </div>
+          </div>
           </div>
         </div>
       </div>
