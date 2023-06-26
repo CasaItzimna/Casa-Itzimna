@@ -14,42 +14,50 @@ function Accomodation({json}) {
   console.log(opcion)
   
   return (
-    <div className="h-full w-full relative">
-        <div className="absolute left-0 top-[10%]">
+    <div className="h-full w-full  relative">
+        <div className="absolute -z-10 left-0 top-[10%]">
             <Image src={sol} alt="sol" className="w-[300px]" />
         </div>
-      <div className="flex flex-col lg:flex-row justify-center w-full h-[600px] ">
-        <div className="w-[25%] h-full flex flex-col justify-center ">
+      <div className="flex flex-col-reverse lg:flex-row justify-center w-full h-[1000px] lg:h-[600px] ">
+        <div className="w-full lg:w-[25%] h-full flex flex-col justify-center ">
             <div className="flex flex-col justify-center w-full">
 
-          <h3 className="text-[40px] font-cinzelBold ">{json.Accomodation.title}</h3>
+          <h3 className="text-[40px] font-cinzelBold text-center lg:text-left ">{json.Accomodation.title}</h3>
           <div className="w-[270px] h-full flex flex-row relative mb-8">
             <div className="bg-[#b4a692] w-[260px] h-[2px]"></div>
             <Image
               src={flor}
               alt="flor"
-              className="w-[20px] h-[20px] absolute right-0 -top-2"
+              className="w-[20px] h-[20px] absolute  right-0 -top-2"
               />
           </div>
-          <div className="flex flex-row justify-between w-[90%] h-full font-ethereal uppercase text-[11px] ">
+          
+
+          <div className="w-full flex flex-row justify-center lg:justify-start">
+
+          <div className="flex flex-row justify-between w-[90%] h-full font-ethereal uppercase text-[10px] ">
             <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion1')}>{json.Accomodation.option1}</h4>
             <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion2')}>{json.Accomodation.option2}</h4>
             <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion3')}>{json.Accomodation.option3}</h4>
           </div>
-          <div className="w-[90%] h-full flex flex-row relative mb-4">
+         
+          </div>
+          <div className="lg:w-[90%] h-full flex flex-row relative px-4 lg:px-0  mb-4">
             <div className="bg-[#b4a692] w-full h-[3px]"></div>
-            <div  className={`absolute bg-[#31302c] w-[30%] h-[3px] ${
+            <div  className={`absolute  bg-[#31302c] w-[30%] h-[3px] ${
       opcion === 'opcion1'
-        ? 'left-0'
+        ? 'left-[2.5%] lg:left-0'
         : opcion === 'opcion2'
         ? 'left-[30%]'
         : opcion === 'opcion3'
-        ? 'right-0'
+        ? 'right-[2.5%] lg:right-0'
         : ''
     }`}></div>
           </div>
-          <div>
-            <p className="text-justify font-ethereal w-[90%] text-xl ">
+          <div className="w-full flex flex-row justify-center text-center lg:text-left">
+            <div className="w-full flex flex-col justify-center">
+              
+            <p className=" text-center lg:text-justify font-ethereal w-full px-4 lg:px-0 lg:w-[90%] text-xl ">
             {json.Accomodation.text}
             </p>
             <Link href='/Spaces'>
@@ -57,10 +65,11 @@ function Accomodation({json}) {
             {json.Accomodation.buttonText}
             </button>
             </Link>
+            </div>
               </div>
           </div>
         </div>
-        <div className="w-[500px] h-full flex flex-col justify-center ">
+        <div className="w-full px-4 sm:w-[500px] h-full flex flex-col justify-center ">
             <div className="w-full flex flex-col justify-center">
 
           <div className=" bg-white h-[350px] w-full mb-2 shadow-2xl ">

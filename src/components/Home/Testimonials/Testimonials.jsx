@@ -14,11 +14,11 @@ function Testimonials({json}) {
       <div className="absolute bottom-0 right-0">
         <Image src={iguana} alt="iguana" className="w-[400px]"/>
       </div>
-      <h3 className="font-apollo text-2xl">{json.Testimonials.subtitle}</h3>
-      <h2 className="font-cinzelBold text-5xl">{json.Testimonials.title}</h2>
+      <h3 className="font-apollo text-lg lg:text-2xl">{json.Testimonials.subtitle}</h3>
+      <h2 className="font-cinzelBold text-4xl lg:text-5xl">{json.Testimonials.title}</h2>
       <div className="w-full flex flex-col items-center">
 
-      <div className="w-full md:w-[440px] h-[70px] flex flex-row  relative mt-3">
+      <div className="w-[90%] md:w-[440px] h-[70px] flex flex-row  relative mt-3">
         <Image
           src={florizq}
           alt="flor"

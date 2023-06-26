@@ -16,7 +16,7 @@ function AboutUs({ json }) {
         </div>
       <div className="w-full h-full max-w-[1920px]  overflow-y-hidden relative ">
         <div className="w-full h-full flex flex-col-reverse lg:flex-row  gap-0 ">
-          <div className="w-full h-full flex flex-col justify-center text-center md:text-left ">
+          <div className="w-full h-full flex flex-col justify-start lg:justify-center text-center md:text-left ">
             <div className="w-full flex flex-row justify-center lg:justify-end">
 
             
@@ -34,7 +34,7 @@ function AboutUs({ json }) {
                 className="w-[20px] h-[20px] absolute right-0 -top-2"
               />
             </div>
-            <p className="text-justify font-ethereal text-xl px-8 lg:px-0 lg:w-[480px] text-[#31302c] tracking-[4px]">
+            <p className=" text-centerlg:text-justify font-ethereal text-xl px-8 lg:px-0 lg:w-[480px] text-[#31302c] tracking-[4px]">
               {json.About.text}
             </p>
             <Link href="/AboutUs">
@@ -45,24 +45,24 @@ function AboutUs({ json }) {
             </div>
             </div>
           </div>
-          <div className="  w-full h-full flex flex-col justify-center items-center">
+          <div className="  w-full h-[400px] lg:h-full flex flex-col justify-center items-center">
             <div className="w-full h-full flex flex-row justify-center lg:justify-start items-center">
-              <div className="w-[500px] h-[400px] relative   ">
-                <div className="absolute lg:top-0 lg:right-0 bg-white h-[250px] w-[300px]">
+              <div className="w-[350px] lg:w-[500px] h-[400px] relative   ">
+                <div className=" absolute top-0 right-0 bg-white h-[200px] lg:h-[250px]  w-[250px] lg:w-[300px]">
                   <Image
                     src={foto1}
                     alt="recamara"
                     className="w-full h-full p-2 object-cover shadow-2xl"
                   />
                 </div>
-                <div className="absolute top-[15%] left-0 bg-white h-[300px] w-[250px]">
+                <div className="absolute top-[15%] left-0 bg-white h-[250px] lg:h-[300px] w-[200px] lg:w-[250px]">
                   <Image
                     src={foto2}
                     alt="hamaca"
                     className="w-full h-full p-2 object-cover shadow-2xl"
                   />
                 </div>
-                <div className="absolute bottom-0 right-4 bg-white w-[280px] h-[200px]">
+                <div className="absolute bottom-[16%] lg:bottom-0 right-4 bg-white w-[230px] lg:w-[280px] h-[150px] lg:h-[200px]">
                   <Image
                     src={foto3}
                     alt="alberca"
