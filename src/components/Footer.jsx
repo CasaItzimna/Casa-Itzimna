@@ -19,55 +19,62 @@ function Footer() {
 
   return (
   
-    <div className="w-full h-full flex flex-col items-center bg-[#31302c]">
+  
 
-    <div className="w-full h-[500px] max-w-[1920px] flex flex-col justify-center ">
-      <div className=" flex flex-row justify-center ">
-        <div className="flex flex-col w-1/3   ">
+    <div className="w-full h-full lg:h-[500px] max-w-[1920px] flex flex-col justify-center bg-[#31302c] ">
+      <div className=" flex flex-col-reverse lg:flex-row justify-center lg:justify-start ">
+       
+       
+        <div className="h-full flex flex-col mb-4 lg:mb-0  lg:w-1/3  text-center lg:text-start   ">
           <h3 className="font-cinzelBold text-2xl text-[#b4a692] mb-4">
             CONTACT
           </h3>
-          <ul className="font-apollo text-white text-sm h-[150px]">
-            <div className="cursor-pointer hover:text-[#b4a692]">
+          <ul className="font-apollo text-white text-center text-sm h-[150px]">
+            <div className="cursor-pointer py-2 text-lg hover:text-[#b4a692]">
 
-            <li className="flex flex-row "> <Image src={location} alt="location" className="h-[20px] w-[15px]"/> &nbsp; AVENIDA PÉREZ PONCE 120, </li>
-            <li className="flex flex-row "><div className="w-[15px]"></div> &nbsp; COLONIA ITZIMNÁ 07100, MÉRIDA, YUCATÁN</li>
+            <li className="flex flex-row justify-center lg:justify-start "> <Image src={location} alt="location" className="hidden lg:flex h-[20px] w-[15px] "/> &nbsp; AVENIDA PÉREZ PONCE 120, </li>
+            <li className="flex flex-row justify-center lg:justify-start"><div className="hidden lg:flex w-[15px]"></div> &nbsp; COLONIA ITZIMNÁ 07100, MÉRIDA, YUCATÁN</li>
             </div>
-            <li className="flex flex-row cursor-pointer hover:text-[#b4a692]"><BsTelephoneFill className="text-[#b4a692]"/> &nbsp;+52 55 2879 4515</li>
-            <li className="flex flex-row cursor-pointer hover:text-[#b4a692]"><HiOutlineMail className="text-[#b4a692]"/> &nbsp;CONTACTO@CASAITZIMNA.COM</li>
+            <li className="flex flex-row py-2 text-lg justify-center lg:justify-start cursor-pointer hover:text-[#b4a692]"><BsTelephoneFill className="hidden lg:flex text-[#b4a692]"/> &nbsp;+52 55 2879 4515</li>
+            <li className="flex flex-row  text-lg justify-center lg:justify-start cursor-pointer hover:text-[#b4a692] "><HiOutlineMail className="hidden lg:flex text-[#b4a692]"/> &nbsp;CONTACTO@CASAITZIMNA.COM</li>
           </ul>
-          <div className="w-full h-[2px] bg-[#b4a692] mb-4" />
-          <div className="uppercase flex flex-col w-full font-apollo text-white ">
+          <div className="hidden lg:flex w-full h-[2px] bg-[#b4a692] mb-4" />
+          <div className="uppercase hidden lg:flex flex-col w-full font-apollo text-white ">
           copyright all rights reserved - casa itzimná hotel boutique
         </div>
         </div>
-        <div className="flex flex-col w-1/4 ">
+       
+        <div className="w-full flex flex-row justify-center lg:justify-start">
+
+        
+        <div className="hidden lg:flex flex-col w-full text-center lg:text-start  lg:w-1/4 ">
           <h3 className="font-cinzelBold text-2xl text-[#b4a692] mb-4">
             PAGES
           </h3>
-          <ul className="font-apollo text-white text-sm h-[150px]">
-            <li className="cursor-pointer hover:text-[#b4a692]"> <Link href='/about'>{json.Footer.option1}</Link></li>
-            <li className="cursor-pointer hover:text-[#b4a692]"><Link href='/house'>{json.Footer.option2}</Link></li>
-            <li className="cursor-pointer hover:text-[#b4a692]"><Link href='/spaces'>{json.Footer.option3}</Link></li>
-            <li className="cursor-pointer hover:text-[#b4a692]"><Link href='/experience'>{json.Footer.option4}</Link></li>
-            <li className="cursor-pointer hover:text-[#b4a692]"><Link href='/boutique'>{json.Footer.option5}</Link></li>
-            <li className="cursor-pointer hover:text-[#b4a692]"><Link href='/contact'>{json.Footer.option6}</Link></li>
+          <ul className="font-apollo text-white text-sm text-center lg:text-start h-[150px]">
+            <li className="cursor-pointer  hover:text-[#b4a692]"> <Link href='/about'>{json.Footer.option1}</Link></li>
+            <li className="cursor-pointer  hover:text-[#b4a692]"><Link href='/house'>{json.Footer.option2}</Link></li>
+            <li className="cursor-pointer  hover:text-[#b4a692]"><Link href='/spaces'>{json.Footer.option3}</Link></li>
+            <li className="cursor-pointer  hover:text-[#b4a692]"><Link href='/experience'>{json.Footer.option4}</Link></li>
+            <li className="cursor-pointer  hover:text-[#b4a692]"><Link href='/boutique'>{json.Footer.option5}</Link></li>
+            <li className="cursor-pointer  hover:text-[#b4a692]"><Link href='/contact'>{json.Footer.option6}</Link></li>
           </ul>
-          <div className="w-full h-[2px] bg-[#b4a692]" />
+          <div className="hidden lg:flex w-full h-[2px] bg-[#b4a692]" />
         </div>
-        <div className="flex flex-col text-right ">
-          <div className="flex flex-row justify-end">
+        </div>
+        <div className="h-[250px] flex flex-col text-center lg:text-right mt-4 lg:mt-0 ">
+          <div className="flex flex-row justify-center lg:justify-end">
             <Image src={logo} alt="logo" className="w-[100px] h-[100px] " />
           </div>
           <h3 className="font-cinzelBold text-2xl text-[#b4a692] mb-4">
             GET SOCIAL
           </h3>
-          <ul className="font-apollo text-white text-sm h-[50px] flex flex-col items-end ">
-            <li className="flex flex-row cursor-pointer hover:text-[#b4a692]">CASA ITZIMNÁ BOUTIQUE &nbsp; <FaFacebookF className="text-[#b4a692]"/></li>
-            <li className="flex flex-row cursor-pointer hover:text-[#b4a692]">CASAITZIMNÁ_BOUTIQUE &nbsp; <AiOutlineInstagram className="text-[#b4a692]"/></li>
+          <ul className="font-apollo text-white text-sm h-[50px] flex flex-col items-center lg:items-end ">
+            <li className="flex flex-row cursor-pointer py-2 text-lg hover:text-[#b4a692]">CASA ITZIMNÁ BOUTIQUE &nbsp; <FaFacebookF className="text-[#b4a692] mt-1"/></li>
+            <li className="flex flex-row cursor-pointer py-2 text-lg hover:text-[#b4a692]">CASAITZIMNÁ_BOUTIQUE &nbsp; <AiOutlineInstagram className="text-[#b4a692] mt-1"/></li>
           </ul>
-          <div className="w-full h-[2px] bg-[#b4a692] mb-4" />
-          <div className="uppercase flex flex-row w-full font-apollo text-white  ">
+          <div className="hidden lg:flex w-full h-[2px] bg-[#b4a692] mb-4" />
+          <div className="uppercase hidden lg:flex flex-row w-full font-apollo text-white  ">
           Made by &nbsp; <span className="text-[#b4a692] cursor-pointer hover:text-white">jaizmora digital media</span>
           </div>
         </div>
@@ -76,7 +83,7 @@ function Footer() {
 
       
     </div>
-    </div>
+    
   );
 }
 

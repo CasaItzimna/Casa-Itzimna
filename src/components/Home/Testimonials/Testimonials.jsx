@@ -9,6 +9,9 @@ import iguana from './iguana.png'
 
 
 function Testimonials({json}) {
+
+  //TO-DO slider de testimonios con paginacion para 9 elementos
+
   return (
     <div className="w-full h-full md:h-[800px]   flex flex-col  text-center mt-4 relative ">
       <div className="absolute bottom-0 right-0">
@@ -18,7 +21,7 @@ function Testimonials({json}) {
       <h2 className="font-cinzelBold text-4xl lg:text-5xl">{json.Testimonials.title}</h2>
       <div className="w-full flex flex-col items-center">
 
-      <div className="w-[90%] md:w-[440px] h-[70px] flex flex-row  relative mt-3">
+      <div className="w-[80%] md:w-[440px] h-[70px] flex flex-row  relative mt-3">
         <Image
           src={florizq}
           alt="flor"
@@ -33,7 +36,7 @@ function Testimonials({json}) {
       </div>
           </div>
       <div className="w-full h-full flex flex-col md:flex-row justify-center items-center gap-8">
-        <div className="relative w-[95%] h-[400px] md:w-[350px] md:h-[400px] border-8 rounded-[7px] border-[#b4a692]">
+        <div className="hidden lg:flex relative w-[95%] h-[400px] md:w-[350px] md:h-[400px] border-8 rounded-[7px] border-[#b4a692]">
           <div className="absolute top-6 left-4 text-[#31302c] ">
             <Image src={comillas} alt="comillas" className="w-[45px] md:w-[60px]" />
           </div>
@@ -53,7 +56,7 @@ function Testimonials({json}) {
             </p>
           </div>
         </div>
-        <div className="relative w-[100%] h-[400px] md:w-[350px] md:h-[400px] border-8 rounded-[7px] border-[#31302c]">
+        <div className="hidden lg:flex relative w-[100%] h-[400px] md:w-[350px] md:h-[400px] border-8 rounded-[7px] border-[#31302c]">
           <div className="absolute top-6 left-4 text-[#31302c] ">
             <Image src={comillasclaras} alt="comillas" className="w-[60px]" />
           </div>
@@ -73,7 +76,7 @@ function Testimonials({json}) {
             </p>
           </div>
         </div>
-        <div className="relative w-[100%] h-[400px] md:w-[350px] md:h-[400px] border-8 rounded-[7px] border-[#b4a692]">
+        <div className="relative w-[95%] h-[400px] md:w-[350px] md:h-[400px] border-8 rounded-[7px] border-[#b4a692] mb-8 lg:mb-0">
           <div className="absolute top-6 left-4 text-[#31302c] ">
             <Image src={comillas} alt="comillas" className="w-[60px]" />
           </div>

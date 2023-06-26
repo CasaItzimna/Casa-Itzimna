@@ -7,6 +7,7 @@ import foto3 from "./foto3.png";
 import sol from "./sol.png";
 import { useState } from "react";
 import Link from "next/link";
+import florizq from "../Testimonials/florizq.png";
 
 function Accomodation({json}) {
 
@@ -22,8 +23,24 @@ function Accomodation({json}) {
         <div className="w-full lg:w-[25%] h-full flex flex-col justify-center ">
             <div className="flex flex-col justify-center w-full">
 
-          <h3 className="text-[40px] font-cinzelBold text-center lg:text-left ">{json.Accomodation.title}</h3>
-          <div className="w-[270px] h-full flex flex-row relative mb-8">
+          <h3 className="text-[30px] lg:text-[40px] font-cinzelBold text-center lg:text-left ">{json.Accomodation.title}</h3>
+          <div className="w-full flex flex-col items-center">
+
+      <div className="w-[80%] md:w-[440px] h-[50px] flex flex-row  relative mt-3">
+        <Image
+          src={florizq}
+          alt="flor"
+          className="w-[20px] h-[20px] absolute left-0 -top-2"
+          />
+        <div className="bg-[#b4a692] w-[430px] h-[2px]"></div>
+        <Image
+          src={flor}
+          alt="flor"
+          className="w-[20px] h-[20px] absolute right-0 -top-2"
+          />
+      </div>
+          </div>
+          <div className="w-[270px] h-full hidden lg:flex flex-row relative mb-8">
             <div className="bg-[#b4a692] w-[260px] h-[2px]"></div>
             <Image
               src={flor}

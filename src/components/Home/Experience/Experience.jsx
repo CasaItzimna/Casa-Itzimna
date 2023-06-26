@@ -2,9 +2,11 @@ import Image from "next/image";
 import spa from "./spa.png";
 
 import flor from "./flor.png";
+import florder from "../../../assets/flor.png";
 import serpiente from "../../../assets/serpiente.png";
 import React from "react";
 import Link from "next/link";
+import florizq from "../Testimonials/florizq.png";
 
 function Experience({json}) {
   return (
@@ -17,13 +19,13 @@ function Experience({json}) {
           
         </div>
 
-        <div className="w-[25%] h-full flex flex-col justify-start lg:justify-center items-center lg:items-end mt-4 lg:mt-0 ">
+        <div className="w-full lg:w-[25%] h-full flex flex-col justify-start lg:justify-center items-center lg:items-end mt-4 lg:mt-0 ">
           <div className="w-full  flex flex-col items-center lg:items-end">
-            <h3 className="text-[40px]  font-cinzelBold lg:text-white text-center lg:text-right ">
+            <h3 className="text-[30px] lg:text-[40px]  font-cinzelBold lg:text-white text-center lg:text-right ">
             {json.Experience.title}
             </h3>
             
-            <div className="w-[218px] h-[20px] flex flex-row relative  ">
+            <div className="w-[218px] h-[20px] hidden lg:flex flex-row relative  ">
               <Image
                 src={flor}
                 alt="flor"
@@ -31,6 +33,22 @@ function Experience({json}) {
               />
               <div className="bg-[#31302c] w-[200px] h-[2px] absolute right-0"></div>
             </div>
+            <div className="w-full flex flex-col items-center">
+
+      <div className="w-[80%] md:w-[440px] h-[50px] flex flex-row  relative mt-3">
+        <Image
+          src={florizq}
+          alt="flor"
+          className="w-[20px] h-[20px] absolute left-0 -top-2"
+          />
+        <div className="bg-[#b4a692] w-[430px] h-[2px]"></div>
+        <Image
+          src={florder}
+          alt="flor"
+          className="w-[20px] h-[20px] absolute right-0 -top-2"
+          />
+      </div>
+          </div>
           </div>
           <p className="text-center lg:text-right text-xl font-ethereal w-[350px] lg:w-[480px] tracking-[4px] lg:text-white">
           {json.Experience.text}
