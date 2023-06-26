@@ -9,17 +9,18 @@ import Link from "next/link";
 
 function AboutUs({ json }) {
   return (
-    <div className="w-full h-full flex flex-col items-center bg-gradient-to-t from-white via-white to-transparent z-30 overflow-y-hidden relative">
+    /* TO-DO: arreglar el iphone SE */
+    <div className="w-full h-[3000px] sm:h-[1500px] lg:h-full flex flex-col items-center bg-gradient-to-t from-white via-white to-transparent z-30 overflow-y-hidden relative">
         <div className="absolute w-1/2 h-full right-0 -bottom-[30%]  ">
           <Image src={serpiente} alt="serpiente" className="w-full h-full" />
         </div>
       <div className="w-full h-full max-w-[1920px]  overflow-y-hidden relative ">
-        <div className="w-full h-full flex flex-col lg:flex-row  gap-0 ">
+        <div className="w-full h-full flex flex-col-reverse lg:flex-row  gap-0 ">
           <div className="w-full h-full flex flex-col justify-center text-center md:text-left ">
-            <div className="w-full flex flex-row justify-end">
+            <div className="w-full flex flex-row justify-center lg:justify-end">
 
             
-            <div className="w-[500px] ">
+            <div className=" w-[500px] ">
 
            
             <h3 className="text-[35px] md:text-[40px]  font-cinzelBold text-[#31302c]  ">
@@ -33,7 +34,7 @@ function AboutUs({ json }) {
                 className="w-[20px] h-[20px] absolute right-0 -top-2"
               />
             </div>
-            <p className="text-justify font-ethereal text-xl w-[480px] text-[#31302c] tracking-[4px]">
+            <p className="text-justify font-ethereal text-xl px-8 lg:px-0 lg:w-[480px] text-[#31302c] tracking-[4px]">
               {json.About.text}
             </p>
             <Link href="/AboutUs">
@@ -45,9 +46,9 @@ function AboutUs({ json }) {
             </div>
           </div>
           <div className="  w-full h-full flex flex-col justify-center items-center">
-            <div className="w-full h-full flex flex-row justify-start items-center">
+            <div className="w-full h-full flex flex-row justify-center lg:justify-start items-center">
               <div className="w-[500px] h-[400px] relative   ">
-                <div className="absolute top-0 right-0 bg-white h-[250px] w-[300px]">
+                <div className="absolute lg:top-0 lg:right-0 bg-white h-[250px] w-[300px]">
                   <Image
                     src={foto1}
                     alt="recamara"

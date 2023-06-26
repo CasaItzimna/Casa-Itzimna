@@ -18,7 +18,7 @@ function Accomodation({json}) {
         <div className="absolute left-0 top-[10%]">
             <Image src={sol} alt="sol" className="w-[300px]" />
         </div>
-      <div className="flex flex-row justify-center w-full h-[600px] ">
+      <div className="flex flex-col lg:flex-row justify-center w-full h-[600px] ">
         <div className="w-[25%] h-full flex flex-col justify-center ">
             <div className="flex flex-col justify-center w-full">
 
