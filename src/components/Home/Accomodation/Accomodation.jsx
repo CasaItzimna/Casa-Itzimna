@@ -26,7 +26,7 @@ function Accomodation({json}) {
           <h3 className="text-[30px] lg:text-[40px] font-cinzelBold text-center lg:text-left ">{json.Accomodation.title}</h3>
           <div className="w-full flex flex-col items-center">
 
-      <div className="w-[80%] md:w-[440px] h-[50px] flex flex-row  relative mt-3">
+      <div className="lg:hidden w-[80%] md:w-[440px] h-[50px] flex flex-row  relative mt-3">
         <Image
           src={florizq}
           alt="flor"

@@ -35,7 +35,7 @@ function Experience({json}) {
             </div>
             <div className="w-full flex flex-col items-center">
 
-      <div className="w-[80%] md:w-[440px] h-[50px] flex flex-row  relative mt-3">
+      <div className="lg:hidden w-[80%] md:w-[440px] h-[50px] flex flex-row  relative mt-3">
         <Image
           src={florizq}
           alt="flor"

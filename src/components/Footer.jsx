@@ -21,11 +21,11 @@ function Footer() {
   
   
 
-    <div className="w-full h-full lg:h-[500px] max-w-[1920px] flex flex-col justify-center bg-[#31302c] ">
-      <div className=" flex flex-col-reverse lg:flex-row justify-center lg:justify-start ">
+    <div className="w-full h-full lg:h-[500px]  flex flex-col justify-center bg-[#31302c] ">
+      <div className=" flex flex-col-reverse lg:flex-row  justify-center  ">
        
        
-        <div className="h-full flex flex-col mb-4 lg:mb-0  lg:w-1/3  text-center lg:text-start   ">
+        <div className="h-full flex flex-col mb-4 lg:mb-0  lg:w-1/4  text-center lg:text-start   ">
           <h3 className="font-cinzelBold text-2xl text-[#b4a692] mb-4">
             CONTACT
           </h3>
@@ -44,14 +44,14 @@ function Footer() {
         </div>
         </div>
        
-        <div className="w-full flex flex-row justify-center lg:justify-start">
+        <div className="w-full lg:w-1/5 flex flex-row justify-center lg:justify-start">
 
         
-        <div className="hidden lg:flex flex-col w-full text-center lg:text-start  lg:w-1/4 ">
+        <div className="hidden lg:flex flex-col w-full text-center lg:text-start  ">
           <h3 className="font-cinzelBold text-2xl text-[#b4a692] mb-4">
             PAGES
           </h3>
-          <ul className="font-apollo text-white text-sm text-center lg:text-start h-[150px]">
+          <ul className="font-apollo text-white text-sm text-center lg:w-1/4 lg:text-start h-[150px]">
             <li className="cursor-pointer  hover:text-[#b4a692]"> <Link href='/about'>{json.Footer.option1}</Link></li>
             <li className="cursor-pointer  hover:text-[#b4a692]"><Link href='/house'>{json.Footer.option2}</Link></li>
             <li className="cursor-pointer  hover:text-[#b4a692]"><Link href='/spaces'>{json.Footer.option3}</Link></li>

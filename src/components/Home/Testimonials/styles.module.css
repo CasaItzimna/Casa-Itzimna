@@ -1,0 +1,7 @@
+.swiper-pagination-bullet {
+  background-color: #b4a692 !important /* Color de fondo de los puntos inactivos */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #31302c !important /* Color de fondo del punto activo */
+}
