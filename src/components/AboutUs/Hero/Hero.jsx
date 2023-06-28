@@ -4,28 +4,24 @@ import hero1 from './heroabout.png'
 
 function Hero({json}) {
     return (
-      <div className="w-full h-full flex flex-col relative ">
-        <Image
-          src={hero1}
-          alt="fondo"
-          className="absolute w-full h-screen object-cover"
-        />
-  
-        <div className="flex flex-col justify-center h-screen w-full text-center items-center text-white absolute z-10">
-          <div className='h-[0%]'>
+    <div className="w-full h-full flex flex-col relative">
+      <Image
+        src={hero1}
+        alt="fondo"
+        className="absolute w-full h-screen object-cover"
+      />
 
-          </div>
-          <div className="h-[30%]">
-            <h1 className="text-9xl font-cinzelRegular">About Us</h1>
-          </div>
-          <div className='h-[30%]'>
+      <div className="flex flex-row justify-center  h-screen w-full   text-white absolute z-10">
+        <div className="w-full h-full flex flex-col justify-center text-center items-center">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-cinzelRegular">
+            <span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[200px]">A</span>bout{" "}
+            <span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[200px]">U</span>s
+          </h1>
 
-          </div>
-        
-          
         </div>
       </div>
-    );
+    </div>
+  );
   }
   
   export default Hero;

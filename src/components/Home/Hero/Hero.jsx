@@ -14,7 +14,7 @@ function Hero({ setShow, json }) {
   const { inicio, fin } = AppContext();
   console.log(inicio);
 
-  const monthNames = [
+  const monthNames = [ 
     "Ene",
     "Feb",
     "Mar",

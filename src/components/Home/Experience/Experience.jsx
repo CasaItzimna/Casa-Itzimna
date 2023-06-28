@@ -50,7 +50,7 @@ function Experience({json}) {
       </div>
           </div>
           </div>
-          <p className="text-center lg:text-right text-xl font-ethereal w-[350px] lg:w-[480px] tracking-[4px] lg:text-white">
+          <p className="text-center lg:text-right text-xl font-ethereal w-[350px] md:w-[600px] lg:w-[480px] tracking-[4px] lg:text-white">
           {json.Experience.text}
           </p>
           <Link href='/Experience'>

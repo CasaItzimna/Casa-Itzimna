@@ -49,10 +49,11 @@ function Accomodation({json}) {
               />
           </div>
           
+          
 
           <div className="w-full flex flex-row justify-center lg:justify-start">
 
-          <div className="flex flex-row justify-between w-[90%] h-full font-ethereal uppercase text-[10px] ">
+          <div className="flex flex-row justify-between w-[90%] md:w-[600px] h-full font-ethereal uppercase text-[10px] ">
             <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion1')}>{json.Accomodation.option1}</h4>
             <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion2')}>{json.Accomodation.option2}</h4>
             <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion3')}>{json.Accomodation.option3}</h4>
@@ -71,10 +72,10 @@ function Accomodation({json}) {
         : ''
     }`}></div>
           </div>
-          <div className="w-full flex flex-row justify-center text-center lg:text-left">
+          <div className="w-full  flex flex-row justify-center text-center lg:text-left">
             <div className="w-full flex flex-col justify-center">
               
-            <p className=" text-center lg:text-justify font-ethereal w-full px-4 lg:px-0 lg:w-[90%] text-xl ">
+            <p className=" text-center lg:text-justify font-ethereal w-full px-4 lg:px-0  lg:w-[90%] text-xl ">
             {json.Accomodation.text}
             </p>
             <Link href='/Spaces'>
@@ -86,8 +87,11 @@ function Accomodation({json}) {
               </div>
           </div>
         </div>
-        <div className="w-full px-4 sm:w-[500px] h-full flex flex-col justify-center ">
-            <div className="w-full flex flex-col justify-center">
+
+        
+        <div className=" flex flex-row justify-center ">
+        <div className="w-full px-4 sm:w-[500px] h-full flex flex-col justify-center  ">
+           
 
           <div className=" bg-white h-[350px] w-full mb-2 shadow-2xl ">
             <Image
@@ -110,9 +114,10 @@ function Accomodation({json}) {
                 alt="desayuno"
                 className="w-full h-full p-2 object-cover "
                 />
-            </div>
+           
                 </div>
           </div>
+        </div>
         </div>
       </div>
     </div>
