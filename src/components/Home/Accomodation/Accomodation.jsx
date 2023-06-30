@@ -15,12 +15,12 @@ function Accomodation({json}) {
   console.log(opcion)
   
   return (
-    <div className="h-full w-full  relative">
+    <div className="h-full w-full  relative mt-8">
         <div className="absolute -z-10 left-0 top-[10%]">
             <Image src={sol} alt="sol" className="w-[300px]" />
         </div>
       <div className="flex flex-col-reverse lg:flex-row justify-center w-full h-[1000px] lg:h-[600px] ">
-        <div className="w-full lg:w-[25%] h-full flex flex-col justify-center ">
+        <div className="w-full lg:w-1/2 h-full flex flex-col justify-center ">
             <div className="flex flex-col justify-center w-full">
 
           <h3 className="text-[30px] lg:text-[40px] font-cinzelBold text-center lg:text-left ">{json.Accomodation.title}</h3>
@@ -53,7 +53,7 @@ function Accomodation({json}) {
 
           <div className="w-full flex flex-row justify-center lg:justify-start">
 
-          <div className="flex flex-row justify-between w-[90%] md:w-[600px] h-full font-ethereal uppercase text-[10px] ">
+          <div className="flex flex-row justify-between   w-[90%] md:w-[600px] lg:w-[90%] h-full font-ethereal uppercase text-[10px] ">
             <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion1')}>{json.Accomodation.option1}</h4>
             <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion2')}>{json.Accomodation.option2}</h4>
             <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion3')}>{json.Accomodation.option3}</h4>

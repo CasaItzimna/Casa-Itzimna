@@ -12,16 +12,21 @@ function Experience({json}) {
   return (
     <div className="w-full h-[800px] lg:h-[400px] relative  ">
       <div className="absolute h-full w-full flex flex-col lg:flex-row justify-center  items-center z-10">
-        <div className="sm-w-[500px] lg:w-[550px] flex flex-col justify-center ">
+        <div className="lg:w-1/2 flex flex-row justify-center">
+
+        
+        <div className="sm-w-[500px] lg:w-[500px] xl:w-[550px]  flex flex-col justify-center  ">
           
 
           <Image src={spa} alt="spa" className="w-full h-full " />
           
         </div>
+        </div>
+        <div className="w-full lg:w-1/2 flex flex-row justify-start md:justify-center">
 
-        <div className="w-full lg:w-[25%] h-full flex flex-col justify-start lg:justify-center items-center lg:items-end mt-4 lg:mt-0 ">
-          <div className="w-full  flex flex-col items-center lg:items-end">
-            <h3 className="text-[30px] lg:text-[40px]  font-cinzelBold lg:text-white text-center lg:text-right ">
+        <div className="lg:w-1/2 xl:w-[25%] h-full flex flex-col justify-start lg:justify-center items-center lg:items-end mt-4 lg:mt-0 ">
+          <div className="w-full md:w-[600px] lg:w-[500px]  flex flex-col items-center lg:items-end">
+            <h3 className="text-[30px] md:text-[40px]   font-cinzelBold lg:text-white text-center lg:text-right ">
             {json.Experience.title}
             </h3>
             
@@ -58,6 +63,7 @@ function Experience({json}) {
           {json.Experience.buttonText}
           </button>
           </Link>
+        </div>
         </div>
       </div>
       <div className="w-full h-full flex flex-row">
