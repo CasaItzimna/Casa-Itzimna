@@ -40,7 +40,7 @@ function OurStory({json}) {
           />
       </div>
           </div>
-          <div className="w-[270px] h-full flex flex-row relative mb-8">
+          <div className="hidden w-[270px]  h-full lg:flex flex-row relative mb-8">
             <div className="bg-[#b4a692] w-[260px] h-[2px]"></div>
             <Image
               src={flor}
@@ -48,6 +48,8 @@ function OurStory({json}) {
               className="w-[20px] h-[20px] absolute right-0 -top-2"
               />
           </div>
+          
+
           <div className="flex flex-row justify-around w-[90%] h-full font-ethereal uppercase text-[11px] ">
             <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion1')}>{json.OurStory.option1}</h4>
             <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion2')}>{json.OurStory.option2}</h4>
@@ -56,24 +58,26 @@ function OurStory({json}) {
           <div className="w-[90%] h-full flex flex-row relative mb-4">
             <div className="bg-[#b4a692] w-full h-[3px]"></div>
             <div  className={`absolute bg-[#31302c] w-[30%] h-[3px] ${
-      opcion === 'opcion1'
-        ? 'left-0'
-        : opcion === 'opcion2'
-        ? 'left-[33%]'
-        : opcion === 'opcion3'
-        ? 'right-0'
-        : ''
-    }`}></div>
+              opcion === 'opcion1'
+              ? 'left-0'
+              : opcion === 'opcion2'
+              ? 'left-[33%]'
+              : opcion === 'opcion3'
+              ? 'right-0'
+              : ''
+            }`}></div>
           </div>
-          <div>
-            <p className="text-justify font-ethereal w-[90%] text-xl ">
+          <div className="flex flex-row justify-center lg:justify-start ">
+            <p className="text-center lg:text-justify font-ethereal w-[90%] text-xl ">
             {json.OurStory.text}
             </p>
             
               </div>
           </div>
         </div>
-        <div className="w-[500px] h-full flex flex-col justify-center ">
+        <div className="w-full flex flex-row justify-center lg:justify-start">
+          
+        <div className="w-[350px] md:w-[400px] lg:w-[500px] h-full flex flex-col justify-center ">
             <div className="w-full flex flex-col justify-center">
 
           <div className=" bg-white h-[350px] w-full mb-2 shadow-2xl ">
@@ -99,6 +103,8 @@ function OurStory({json}) {
                 />
             </div>
                 </div>
+                
+        </div>
           </div>
         </div>
       </div>
