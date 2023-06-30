@@ -33,11 +33,11 @@ function History({ json }) {
           alt="flor"
           className="w-[20px] h-[20px] absolute left-0 -top-2"
           />
-        <div className="bg-[#b4a692] w-[430px] h-[2px]"></div>
+        <div className="bg-black w-[430px] h-[2px]"></div>
         <Image
-          src={flor}
+          src={florizq}
           alt="flor"
-          className="w-[20px] h-[20px] absolute right-0 -top-2"
+          className="w-[20px] h-[20px] absolute  right-0 -top-2 rotate-180"
           />
       </div>
 

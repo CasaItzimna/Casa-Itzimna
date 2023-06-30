@@ -20,17 +20,20 @@ function Why({ json }) {
   }
 
   return (
-    <div className="w-full h-full lg:h-[700px] flex flex-col lg:flex-row justify-center gap-8">
-      <div className="w-[500px] h-full flex flex-col justify-center items-center lg:items-start">
+    <div className="w-full h-full lg:h-[700px] flex flex-col lg:flex-row justify-start xl:justify-center  gap-8">
+      <div className="w-full lg:w-[50%] flex flex-row xl:justify-start">
+
+      <div className="w-full lg:w-full h-full flex flex-col justify-center  items-center lg:items-start  mt-8 lg:mt-0">
         <Image
           src={foto}
           alt="foto alberca"
-          className="w-[90%] lg:w-[500px] h-[350px] object-cover rounded-[18px] drop-shadow-2xl"
-        />
+          className="w-[90%] lg:w-full xl:w-[500px] h-[200px] lg:h-[350px] object-cover rounded-[18px] drop-shadow-2xl"
+          />
       </div>
-      <div className=" w-full lg:w-[25%] flex flex-col justify-center ">
+          </div>
+      <div className=" w-full lg:w-[50%] xl:w-[25%] flex flex-col justify-center ">
         <div className="flex flex-col w-full ">
-          <h3 className="text-[30px] lg:text-[40px] font-cinzelBold text-center lg:text-start ">{json.Why.title}</h3>
+          <h3 className="text-[30px] lg:text-[40px] font-cinzelBold text-center lg:text-start mt-4 lg:mt-0 ">{json.Why.title}</h3>
           <div className="w-full flex flex-col items-center">
 
       <div className="lg:hidden w-[80%] md:w-[440px] h-[50px] flex flex-row  relative mt-3">
@@ -69,10 +72,14 @@ function Why({ json }) {
             
             {json.Why.question1}
           </h3>
-          <div className="h-[20px] w-full bg-[#aea08c] mt-5 mb-4"></div>
-          <p className={`font-ethereal text-lg tracking-[2px] flex flex-row  text-justify w-[90%] ${pregunta1 == false? 'hidden': null }`}>
+          <div className={`${pregunta1 == true? 'hidden': null } h-[2px] lg:h-[20px] w-full bg-[#aea08c] mt-5 mb-4`}></div>
+          <div className="w-full flex flex-row justify-center items-center mb-4 lg:mb-0">
+
+          <p className={`w-[90%] font-ethereal text-lg tracking-[2px] text-justify mt-4 xl:mt-0  ${pregunta1 == false? 'hidden': null }`}>
             {json.Why.answer1}
           </p>
+          </div>
+          <div className={`${pregunta1 == false? 'hidden': null } h-[2px] lg:h-[20px] w-full bg-[#aea08c] mt-5 mb-4`}></div>
           <h3 className="text-xl font-apollo tracking-[3px] flex flex-row gap-2 items-center cursor-pointer "
          onClick={()=>{setPregunta2(!pregunta2); setPregunta1(false); setPregunta3(false)}}
           >
@@ -84,10 +91,13 @@ function Why({ json }) {
             }
             {json.Why.question2}
           </h3>
-          <div className="h-[20px] w-full bg-[#aea08c] mt-5 mb-4 "></div>
-          <p className={`font-ethereal text-lg tracking-[2px] flex flex-row ${pregunta2 == false? 'hidden': null }`}>
+          <div className={`${pregunta2 == true? 'hidden': null } h-[2px] lg:h-[20px] w-full bg-[#aea08c] mt-5 mb-4`}></div>
+          <div className="w-full flex flex-row justify-center items-center mb-4 lg:mb-0">
+          <p className={`w-[90%] font-ethereal text-lg tracking-[2px] text-justify mt-4 xl:mt-0 ${pregunta2 == false? 'hidden': null }`}>
             {json.Why.answer2}
           </p>
+          </div>
+          <div className={`${pregunta2 == false? 'hidden': null } h-[2px] lg:h-[20px] w-full bg-[#aea08c] mt-5 mb-4`}></div>
           <h3 className="text-xl font-apollo tracking-[3px] flex flex-row gap-2 items-center cursor-pointer" 
        onClick={()=>{setPregunta3(!pregunta3); setPregunta2(false); setPregunta1(false)}}
           >
@@ -99,9 +109,11 @@ function Why({ json }) {
             }
             {json.Why.question3}
           </h3>
-          <p className={`font-ethereal text-lg tracking-[2px] flex flex-row ${pregunta3 == false? 'hidden': null }`}>
+          <div className="w-full flex flex-row justify-center lg:justify-start items-center mb-4 lg:mb-0">
+          <p className={`w-[90%] font-ethereal text-lg tracking-[2px] text-justify mt-4 xl:mt-0  ${pregunta3 == false? 'hidden': null }`}>
             {json.Why.answer3}
           </p>
+          </div>
         </div>
       </div>
     </div>

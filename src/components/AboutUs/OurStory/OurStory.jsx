@@ -15,16 +15,16 @@ function OurStory({json}) {
   console.log(opcion)
   
   return (
-    <div className="h-full w-full relative z-20">
-        <div className="absolute left-0 top-[10%]">
+    <div className="h-[1000px]  lg:full w-full relative z-20">
+        <div className="absolute left-0 top-[10%] -z-30">
             <Image src={cabeza} alt="cabeza" className="w-[300px]" />
         </div>
       <div className="flex flex-col-reverse lg:flex-row justify-center w-full h-[1000px] lg:h-[700px] ">
-        <div className="w-full lg:w-[25%] h-full flex flex-col justify-center ">
-            <div className="flex flex-col justify-center w-full">
+        <div className="w-full lg:w-[100%] h-full md:h-[25%] lg:h-[500px] flex flex-col justify-center md:justify-end lg:justify-center ">
+            <div className="flex flex-col justify-center w-full ">
 
-          <h3 className="text-[30px] lg:text-[40px] font-cinzelBold text-center lg:text-left  ">{json.OurStory.title}</h3>
-          <div className="w-full flex flex-col items-center">
+          <h3 className="text-[30px] lg:text-[40px] font-cinzelBold text-center lg:text-left   ">{json.OurStory.title}</h3>
+          <div className="w-full flex flex-col items-center ">
 
       <div className="lg:hidden w-[80%] md:w-[440px] h-[50px] flex flex-row  relative mt-3">
         <Image
@@ -49,12 +49,15 @@ function OurStory({json}) {
               />
           </div>
           
+          <div className="w-full flex flex-row justify-center lg:justify-start">
 
-          <div className="flex flex-row justify-around w-[90%] h-full font-ethereal uppercase text-[11px] ">
+          <div className="flex flex-row  justify-around w-[90%] h-full font-ethereal uppercase text-[11px] ">
             <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion1')}>{json.OurStory.option1}</h4>
             <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion2')}>{json.OurStory.option2}</h4>
             <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion3')}>{json.OurStory.option3}</h4>
           </div>
+          </div>
+          <div className="w-full flex flex-row justify-center lg:justify-start">
           <div className="w-[90%] h-full flex flex-row relative mb-4">
             <div className="bg-[#b4a692] w-full h-[3px]"></div>
             <div  className={`absolute bg-[#31302c] w-[30%] h-[3px] ${
@@ -66,7 +69,9 @@ function OurStory({json}) {
               ? 'right-0'
               : ''
             }`}></div>
-          </div>
+          
+            </div>
+            </div>
           <div className="flex flex-row justify-center lg:justify-start ">
             <p className="text-center lg:text-justify font-ethereal w-[90%] text-xl ">
             {json.OurStory.text}
@@ -75,10 +80,10 @@ function OurStory({json}) {
               </div>
           </div>
         </div>
-        <div className="w-full flex flex-row justify-center lg:justify-start">
+        <div className=" flex flex-row justify-center ">
           
-        <div className="w-[350px] md:w-[400px] lg:w-[500px] h-full flex flex-col justify-center ">
-            <div className="w-full flex flex-col justify-center">
+        <div className="w-[350px] md:w-[400px] lg:w-[500px] h-full flex flex-col justify-center lg:justify-center  ">
+            <div className="w-full flex flex-col justify-center md:justify-end ">
 
           <div className=" bg-white h-[350px] w-full mb-2 shadow-2xl ">
             <Image
