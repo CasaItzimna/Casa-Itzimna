@@ -6,14 +6,11 @@ import foto3 from "./3.png";
 import fototo1 from "./foto1.png";
 import fototo2 from "./foto2.png";
 
+
 function Rates({ json }) {
-  return (
-    <div className="w-full h-[1000px] flex flex-col  ">
-      <div className="w-full  flex flex-row justify-center items-center">
-        <div className="w-full flex flex-col items-center justify-center">
-          <h3 className="text-4xl font-cinzelBold">{json.Rates.title}</h3>
-          <div className="w-full max-w-[1920px] flex flex-row gap-8 justify-center items-center">
-            <div className="w-[25%] h-full flex flex-col ">
+
+  const ratesElements = [
+    <div key={1} className="w-[300px] lg:w-[25%] h-full flex flex-col ">
               <Image
                 src={foto1}
                 alt="plan1"
@@ -35,8 +32,8 @@ function Rates({ json }) {
                   </button>
                 </div>
               </div>
-            </div>
-            <div className="w-[25%] h-full  flex flex-col ">
+            </div>,
+            <div key={2} className="w-[300px] lg:w-[25%] h-full  flex flex-col ">
               <Image
                 src={foto2}
                 alt="plan2"
@@ -58,8 +55,8 @@ function Rates({ json }) {
                   </button>
                 </div>
               </div>
-            </div>
-            <div className="w-[25%] h-full  flex flex-col ">
+            </div>,
+            <div key={3} className="w-[300px] lg:w-[25%] h-full  flex flex-col ">
               <Image
                 src={foto3}
                 alt="plan3"
@@ -82,29 +79,45 @@ function Rates({ json }) {
                 </div>
               </div>
             </div>
+  ]
+
+  return (
+    <div className="w-full h-[1200px] flex flex-col mt-8 lg:mt-0  ">
+      <div className="w-full  flex flex-row justify-center items-center">
+        <div className="w-full flex flex-col items-center justify-center">
+          <h3 className="text-4xl font-cinzelBold">{json.Rates.title}</h3>
+          <div id={"slider"} className="w-full h-full mb-8 lg:mb-0 mx-4 lg:mx-0  flex flex-row justify-center">
+            <div className="w-[90%] flex flex-row justify-start items-center gap-8 overflow-x-scroll overflow-y-hidden  scroll-smooth scrollbar-hide">
+
+            {
+              ratesElements.map((rate, index) =>(
+                <div key={index}>{rate}</div>
+                ))
+              }
+              </div>
           </div>
 
-          <div className="w-full h-[300px] flex flex-col mt-14 ">
+          <div className="w-full h-full lg:h-[300px] flex flex-col mt-14 ">
             <div className="w-full  h-full  flex flex-row justify-center">
-              <div className="w-full max-w-[1920px] flex flex-row gap-8 justify-center">
+              <div className="w-full max-w-[1920px] flex flex-col lg:flex-row gap-8 justify-center">
 
               
-              <div className="w-[15%]  flex flex-row justify-center items-center">
+              <div className="w-[15%] hidden lg:flex flex-row justify-center items-center">
                 <Image src={fototo1} alt="persona" className="h-full" />
               </div>
-              <div className="w-[35%] flex flex-row justiy-center items-center">
+              <div className="w-full lg:w-[35%] flex flex-row justify-center items-center">
                 <Image
                   src={fototo2}
                   alt="persona"
-                  className="w-full h-full object-cover"
+                  className="w-[90%] h-full object-cover"
                 />
               </div>
-              <div className=" w-[25%] h-full flex flex-col justify-center gap-2 text-left tracking-[4px]">
+              <div className=" w-full lg:w-[25%] h-full flex flex-col justify-center gap-2 text-center lg:text-left tracking-[4px] ">
                 <h3 className="font-apollo text-3xl">
                   {json.Rates.unforgettableTitle}
                 </h3>
                 <p className="font-apollo text-lg tracking-[1px]">{json.Rates.unforgettableText}</p>
-                <div className="flex flex-row justify-start ">
+                <div className="flex flex-row justify-center lg:justify-start ">
 
                 <button className="font-Geometrica bg-[#b4a692] w-[150px] h-[35px] rounded-[7px] text-xl px-2 mt-4">
                   {json.Rates.experiencesButton}

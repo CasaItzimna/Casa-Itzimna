@@ -22,14 +22,14 @@ function Facilities({json}) {
   console.log(opcion)
   
   return (
-    <div className="h-full w-full flex flex-col items-center  relative z-10 ">
-        
-      <div className="max-w-[1920px] flex flex-row justify-center w-full  h-full gap-8 bg-gradient-to-b from-transparent from-20%  to-white to-30%   3xl:absolute 3xl:-top-48   ">
-        <div className="w-[35%] h-full flex flex-col  ">
+    <div className="h-[2500px] lg:h-full w-full flex flex-col items-center  relative z-20 ">
+        <div className="w-full flex flex-row justify-center items-center">
+      <div className="max-w-[1920px] flex flex-col-reverse lg:flex-row justify-center w-[90%] lg:w-full  h-full gap-8 bg-gradient-to-b from-transparent from-20%  to-white to-30%   3xl:absolute 3xl:-top-48   ">
+        <div className="w-full xl:w-[35%] h-full flex flex-col  ">
             <div className="font-PlayfairDisplay text-[16px] text-justify tracking-wider">
                 {json.Facilities.texto1}
             </div>
-            <div>
+            <div className="w-full flex flex-row justify-center lg:justify-start">
                 <ul className="list-disc mt-4 mb-4 pl-8">
                     <li className="font-PlayfairDisplay text-lg tracking-wider">{json.Facilities.list1}</li>
                     <li className="font-PlayfairDisplay text-lg tracking-wider">{json.Facilities.list2}</li>
@@ -37,8 +37,8 @@ function Facilities({json}) {
                     <li className="font-PlayfairDisplay text-lg tracking-wider">{json.Facilities.list4}</li>
                 </ul>
             </div>
-            <div>
-                <h2 className="text-2xl font-apollo mt-4 tracking-[10px] underline">{json.Facilities.title}</h2>
+            <div className="">
+                <h2 className="text-2xl font-apollo mt-4 tracking-[10px] underline text-center lg:text-start">{json.Facilities.title}</h2>
             </div>
             <div className="w-full flex flex-row gap-8 mt-6 mb-8 ">
                 <div className="w-full flex flex-col gap-3">
@@ -94,26 +94,35 @@ function Facilities({json}) {
                      </div>
                 </div>
             </div>
-            <div className="w-[280px] flex flex-row justify-center h-full border-[1px] border-[#b4a692] rounded-[7px]">
+            <div className="w-full flex flex-row justify-center h-full border-[1px] border-[#b4a692] rounded-[7px]">
                 <h3 className="text-lg tracking-[1px] px-4 py-1">{json.Facilities.termstitle}</h3>
             </div>
             <div>
+              <div className="w-full flex flex-row justify-center lg:justify-start">
                 <h3 className="text-3xl font-apollo mt-8 mb-4 tracking-[8px]">{json.Facilities.checkin}</h3>
+              </div>
                 <ul>
                 <li className="flex flex-row text-[16px] tracking-[2px]  font-PlayfairDisplay"><Image src={check} alt="check" className=" w-[23px] h-[15px] mr-4 "/>{json.Facilities.checkinText1}</li>
                 <li className="flex flex-row text-[16px] tracking-[2px] mt-4 font-PlayfairDisplay"><Image src={check} alt="check" className=" w-[23px] h-[15px] mr-4 "/>{json.Facilities.checkinText2}</li>
                 </ul>
             </div>
             <div>
+            <div className="w-full flex flex-row justify-center lg:justify-start">
                 <h3 className="text-3xl font-apollo mt-8 mb-4 tracking-[8px]">{json.Facilities.checkout}</h3>
+                </div>
                 <ul>
                     <li className="flex flex-row text-[16px] tracking-[2px] mt-4 font-PlayfairDisplay"><Image src={check} alt="check" className=" w-[23px] h-[15px] mr-4 "/>{json.Facilities.checkoutText1}</li>
                     <li className="flex flex-row text-[16px] tracking-[2px] mt-4 font-PlayfairDisplay"><Image src={check} alt="check" className=" w-[23px] h-[15px] mr-4 "/>{json.Facilities.checkoutText2}</li>
                 </ul>
             </div>
+        </div> 
+        <div>
+          
         </div>
-        <div className="w-[40%] h-full flex flex-col justify-start ">
-            <div className="w-full flex flex-col justify-center">
+        <div className="w-full md:w-[400px] lg:w-[500px] h-full flex flex-col justify-center lg:justify-center ">
+          <div className="w-full flex flex-row justify-center items-center">
+
+            <div className="w-[90%] xl:w-full flex flex-col justify-center md:justify-end ">
 
           <div className=" bg-white h-[350px] w-full mb-2 shadow-2xl ">
             <Image
@@ -139,13 +148,18 @@ function Facilities({json}) {
             </div>
                 </div>
           </div>
-          <div className="mt-4">
-            <p className="font-PlayfairDisplay font-[700] text-lg tracking-[4px] text-justify">{json.Facilities.exploreText}</p>
+                </div>
+          <div className="mt-4 w-full flex flex-row justify-center">
+            <p className="w-[90%] font-PlayfairDisplay font-[700] text-lg tracking-[4px] text-justify">{json.Facilities.exploreText}</p>
           </div>
+          <div className="w-full flex flex-row justify-center xl:justify-start">
+
           <button className="font-Geometrica bg-[#b4a692] w-[150px] h-[35px] rounded-[7px] text-xl px-4 mt-4">
           {json.Facilities.galleryButton}
           </button>
+          </div>
         </div>
+      </div>
       </div>
     </div>
   );

@@ -47,11 +47,11 @@ function Booking({ json }) {
 
   return (
     <div className="w-full h-full flex flex-col justify-center items-center pb-10">
-      <div className="w-full max-w-[1920px] flex flex-row justify-center gap-4">
-        <div className="w-[40%] flex flex-col ">
+      <div className="w-full max-w-[1920px] flex flex-col-reverse lg:flex-row justify-center gap-4">
+        <div className="w-full lg:w-[40%] flex flex-col ">
           <div className="w-full flex flex-row justify-center">
-            <div className="flex flex-col">
-              <h3 className="text-5xl font-cinzelBold tracking-[2px] mb-4">
+            <div className="w-full flex flex-col items-center">
+              <h3 className=" text-5xl font-cinzelBold tracking-[2px] mb-4">
                 {json.Booking.title}
               </h3>
               <form className="w-full grid grid-cols-2 gap-4">
@@ -104,7 +104,11 @@ function Booking({ json }) {
                   placeholder="ADD AN EXPERIENCE"
                   className="placeholder:text-center placeholder:font-Geometrica  border-[1px] py-1 border-[#b4a692]"
                 />
-                <button className="bg-black text-white text-2xl tracking-[4px] font-Geometrica py-3 mt-2">BOOK NOW</button>
+                
+
+                <button className="col-span-2 lg:col-span-1  bg-black text-white text-2xl tracking-[4px] font-Geometrica py-3 mt-2">BOOK NOW</button>
+                
+                
                 <p className="col-span-2 font-PlayfairDisplay text-sm">
                 {json.Booking.consent}<span className="text-[#b4a692] ml-2">{json.Booking.privacy}</span>
               </p>
@@ -113,10 +117,10 @@ function Booking({ json }) {
             </div>
           </div>
         </div>
-        <div className="w-[40%] flex flex-col">
-          <div className="w-full flex flex-row justify-start">
+        <div className="w-full lg:w-[40%] flex flex-col">
+          <div className="w-full h-full flex flex-row justify-center lg:justify-start">
 
-          <Image src={bookingfoto} alt="bookingfoto" className="w-full h-[550px] mb-8 object-cover"/>
+          <Image src={bookingfoto} alt="bookingfoto" className="w-[90%] h-[550px] mb-8 object-cover"/>
           </div>
         </div>
       </div>
