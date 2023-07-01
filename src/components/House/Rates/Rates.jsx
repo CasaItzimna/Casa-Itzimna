@@ -10,7 +10,7 @@ import fototo2 from "./foto2.png";
 function Rates({ json }) {
 
   const ratesElements = [
-    <div key={1} className="w-[300px] lg:w-[25%] h-full flex flex-col ">
+    <div key={1} className="w-[300px] xl:w-[500px] h-full flex flex-col ">
               <Image
                 src={foto1}
                 alt="plan1"
@@ -33,7 +33,7 @@ function Rates({ json }) {
                 </div>
               </div>
             </div>,
-            <div key={2} className="w-[300px] lg:w-[25%] h-full  flex flex-col ">
+            <div key={2} className="w-[300px] xl:w-[500px] h-full  flex flex-col ">
               <Image
                 src={foto2}
                 alt="plan2"
@@ -56,7 +56,7 @@ function Rates({ json }) {
                 </div>
               </div>
             </div>,
-            <div key={3} className="w-[300px] lg:w-[25%] h-full  flex flex-col ">
+            <div key={3} className="w-[300px] xl:w-[500px] h-full  flex flex-col ">
               <Image
                 src={foto3}
                 alt="plan3"
@@ -82,12 +82,12 @@ function Rates({ json }) {
   ]
 
   return (
-    <div className="w-full h-[1200px] flex flex-col mt-8 lg:mt-0  ">
+    <div className="w-full h-[1200px] md:h-[1350px] lg:h-[1000px] flex flex-col mt-8 xl:mt-0  ">
       <div className="w-full  flex flex-row justify-center items-center">
         <div className="w-full flex flex-col items-center justify-center">
-          <h3 className="text-4xl font-cinzelBold">{json.Rates.title}</h3>
+          <h3 className="text-4xl font-cinzelBold mb-8">{json.Rates.title}</h3>
           <div id={"slider"} className="w-full h-full mb-8 lg:mb-0 mx-4 lg:mx-0  flex flex-row justify-center">
-            <div className="w-[90%] flex flex-row justify-start items-center gap-8 overflow-x-scroll overflow-y-hidden  scroll-smooth scrollbar-hide">
+            <div className="w-[90%] flex flex-row justify-start lg:justify-center items-center gap-8 overflow-x-scroll overflow-y-hidden  scroll-smooth scrollbar-hide">
 
             {
               ratesElements.map((rate, index) =>(

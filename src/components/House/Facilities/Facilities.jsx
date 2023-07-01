@@ -22,10 +22,14 @@ function Facilities({json}) {
   console.log(opcion)
   
   return (
-    <div className="h-[2500px] lg:h-full w-full flex flex-col items-center  relative z-20 ">
-        <div className="w-full flex flex-row justify-center items-center">
-      <div className="max-w-[1920px] flex flex-col-reverse lg:flex-row justify-center w-[90%] lg:w-full  h-full gap-8 bg-gradient-to-b from-transparent from-20%  to-white to-30%   3xl:absolute 3xl:-top-48   ">
-        <div className="w-full xl:w-[35%] h-full flex flex-col  ">
+    <div className="h-[2500px] md:h-[1600px]  xl:h-full  w-full  flex flex-col items-center  relative z-20 ">
+        <div className="w-full flex flex-row justify-center  ">
+      <div className="max-w-[1920px] flex flex-col-reverse lg:flex-row  w-[90%] lg:w-full 
+       h-full gap-8 bg-gradient-to-b from-transparent from-20%  to-white to-30% 3xl:absolute 3xl:-top-48   ">
+        <div className="w-1/2 flex flex-row justify-center xl:justify-end ">
+
+        
+        <div className="w-[90%] xl:w-[50%] h-full flex flex-col  ">
             <div className="font-PlayfairDisplay text-[16px] text-justify tracking-wider">
                 {json.Facilities.texto1}
             </div>
@@ -107,7 +111,7 @@ function Facilities({json}) {
                 </ul>
             </div>
             <div>
-            <div className="w-full flex flex-row justify-center lg:justify-start">
+            <div className="w-full flex flex-row justify-center lg:justify-start ">
                 <h3 className="text-3xl font-apollo mt-8 mb-4 tracking-[8px]">{json.Facilities.checkout}</h3>
                 </div>
                 <ul>
@@ -116,13 +120,14 @@ function Facilities({json}) {
                 </ul>
             </div>
         </div> 
-        <div>
-          
         </div>
-        <div className="w-full md:w-[400px] lg:w-[500px] h-full flex flex-col justify-center lg:justify-center ">
-          <div className="w-full flex flex-row justify-center items-center">
+        
+        <div className="">
 
-            <div className="w-[90%] xl:w-full flex flex-col justify-center md:justify-end ">
+        <div className="w-full   h-full flex flex-col justify-center lg:justify-start  ">
+          <div className="w-full flex flex-row justify-center xl:justify-start items-center ">
+
+            <div className="w-[90%] xl:w-1/2 flex flex-col justify-center md:justify-end xl:justify-start">
 
           <div className=" bg-white h-[350px] w-full mb-2 shadow-2xl ">
             <Image
@@ -159,6 +164,8 @@ function Facilities({json}) {
           </button>
           </div>
         </div>
+        </div>
+
       </div>
       </div>
     </div>
