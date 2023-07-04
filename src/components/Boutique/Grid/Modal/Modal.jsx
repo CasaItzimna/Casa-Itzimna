@@ -8,8 +8,8 @@ const Modal = ({ show, onClose, children }) => {
 
   return (
     // El contenedor del modal tiene posición fija y cubre toda la pantalla
-    <div className="fixed z-10 inset-0 overflow-y-auto">
-      <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+    <div className="fixed top-[20%] z-10 inset-0 ">
+      <div className="flex items-end justify-center  pt-4 px-4 pb-20 text-center sm:block sm:p-0">
 {/*         El fondo oscuro semitransparente se crea aquí
  */}        <div
           className="fixed inset-0 transition-opacity"
@@ -20,7 +20,7 @@ const Modal = ({ show, onClose, children }) => {
         </div>
 {/*         El contenedor del contenido del modal
  */}        <div
-          className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+          className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg 2xl:max-w-4xl 2xl:h-[800px] sm:w-full"
           role="dialog"
           aria-modal="true"
           aria-labelledby="modal-headline"
