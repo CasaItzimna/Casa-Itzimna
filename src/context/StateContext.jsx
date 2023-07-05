@@ -9,6 +9,7 @@ const StateContext = createContext();
 export function StateContextProvider({ children }) {
   const [facturas, setFacturas] = useState([]);
   const [reservaciones, setReservaciones] = useState([]);
+  const [product, setProduct] = useState(null);
   const [productos, setProductos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [idioma, setIdioma] = useState('ingles')
@@ -191,12 +192,24 @@ export function StateContextProvider({ children }) {
   }
 
   //Productos
-  //TODO: getProductos
   async function getProductos() {
     const query = '*[_type == "productos"]';
     const resultado = await client.fetch(query);
     setProductos(resultado);
   }
+
+  async function getProduct(productSlug) {
+    console.log(productSlug)
+    const query  = `*[_type == "productos" && slug.current == $productSlug]`
+    const params = {productSlug}
+    const product = await client.fetch(query, params)
+    setProduct(product)
+  }
+
+
+
+
+
 
   //checkPassword
   async function checkPassword(plaintext, hash) {
@@ -278,6 +291,7 @@ export function StateContextProvider({ children }) {
         updateReservacion,
         deleteReservacion,
         getProductos,
+        getProduct,
         loginUser,
         postUser,
         setIdioma,
@@ -289,6 +303,7 @@ export function StateContextProvider({ children }) {
         facturas,
         reservaciones,
         productos,
+        product,
         isLoading,
       }}
     >

@@ -6,6 +6,7 @@ import share from "./icons/share.png";
 import Image from "next/image";
 import { useState } from "react";
 import cerrar from './icons/x.png'
+import Link from "next/link";
 
 function ProductoModal({ producto, isOpen, onRequestClose }) {
   console.log(producto);
@@ -108,12 +109,16 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
             <button className="w-[210px] tracking-[4px] mt-8 py-2 text-xl text-white bg-black">
               ADD TO CART
             </button>
+            <Link
+            href={`AR/${producto.slug.current}`}
+            >
             <button className="w-[210px] tracking-[4px] py-1 text-md mt-3 border-[1px] border-black ">
               <div className="flex flex-row  justify-center gap-2">
                 <Image src={ar} alt="ar logo" className="h-[25px] w-[25px] " />
                 <span>AR VIEW</span>
               </div>
             </button>
+            </Link>
             <button className="w-[210px] tracking-[4px] py-1 text-md mt-3 border-[1px] border-black ">
               <div className="flex flex-row  justify-center items-center gap-2">
                 <Image
