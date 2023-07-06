@@ -20,7 +20,7 @@ function Hero() {
               </h1>
               <div className='flex lg:hidden h-[100px]'/>
                 
-    
+     
             </div>
           </div>
         </div>

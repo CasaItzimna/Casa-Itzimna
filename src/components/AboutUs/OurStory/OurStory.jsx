@@ -15,12 +15,13 @@ function OurStory({json}) {
   console.log(opcion)
   
   return (
-    <div className="h-[1000px]  lg:full w-full relative z-20">
+    <div className="h-[700px]  lg:full w-full relative z-20">
+        <div className="h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
         <div className="absolute left-0 top-[10%] -z-30">
             <Image src={cabeza} alt="cabeza" className="w-[300px]" />
         </div>
       <div className="flex flex-col-reverse lg:flex-row justify-center w-full h-[1000px] lg:h-[700px] ">
-        <div className="w-full lg:w-full xl:w-[25%] h-full md:h-[25%] lg:h-[500px] flex flex-col justify-center md:justify-end lg:justify-center ">
+        <div className="w-full lg:w-full xl:w-[25%] h-full md:h-[25%] lg:h-[500px] flex flex-col justify-center md:justify-end lg:justify-start ">
             <div className="flex flex-col justify-center w-full ">
 
           <h3 className="text-[30px] lg:text-[40px] font-cinzelBold text-center lg:text-left   ">{json.OurStory.title}</h3>

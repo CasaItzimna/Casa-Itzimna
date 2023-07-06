@@ -16,12 +16,12 @@ function House() {
   return (
     <div>
 
-    <div className={`w-full flex flex-col relative  h-[calc(170vh*2)]  md:h-full lg:h-[calc(105vh*2)] xl:h-[calc(75vh*2)] `}>
+    
      
 
     <Hero json = {json}/>
     <Facilities json = {json}/>
-      </div>
+    
       <Rates json={json} />
       <Booking json={json} />
       

@@ -16,12 +16,9 @@ function AboutUs() {
   return (
     <div>
 
-<div className={`w-full flex flex-col relative  h-[calc(105vh*2)] sm:h-[calc(90vh*2)] md:h-[calc(80vh*2)] lg:h-[calc(80vh*2)] xl:h-[calc(65vh*2)] `}>
-     
-
     <Hero json = {json}/>
     <OurStory json = {json}/>
-      </div>
+      
        <History json = {json}/>
       <Why json = {json}/>
       </div>

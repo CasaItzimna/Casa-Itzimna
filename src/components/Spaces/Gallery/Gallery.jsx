@@ -7,8 +7,10 @@ function Gallery({json}) {
     console.log(active)
 
   return (
-    <div className='w-full h-[1000px] flex flex-row justify-center '>
-        <div className='flex flex-col justify-start'>
+    <div className='w-full h-[1000px] flex flex-row justify-center relative '>
+                        <div className="h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
+
+        <div className='flex flex-col justify-start z-20'>
             <div className='grid grid-cols-6 gap-4'>
                 <button className={`font-Geometrica bg-[#31302c] w-[120px] text-white text-md tracking-[2px]`}
                 onClick={()=>setActive("opcion1")}

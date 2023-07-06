@@ -23,7 +23,9 @@ function Facilities({json}) {
   
   return (
     <div className="h-[2500px] md:h-[1600px]  xl:h-full  w-full  flex flex-col items-center  relative z-20 ">
-        <div className="w-full flex flex-row justify-center  ">
+                      <div className="h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
+
+        <div className="w-full flex flex-row justify-center z-20 ">
       <div className="max-w-[1920px] flex flex-col-reverse lg:flex-row  w-[90%] lg:w-full 
        h-full gap-8 bg-gradient-to-b from-transparent from-20%  to-white to-30% 3xl:absolute 3xl:-top-48   ">
         <div className="w-1/2 flex flex-row justify-center xl:justify-end ">
