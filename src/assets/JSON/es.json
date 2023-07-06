@@ -129,5 +129,14 @@
   "bookbutton": "RESERVAR AHORA",
   "consent": "Haz que tu estadía sea realmente memorable eligiendo algunas de nuestras experiencias exclusivas. Crea recuerdos inolvidables durante tu estancia con nosotros.",
   "privacy": "política de privacidad"
+  },
+  "Experiences":{
+  "Experiences1":"NOCHE ENCANTADORA",
+  "Experiences2":"DESCUBRIENDO MARAVILLAS",
+  "Experiences3":"SERENIDAD DE SPA",
+  "Experiences4":"DELEITES CULINARIOS",
+  "Captivating": "ESPACIOS CAPTIVANTES",
+  "CaptivatingText": "Explora nuestras comodidades y adéntrate en un mundo de espacios cautivadores, donde la comodidad y el lujo se entrelazan para crear una experiencia inolvidable.",
+  "ButtonText": "ESPACIOS"
   }
   }

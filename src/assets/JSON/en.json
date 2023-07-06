@@ -129,6 +129,16 @@
   "bookbutton": "BOOK NOW",
   "consent": "By clicking this button, you consent to the processing of personal data and agree with the",
   "privacy": "privacy policy"
+},
+"Experiences":{
+  "Experiences1":"ENCHANTING EVENING",
+  "Experiences2":"UNVEILING WONDERS",
+  "Experiences3":"SPA SERENITY",
+  "Experiences4":"CULINARY DELIGHTS",
+  "Captivating": "CAPTIVATING SPACES",
+  "CaptivatingText": "Explore our amenities & step into a world of captivating spaces, where comfort and luxury intertwine to create an unforgettable experience.",
+  "ButtonText": "SPACES"
+
 }
   
   }
