@@ -138,5 +138,13 @@
   "Captivating": "ESPACIOS CAPTIVANTES",
   "CaptivatingText": "Explora nuestras comodidades y adéntrate en un mundo de espacios cautivadores, donde la comodidad y el lujo se entrelazan para crear una experiencia inolvidable.",
   "ButtonText": "ESPACIOS"
+  },
+  "Gallery":{
+    "button1":"JARDÍN",
+"button2":"HABITACIONES",
+"button3":"TERRAZA",
+"button4":"COCINA",
+"button5":"SALONES",
+"button6":"EXPERIENCIA"
   }
   }

@@ -139,6 +139,14 @@
   "CaptivatingText": "Explore our amenities & step into a world of captivating spaces, where comfort and luxury intertwine to create an unforgettable experience.",
   "ButtonText": "SPACES"
 
+},
+"Gallery":{
+  "button1":"GARDEN",
+  "button2":"ROOMS",
+  "button3":"TERRACE",
+  "button4":"KITCHEN",
+  "button5":"LOUNGES",
+  "button6":"EXPERIENCE"
 }
   
   }
