@@ -13,51 +13,67 @@ function Experiences({json}) {
     <div className='w-full h-full  relative'>
                 <div className="h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
     <div className='flex flex-row justify-center'>
-        <div className='w-[53%] h-[1000px] flex flex-col justify-start z-10'>
-            <div className='grid grid-cols-4 place-items-center gap-4'>
-                <div className='w-[250px] relative'> 
-                <Image src={experience1} alt='experience1' className='w-full h-full object-cover'/>
-                <h4 className='absolute text-white text-4xl font-apollo tracking-[8px] w-[80px] h-[20px] bottom-[50px]  -left-[20px] -rotate-90 '>{json.Experiences.Experiences1}</h4>
-                </div>
-                <div className='w-[250px] relative'> 
-                <Image src={experience2} alt='experience2' className='w-full h-full object-cover'/>
-                <h4 className='absolute text-white text-4xl font-apollo tracking-[8px] w-[80px] h-[20px] bottom-[50px]  -left-[20px] -rotate-90 '>{json.Experiences.Experiences2}</h4>
-                </div>
-                <div className='w-[250px] relative'> 
-                <Image src={experience3} alt='experience3' className='w-full h-full object-cover'/>
-                <h4 className='absolute text-white text-4xl font-apollo tracking-[8px] w-[80px] h-[20px] bottom-[50px]  -left-[20px] -rotate-90 '>{json.Experiences.Experiences3}</h4>
-                </div>
-                <div className='w-[250px] relative'> 
-                <Image src={experience4} alt='experience4' className='w-full h-full object-cover'/>
-                <h4 className='absolute text-white text-4xl font-apollo tracking-[8px] w-[80px] h-[20px] bottom-[50px]  -left-[20px] -rotate-90 '>{json.Experiences.Experiences4}</h4>
-                </div>
-            </div>
-            <div className='w-full h-full flex flex-col justify-center'>
-                <div className='flex flex-row gap-4 h-[350px]'>
-                    <div className='w-[27%]'>
-                        <h4 className='font-apollo w-[150px] text-2xl tracking-[6px] '>
-                            {json.Experiences.Captivating}
-                        </h4>
-                        <p className='font-PlayfairDisplay text-justify tracking-[2px] mt-4'>
-                            {json.Experiences.CaptivatingText}
-                        </p>
-                        <button className='font-Geometrica bg-[#b4a692] w-[150px] py-1 rounded-[7px] tracking-[4px] mt-4'>
-                            {json.Experiences.ButtonText}
-                        </button>
-                    </div>
-                    <div  className='w-[26%] h-[270px]'>
-                        <Image src={captivating} alt='captivating img' className='w-full h-full object-cover'/>
-                    </div>
-                    <div className='w-[47%] h-[270px]'>
-                        <Image src={lobby} alt='lobby img' className='w-full h-full object-cover'/>
-                    </div>
-               
-                </div>
+        <div className='w-[53%] md:w-[62%] h-full flex flex-col justify-start z-10'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 place-items-center gap-4 '>
+                <div className='w-[250px] relative '> 
+                <Image src={experience1} alt='experience1' className='w-full h-[200px] lg:h-full object-cover'/>
+                <div>
 
+                <h4 className='absolute text-center lg:text-left text-white text-2xl lg:text-4xl font-apollo tracking-[8px] lg:w-[80px] lg:h-[20px] bottom-[30%] left-[0%] lg:bottom-[50px]  lg:-left-[20px] lg:-rotate-90 '>{json.Experiences.Experiences1}</h4>
+                </div>
+                </div>
+                <div className='w-[250px] relative'> 
+                <Image src={experience2} alt='experience1' className='w-full h-[200px] lg:h-full object-cover'/>
+                <div>
+
+                <h4 className='absolute text-center lg:text-left text-white text-2xl lg:text-4xl font-apollo tracking-[8px] lg:w-[80px] lg:h-[20px] bottom-[30%] left-[0%] lg:bottom-[50px]  lg:-left-[20px] lg:-rotate-90 '>{json.Experiences.Experiences2}</h4>
+                </div>
+                </div>
+                <div className='w-[250px] relative'> 
+                <Image src={experience3} alt='experience1' className='w-full h-[200px] lg:h-full object-cover'/>
+                <div>
+
+                <h4 className='absolute text-center lg:text-left text-white text-2xl lg:text-4xl font-apollo tracking-[8px] lg:w-[80px] lg:h-[20px] bottom-[40%] left-[5%] lg:bottom-[50px]  lg:-left-[20px] lg:-rotate-90 '>{json.Experiences.Experiences3}</h4>
+                </div>
+                </div>
+                <div className='w-[250px] relative'> 
+                <Image src={experience4} alt='experience1' className='w-full h-[200px] lg:h-full object-cover'/>
+                <div>
+
+                <h4 className='absolute text-center lg:text-left text-white text-2xl lg:text-4xl font-apollo tracking-[8px] lg:w-[80px] lg:h-[20px] bottom-[30%] left-[0%] lg:bottom-[50px]  lg:-left-[20px] lg:-rotate-90 '>{json.Experiences.Experiences4}</h4>
+                </div>
+                </div>
             </div>
+           
         </div>
 
     </div>
+    <div className='w-full h-full flex flex-col lg:mt-8 justify-center'>
+                <div className='w-full  flex flex-col-reverse lg:flex-row lg:justify-center gap-4 h-full lg:h-[350px]'>
+                    <div className=' lg:w-[850px] flex flex-col items-center lg:flex-row justify-center mb-8 lg:mb-0 '>
+                        <div className='flex flex-col items-center lg:items-start my-8 lg:my-0 lg:w-[27%]'>
+                            
+                        <h4 className='font-apollo  w-[60%] lg:w-[150px] text-2xl tracking-[6px] text-center lg:text-left '>
+                            {json.Experiences.Captivating}
+                        </h4>
+                        <p className='w-[90%] md:w-[60%] lg:w-full font-PlayfairDisplay text-justify tracking-[2px] mt-4'>
+                            {json.Experiences.CaptivatingText}
+                        </p>
+                        <button className='font-Geometrica bg-[#b4a692] w-[150px] py-1 rounded-[7px] tracking-[4px] mt-4 mb-8 lg:mb-0'>
+                            {json.Experiences.ButtonText}
+                        </button>
+                   </div>
+                    <div  className='hidden lg:flex w-[26%] h-[270px] '>
+                        <Image src={captivating} alt='captivating img' className='w-full h-full object-cover'/>
+                    </div>
+                    <div className='  w-[350px] md:w-[60%] lg:w-[47%]  h-[270px]'>
+                        <Image src={lobby} alt='lobby img' className='w-full h-full object-cover '/>
+                    </div>
+                    
+                    </div>
+                </div>
+
+            </div>
     </div>
   )
 }

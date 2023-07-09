@@ -15,7 +15,7 @@ function OurStory({json}) {
   console.log(opcion)
   
   return (
-    <div className="h-[700px]  lg:full w-full relative z-20">
+    <div className="h-full lg:full w-full relative z-20">
         <div className="h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
         <div className="absolute left-0 top-[10%] -z-30">
             <Image src={cabeza} alt="cabeza" className="w-[300px]" />

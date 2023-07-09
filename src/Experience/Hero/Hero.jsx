@@ -6,7 +6,7 @@ import hero1 from './hero.png'
 
 function Hero() {
     return (
-        <div className="w-full h-[90vh] lg:h-[90vh] flex flex-col relative">
+        <div className="w-full  h-[60vh] lg:h-[90vh] flex flex-col relative">
           <Image
             src={hero1}
             alt="fondo"
