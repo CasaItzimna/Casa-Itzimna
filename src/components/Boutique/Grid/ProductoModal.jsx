@@ -20,17 +20,20 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
       overlayClassName="modal-overlay"
     >
       <div className="w-full h-full flex flex-col justify-center">
-        <div className="flex">
+        <div className="flex flex-col place-items-center lg:place-content-start lg:flex-row">
           {/* Columna izquierda */}
-          <div className="w-[500px] p-4">
-            <div className="mb-4">
+          <div className="flex flex-col lg:w-[500px] p-4">
+            <div className="flex flex-row justify-center mb-4">
               <img
                 src={urlFor(producto?.image[0].asset._ref)}
                 alt="Imagen del producto"
-                className="w-full"
+                className="w-[250px] lg:w-full"
               />
             </div>
-            <div className="flex justify-between gap-4">
+            <div className="flex flex-row w-full  justify-center lg:justify-between ">
+              <div className="w-[80%] lg:w-full flex flex-row gap-4">
+
+              
               {producto.image.slice(1, 4).map((img, index) => (
                 <div key={index} className="w-1/3">
                   <img
@@ -41,11 +44,12 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
                 </div>
               ))}
             </div>
+            </div>
           </div>
 
           {/* Columna derecha */}
-          <div className="w-1/2 p-4 flex flex-col justify-start">
-            <h2 className="text-7xl mb-4 font-apollo uppercase tracking-[10px]">
+          <div className="w-[90%] lg:w-1/2 p-4 flex flex-col justify-start">
+            <h2 className="text-xl lg:text-7xl mb-2 lg:mb-4 font-apollo uppercase tracking-[10px]">
               {producto.name}
             </h2>
             <p className="font-PlayfairDisplay">Categoria</p>
@@ -105,7 +109,7 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
             </p>
             <p className={`${opcion === "opcion2"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>{producto.details}</p>
             <p className={`${opcion === "opcion3"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>{producto.shipping}</p>
-
+            <div className="flex flex-col items-center lg:items-start">
             <button className="w-[210px] tracking-[4px] mt-8 py-2 text-xl text-white bg-black">
               ADD TO CART
             </button>
@@ -129,18 +133,19 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
                 <span>SHARE</span>
               </div>
             </button>
+            </div>
 
             {/* ... Agrega más información del producto aquí ... */}
           </div>
         </div>
       </div>
       <button
-        className="absolute -top-5 -right-5 w-[55px] h-[55px] bg-[#31302c] rounded-[7px] "
+        className="absolute top-0 right-0 lg:-top-5 lg:-right-5 w-[30px] h-[30px] lg:w-[55px] lg:h-[55px] bg-[#31302c] rounded-[7px] "
         onClick={onRequestClose}
       >
         <div className="flex flex-row justify-center">
 
-        <Image src={cerrar} alt="cerrar boton " />
+        <Image src={cerrar} alt="cerrar boton " className="w-[80%] lg:w-[30px] h-[80%] lg:h-[30px]" />
         </div>
       </button>
     </Modal>
