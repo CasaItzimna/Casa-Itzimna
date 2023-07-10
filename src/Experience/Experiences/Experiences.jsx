@@ -50,7 +50,7 @@ function Experiences({json}) {
     </div>
     <div className='w-full h-full flex flex-col lg:mt-8 justify-center'>
                 <div className='w-full  flex flex-col-reverse lg:flex-row lg:justify-center gap-4 h-full lg:h-[350px]'>
-                    <div className=' lg:w-[850px] flex flex-col items-center lg:flex-row justify-center mb-8 lg:mb-0 '>
+                    <div className=' lg:w-[60%] gap-4 flex flex-col items-center lg:flex-row justify-center mb-8 lg:mb-0 '>
                         <div className='flex flex-col items-center lg:items-start my-8 lg:my-0 lg:w-[27%]'>
                             
                         <h4 className='font-apollo  w-[60%] lg:w-[150px] text-2xl tracking-[6px] text-center lg:text-left '>

@@ -30,7 +30,7 @@ const GalleryMasonry = ({opcion}) => {
     
     <Masonry
       breakpointCols={breakpointColumnsObj}
-      className="my-masonry-grid flex"
+      className="my-masonry-grid flex mb-8"
   columnClassName="my-masonry-grid_column">
       {
         opcion == "garden"?
