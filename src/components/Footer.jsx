@@ -62,16 +62,17 @@ function Footer() {
           <div className="hidden lg:flex w-full h-[2px] bg-[#b4a692]" />
         </div>
         </div>
-        <div className="h-[250px] flex flex-col text-center lg:text-right mt-4 lg:mt-0 ">
+        
+        <div className=" flex flex-col text-center lg:text-right mt-4 lg:mt-0 ">
           <div className="flex flex-row justify-center lg:justify-end">
             <Image src={logo} alt="logo" className="w-[100px] h-[100px] " />
           </div>
-          <h3 className="font-cinzelBold text-2xl text-[#b4a692] mb-4">
+          <h3 className="font-cinzelBold text-2xl text-[#b4a692] mb-2">
             GET SOCIAL
           </h3>
-          <ul className="font-apollo text-white text-sm h-[50px] flex flex-col items-center lg:items-end ">
-            <li className="flex flex-row cursor-pointer py-2 text-lg hover:text-[#b4a692]">CASA ITZIMNÁ BOUTIQUE &nbsp; <FaFacebookF className="text-[#b4a692] mt-1"/></li>
-            <li className="flex flex-row cursor-pointer py-2 text-lg hover:text-[#b4a692]">CASAITZIMNÁ_BOUTIQUE &nbsp; <AiOutlineInstagram className="text-[#b4a692] mt-1"/></li>
+          <ul className="font-apollo text-white text-sm h-[50px] flex flex-col items-center lg:items-end mb-2 ">
+            <li className="flex flex-row cursor-pointer text-lg hover:text-[#b4a692]">CASA ITZIMNÁ BOUTIQUE &nbsp; <FaFacebookF className="text-[#b4a692] mt-1"/></li>
+            <li className="flex flex-row cursor-pointer text-lg hover:text-[#b4a692] ">CASAITZIMNÁ_BOUTIQUE &nbsp; <AiOutlineInstagram className="text-[#b4a692] mt-1"/></li>
           </ul>
           <div className="hidden lg:flex w-full h-[2px] bg-[#b4a692] mb-4" />
           <div className="uppercase hidden lg:flex flex-row w-full font-apollo text-white  ">
