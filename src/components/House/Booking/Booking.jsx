@@ -47,7 +47,7 @@ function Booking({ json }) {
 
   return (
     <div className="w-full h-full flex flex-col justify-center items-center pb-10">
-      <div className="w-full max-w-[1920px] flex flex-col-reverse lg:flex-row justify-center gap-4">
+      <div className="w-full lg:w-[1200px]  flex flex-col-reverse lg:flex-row justify-center gap-4">
         <div className="w-full lg:w-[40%] flex flex-col ">
           <div className="w-full flex flex-row justify-center">
             <div className="w-full flex flex-col items-center">

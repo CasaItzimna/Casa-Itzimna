@@ -123,7 +123,7 @@ function Facilities({json}) {
         </div> 
         </div>
         
-        <div className="w-1/2">
+        <div className=" w-full lg:w-1/2">
 
         <div className="w-full   h-full flex flex-col justify-center lg:justify-start  ">
           <div className="w-full flex flex-row justify-center xl:justify-start items-center ">
