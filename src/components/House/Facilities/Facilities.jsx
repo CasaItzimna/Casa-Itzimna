@@ -22,13 +22,12 @@ function Facilities({json}) {
   console.log(opcion)
   
   return (
-    <div className="h-[2500px] md:h-[1600px]  xl:h-full  w-full  flex flex-col items-center  relative z-20 ">
+    <div className="h-full  w-full  flex flex-col items-center  relative z-20 ">
                       <div className="h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
 
         <div className="w-full flex flex-row justify-center z-20 ">
-      <div className="max-w-[1920px] flex flex-col-reverse lg:flex-row  w-[90%] lg:w-full 
-       h-full gap-8 bg-gradient-to-b from-transparent from-20%  to-white to-30% 3xl:absolute 3xl:-top-48   ">
-        <div className="w-1/2 flex flex-row justify-center xl:justify-end ">
+      <div className=" w-[90%] lg:w-full h-full flex flex-col-reverse lg:flex-row  gap-8   ">
+        <div className="w-full lg:w-1/2 flex flex-row justify-center xl:justify-end ">
 
         
         <div className="w-[90%] xl:w-[50%] h-full flex flex-col  ">
@@ -107,7 +106,7 @@ function Facilities({json}) {
               <div className="w-full flex flex-row justify-center lg:justify-start">
                 <h3 className="text-3xl font-apollo mt-8 mb-4 tracking-[8px]">{json.Facilities.checkin}</h3>
               </div>
-                <ul>
+                <ul className="flex flex-col items-center lg:items-start">
                 <li className="flex flex-row text-[16px] tracking-[2px]  font-PlayfairDisplay"><Image src={check} alt="check" className=" w-[23px] h-[15px] mr-4 "/>{json.Facilities.checkinText1}</li>
                 <li className="flex flex-row text-[16px] tracking-[2px] mt-4 font-PlayfairDisplay"><Image src={check} alt="check" className=" w-[23px] h-[15px] mr-4 "/>{json.Facilities.checkinText2}</li>
                 </ul>
@@ -116,7 +115,7 @@ function Facilities({json}) {
             <div className="w-full flex flex-row justify-center lg:justify-start ">
                 <h3 className="text-3xl font-apollo mt-8 mb-4 tracking-[8px]">{json.Facilities.checkout}</h3>
                 </div>
-                <ul>
+                <ul className="flex flex-col items-center lg:items-start">
                     <li className="flex flex-row text-[16px] tracking-[2px] mt-4 font-PlayfairDisplay"><Image src={check} alt="check" className=" w-[23px] h-[15px] mr-4 "/>{json.Facilities.checkoutText1}</li>
                     <li className="flex flex-row text-[16px] tracking-[2px] mt-4 font-PlayfairDisplay"><Image src={check} alt="check" className=" w-[23px] h-[15px] mr-4 "/>{json.Facilities.checkoutText2}</li>
                 </ul>
@@ -124,7 +123,7 @@ function Facilities({json}) {
         </div> 
         </div>
         
-        <div className="">
+        <div className="w-1/2">
 
         <div className="w-full   h-full flex flex-col justify-center lg:justify-start  ">
           <div className="w-full flex flex-row justify-center xl:justify-start items-center ">
@@ -156,7 +155,7 @@ function Facilities({json}) {
                 </div>
           </div>
                 </div>
-          <div className="mt-4 w-full flex flex-row justify-center">
+          <div className="mt-4 w-full lg:w-1/2 flex flex-row justify-center lg:justify-start">
             <p className="w-[90%] font-PlayfairDisplay font-[700] text-lg tracking-[4px] text-justify">{json.Facilities.exploreText}</p>
           </div>
           <div className="w-full flex flex-row justify-center xl:justify-start">

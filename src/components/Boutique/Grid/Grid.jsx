@@ -9,7 +9,7 @@ function Grid({ json, productos }) {
     <div className="w-full h-full flex justify-center  relative">
         <div className="h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
       <div className="flex flex-col justify-center z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3  gap-8">
           {productos.map((producto, index) => (
             <Producto key={index} producto={producto} />
           ))}

@@ -54,7 +54,7 @@ function Booking({ json }) {
               <h3 className=" text-5xl font-cinzelBold tracking-[2px] mb-4">
                 {json.Booking.title}
               </h3>
-              <form className="w-full grid grid-cols-2 gap-4">
+              <form className="w-[90%] lg:w-full grid grid-cols-2 gap-4">
                 <input
                   type="text"
                   name="name"
