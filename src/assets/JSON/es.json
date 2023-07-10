@@ -146,5 +146,22 @@
 "button4":"COCINA",
 "button5":"SALONES",
 "button6":"EXPERIENCIA"
-  }
+  },
+  "Contact": {
+    "Touch": "CONTÁCTANOS",
+    "Input1": "NOMBRE",
+    "Input2": "APELLIDO",
+    "Input3": "CORREO ELECTRÓNICO",
+    "Input4": "NÚMERO DE TELÉFONO",
+    "Input5": "MENSAJE",
+    "consent": "Al hacer clic en este botón, das tu consentimiento para el procesamiento de datos personales y aceptas la",
+    "privacy": "política de privacidad",
+    "button": "ENVIAR MENSAJE",
+    "FindTittle": "ENCUÉNTRANOS",
+    "Business": "Horario de Atención",
+    "BusinessDays": "LUNES-VIERNES",
+    "OurContact":"NUESTRO CONTACTO",
+    "Social": "REDES SOCIALES",
+    "Address":"DIRECCIÓN"
+    }
   }

@@ -147,6 +147,25 @@
   "button4":"KITCHEN",
   "button5":"LOUNGES",
   "button6":"EXPERIENCE"
+},
+
+  "Contact":{
+    "Touch": "GET IN TOUCH",
+    "Input1": "FIRST NAME",
+    "Input2": "LAST NAME",
+    "Input3": "E-MAIL",
+    "Input4": "PHONE NUMBER",
+    "Input5": "MESSAGE",
+    "consent": "By clicking this button, you consent to the processing of personal data and agree with the",
+    "privacy": "privacy policy",
+    "button": "SEND MESSAGE",
+    "FindTittle": "FIND US",
+    "Business": "Business Hours",
+    "BusinessDays": "MONDAY-FRIDAY",
+    "OurContact":"OUR CONTACT",
+    "Social": "SOCIAL MEDIA",
+    "Address":"ADDRESS"
+  
 }
   
   }
