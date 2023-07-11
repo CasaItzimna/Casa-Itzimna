@@ -24,7 +24,7 @@ function Experience({json}) {
         </div>
         <div className="w-full lg:w-1/2 flex flex-row justify-start md:justify-center">
 
-        <div className="lg:w-1/2 xl:w-[25%] h-full flex flex-col justify-start lg:justify-center items-center lg:items-end mt-4 lg:mt-0 ">
+        <div className="w-full lg:w-1/2 xl:w-[25%] h-full flex flex-col justify-start lg:justify-center items-center lg:items-end mt-4 lg:mt-0 ">
           <div className="w-full md:w-[600px] lg:w-[500px]  flex flex-col items-center lg:items-end">
             <h3 className="text-[30px] md:text-[40px]   font-cinzelBold lg:text-white text-center lg:text-right ">
             {json.Experience.title}
