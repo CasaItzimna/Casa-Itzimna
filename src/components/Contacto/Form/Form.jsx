@@ -33,9 +33,11 @@ function Form({json}) {
   };
 
   return (
-    <div className='w-full h-full flex flex-row justify-center'>
-        <div className='flex flex-col justify-start'>
-        <h3 className=" text-5xl font-cinzelBold text-center tracking-[2px] mb-4">
+    <div className='w-full h-full flex flex-row justify-center relative mb-4 lg:mb-0'>
+                      <div className="h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
+
+        <div className='flex flex-col justify-start items-center z-10'>
+        <h3 className="w-[90%] lg:w-full text-5xl font-apollo text-center tracking-[8px] mb-4">
                 {json.Contact.Touch}
               </h3>
               <form className="w-[90%] lg:w-full grid grid-cols-2 gap-4">
@@ -72,16 +74,16 @@ function Form({json}) {
                   name="message"
                   value={message}
                   placeholder={json.Contact.Input5}
-                  className="placeholder:text-center placeholder:font-Geometrica border-[1px] py-1 col-span-2 border-[#b4a692]"
+                  className="h-full flex items-center text-center placeholder:font-Geometrica  border-[1px] py-4 col-span-2 border-[#b4a692]"
                 />
 
               </form>
-                <p className="col-span-2 font-PlayfairDisplay text-sm">
+                <p className="w-[90%] lg:w-full col-span-2 font-PlayfairDisplay text-sm mt-2">
                 {json.Contact.consent}<span className="text-[#b4a692] ml-2">{json.Contact.privacy}</span>
               </p>
               <div className='wfull flex flex-row justify-center'>
 
-              <button className=" w-[250px] bg-black text-white text-2xl tracking-[4px] font-Geometrica py-3 mt-4">{json.Contact.button}</button>
+              <button className=" w-[250px] bg-black text-white text-2xl tracking-[4px] font-Geometrica py-2 mt-4">{json.Contact.button}</button>
               </div>
               
         </div>
