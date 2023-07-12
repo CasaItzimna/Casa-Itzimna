@@ -32,10 +32,13 @@ function AR() {
   return (
     <div className="flex flex-col justify-start lg:justify-center w-full h-screen relative">
       <div className="flex flex-row justify-center">
+        <div className="h-[100px] bg-red-500">
+
+        </div>
         
         <model-viewer
         className="center-block"
-        style={{ width: "350px", height: "500px" }}
+        style={{ width: "100vh", height: "100vh" }}
           src={newAR}
           ar
           ar-modes="webxr scene-viewer quick-look"
