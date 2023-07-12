@@ -118,12 +118,12 @@ function Navbar() {
         <Image
           src={carrito}
           alt="menu movil"
-          className={!active ? "flex w-[40px] ml-4" : "hidden"}
+          className={!active ? "flex w-[40px] ml-4 cursor-pointer" : "hidden"}
         />
         <Image
           src={menu}
           alt="menu movil"
-          className={!active ? "flex w-[40px] mr-4" : "hidden"}
+          className={!active ? "flex w-[40px] mr-4 cursor-pointer" : "hidden"}
           onClick={()=>setActive(true)}
         />
       </div>
@@ -131,13 +131,18 @@ function Navbar() {
           <div className="w-full h-[180px] flex flex-row justify-center relative">
             <Image src={close} alt="close menu movil"
              onClick={()=>setActive(false)}
-              className="w-[30px] absolute top-10 right-4"/>
+              className="w-[30px] absolute top-10 right-4 cursor-pointer"/>
                
             <Image src={logomovil} alt="logo menu movil" className="w-[60%] absolute top-[80px] sm:top-[30%] md:top-[10%] "/>
             
           </div>
           <div>
           <ul className="flex flex-col text-center gap-3 text-xl font-Geometrica">
+                <li className="cursor-pointer hover:text-[#b4a692] tracking-[3px]"
+                onClick={()=>setActive(false)}
+                >
+                  <Link href="/AboutUs">{json.Navbar.option1}</Link>
+                </li>
                 <li className="cursor-pointer hover:text-[#b4a692] tracking-[3px]"
                 onClick={()=>setActive(false)}
                 >
@@ -176,11 +181,11 @@ function Navbar() {
                 <button className="tracking-[2px] bg-[#30302c] text-white font-Geometrica px-2 text-lg">BOOK NOW</button>
           </div>
           <div className="w-full flex flex-row justify-center gap-12 mt-8 mb-8">
-                <Image src={carritocafe} alt="carrito de compras" className="w-[25px] h-[25px]"/>
-                <Image src={telefonocafe} alt="carrito de compras" className="w-[21px] h-[25px]"/>
-                <Image src={emailcafe} alt="carrito de compras" className="w-[30px] h-[25px]"/>
-                <Image src={fbcafe} alt="carrito de compras" className="w-[15px] h-[25px]"/>
-                <Image src={igcafe} alt="carrito de compras" className="w-[25px] h-[25px]"/>
+                <Image src={carritocafe} alt="carrito de compras" className="w-[25px] h-[25px] cursor-pointer"/>
+                <Image src={telefonocafe} alt="carrito de compras" className="w-[21px] h-[25px] cursor-pointer"/>
+                <Image src={emailcafe} alt="carrito de compras" className="w-[30px] h-[25px] cursor-pointer"/>
+                <Image src={fbcafe} alt="carrito de compras" className="w-[15px] h-[25px] cursor-pointer"/>
+                <Image src={igcafe} alt="carrito de compras" className="w-[25px] h-[25px] cursor-pointer"/>
           </div>
       </div>
     </Fragment>
