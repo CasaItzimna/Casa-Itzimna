@@ -30,12 +30,12 @@ function Hero({ setShow, json }) {
   ];
 
   return (
-    <div className="w-full h-full flex flex-col relative">
-      <Image
-        src={hero1}
-        alt="fondo"
-        className="absolute w-full h-screen object-cover"
-      />
+    <div className="w-full  h-[85vh] md:h-[90vh] lg:h-[100vh] flex flex-col relative">
+    <Image
+      src={hero1}
+      alt="fondo"
+      className="absolute w-full h-full object-cover"
+    />
 
       <div className="flex flex-row justify-center  h-screen w-full   text-white absolute z-10">
         <div className="w-full h-full flex flex-col justify-center text-center items-center">

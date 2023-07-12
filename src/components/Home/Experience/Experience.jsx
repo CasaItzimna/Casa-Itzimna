@@ -10,8 +10,8 @@ import florizq from "../Testimonials/florizq.png";
 
 function Experience({json}) {
   return (
-    <div className="w-full h-[800px] lg:h-[400px] relative  ">
-      <div className="absolute h-full w-full flex flex-col lg:flex-row justify-center  items-center z-10">
+    <div className="w-full h-[800px] lg:h-[400px] flex flex-row justify-center relative  ">
+      <div className="absolute h-full  flex flex-col lg:flex-row justify-center  items-center z-10">
         <div className="lg:w-1/2 flex flex-row justify-center">
 
         
@@ -22,7 +22,7 @@ function Experience({json}) {
           
         </div>
         </div>
-        <div className="w-full lg:w-1/2 flex flex-row justify-start md:justify-center">
+        <div className="w-full lg:w-1/2 flex flex-row justify-start md:justify-center lg:justify-end">
 
         <div className="w-full lg:w-1/2 xl:w-[25%] h-full flex flex-col justify-start lg:justify-center items-center lg:items-end mt-4 lg:mt-0 ">
           <div className="w-full md:w-[600px] lg:w-[500px]  flex flex-col items-center lg:items-end">

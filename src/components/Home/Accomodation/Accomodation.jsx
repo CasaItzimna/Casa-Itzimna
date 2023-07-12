@@ -20,8 +20,8 @@ function Accomodation({json}) {
             <Image src={sol} alt="sol" className="w-[300px]" />
         </div>
       <div className="flex flex-col-reverse lg:flex-row justify-center w-full h-[1000px] lg:h-[600px] ">
-        <div className="w-full lg:w-1/2 h-full flex flex-col justify-center ">
-            <div className="flex flex-col justify-center w-full">
+        <div className="w-full lg:w-1/4 h-full flex flex-col justify-center items-center ">
+            <div className="flex flex-col justify-center w-full ">
 
           <h3 className="text-[30px] lg:text-[40px] font-cinzelBold text-center lg:text-left ">{json.Accomodation.title}</h3>
           <div className="w-full flex flex-col items-center">
@@ -89,7 +89,7 @@ function Accomodation({json}) {
         </div>
 
         
-        <div className=" flex flex-row justify-center ">
+        <div className=" flex flex-row justify-center  ">
         <div className="w-full px-4 sm:w-[500px] h-full flex flex-col justify-center  ">
            
 

@@ -15,7 +15,7 @@ import speakers from './icons/speakers.png'
 import tv from './icons/tv.png'
 import wifi from './icons/wifi.png'
 import check from './icons/check.png'
-
+ 
 function Facilities({json}) {
 
   const [opcion, setOpcion] = useState('opcion1')

@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <div>
 
-<div className={`w-full flex flex-col  relative ${!show?"h-[calc(110vh*2)] sm:h-[calc(90vh*2)] md:h-[calc(80vh*2)] lg:h-[calc(70vh*2)] xl:h-[calc(65vh*2)]":"h-[calc(90vh*2)]"}`}>
+
      
 
     <Hero
@@ -49,7 +49,7 @@ export default function Home() {
           />
         </div>
     <AboutUs json = {json}/>
-      </div>
+      
       <Experience json = {json}/>
       <Accomodation json = {json}/>
       <Testimonials json = {json}/>

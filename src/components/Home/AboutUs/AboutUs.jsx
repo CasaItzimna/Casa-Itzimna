@@ -11,8 +11,9 @@ import florizq from "../Testimonials/florizq.png";
 function AboutUs({ json }) {
   return (
     /* TO-DO: arreglar el iphone SE */
-    <div className="w-full h-[3000px]  sm:h-[1500px] lg:h-full flex flex-col items-center bg-gradient-to-t from-white via-white to-transparent z-30 overflow-y-hidden relative">
-        <div className="absolute w-10/12 h-1/4 md:w-3/4 md:h-1/2 lg:w-1/2 lg:h-full right-0 bottom-[20%] md:bottom-[5%] lg:-bottom-[30%]  ">
+    <div className="h-full  w-full  flex flex-col items-center  relative z-20 lg:mb-8 ">
+    <div className="h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
+<div className="absolute w-10/12 h-1/4 md:w-3/4 md:h-1/2 lg:w-1/2 lg:h-full right-0 bottom-[20%] md:bottom-[5%] lg:-bottom-[30%]  ">
           <Image src={serpiente} alt="serpiente" className="w-full h-full" />
         </div>
       <div className="w-full h-full max-w-[1920px]  overflow-y-hidden relative ">

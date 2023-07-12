@@ -33,9 +33,9 @@ function Footer() {
             <div className="cursor-pointer py-2 text-lg hover:text-[#b4a692]">
 
             <li className="flex flex-row justify-center lg:justify-start "> <Image src={location} alt="location" className="hidden lg:flex h-[20px] w-[15px] "/> &nbsp; AVENIDA PÉREZ PONCE 120, </li>
-            <li className="flex flex-row justify-center lg:justify-start"><div className="hidden lg:flex w-[15px]"></div> &nbsp; COLONIA ITZIMNÁ 07100, MÉRIDA, YUCATÁN</li>
+            <li className="flex flex-row justify-center lg:justify-start lg:text-left">COLONIA ITZIMNÁ 07100, MÉRIDA, YUCATÁN</li>
             </div>
-            <li className="flex flex-row py-2 text-lg justify-center lg:justify-start cursor-pointer hover:text-[#b4a692]"><BsTelephoneFill className="hidden lg:flex text-[#b4a692]"/> &nbsp;+52 55 2879 4515</li>
+            <li className="flex flex-row lg:py-0  text-lg justify-center lg:justify-start cursor-pointer hover:text-[#b4a692]"><BsTelephoneFill className="hidden lg:flex text-[#b4a692]"/> &nbsp;+52 55 2879 4515</li>
             <li className="flex flex-row  text-lg justify-center lg:justify-start cursor-pointer hover:text-[#b4a692] "><HiOutlineMail className="hidden lg:flex text-[#b4a692]"/> &nbsp;CONTACTO@CASAITZIMNA.COM</li>
           </ul>
           <div className="hidden lg:flex w-full h-[2px] bg-[#b4a692] mb-4" />
