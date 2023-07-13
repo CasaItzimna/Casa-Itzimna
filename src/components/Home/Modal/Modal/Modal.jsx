@@ -8,8 +8,8 @@ const Modal = ({ show, onClose, children }) => {
 
   return (
     // El contenedor del modal tiene posición fija y cubre toda la pantalla
-    <div className=" fixed lg:top-[5%] z-50 inset-0 overflow-y-auto lg:overflow-y-hidden  ">
-      <div className=" flex items-end justify-center  pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+    <div className="fixed lg:top-[5%]  inset-0 overflow-y-auto lg:overflow-y-hidden z-0 ">
+      <div className="flex items-end justify-center  pt-4 px-4 pb-20 text-center sm:block sm:p-0">
 {/*         El fondo oscuro semitransparente se crea aquí
  */}        <div
           className="fixed inset-0 transition-opacity"

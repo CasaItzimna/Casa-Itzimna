@@ -62,11 +62,13 @@ function Hero({ setShow, json }) {
           <button className="w-[50%] bg-black/40 hover:bg-black text-white mt-8 py-4 text-xl font-Geometrica tracking-[2px] lg:hidden"
           onClick={openModal}
           >{json.Home.buttonBook}</button>
+         
+
           <CalendarioModal
         
         isOpen={modalOpen}
         onRequestClose={closeModal}
-      />
+        />
 
           <div
             className="hidden lg:flex flex-row w-[80%] md:w-[60%] lg:w-[40%] h-[65px] bg-white/40 mt-14 justify-center items-center rounded-md "

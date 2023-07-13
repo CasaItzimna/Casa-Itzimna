@@ -54,6 +54,12 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
   const [show, setShow] = useState(false);
   console.log(show);
 
+  const [selectedPackage, setSelectedPackage] = useState('paquete1');
+
+  const handlePackageChange = (event) => {
+    setSelectedPackage(event.target.value);
+  };
+
   const monthNames = [
     "Ene",
     "Feb",
@@ -116,7 +122,8 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
       className="modal-overlay"
       overlayClassName="modal-overlay"
     >
-      <div className="w-screen h-[150px] flex flex-col justify-end items-center text-center">
+      <div className="w-screen h-[150px]  flex flex-col justify-end items-center text-center">
+        <Image src={close} alt="close modal" onClick={()=>setShow(false)} className="w-[25px] absolute top-8 right-8 cursor-pointer"/>
       <h1 className="  text-black text-4xl sm:text-7xl md:text-6xl lg:text-8xl xl:text-7xl font-cinzelRegular">
             <span className="text-black text-[50px] sm:text-[100px] md:text-[100px] lg:text-[150px] xl:text-[100px]">
               C
@@ -136,29 +143,30 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
       <form className="flex flex-col h-full w-full" onSubmit={handleSubmit}>
        
         <div className="grid grid-cols-2 mt-2 mb-4 px-4 pb-4 pt-2 w-full h-full border-t-[1px] border-b-[1px] border-[#b4a692] gap-4">
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center border-r-[1px] border-[#b4a692]  ">
           <p className="text-[#b4a692] font-Geometrica uppercase mb-2 tracking-[2px]">Entrada</p>
           
           <div
-            className="w-full mx-[25%] bg-[#b4a692] text-black flex flex-col text-center relative cursor-pointer"
+            className="w-[70%] bg-[#b4a692] text-black flex flex-col text-center relative cursor-pointer"
             onClick={() => setShow(true)}
           >
             
             {!inicio ? (
               <div>
-                <p className="text-6xl">{hoy.getDate()}</p>
-                <p className="mt-2">
-                  {monthNames[hoy.getMonth()]}, {hoy.getFullYear()}
+                <p className="text-3xl font-Geometrica mt-2 uppercase">{monthNames[hoy.getMonth()]}</p>
+                <p className="text-3xl  font-Geometrica">
+                {hoy.getDate()}, {hoy.getFullYear()}
                 </p>
+                <p className="text-xl font-Geometrica uppercase mb-2">dia</p>
                 <div>
                   <AiOutlineCaretDown className="absolute top-[50%] right-[10%]" />
                 </div>
               </div>
             ) : (
               <div>
-                <p className="text-6xl">{inicio.getDate()}</p>
+                <p className="text-6xl">{monthNames[inicio.getMonth()]}</p>
                 <p className="mt-2">
-                  {monthNames[inicio.getMonth()]}, {inicio.getFullYear()}
+                {inicio.getDate()} , {inicio.getFullYear()}
                 </p>
                 <div>
                   <AiOutlineCaretDown className="absolute top-[50%] right-[10%]" />
@@ -171,15 +179,16 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
           <p className="text-[#b4a692] font-Geometrica uppercase mb-2 tracking-[2px]">Salida</p>
           
           <div
-            className="w-full  bg-[#b4a692] text-black flex flex-col text-center relative cursor-pointer"
+            className="w-[70%]  bg-[#b4a692] text-black flex flex-col text-center relative cursor-pointer"
             onClick={() => setShow(true)}
           >
             {!fin ? (
               <div>
-                <p className="text-6xl">{despues.getDate()}</p>
-                <p className="mt-2">
-                  {monthNames[despues.getMonth()]}, {despues.getFullYear()}
+                <p className="text-3xl font-Geometrica mt-2 uppercase">{monthNames[despues.getMonth()]}</p>
+                <p className="text-3xl font-Geometrica">
+                {despues.getDate()} , {despues.getFullYear()}
                 </p>
+                <p className="text-xl font-Geometrica uppercase mb-2">dia</p>
 
                 <div>
                   <AiOutlineCaretDown className="absolute top-[50%] right-[10%]" />
@@ -187,9 +196,9 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
               </div>
             ) : (
               <div>
-                <p className="text-6xl">{fin.getDate()}</p>
+                <p className="text-6xl">{monthNames[fin.getMonth()]}</p>
                 <p className="mt-2">
-                  {monthNames[fin.getMonth()]}, {fin.getFullYear()}
+                {fin.getDate()} , {fin.getFullYear()}
                 </p>
                 <div>
                   <AiOutlineCaretDown className="absolute top-[50%] right-[10%]" />
@@ -210,15 +219,37 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
           />
         </div>
         <div className="flex flex-col items-center">
-              <h3 className="text-[#b4a692] font-Geometrica uppercase tracking-[2px]">GUEST NUMBER</h3>
-              <div className="flex flex-row justify-center gap-4 text-black mt-2 mb-4 ">
-                
-              <input type="radio" value="Male" name="gender" className="font-Geometrica" /> 1-2
-        <input type="radio" value="Female" name="gender" className="font-Geometrica" /> 3-5
-        <input type="radio" value="Other" name="gender" className="font-Geometrica" /> 6-8
-        
+      <h3 className="text-[#b4a692] font-Geometrica uppercase tracking-[2px]">GUEST NUMBER</h3>
+      <div className="flex flex-row justify-center gap-4 text-black mt-2 mb-4">
+      <div onClick={()=>setSelectedPackage('paquete1')} className={selectedPackage === 'paquete1'?`border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer bg-[#b4a692]`:`border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer`}>
+          <div className={selectedPackage === 'paquete1'?`border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`:`border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#b4a692] `}></div>
         </div>
+        <label
+          htmlFor="paquete1"
+          className={`font-Geometrica ${selectedPackage === 'paquete1' ? 'text-[#b4a692]' : ''}`}
+        >
+          1-2
+        </label>
+        <div onClick={()=>setSelectedPackage('paquete2')} className={selectedPackage === 'paquete2'?`border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer bg-[#b4a692]`:`border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer`}>
+          <div className={selectedPackage === 'paquete2'?`border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`:`border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#b4a692] `}></div>
         </div>
+        <label
+          htmlFor="paquete2"
+          className={`font-Geometrica ${selectedPackage === 'paquete2' ? 'text-[#b4a692]' : ''}`}
+        >
+          3-5
+        </label>
+        <div onClick={()=>setSelectedPackage('paquete3')} className={selectedPackage === 'paquete3'?`border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer bg-[#b4a692]`:`border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer`}>
+          <div className={selectedPackage === 'paquete3'?`border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`:`border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#b4a692] `}></div>
+        </div>
+        <label
+          htmlFor="paquete3"
+          className={`font-Geometrica ${selectedPackage === 'paquete3' ? 'text-[#b4a692]' : ''}`}
+        >
+          6-8
+        </label>
+      </div>
+    </div>
       <div className="flex flex-row justify-center">
       <button
           className="w-[70%] bg-black text-white text-lg uppercase font-semibold py-1 mt-4 rounded-[4px] font-Geometrica tracking-[4px] "
