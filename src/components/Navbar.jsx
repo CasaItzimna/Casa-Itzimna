@@ -141,7 +141,7 @@ function Navbar() {
                 <li className="cursor-pointer hover:text-[#b4a692] tracking-[3px]"
                 onClick={()=>setActive(false)}
                 >
-                  <Link href="/AboutUs">{json.Navbar.option1}</Link>
+                  <Link href="/">{json.Navbar.option1}</Link>
                 </li>
                 <li className="cursor-pointer hover:text-[#b4a692] tracking-[3px]"
                 onClick={()=>setActive(false)}
@@ -177,8 +177,8 @@ function Navbar() {
               </ul>
           </div>
           <div className="w-full flex flex-row justify-center gap-2 mt-4">
-                <button className="tracking-[2px] border-[1px] border-[#31302c] font-Geometrica text-[#31302c] px-4 text-lg">LOG IN</button>
-                <button className="tracking-[2px] bg-[#30302c] text-white font-Geometrica px-2 text-lg">BOOK NOW</button>
+                <button className="tracking-[2px] border-[1px] border-[#31302c] font-Geometrica text-[#31302c] px-4 text-lg"><Link href="/Login">LOG IN</Link></button>
+                <button className="tracking-[2px] bg-[#30302c] text-white font-Geometrica px-2 text-lg"><Link href="/Booking">BOOK NOW</Link></button>
           </div>
           <div className="w-full flex flex-row justify-center gap-12 mt-8 mb-8">
                 <Image src={carritocafe} alt="carrito de compras" className="w-[25px] h-[25px] cursor-pointer"/>

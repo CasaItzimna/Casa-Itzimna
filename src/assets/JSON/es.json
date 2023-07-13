@@ -19,7 +19,8 @@
     "Home": {
       "calendarioInicio": "INICIO",
       "calendarioFin": "FIN",
-      "calendarioPersonas": "PERSONAS"
+      "calendarioPersonas": "PERSONAS",
+      "buttonBook": "RESERVAR"
     },
     "About": {
       "title": "Acerca de Nosotros",

@@ -19,7 +19,8 @@
     "Home": {
       "calendarioInicio": "CHECK IN",
       "calendarioFin": "CHECK OUT",
-      "calendarioPersonas": "GUESTS"
+      "calendarioPersonas": "GUESTS",
+      "buttonBook": "BOOK NOW"
     },
     "About": {
       "title": "About Us",

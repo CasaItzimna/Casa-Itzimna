@@ -9,8 +9,23 @@ import Calendario from "@/components/Reservacion/Calendario";
 import { useState } from "react";
 import { useEffect } from "react";
 import { AppContext } from "@/context/StateContext";
+import CalendarioModal from '../Modal/CalendarioModal';
 
 function Hero({ setShow, json }) {
+
+  const [modalOpen, setModalOpen] = useState(false);
+    const [slug, setSlug] = useState('');
+  
+    const openModal = () => {
+        console.log('entre')
+      setModalOpen(true);
+      
+    };
+  
+    const closeModal = () => {
+      setModalOpen(false);
+    };
+
   const { inicio, fin } = AppContext();
   console.log(inicio);
 
@@ -37,16 +52,24 @@ function Hero({ setShow, json }) {
       className="absolute w-full h-full object-cover"
     />
 
-      <div className="flex flex-row justify-center  h-screen w-full   text-white absolute z-10">
-        <div className="w-full h-full flex flex-col justify-center text-center items-center">
+      <div className="flex flex-row justify-center  h-full w-full   text-white absolute z-10">
+        <div className="w-full h-[90%] flex flex-col justify-center text-center items-center">
           <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-8xl xl:text-9xl font-cinzelRegular">
             <span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[150px] xl:text-[200px]">C</span>asa{" "}
             <span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[150px] xl:text-[200px]">I</span>tzimná
           </h1>
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-cinzelRegular">Boutique</h2>
+          <button className="w-[50%] bg-black/40 hover:bg-black text-white mt-8 py-4 text-xl font-Geometrica tracking-[2px] lg:hidden"
+          onClick={openModal}
+          >{json.Home.buttonBook}</button>
+          <CalendarioModal
+        
+        isOpen={modalOpen}
+        onRequestClose={closeModal}
+      />
 
           <div
-            className="hidden md:flex flex-row w-[80%] md:w-[60%] lg:w-[40%] h-[65px] bg-white/40 mt-14 justify-center items-center rounded-md "
+            className="hidden lg:flex flex-row w-[80%] md:w-[60%] lg:w-[40%] h-[65px] bg-white/40 mt-14 justify-center items-center rounded-md "
             id="barraCheckIn"
           >
             <div className="w-[22%] h-[40px] bg-white rounded-md cursor-pointer  ">
