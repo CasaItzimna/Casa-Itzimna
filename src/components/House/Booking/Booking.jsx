@@ -441,7 +441,7 @@ function Booking({ json }) {
                   null
                 }
                 <button
-                  className="col-span-2 lg:col-span-1  bg-black text-white text-2xl tracking-[4px] font-Geometrica py-3 mt-2"
+                  className="col-span-2  bg-black text-white text-2xl tracking-[4px] font-Geometrica py-3 mt-2"
                   onClick={handleSubmit}
                   
                 >
