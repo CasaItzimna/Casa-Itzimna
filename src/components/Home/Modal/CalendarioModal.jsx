@@ -100,6 +100,11 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
     }
   }, [inicio, fin,total]);
 
+  useEffect(() => {
+    localStorage.setItem("paquete", "paquete1")
+  }, [])
+  
+
   const handleSubmit = () => {
     event.preventDefault();
     console.log(formData);
@@ -234,7 +239,7 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
         <div className="flex flex-col items-center">
       <h3 className="text-[#b4a692] font-Geometrica uppercase tracking-[2px]">GUEST NUMBER</h3>
       <div className="flex flex-row justify-center gap-4 text-black mt-2 mb-4">
-      <div onClick={()=>setSelectedPackage('paquete1')} className={selectedPackage === 'paquete1'?`border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer bg-[#b4a692]`:`border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer`}>
+      <div onClick={()=>{setSelectedPackage('paquete1'); localStorage.setItem("paquete", "paquete1")}} className={selectedPackage === 'paquete1'?`border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer bg-[#b4a692]`:`border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer`}>
           <div className={selectedPackage === 'paquete1'?`border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`:`border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#b4a692] `}></div>
         </div>
         <label
@@ -243,7 +248,7 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
         >
           1-2
         </label>
-        <div onClick={()=>setSelectedPackage('paquete2')} className={selectedPackage === 'paquete2'?`border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer bg-[#b4a692]`:`border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer`}>
+        <div onClick={()=>{setSelectedPackage('paquete2'); localStorage.setItem("paquete", "paquete2")}} className={selectedPackage === 'paquete2'?`border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer bg-[#b4a692]`:`border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer`}>
           <div className={selectedPackage === 'paquete2'?`border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`:`border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#b4a692] `}></div>
         </div>
         <label
@@ -252,7 +257,7 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
         >
           3-5
         </label>
-        <div onClick={()=>setSelectedPackage('paquete3')} className={selectedPackage === 'paquete3'?`border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer bg-[#b4a692]`:`border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer`}>
+        <div onClick={()=>{setSelectedPackage('paquete3'); localStorage.setItem("paquete", "paquete3")}} className={selectedPackage === 'paquete3'?`border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer bg-[#b4a692]`:`border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer`}>
           <div className={selectedPackage === 'paquete3'?`border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`:`border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#b4a692] `}></div>
         </div>
         <label
@@ -266,10 +271,12 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
       <div className="flex flex-row justify-center">
       <button
           className="w-[70%] bg-black text-white text-lg uppercase font-semibold py-1 mt-4 rounded-[4px] font-Geometrica tracking-[4px] "
-          onClick={handleSubmit}
+          onClick={() => { handleSubmit(); onRequestClose(true); setShowModalCalendar(false) }}
           type="submit"
         >
+          <Link href="/House#booking">
           BOOK NOW
+          </Link>
         </button>
       </div>
        

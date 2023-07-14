@@ -189,11 +189,11 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow }) {
       <div className="flex flex-row w-full h-full justify-center lg:px-12 ">
         <div
           className="flex flex-col lg:flex-row h-full w-full bg-white-200 rounded-md
-           bg-white border border-gray-100 py-6 ">
-          <div className="flex flex-col w-full h-full lg:border-r-2 border-black">
+           bg-white lg:border lg:border-gray-100 py-6 ">
+          <div className="flex flex-col w-full h-full lg:border-r-2 lg:border-black">
           <div className=" w-full h-full  flex flex-row  justify-end absolute -top-4">
               <RxCross2
-                className="mr-4 cursor-pointer text-2xl"
+                className="mr-4 cursor-pointer  text-2xl text-black"
                 onClick={() => setShow(false)}
               />
             </div>
@@ -219,7 +219,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow }) {
           <div className="flex flex-col w-full h-full relative">
             <div className=" w-full h-full  flex flex-row  justify-end absolute -top-4">
               <RxCross2
-                className="hidden lg:flex mr-4 cursor-pointer text-2xl"
+                className="hidden lg:flex mr-4 cursor-pointer text-2xl text-black"
                 onClick={() => setShow(false)}
               />
             </div>
