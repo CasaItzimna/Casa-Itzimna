@@ -9,8 +9,8 @@ export default{
             type: 'string'
         }
         ,{
-            name: 'phone',
-            title: 'Phone',
+            name: 'tel',
+            title: 'Tel',
             type: 'string'
         },
         {
@@ -19,18 +19,18 @@ export default{
             type: 'string',
         },
         {
-            name: 'people',
-            title: 'People',
-            type: 'number'
+            name: 'guests',
+            title: 'Guests',
+            type: 'string'
         },
         {
-            name: 'begin',
-            title: 'Begin',
+            name: 'checkin',
+            title: 'Check-in',
             type: 'date'
         },
         {
-            name: 'end',
-            title: 'End',
+            name: 'checkout',
+            title: 'Check-Out',
             type: 'date'
         },
         {
@@ -42,6 +42,16 @@ export default{
             name: 'total',
             title:'Total',
             type: 'number'
+        },
+        {
+            name: 'status',
+            title:'Status',
+            type: 'string'
+        },
+        {
+            name: 'idioma',
+            title: 'Idioma',
+            type:'string'
         },
         {
             name: 'registerDate',

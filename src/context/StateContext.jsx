@@ -131,13 +131,15 @@ export function StateContextProvider({ children }) {
     client.create({
       _type: "reservaciones",
       name: formData.name,
-      phone: formData.phone,
+      tel: formData.tel,
       email: formData.email,
-      people: parseInt(formData.people),
-      begin: formatISO(formData.begin).substring(0, 10),
-      end: formatISO(formData.end).substring(0, 10),
+      guests: formData.guests,
+      checkin: formatISO(formData.begin).substring(0, 10),
+      checkout: formatISO(formData.end).substring(0, 10),
       comments: formData.comments,
       total: formData.total,
+      status: "pendiente",
+      idioma: idioma,
       registerDate: new Date(),
     });
   }

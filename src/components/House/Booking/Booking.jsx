@@ -7,10 +7,12 @@ import Calendario from "@/components/Home/Modal/Calendario";
 import { AiOutlineCaretDown } from "react-icons/ai";
 import { AppContext } from "@/context/StateContext";
 import { differenceInDays, isValid } from "date-fns";
+import { useRouter } from 'next/router';
 
 function Booking({ json }) {
   const [name, setName] = useState("");
   const [tel, setTel] = useState("");
+  const [email, setEmail] = useState("");
   const [checkin, setCheckin] = useState("");
   const [checkout, setCheckout] = useState("");
   const [guests, setGuests] = useState("");
@@ -50,15 +52,17 @@ function Booking({ json }) {
     console.log(name);
   }; */
 
+  const router = useRouter();
+
   const { postReservacion } = AppContext();
 
   const [formData, setFormData] = useState({
     name: "",
-    phone: "",
+    tel: "",
     email: "",
-    people: "",
-    begin: "",
-    end: "",
+    guests: "",
+    checkin: "",
+    checkout: "",
     comments: "",
     total: "",
   });
@@ -68,6 +72,7 @@ function Booking({ json }) {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
+    
   };
   const options = { weekday: "long" };
 
@@ -90,7 +95,7 @@ function Booking({ json }) {
   const [show, setShow] = useState(false);
   console.log(show);
 
-  const [selectedPackage, setSelectedPackage] = useState("paquete1");
+  const [selectedPackage, setSelectedPackage] = useState("1-2");
 
   const handlePackageChange = (event) => {
     setSelectedPackage(event.target.value);
@@ -137,14 +142,19 @@ function Booking({ json }) {
   const handleSubmit = () => {
     event.preventDefault();
     console.log(formData);
+    formData.checkin = inicio
+    formData.checkout = fin
+    formData.guests = selectedPackage
+    formData.experience= experience
+    formData.plan = plan
+    console.log(formData)
     if (
       formData.name &&
-      formData.phone &&
+      formData.tel &&
       formData.email &&
-      formData.people &&
-      formData.begin &&
-      formData.end &&
-      formData.comments &&
+      formData.guests &&
+      formData.checkin &&
+      formData.checkout &&
       formData.total
     ) {
       console.log("entre en el if", formData);
@@ -152,16 +162,17 @@ function Booking({ json }) {
       postReservacion(formData);
       setFormData({
         name: "",
-        phone: "",
+        tel: "",
         email: "",
-        people: 0,
-        inicio: null,
-        fin: null,
+        guests: "1-2",
+        checkin: "",
+        checkout: "",
         comments: "",
       });
+      router.push('/Carrito');
     } else {
       setError(true);
-    }
+    } 
   };
 
   return (
@@ -180,15 +191,25 @@ function Booking({ json }) {
                 <input
                   type="text"
                   name="name"
-                  value={name}
+                  onChange={handleInputChange}
+                  value={formData.name}
                   placeholder="NAME"
                   className="placeholder:text-center placeholder:font-Geometrica w-full  col-span-2 border-[1px] py-1 border-[#b4a692]"
                 />
                 <input
                   type="tel"
                   name="tel"
-                  value={tel}
+                  onChange={handleInputChange}
+                  value={formData.tel}
                   placeholder="PHONE NUMBER"
+                  className="placeholder:text-center placeholder:font-Geometrica col-span-2 border-[1px] py-1 border-[#b4a692]"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  onChange={handleInputChange}
+                  value={formData.email}
+                  placeholder="EMAIL"
                   className="placeholder:text-center placeholder:font-Geometrica col-span-2 border-[1px] py-1 border-[#b4a692]"
                 />
                 <div className="flex flex-col h-full w-full col-span-2">
@@ -297,27 +318,27 @@ function Booking({ json }) {
                       <div className="flex flex-row justify-center gap-4 text-black mt-2 mb-4">
                         <div
                           onClick={() => {
-                            setSelectedPackage("paquete1");
-                            localStorage.setItem("paquete", "paquete1");
+                            setSelectedPackage("1-2");
+                            localStorage.setItem("paquete", "1-2");
                           }}
                           className={
-                            selectedPackage === "paquete1"
+                            selectedPackage === "1-2"
                               ? `border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer bg-[#b4a692]`
                               : `border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer`
                           }
                         >
                           <div
                             className={
-                              selectedPackage === "paquete1"
+                              selectedPackage === "1-2"
                                 ? `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`
                                 : `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#b4a692] `
                             }
                           ></div>
                         </div>
                         <label
-                          htmlFor="paquete1"
+                          htmlFor="1-2"
                           className={`font-Geometrica ${
-                            selectedPackage === "paquete1"
+                            selectedPackage === "1-2"
                               ? "text-[#b4a692]"
                               : ""
                           }`}
@@ -326,27 +347,27 @@ function Booking({ json }) {
                         </label>
                         <div
                           onClick={() => {
-                            setSelectedPackage("paquete2");
-                            localStorage.setItem("paquete", "paquete2");
+                            setSelectedPackage("3-5");
+                            localStorage.setItem("paquete", "3-5");
                           }}
                           className={
-                            selectedPackage === "paquete2"
+                            selectedPackage === "3-5"
                               ? `border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer bg-[#b4a692]`
                               : `border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer`
                           }
                         >
                           <div
                             className={
-                              selectedPackage === "paquete2"
+                              selectedPackage === "3-5"
                                 ? `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`
                                 : `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#b4a692] `
                             }
                           ></div>
                         </div>
                         <label
-                          htmlFor="paquete2"
+                          htmlFor="3-5"
                           className={`font-Geometrica ${
-                            selectedPackage === "paquete2"
+                            selectedPackage === "3-5"
                               ? "text-[#b4a692]"
                               : ""
                           }`}
@@ -355,27 +376,27 @@ function Booking({ json }) {
                         </label>
                         <div
                           onClick={() => {
-                            setSelectedPackage("paquete3");
-                            localStorage.setItem("paquete", "paquete3");
+                            setSelectedPackage("6-8");
+                            localStorage.setItem("paquete", "6-8");
                           }}
                           className={
-                            selectedPackage === "paquete3"
+                            selectedPackage === "6-8"
                               ? `border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer bg-[#b4a692]`
                               : `border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer`
                           }
                         >
                           <div
                             className={
-                              selectedPackage === "paquete3"
+                              selectedPackage === "6-8"
                                 ? `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`
                                 : `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#b4a692] `
                             }
                           ></div>
                         </div>
                         <label
-                          htmlFor="paquete3"
+                          htmlFor="6-8"
                           className={`font-Geometrica ${
-                            selectedPackage === "paquete3"
+                            selectedPackage === "6-8"
                               ? "text-[#b4a692]"
                               : ""
                           }`}
@@ -410,8 +431,21 @@ function Booking({ json }) {
                 </select>
                 <p className="font-Geometrica">TOTAL:</p>
                 <p className="font-Geometrica text-right">${total}mxn</p>
+                {
+                  error?
+                  <div className="col-span-2 w-full flex flex-row justify-center text-red-500 font-Geometrica uppercase">
 
-                <button className="col-span-2 lg:col-span-1  bg-black text-white text-2xl tracking-[4px] font-Geometrica py-3 mt-2">
+                    <p>Completa todos los campos</p>
+                  </div>
+                  :
+                  null
+                }
+                <button
+                  className="col-span-2 lg:col-span-1  bg-black text-white text-2xl tracking-[4px] font-Geometrica py-3 mt-2"
+                  onClick={handleSubmit}
+                  
+                >
+                  {/*  <Link href="/Carrito"> BOOK NOW </Link> */}
                   BOOK NOW
                 </button>
 
