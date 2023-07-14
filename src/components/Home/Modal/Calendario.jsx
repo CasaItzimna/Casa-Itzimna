@@ -42,17 +42,17 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow }) {
     if (!inicio) {
       // Si no hay día de inicio seleccionado, establecerlo
       setInicio(day);
-      localStorage.setItem('inicio', day)
+      localStorage.setItem("inicio", day);
     } else if (!fin && day > inicio) {
       // Si hay día de inicio pero no hay día de fin y el día seleccionado es mayor que el día de inicio, establecerlo como día de fin
       setFin(day);
-      localStorage.setItem('fin', day)
+      localStorage.setItem("fin", day);
     } else {
       // Si hay día de inicio, día de fin y se hace clic en un día diferente, reiniciar la selección
       setInicio(null);
-      localStorage.setItem('inicio', null)
+      localStorage.setItem("inicio", null);
       setFin(null);
-      localStorage.setItem('fin', null)
+      localStorage.setItem("fin", null);
     }
   }
 
@@ -185,22 +185,24 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow }) {
   }
 
   return (
-    <div className="flex flex-col w-full h-full  mt-4 relative z-10 ">
-      <div className="flex flex-row  justify-center lg:px-12 mt-4">
+    <div className="flex flex-col w-full h-full items-center  mt-4 relative z-10 ">
+      <div className="flex flex-row w-full h-full justify-center lg:px-12 ">
         <div
-          className="flex flex-row 
-h-full w-[1000px] bg-white-200 rounded-md bg-clip-padding backdrop-filter
- backdrop-blur-md bg-opacity-30 border border-gray-100
- py-6 mt-8
-"
-        >
-          <div className="flex flex-col w-[500px] h-full border-r-2 border-black">
+          className="flex flex-col lg:flex-row h-full w-full bg-white-200 rounded-md
+           bg-white border border-gray-100 py-6 ">
+          <div className="flex flex-col w-full h-full lg:border-r-2 border-black">
+          <div className=" w-full h-full  flex flex-row  justify-end absolute -top-4">
+              <RxCross2
+                className="mr-4 cursor-pointer text-2xl"
+                onClick={() => setShow(false)}
+              />
+            </div>
             <div className="flex flex-row justify-center mb-4">
-              <div className="text-xl font-bold">
+              <div className="text-xl font-bold text-black">
                 {currentMonthName} {currentYear}
               </div>
             </div>
-            <div className="grid grid-cols-7 text-center font-bold">
+            <div className="grid grid-cols-7 text-center text-black font-bold">
               <div>D</div>
               <div>L</div>
               <div>M</div>
@@ -214,20 +216,20 @@ h-full w-[1000px] bg-white-200 rounded-md bg-clip-padding backdrop-filter
               {days}
             </div>
           </div>
-          <div className="flex flex-col w-[500px] h-full relative">
+          <div className="flex flex-col w-full h-full relative">
             <div className=" w-full h-full  flex flex-row  justify-end absolute -top-4">
               <RxCross2
-                className="mr-4 cursor-pointer text-2xl"
+                className="hidden lg:flex mr-4 cursor-pointer text-2xl"
                 onClick={() => setShow(false)}
               />
             </div>
             <div className="flex flex-row justify-center mb-4">
               <div> </div>
-              <div className="text-xl font-bold">
+              <div className="text-xl font-bold text-black">
                 {nextMonthName} {nextMonthYear}
               </div>
             </div>
-            <div className="grid grid-cols-7 text-center font-bold">
+            <div className="grid grid-cols-7 text-center font-bold text-black">
               <div>D</div>
               <div>L</div>
               <div>M</div>
@@ -236,7 +238,7 @@ h-full w-[1000px] bg-white-200 rounded-md bg-clip-padding backdrop-filter
               <div>V</div>
               <div>S</div>
             </div>
-            <div className="grid grid-cols-7 text-center">
+            <div className="grid grid-cols-7 text-center text-black">
               {nextMonthEmptyCells}
               {nextMonthDays}
             </div>

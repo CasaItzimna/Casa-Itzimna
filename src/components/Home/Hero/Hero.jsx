@@ -13,6 +13,8 @@ import CalendarioModal from '../Modal/CalendarioModal';
 
 function Hero({ setShow, json }) {
 
+  const {setShowModalCalendar} = AppContext()
+
   const [modalOpen, setModalOpen] = useState(false);
     const [slug, setSlug] = useState('');
   
@@ -60,7 +62,7 @@ function Hero({ setShow, json }) {
           </h1>
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-cinzelRegular">Boutique</h2>
           <button className="w-[50%] bg-black/40 hover:bg-black text-white mt-8 py-4 text-xl font-Geometrica tracking-[2px] lg:hidden"
-          onClick={openModal}
+          onClick={() => { openModal(); setShowModalCalendar(true); }}
           >{json.Home.buttonBook}</button>
          
 

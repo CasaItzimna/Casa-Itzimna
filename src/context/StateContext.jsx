@@ -15,6 +15,7 @@ export function StateContextProvider({ children }) {
   const [idioma, setIdioma] = useState('ingles')
   const [inicio, setInicio] = useState(null);
   const [fin, setFin] = useState(null);
+  const [showModalCalendar, setShowModalCalendar] = useState(false)
 
   //Facturas
 
@@ -297,6 +298,8 @@ export function StateContextProvider({ children }) {
         setIdioma,
         setInicio,
         setFin,
+        setShowModalCalendar,
+        showModalCalendar,
         inicio,
         fin,
         idioma,

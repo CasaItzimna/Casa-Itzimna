@@ -14,15 +14,34 @@ import emailcafe from '../assets/Icons/emailcafe.png'
 import fbcafe from '../assets/Icons/fbcafe.png'
 import igcafe from '../assets/Icons/igcafe.png'
 import telefonocafe from '../assets/Icons/telefonocafe.png'
+import { useEffect } from "react";
+import CalendarioModal from './Home/Modal/CalendarioModal';
 
 
 function Navbar() {
+
+  const {setShowModalCalendar, showModalCalendar} = AppContext()
+
+  const [modalOpen, setModalOpen] = useState(false);
+    const [slug, setSlug] = useState('');
+  
+    const openModal = () => {
+        console.log('entre')
+      setModalOpen(true);
+      
+    };
+  
+    const closeModal = () => {
+      setModalOpen(false);
+    };
+    
   const [active, setActive] = useState(false);
   console.log(active)
 
   const { idioma, setIdioma } = AppContext();
   console.log(idioma);
   const json = idioma === "espanol" ? esJson : enJson;
+
 
   return (
     <Fragment>
@@ -114,7 +133,7 @@ function Navbar() {
         </div>
       </div>
 
-      <div className="lg:hidden flex flex-row justify-between absolute top-10  z-20 w-full text-white ">
+      <div className={showModalCalendar === false ?"lg:hidden flex flex-row justify-between absolute top-10  z-20 w-full text-white ": "hidden"}>
         <Image
           src={carrito}
           alt="menu movil"
@@ -178,7 +197,12 @@ function Navbar() {
           </div>
           <div className="w-full flex flex-row justify-center gap-2 mt-4">
                 <button className="tracking-[2px] border-[1px] border-[#31302c] font-Geometrica text-[#31302c] px-4 text-lg"><Link href="/Login">LOG IN</Link></button>
-                <button className="tracking-[2px] bg-[#30302c] text-white font-Geometrica px-2 text-lg"><Link href="/Booking">BOOK NOW</Link></button>
+                <button className="tracking-[2px] bg-[#30302c] text-white font-Geometrica px-2 text-lg" onClick={() => { openModal(); setShowModalCalendar(true); }}> BOOK NOW</button>
+                <CalendarioModal
+        
+        isOpen={modalOpen}
+        onRequestClose={closeModal}
+        />
           </div>
           <div className="w-full flex flex-row justify-center gap-12 mt-8 mb-8">
                 <Image src={carritocafe} alt="carrito de compras" className="w-[25px] h-[25px] cursor-pointer"/>

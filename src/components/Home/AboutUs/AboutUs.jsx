@@ -7,12 +7,17 @@ import serpiente from "../../../assets/serpiente.png";
 import Image from "next/image";
 import Link from "next/link";
 import florizq from "../Testimonials/florizq.png";
+import { AppContext } from "@/context/StateContext";
 
 function AboutUs({ json }) {
+
+  const {showModalCalendar} = AppContext()
+  console.log(showModalCalendar)
+
   return (
     /* TO-DO: arreglar el iphone SE */
-    <div className="h-full  w-full  flex flex-col items-center  relative z-20 lg:mb-8 ">
-    <div className="h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
+    <div className="h-full  w-full  flex flex-col items-center  relative z-0 lg:mb-8 ">
+    <div className={showModalCalendar === false?"h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-10 overflow-y-hidden absolute -top-48 ":"hidden"}></div>
 <div className="absolute w-10/12 h-1/4 md:w-3/4 md:h-1/2 lg:w-1/2 lg:h-full right-0 bottom-[20%] md:bottom-[5%] lg:-bottom-[30%]  ">
           <Image src={serpiente} alt="serpiente" className="w-full h-full" />
         </div>

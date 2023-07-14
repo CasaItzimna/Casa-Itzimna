@@ -18,7 +18,7 @@ import telefonocafe from '../../../assets/Icons/telefonocafe.png'
 
 function ProductoModal({ producto, isOpen, onRequestClose }) {
  
-  const { postReservacion } = AppContext();
+  const { postReservacion, setShowModalCalendar } = AppContext();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -37,16 +37,21 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
+  const options = { weekday: 'long' };
 
   const today = new Date();
-
+  const todayName = today?.toLocaleDateString('en-US', options);
   const [inicio, setInicio] = useState(null);
-  const [fin, setFin] = useState(null);
+  const inicioName = inicio?.toLocaleDateString('en-US', options);
 
+  const [fin, setFin] = useState(null);
+  const finName = fin?.toLocaleDateString('en-US', options);
   const [hoy, setHoy] = useState(new Date(today));
+  const hoyName = hoy?.toLocaleDateString('en-US', options);
   const dateAfterThreeDays = new Date(today);
   dateAfterThreeDays.setDate(today.getDate() + 3);
   const [despues, setDespues] = useState(dateAfterThreeDays);
+  const despuesName = despues?.toLocaleDateString('en-US', options);
 
   const [total, setTotal] = useState(differenceInDays(despues, hoy) * precio);
 
@@ -122,21 +127,27 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
       className="modal-overlay"
       overlayClassName="modal-overlay"
     >
-      <div className="w-screen h-[150px]  flex flex-col justify-end items-center text-center">
-        <Image src={close} alt="close modal" onClick={()=>setShow(false)} className="w-[25px] absolute top-8 right-8 cursor-pointer"/>
-      <h1 className="  text-black text-4xl sm:text-7xl md:text-6xl lg:text-8xl xl:text-7xl font-cinzelRegular">
-            <span className="text-black text-[50px] sm:text-[100px] md:text-[100px] lg:text-[150px] xl:text-[100px]">
+      <div className="w-full h-full flex flex-col justify-center z-50">
+        
+      <div className="w-screen md:w-full  h-[150px]  flex flex-col justify-end items-center text-center">
+        <Image src={close} alt="close modal" onClick={()=>{onRequestClose(true); setShowModalCalendar(false) }} className="w-[25px] absolute top-8 right-4 cursor-pointer "/>
+        <div className="w-full flex flex-row justify-center">
+          <div>
+      <h1 className="  text-black text-4xl lg:text-8xl xl:text-7xl font-cinzelRegular">
+            <span className="text-black text-[50px]  lg:text-[150px] xl:text-[100px]">
               C
             </span>
             asa{" "}
-            <span className="text-black text-[50px] sm:text-[100px] md:text-[100px] lg:text-[150px] xl:text-[100px]">
+            <span className="text-black text-[50px]  lg:text-[150px] xl:text-[100px]">
               I
             </span>
             tzimná
           </h1>
-          <h2 className="text-black text-3xl sm:text-5xl md:text-5xl font-cinzelRegular mb-2">
+          <h2 className="text-black text-3xl  font-cinzelRegular mb-2">
             Boutique
           </h2>
+          </div>
+        </div>
       </div>
       <div className="flex flex-col h-full w-full">
       
@@ -157,19 +168,20 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
                 <p className="text-3xl  font-Geometrica">
                 {hoy.getDate()}, {hoy.getFullYear()}
                 </p>
-                <p className="text-xl font-Geometrica uppercase mb-2">dia</p>
+                <p className="text-xl font-Geometrica uppercase mb-2">{hoyName}</p>
                 <div>
-                  <AiOutlineCaretDown className="absolute top-[50%] right-[10%]" />
+                  <AiOutlineCaretDown className="absolute top-[15%] right-[10%]" />
                 </div>
               </div>
             ) : (
               <div>
-                <p className="text-6xl">{monthNames[inicio.getMonth()]}</p>
-                <p className="mt-2">
-                {inicio.getDate()} , {inicio.getFullYear()}
+                <p className="text-3xl font-Geometrica mt-2 uppercase">{monthNames[inicio.getMonth()]}</p>
+                <p className="text-3xl  font-Geometrica">
+                {inicio.getDate()}, {inicio.getFullYear()}
                 </p>
+                <p className="text-xl font-Geometrica uppercase mb-2">{inicioName}</p>
                 <div>
-                  <AiOutlineCaretDown className="absolute top-[50%] right-[10%]" />
+                  <AiOutlineCaretDown className="absolute top-[15%] right-[10%]" />
                 </div>
               </div>
             )}
@@ -186,22 +198,23 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
               <div>
                 <p className="text-3xl font-Geometrica mt-2 uppercase">{monthNames[despues.getMonth()]}</p>
                 <p className="text-3xl font-Geometrica">
-                {despues.getDate()} , {despues.getFullYear()}
+                {despues.getDate()}, {despues.getFullYear()}
                 </p>
-                <p className="text-xl font-Geometrica uppercase mb-2">dia</p>
+                <p className="text-xl font-Geometrica uppercase mb-2">{despuesName}</p>
 
                 <div>
-                  <AiOutlineCaretDown className="absolute top-[50%] right-[10%]" />
+                  <AiOutlineCaretDown className="absolute top-[15%] right-[10%]" />
                 </div>
               </div>
             ) : (
               <div>
-                <p className="text-6xl">{monthNames[fin.getMonth()]}</p>
-                <p className="mt-2">
-                {fin.getDate()} , {fin.getFullYear()}
+                <p className="text-3xl font-Geometrica mt-2 uppercase">{monthNames[fin.getMonth()]}</p>
+                <p className="text-3xl  font-Geometrica">
+                {fin.getDate()}, {fin.getFullYear()}
                 </p>
+                <p className="text-xl font-Geometrica uppercase mb-2">{finName}</p>
                 <div>
-                  <AiOutlineCaretDown className="absolute top-[50%] right-[10%]" />
+                  <AiOutlineCaretDown className="absolute top-[15%] right-[10%]" />
                 </div>
               </div>
             )}
@@ -261,13 +274,15 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
       </div>
        
         <div className="w-full flex flex-row justify-around mt-8 mb-8">
-                <Image src={carritocafe} alt="carrito de compras" className="w-[25px] h-[25px] cursor-pointer"/>
+                <Image src={carritocafe} alt="carrito de compras" className="w-[25px] h-[25px] cursor-pointer "/>
                 <Image src={telefonocafe} alt="carrito de compras" className="w-[21px] h-[25px] cursor-pointer"/>
                 <Image src={emailcafe} alt="carrito de compras" className="w-[30px] h-[25px] cursor-pointer"/>
                 <Image src={fbcafe} alt="carrito de compras" className="w-[15px] h-[25px] cursor-pointer"/>
                 <Image src={igcafe} alt="carrito de compras" className="w-[25px] h-[25px] cursor-pointer"/>
           </div>
       </form>
+    </div>
+    
     </div>
     </Modal>
   );

@@ -11,7 +11,7 @@ import florizq from "../Testimonials/florizq.png";
 function Experience({json}) {
   return (
     <div className="w-full h-[800px] lg:h-[400px] flex flex-row justify-center relative  ">
-      <div className="absolute h-full  flex flex-col lg:flex-row justify-center  items-center z-10">
+      <div className="absolute h-full  flex flex-col lg:flex-row justify-center  items-center z-0">
         <div className="lg:w-1/2 flex flex-row justify-center">
 
         
