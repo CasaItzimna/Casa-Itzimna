@@ -134,11 +134,13 @@ function Navbar() {
       </div>
 
       <div className={showModalCalendar === false ?"lg:hidden flex flex-row justify-between absolute top-10  z-20 w-full text-white ": "hidden"}>
+      <Link href="/Carrito">
         <Image
           src={carrito}
           alt="menu movil"
           className={!active ? "flex w-[40px] ml-4 cursor-pointer" : "hidden"}
         />
+        </Link>
         <Image
           src={menu}
           alt="menu movil"
