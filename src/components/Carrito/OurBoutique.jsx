@@ -22,7 +22,7 @@ function OurBoutique() {
     
   return (
     <div className="w-full flex flex-row justify-start md:justify-center bg-[#b4a692]">
-          <div className=" w-full lg:w-full xl:w-[45%] relative flex flex-row justify-center items-center group">
+          <div className=" w-full lg:w-[80%] xl:w-[60%] relative flex flex-row justify-center items-center group">
 
           <MdChevronLeft
           onClick={slideLeft}
@@ -30,7 +30,7 @@ function OurBoutique() {
           className="bg-white left-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block"
           />
 
-      <div id={"slider"} className="w-full h-full mb-4 lg:mb-0 mx-4 lg:mx-0  flex flex-row justify-start items-center gap-8 overflow-x-scroll overflow-y-hidden  scroll-smooth scrollbar-hide">
+      <div id={"slider"} className="w-full h-full mb-4 lg:mb-8 mx-4 lg:mx-0  flex flex-row justify-start items-center gap-8 overflow-x-scroll overflow-y-hidden  scroll-smooth scrollbar-hide">
       {productos?.map((producto, index) => (
        
             <img key={index} src={urlFor(producto?.image[0].asset._ref)} alt='products' className='w-[100px] h-[100px] bg-white'/>
