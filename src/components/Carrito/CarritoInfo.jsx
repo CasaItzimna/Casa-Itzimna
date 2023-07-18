@@ -5,26 +5,53 @@ import experience from './img/experiencefoto.png'
 import producto from './img/productoCarrito.png'
 import masaje from './img/masaje.png'
 import Image from 'next/image'
+import { AppContext } from '@/context/StateContext'
 
 function CarritoInfo() {
 
-  const [carrito, setCarrito] = useState(null)
-  const [plan, setPlan] = useState(carrito?.plan);
+  //const [carrito, setCarrito] = useState(null)
+  const [plan, setPlan] = useState(null);
+  console.log(plan)
 
-  useEffect(() => {
+/*   useEffect(() => {
     if((localStorage.getItem("carrito"))){
       setCarrito(JSON.parse(localStorage.getItem("carrito")))
+      setPlan(JSON.parse(localStorage.getItem("carrito")).plan)
+    }
+  }, [])
+  console.log(carrito) */
+
+  
+  
+
+  const {carrito, setCarrito} = AppContext()
+  console.log(carrito)
+  const [checkin, setCheckin] = useState("")
+  const [checkout, setCheckout] = useState("")
+  
+
+  useEffect(() => {
+    if(carrito){
+      setPlan(carrito?.plan)
+      setCheckin(carrito?.checkin)
+      setCheckout(carrito?.checkout)
+    }
+    else{
+      setCarrito(JSON.parse(localStorage.getItem("carrito")))
+      setPlan(JSON.parse(localStorage.getItem("carrito")).plan)
+      setCheckin(carrito?.checkin)
+      setCheckout(carrito?.checkout)
     }
   }, [])
   console.log(carrito)
+  
   
 
   const [guest, setGuest] = useState("")
   return (
     <div className='w-full h-full flex flex-row justify-center bg-[#b4a692]'>
-        {/*linea de tiempo*/}
-
-        {/*Cart*/}
+      {
+        carrito?
         <div className='bg-white w-[95%] lg:w-full h-full grid grid-cols-1 lg:grid-cols-2 mb-8 '>
                 {/*Cart*/}
                 <div className='w-full flex flex-col items-center '>
@@ -47,12 +74,12 @@ function CarritoInfo() {
                   <option value="option2" className='font-apollo'>Option 2</option>
                   <option value="option3" className='font-apollo'>Option 3</option>
                 </select>
-                <div className='w-[50%] flex flex-row gap-1 mt-4'>
-                  <div className='w-1/2 border-[1px] h-[30px] border-[#b4a692] text-center'>{carrito?.checkin.substring(0,10)}</div>
-                  <div className='w-1/2 border-[1px] h-[30px] border-[#b4a692] text-center'>{carrito?.checkout.substring(0,10)}</div>
-                </div>
+                 <div className='w-[50%] h-full flex flex-row gap-1 mt-4 font-apollo '>
+                  <div className='w-1/2 border-[1px] h-[30px] border-[#b4a692] text-center text-sm'>{carrito?.checkin.substring(0,10)}</div>
+                  <div className='w-1/2 border-[1px] h-[30px] border-[#b4a692] text-center text-sm'>{carrito?.checkout.substring(0,10)}</div>
+                </div> 
                 {/* <p className='text-right font-apollo mt-4'>PRICE FOR TOTAL NOCHES - NOMBRE PAQUETE</p> */}
-                <p className='text-right font-apollo text-3xl mt-8 mb-4'>$TOTAL USD</p>
+                <p className='text-right font-apollo text-3xl mt-8 mb-4'>${carrito?.total} MXN</p>
                 </div>
                 
                 {
@@ -71,9 +98,9 @@ function CarritoInfo() {
                   <Image src={bote} alt='basura' className=' mb-4' />
                   </div>
                   </div>
-                  <div className='flex flex-col justify-center w-full'>
+                  <div className='flex flex-col justify-center'>
                   <Image src={experience} alt=''className='rounded-[2px]' />
-                  <p className='text-right font-apollo text-3xl mt-4'>$300 USD</p>
+                  <p className='text-right font-apollo text-3xl mt-4'>$300 MXN</p>
                   </div>
                   </div>
                 </div>
@@ -94,13 +121,14 @@ function CarritoInfo() {
 
                   <h3 className=' font-apollo uppercase tracking-[2px]'>Descripcion producto</h3>
                   <p className='text-[#31302c] mt-2  font-apollo w-full'>*SET SHIPING AT PAYMENT</p>
-                  <div className='flex flex-row mt-2 justify-start'>
+                  <div className='flex flex-row mt-2 justify-start '>
 
                   <Image src={bote} alt='basura' className=' mb-4' />
                   </div>
                   </div>
-                  <div className='flex flex-col justify-center items-center w-full'>
+                  <div className='flex flex-col justify-center items-end w-full'>
                   <Image src={producto} alt='producto foto' className='w-[50%]' />
+                  <p className='text-right font-apollo text-3xl mt-4'>$1464 MXN</p>
                   </div>
                   </div>
                 </div>
@@ -112,20 +140,22 @@ function CarritoInfo() {
                 <div className='w-full flex flex-col items-center'>
                 <div className='w-full h-full flex flex-row  justify-between border-b-[2px] border-[#b4a692] '>
                   <div className='h-full flex flex-col justify-between'>
-                    <p className='font-apollo text-[#282828]'>SUBTOTAL</p>
-                    <p className='font-apollo text-[#282828]'>TAX</p>
+                    <p className='font-apollo text-[#31302c]/40'>SUBTOTAL</p>
+                    <p className='font-apollo text-[#31302c]/40'>TAX</p>
                   </div>
-                  <div className='h-full flex flex-col text-right'>
-                    <div>
-                    <p className='font-apollo text-[#282828]'>$1,288 MXN</p>
-                    <p className='font-apollo text-[#282828]'>$300 MXN</p>
-                    <p className='font-apollo text-[#282828]'>$1,464 MXN</p>
+                  <div className='h-[150px] flex flex-col justify-between text-right '>
+                    <div className='h-full flex flex-col'>
+                    <p className='font-apollo text-[#31302c]/40'>$1,288 MXN</p>
+                    <p className='font-apollo text-[#31302c]/40'>$300 MXN</p>
+                    <p className='font-apollo text-[#31302c]/40'>$1,464 MXN</p>
                     </div>
-                    <br />
-                    <p className='font-apollo text-[#282828] mb-4'>$120 MXN</p>
+                    <div className='h-full flex flex-col justify-end'>
+
+                    <p className='font-apollo text-[#282828] '>$120 MXN</p>
+                    </div>
                   </div>
                 </div>
-                <div className='w-full flex flex-row justify-between'>
+                <div className='w-full flex flex-row justify-between mt-4'>
                   <p className='font-apollo text-[#282828]'>TOTAL</p>
                   <p className='font-apollo text-[#282828]'>$3,172 MXN</p>
                 </div>
@@ -153,6 +183,16 @@ function CarritoInfo() {
             </div>
             </div>
         </div>
+        :
+        <div>
+          <p>No hay nada en el carrito</p>
+          </div>
+
+      }
+        {/*linea de tiempo*/}
+
+        {/*Cart*/}
+        
 
     </div>
   )

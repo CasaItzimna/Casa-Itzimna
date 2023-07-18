@@ -18,6 +18,8 @@ function Booking({ json }) {
   const [guests, setGuests] = useState("");
   const [plan, setPlan] = useState("");
   const [experiences, setExperiences] = useState([]);
+  
+  const {carrito,setCarrito} = AppContext()
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -165,7 +167,8 @@ function Booking({ json }) {
     ) {
       console.log("entre en el if", formData);
 
-      postReservacion(formData);
+      setCarrito(formData)
+      //postReservacion(formData);
       var formDataJSON = JSON.stringify(formData);
       localStorage.setItem("carrito", formDataJSON);
       setFormData({
