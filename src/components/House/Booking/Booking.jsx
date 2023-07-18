@@ -416,47 +416,61 @@ function Booking({ json }) {
                   name="plan"
                   value={plan}
                   onChange={(e) => setPlan(e.target.value)}
-                  className="border-[1px] py-1 border-[#b4a692] font-Geometrica text-gray-500"
+                  className="border-[1px] py-1 border-[#b4a692] font-Geometrica text-gray-500 col-span-2"
                 >
                   <option value="">CHOOSE A PLAN</option>
-                  <option value="option1">Option 1</option>
-                  <option value="option2">Option 2</option>
-                  <option value="option3">Option 3</option>
+                  <option value="select">SELECT</option>
+                  <option value="luxury">LUXURY</option>
+                  <option value="premier">PREMIER</option>
                 </select>
-                <div className="flex flex-row gap-4">
+                <div className="flex flex-row  gap-4 col-span-2">
                   <div className="flex flex-col ">
 
-                  <h3>Experiences:</h3>
+                  <h3 className="uppercase ">Experiences:</h3>
                   <div className="flex flex-row gap-4 mb-4">
                     
                   
       <label className="block">
         <input
           type="checkbox"
-          value="beginner"
-          checked={experiences.includes("beginner")}
+          value="cena"
+          checked={experiences.includes("cena")}
           onChange={handleExperienceChange}
+          className=""
         />
-        Beginner
+        CENA ROMANTICA
       </label>
       <label className="block">
         <input
           type="checkbox"
-          value="intermediate"
-          checked={experiences.includes("intermediate")}
+          value="recorrido"
+          checked={experiences.includes("recorrido")}
           onChange={handleExperienceChange}
+          className="uppercase"
         />
-        Intermediate
+        RECORRIDO
       </label>
       <label className="block">
         <input
           type="checkbox"
-          value="advanced"
-          checked={experiences.includes("advanced")}
+          value="spa"
+          checked={experiences.includes("spa")}
           onChange={handleExperienceChange}
+          className="uppercase"
         />
-        Advanced
+        SPA
       </label>
+      <label className="block">
+        <input
+          type="checkbox"
+          value="comidas"
+          checked={experiences.includes("comidas")}
+          onChange={handleExperienceChange}
+          className="uppercase"
+        />
+        COMIDAS
+      </label>
+     
       
       </div>
       </div>

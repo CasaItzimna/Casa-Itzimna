@@ -48,7 +48,6 @@ function Navbar() {
       <div className="w-full h-full hidden lg:flex flex-col items-center">
         <div className="h-[150px] max-w-[1920px] w-full absolute top-20 z-20 flex flex-row justify-around  font-apollo">
           <div className="flex flex-col">
-            z
             <Link href="/">
               <Image
                 src={logo}

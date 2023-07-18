@@ -33,7 +33,7 @@ function OurBoutique() {
       <div id={"slider"} className="w-full h-full mb-4 lg:mb-8 mx-4 lg:mx-0  flex flex-row justify-start items-center gap-8 overflow-x-scroll overflow-y-hidden  scroll-smooth scrollbar-hide">
       {productos?.map((producto, index) => (
        
-            <img key={index} src={urlFor(producto?.image[0].asset._ref)} alt='products' className='w-[100px] h-[100px] bg-white'/>
+            <img key={index} src={urlFor(producto?.image[0].asset._ref)} alt='products' className='w-[100px] h-[100px] bg-white cursor-pointer'/>
         
         ))}
 
