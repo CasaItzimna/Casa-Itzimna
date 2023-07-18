@@ -7,7 +7,7 @@ import Calendario from "@/components/Home/Modal/Calendario";
 import { AiOutlineCaretDown } from "react-icons/ai";
 import { AppContext } from "@/context/StateContext";
 import { differenceInDays, isValid } from "date-fns";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 
 function Booking({ json }) {
   const [name, setName] = useState("");
@@ -17,7 +17,7 @@ function Booking({ json }) {
   const [checkout, setCheckout] = useState("");
   const [guests, setGuests] = useState("");
   const [plan, setPlan] = useState("");
-  const [experience, setExperience] = useState("");
+  const [experiences, setExperiences] = useState([]);
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -43,8 +43,15 @@ function Booking({ json }) {
     setPlan(event.target.value);
   };
 
-  const handleExperienceChange = (event) => {
-    setExperience(event.target.value);
+  const handleExperienceChange = (e) => {
+    const selectedValue = e.target.value;
+    if (e.target.checked) {
+      // Agregar experiencia seleccionada
+      setExperiences([...experiences, selectedValue]);
+    } else {
+      // Eliminar experiencia deseleccionada
+      setExperiences(experiences.filter((experience) => experience !== selectedValue));
+    }
   };
 
   /* const handleSubmit = (event) => {
@@ -72,7 +79,6 @@ function Booking({ json }) {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
-    
   };
   const options = { weekday: "long" };
 
@@ -142,12 +148,12 @@ function Booking({ json }) {
   const handleSubmit = () => {
     event.preventDefault();
     console.log(formData);
-    formData.checkin = inicio
-    formData.checkout = fin
-    formData.guests = selectedPackage
-    formData.experience= experience
-    formData.plan = plan
-    console.log(formData)
+    formData.checkin = inicio;
+    formData.checkout = fin;
+    formData.guests = selectedPackage;
+    formData.experience = experiences;
+    formData.plan = plan;
+    console.log(formData);
     if (
       formData.name &&
       formData.tel &&
@@ -160,6 +166,8 @@ function Booking({ json }) {
       console.log("entre en el if", formData);
 
       postReservacion(formData);
+      var formDataJSON = JSON.stringify(formData);
+      localStorage.setItem("carrito", formDataJSON);
       setFormData({
         name: "",
         tel: "",
@@ -169,10 +177,10 @@ function Booking({ json }) {
         checkout: "",
         comments: "",
       });
-      router.push('/Carrito');
+      router.push("/Carrito");
     } else {
       setError(true);
-    } 
+    }
   };
 
   return (
@@ -338,9 +346,7 @@ function Booking({ json }) {
                         <label
                           htmlFor="1-2"
                           className={`font-Geometrica ${
-                            selectedPackage === "1-2"
-                              ? "text-[#b4a692]"
-                              : ""
+                            selectedPackage === "1-2" ? "text-[#b4a692]" : ""
                           }`}
                         >
                           1-2
@@ -367,9 +373,7 @@ function Booking({ json }) {
                         <label
                           htmlFor="3-5"
                           className={`font-Geometrica ${
-                            selectedPackage === "3-5"
-                              ? "text-[#b4a692]"
-                              : ""
+                            selectedPackage === "3-5" ? "text-[#b4a692]" : ""
                           }`}
                         >
                           3-5
@@ -396,9 +400,7 @@ function Booking({ json }) {
                         <label
                           htmlFor="6-8"
                           className={`font-Geometrica ${
-                            selectedPackage === "6-8"
-                              ? "text-[#b4a692]"
-                              : ""
+                            selectedPackage === "6-8" ? "text-[#b4a692]" : ""
                           }`}
                         >
                           6-8
@@ -418,32 +420,54 @@ function Booking({ json }) {
                   <option value="option2">Option 2</option>
                   <option value="option3">Option 3</option>
                 </select>
-                <select
-                  name="experience"
-                  value={experience}
-                  onChange={(e) => setExperience(e.target.value)}
-                  className="border-[1px] py-1 border-[#b4a692] font-Geometrica text-gray-500"
-                >
-                  <option value="">ADD AN EXPERIENCE</option>
-                  <option value="beginner">Beginner</option>
-                  <option value="intermediate">Intermediate</option>
-                  <option value="advanced">Advanced</option>
-                </select>
+                <div className="flex flex-row gap-4">
+                  <div className="flex flex-col ">
+
+                  <h3>Experiences:</h3>
+                  <div className="flex flex-row gap-4 mb-4">
+                    
+                  
+      <label className="block">
+        <input
+          type="checkbox"
+          value="beginner"
+          checked={experiences.includes("beginner")}
+          onChange={handleExperienceChange}
+        />
+        Beginner
+      </label>
+      <label className="block">
+        <input
+          type="checkbox"
+          value="intermediate"
+          checked={experiences.includes("intermediate")}
+          onChange={handleExperienceChange}
+        />
+        Intermediate
+      </label>
+      <label className="block">
+        <input
+          type="checkbox"
+          value="advanced"
+          checked={experiences.includes("advanced")}
+          onChange={handleExperienceChange}
+        />
+        Advanced
+      </label>
+      
+      </div>
+      </div>
+    </div>
                 <p className="font-Geometrica">TOTAL:</p>
                 <p className="font-Geometrica text-right">${total}mxn</p>
-                {
-                  error?
+                {error ? (
                   <div className="col-span-2 w-full flex flex-row justify-center text-red-500 font-Geometrica uppercase">
-
                     <p>Completa todos los campos</p>
                   </div>
-                  :
-                  null
-                }
+                ) : null}
                 <button
                   className="col-span-2  bg-black text-white text-2xl tracking-[4px] font-Geometrica py-3 mt-2"
                   onClick={handleSubmit}
-                  
                 >
                   {/*  <Link href="/Carrito"> BOOK NOW </Link> */}
                   BOOK NOW

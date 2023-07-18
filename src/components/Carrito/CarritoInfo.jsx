@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import bote from './icons/bote.png'
 import experience from './img/experiencefoto.png'
@@ -7,6 +7,18 @@ import masaje from './img/masaje.png'
 import Image from 'next/image'
 
 function CarritoInfo() {
+
+  const [carrito, setCarrito] = useState(null)
+  const [plan, setPlan] = useState(carrito?.plan);
+
+  useEffect(() => {
+    if((localStorage.getItem("carrito"))){
+      setCarrito(JSON.parse(localStorage.getItem("carrito")))
+    }
+  }, [])
+  console.log(carrito)
+  
+
   const [guest, setGuest] = useState("")
   return (
     <div className='w-full h-full flex flex-row justify-center bg-[#b4a692]'>
@@ -21,12 +33,12 @@ function CarritoInfo() {
                   
                 <h1 className='font-apollo text-3xl tracking-[4px] mt-8 mb-4'>CART</h1>
                 <h2 className='font-apollo text-xl tracking-[4px] mb-2 text-[#b4a692]'>BOOKING DATA</h2>
-                <p className='font-apollo mb-1'>Nombre</p>
-                <p className='font-apollo mb-1'>Tel</p>
-                <p className='font-apollo mb-1'>Correo</p>
+                <p className='font-apollo mb-1'>{carrito?.name}</p>
+                <p className='font-apollo mb-1'>{carrito?.tel}</p>
+                <p className='font-apollo mb-1'>{carrito?.email}</p>
                 <select
                   name="guest"
-                  value={guest}
+                  value={plan}
                   onChange={(e) => setPlan(e.target.value)}
                   className="border-[1px] w-[50%] py-1 border-[#b4a692] font-apollo text-gray-500"
                 >
@@ -36,15 +48,18 @@ function CarritoInfo() {
                   <option value="option3" className='font-apollo'>Option 3</option>
                 </select>
                 <div className='w-[50%] flex flex-row gap-1 mt-4'>
-                  <div className='w-1/2 border-[1px] h-[30px] border-[#b4a692] text-center'>check-in</div>
-                  <div className='w-1/2 border-[1px] h-[30px] border-[#b4a692] text-center'>check-out </div>
+                  <div className='w-1/2 border-[1px] h-[30px] border-[#b4a692] text-center'>{carrito?.checkin.substring(0,10)}</div>
+                  <div className='w-1/2 border-[1px] h-[30px] border-[#b4a692] text-center'>{carrito?.checkout.substring(0,10)}</div>
                 </div>
-                <p className='text-right font-apollo mt-4'>PRICE FOR TOTAL NOCHES - NOMBRE PAQUETE</p>
-                <p className='text-right font-apollo text-3xl mb-4'>$TOTAL USD</p>
+                {/* <p className='text-right font-apollo mt-4'>PRICE FOR TOTAL NOCHES - NOMBRE PAQUETE</p> */}
+                <p className='text-right font-apollo text-3xl mt-8 mb-4'>$TOTAL USD</p>
                 </div>
                 
-                <div className='w-[90%] flex flex-col mb-2 border-b-[2px] border-b-[#b4a692]'>
-                  <h2 className='font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#b4a692]'>nombre experiencia</h2>
+                {
+                  carrito?.experience.length> 0? 
+                  carrito.experience.map((exp, index) =>(
+                  <div key={index} className='w-[90%] flex flex-col mb-2 border-b-[2px] border-b-[#b4a692]'>
+                  <h2 className='font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#b4a692]'>{exp}</h2>
                   <div className='w-full flex flex-row justify-between'>
 
                   <div className='flex flex-col'>
@@ -62,6 +77,15 @@ function CarritoInfo() {
                   </div>
                   </div>
                 </div>
+                  ))
+                  :
+                  <div className='w-[90%] flex flex-col items-center mb-2 border-b-[2px] border-b-[#b4a692]'>
+                  <h2 className='font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#b4a692]'>NO HAY EXPERIENCIAS AGREGADAS</h2>
+                  
+                </div>
+                }
+
+                
                 <div className='w-[90%] flex flex-col mb-2 '>
                   <h2 className='font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#b4a692]'>nombre producto</h2>
                   <div className='w-full flex flex-row justify-between'>
