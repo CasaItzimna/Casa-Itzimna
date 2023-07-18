@@ -75,7 +75,7 @@ function Booking({ json }) {
     comments: "",
     total: "",
   });
-  const [precio, setPrecio] = useState(200);
+  const [precio, setPrecio] = useState(18000);
   const [error, setError] = useState(false);
 
   const handleInputChange = (event) => {
@@ -123,13 +123,29 @@ function Booking({ json }) {
     "Nov",
     "Dic",
   ];
-
+  const [auxGuest, setAuxGuest] = useState(0)
   useEffect(() => {
     if (inicio && fin) {
       console.log("aqui anndo", inicio, fin);
-      setTotal(differenceInDays(fin, inicio) * precio);
+      
+      if(selectedPackage =="6-8" ){
+        setAuxGuest(4000)
+        console.log('entre')
+      }
+      if(selectedPackage =="3-5" ){
+        setAuxGuest(0)
+      }
+      if(selectedPackage =="1-2" ){
+        setAuxGuest(0)
+        console.log("entre")
+      }
+      console.log(auxGuest)
+      console.log((differenceInDays(fin, inicio) * precio))
+      console.log((differenceInDays(fin, inicio) * precio)+auxGuest)
+      setTotal((differenceInDays(fin, inicio) * precio)+auxGuest);
+
     }
-  }, [inicio, fin]);
+  }, [inicio, fin, selectedPackage]);
 
   useEffect(() => {
     if (inicio) {
