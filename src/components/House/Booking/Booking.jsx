@@ -16,10 +16,13 @@ function Booking({ json }) {
   const [checkin, setCheckin] = useState("");
   const [checkout, setCheckout] = useState("");
   const [guests, setGuests] = useState("");
+  const [guestsPrecio, setGuestsPrecio] = useState(0);
   const [plan, setPlan] = useState("");
+  const [planPrecio, setPlanPrecio] = useState(18000);
   const [experiences, setExperiences] = useState([]);
+  const [experiencesPrecio, setExperiencesPrecio] = useState(0);
   
-  const {carrito,setCarrito} = AppContext()
+  const {reservacion, carrito, setCarrito, setReservacion} = AppContext()
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -88,7 +91,6 @@ function Booking({ json }) {
   const todayName = today?.toLocaleDateString("en-US", options);
   const [inicio, setInicio] = useState(null);
   const inicioName = inicio?.toLocaleDateString("en-US", options);
-
   const [fin, setFin] = useState(null);
   const finName = fin?.toLocaleDateString("en-US", options);
   const [hoy, setHoy] = useState(new Date(today));
@@ -97,16 +99,25 @@ function Booking({ json }) {
   dateAfterThreeDays.setDate(today.getDate() + 3);
   const [despues, setDespues] = useState(dateAfterThreeDays);
   const despuesName = despues?.toLocaleDateString("en-US", options);
+  const [totalDiasHoy, setTotalDiasHoy] = useState(differenceInDays(despues, hoy) );
+  console.log(totalDiasHoy)
+  console.log(hoy, despues)
+  console.log(fin,inicio)
+  const [totalDiasInicio, setTotalDiasInicio] = useState(differenceInDays(fin, inicio) );
+  console.log(totalDiasInicio)
+/*   const [total, setTotal] = useState(differenceInDays(despues, hoy) * precio);
+ */
+const [total, setTotal] = useState(0)
 
-  const [total, setTotal] = useState(differenceInDays(despues, hoy) * precio);
+totalDiasHoy*planPrecio+guestsPrecio
 
   const [show, setShow] = useState(false);
   console.log(show);
 
-  const [selectedPackage, setSelectedPackage] = useState("1-2");
+  const [selectedGuests, setSelectedGuests] = useState("1-2");
 
   const handlePackageChange = (event) => {
-    setSelectedPackage(event.target.value);
+    setSelectedGuests(event.target.value);
   };
 
   const monthNames = [
@@ -123,29 +134,12 @@ function Booking({ json }) {
     "Nov",
     "Dic",
   ];
-  const [auxGuest, setAuxGuest] = useState(0)
+
   useEffect(() => {
     if (inicio && fin) {
-      console.log("aqui anndo", inicio, fin);
-      
-      if(selectedPackage =="6-8" ){
-        setAuxGuest(4000)
-        console.log('entre')
-      }
-      if(selectedPackage =="3-5" ){
-        setAuxGuest(0)
-      }
-      if(selectedPackage =="1-2" ){
-        setAuxGuest(0)
-        console.log("entre")
-      }
-      console.log(auxGuest)
-      console.log((differenceInDays(fin, inicio) * precio))
-      console.log((differenceInDays(fin, inicio) * precio)+auxGuest)
-      setTotal((differenceInDays(fin, inicio) * precio)+auxGuest);
-
+      setTotalDiasInicio(differenceInDays(fin, inicio))
     }
-  }, [inicio, fin, selectedPackage]);
+  }, [inicio, fin]);
 
   useEffect(() => {
     if (inicio) {
@@ -160,17 +154,81 @@ function Booking({ json }) {
   }, [inicio, fin, total]);
 
   useEffect(() => {
-    localStorage.setItem("paquete", "paquete1");
+    localStorage.setItem("guests", "1-2");
   }, []);
+
+  useEffect(() => {
+    if(plan == "select"){
+      setPlanPrecio(18000)
+    }
+    if(plan == "luxury"){
+      setPlanPrecio(22000)
+    }
+    if(plan == "premier"){
+      setPlanPrecio(25000)
+    }
+    if(selectedGuests == "6-8"){
+      setGuestsPrecio(2000)
+    }
+    if(selectedGuests == "1-2"){
+      setGuestsPrecio(0)
+    }
+    if(selectedGuests == "3-5"){
+      setGuestsPrecio(0)
+    }
+    let totalExperiencesPrecio = 0;
+    if(experiences.length>0){
+      console.log(experiences)
+      for(var i = 0; i<= experiences.length; i++){
+        if(experiences[i] == "cena"){
+         totalExperiencesPrecio += 3000
+        }
+        if(experiences[i] == "recorrido"){
+          totalExperiencesPrecio += 2500
+         }
+         if(experiences[i] == "spa"){
+          totalExperiencesPrecio += 5000
+         }
+         if(experiences[i] == "comidas"){
+          totalExperiencesPrecio += 6000
+         }
+        
+      }
+      setExperiencesPrecio(totalExperiencesPrecio);
+  }
+  else{
+    setExperiencesPrecio(0);
+  }
+    
+  }, [experiences, selectedGuests, plan])
+  
+  
+  useEffect(() => {
+   if(inicio && fin){
+    setTotal((totalDiasInicio*planPrecio)+guestsPrecio+experiencesPrecio)
+    console.log(totalDiasInicio)
+    console.log((totalDiasInicio*planPrecio)+guestsPrecio+experiencesPrecio)
+   }
+   else{
+      setTotal((totalDiasHoy*planPrecio)+guestsPrecio+experiencesPrecio)
+      console.log(totalDiasHoy)
+      console.log((totalDiasHoy*planPrecio)+guestsPrecio+experiencesPrecio)
+   }
+  }, [experiencesPrecio,guestsPrecio, planPrecio,totalDiasHoy, totalDiasInicio,fin, inicio])
+  
+
+  
+  
 
   const handleSubmit = () => {
     event.preventDefault();
     console.log(formData);
     formData.checkin = inicio;
     formData.checkout = fin;
-    formData.guests = selectedPackage;
+    formData.guests = selectedGuests;
     formData.experience = experiences;
     formData.plan = plan;
+    formData.total = total
     console.log(formData);
     if (
       formData.name &&
@@ -182,11 +240,11 @@ function Booking({ json }) {
       formData.total
     ) {
       console.log("entre en el if", formData);
-
-      setCarrito(formData)
+      setReservacion(formData)
+      setCarrito(carrito.push(reservacion))
       //postReservacion(formData);
       var formDataJSON = JSON.stringify(formData);
-      localStorage.setItem("carrito", formDataJSON);
+      localStorage.setItem("reservacion", formDataJSON);
       setFormData({
         name: "",
         tel: "",
@@ -345,18 +403,18 @@ function Booking({ json }) {
                       <div className="flex flex-row justify-center gap-4 text-black mt-2 mb-4">
                         <div
                           onClick={() => {
-                            setSelectedPackage("1-2");
-                            localStorage.setItem("paquete", "1-2");
+                            setSelectedGuests("1-2");
+                            localStorage.setItem("guests", "1-2");
                           }}
                           className={
-                            selectedPackage === "1-2"
+                            selectedGuests === "1-2"
                               ? `border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer bg-[#b4a692]`
                               : `border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer`
                           }
                         >
                           <div
                             className={
-                              selectedPackage === "1-2"
+                              selectedGuests === "1-2"
                                 ? `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`
                                 : `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#b4a692] `
                             }
@@ -365,25 +423,25 @@ function Booking({ json }) {
                         <label
                           htmlFor="1-2"
                           className={`font-Geometrica ${
-                            selectedPackage === "1-2" ? "text-[#b4a692]" : ""
+                            selectedGuests === "1-2" ? "text-[#b4a692]" : ""
                           }`}
                         >
                           1-2
                         </label>
                         <div
                           onClick={() => {
-                            setSelectedPackage("3-5");
-                            localStorage.setItem("paquete", "3-5");
+                            setSelectedGuests("3-5");
+                            localStorage.setItem("guests", "3-5");
                           }}
                           className={
-                            selectedPackage === "3-5"
+                            selectedGuests === "3-5"
                               ? `border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer bg-[#b4a692]`
                               : `border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer`
                           }
                         >
                           <div
                             className={
-                              selectedPackage === "3-5"
+                              selectedGuests === "3-5"
                                 ? `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`
                                 : `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#b4a692] `
                             }
@@ -392,25 +450,25 @@ function Booking({ json }) {
                         <label
                           htmlFor="3-5"
                           className={`font-Geometrica ${
-                            selectedPackage === "3-5" ? "text-[#b4a692]" : ""
+                            selectedGuests === "3-5" ? "text-[#b4a692]" : ""
                           }`}
                         >
                           3-5
                         </label>
                         <div
                           onClick={() => {
-                            setSelectedPackage("6-8");
-                            localStorage.setItem("paquete", "6-8");
+                            setSelectedGuests("6-8");
+                            localStorage.setItem("guests", "6-8");
                           }}
                           className={
-                            selectedPackage === "6-8"
+                            selectedGuests === "6-8"
                               ? `border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer bg-[#b4a692]`
                               : `border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer`
                           }
                         >
                           <div
                             className={
-                              selectedPackage === "6-8"
+                              selectedGuests === "6-8"
                                 ? `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`
                                 : `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#b4a692] `
                             }
@@ -419,7 +477,7 @@ function Booking({ json }) {
                         <label
                           htmlFor="6-8"
                           className={`font-Geometrica ${
-                            selectedPackage === "6-8" ? "text-[#b4a692]" : ""
+                            selectedGuests === "6-8" ? "text-[#b4a692]" : ""
                           }`}
                         >
                           6-8

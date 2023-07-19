@@ -16,7 +16,8 @@ export function StateContextProvider({ children }) {
   const [inicio, setInicio] = useState(null);
   const [fin, setFin] = useState(null);
   const [showModalCalendar, setShowModalCalendar] = useState(false)
-  const [carrito, setCarrito] = useState(null)
+  const [carrito, setCarrito] = useState([])
+  const [reservacion, setReservacion] = useState(null)
 
   //Facturas
 
@@ -303,6 +304,8 @@ export function StateContextProvider({ children }) {
         setFin,
         setShowModalCalendar,
         setCarrito,
+        setReservacion,
+        reservacion,
         carrito,
         showModalCalendar,
         inicio,
