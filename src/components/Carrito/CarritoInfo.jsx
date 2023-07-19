@@ -11,25 +11,32 @@ import Link from "next/link";
 function CarritoInfo() {
   //const [carrito, setCarrito] = useState(null)
   const [plan, setPlan] = useState(null);
-  console.log(plan);
-  const { carrito, setCarrito } = AppContext();
-  console.log(carrito);
+  const { carrito, setCarrito, reservacion, setReservacion } = AppContext();
   const [checkin, setCheckin] = useState("");
   const [checkout, setCheckout] = useState("");
+  const [reservacionEnCarrito, setReservacionEnCarrito] = useState([]);
 
   useEffect(() => {
-    if (carrito) {
-      setPlan(carrito?.plan);
-      setCheckin(carrito?.checkin.substring(0, 10));
-      setCheckout(carrito?.checkout.substring(0, 10));
+    if (carrito.length > 0) {
+      setReservacionEnCarrito(
+        carrito.filter((item) => item.tipo === "reservacion")
+      );
     } else {
-      setCarrito(JSON.parse(localStorage.getItem("carrito")));
-      setPlan(JSON.parse(localStorage.getItem("carrito"))?.plan);
-      setCheckin(carrito?.checkin.substring(0, 10));
-      setCheckout(carrito?.checkout.substring(0, 10));
+      const localStorageReservacion = localStorage.getItem("reservacion");
+      if (localStorageReservacion) {
+        const reservacionObj = JSON.parse(localStorageReservacion);
+        setCarrito([...carrito, reservacionObj]);
+      }
     }
   }, [carrito]);
-  console.log(carrito);
+
+  useEffect(() => {
+    if (reservacionEnCarrito.length > 0) {
+      setPlan(reservacionEnCarrito[0]?.plan);
+      setCheckin(reservacionEnCarrito[0]?.checkin.substring(0, 10));
+      setCheckout(reservacionEnCarrito[0]?.checkout.substring(0, 10));
+    }
+  }, [reservacionEnCarrito]);
 
   const [guest, setGuest] = useState("");
 
@@ -61,13 +68,13 @@ function CarritoInfo() {
                 BOOKING DATA
               </h2>
               <p className="font-apollo mb-1 uppercase tracking-[2px]">
-                {carrito?.name}
+                {reservacionEnCarrito[0]?.name}
               </p>
               <p className="font-apollo mb-1 uppercase tracking-[2px]">
-                {carrito?.tel}
+                {reservacionEnCarrito[0]?.tel}
               </p>
               <p className="font-apollo mb-1 uppercase tracking-[2px]">
-                {carrito?.email}
+                {reservacionEnCarrito[0]?.email}
               </p>
               <select
                 name="guest"
@@ -98,12 +105,12 @@ function CarritoInfo() {
               </div>
               {/* <p className='text-right font-apollo mt-4'>PRICE FOR TOTAL NOCHES - NOMBRE PAQUETE</p> */}
               <p className="text-right font-apollo text-3xl mt-8 mb-4 tracking-[2px] ">
-                ${carrito?.total} MXN
+                ${reservacionEnCarrito[0]?.total} MXN
               </p>
             </div>
 
-            {carrito?.experience.length > 0 ? (
-              carrito.experience.map((exp, index) => (
+            {reservacionEnCarrito[0]?.experience.length > 0 ? (
+              reservacionEnCarrito[0]?.experience.map((exp, index) => (
                 <div
                   key={index}
                   className="w-[90%] flex flex-col mt-4 mb-2 border-b-[2px] border-b-[#b4a692]"
