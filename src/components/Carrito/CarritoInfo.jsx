@@ -7,6 +7,8 @@ import masaje from "./img/masaje.png";
 import Image from "next/image";
 import { AppContext } from "@/context/StateContext";
 import Link from "next/link";
+import { client, urlFor } from "../../lib/client";
+
 
 function CarritoInfo() {
   //const [carrito, setCarrito] = useState(null)
@@ -15,26 +17,41 @@ function CarritoInfo() {
   const [checkin, setCheckin] = useState("");
   const [checkout, setCheckout] = useState("");
   const [reservacionEnCarrito, setReservacionEnCarrito] = useState([]);
+  const [productosEnCarrito, setProductosEnCarrito] = useState([])
 
   useEffect(() => {
     if (carrito.length > 0) {
       setReservacionEnCarrito(
         carrito.filter((item) => item.tipo === "reservacion")
       );
+      // Filtrar los elementos que son arreglos
+const arreglosEnCarrito = carrito.filter(item => Array.isArray(item));
+
+// Filtrar los objetos que tienen el tipo 'producto' dentro de los arreglos
+const productosEnCarrito = arreglosEnCarrito.flatMap(arr => arr.filter(item => item.tipo === 'producto'));
+setProductosEnCarrito(productosEnCarrito)
+
     } else {
       const localStorageReservacion = localStorage.getItem("reservacion");
+      const localStorageProductos = localStorage.getItem("producto");
       if (localStorageReservacion) {
         const reservacionObj = JSON.parse(localStorageReservacion);
         setCarrito([...carrito, reservacionObj]);
       }
+      if (localStorageProductos) {
+        const productoObj = JSON.parse(localStorageProductos);
+        setCarrito([...carrito, productoObj]);
+      }
     }
   }, [carrito]);
+  console.log(carrito)
+  console.log(productosEnCarrito)
 
   useEffect(() => {
     if (reservacionEnCarrito.length > 0) {
       setPlan(reservacionEnCarrito[0]?.plan);
-      setCheckin(reservacionEnCarrito[0]?.checkin.substring(0, 10));
-      setCheckout(reservacionEnCarrito[0]?.checkout.substring(0, 10));
+      setCheckin(reservacionEnCarrito[0]?.checkin.toISOString().substring(0, 10));
+      setCheckout(reservacionEnCarrito[0]?.checkout.toISOString().substring(0, 10));
     }
   }, [reservacionEnCarrito]);
 
@@ -54,6 +71,9 @@ function CarritoInfo() {
     JSON.stringify(localStorage.setItem("carrito", updatedCart));
   };
 
+  console.log(productosEnCarrito)
+  console.log(carrito)
+
   return (
     <div className="w-full h-full flex flex-row justify-center bg-[#b4a692]">
       {carrito ? (
@@ -67,7 +87,10 @@ function CarritoInfo() {
               <h2 className="font-apollo text-xl tracking-[4px] mb-2 text-[#b4a692]">
                 BOOKING DATA
               </h2>
-              <p className="font-apollo mb-1 uppercase tracking-[2px]">
+              {
+                reservacionEnCarrito.length>0?(
+                  <div className="w-full flex flex-col ">
+                <p className="font-apollo mb-1 uppercase tracking-[2px]">
                 {reservacionEnCarrito[0]?.name}
               </p>
               <p className="font-apollo mb-1 uppercase tracking-[2px]">
@@ -103,10 +126,21 @@ function CarritoInfo() {
                   {checkout}
                 </div>
               </div>
-              {/* <p className='text-right font-apollo mt-4'>PRICE FOR TOTAL NOCHES - NOMBRE PAQUETE</p> */}
+               <p className='text-right font-apollo mt-4'>PRICE FOR TOTAL NOCHES - NOMBRE PAQUETE</p> 
               <p className="text-right font-apollo text-3xl mt-8 mb-4 tracking-[2px] ">
                 ${reservacionEnCarrito[0]?.total} MXN
               </p>
+              </div>
+                )
+              :(
+              <div className="w-[90%] flex flex-col items-center mb-2">
+                <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#b4a692]">
+                  NO HAY RESERVACION AGREGADA
+                </h2>
+              </div>)
+
+              }
+              
             </div>
 
             {reservacionEnCarrito[0]?.experience.length > 0 ? (
@@ -158,16 +192,19 @@ function CarritoInfo() {
                 </h2>
               </div>
             )}
-
-            <div className="w-[90%] flex flex-col mb-2 mt-4 ">
+              {
+                productosEnCarrito.length>0?
+                
+                productosEnCarrito.map((producto,index) =>(
+<div key={index} className="w-[90%] flex flex-col mb-2 mt-4 border-b-[2px] border-b-[#b4a692] ">
               <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#b4a692]">
-                nombre producto
+                {producto.name}
               </h2>
               <div className="w-full flex flex-row justify-between">
                 <div className="w-full flex flex-col justify-between">
                   <div>
                     <h3 className=" font-apollo uppercase tracking-[2px]">
-                      Descripcion producto
+                      {producto.description.substring(0,70)+" ..."}
                     </h3>
                     <p className="text-[#31302c] mt-2  font-apollo w-full tracking-[2px]">
                       *SET SHIPING AT PAYMENT
@@ -183,17 +220,26 @@ function CarritoInfo() {
                   </div>
                 </div>
                 <div className="flex flex-col justify-center items-end w-full">
-                  <Image
-                    src={producto}
+                <img src={urlFor(producto?.image[0].asset._ref)}
                     alt="producto foto"
                     className="w-[50%]"
                   />
                   <p className="text-right font-apollo text-3xl mt-4 tracking-[2px]">
-                    $1464 MXN
+                    ${producto.price} MXN
                   </p>
                 </div>
               </div>
             </div>
+                ))
+
+                :
+<div className="w-[90%] flex flex-col items-center mb-2 border-b-[2px] border-b-[#b4a692]">
+                <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#b4a692]">
+                  NO HAY EXPERIENCIAS AGREGADAS
+                </h2>
+              </div>
+              }
+            
           </div>
 
           <div className="h-full flex flex-col gap-8 ">

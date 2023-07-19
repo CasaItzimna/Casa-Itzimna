@@ -242,7 +242,7 @@ totalDiasHoy*planPrecio+guestsPrecio
     ) {
       console.log("entre en el if", formData);
       setReservacion(formData)
-      setCarrito([...carrito,formData])
+      setCarrito([...carrito, formData])
       //postReservacion(formData);
       var formDataJSON = JSON.stringify(formData);
       localStorage.setItem("reservacion", formDataJSON);

@@ -7,11 +7,37 @@ import Image from "next/image";
 import { useState } from "react";
 import cerrar from './icons/x.png'
 import Link from "next/link";
+import { AppContext } from "@/context/StateContext";
+import { useRouter } from "next/router";
 
 function ProductoModal({ producto, isOpen, onRequestClose }) {
   console.log(producto);
   const [opcion, setOpcion] = useState("opcion1");
   console.log(opcion);
+  const {carrito, setCarrito} = AppContext()
+
+  const router = useRouter();
+
+  const addProductCart = producto => {
+    console.log(producto);
+  
+    // Agregar la propiedad 'tipo' al objeto producto
+    const productoConTipo = { ...producto, tipo: "producto" };
+  
+    // Agregar el producto con la propiedad 'tipo' al carrito
+    setCarrito([...carrito, productoConTipo]);
+  
+    // Obtener el arreglo actual de productos desde localStorage
+    const productosEnLocalStorage = JSON.parse(localStorage.getItem("producto")) || [];
+  
+    // Agregar el nuevo producto al arreglo
+    productosEnLocalStorage.push(productoConTipo);
+  
+    // Guardar el arreglo actualizado de productos en localStorage
+    localStorage.setItem("producto", JSON.stringify(productosEnLocalStorage));
+    router.push('/Carrito');
+  };
+
   return (
     <Modal
       show={isOpen}
@@ -110,7 +136,9 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
             <p className={`${opcion === "opcion2"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>{producto.details}</p>
             <p className={`${opcion === "opcion3"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>{producto.shipping}</p>
             <div className="flex flex-col items-center lg:items-start">
-            <button className="w-[210px] tracking-[4px] mt-8 py-2 text-xl text-white bg-black">
+            <button className="w-[210px] tracking-[4px] mt-8 py-2 text-xl text-white bg-black"
+            onClick={()=>addProductCart(producto)}
+            >
               ADD TO CART
             </button>
             <Link
