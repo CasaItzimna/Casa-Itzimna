@@ -14,27 +14,34 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
   console.log(producto);
   const [opcion, setOpcion] = useState("opcion1");
   console.log(opcion);
-  const {carrito, setCarrito} = AppContext()
+  const {carritoProductos, setCarritoProductos} = AppContext()
 
   const router = useRouter();
 
-  const addProductCart = producto => {
+  const addProductCart = (producto) => {
     console.log(producto);
   
     // Agregar la propiedad 'tipo' al objeto producto
     const productoConTipo = { ...producto, tipo: "producto" };
   
     // Agregar el producto con la propiedad 'tipo' al carrito
-    setCarrito([...carrito, productoConTipo]);
+    setCarritoProductos([...carritoProductos, productoConTipo]);
   
+    if(localStorage.getItem("producto")){
+
+    
     // Obtener el arreglo actual de productos desde localStorage
-    const productosEnLocalStorage = JSON.parse(localStorage.getItem("producto")) || [];
-  
+    const productosEnLocalStorage = JSON.parse(localStorage.getItem("producto")) ;
     // Agregar el nuevo producto al arreglo
     productosEnLocalStorage.push(productoConTipo);
-  
     // Guardar el arreglo actualizado de productos en localStorage
     localStorage.setItem("producto", JSON.stringify(productosEnLocalStorage));
+    } 
+    else{
+// Guardar el arreglo actualizado de productos en localStorage
+localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoConTipo]) );
+    }
+  
     router.push('/Carrito');
   };
 

@@ -22,7 +22,7 @@ function Booking({ json }) {
   const [experiences, setExperiences] = useState([]);
   const [experiencesPrecio, setExperiencesPrecio] = useState(0);
   
-  const {reservacion, carrito, setCarrito, setReservacion} = AppContext()
+  const {carritoReservaciones, setCarritoReservaciones} = AppContext();
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -241,11 +241,25 @@ totalDiasHoy*planPrecio+guestsPrecio
       formData.total
     ) {
       console.log("entre en el if", formData);
-      setReservacion(formData)
-      setCarrito([...carrito, formData])
+      setCarritoReservaciones([...carritoReservaciones, formData])
       //postReservacion(formData);
+      if (localStorage.getItem("reservacion")) {
+        // Obtener el arreglo actual de reservaciones desde localStorage
+        const reservacionesEnLocalStorage = JSON.parse(localStorage.getItem("reservacion"));
+      
+        // Agregar el nuevo objeto formData al arreglo
+        reservacionesEnLocalStorage.push(formData);
+      
+        // Guardar el arreglo actualizado de reservaciones en localStorage
+        localStorage.setItem("reservacion", JSON.stringify(reservacionesEnLocalStorage));
+      } else {
+        // Si no hay reservaciones en el localStorage, crea un arreglo con formData y guárdalo
+        const newReservaciones = [formData];
+        localStorage.setItem("reservacion", JSON.stringify(newReservaciones));
+      }
+            /* 
       var formDataJSON = JSON.stringify(formData);
-      localStorage.setItem("reservacion", formDataJSON);
+      localStorage.setItem('reservacion',[...carritoReservaciones, formDataJSON]); */
       setFormData({
         name: "",
         tel: "",

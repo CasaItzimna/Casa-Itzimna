@@ -8,75 +8,99 @@ import Image from "next/image";
 import { AppContext } from "@/context/StateContext";
 import Link from "next/link";
 import { client, urlFor } from "../../lib/client";
+import Reservacion from "./Reservacion";
 
 
 function CarritoInfo() {
   //const [carrito, setCarrito] = useState(null)
   const [plan, setPlan] = useState(null);
-  const { carrito, setCarrito, reservacion, setReservacion } = AppContext();
+  const { carritoReservaciones, setCarritoReservaciones, carritoProductos, setCarritoProductos, reservacion, setReservacion } = AppContext();
   const [checkin, setCheckin] = useState("");
   const [checkout, setCheckout] = useState("");
   const [reservacionEnCarrito, setReservacionEnCarrito] = useState([]);
   const [productosEnCarrito, setProductosEnCarrito] = useState([])
 
-  useEffect(() => {
-    if (carrito.length > 0) {
-      setReservacionEnCarrito(
-        carrito.filter((item) => item.tipo === "reservacion")
-      );
-      // Filtrar los elementos que son arreglos
-const arreglosEnCarrito = carrito.filter(item => Array.isArray(item));
-
-// Filtrar los objetos que tienen el tipo 'producto' dentro de los arreglos
-const productosEnCarrito = arreglosEnCarrito.flatMap(arr => arr.filter(item => item.tipo === 'producto'));
-setProductosEnCarrito(productosEnCarrito)
-
-    } else {
-      const localStorageReservacion = localStorage.getItem("reservacion");
-      const localStorageProductos = localStorage.getItem("producto");
-      if (localStorageReservacion) {
-        const reservacionObj = JSON.parse(localStorageReservacion);
-        setCarrito([...carrito, reservacionObj]);
-      }
-      if (localStorageProductos) {
-        const productoObj = JSON.parse(localStorageProductos);
-        setCarrito([...carrito, productoObj]);
-      }
-    }
-  }, [carrito]);
-  console.log(carrito)
-  console.log(productosEnCarrito)
+  
 
   useEffect(() => {
-    if (reservacionEnCarrito.length > 0) {
-      setPlan(reservacionEnCarrito[0]?.plan);
-      setCheckin(reservacionEnCarrito[0]?.checkin.toISOString().substring(0, 10));
-      setCheckout(reservacionEnCarrito[0]?.checkout.toISOString().substring(0, 10));
+    if(!carritoProductos.length>0){
+      console.log(carritoProductos)
+      if(localStorage.getItem('producto')){
+
+        setCarritoProductos([...carritoProductos,JSON.parse(localStorage.getItem('producto'))[0]])
+      }
     }
-  }, [reservacionEnCarrito]);
+    if(!carritoReservaciones?.length>0){
+      if(localStorage.getItem('reservacion')){
+        console.log(JSON.parse(localStorage.getItem('reservacion')))
+        setCarritoReservaciones([...carritoReservaciones,JSON.parse(localStorage.getItem('reservacion'))[0]])
+      }
+    }
+  }, [carritoProductos, carritoReservaciones])
+  console.log(carritoProductos[0])
+  console.log(carritoReservaciones)
+  
 
-  const [guest, setGuest] = useState("");
 
-  const deleteItem = (exp) => {
-    console.log("eliminando..." + exp);
-    const updatedCart = { ...carrito }; // Copia el objeto carrito
-
-    const index = updatedCart.experience.findIndex((item) => item === exp);
+  const deleteProduct = (producto) => {
+    console.log(producto);
+    const updatedCart =  [...carritoProductos] ; // Copia el objeto carrito
+console.log(updatedCart)
+    const index = updatedCart.findIndex((item) => item === producto);
+    console.log(index)
     if (index !== -1) {
-      updatedCart.experience.splice(index, 1); // Elimina el elemento del arreglo
+      updatedCart.splice(index, 1); // Elimina el elemento del arreglo
     }
 
     // Actualiza el estado con el nuevo carrito
-    setCarrito(updatedCart);
-    JSON.stringify(localStorage.setItem("carrito", updatedCart));
+    setCarritoProductos(updatedCart);
+    JSON.stringify(localStorage.setItem("producto", updatedCart));
+  };
+  const deleteExp = (reservacion, exp) => {
+    console.log(exp);
+    const updatedCart = carritoReservaciones.map((rsv) => {
+      // Si rsv es la misma reservacion que la que queremos modificar
+      if (rsv === reservacion && Array.isArray(rsv.experience)) {
+        const index = rsv.experience.findIndex((item) => item === exp);
+        console.log(index);
+        if (index !== -1) {
+          // Creamos una copia de la propiedad 'experience' usando slice()
+          const updatedExperience = [...rsv.experience];
+          // Eliminamos el elemento del arreglo 'experience' usando splice()
+          updatedExperience.splice(index, 1);
+          // Actualizamos la propiedad 'experience' del objeto reservacion
+          rsv.experience = updatedExperience;
+        }
+      }
+      return rsv; // Devuelve el objeto modificado o sin cambios
+    });
+  
+    // Actualiza el estado con el nuevo carrito
+    setCarritoReservaciones(updatedCart);
+    // Actualiza el localStorage
+    localStorage.setItem("reservacion", JSON.stringify(updatedCart));
+  };
+  
+  const deleteReservation = (reservacion) => {
+    console.log(reservacion);
+    const updatedCart =  [...carritoReservaciones] ; // Copia el objeto carrito
+console.log(updatedCart)
+    const index = updatedCart.findIndex((item) => item === reservacion);
+    console.log(index)
+    if (index !== -1) {
+      updatedCart.splice(index, 1); // Elimina el elemento del arreglo
+    }
+
+    // Actualiza el estado con el nuevo carrito
+    setCarritoReservaciones(updatedCart);
+    JSON.stringify(localStorage.setItem("reservacion", updatedCart));
   };
 
-  console.log(productosEnCarrito)
-  console.log(carrito)
+  console.log(carritoProductos)
 
   return (
     <div className="w-full h-full flex flex-row justify-center bg-[#b4a692]">
-      {carrito ? (
+      {carritoReservaciones || carritoProductos ? (
         <div className="w-[80%] xl:w-[60%] h-full grid grid-cols-1 lg:grid-cols-2 lg:gap-9 mb-8 ">
           {/*Cart*/}
           <div className="w-full flex flex-col bg-white items-center ">
@@ -88,49 +112,14 @@ setProductosEnCarrito(productosEnCarrito)
                 BOOKING DATA
               </h2>
               {
-                reservacionEnCarrito.length>0?(
-                  <div className="w-full flex flex-col ">
-                <p className="font-apollo mb-1 uppercase tracking-[2px]">
-                {reservacionEnCarrito[0]?.name}
-              </p>
-              <p className="font-apollo mb-1 uppercase tracking-[2px]">
-                {reservacionEnCarrito[0]?.tel}
-              </p>
-              <p className="font-apollo mb-1 uppercase tracking-[2px]">
-                {reservacionEnCarrito[0]?.email}
-              </p>
-              <select
-                name="guest"
-                value={plan}
-                onChange={(e) => setPlan(e.target.value)}
-                className="border-[1px] w-[50%] py-1 border-[#b4a692] font-apollo text-gray-500 uppercase tracking-[2px]"
-              >
-                <option value="" className="font-apollo ">
-                  CHOOSE A PLAN
-                </option>
-                <option value="select" className="font-apollo">
-                  SELECT
-                </option>
-                <option value="luxury" className="font-apollo">
-                  LUXURY
-                </option>
-                <option value="premier" className="font-apollo">
-                  PREMIER
-                </option>
-              </select>
-              <div className="w-[50%] h-full flex flex-row gap-1 mt-4 font-apollo ">
-                <div className="w-1/2 border-[1px] h-[30px] border-[#b4a692] text-center text-sm tracking-[2px] flex flex-col items-center justify-center">
-                  {checkin}
-                </div>
-                <div className="w-1/2 border-[1px] h-[30px] border-[#b4a692] text-center text-sm tracking-[2px] flex flex-col items-center justify-center">
-                  {checkout}
-                </div>
-              </div>
-               <p className='text-right font-apollo mt-4'>PRICE FOR TOTAL NOCHES - NOMBRE PAQUETE</p> 
-              <p className="text-right font-apollo text-3xl mt-8 mb-4 tracking-[2px] ">
-                ${reservacionEnCarrito[0]?.total} MXN
-              </p>
-              </div>
+                console.log(carritoReservaciones)
+              }
+              {
+                carritoReservaciones.length>0 ?(
+                  carritoReservaciones.map((reservacion, index)=>(
+                    <Reservacion key={index} reservacion = {reservacion} deleteExp={deleteExp} deleteReservation={deleteReservation}/>
+                  
+                ))
                 )
               :(
               <div className="w-[90%] flex flex-col items-center mb-2">
@@ -143,68 +132,22 @@ setProductosEnCarrito(productosEnCarrito)
               
             </div>
 
-            {reservacionEnCarrito[0]?.experience.length > 0 ? (
-              reservacionEnCarrito[0]?.experience.map((exp, index) => (
-                <div
-                  key={index}
-                  className="w-[90%] flex flex-col mt-4 mb-2 border-b-[2px] border-b-[#b4a692]"
-                >
-                  <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#b4a692]">
-                    {exp}
-                  </h2>
-                  <div className="w-full flex flex-row justify-between">
-                    <div className="flex flex-col justify-between">
-                      <div>
-                        <h3 className="w-[90%] font-apollo uppercase tracking-[2px]">
-                          Descripcion experiencia
-                        </h3>
-                        <p className="text-[#31302c] mt-2  font-apollo w-[90%] tracking-[2px]">
-                          *AT YOUR ARRIVING, PLEASE CONFIRM THE DATE OF THE
-                          SERVICE
-                        </p>
-                      </div>
-                      <div className="flex flex-row mt-2 justify-start">
-                        <Image
-                          src={bote}
-                          alt="basura"
-                          className=" cursor-pointer mb-4"
-                          onClick={() => deleteItem(exp)}
-                        />
-                      </div>
-                    </div>
-                    <div className="flex flex-col justify-center">
-                      <Image
-                        src={experience}
-                        alt=""
-                        className="rounded-[2px]"
-                      />
-                      <p className="text-right font-apollo text-3xl mt-4 tracking-[2px]">
-                        $300 MXN
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))
-            ) : (
-              <div className="w-[90%] flex flex-col items-center mb-2 border-b-[2px] border-b-[#b4a692]">
-                <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#b4a692]">
-                  NO HAY EXPERIENCIAS AGREGADAS
-                </h2>
-              </div>
-            )}
+            {
+              console.log(carritoProductos)
+            }
               {
-                productosEnCarrito.length>0?
+                carritoProductos.length>0?
                 
-                productosEnCarrito.map((producto,index) =>(
-<div key={index} className="w-[90%] flex flex-col mb-2 mt-4 border-b-[2px] border-b-[#b4a692] ">
+                carritoProductos.map((producto,index) =>(
+              <div key={index} className="w-[90%] flex flex-col mb-2 mt-4 border-b-[2px] border-b-[#b4a692] ">
               <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#b4a692]">
-                {producto.name}
+                {producto?.name}
               </h2>
               <div className="w-full flex flex-row justify-between">
                 <div className="w-full flex flex-col justify-between">
                   <div>
                     <h3 className=" font-apollo uppercase tracking-[2px]">
-                      {producto.description.substring(0,70)+" ..."}
+                      {producto?.description.substring(0,70)+" ..."}
                     </h3>
                     <p className="text-[#31302c] mt-2  font-apollo w-full tracking-[2px]">
                       *SET SHIPING AT PAYMENT
@@ -215,17 +158,17 @@ setProductosEnCarrito(productosEnCarrito)
                       src={bote}
                       alt="basura"
                       className=" cursor-pointer mb-4"
-                      onClick={() => deleteItem()}
+                      onClick={() => deleteProduct(producto)}
                     />
                   </div>
                 </div>
                 <div className="flex flex-col justify-center items-end w-full">
-                <img src={urlFor(producto?.image[0].asset._ref)}
+                <img src={urlFor(producto.image[0].asset._ref)}
                     alt="producto foto"
                     className="w-[50%]"
-                  />
+                  /> 
                   <p className="text-right font-apollo text-3xl mt-4 tracking-[2px]">
-                    ${producto.price} MXN
+                    ${producto?.price} MXN
                   </p>
                 </div>
               </div>
@@ -233,9 +176,9 @@ setProductosEnCarrito(productosEnCarrito)
                 ))
 
                 :
-<div className="w-[90%] flex flex-col items-center mb-2 border-b-[2px] border-b-[#b4a692]">
+<div className="w-[90%] flex flex-col items-center mb-2">
                 <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#b4a692]">
-                  NO HAY EXPERIENCIAS AGREGADAS
+                  NO HAY PRODUCTOS AGREGADOS
                 </h2>
               </div>
               }
