@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import bote from "./icons/bote.png";
 import experience from "./img/experiencefoto.png";
+import { differenceInDays, isValid } from "date-fns";
 
 function Reservacion({reservacion, deleteExp, deleteReservation}) {
     const [plan, setPlan] = useState(null);
@@ -23,6 +24,21 @@ function Reservacion({reservacion, deleteExp, deleteReservation}) {
           }
       }, [reservacion]);
 
+      const getPriceByExperience = (exp) => {
+        switch (exp) {
+          case "spa":
+            return 5000;
+          case "cena":
+            return 3000;
+          case "recorrido":
+            return 2500;
+          case "comidas":
+            return 6000;
+          default:
+            return 0; // Precio predeterminado si no se encuentra la experiencia
+        }
+      };
+
       
 
   return (
@@ -39,7 +55,7 @@ function Reservacion({reservacion, deleteExp, deleteReservation}) {
               <p className="font-apollo mb-1 uppercase tracking-[2px]">
                 {reservacion?.email}
               </p>
-              <select
+              {/* <select
                 name="guest"
                 value={plan}
                 onChange={(e) => setPlan(e.target.value)}
@@ -57,7 +73,10 @@ function Reservacion({reservacion, deleteExp, deleteReservation}) {
                 <option value="premier" className="font-apollo">
                   PREMIER
                 </option>
-              </select>
+              </select> */}
+              <div className='border-[1px] w-[50%] py-1 border-[#b4a692] font-apollo text-gray-500 uppercase tracking-[2px]'>
+                {reservacion?.plan}
+              </div>
               <div className="w-[50%] h-full flex flex-row gap-1 mt-4 font-apollo ">
                 <div className="w-1/2 border-[1px] h-[30px] border-[#b4a692] text-center text-sm tracking-[2px] flex flex-col items-center justify-center">
                   {checkin}
@@ -66,7 +85,7 @@ function Reservacion({reservacion, deleteExp, deleteReservation}) {
                   {checkout}
                 </div>
               </div>
-               <p className='text-right font-apollo mt-4'>PRICE FOR TOTAL NOCHES - NOMBRE PAQUETE</p> 
+               <p className='text-right font-apollo mt-4'>PRICE FOR { differenceInDays(new Date(reservacion.checkout), new Date(reservacion.checkin))} NIGHTS - <span className='uppercase'>{reservacion.plan}</span></p> 
                <div className='flex flex-row w-full justify-between'>
                <div className="flex flex-col justify-end mb-4 ">
                     <Image
@@ -83,9 +102,12 @@ function Reservacion({reservacion, deleteExp, deleteReservation}) {
               </div>
               {
               reservacion?.experience.map((exp, index) => (
+                <div key={index}
+                className='flex flex-row justify-center '
+                >
                 <div
-                  key={index}
-                  className="w-[90%] flex flex-col mt-4 mb-2 border-b-[2px] border-b-[#b4a692]"
+                  
+                  className="w-full flex flex-col mt-4 mb-2 border-b-[2px] border-b-[#b4a692]"
                 >
                   <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#b4a692]">
                     {exp}
@@ -116,11 +138,12 @@ function Reservacion({reservacion, deleteExp, deleteReservation}) {
                         alt=""
                         className="rounded-[2px]"
                       />
-                      <p className="text-right font-apollo text-3xl mt-4 tracking-[2px]">
-                        $300 MXN
+                      <p className="text-right font-apollo text-3xl mt-4  mb-2 tracking-[2px]">
+                        ${getPriceByExperience(exp)}MXN
                       </p>
                     </div>
                   </div>
+                </div>
                 </div>
               ))
 }

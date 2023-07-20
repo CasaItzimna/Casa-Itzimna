@@ -164,5 +164,21 @@
     "OurContact":"NUESTRO CONTACTO",
     "Social": "REDES SOCIALES",
     "Address":"DIRECCIÓN"
+    },
+    "Confirmation":{
+      "titulo": "CONFIRMACIÓN DE ORDEN",
+      "thanks": "GRACIAS POR ELEGIR CASA ITZIMNÁ",
+      "delighted": "ESTAMOS ENCANTADOS DE CONFIRMAR SU ORDEN.",
+      "recipt": "SU RECIBO SERÁ ENVIADO A SU CORREO ELECTRÓNICO EN POCO TIEMPO",
+      "review": "DATOS DE RESERVA",
+      "recommend": "Le recomendamos que imprima o guarde esta confirmación para su referencia. A su llegada, por favor presente esta confirmación en la recepción del hotel para facilitar un proceso de registro sin problemas.",
+      "questions": "Si tiene alguna pregunta o necesita ayuda adicional, no dude en ponerse en contacto con nuestro equipo de atención al cliente al",
+      "forward": "Esperamos brindarle una estancia memorable en",
+      "regards": "MEJORES SALUDOS"
+    },
+    "Error":{
+      "payment": "ERROR DE PAGO",
+"apologize": "Pedimos disculpas por las molestias, pero hemos encontrado un error al procesar su pago para su orden.",
+"meantime": "Mientras tanto, le animamos a intentar nuevamente el proceso de pago. Puede regresar a la página de reserva y volver a ingresar su información de pago. Si el problema persiste, por favor, póngase en contacto con nuestro equipo de atención al cliente para obtener ayuda adicional al "
     }
   }

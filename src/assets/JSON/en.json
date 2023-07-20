@@ -167,6 +167,24 @@
     "Social": "SOCIAL MEDIA",
     "Address":"ADDRESS"
   
+},
+"Confirmation":{
+  "titulo": "ORDER CONFIRMATION",
+  "thanks": "THANK YOU FOR CHOOSING CASA ITZIMNÁ",
+  "delighted": "WE ARE DELIGHTED TO CONFIRM YOUR ORDER.",
+  "recipt": "YOUR RECIPT WILL BE SENT TO YOUR E-MAIL IN NO TIME",
+  "review": "REVIEW THE DETAILS BELOW:",
+  "booking": "BOOKING DATA",
+  "recommend": "We recommend that you print or save this confirmation for your reference. Upon arrival, please present this confirmation at the hotel reception to facilitate a smooth check-in process.",
+  "questions": "If you have any questions or need further assistance, feel free to contact our customer support team at",
+  "forward":"We look forward to providing you with a memorable stay at",
+  "regards":"BEST REGARDS"
+},
+"Error":{
+  "payment": "PAYMENT ERROR",
+  "apologize": "We apologize for the inconvenience, but we encountered an error while processing your payment for your order.",
+  "meantime": "In the meantime, we encourage you to try the payment process again. You can return to the booking page and re-enter your payment information. If the issue persists, please contact our customer support team for further assistance at "
+
 }
   
   }
