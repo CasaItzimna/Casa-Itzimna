@@ -9,45 +9,52 @@ import { AppContext } from "@/context/StateContext";
 import Link from "next/link";
 import { client, urlFor } from "../../lib/client";
 import Reservacion from "./Reservacion";
-
+import { differenceInDays, isValid } from "date-fns";
 
 function CarritoInfo() {
   //const [carrito, setCarrito] = useState(null)
   const [plan, setPlan] = useState(null);
-  const { carritoReservaciones, setCarritoReservaciones, carritoProductos, setCarritoProductos, reservacion, setReservacion } = AppContext();
+  const {
+    carritoReservaciones,
+    setCarritoReservaciones,
+    carritoProductos,
+    setCarritoProductos,
+    reservacion,
+    setReservacion,
+  } = AppContext();
   const [checkin, setCheckin] = useState("");
   const [checkout, setCheckout] = useState("");
   const [reservacionEnCarrito, setReservacionEnCarrito] = useState([]);
-  const [productosEnCarrito, setProductosEnCarrito] = useState([])
-
-  
+  const [productosEnCarrito, setProductosEnCarrito] = useState([]);
 
   useEffect(() => {
-    if(!carritoProductos.length>0){
-      console.log(carritoProductos)
-      if(localStorage.getItem('producto')){
-
-        setCarritoProductos([...carritoProductos,JSON.parse(localStorage.getItem('producto'))[0]])
-      }
-    }
-    if(!carritoReservaciones?.length>0){
-      if(localStorage.getItem('reservacion')){
-        console.log(JSON.parse(localStorage.getItem('reservacion')))
-        setCarritoReservaciones([...carritoReservaciones,JSON.parse(localStorage.getItem('reservacion'))[0]])
-      }
-    }
-  }, [carritoProductos, carritoReservaciones])
-  console.log(carritoProductos[0])
-  console.log(carritoReservaciones)
+    if (carritoProductos.length === 0) {
+      console.log(carritoProductos);
   
-
+      // Verifica si hay datos en el localStorage
+      if (localStorage.getItem("producto")) {
+        // Parsea los datos del localStorage y guárdalos en el estado carritoProductos
+        setCarritoProductos(JSON.parse(localStorage.getItem("producto")));
+      }
+    }
+    if (!carritoReservaciones?.length > 0) {
+      if (localStorage.getItem("reservacion")) {
+        console.log(JSON.parse(localStorage.getItem("reservacion")));
+        setCarritoReservaciones(
+          JSON.parse(localStorage.getItem("reservacion"))
+        );
+      }
+    }
+  }, [carritoProductos, carritoReservaciones]);
+  console.log(carritoProductos[0]);
+  console.log(carritoReservaciones);
 
   const deleteProduct = (producto) => {
     console.log(producto);
-    const updatedCart =  [...carritoProductos] ; // Copia el objeto carrito
-console.log(updatedCart)
+    const updatedCart = [...carritoProductos]; // Copia el objeto carrito
+    console.log(updatedCart);
     const index = updatedCart.findIndex((item) => item === producto);
-    console.log(index)
+    console.log(index);
     if (index !== -1) {
       updatedCart.splice(index, 1); // Elimina el elemento del arreglo
     }
@@ -56,6 +63,22 @@ console.log(updatedCart)
     setCarritoProductos(updatedCart);
     JSON.stringify(localStorage.setItem("producto", updatedCart));
   };
+
+  const getPriceByExperience = (exp) => {
+    switch (exp) {
+      case "spa":
+        return 5000;
+      case "cena":
+        return 3000;
+      case "recorrido":
+        return 2500;
+      case "comidas":
+        return 6000;
+      default:
+        return 0; // Precio predeterminado si no se encuentra la experiencia
+    }
+  };
+  
   const deleteExp = (reservacion, exp) => {
     console.log(exp);
     const updatedCart = carritoReservaciones.map((rsv) => {
@@ -70,23 +93,25 @@ console.log(updatedCart)
           updatedExperience.splice(index, 1);
           // Actualizamos la propiedad 'experience' del objeto reservacion
           rsv.experience = updatedExperience;
+          rsv.total = rsv.total- getPriceByExperience(exp);
         }
       }
       return rsv; // Devuelve el objeto modificado o sin cambios
     });
-  
+   
+
     // Actualiza el estado con el nuevo carrito
     setCarritoReservaciones(updatedCart);
     // Actualiza el localStorage
     localStorage.setItem("reservacion", JSON.stringify(updatedCart));
   };
-  
+
   const deleteReservation = (reservacion) => {
     console.log(reservacion);
-    const updatedCart =  [...carritoReservaciones] ; // Copia el objeto carrito
-console.log(updatedCart)
+    const updatedCart = [...carritoReservaciones]; // Copia el objeto carrito
+    console.log(updatedCart);
     const index = updatedCart.findIndex((item) => item === reservacion);
-    console.log(index)
+    console.log(index);
     if (index !== -1) {
       updatedCart.splice(index, 1); // Elimina el elemento del arreglo
     }
@@ -96,7 +121,53 @@ console.log(updatedCart)
     JSON.stringify(localStorage.setItem("reservacion", updatedCart));
   };
 
-  console.log(carritoProductos)
+  console.log(carritoProductos);
+
+
+  // Variables para almacenar la suma de cada sección
+let sumReservaciones = 0;
+let sumExperiences = 0;
+let sumProductos = 0;
+
+// Calcula la suma de las reservaciones
+carritoReservaciones.forEach((rsv) => {
+  sumReservaciones +=
+    differenceInDays(new Date(rsv.checkout), new Date(rsv.checkin)) *
+      (rsv.plan === "select"
+        ? 18000
+        : rsv.plan === "luxury"
+        ? 22000
+        : rsv.plan === "premier"
+        ? 25000
+        : 0) +
+    (rsv.guests === "6-8"
+      ? 2000
+      : rsv.guests === "1-2"
+      ? 0
+      : rsv.guests === "3-5"
+      ? 0
+      : 0);
+});
+// Calcula la suma de las experiencias
+carritoReservaciones.forEach((rsv) => {
+  rsv.experience.forEach((exp) => {
+    sumExperiences +=
+      exp === "cena"
+        ? 3000
+        : exp === "recorrido"
+        ? 2500
+        : exp === "spa"
+        ? 5000
+        : exp === "comidas"
+        ? 6000
+        : 0;
+  });
+});
+
+// Calcula la suma de los productos
+carritoProductos.forEach((product) => {
+  sumProductos += product.price;
+});
 
   return (
     <div className="w-full h-full flex flex-row justify-center bg-[#b4a692]">
@@ -111,78 +182,74 @@ console.log(updatedCart)
               <h2 className="font-apollo text-xl tracking-[4px] mb-2 text-[#b4a692]">
                 BOOKING DATA
               </h2>
-              {
-                console.log(carritoReservaciones)
-              }
-              {
-                carritoReservaciones.length>0 ?(
-                  carritoReservaciones.map((reservacion, index)=>(
-                    <Reservacion key={index} reservacion = {reservacion} deleteExp={deleteExp} deleteReservation={deleteReservation}/>
-                  
+              {console.log(carritoReservaciones)}
+              {carritoReservaciones.length > 0 ? (
+                carritoReservaciones.map((reservacion, index) => (
+                  <Reservacion
+                    key={index}
+                    reservacion={reservacion}
+                    deleteExp={deleteExp}
+                    deleteReservation={deleteReservation}
+                  />
                 ))
-                )
-              :(
+              ) : (
+                <div className="w-[90%] flex flex-col items-center mb-2">
+                  <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#b4a692]">
+                    NO HAY RESERVACION AGREGADA
+                  </h2>
+                </div>
+              )}
+            </div>
+
+            {console.log(carritoProductos)}
+            {carritoProductos.length > 0 ? (
+              carritoProductos.map((producto, index) => (
+                <div
+                  key={index}
+                  className="w-[90%] flex flex-col mb-2 mt-4 border-b-[2px] border-b-[#b4a692] "
+                >
+                  <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#b4a692]">
+                    {producto?.name}
+                  </h2>
+                  <div className="w-full flex flex-row justify-between">
+                    <div className="w-full flex flex-col justify-between">
+                      <div>
+                        <h3 className=" font-apollo uppercase tracking-[2px]">
+                          {producto?.description.substring(0, 70) + " ..."}
+                        </h3>
+                        <p className="text-[#31302c] mt-2  font-apollo w-full tracking-[2px]">
+                          *SET SHIPING AT PAYMENT
+                        </p>
+                      </div>
+                      <div className="flex flex-row mt-2 justify-start ">
+                        <Image
+                          src={bote}
+                          alt="basura"
+                          className=" cursor-pointer mb-4"
+                          onClick={() => deleteProduct(producto)}
+                        />
+                      </div>
+                    </div>
+                    <div className="flex flex-col justify-center items-end w-full">
+                      <img
+                        src={urlFor(producto.image[0].asset._ref)}
+                        alt="producto foto"
+                        className="w-[50%]"
+                      />
+                      <p className="text-right font-apollo text-3xl mt-4 tracking-[2px]">
+                        ${producto?.price} MXN
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))
+            ) : (
               <div className="w-[90%] flex flex-col items-center mb-2">
-                <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#b4a692]">
-                  NO HAY RESERVACION AGREGADA
-                </h2>
-              </div>)
-
-              }
-              
-            </div>
-
-            {
-              console.log(carritoProductos)
-            }
-              {
-                carritoProductos.length>0?
-                
-                carritoProductos.map((producto,index) =>(
-              <div key={index} className="w-[90%] flex flex-col mb-2 mt-4 border-b-[2px] border-b-[#b4a692] ">
-              <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#b4a692]">
-                {producto?.name}
-              </h2>
-              <div className="w-full flex flex-row justify-between">
-                <div className="w-full flex flex-col justify-between">
-                  <div>
-                    <h3 className=" font-apollo uppercase tracking-[2px]">
-                      {producto?.description.substring(0,70)+" ..."}
-                    </h3>
-                    <p className="text-[#31302c] mt-2  font-apollo w-full tracking-[2px]">
-                      *SET SHIPING AT PAYMENT
-                    </p>
-                  </div>
-                  <div className="flex flex-row mt-2 justify-start ">
-                    <Image
-                      src={bote}
-                      alt="basura"
-                      className=" cursor-pointer mb-4"
-                      onClick={() => deleteProduct(producto)}
-                    />
-                  </div>
-                </div>
-                <div className="flex flex-col justify-center items-end w-full">
-                <img src={urlFor(producto.image[0].asset._ref)}
-                    alt="producto foto"
-                    className="w-[50%]"
-                  /> 
-                  <p className="text-right font-apollo text-3xl mt-4 tracking-[2px]">
-                    ${producto?.price} MXN
-                  </p>
-                </div>
-              </div>
-            </div>
-                ))
-
-                :
-<div className="w-[90%] flex flex-col items-center mb-2">
                 <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#b4a692]">
                   NO HAY PRODUCTOS AGREGADOS
                 </h2>
               </div>
-              }
-            
+            )}
           </div>
 
           <div className="h-full flex flex-col gap-8 ">
@@ -202,17 +269,67 @@ console.log(updatedCart)
                           TAX
                         </p>
                       </div>
-                      <div className="h-[150px] flex flex-col justify-between text-right ">
+                      <div className="h-full flex flex-col justify-between text-right ">
                         <div className="h-full flex flex-col">
-                          <p className="font-apollo text-[#31302c]/40 tracking-[2px] text-lg">
-                            $1,288 MXN
-                          </p>
-                          <p className="font-apollo text-[#31302c]/40 tracking-[2px] text-lg">
-                            $300 MXN
-                          </p>
-                          <p className="font-apollo text-[#31302c]/40 tracking-[2px] text-lg">
-                            $1,464 MXN
-                          </p>
+                          {}
+                          {carritoReservaciones.map((rsv, index) => (
+                            <p
+                              key={index}
+                              className="font-apollo text-[#31302c]/40 tracking-[2px] text-lg"
+                            >$
+                              {differenceInDays(
+                                new Date(rsv.checkout),
+                                new Date(rsv.checkin)
+                              ) *
+                                (rsv.plan === "select"
+                                  ? 18000
+                                  : rsv.plan === "luxury"
+                                  ? 22000
+                                  : rsv.plan === "premier"
+                                  ? 25000
+                                  : 0) +
+                                (rsv.guests === "6-8"
+                                  ? 2000
+                                  : rsv.guests === "1-2"
+                                  ? 0
+                                  : rsv.guests === "3-5"
+                                  ? 0
+                                  : 0)}
+                            </p>
+                          ))}
+                            {carritoReservaciones.map((rsv, index) => (
+                            <div key={index+10}>
+                              {rsv.experience.map((exp, i) => (
+                                <p
+                                  key={i}
+                                  className="font-apollo text-[#31302c]/40 tracking-[2px] text-lg"
+                                >$
+                                  {exp == "cena"
+                                  ? 3000
+                                  : exp == "recorrido"
+                                  ? 2500
+                                  : exp == "spa"
+                                  ? 5000
+                                  : exp == "comidas"
+                                  ? 6000
+                                  : 0
+                                }
+                                
+                                
+                                </p>
+                              ))}
+                            </div>
+                          ))}
+                        
+                          {
+                                  carritoProductos.map((product,index) => (
+                                  <p key={index}
+                                  className="font-apollo text-[#31302c]/40 tracking-[2px] text-lg"
+                                  >$
+                                    {product.price}
+                                    </p>
+                                  ))
+                                }
                         </div>
                         <div className="h-full flex flex-col justify-end">
                           <p className="font-apollo text-[#282828] tracking-[2px] text-lg ">
@@ -226,7 +343,7 @@ console.log(updatedCart)
                         TOTAL
                       </p>
                       <p className="font-apollo text-[#282828] tracking-[2px] text-xl">
-                        $3,172 MXN
+                        ${sumReservaciones + sumExperiences + sumProductos} MXN
                       </p>
                     </div>
                     <button className="bg-black text-white uppercase w-full py-4 mt-4 font-Geometrica text-xl mb-4">

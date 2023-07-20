@@ -23,6 +23,8 @@ function Reservacion({reservacion, deleteExp, deleteReservation}) {
           }
       }, [reservacion]);
 
+      
+
   return (
     <div className='w-full flex flex-col'>
 
