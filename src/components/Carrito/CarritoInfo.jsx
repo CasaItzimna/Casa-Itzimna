@@ -10,6 +10,7 @@ import Link from "next/link";
 import { client, urlFor } from "../../lib/client";
 import Reservacion from "./Reservacion";
 import { differenceInDays, isValid } from "date-fns";
+import getStripe from '../../lib/getStripe'
 
 function CarritoInfo() {
   //const [carrito, setCarrito] = useState(null)
@@ -168,6 +169,30 @@ carritoReservaciones.forEach((rsv) => {
 carritoProductos.forEach((product) => {
   sumProductos += product.price;
 });
+
+
+const handleCheckOut = async () =>{
+
+  console.log('Esto es un ejemplo'
+  )
+
+  /* const stripe = await getStripe()
+
+  const response = await fetch('/api/stripe', {
+    method: 'POST',
+    headers:{
+      'Content-Type': 'application/json',
+    },
+    body:  JSON.stringify(cartItems),
+  })
+
+  if(response.statusCode === 500) return;
+
+  const data = await response.json()
+
+  toast.loading('Redirecting...')
+  stripe.redirectToCheckout({sessionId: data.id}) */
+}
 
   return (
     <div className="w-full h-full flex flex-row justify-center bg-[#b4a692]">
@@ -346,7 +371,9 @@ carritoProductos.forEach((product) => {
                         ${sumReservaciones + sumExperiences + sumProductos} MXN
                       </p>
                     </div>
-                    <button className="bg-black text-white uppercase w-full py-4 mt-4 font-Geometrica text-xl mb-4">
+                    <button className="bg-black text-white uppercase w-full py-4 mt-4 font-Geometrica text-xl mb-4"
+                    onClick={handleCheckOut}
+                    >
                       Proceed to pay
                     </button>
                   </div>
