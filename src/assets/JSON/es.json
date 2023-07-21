@@ -2,9 +2,9 @@
     "Navbar": {
       "option1": "INICIO",
       "option2": "ACERCA",
-      "option3": "CASA",
+      "option3": "CASA", 
       "option4": "EXPERIENCIA",
-      "option5": "ESCPACIOS",
+      "option5": "ESPACIOS",
       "option6": "BOUTIQUE",
       "option7": "CONTACTO"
     },
@@ -23,7 +23,7 @@
       "buttonBook": "RESERVAR"
     },
     "About": {
-      "title": "Acerca de Nosotros",
+      "title": "Nosotros",
       "text": "espanol  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
     "buttonText": "VER MÁS"
     },

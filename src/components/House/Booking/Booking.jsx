@@ -78,7 +78,7 @@ function Booking({ json }) {
     comments: "",
     total: "",
   });
-  const [precio, setPrecio] = useState(18000);
+  const [precio, setPrecio] = useState(0);
   const [error, setError] = useState(false);
 
   const handleInputChange = (event) => {
@@ -109,7 +109,7 @@ function Booking({ json }) {
  */
 const [total, setTotal] = useState(0)
 
-totalDiasHoy*planPrecio+guestsPrecio
+
 
   const [show, setShow] = useState(false);
   console.log(show);
@@ -205,14 +205,12 @@ totalDiasHoy*planPrecio+guestsPrecio
   
   useEffect(() => {
    if(inicio && fin){
-    setTotal((totalDiasInicio*planPrecio)+guestsPrecio+experiencesPrecio)
-    console.log(totalDiasInicio)
-    console.log((totalDiasInicio*planPrecio)+guestsPrecio+experiencesPrecio)
+    setTotal(((totalDiasInicio*planPrecio)+guestsPrecio)+experiencesPrecio)
+    setPrecio((totalDiasInicio*planPrecio)+guestsPrecio)
    }
    else{
-      setTotal((totalDiasHoy*planPrecio)+guestsPrecio+experiencesPrecio)
-      console.log(totalDiasHoy)
-      console.log((totalDiasHoy*planPrecio)+guestsPrecio+experiencesPrecio)
+      setTotal(((totalDiasHoy*planPrecio)+guestsPrecio)+experiencesPrecio)
+      setPrecio((totalDiasHoy*planPrecio)+guestsPrecio)
    }
   }, [experiencesPrecio,guestsPrecio, planPrecio,totalDiasHoy, totalDiasInicio,fin, inicio])
   
@@ -230,6 +228,7 @@ totalDiasHoy*planPrecio+guestsPrecio
     formData.plan = plan;
     formData.total = total
     formData.tipo = "reservacion"
+    formData.price = precio
     console.log(formData);
     if (
       formData.name &&

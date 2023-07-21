@@ -13,7 +13,7 @@ import { differenceInDays, isValid } from "date-fns";
 import getStripe from '../../lib/getStripe'
 
 function CarritoInfo() {
-  //const [carrito, setCarrito] = useState(null)
+  const [carrito, setCarrito] = useState([])
   const [plan, setPlan] = useState(null);
   const {
     carritoReservaciones,
@@ -33,20 +33,21 @@ function CarritoInfo() {
       console.log(carritoProductos);
   
       // Verifica si hay datos en el localStorage
-      if (localStorage.getItem("producto")) {
+      if (JSON.parse(localStorage.getItem("producto"))) {
         // Parsea los datos del localStorage y guárdalos en el estado carritoProductos
         setCarritoProductos(JSON.parse(localStorage.getItem("producto")));
       }
     }
+  }, []);
+  
+  useEffect(() => {
     if (!carritoReservaciones?.length > 0) {
-      if (localStorage.getItem("reservacion")) {
+      if (JSON.parse(localStorage.getItem("reservacion"))) {
         console.log(JSON.parse(localStorage.getItem("reservacion")));
-        setCarritoReservaciones(
-          JSON.parse(localStorage.getItem("reservacion"))
-        );
+        setCarritoReservaciones(JSON.parse(localStorage.getItem("reservacion")));
       }
     }
-  }, [carritoProductos, carritoReservaciones]);
+  }, []);
   console.log(carritoProductos[0]);
   console.log(carritoReservaciones);
 
@@ -62,7 +63,7 @@ function CarritoInfo() {
 
     // Actualiza el estado con el nuevo carrito
     setCarritoProductos(updatedCart);
-    JSON.stringify(localStorage.setItem("producto", updatedCart));
+    JSON.stringify(localStorage.setItem("producto", JSON.stringify(updatedCart)));
   };
 
   const getPriceByExperience = (exp) => {
@@ -119,7 +120,7 @@ function CarritoInfo() {
 
     // Actualiza el estado con el nuevo carrito
     setCarritoReservaciones(updatedCart);
-    JSON.stringify(localStorage.setItem("reservacion", updatedCart));
+    JSON.stringify(localStorage.setItem("reservacion", JSON.stringify(updatedCart)));
   };
 
   console.log(carritoProductos);
@@ -170,28 +171,71 @@ carritoProductos.forEach((product) => {
   sumProductos += product.price;
 });
 
+const obtenerPrecioExperiencia = (exp) => {
+  return exp === "cena"
+    ? 3000
+    : exp === "recorrido"
+    ? 2500
+    : exp === "spa"
+    ? 5000
+    : exp === "comidas"
+    ? 6000
+    : 0;
+};
 
 const handleCheckOut = async () =>{
 
-  console.log('Esto es un ejemplo'
-  )
+  console.log('Esto es un ejemplo')
+ // Recorremos carritoReservaciones para guardar cada reservación y experiencia en el arreglo carrito
+carritoReservaciones.forEach((reservacion) => {
+  carrito.push(reservacion); // Guardamos la reservación completa en el arreglo carrito
 
-  /* const stripe = await getStripe()
+  // Recorremos el arreglo experience dentro de cada reservación
+  if (reservacion.experience && Array.isArray(reservacion.experience)) {
+    reservacion.experience.forEach((exp) => {
+      const precioExperiencia = obtenerPrecioExperiencia(exp);
+      carrito.push({ name: exp, price: precioExperiencia, tipo: "experiencia" }); // Guardamos la experiencia con su precio en el arreglo carrito
+    });
+  }
+});
 
+// Recorremos carritoProductos para guardar cada producto en el arreglo carrito
+carritoProductos.forEach((producto) => {
+  carrito.push(producto); // Guardamos cada producto en el arreglo carrito
+});
+  
+  console.log('esto es lo que vamos a enviar:', carrito)
+  const carrito2 = [
+    { tipo: 'reservacion', name: 'Ismael', price: 1080 },
+    { tipo: 'reservacion', price: 2360, name: 'spa' },
+    { tipo: 'reservacion', price: 2500, name: 'cena' },
+    { tipo: 'producto', name: 'blabla', price: 4800 }
+  ];
+  
+  const stripe = await getStripe();
+  
   const response = await fetch('/api/stripe', {
     method: 'POST',
-    headers:{
+    headers: {
       'Content-Type': 'application/json',
     },
-    body:  JSON.stringify(cartItems),
-  })
-
-  if(response.statusCode === 500) return;
-
-  const data = await response.json()
-
-  toast.loading('Redirecting...')
-  stripe.redirectToCheckout({sessionId: data.id}) */
+    body: JSON.stringify({
+      items: carrito
+    }),
+  });
+  
+  if (response.status === 500) return;
+  
+  const data = await response.json();
+  
+  // Solo pasa el sessionId a la función redirectToCheckout
+  const { error } = stripe.redirectToCheckout({ sessionId: data.id });
+  
+  // Manejar el error si es necesario
+  if (error) {
+    console.error(error);
+  }
+  
 }
 
   return (
