@@ -32,7 +32,7 @@ const Facturas = () => {
             <table className="w-full text-center ">
               <thead>
                 <tr>
-                  <th className="text-left">NOMBRE</th>
+                  <th className="text-left pl-2">NOMBRE</th>
                   <th>TELEFONO</th>
                   <th>CORREO</th>
                   <th>RFC</th>

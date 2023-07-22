@@ -93,12 +93,12 @@ function Factura({ factura, index  }) {
   return (
     <>
      <tr key={factura.id} className={`${index % 2 === 0 ? 'bg-[#e7e4df] ' : 'bg-[#dad9d9]'} `}>
-  <td className="text-left">{factura.name}</td>
-  <td>{factura.phone}</td>
-  <td>{factura.email}</td>
-  <td>{factura.rfc}</td>
-  <td>{factura.date}</td>
-  <td>{factura.state ? "pendiente" : "enviada"}</td>
+  <td className="text-left font-apollo uppercase tracking-[2px] text-sm pl-2">{factura.name}</td>
+  <td className="font-apollo uppercase tracking-[2px] text-sm ">{factura.phone}</td>
+  <td className="font-apollo uppercase tracking-[2px] text-sm ">{factura.email}</td>
+  <td className="font-apollo uppercase tracking-[2px] text-sm ">{factura.rfc}</td>
+  <td className="font-apollo uppercase tracking-[2px] text-sm ">{factura.date}</td>
+  <td className="font-apollo uppercase tracking-[2px] text-sm ">{factura.state ? "pendiente" : "enviada"}</td>
   <td>
     <Image src={bote} alt="Imagen del bote" className="w-[10px]" />
   </td>
