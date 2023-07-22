@@ -7,6 +7,15 @@ import dynamic from "next/dynamic";
 import Facturas from "./Facturas";
 import Reservaciones from "./Reservaciones";
 import { AppContext } from "@/context/StateContext";
+import Image from "next/image";
+import logomovil from '../../assets/Logo/logomenumov.png'
+import homeIcon from '../../assets/Icons/home.png'
+import factura from '../../assets/Icons/factura.png'
+import salir from '../../assets/Icons/salir.png'
+import {AiFillHome} from 'react-icons/ai'
+import { FaSuitcase, FaReceipt, FaRightFromBracket, FaRightToBracket} from 'react-icons/fa'
+
+
 
 const Dashboard = () => {
   const { getReservaciones } = AppContext();
@@ -68,34 +77,53 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="h-screen w-full">
-      <div className="flex flex-row w-full h-full  ">
-        <div className="flex flex-col w-1/6 justify-center h-full bg-red-950 ">
-          <div className="flex flex-col w-[90%] items-center h-full">
-            <h1>Dashboard</h1>
-            <p>Bienvenido,{user?.name}</p>
-            Sidebar
-            <ul>
-              <li className="cursor-pointer">
-                <span onClick={() => handleSidebarClick("Reservaciones")}>
-                  Reservaciones
-                </span>
-              </li>
-              <li className="cursor-pointer">
-                <span onClick={() => handleSidebarClick("Facturas")}>
-                  Facturas
-                </span>
-              </li>
-              <li>Menu</li>
-            </ul>
+    <div className="w-full h-screen flex flex-row">
+      <div className="w-1/4 flex flex-col bg-[#31302c]">
+        <div className="w-full h-full flex flex-row justify-center " >
+          <div className="w-[90%] flex flex-col  justify-between">
+            <div className="h-full flex flex-col">
+              
+            <div className="text-center">
+
+            
+          <h1 className="  text-white text-3xl font-cinzelRegular mt-8">
+            <span className="text-white text-[35px]  ">
+              C
+            </span>
+            asa{" "}
+            <span className="text-white text-[35px] ">
+              I
+            </span>
+            tzimná
+          </h1>
+          <h2 className="text-white text-md  font-cinzelRegular mb-2">
+            Boutique
+          </h2>
           </div>
-          <div className="w-full flex flex-row justify-start mb-8">
-            <button onClick={() => logout()}>Logout</button>
+          <div className="text-white font-apollo mt-4">
+            <p className="text-lg">Bienvenido,</p>
+            <p className="text-4xl">{user?.name}</p>
+          </div>
+          <div className="flex flex-col">
+            <p className="flex flex-row gap-4 mt-9 items-center cursor-pointer hover:text-[#b4a692]"><span><AiFillHome className="text-2xl text-white "/></span><span className="text-xl text-white font-apollo tracking-[2px]">Dashboard</span></p>
+            <p className="flex flex-row gap-4 mt-9 items-center cursor-pointer hover:text-[#b4a692]"><span><FaSuitcase className="text-2xl text-white"/></span><span className="text-xl text-white font-apollo tracking-[2px]" onClick={() => handleSidebarClick("Reservaciones")}>Reservaciones</span></p>
+            <p className="flex flex-row gap-4 mt-9 items-center cursor-pointer hover:text-[#b4a692]"><span><FaReceipt className="text-2xl text-white"/></span><span className="text-xl text-white font-apollo tracking-[2px]" onClick={() => handleSidebarClick("Facturas")}>Facturación</span></p>
+          </div>
+          </div>
+          <div>
+          <p className="flex flex-row gap-4 mb-8 items-center cursor-pointer hover:text-[#b4a692]"  onClick={() => logout()}><span><Image src={salir} alt="exit icon" className="w-[20px] h-[21px]"/></span><span className="text-xl text-white font-apollo tracking-[2px]">Cerrar Sesión</span></p>
+
           </div>
         </div>
-        <div className="w-5/6 h-full ">{renderActiveComponent()}</div>
+        
+        </div>
       </div>
+      <div className="w-3/4 flex flex-col">
+      {renderActiveComponent()}
+      </div>
+
     </div>
+   
   );
 };
 

@@ -19,16 +19,16 @@ function Footer() {
   const json = idioma === 'espanol' ? esJson : enJson;
 
   const router = useRouter();
-
-  // Verificar si estamos en la página Dashboard
+  console.log(router.pathname)
   const isDashboardPage = router.pathname === '/Dashboard';
-  console.log(isDashboardPage)
+  const isDashboardComponentPage = router.pathname === '/Dashboard/[_component]';
+  console.log(isDashboardComponentPage)
 
 
   return (
   
   
-    !isDashboardPage?
+    !isDashboardPage && !isDashboardComponentPage?
   
 
     <div className="w-full h-full lg:h-[500px]  flex flex-col justify-center bg-[#31302c] ">

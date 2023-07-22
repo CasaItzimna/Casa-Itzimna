@@ -44,15 +44,16 @@ function Navbar() {
   const json = idioma === "espanol" ? esJson : enJson;
 
   const router = useRouter();
-
-  // Verificar si estamos en la página Dashboard
+  console.log(router.pathname)
   const isDashboardPage = router.pathname === '/Dashboard';
-  console.log(isDashboardPage)
+  const isDashboardComponentPage = router.pathname === '/Dashboard/[_component]';
+  console.log(isDashboardComponentPage)
+ 
 
 
 
   return (
-    !isDashboardPage?
+    !isDashboardPage && !isDashboardComponentPage?
     <Fragment>
       <div className="w-full h-full hidden lg:flex flex-col items-center">
         <div className="h-[150px] max-w-[1920px] w-full absolute top-20 z-20 flex flex-row justify-around  font-apollo">

@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import { AppContext } from "@/context/StateContext";
 import Modal from "../Modal/Modal";
 
+import bote from '../../../assets/Icons/bote.png'
+import editar from '../../../assets/Icons/editar.png'
+import Image from "next/image";
+
 
 function Reservacion({ reservacion }) {
 
@@ -83,13 +87,35 @@ function Reservacion({ reservacion }) {
    
   };
 
+  console.log(reservacion)
+
   return (
-    <div className="flex flex-row justify-between">
-      <span>Reservacion de {reservacion.name}</span>
-      <button onClick={handleEditClick}>Editar</button>
-      <button onClick={handleDeleteClick} >
-  Eliminar
+    <div className="w-[350px] h-[235px] rounded-[7px] border-[2px]">
+    <div className="w-full flex flex-row justify-center">
+      <div className="w-[90%] flex flex-col gap-1">
+        <div className="flex flex-row justify-between">
+
+      <span className="uppercase font-apollo tracking-[2px] mt-4 text-lg">{reservacion.name}</span>
+      <button onClick={handleEditClick}><Image src={editar} alt="editar button" className="w-[20px]" /> </button>
+        </div>
+      <p className="font-apollo uppercase text-sm">{reservacion.checkin} - {reservacion.checkout}</p>
+      <p className="font-apollo uppercase text-sm">{reservacion.guests} Húespedes</p>
+      <p className="font-apollo uppercase text-sm">PAQUETE{reservacion.plan} </p>
+      <p className="font-apollo uppercase text-sm">EXTRA:{reservacion.experience} </p>
+      <p className="font-apollo uppercase text-sm">teléfono: {reservacion.tel} </p>
+      <p className="font-apollo uppercase text-sm">e-mail: {reservacion.email} </p>
+      <div className="flex flex-row justify-between mb-4">
+        <div>
+      <button onClick={handleDeleteClick} className="mt-2" ><Image src={bote} alt="editar button" className="w-[15px] " /></button>
+        
+        </div>
+      
+<div>
+<button onClick={handleDeleteClick} className="font-Geometrica tracking-[2px] bg-[#b4a692] px-4 py-1 rounded-[7px]" >
+  MAILING
 </button>
+</div>
+</div>
 
       <Modal show={showModal} onClose={handleCloseModal}>
         <div className="p-6">
@@ -198,6 +224,8 @@ function Reservacion({ reservacion }) {
           </div>
         </div>
       </Modal>
+      </div>
+    </div>
     </div>
   );
 }
