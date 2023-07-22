@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Modal from "../Modal/Modal";
 import { AppContext } from "@/context/StateContext";
+import Image from "next/image";
+import bote from '../../../assets/Icons/bote.png'
 
 
-function Factura({ factura,  }) {
+
+function Factura({ factura, index  }) {
 
   
   const { updateFactura, deleteFactura } = AppContext();
@@ -85,14 +88,21 @@ function Factura({ factura,  }) {
    
   };
 
+  console.log(factura)
+
   return (
-    <div className="flex flex-row justify-between">
-      <span>Factura de {factura.name}</span>
-      <button>{factura.state === true ? "recibida" : "enviada"}</button>
-      <button onClick={handleEditClick}>Editar</button>
-      <button onClick={handleDeleteClick} >
-  Eliminar
-</button>
+    <>
+     <tr key={factura.id} className={`${index % 2 === 0 ? 'bg-[#e7e4df] ' : 'bg-[#dad9d9]'} `}>
+  <td className="text-left">{factura.name}</td>
+  <td>{factura.phone}</td>
+  <td>{factura.email}</td>
+  <td>{factura.rfc}</td>
+  <td>{factura.date}</td>
+  <td>{factura.state ? "pendiente" : "enviada"}</td>
+  <td>
+    <Image src={bote} alt="Imagen del bote" className="w-[10px]" />
+  </td>
+</tr>
 
       <Modal show={showModal} onClose={handleCloseModal}>
         <div className="p-6">
@@ -191,7 +201,7 @@ function Factura({ factura,  }) {
           </div>
         </div>
       </Modal>
-    </div>
+    </>
   );
 }
 
