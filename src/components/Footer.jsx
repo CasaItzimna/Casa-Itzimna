@@ -1,5 +1,6 @@
 import React from "react";
 import { BsFacebook, BsInstagram, BsWhatsapp } from "react-icons/bs";
+import { useRouter } from 'next/router';
 
 import Image from "next/image";
 import logo from "../assets/Logo/LOGOBLANCO.png";
@@ -17,8 +18,17 @@ function Footer() {
   const { idioma, setIdioma } = AppContext();
   const json = idioma === 'espanol' ? esJson : enJson;
 
+  const router = useRouter();
+
+  // Verificar si estamos en la página Dashboard
+  const isDashboardPage = router.pathname === '/Dashboard';
+  console.log(isDashboardPage)
+
+
   return (
   
+  
+    !isDashboardPage?
   
 
     <div className="w-full h-full lg:h-[500px]  flex flex-col justify-center bg-[#31302c] ">
@@ -84,6 +94,10 @@ function Footer() {
 
       
     </div>
+    :
+    null
+      
+  
     
   );
 }

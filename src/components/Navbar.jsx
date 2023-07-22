@@ -16,6 +16,7 @@ import igcafe from '../assets/Icons/igcafe.png'
 import telefonocafe from '../assets/Icons/telefonocafe.png'
 import { useEffect } from "react";
 import CalendarioModal from './Home/Modal/CalendarioModal';
+import { useRouter } from 'next/router';
 
 
 function Navbar() {
@@ -42,8 +43,16 @@ function Navbar() {
   console.log(idioma);
   const json = idioma === "espanol" ? esJson : enJson;
 
+  const router = useRouter();
+
+  // Verificar si estamos en la página Dashboard
+  const isDashboardPage = router.pathname === '/Dashboard';
+  console.log(isDashboardPage)
+
+
 
   return (
+    !isDashboardPage?
     <Fragment>
       <div className="w-full h-full hidden lg:flex flex-col items-center">
         <div className="h-[150px] max-w-[1920px] w-full absolute top-20 z-20 flex flex-row justify-around  font-apollo">
@@ -214,6 +223,7 @@ function Navbar() {
           </div>
       </div>
     </Fragment>
+    : null
   );
 }
 

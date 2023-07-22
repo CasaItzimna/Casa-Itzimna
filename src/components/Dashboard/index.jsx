@@ -8,10 +8,8 @@ import Facturas from "./Facturas";
 import Reservaciones from "./Reservaciones";
 import { AppContext } from "@/context/StateContext";
 
-
 const Dashboard = () => {
-
-  const {getReservaciones} = AppContext()
+  const { getReservaciones } = AppContext();
 
   const [user, setUser] = useState({
     email: "",
@@ -40,8 +38,6 @@ const Dashboard = () => {
 
   const [activeComponent, setActiveComponent] = useState("Reservaciones");
 
-
-
   const renderActiveComponent = () => {
     console.log(activeComponent);
     switch (activeComponent) {
@@ -59,9 +55,8 @@ const Dashboard = () => {
     router.push(`/Dashboard/${component}`);
   };
   useEffect(() => {
-    getReservaciones()
-  }, [])
-  
+    getReservaciones();
+  }, []);
 
   useEffect(() => {
     const storedActiveComponent = localStorage.getItem("activeComponent");
@@ -71,30 +66,32 @@ const Dashboard = () => {
       setActiveComponent("Reservaciones");
     }
   }, []);
-  
-  
-  
+
   return (
-    <div className="h-full w-full">
-      <div>
-        <h1>Dashboard</h1>
-        <p>Bienvenido,{user?.name}</p>
-        <button onClick={() => logout()}>Logout</button>
-      </div>
-      <div className="flex flex-row w-full h-full mt-4 ">
-        <div className="flex flex-col w-1/6 h-full">
-          Sidebar
-          <ul>
-  <li className="cursor-pointer">
-    <span onClick={() => handleSidebarClick("Reservaciones")}>
-      Reservaciones
-    </span>
-  </li>
-  <li className="cursor-pointer">
-    <span onClick={() => handleSidebarClick("Facturas")}>Facturas</span>
-  </li>
-  <li>Menu</li>
-</ul>
+    <div className="h-screen w-full">
+      <div className="flex flex-row w-full h-full  ">
+        <div className="flex flex-col w-1/6 justify-center h-full bg-red-950 ">
+          <div className="flex flex-col w-[90%] items-center h-full">
+            <h1>Dashboard</h1>
+            <p>Bienvenido,{user?.name}</p>
+            Sidebar
+            <ul>
+              <li className="cursor-pointer">
+                <span onClick={() => handleSidebarClick("Reservaciones")}>
+                  Reservaciones
+                </span>
+              </li>
+              <li className="cursor-pointer">
+                <span onClick={() => handleSidebarClick("Facturas")}>
+                  Facturas
+                </span>
+              </li>
+              <li>Menu</li>
+            </ul>
+          </div>
+          <div className="w-full flex flex-row justify-start mb-8">
+            <button onClick={() => logout()}>Logout</button>
+          </div>
         </div>
         <div className="w-5/6 h-full ">{renderActiveComponent()}</div>
       </div>
