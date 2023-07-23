@@ -128,9 +128,16 @@ export function StateContextProvider({ children }) {
 
  
   //Reservaciones
-
-  //TODO: postReservacion
+  function isLongDate(dateString) {
+    return dateString.length > 10; // Verifica si la fecha es más larga que 'yyyy-mm-dd'
+  }
+  
   function postReservacion(formData) {
+    console.log(formData);
+  
+    const checkin = isLongDate(formData.checkin) ? formatISO(formData.checkin).substring(0, 10) : formData.checkin;
+    const checkout = isLongDate(formData.checkout) ? formatISO(formData.checkout).substring(0, 10) : formData.checkout;
+  
     console.log(formData);
     client.create({
       _type: "reservaciones",
@@ -138,9 +145,11 @@ export function StateContextProvider({ children }) {
       tel: formData.tel,
       email: formData.email,
       guests: formData.guests,
-      checkin: formatISO(formData.begin).substring(0, 10),
-      checkout: formatISO(formData.end).substring(0, 10),
+      checkin: checkin,
+    checkout: checkout,
       comments: formData.comments,
+      plan: formData.plan,
+      experience: formData.experience,
       total: formData.total,
       status: "pendiente",
       idioma: idioma,
@@ -170,6 +179,8 @@ export function StateContextProvider({ children }) {
         //end: formatISO(formData.end).substring(0, 10),
         begin: formData.begin,
         end: formData.end,
+        plan: formData.plan,
+        experience: formData.experience,
         comments: formData.comments,
         total: formData.total,
         registerDate: new Date(),

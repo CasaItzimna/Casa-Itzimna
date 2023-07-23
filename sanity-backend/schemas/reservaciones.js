@@ -34,6 +34,17 @@ export default{
             type: 'date'
         },
         {
+            name: 'plan',
+            title: 'Plan',
+            type: "string"
+        },
+        {
+            name: "experience",
+            title: "Experience",
+            type: 'array',
+            of:[{type:"string"}]
+        },
+        {
             name: 'comments',
             title: 'Comments',
             type: 'string'
@@ -41,7 +52,7 @@ export default{
         {
             name: 'total',
             title:'Total',
-            type: 'number'
+            type: 'string'
         },
         {
             name: 'status',

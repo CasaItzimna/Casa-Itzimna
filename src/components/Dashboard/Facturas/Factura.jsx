@@ -12,6 +12,7 @@ function Factura({ factura, index  }) {
   const { updateFactura, deleteFactura } = AppContext();
 
   const [showModal, setShowModal] = useState(false);
+
   const{getFacturas} = AppContext()
 
   const handleEditClick = () => {
@@ -20,6 +21,9 @@ function Factura({ factura, index  }) {
 
   const handleCloseModal = () => {
     setShowModal(false);
+  };
+  const handleCloseModal2 = () => {
+    setShowModal2(false);
   };
 
   const [formData, setFormData] = useState({
@@ -31,6 +35,7 @@ function Factura({ factura, index  }) {
     state: factura.state,
     total: factura.total,
   });
+
 
   useEffect(() => {
     setFormData({
@@ -88,35 +93,38 @@ function Factura({ factura, index  }) {
    
   };
 
+
+ 
+
   console.log(factura)
 
   return (
     <>
      <tr key={factura.id} className={`${index % 2 === 0 ? 'bg-[#e7e4df] ' : 'bg-[#dad9d9]'} `}>
   <td className="text-left font-apollo uppercase tracking-[2px] text-sm pl-2">{factura.name}</td>
-  <td className="font-apollo uppercase tracking-[2px] text-sm ">{factura.phone}</td>
-  <td className="font-apollo uppercase tracking-[2px] text-sm ">{factura.email}</td>
-  <td className="font-apollo uppercase tracking-[2px] text-sm ">{factura.rfc}</td>
-  <td className="font-apollo uppercase tracking-[2px] text-sm ">{factura.date}</td>
-  <td className="font-apollo uppercase tracking-[2px] text-sm ">{factura.state ? "pendiente" : "enviada"}</td>
-  <td>
-    <Image src={bote} alt="Imagen del bote" className="w-[10px]" />
-  </td>
+  <td className="font-apollo uppercase tracking-[2px] text-sm  hidden lg:table-cell">{factura.phone}</td>
+{/*   <td className="font-apollo uppercase tracking-[2px] text-sm hidden lg:table-cell ">{factura.email}</td>
+ */}  <td className="font-apollo uppercase tracking-[2px] text-sm hidden lg:table-cell ">{factura.rfc}</td>
+  <td className="font-apollo uppercase tracking-[2px] text-sm hidden lg:table-cell ">{factura.date}</td>
+  <td className="font-apollo uppercase tracking-[2px] text-sm hidden lg:table-cell">{factura.state ? "pendiente" : "enviada"}</td>
+  <td className="font-apollo uppercase tracking-[2px] text-sm  "><button className="py-2 px-2 cursor-pointer" onClick={()=>setShowModal(true)}>Ver Detalle</button></td>
+
+ 
 </tr>
 
-      <Modal show={showModal} onClose={handleCloseModal}>
-        <div className="p-6">
-          <h2 className="text-xl mb-4">Editar factura de {factura.name}</h2>
+<Modal show={showModal} onClose={handleCloseModal}>
+        <div className="p-6 ">
+          <h2 className="text-xl mb-4 font-apollo uppercase tracking-[2px]">Editar factura de {factura.name}</h2>
           <div>
             <form
-              className="flex flex-col h-full w-full"
+              className="flex flex-col h-full w-full font-Geometrica"
               onSubmit={handleSubmit}
             >
               <input
                 type="text"
                 name="name"
                 id="name"
-                className="border-2 mt-2"
+                className="border-2 mt-2 "
                 placeholder="name"
                 onChange={handleInputChange}
                 value={formData.name}
@@ -166,15 +174,17 @@ function Factura({ factura, index  }) {
                 type="number"
                 name="total"
                 id="total"
-                className="border-2 mt-2"
+                className="border-2 mt-2 mb-2"
                 placeholder="total"
                 onChange={handleInputChange}
                 value={formData.total}
                 required
               />
               <label htmlFor="switch">
-                {isSwitchChecked ? "Recibida" : "enviada"}
+                {isSwitchChecked ? "RECIBIDA" : "ENVIADA"}
               </label>
+              <div className="flex flex-row w-[50px]">
+
               <input
                 type="checkbox"
                 name="switch"
@@ -183,17 +193,24 @@ function Factura({ factura, index  }) {
                 onChange={handleSwitchChange}
                 checked={isSwitchChecked}
               />
+              </div>
             </form>
           </div>
           <div className="flex flex-row justify-between">
             <button
-              className="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              className="mt-4 bg-[#b4a692] hover:bg-[#4a443c] text-white font-bold py-2 px-4 rounded"
               onClick={handleSubmit}
             >
-              Guardar cambios
+              Guardar 
             </button>
             <button
-              className="mt-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+              className="mt-4 bg-[#b4a692] hover:bg-[#4a443c] text-white font-bold py-2 px-4 rounded"
+              onClick={handleDeleteClick}
+            >
+              Eliminar 
+            </button>
+            <button
+              className="mt-4 bg-[#b4a692] hover:bg-[#4a443c] text-white font-bold py-2 px-4 rounded"
               onClick={handleCloseModal}
             >
               Cancelar
@@ -201,6 +218,9 @@ function Factura({ factura, index  }) {
           </div>
         </div>
       </Modal>
+
+
+     
     </>
   );
 }
