@@ -134,29 +134,36 @@ export function StateContextProvider({ children }) {
     return dateString.toString().length > 10; // Verifica si la fecha es más larga que 'yyyy-mm-dd'
   }
   
-  function postReservacion(formData) {
-    console.log(formData);
+  async function postReservacion(formData) {
+    try {
+      const checkin = isLongDate(formData.checkin) ? formatISO(formData.checkin).substring(0, 10) : formData.checkin;
+      const checkout = isLongDate(formData.checkout) ? formatISO(formData.checkout).substring(0, 10) : formData.checkout;
   
-    const checkin = isLongDate(formData.checkin) ? formatISO(formData.checkin).substring(0, 10) : formData.checkin;
-    const checkout = isLongDate(formData.checkout) ? formatISO(formData.checkout).substring(0, 10) : formData.checkout;
+      const createdReservacion = await client.create({
+        _type: "reservaciones",
+        name: formData.name,
+        tel: formData.tel,
+        email: formData.email,
+        guests: formData.guests,
+        checkin: checkin,
+        checkout: checkout,
+        comments: formData.comments,
+        plan: formData.plan,
+        experience: formData.experience,
+        total: formData.total.toString(),
+        status: "pendiente",
+        idioma: idioma,
+        registerDate: new Date(),
+      });
   
-    console.log(formData);
-    client.create({
-      _type: "reservaciones",
-      name: formData.name,
-      tel: formData.tel,
-      email: formData.email,
-      guests: formData.guests,
-      checkin: checkin,
-    checkout: checkout,
-      comments: formData.comments,
-      plan: formData.plan,
-      experience: formData.experience,
-      total: formData.total.toString(),
-      status: "pendiente",
-      idioma: idioma,
-      registerDate: new Date(),
-    });
+      // Obtenemos el ID generado por Sanity para la nueva reservación
+      const reservacionId = createdReservacion._id;
+       // Retornamos el reservacionId
+        return reservacionId;
+       } catch (error) {
+        console.error("Error al crear la reservación:", error);
+        throw error; // Lanzamos el error para que pueda ser capturado en el catch del componente
+     }
   }
 
   //TODO: getReservaciones
@@ -165,6 +172,21 @@ export function StateContextProvider({ children }) {
     const resultado = await client.fetch(query);
     setReservaciones(resultado);
     setIsLoading(false)
+  }
+
+  async function getReservacion(id) {
+    try {
+      const query = `*[_type == "reservaciones" && _id == "${id}"]`;
+      const resultado = await client.fetch(query);
+      if (resultado.length > 0) {
+        return resultado[0];
+      } else {
+        return null;
+      }
+    } catch (error) {
+      console.error("Error al obtener la reservación:", error);
+      throw error; 
+    }
   }
 
   //TODO: updateReservacion
@@ -298,6 +320,8 @@ export function StateContextProvider({ children }) {
     });
   }
 
+  
+
   return (
     <StateContext.Provider
       value={{
@@ -308,6 +332,7 @@ export function StateContextProvider({ children }) {
         deleteFactura,
         postReservacion,
         getReservaciones,
+        getReservacion,
         updateReservacion,
         deleteReservacion,
         getProductos,

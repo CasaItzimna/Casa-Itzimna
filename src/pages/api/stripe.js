@@ -1,10 +1,12 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+import {updateReservacion} from '../../context/StateContext'
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
         console.log(req.body)
         console.log(req.body.items[0].name)
         try {
+          
             const params = {
                 submit_type: 'pay',
                 mode: 'payment',

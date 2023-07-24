@@ -1,6 +1,17 @@
 import React from 'react'
+import Reservacion from './Reservacion'
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function Order({json}) {
+
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        
+      }, []);
+
   return (
     <div className='w-full flex flex-row justify-center bg-[#b4a692] '>
         <div className='w-[90%]  h-full flex flex-col items-center bg-white mb-8'>
@@ -16,14 +27,7 @@ function Order({json}) {
                     <p className='text-center font-apollo tracking-[2px] mt-8'>{json.Confirmation.review}</p>
                     <h3 className='text-center font-apollo tracking-[4px] text-xl text-[#b4a692]'>{json.Confirmation.booking}</h3>
 
-                    <p className='font-apollo tracking-[2px] uppercase'>paulina mora</p>
-                    <p className='font-apollo tracking-[2px] uppercase'>+52 55 4023 5479</p>
-                    <p className='font-apollo tracking-[2px] uppercase'>jaizmorateam@gmail.com</p>
-                    <p className='font-apollo tracking-[2px] uppercase'>6-8 guest</p>
-                    <p className='font-apollo tracking-[2px] uppercase'>luxury rate</p>
-                    <p className='font-apollo tracking-[2px] uppercase'>12 nights</p>
-                    <p className='font-apollo tracking-[2px] uppercase'><span>Check in:</span> 17/09/23</p>
-                    <p className='font-apollo tracking-[2px] uppercase'><span>Check out:</span> 30/09/23</p>
+                    <Reservacion/>
 
 
                 </div>

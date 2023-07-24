@@ -219,7 +219,7 @@ const [total, setTotal] = useState(0)
   
   
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     event.preventDefault();
     console.log(formData);
     formData.checkin = inicio;
@@ -242,6 +242,15 @@ const [total, setTotal] = useState(0)
     ) {
       console.log("entre en el if", formData);
       setCarritoReservaciones([...carritoReservaciones, formData])
+      const reservacionId = await postReservacion(formData);
+      try {
+        const reservacionId = await postReservacion(formData);
+        console.log("ID de la nueva reservacion:", reservacionId);
+        formData.id = reservacionId;
+      } catch (error) {
+        console.error("Error al crear la reservación:", error);
+        // Manejar el error, por ejemplo, mostrar un mensaje al usuario
+      }
       //
       if (localStorage.getItem("reservacion")) {
         // Obtener el arreglo actual de reservaciones desde localStorage
@@ -261,8 +270,7 @@ const [total, setTotal] = useState(0)
       var formDataJSON = JSON.stringify(formData);
       localStorage.setItem('reservacion',[...carritoReservaciones, formDataJSON]); */
 
-      postReservacion(formData);
-
+      
       emailjs.init("F9ctTSenSvQgRvd69");
 
     // Parámetros para enviar el correo electrónico
