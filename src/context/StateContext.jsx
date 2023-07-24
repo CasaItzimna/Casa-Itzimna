@@ -129,7 +129,9 @@ export function StateContextProvider({ children }) {
  
   //Reservaciones
   function isLongDate(dateString) {
-    return dateString.length > 10; // Verifica si la fecha es más larga que 'yyyy-mm-dd'
+    console.log(dateString)
+    console.log(dateString.toString() )
+    return dateString.toString().length > 10; // Verifica si la fecha es más larga que 'yyyy-mm-dd'
   }
   
   function postReservacion(formData) {
@@ -150,7 +152,7 @@ export function StateContextProvider({ children }) {
       comments: formData.comments,
       plan: formData.plan,
       experience: formData.experience,
-      total: formData.total,
+      total: formData.total.toString(),
       status: "pendiente",
       idioma: idioma,
       registerDate: new Date(),

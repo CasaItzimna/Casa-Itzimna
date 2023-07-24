@@ -32,15 +32,9 @@ export default async function handler(req, res) {
                 }
             }),
                     /* Puedes incluir más objetos para agregar más productos a la sesión de pago */
- 
-                  
-                
-
                 success_url: `${req.headers.origin}/Confirmacion`,
                 cancel_url: `${req.headers.origin}/ErrorPago`,
             }
-
-
 
             // Create Checkout Sessions from body params.
             const session = await stripe.checkout.sessions.create(params);

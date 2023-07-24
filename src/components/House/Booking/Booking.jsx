@@ -8,6 +8,7 @@ import { AiOutlineCaretDown } from "react-icons/ai";
 import { AppContext } from "@/context/StateContext";
 import { differenceInDays, isValid } from "date-fns";
 import { useRouter } from "next/router";
+import emailjs from '@emailjs/browser';
 
 function Booking({ json }) {
   const [name, setName] = useState("");
@@ -241,7 +242,7 @@ const [total, setTotal] = useState(0)
     ) {
       console.log("entre en el if", formData);
       setCarritoReservaciones([...carritoReservaciones, formData])
-      //postReservacion(formData);
+      //
       if (localStorage.getItem("reservacion")) {
         // Obtener el arreglo actual de reservaciones desde localStorage
         const reservacionesEnLocalStorage = JSON.parse(localStorage.getItem("reservacion"));
@@ -259,6 +260,36 @@ const [total, setTotal] = useState(0)
             /* 
       var formDataJSON = JSON.stringify(formData);
       localStorage.setItem('reservacion',[...carritoReservaciones, formDataJSON]); */
+
+      postReservacion(formData);
+
+      emailjs.init("F9ctTSenSvQgRvd69");
+
+    // Parámetros para enviar el correo electrónico
+    const params = {
+      from_name: formData.name,
+      phone: formData.tel,
+      email: formData.email,
+      plan: formData.plan,
+      guests: formData.guests,
+      checkin: formData.checkin,
+      checkout: formData.checkout,
+      precio: formData.precio,
+      experiences: formData.experience,
+      total: formData.total
+    };
+
+    // Envía el correo electrónico
+    emailjs
+      .send("service_d5x4xeq", "template_vrd3ujg", params)
+      .then((response) => {
+        console.log("Correo electrónico enviado exitosamente:", response);
+      })
+      .catch((error) => {
+        console.error("Error al enviar el correo electrónico:", error);
+      });
+
+
       setFormData({
         name: "",
         tel: "",
