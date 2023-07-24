@@ -161,7 +161,9 @@ function Facilities({json}) {
           <div className="w-full flex flex-row justify-center xl:justify-start">
 
           <button className="font-Geometrica bg-[#b4a692] w-[150px] h-[35px] rounded-[7px] text-xl px-4 mt-4">
+          <Link href="/Spaces">
           {json.Facilities.galleryButton}
+          </Link>
           </button>
           </div>
         </div>

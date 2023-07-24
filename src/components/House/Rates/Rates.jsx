@@ -5,6 +5,7 @@ import foto2 from "./2.png";
 import foto3 from "./3.png";
 import fototo1 from "./foto1.png";
 import fototo2 from "./foto2.png";
+import Link from "next/link";
 
 
 function Rates({ json }) {
@@ -120,7 +121,9 @@ function Rates({ json }) {
                 <div className="flex flex-row justify-center lg:justify-start ">
 
                 <button className="font-Geometrica bg-[#b4a692] w-[150px] h-[35px] rounded-[7px] text-xl px-2 mt-4">
+                <Link href="/Experience">
                   {json.Rates.experiencesButton}
+                  </Link>
                 </button>
                 </div>
               </div>

@@ -24,12 +24,12 @@
     },
     "About": {
       "title": "About Us",
-      "text": "Discover the enchantment of Mérida at our exclusive Boutique House, where history merges with contemporary elegance to offer you a unique experience. Make Casa Itzimná your stay in this magical city!",
+      "text": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
     "buttonText": "READ MORE"
     },
     "Experience":{
         "title": "Experience",
-      "text": "Let yourself be captivated by the decoration, the attention of our team, the local gastronomy, and the charm of Mérida through the unique and captivating experiences we offer at Casa Itzimná Boutique.",
+      "text": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
       "buttonText": "DISCOVER"
     },
     "Accomodation":{
@@ -37,50 +37,50 @@
         "option1": "UNIQUE SPACES",
         "option2": "LUXURE & COMFORT",
         "option3": "GRACIOUS HOSPITALITY",
-      "text": "Experience the comfort of every corner, infused with the charm of Mérida and contemporary flair. The Boutique House has been designed to offer a haven of luxury and well-being. Discover the warmth and elegance of our spaces.",
+      "text": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
       "buttonText": "SPACES"
     },
     "Testimonials":{
         "title": "Testimonials",
         "subtitle": "WHAT OUT CUSTOMERS SAY",
         "titleText": "EXCELENT SERVICE & AMMENITIES",
-      "text1": "My stay at Casa Itzimná Boutique was simply exceptional. From the moment I arrived, I was welcomed with warmth and kindness that truly made a difference. The facilities are impressive and exceeded my expectations.",
-      "text2": "I can't find words to describe how wonderful my time here was. Every moment of my stay was filled with pampering and attentiveness. The staff was incredibly friendly and always willing to help with any request.",
-      "text3": "My experience at Casa Itzimná was magical. I was captivated by the elegance and taste in every detail. The service was impeccable, and the facilities perfectly blend modern amenities with a colonial touch."
+      "text1": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+      "text2": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+      "text3": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis."
     },
     "OurStory":{
       "title": "Our Story",
       "option1": "ABOUT",
       "option2": "MISSION",
       "option3": "OUR GOALS",
-    "text": "Located in the heart of the ancient Itzimná Colony, you'll find our colonial-style mansion, built in 1961, turning it into a true historical treasure that has been a home to local families and witnessed the evolution of Mérida. Today, meticulously restored, it blends the elegance of yesteryears with modern amenities, offering our guests a unique and charming colonial experience."
+    "text": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis."
     
   },
   "History":{
     "title": "Our History",
     "subtitle": "DISCOVER THE LEGACY OG HOSPITALITY AND ELEGANCE",
-    "titleText1": "ITZIMNÁ COLONY",
-    "titleText2": "THE SANCTUARY",
-    "titleText3": "ESTABLISHMENT",
-  "text1": "The Itzimná Colony belongs to the Ceh Pech cacicazgo, housing a temple dedicated to the deity Itzamná and considered a Pre-Hispanic Legacy of the Colony.",
-  "text2": "After the destruction of the pre-Hispanic temple, a small chapel is built, honoring the Christ of Esquipulas and San Miguel Archangel.",
-  "text3": "Construction of the colonial-style mansion in the ancient Itzimná Colony."
+    "titleText1": "ESTABLISHMENT",
+    "titleText2": "RESTORATION",
+    "titleText3": "BOUTIQUE",
+  "text1": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "text2": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  "text3": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 },
 "Why":{
   "title": "Why Choose Us",
   "question1":"UNPARALLED LUXURY AND COMFORT",
   "question2":"EXQUISITE DINING EXPERIENCES",
   "question3":"IMPECCABLE SERVICE AND ATTENTION",
-  "answer1": "At Casa Itzimná Boutique, an extraordinary experience awaits you, where sophistication and well-being come together to make your stay truly exceptional.",
-  "answer2": "Exquisite Culinary Experiences: Let yourself be captivated by our unique flavors and delight your senses with the exceptional gastronomy we offer at Casa Itzimná Boutique.",
-  "answer3": "Impeccable Service and Exceptional Attention: Our team is devoted to providing unparalleled hospitality, ensuring that every moment of your stay is perfect and memorable."
+  "answer1": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+  "answer2": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+  "answer3": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis."
 },
 "Facilities":{
-  "texto1": "House located in Itzimná neighborhood, close to Paseo Montejo and Monumento a la Patria, just 3 km from downtown Mérida. It features gardens, kitchen with island and bar area, guest bathroom, 3 bedrooms with en-suite bathrooms, laundry area with washer and dryer, screens in each bedroom, terrace with cable TV, parking for 5 cars, and more. An oasis of luxury and well-being!",
-  "list1": "Air conditioning in all areas",
-  "list2": "Terrace with integrated kitchen and full bathroom",
-  "list3": "Spacious gardens and pool area with sunbeds and hammocks",
-  "list4": "Solar panels and water softening system",
+  "texto1": "ingles Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+  "list1": "Lorem ipsum dolor sit amet",
+  "list2": "Lorem ipsum dolor sit amet",
+  "list3": "Lorem ipsum dolor sit amet",
+  "list4": "Lorem ipsum dolor sit amet",
   "title": "FACILITIES",
   "facility1": "SWIMMING POOL",
   "facility2": "PARKING LOT",

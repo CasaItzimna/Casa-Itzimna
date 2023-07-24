@@ -10,6 +10,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { AppContext } from "@/context/StateContext";
 import CalendarioModal from '../Modal/CalendarioModal';
+import Link from "next/link";
 
 function Hero({ setShow, json }) {
 
@@ -61,11 +62,15 @@ function Hero({ setShow, json }) {
             <span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[150px] xl:text-[200px]">I</span>tzimná
           </h1>
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-cinzelRegular">Boutique</h2>
-          <button className="w-[50%] bg-black/40 hover:bg-black text-white mt-8 py-4 text-xl font-Geometrica tracking-[2px] lg:hidden"
-          onClick={() => { openModal(); setShowModalCalendar(true); }}
-          >{json.Home.buttonBook}</button>
+          <button className="w-[50%] lg:w-[30%] bg-black/40 hover:bg-black text-white mt-8 py-4 text-xl font-Geometrica tracking-[2px] "
+          /* onClick={() => { openModal(); setShowModalCalendar(true); }} */
+          >
+            <Link href="/House#booking">
+            {json.Home.buttonBook}
+            </Link></button>
+            
          
-
+{/* 
           <CalendarioModal
         
         isOpen={modalOpen}
@@ -109,7 +114,7 @@ function Hero({ setShow, json }) {
             <button className="w-[22%] h-[40px] bg-[#b4a692] ml-4 font-apollo  rounded-md cursor-pointer text-black md:text-sm xl:text-xl">
               CHECK NOW
             </button>
-          </div>
+          </div> */}
           {/* To-Do boton de book now */}
         </div>
       </div>

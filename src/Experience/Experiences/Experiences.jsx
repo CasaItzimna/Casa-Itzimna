@@ -6,6 +6,7 @@ import experience3 from './experience3.png'
 import experience4 from './experience4.png'
 import 	captivating from './captivating.png'
 import 	lobby from './lobby.png'
+import Link from 'next/link'
 
 function Experiences({json}) {
     console.log(json.Experiences.Experiences1)
@@ -60,7 +61,9 @@ function Experiences({json}) {
                             {json.Experiences.CaptivatingText}
                         </p>
                         <button className='font-Geometrica bg-[#b4a692] w-[150px] py-1 rounded-[7px] tracking-[4px] mt-4 mb-8 lg:mb-0'>
+                            <Link href="/Spaces">
                             {json.Experiences.ButtonText}
+                            </Link>
                         </button>
                    </div>
                     <div  className='hidden lg:flex w-[26%] h-[270px] '>

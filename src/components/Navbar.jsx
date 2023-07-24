@@ -132,11 +132,16 @@ function Navbar() {
             </div>
           </div>
           <div className="flex flex-col justify-center">
-            <button className="border-2 border-white rounded-md text-white w-[120px] h-[35px] text-xl flex flex-col justify-center items-center">
+           {/*  <button className="border-2 border-white rounded-md text-white w-[120px] h-[35px] text-xl flex flex-col justify-center items-center">
               <Link href="/Login">LOG IN</Link>
-            </button>
+            </button> */}
+            <div className="flex flex-row justify-center mb-4">
+            <Link href="/Carrito">
+                <Image src={carrito} alt="carrito de compras icon" className="w-[25px] h-[25px] cursor-pointer"/>
+            </Link>
+            </div>
             <button className="bg-[#b4a692] rounded-md text-black w-[120px] h-[30px] mt-2 text-xl">
-              <Link href="/Booking">BOOK NOW</Link>
+            <Link href="/House#booking">BOOK NOW</Link>
             </button>
           </div>
         </div>
@@ -207,8 +212,8 @@ function Navbar() {
               </ul>
           </div>
           <div className="w-full flex flex-row justify-center gap-2 mt-4">
-                <button className="tracking-[2px] border-[1px] border-[#31302c] font-Geometrica text-[#31302c] px-4 text-lg"><Link href="/Login">LOG IN</Link></button>
-                <button className="tracking-[2px] bg-[#30302c] text-white font-Geometrica px-2 text-lg" onClick={() => { openModal(); setShowModalCalendar(true); }}> BOOK NOW</button>
+{/*                 <button className="tracking-[2px] border-[1px] border-[#31302c] font-Geometrica text-[#31302c] px-4 text-lg"><Link href="/Login">LOG IN</Link></button>
+ */}                <button className="tracking-[2px] bg-[#30302c] text-white font-Geometrica px-2 text-lg" /* onClick={() => { openModal(); setShowModalCalendar(true); }} */  onClick={()=>setActive(false)}> <Link href="/House#booking">BOOK NOW</Link> </button>
                 <CalendarioModal
         
         isOpen={modalOpen}
@@ -216,11 +221,13 @@ function Navbar() {
         />
           </div>
           <div className="w-full flex flex-row justify-center gap-12 mt-8 mb-8">
-                <Image src={carritocafe} alt="carrito de compras" className="w-[25px] h-[25px] cursor-pointer"/>
-                <Image src={telefonocafe} alt="carrito de compras" className="w-[21px] h-[25px] cursor-pointer"/>
-                <Image src={emailcafe} alt="carrito de compras" className="w-[30px] h-[25px] cursor-pointer"/>
-                <Image src={fbcafe} alt="carrito de compras" className="w-[15px] h-[25px] cursor-pointer"/>
-                <Image src={igcafe} alt="carrito de compras" className="w-[25px] h-[25px] cursor-pointer"/>
+            <Link href="/Carrito">
+                <Image src={carritocafe} alt="carrito de compras icon" className="w-[25px] h-[25px] cursor-pointer"/>
+            </Link>
+                <Image src={telefonocafe} alt="telefono icon" className="w-[21px] h-[25px] cursor-pointer"/>
+                <Image src={emailcafe} alt="email icon" className="w-[30px] h-[25px] cursor-pointer"/>
+                <Image src={fbcafe} alt="fb icon" className="w-[15px] h-[25px] cursor-pointer"/>
+                <Image src={igcafe} alt="ig icon" className="w-[25px] h-[25px] cursor-pointer"/>
           </div>
       </div>
     </Fragment>

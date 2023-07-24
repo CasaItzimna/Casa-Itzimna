@@ -2,9 +2,9 @@
     "Navbar": {
       "option1": "INICIO",
       "option2": "ACERCA",
-      "option3": "CASA",
+      "option3": "CASA", 
       "option4": "EXPERIENCIA",
-      "option5": "ESCPACIOS",
+      "option5": "ESPACIOS",
       "option6": "BOUTIQUE",
       "option7": "CONTACTO"
     },
@@ -24,29 +24,29 @@
     },
     "About": {
       "title": "Nosotros",
-      "text": "Descubre el encanto de Mérida en nuestra exclusiva Casa Boutique, donde la historia se fusiona con la elegancia contemporánea para ofrecerte una experiencia única. ¡Haz de Casa Itzimná tu estancia en esta mágica ciudad!",
+      "text": "espanol  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
     "buttonText": "VER MÁS"
     },
     "Experience":{
-        "title": "Experiencia",
-      "text": "Déjate conquistar por la decoración, la atención de nuestro equipo, la gastronomía local y el encanto de Mérida a través de las experiencias únicas y cautivadoras que te ofrecemos en Casa Itzimná Boutique. ",
+        "title": "Acerca de Nosotros",
+      "text": "espanol  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
       "buttonText": "DESCUBRIR"
     },
     "Accomodation":{
         "title": "Alojamiento",
         "opcion1": "ESPACIOS UNICOS",
-        "opcion2": "LUJO Y COMODIDAD",
+        "opcion2": "LUJO & COMODIDAD",
         "opcion3": "HOSPITALIDAD",
-      "text": "Conoce la comodidad de cada rincón impregnado con el encanto de Mérida y lo contemporáneo. La Casa Boutique ha sido diseñada con el fin de ofrecer un refugio de lujo y bienestar. Descubre la calidez y elegancia de nuestros espacios.",
+      "text": "espanol  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
       "buttonText": "ESPACIOS"
     },
     "Testimonials":{
         "title": "Testimonios",
         "subtitle": "LO QUE NUESTROS CLIENTES DICEN",
         "titleText": "EXCELENTE SERVICIO & AMENIDADES",
-      "text1": "Mi estancia en Casa Itzimná Boutique fue simplemente excepcional. Desde el momento en que llegué, fui recibido con calidez y amabilidad que realmente hicieron la diferencia. Las instalaciones son impresionantes, superaron mis expectativas.",
-      "text2": "No tengo palabras para describir lo maravilloso que fue mi tiempo aquí. Cada momento de mi estancia estuvo lleno de mimos y atenciones. El personal fue increíblemente amable y siempre dispuesto a ayudar con cualquier solicitud.",
-      "text3": "Mi experiencia en Casa Itzimná fue mágica. Me cautivó la elegancia y el buen gusto en cada detalle. El servicio fue impecable, las instalaciones totalmente modernas con un toque colonial."
+      "text1": "espanol  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+      "text2": "espanol  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+      "text3": "espanol  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis."
     },
     
     "OurStory":{
@@ -54,34 +54,34 @@
       "option1": "ACERCA",
       "option2": "MISION",
       "option3": "METAS",
-    "text": "Ubicada en el corazón de la antigua Colonia de Itzimná, se encuentra nuestra casona de estilo colonial construída en 1961, convirtiéndola en un verdadero tesoro histórico que ha sido hogar de familias locales y testigo de la evolución de Mérida. Hoy, restaurada con esmero y delicadeza, combina la elegancia de antaño con servicios contemporáneos, ofreciendo a nuestros huéspedes una experiencia única y llena de encanto colonial."
+    "text": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis."
     
   },
   "History":{
     "title": "Historia",
     "subtitle": "DESCUBRE EL LEGADO DE HOSPITALIDAD Y ELEGANCIA",
-    "titleText1": "COLONIA ITZIMNÁ",
-    "titleText2": "UN SANTUARIO DE FE",
-    "titleText3": "ESTABLECIMIENTO",
-    "text1": "La Colonia Itzimná pertenece al cacicazgo de Ceh Pech, como un templo dedicado a la Deidad Itzamná y es considerada como Legado Prehispánico de la Colonia.",
-    "text2": "Después de la destrucción del templo prehispánico, se construye una pequeña capilla que venera al Cristo de las Esquipulas y a San Miguel Arcángel.",
-    "text3": "Construcción de la casona de estilo colonial en la antigua Colonia de Itzimná."
+    "titleText1": "ESTABLECIMIENTO",
+    "titleText2": "RESTAURACIÓN",
+    "titleText3": "BOUTIQUE",
+    "text1": "espanol  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "text2": "espanol  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "text3": "espanol  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 },
 "Why":{
   "title": "Por qué Escogernos",
   "question1":"LUJO Y CONFORT SIN IGUAL",
   "question2":"EXPERIENCIAS GASTRONÓMICAS EXQUISITAS",
   "question3":"SERVICIO Y ATENCIÓN IMPECABLE",
-  "answer1": "En Casa Itzimná Boutique, te espera una experiencia extraordinaria donde la sofisticación y el bienestar se unen para hacer de tu estancia algo realmente excepcional.",
-  "answer2": "Déjate cautivar por nuestros sabores únicos y deleita tus sentidos con la gastronomía excepcional que ofrecemos inspirados en la cocina yucateca.",
-  "answer3": "Nuestro equipo está dedicado a brindarte una hospitalidad inigualable, asegurándonos de que cada momento de tu estancia sea perfecto y memorable."
+  "answer1": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+  "answer2": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+  "answer3": "ingles  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis."
 },
 "Facilities":{
-  "texto1": "Casa ubicada en la colonia Itzimná, cerca de Paseo Montejo y el Monumento a la Patria, a solo 3 km del centro de Mérida. Cuenta con jardines, cocina con isla y área de bar, baño para visitas, 3 recámaras con baño independiente, área de lavandería con lavadora y secadora, pantallas en cada recámara, terraza con televisión por cable, estacionamiento para 5 automóviles, y más. ¡Un oasis de lujo y bienestar!",
-  "list1": "Aire acondicionado en todas las áreas",
-  "list2": "Terraza con cocina integrada y baño completo",
-  "list3": "Amplios jardines y área de piscina con camastros y hamacas",
-  "list4": "Paneles solares y sistema de suavizado de agua",
+  "texto1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.",
+  "list1": "Lorem ipsum dolor sit amet",
+  "list2": "Lorem ipsum dolor sit amet",
+  "list3": "Lorem ipsum dolor sit amet",
+  "list4": "Lorem ipsum dolor sit amet",
   "title": "INSTALACIONES",
   "facility1": "PISCINA",
   "facility2": "ESTACIONAMIENTO",

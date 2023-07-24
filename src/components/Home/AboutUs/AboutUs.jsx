@@ -62,7 +62,9 @@ function AboutUs({ json }) {
             </p>
             <Link href="/AboutUs">
               <button className="rounded-[4px] bg-[#b4a692] w-[200px] h-[45px] mt-8 font-apollo text-xl tracking-[4px] ">
+                <Link href="/Aboutus">
                 {json.About.buttonText}
+                </Link>
               </button>
             </Link>
             </div>
