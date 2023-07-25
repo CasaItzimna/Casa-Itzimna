@@ -19,15 +19,15 @@ const GalleryMasonry = ({opcion}) => {
 
   const breakpointColumnsObj = {
     default: 4,
-  3000: 6,
-  2000: 5,
+  3000: 3,
+  2000: 3,
   1200: 3,
   1000: 2,
   500: 1, // número de columnas en pantallas más grandes o iguales a 700px
     // Puedes agregar más tamaños de pantalla aquí si es necesario
   };
   return (
-    
+    <div className='w-full h-full'>
     <Masonry
       breakpointCols={breakpointColumnsObj}
       className="my-masonry-grid flex mb-8"
@@ -36,12 +36,12 @@ const GalleryMasonry = ({opcion}) => {
         opcion == "garden"?
         garden.map((foto, index) => (
           index == 3 ?
-          <div  className=''>
+          <div key={index} className=''>
 
           <Img key={index} foto={foto}/>
           </div>
           :
-          <div>
+          <div key={index}>
             <Img key={index} foto={foto}/>
           </div>
             
@@ -50,6 +50,7 @@ const GalleryMasonry = ({opcion}) => {
         :null
       }
     </Masonry>
+    </div>
    
   );
 };

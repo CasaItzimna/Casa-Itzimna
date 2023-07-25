@@ -30,7 +30,7 @@ function Facilities({json}) {
         <div className="w-full lg:w-1/2 flex flex-row justify-center xl:justify-end ">
 
         
-        <div className="w-[90%] xl:w-[50%] h-full flex flex-col  ">
+        <div className="w-[90%] xl:w-[500px] h-full flex flex-col  ">
             <div className="font-PlayfairDisplay text-[16px] text-justify tracking-wider">
                 {json.Facilities.texto1}
             </div>
@@ -123,7 +123,7 @@ function Facilities({json}) {
         </div> 
         </div>
         
-        <div className=" w-full lg:w-1/2">
+        <div className=" w-full lg:w-1/2 xl:w-1/2">
 
         <div className="w-full   h-full flex flex-col justify-center lg:justify-start  ">
           <div className="w-full flex flex-row justify-center xl:justify-start items-center ">

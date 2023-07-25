@@ -12,7 +12,7 @@ function Spaces() {
   console.log(json)
 
   return (
-    <div>
+    <div className='h-full w-full'>
     <Hero />
     <Gallery json = {json}/>
 

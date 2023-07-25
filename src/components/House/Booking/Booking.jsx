@@ -315,10 +315,10 @@ const [total, setTotal] = useState(0)
 
   return (
     <div className="w-full h-full flex flex-col justify-center items-center pb-10">
-      <div className="w-full lg:w-[1200px]  flex flex-col-reverse lg:flex-row justify-center gap-4">
-        <div className="w-full lg:w-[40%] flex flex-col ">
-          <div className="w-full flex flex-row justify-center">
-            <div className="w-full flex flex-col items-center" id="booking">
+      <div className="w-full lg:w-[1300px] h-full flex flex-col-reverse lg:flex-row justify-center gap-4">
+        <div className="w-full lg:w-[40%] h-full flex flex-col ">
+          <div className="w-full h-full flex flex-row justify-center">
+            <div className="w-full h-full flex flex-col items-center" id="booking">
               <h3 className=" text-5xl font-cinzelBold tracking-[2px] mb-4">
                 {json.Booking.title}
               </h3>
@@ -627,15 +627,18 @@ const [total, setTotal] = useState(0)
             </div>
           </div>
         </div>
-        <div className="w-full lg:w-[40%] flex flex-col">
-          <div className="w-full h-full flex flex-row justify-center lg:justify-start">
-            <Image
-              src={bookingfoto}
-              alt="bookingfoto"
-              className="w-[90%] h-[550px] mb-8 object-cover"
-            />
-          </div>
-        </div>
+          <div className="lg:w-[40%] flex flex-col ">
+        <div className="w-full  h-full flex flex-row justify-center lg:justify-start">
+
+  <div className="w-full h-full flex flex-col justify-center items-center ">
+    <Image
+      src={bookingfoto}
+      alt="bookingfoto"
+      className="w-[90%] h-[550px] object-cover"
+      />
+  </div>
+      </div>
+</div>
       </div>
     </div>
   );

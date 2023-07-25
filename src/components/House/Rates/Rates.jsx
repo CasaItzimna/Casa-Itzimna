@@ -11,7 +11,7 @@ import Link from "next/link";
 function Rates({ json }) {
 
   const ratesElements = [
-    <div key={1} className="w-[300px] xl:w-[300px] h-full flex flex-col ">
+    <div key={1} className="w-[300px] xl:w-[300px] 2xl:w-[330px] h-full flex flex-col ">
               <Image
                 src={foto1}
                 alt="plan1"
@@ -34,7 +34,7 @@ function Rates({ json }) {
                 </div>
               </div>
             </div>,
-            <div key={2} className="w-[300px] xl:w-[300px] h-full  flex flex-col ">
+            <div key={2} className="w-[300px] xl:w-[300px] 2xl:w-[330px] h-full  flex flex-col ">
               <Image
                 src={foto2}
                 alt="plan2"
@@ -57,7 +57,7 @@ function Rates({ json }) {
                 </div>
               </div>
             </div>,
-            <div key={3} className="w-[300px] xl:w-[300px] h-full  flex flex-col ">
+            <div key={3} className="w-[300px] xl:w-[300px] 2xl:w-[330px] h-full  flex flex-col ">
               <Image
                 src={foto3}
                 alt="plan3"
@@ -100,7 +100,7 @@ function Rates({ json }) {
 
           <div className="w-full h-full lg:h-[300px] flex flex-col mt-14 ">
             <div className="w-full  h-full  flex flex-row justify-center">
-              <div className="wfull  lg:w-[1200px]  flex flex-col lg:flex-row gap-8 justify-center">
+              <div className="wfull  lg:w-[1300px]  flex flex-col lg:flex-row gap-8 justify-center">
 
               
               <div className="w-[15%] hidden lg:flex flex-row justify-center items-center">

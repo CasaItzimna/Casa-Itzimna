@@ -21,7 +21,7 @@ function Why({ json }) {
 
   return (
     <div className="w-full h-full lg:h-[700px] flex flex-col lg:flex-row justify-start xl:justify-center  gap-8">
-      <div className="w-full lg:w-[50%] xl:w-[25%] flex flex-row xl:justify-start">
+      <div className="w-full lg:w-[50%] xl:w-[500px] flex flex-row xl:justify-start">
 
       <div className="w-full lg:w-full h-full flex flex-col justify-center  items-center lg:items-start  mt-8 lg:mt-0">
         <Image

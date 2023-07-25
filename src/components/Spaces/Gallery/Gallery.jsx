@@ -8,11 +8,11 @@ function Gallery({json}) {
     console.log(active)
 
   return (
-    <div className='w-full h-full lg:h-[1000px] flex flex-row justify-center relative '>
+    <div className='w-full h-full  flex flex-row justify-center relative '>
                         <div className="h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
 
         <div className='w-[90%] lg:w-[50%] flex flex-col justify-start z-20 '>
-            <div className='grid grid-cols-2 md:grid-cols-3 place-items-center  2xl:grid-cols-6 2xl:place-items-start gap-4 mb-4 lg:mb-8'>
+            <div className='grid grid-cols-2 md:grid-cols-3 place-items-center  2xl:grid-cols-6 2xl:place-items-center gap-4 mb-4 lg:mb-8'>
                 <button className={`font-Geometrica ${active == "garden"? "bg-[#b4a692]" : "bg-[#31302c]"}  w-[120px] text-white text-md tracking-[2px] `}
                 onClick={()=>setActive("garden")}
                 >
@@ -44,7 +44,7 @@ function Gallery({json}) {
                 {json.Gallery.button6}
                 </button>
             </div>
-            <div>
+            <div className='w-full h-full'>
                 {/*aqui van las fotos*/}
                 <Masonry
                 opcion = {active}

@@ -81,34 +81,13 @@ function Testimonials({json}) {
           {json.Testimonials.titleText}
         </h3>
         <p className="font-apollo text-justify px-4 text-lg">
-          {json.Testimonials.text1}
+          {json.Testimonials.text3}
         </p>
       </div>
     </div>,
-    <div
-    key={4}
-    className="flex relative w-[300px] h-[400px] md:w-[350px] md:h-[400px] border-8 rounded-[7px] border-[#b4a692]">
-      <div className="absolute top-6 left-4 text-[#31302c] ">
-        <Image src={comillas} alt="comillas" className="w-[45px] md:w-[60px]" />
-      </div>
-      <div className="absolute top-4 right-4 flex flex-row gap-1 ">
-        <Image src={starsolid} alt="comillas" className="w-[20px]" />
-        <Image src={starsolid} alt="comillas" className="w-[20px]" />
-        <Image src={starsolid} alt="comillas" className="w-[20px]" />
-        <Image src={starsolid} alt="comillas" className="w-[20px]" />
-        <Image src={starsolid} alt="comillas" className="w-[20px]" />
-      </div>
-      <div className=" absolute top-20 md:top-24 flex flex-col w-full h-full">
-        <h3 className="text-[#31302c] text-xl md:text-2xl text-center px-8 font-apollo">
-          {json.Testimonials.titleText}
-        </h3>
-        <p className="font-apollo text-justify px-4 text-lg">
-          {json.Testimonials.text1}
-        </p>
-      </div>
-    </div>,
+   
     <div 
-    key={5}
+    key={4}
     className="flex relative w-[300px] h-[400px] md:w-[350px] md:h-[400px] border-8 rounded-[7px] border-[#31302c]">
       <div className="absolute top-6 left-4 text-[#31302c] ">
         <Image src={comillasclaras} alt="comillas" className="w-[60px]" />
@@ -125,12 +104,12 @@ function Testimonials({json}) {
           {json.Testimonials.titleText}
         </h3>
         <p className="font-apollo text-justify px-4 text-lg">
-          {json.Testimonials.text2}
+          {json.Testimonials.text1}
         </p>
       </div>
     </div>,
     <div
-    key={6}
+    key={5}
     className="flex relative w-[300px] h-[400px] md:w-[350px] md:h-[400px] border-8 rounded-[7px] border-[#b4a692]">
       <div className="absolute top-6 left-4 text-[#31302c] ">
         <Image src={comillas} alt="comillas" className="w-[45px] md:w-[60px]" />
@@ -147,7 +126,29 @@ function Testimonials({json}) {
           {json.Testimonials.titleText}
         </h3>
         <p className="font-apollo text-justify px-4 text-lg">
-          {json.Testimonials.text1}
+          {json.Testimonials.text2}
+        </p>
+      </div>
+    </div>,
+    <div 
+    key={6}
+    className="flex relative w-[300px] h-[400px] md:w-[350px] md:h-[400px] border-8 rounded-[7px] border-[#31302c]">
+      <div className="absolute top-6 left-4 text-[#31302c] ">
+        <Image src={comillasclaras} alt="comillas" className="w-[60px]" />
+      </div>
+      <div className="absolute top-4 right-4 flex flex-row gap-1 ">
+        <Image src={starsolid} alt="comillas" className="w-[20px]" />
+        <Image src={starsolid} alt="comillas" className="w-[20px]" />
+        <Image src={starsolid} alt="comillas" className="w-[20px]" />
+        <Image src={starsolid} alt="comillas" className="w-[20px]" />
+        <Image src={starsolid} alt="comillas" className="w-[20px]" />
+      </div>
+      <div className=" absolute top-24 flex flex-col w-full h-full">
+        <h3 className="text-[#b4a692] text-xl md:text-2xl text-center px-8 font-apollo">
+          {json.Testimonials.titleText}
+        </h3>
+        <p className="font-apollo text-justify px-4 text-lg">
+          {json.Testimonials.text3}
         </p>
       </div>
     </div>,
@@ -172,55 +173,14 @@ function Testimonials({json}) {
         </p>
       </div>
     </div>,
-    <div 
-    key={8}
-    className="flex relative w-[300px] h-[400px] md:w-[350px] md:h-[400px] border-8 rounded-[7px] border-[#31302c]">
-      <div className="absolute top-6 left-4 text-[#31302c] ">
-        <Image src={comillasclaras} alt="comillas" className="w-[60px]" />
-      </div>
-      <div className="absolute top-4 right-4 flex flex-row gap-1 ">
-        <Image src={starsolid} alt="comillas" className="w-[20px]" />
-        <Image src={starsolid} alt="comillas" className="w-[20px]" />
-        <Image src={starsolid} alt="comillas" className="w-[20px]" />
-        <Image src={starsolid} alt="comillas" className="w-[20px]" />
-        <Image src={starsolid} alt="comillas" className="w-[20px]" />
-      </div>
-      <div className=" absolute top-24 flex flex-col w-full h-full">
-        <h3 className="text-[#b4a692] text-xl md:text-2xl text-center px-8 font-apollo">
-          {json.Testimonials.titleText}
-        </h3>
-        <p className="font-apollo text-justify px-4 text-lg">
-          {json.Testimonials.text2}
-        </p>
-      </div>
-    </div>,
-    <div
-    key={9} className="flex relative w-[300px] h-[400px] md:w-[350px] md:h-[400px] border-8 rounded-[7px] border-[#b4a692]">
-      <div className="absolute top-6 left-4 text-[#31302c] ">
-        <Image src={comillas} alt="comillas" className="w-[45px] md:w-[60px]" />
-      </div>
-      <div className="absolute top-4 right-4 flex flex-row gap-1 ">
-        <Image src={starsolid} alt="comillas" className="w-[20px]" />
-        <Image src={starsolid} alt="comillas" className="w-[20px]" />
-        <Image src={starsolid} alt="comillas" className="w-[20px]" />
-        <Image src={starsolid} alt="comillas" className="w-[20px]" />
-        <Image src={starsolid} alt="comillas" className="w-[20px]" />
-      </div>
-      <div className=" absolute top-20 md:top-24 flex flex-col w-full h-full">
-        <h3 className="text-[#31302c] text-xl md:text-2xl text-center px-8 font-apollo">
-          {json.Testimonials.titleText}
-        </h3>
-        <p className="font-apollo text-justify px-4 text-lg">
-          {json.Testimonials.text1}
-        </p>
-      </div>
-    </div>,
+    
+  
   ];
 
   
 
   return (
-    <div className="w-full h-full md:h-[800px]   flex flex-col  text-center mt-4 relative ">
+    <div className="w-full  h-full md:h-[800px]   flex flex-col  text-center mt-4 relative ">
       <div className="absolute bottom-0 right-0">
         <Image src={iguana} alt="iguana" className="w-[400px]"/>
       </div>
@@ -244,7 +204,7 @@ function Testimonials({json}) {
           </div>
 
           <div className="w-full flex flex-row justify-start md:justify-center">
-          <div className=" w-full lg:w-full xl:w-[45%] relative flex flex-row justify-center items-center group">
+          <div className=" w-full lg:w-full xl:w-[50%] 2xl:w-[45%] relative flex flex-row justify-center items-center group">
 
           <MdChevronLeft
           onClick={slideLeft}
@@ -252,7 +212,7 @@ function Testimonials({json}) {
           className="bg-white left-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block"
           />
 
-      <div id={"slider"} className="w-full h-full mb-8 lg:mb-0 mx-4 lg:mx-0  flex flex-row justify-start items-center gap-8 overflow-x-scroll overflow-y-hidden  scroll-smooth scrollbar-hide">
+      <div id={"slider"} className="w-full h-full mb-8 lg:mb-0 mx-4 lg:mx-0   flex flex-row justify-start items-center gap-8 overflow-x-scroll overflow-y-hidden  scroll-smooth scrollbar-hide">
       {testimonialElements.map((testimonio, index) => (
         <div key={index}>{testimonio}</div>
         ))}

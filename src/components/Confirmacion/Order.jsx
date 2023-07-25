@@ -63,7 +63,7 @@ function Order({json}) {
       }
     }
     else{
-        router.push("/Home");
+        router.push("/");
     }
   }, []);
 
