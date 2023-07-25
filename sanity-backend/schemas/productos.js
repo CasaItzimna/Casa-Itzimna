@@ -49,9 +49,12 @@ export default {
       type: 'number',
 
     },
-
-
-
+    {
+      name: 'cantidad',
+      title: 'Cantidad',
+      type: 'number',
+      value: 1
+    },
     {
       name: 'image',
       title: 'Imagen',

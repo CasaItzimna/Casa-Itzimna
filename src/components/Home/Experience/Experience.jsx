@@ -60,9 +60,9 @@ function Experience({json}) {
           </p>
           <Link href='/Experience'>
           <button className="rounded-[4px] bg-[#31302c] text-white w-[200px] h-[45px] text-xl tracking-[4px] mt-8 font-apollo ">
-            <Link href="/Experience">
+            
           {json.Experience.buttonText}
-          </Link>
+         
           </button>
           </Link>
         </div>

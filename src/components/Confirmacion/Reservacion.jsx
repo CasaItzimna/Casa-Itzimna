@@ -1,22 +1,31 @@
 import React from "react";
+import { differenceInDays, isValid } from "date-fns";
 
-function Reservacion() {
+function Reservacion({rsv}) {
+  console.log(rsv)
   return (
     <div>
-      <p className="font-apollo tracking-[2px] uppercase">paulina mora</p>
-      <p className="font-apollo tracking-[2px] uppercase">+52 55 4023 5479</p>
+       <h3 className='text-center font-apollo tracking-[4px] text-xl text-[#b4a692] uppercase'>Booking Data</h3>
+      <p className="font-apollo tracking-[2px] uppercase">{rsv.name}</p>
+      <p className="font-apollo tracking-[2px] uppercase">{rsv.tel}</p>
       <p className="font-apollo tracking-[2px] uppercase">
-        jaizmorateam@gmail.com
+        {rsv.email}
       </p>
-      <p className="font-apollo tracking-[2px] uppercase">6-8 guest</p>
-      <p className="font-apollo tracking-[2px] uppercase">luxury rate</p>
-      <p className="font-apollo tracking-[2px] uppercase">12 nights</p>
+      <p className="font-apollo tracking-[2px] uppercase">{rsv.guests} guest</p>
+      <p className="font-apollo tracking-[2px] uppercase">{rsv.plan} rate</p>
       <p className="font-apollo tracking-[2px] uppercase">
-        <span>Check in:</span> 17/09/23
+        <span>Check in:</span> {rsv.checkin.substring(0, 10)}
       </p>
       <p className="font-apollo tracking-[2px] uppercase">
-        <span>Check out:</span> 30/09/23
+        <span>Check out:</span> {rsv.checkout.substring(0, 10)}
       </p>
+      <p className="font-apollo tracking-[2px] uppercase">Experiences: 
+
+      {rsv.experience.map((exp,index) =>(
+        <span key={index} className=""> {exp} </span>
+        ))}
+        </p>
+    
     </div>
   );
 }

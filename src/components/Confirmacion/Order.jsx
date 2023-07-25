@@ -2,15 +2,70 @@ import React from 'react'
 import Reservacion from './Reservacion'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { AppContext } from '@/context/StateContext';
+import { useRef } from 'react';
+import Producto from './Producto';
+import { useRouter } from "next/router";
+
 
 function Order({json}) {
 
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [productosCarrito, setproductosCarrito] = useState([])
+    const [reservacionesCarrito, setreservacionesCarrito] = useState([])
+    const {updateReservacion, updateProducto} = AppContext()
+    const sessionIdRef = useRef(null);
 
-    useEffect(() => {
-        
-      }, []);
+    const router = useRouter();
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // Obtener el valor del parámetro 'session_id' de la URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const sessionId = urlParams.get('session_id');
+      sessionIdRef.current = sessionId;
+
+      
+
+      // Ahora puedes utilizar el valor de 'sessionId' en tu código
+      console.log(sessionId);
+    }
+
+    if (sessionIdRef.current) {
+      if (localStorage.getItem('reservacion')  ) {
+        console.log("entre")
+        const reservaciones = JSON.parse(localStorage.getItem('reservacion'));
+        setreservacionesCarrito(reservaciones)
+        reservaciones.map((rsv) => {
+            console.log(rsv)
+          rsv.status = 'aprobada';
+          console.log(rsv)
+          updateReservacion(rsv.id, rsv);
+        });
+        localStorage.removeItem('reservacion')
+        // eliminar localstorage
+        // mandar a error404?
+      } 
+
+      if(localStorage.getItem('producto')){
+        console.log("entre")
+        const productos = JSON.parse(localStorage.getItem('producto'));
+        setproductosCarrito(productos)
+        productos.map((item) => {
+            console.log(item)
+          item.cantidad = item.cantidad - 1
+          console.log(item)
+          updateProducto(item._id, item);
+
+        });
+        localStorage.removeItem('producto')
+      }
+    }
+    else{
+        router.push("/Home");
+    }
+  }, []);
 
   return (
     <div className='w-full flex flex-row justify-center bg-[#b4a692] '>
@@ -25,23 +80,23 @@ function Order({json}) {
                 </div>
                 <div className='w-full flex flex-col items-start'>
                     <p className='text-center font-apollo tracking-[2px] mt-8'>{json.Confirmation.review}</p>
-                    <h3 className='text-center font-apollo tracking-[4px] text-xl text-[#b4a692]'>{json.Confirmation.booking}</h3>
-
-                    <Reservacion/>
-
-
-                </div>
-                <div className='w-full flex flex-col items-start mt-4'>
-                    <h3 className='uppercase font-apollo tracking-[4px] text-xl text-[#b4a692]'>Romantic dinner experience</h3>
-
-                    <p className='font-apollo tracking-[2px] uppercase'>descripcion</p>
+                   
+                    {
+                        reservacionesCarrito.map((rsv, index) =>(
+                            <Reservacion key={index} rsv={rsv}/>
+                        ))
+                    }
 
 
                 </div>
+                
                 <div className='w-full flex flex-col items-start mt-4'>
-                    <h3 className='uppercase text-center font-apollo tracking-[4px] text-xl text-[#b4a692]'>product name</h3>
+                    {
+                        productosCarrito.map((item,index)=>(
+                            <Producto key={index} item={item}/>
 
-                    <p className='font-apollo tracking-[2px] uppercase'>Huichol Art Piece</p>
+                        ))
+                    }
 
                 </div>
                 <div className='w-full flex flex-col items-center mt-8'>

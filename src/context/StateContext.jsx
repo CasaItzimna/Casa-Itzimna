@@ -4,6 +4,7 @@ import { client } from "../lib/client";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 
+
 const StateContext = createContext();
 
 export function StateContextProvider({ children }) {
@@ -206,7 +207,8 @@ export function StateContextProvider({ children }) {
         plan: formData.plan,
         experience: formData.experience,
         comments: formData.comments,
-        total: formData.total,
+        total: formData.total.toString(),
+        status: formData.status,
         registerDate: new Date(),
       })
       
@@ -248,10 +250,34 @@ export function StateContextProvider({ children }) {
     setProduct(product)
   }
 
-
-
-
-
+   //TODO: updateReservacion
+   function updateProducto(productoId, formData) {
+    console.log(formData);
+    client
+      .patch(productoId)
+      .set({
+        name: formData.name,
+        artist: formData.artist,
+        slug: formData.slug,
+        details: formData.details,
+        description: formData.description,
+        category: formData.category,
+        price: formData.price,
+        cantidad: formData.cantidad,
+        // Si el formData incluye un objeto 'file', se actualiza el campo 'file'.
+        // Si no, se omite el campo y no se modifica.
+        ...(formData.file ? { file: formData.file } : {})
+      })
+      
+      .commit()
+      .then((updatedProducto) => {
+        console.log("Reservación actualizada:", updatedProdcuto);
+        getProductos()
+      })
+      .catch((error) => {
+        console.error("Error al actualizar la reservación:", error);
+      });
+  }
 
   //checkPassword
   async function checkPassword(plaintext, hash) {
@@ -337,6 +363,7 @@ export function StateContextProvider({ children }) {
         deleteReservacion,
         getProductos,
         getProduct,
+        updateProducto,
         loginUser,
         postUser,
         setIdioma,
