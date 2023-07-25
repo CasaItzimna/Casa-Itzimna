@@ -30,13 +30,13 @@ function Experience({json}) {
             {json.Experience.title}
             </h3>
             
-            <div className="w-[218px] h-[20px] hidden lg:flex flex-row relative  ">
+            <div className="w-[260px] h-[20px] hidden lg:flex flex-row relative  ">
               <Image
                 src={flor}
                 alt="flor"
-                className="w-[20px] h-[20px] absolute  -top-2 "
+                className="w-[20px] h-[20px] absolute  -top-[9px] "
               />
-              <div className="bg-[#31302c] w-[200px] h-[2px] absolute right-0"></div>
+              <div className="bg-[#31302c] w-[250px] h-[2px] absolute right-0"></div>
             </div>
             <div className="w-full flex flex-col items-center">
 
@@ -55,7 +55,13 @@ function Experience({json}) {
       </div>
           </div>
           </div>
-          <p className="text-center lg:text-right text-xl font-ethereal w-[350px] md:w-[600px] lg:w-[480px] tracking-[4px] lg:text-white">
+          <p
+  className="text-center text-xl font-ethereal w-[350px] md:w-[600px] lg:w-[480px] tracking-[4px] lg:text-white"
+  style={{
+    textAlign: 'justify', // Utiliza la sintaxis de JavaScript para establecer el estilo 'text-align'
+    textAlignLast: 'right', // Utiliza la sintaxis de JavaScript para establecer el estilo 'text-align-last'
+  }}
+          >
           {json.Experience.text}
           </p>
           <Link href='/Experience'>

@@ -57,7 +57,7 @@ function AboutUs({ json }) {
           />
       </div>
           </div>
-            <p className=" text-centerlg:text-justify font-ethereal text-xl px-8 lg:px-0 lg:w-[480px] text-[#31302c] tracking-[4px]">
+            <p className=" text-center lg:text-justify font-ethereal text-xl px-8 lg:px-0 lg:w-[480px] text-[#31302c] tracking-[4px]">
               {json.About.text}
             </p>
             <Link href="/AboutUs">

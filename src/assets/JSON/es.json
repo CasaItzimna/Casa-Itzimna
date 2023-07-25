@@ -37,7 +37,9 @@
         "opcion1": "ESPACIOS UNICOS",
         "opcion2": "LUJO Y COMODIDAD",
         "opcion3": "HOSPITALIDAD",
-      "text": "Conoce la comodidad de cada rincón impregnado con el encanto de Mérida y lo contemporáneo. La Casa Boutique ha sido diseñada con el fin de ofrecer un refugio de lujo y bienestar. Descubre la calidez y elegancia de nuestros espacios.",
+      "text1": "Conoce la comodidad de cada rincón impregnado con el encanto de Mérida y lo contemporáneo. La Casa Boutique ha sido diseñada con el fin de ofrecer un refugio de lujo y bienestar. Descubre la calidez y elegancia de nuestros espacios.",
+      "text2": "Sofisticación y bienestar sin igual, pensamos y cuidamos cada detallede manera cuidadosa para envolverte en una sensación de elegancia y satisfacción. Permítenos transportarte a un mundo de deleite y relajación para ofrecerte un verdadero oasis de lujo y confort.",
+      "text3": "La hospitalidad excepcional y nuestros servicios exclusivos te esperan para hacer de tu estancia una experiencia verdaderamente única y exquisita. Nuestra excepcional hospitalidad, es lo que consideramos un verdadero arte.",
       "buttonText": "ESPACIOS"
     },
     "Testimonials":{
@@ -53,8 +55,10 @@
       "title": "Nuestra Historia",
       "option1": "ACERCA",
       "option2": "MISION",
-      "option3": "METAS",
-    "text": "Ubicada en el corazón de la antigua Colonia de Itzimná, se encuentra nuestra casona de estilo colonial construída en 1961, convirtiéndola en un verdadero tesoro histórico que ha sido hogar de familias locales y testigo de la evolución de Mérida. Hoy, restaurada con esmero y delicadeza, combina la elegancia de antaño con servicios contemporáneos, ofreciendo a nuestros huéspedes una experiencia única y llena de encanto colonial."
+      "option3": "Visión",
+    "text1": "Ubicada en el corazón de la antigua Colonia de Itzimná, se encuentra nuestra casona de estilo colonial construída en 1961, convirtiéndola en un verdadero tesoro histórico que ha sido hogar de familias locales y testigo de la evolución de Mérida. Hoy, restaurada con esmero y delicadeza, combina la elegancia de antaño con servicios contemporáneos, ofreciendo a nuestros huéspedes una experiencia única y llena de encanto colonial.",
+    "text2": "Nuestra misión es preservar y compartir la rica historia y encanto colonial de nuestra casona construida en 1961. A través de una meticulosa restauración y la incorporación de servicios contemporáneos, brindamos a nuestros huéspedes una experiencia única, llena de comodidad y autenticidad. Nos esforzamos por ser un oasis de lujo y bienestar, donde cada rincón evoca la esencia de Mérida y su pasado prehispánico.",
+    "text3": "Nuestra visión en Casa Itzimná Boutique es ser reconocidos como un destino de excelencia en hospitalidad, donde los huéspedes encuentren un refugio de elegancia y sofisticación. Queremos ser un lugar donde se celebre la riqueza cultural de Mérida y su entorno, ofreciendo a nuestros visitantes una experiencia enriquecedora y memorable."
     
   },
   "History":{

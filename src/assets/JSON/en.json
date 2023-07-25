@@ -37,7 +37,9 @@
         "option1": "UNIQUE SPACES",
         "option2": "LUXURE & COMFORT",
         "option3": "GRACIOUS HOSPITALITY",
-      "text": "Experience the comfort of every corner, infused with the charm of Mérida and contemporary flair. The Boutique House has been designed to offer a haven of luxury and well-being. Discover the warmth and elegance of our spaces.",
+      "text1": "Experience the comfort of every corner, infused with the charm of Mérida and contemporary flair. The Boutique House has been designed to offer a haven of luxury and well-being. Discover the warmth and elegance of our spaces.",
+      "text2": "Let us Transport You to a World of Delight and Relaxation, Offering a True Oasis of Luxury and Comfort.",
+      "text3": "Exceptional Hospitality and Exclusive Services Await to Make Your Stay a Truly Unique and Exquisite Experience. Our exceptional hospitality is what we consider a true art.",
       "buttonText": "SPACES"
     },
     "Testimonials":{
@@ -52,8 +54,10 @@
       "title": "Our Story",
       "option1": "ABOUT",
       "option2": "MISSION",
-      "option3": "OUR GOALS",
-    "text": "Located in the heart of the ancient Itzimná Colony, you'll find our colonial-style mansion, built in 1961, turning it into a true historical treasure that has been a home to local families and witnessed the evolution of Mérida. Today, meticulously restored, it blends the elegance of yesteryears with modern amenities, offering our guests a unique and charming colonial experience."
+      "option3": "Vision",
+    "text1": "Located in the heart of the ancient Itzimná Colony, you'll find our colonial-style mansion, built in 1961, turning it into a true historical treasure that has been a home to local families and witnessed the evolution of Mérida. Today, meticulously restored, it blends the elegance of yesteryears with modern amenities, offering our guests a unique and charming colonial experience.",
+    "text2": "At Casa Itzimná Boutique, our mission is to preserve and share the rich history and colonial charm of our mansion built in 1961. Through meticulous restoration and the incorporation of contemporary services, we provide our guests with a unique experience, filled with comfort and authenticity. We strive to be an oasis of luxury and well-being, where every corner evokes the essence of Mérida and its pre-Hispanic past",
+    "text3": "Our vision at Casa Itzimná Boutique is to be recognized as a destination of excellence in hospitality, where guests find a refuge of elegance and sophistication. We aim to be a place that celebrates the cultural richness of Mérida and its surroundings, offering our visitors an enriching and memorable experience."
     
   },
   "History":{

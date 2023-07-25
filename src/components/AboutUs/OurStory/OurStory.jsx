@@ -74,9 +74,12 @@ function OurStory({json}) {
             </div>
             </div>
           <div className="flex flex-row justify-center lg:justify-start ">
-            <p className="text-center lg:text-justify font-ethereal w-[90%] text-xl ">
-            {json.OurStory.text}
+          <p className={`${opcion === "opcion1"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>
+              {json.OurStory.text1}
             </p>
+            <p className={`${opcion === "opcion2"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>{json.OurStory.text2}</p>
+            <p className={`${opcion === "opcion3"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>{json.OurStory.text3}</p>
+           
             
               </div>
           </div>
