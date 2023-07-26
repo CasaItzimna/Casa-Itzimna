@@ -41,7 +41,7 @@ function AR() {
         
         <model-viewer
         className="center-block"
-        style={{ width: "100vh", height: "100vh" }}
+        style={{ width: "100vh", height: "80vh" }}
           src={newAR}
           ar
           ar-modes="webxr scene-viewer quick-look"
