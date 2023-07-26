@@ -17,6 +17,9 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
   const {carritoProductos, setCarritoProductos} = AppContext()
 
 
+  const router = useRouter()
+
+
   const addProductCart = (producto) => {
     console.log(producto);
   
