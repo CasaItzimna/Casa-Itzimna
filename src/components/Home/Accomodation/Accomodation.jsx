@@ -72,7 +72,7 @@ function Accomodation({json}) {
         : ''
     }`}></div>
           </div>
-          <div className="w-full  flex flex-row justify-center text-center lg:text-left">
+          <div className="w-full  flex flex-row justify-center xl:justify-start  text-center lg:text-left">
             <div className="w-[90%] flex flex-col justify-center">
               
             <p className={`${opcion === "opcion1"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>
@@ -97,13 +97,18 @@ function Accomodation({json}) {
            
 
           <div className=" bg-white h-[350px] w-full mb-2 shadow-2xl ">
+          <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50">
+
             <Image
               alt="1"
               src={foto1}
               className="p-2 w-full h-full object-cover "
               />
+              </div>
           </div>
           <div className="flex flex-row w-full h-full gap-4 ">
+          <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50">
+
             <div className="bg-white w-full h-[170px] shadow-2xl ">
               <Image
                 src={foto2}
@@ -111,13 +116,17 @@ function Accomodation({json}) {
                 className="w-full h-full p-2 object-cover "
                 />
             </div>
+            </div>
             <div className="bg-white w-full h-[170px] shadow-2xl">
+            <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50">
+
               <Image
                 src={foto3}
                 alt="desayuno"
                 className="w-full h-full p-2 object-cover "
                 />
            
+                </div>
                 </div>
           </div>
         </div>

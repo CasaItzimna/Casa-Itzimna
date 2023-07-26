@@ -64,22 +64,22 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow }) {
         className={`mb-2 mt-4 relative
         ${
           i > today.getDate()
-            ? "cursor-pointer lg:hover:bg-[#b4a692] lg:hover:mx-7 lg:hover:rounded-full"
+            ? "cursor-pointer lg:hover:bg-[#b4a692] lg:hover:mx-2 lg:hover:rounded-full"
             : "text-gray-200"
         }
           ${
             i === today.getDate()
-              ? " text-white bg-[#b4a692]  rounded-full mx-0 lg:mx-7 "
+              ? " text-white bg-[#b4a692]  rounded-full mx-0 lg:mx-2 "
               : "text-black"
           } 
         ${
           i === inicio?.getDate() && inicio?.getMonth() === today.getMonth()
-            ? "bg-blue-500 rounded-l-full"
+            ? "bg-[#b4a692] rounded-l-full"
             : null
         } 
         ${
           i === fin?.getDate() && fin?.getMonth() === today.getMonth()
-            ? "bg-blue-500 rounded-r-full"
+            ? "bg-[#b4a692] rounded-r-full"
             : null
         } 
       ${
@@ -88,7 +88,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow }) {
         i > inicio?.getDate() &&
         i < fin?.getDate() &&
         inicio?.getMonth() === today.getMonth()
-          ? "bg-gray-400"
+          ? "bg-[#c7c1b8]"
           : null
       }
         ${
@@ -96,7 +96,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow }) {
           fin?.getDate() &&
           inicio?.getMonth() != fin?.getMonth() &&
           i > inicio?.getDate()
-            ? "bg-gray-400"
+            ? "bg-[#c7c1b8]"
             : null
         }
         `}
@@ -138,16 +138,16 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow }) {
     nextMonthDays.push(
       <div
         key={new Date(currentYear, today.getMonth(), i)}
-        className={`mb-2 mt-4 relative cursor-pointer lg:hover:bg-[#b4a692] lg:hover:mx-7 lg:hover:rounded-full
+        className={`mb-2 mt-4 relative cursor-pointer lg:hover:bg-[#b4a692] lg:hover:mx-2 lg:hover:rounded-full
        
         ${
           i === inicio?.getDate() && inicio?.getMonth() === today.getMonth() + 1
-            ? "bg-blue-500 rounded-l-full"
+            ? "bg-[#b4a692] rounded-l-full"
             : null
         } 
         ${
           i === fin?.getDate() && fin?.getMonth() === today.getMonth() + 1
-            ? "bg-blue-500 rounded-r-full"
+            ? "bg-[#b4a692] rounded-r-full"
             : null
         } 
       ${
@@ -156,7 +156,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow }) {
         i > inicio?.getDate() &&
         i < fin?.getDate() &&
         fin?.getMonth() === today.getMonth() + 1
-          ? "bg-gray-400"
+          ? "bg-[#c7c1b8]"
           : null
       }
       ${
@@ -164,7 +164,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow }) {
         fin?.getDate() &&
         inicio?.getMonth() != fin?.getMonth() &&
         i < fin?.getDate()
-          ? "bg-gray-400"
+          ? "bg-[#c7c1b8]"
           : null
       }
              
@@ -186,14 +186,14 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow }) {
 
   return (
     <div className="flex flex-col w-full h-full items-center  mt-4 relative z-10 ">
-      <div className="flex flex-row w-full h-full justify-center lg:px-12 ">
+      <div className="flex flex-row w-full h-full justify-center  ">
         <div
           className="flex flex-col lg:flex-row h-full w-full bg-white-200 rounded-md
            bg-white lg:border lg:border-gray-100 py-6 ">
           <div className="flex flex-col w-full h-full lg:border-r-2 lg:border-black">
           <div className=" w-full h-full  flex flex-row  justify-end absolute -top-4">
               <RxCross2
-                className="mr-4 cursor-pointer  text-2xl text-black"
+                className="mr-4 cursor-pointer  text-2xl text-black lg:hidden"
                 onClick={() => setShow(false)}
               />
             </div>

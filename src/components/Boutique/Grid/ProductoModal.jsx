@@ -71,7 +71,7 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
                   <img
                     src={urlFor(img.asset._ref)}
                     alt={`Imagen del producto ${index + 2}`}
-                    className="w-full"
+                    className="w-full overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50"
                   />
                 </div>
               ))}

@@ -131,26 +131,32 @@ function Facilities({json}) {
             <div className="w-[90%] xl:w-3/4 2xl:w-1/2 flex flex-col justify-center md:justify-end xl:justify-start">
 
           <div className=" bg-white h-[350px] w-full mb-2 shadow-2xl ">
+          <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50">
             <Image
               alt="1"
               src={foto1}
               className="p-2 w-full h-full object-cover "
               />
+              </div>
           </div>
           <div className="flex flex-row w-full h-full gap-4 ">
             <div className="bg-white w-full h-[170px] shadow-2xl ">
+            <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50">
               <Image
                 src={foto2}
                 alt="sala"
                 className="w-full h-full p-2 object-cover "
                 />
+                </div>
             </div>
             <div className="bg-white w-full h-[170px] shadow-2xl">
+            <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50">
               <Image
                 src={foto3}
                 alt="desayuno"
                 className="w-full h-full p-2 object-cover "
                 />
+                </div>
             </div>
                 </div>
           </div>

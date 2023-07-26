@@ -634,7 +634,7 @@ const [total, setTotal] = useState(0)
     <Image
       src={bookingfoto}
       alt="bookingfoto"
-      className="w-[90%] h-[550px] object-cover"
+      className="w-[90%] h-[550px] object-cover  overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50"
       />
   </div>
       </div>

@@ -239,12 +239,13 @@ carritoProductos.forEach((producto) => {
 }
 
   return (
-    <div className="w-full h-full flex flex-row justify-center bg-[#b4a692]">
+    <div className="w-full h-full flex flex-row justify-center bg-[#b4a692] ">
       {carritoReservaciones || carritoProductos ? (
-        <div className="w-[80%] xl:w-[60%] h-full grid grid-cols-1 lg:grid-cols-2 lg:gap-9 mb-8 ">
+        <div className="w-[80%] xl:w-[60%] h-full grid grid-cols-1 lg:grid-cols-2 lg:gap-9 mb-8  ">
           {/*Cart*/}
-          <div className="w-full flex flex-col bg-white items-center ">
-            <div className="w-[90%] flex flex-col mb-2 border-b-[2px]  border-b-[#b4a692]">
+          <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#9b9696]">
+          <div className="w-full h-full  flex flex-col bg-white items-center    ">
+            <div className="w-[90%] flex flex-col mb-2 border-b-[2px]  border-b-[#b4a692] ">
               <h1 className="font-apollo text-3xl tracking-[4px] mt-8 mb-4">
                 CART
               </h1>
@@ -262,10 +263,13 @@ carritoProductos.forEach((producto) => {
                   />
                 ))
               ) : (
+                <div className="w-full flex flex-row justify-center">
+
                 <div className="w-[90%] flex flex-col items-center mb-2">
                   <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#b4a692]">
-                    NO HAY RESERVACION AGREGADA
+                    NO HAY RESERVACIONES AGREGADAS
                   </h2>
+                </div>
                 </div>
               )}
             </div>
@@ -320,11 +324,12 @@ carritoProductos.forEach((producto) => {
               </div>
             )}
           </div>
+          </div>
 
           <div className="h-full flex flex-col gap-8 ">
             <div className="w-full flex flex-row justify-center">
-              <div className=" w-full flex flex-col items-center bg-white mt-8 lg:mt-0">
-                <div className="w-[90%] h-full flex flex-col  ">
+              <div className=" w-full flex flex-col items-center bg-white mt-8 lg:mt-0  overflow-hidden shadow-[12.0px_12.0px_8.0px_#9b9696]">
+                <div className="w-[90%] h-full flex flex-col   ">
                   <h1 className="font-apollo text-3xl tracking-[4px] mt-8 mb-4 uppercase text-center">
                     Summary
                   </h1>
@@ -334,9 +339,9 @@ carritoProductos.forEach((producto) => {
                         <p className="font-apollo text-[#31302c]/40 text-lg tracking-[2px]">
                           SUBTOTAL
                         </p>
-                        <p className="font-apollo text-[#31302c]/40 text-lg tracking-[2px]">
+                        {/* <p className="font-apollo text-[#31302c]/40 text-lg tracking-[2px]">
                           TAX
-                        </p>
+                        </p> */}
                       </div>
                       <div className="h-full flex flex-col justify-between text-right ">
                         <div className="h-full flex flex-col">
@@ -400,11 +405,11 @@ carritoProductos.forEach((producto) => {
                                   ))
                                 }
                         </div>
-                        <div className="h-full flex flex-col justify-end">
+                       {/*  <div className="h-full flex flex-col justify-end">
                           <p className="font-apollo text-[#282828] tracking-[2px] text-lg ">
                             $120 MXN
                           </p>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                     <div className="w-full flex flex-row justify-between mt-4">
@@ -426,7 +431,7 @@ carritoProductos.forEach((producto) => {
             </div>
 
             <div className="w-full flex flex-row justify-center">
-              <div className="w-full  bg-white flex flex-col items-center">
+              <div className="w-full  bg-white flex flex-col items-center  overflow-hidden shadow-[12.0px_12.0px_8.0px_#9b9696]">
                 <Image
                   src={masaje}
                   alt="masaje"

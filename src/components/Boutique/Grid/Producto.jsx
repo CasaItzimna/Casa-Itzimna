@@ -25,7 +25,8 @@ function Producto({producto}) {
     
 
   return (
-    <div className='bg-[#b4a692] w-[350px] lg:w-[478px] h-[480px] lg:h-[533px] flex flex-col justify-center'>
+    
+    <div className='bg-[#b4a692] w-[350px] lg:w-[478px] h-[480px] lg:h-[533px] flex flex-col justify-center overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50'>
             <div className='flex flex-row w-full justify-center'>
                 <div className='flex flex-col'>
                     <div className='w-full flex flex-row justify-center'>

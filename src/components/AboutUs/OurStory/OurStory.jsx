@@ -16,8 +16,8 @@ function OurStory({json}) {
   
   return (
     <div className="h-full lg:full w-full relative z-20">
-{/*         <div className="h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
- */}        <div className="absolute left-0 top-[10%] -z-30">
+        <div className="h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
+      <div className="absolute left-0 top-[10%] -z-30">
             <Image src={cabeza} alt="cabeza" className="w-[300px]" />
         </div>
       <div className="flex flex-col-reverse lg:flex-row justify-center w-full h-[1000px] lg:h-[700px] lg:gap-4 ">
@@ -93,26 +93,32 @@ function OurStory({json}) {
             <div className="w-full flex flex-col justify-center md:justify-end ">
 
           <div className=" bg-white h-[350px] w-full mb-2 shadow-2xl ">
+          <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50">
             <Image
               alt="1"
               src={foto1}
               className="p-2 w-full h-full object-cover "
               />
+              </div>
           </div>
           <div className="flex flex-row w-full h-full gap-4 ">
             <div className="bg-white w-full h-[170px] shadow-2xl ">
+            <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50">
               <Image
                 src={foto2}
                 alt="sala"
                 className="w-full h-full p-2 object-cover "
                 />
+                </div>
             </div>
             <div className="bg-white w-full h-[170px] shadow-2xl">
+            <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50">
               <Image
                 src={foto3}
                 alt="desayuno"
                 className="w-full h-full p-2 object-cover "
                 />
+                </div>
             </div>
                 </div>
                 
