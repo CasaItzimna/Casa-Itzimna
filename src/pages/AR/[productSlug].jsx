@@ -30,7 +30,12 @@ function AR() {
   console.log("AR", newAR);
 
   return (
+    <div>
+    <div className='w-full h-[100px] lg:h-[250px] bg-[#31302c]'>
+
+    </div>
     <div className="flex flex-col justify-start lg:justify-center w-full h-screen relative">
+      
       <div className="flex flex-row justify-center">
         
         
@@ -53,6 +58,7 @@ function AR() {
           {" "}
         </model-viewer>
       </div>
+    </div>
     </div>
   );
 }
