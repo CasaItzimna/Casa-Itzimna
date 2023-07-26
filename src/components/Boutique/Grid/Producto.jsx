@@ -32,11 +32,11 @@ function Producto({producto}) {
                     <div className='w-full flex flex-row justify-center'>
                         <div className='flex flex-col mb-4'>
 
-                <img src={urlFor(producto?.image[0].asset._ref)} alt='imagen producto' className='w-[200px]'   /> 
+                <img src={urlFor(producto?.image[0].asset._ref)} alt='imagen producto' className='w-[200px] h-[230px] object-contain'   /> 
                 <img src={urlFor(producto?.image[0].asset._ref)} alt='imagen producto' className='w-[200px] h-[90px] rotate-180 blur-xl '   /> 
                         </div>
                     </div>
-            <p className='font-apollo uppercase text-4xl tracking-[4px] mb-4'>{producto?.name}</p>
+            <p className='font-apollo uppercase text-2xl lg:text-4xl tracking-[4px] mb-4'>{producto?.name}</p>
             <button className='border-[1px] border-[#31302c] tracking-[4px] font-apollo text-2xl py-1 mt-4'
             onClick={openModal}
             >

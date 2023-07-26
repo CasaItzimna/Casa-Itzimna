@@ -1,9 +1,9 @@
 import Image from "next/image";
 import React from "react";
 import flor from "../../../assets/flor.png";
-import foto1 from "./foto1.png";
-import foto2 from "./foto2.png";
-import foto3 from "./foto3.png";
+import foto1 from "./our-story-1.jpg";
+import foto2 from "./our-story-2.jpg";
+import foto3 from "./our-story-3.jpg";
 import cabeza from "./cabeza.png";
 import florizq from "../../Home/Testimonials/florizq.png";
 import { useState } from "react";
@@ -101,7 +101,7 @@ function OurStory({json}) {
               />
               </div>
           </div>
-          <div className="flex flex-row w-full h-full gap-4 ">
+          <div className="flex flex-row w-full gap-4 ">
             <div className="bg-white w-full h-[170px] shadow-2xl ">
             <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50">
               <Image

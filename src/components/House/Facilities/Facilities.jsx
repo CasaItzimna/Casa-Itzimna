@@ -1,9 +1,9 @@
 import Image from "next/image";
 import React from "react";
 import flor from "../../../assets/flor.png";
-import foto1 from "./foto1.png";
-import foto2 from "./foto2.png";
-import foto3 from "./foto3.png";
+import foto1 from "./Facilities-1.jpg";
+import foto2 from "./Facilities-2.jpg";
+import foto3 from "./Facilities-3.jpg";
 import { useState } from "react";
 import Link from "next/link";
 import pool from './icons/pool.png'
@@ -164,7 +164,7 @@ function Facilities({json}) {
           <div className="mt-4 w-full lg:w-full flex flex-row justify-center lg:justify-start xl:justify-center 2xl:justify-start ">
             <div className="flex flex-col items-center 2xl:items-start w-[90%]">
 
-            <p className="w-[350px] 2xl:w-[300px] font-PlayfairDisplay font-[700] text-lg tracking-[4px] text-justify">{json.Facilities.exploreText}</p>
+            <p className="w-[350px] 2xl:w-1/2 font-PlayfairDisplay font-[700] text-lg tracking-[4px] text-justify">{json.Facilities.exploreText}</p>
           <div className="w-full flex flex-row justify-center xl:justify-start">
             <div className="w-full flex flex-col items-center 2xl:items-start">
 

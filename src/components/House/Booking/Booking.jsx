@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import bookingfoto from "./bookingfoto.png";
+import bookingfoto from "./Booking.jpg";
 import trianguloAb from "./trianguloAb.png";
 import Link from "next/link";
 import Calendario from "@/components/Home/Modal/Calendario";
@@ -359,7 +359,7 @@ const [total, setTotal] = useState(0)
                         </p>
 
                         <div
-                          className="w-[70%] bg-[#b4a692] text-black flex flex-col text-center relative cursor-pointer"
+                          className="w-[80%] bg-[#b4a692] text-black flex flex-col text-center relative cursor-pointer"
                           onClick={() => setShow(true)}
                         >
                           {!inicio ? (
@@ -401,7 +401,7 @@ const [total, setTotal] = useState(0)
                         </p>
 
                         <div
-                          className="w-[70%]  bg-[#b4a692] text-black flex flex-col text-center relative cursor-pointer"
+                          className="w-[80%]  bg-[#b4a692] text-black flex flex-col text-center relative cursor-pointer"
                           onClick={() => setShow(true)}
                         >
                           {!fin ? (
@@ -553,10 +553,10 @@ const [total, setTotal] = useState(0)
                 <div className="flex flex-row  gap-4 col-span-2">
                   <div className="flex flex-col ">
 
-                  <h3 className="uppercase ">Experiences:</h3>
-                  <div className="flex flex-row gap-4 mb-4">
+                  <h3 className="uppercase mb-4 lg:mb-2 font-Geometrica ">Experiences:</h3>
+                  <div className="flex flex-col lg:flex-row font-Geometrica gap-4 mb-4">
                     
-                  
+                    
       <label className="block">
         <input
           type="checkbox"

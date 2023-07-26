@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import React from 'react'
-import experience1 from './experience1.png'
-import experience2 from './experience2.png'
-import experience3 from './experience3.png'
-import experience4 from './experience4.png'
-import 	captivating from './captivating.png'
-import 	lobby from './lobby.png'
+import experience1 from './Enchanting-Evening.jpg'
+import experience2 from './Unveiling-Wonders.jpg'
+import experience3 from './Spaserenity.jpg'
+import experience4 from './Culinary-Delights.jpg'
+import 	captivating from './captivating-1.jpg'
+import 	lobby from './captivating-2.jpg'
 import Link from 'next/link'
 
 function Experiences({json}) {
@@ -17,6 +17,7 @@ function Experiences({json}) {
         <div className='w-[53%] md:w-[62%] h-full flex flex-col justify-start z-10'>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 place-items-center gap-4 '>
                 <div className='w-[250px] relative '> 
+                <div className='bg-black/50 absolute top-0 w-full h-full'></div>
                 <Image src={experience1} alt='experience1' className='w-full h-[200px] lg:h-full object-cover'/>
                 <div>
 
@@ -24,6 +25,7 @@ function Experiences({json}) {
                 </div>
                 </div>
                 <div className='w-[250px] relative'> 
+                <div className='bg-black/50 absolute top-0 w-full h-full'></div>
                 <Image src={experience2} alt='experience1' className='w-full h-[200px] lg:h-full object-cover'/>
                 <div>
 
@@ -31,6 +33,7 @@ function Experiences({json}) {
                 </div>
                 </div>
                 <div className='w-[250px] relative'> 
+                <div className='bg-black/50 absolute top-0 w-full h-full'></div>
                 <Image src={experience3} alt='experience1' className='w-full h-[200px] lg:h-full object-cover'/>
                 <div>
 
@@ -38,6 +41,7 @@ function Experiences({json}) {
                 </div>
                 </div>
                 <div className='w-[250px] relative'> 
+                <div className='bg-black/50 absolute top-0 w-full h-full'></div>
                 <Image src={experience4} alt='experience1' className='w-full h-[200px] lg:h-full object-cover'/>
                 <div>
 

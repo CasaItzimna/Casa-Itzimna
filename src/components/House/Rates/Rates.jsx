@@ -1,10 +1,10 @@
 import Image from "next/image";
 import React from "react";
-import foto1 from "./1.png";
-import foto2 from "./2.png";
-import foto3 from "./3.png";
-import fototo1 from "./foto1.png";
-import fototo2 from "./foto2.png";
+import foto1 from "./Select.jpg";
+import foto2 from "./Luxury.jpg";
+import foto3 from "./Premium.jpg";
+import fototo1 from "./unforgettable-1.jpg";
+import fototo2 from "./Unforgettable-2.jpg";
 import Link from "next/link";
 
 

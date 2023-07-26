@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import foto from "./foto.png";
+import foto from "./Why-choose-1.jpg";
 import flor from "./flor.png";
 import cafe from './cafe.png'
 import blanca from './blanca.png'
@@ -24,13 +24,11 @@ function Why({ json }) {
       <div className="w-full lg:w-[50%] xl:w-[500px] flex flex-row xl:justify-start">
 
       <div className="w-full lg:w-full h-full flex flex-col justify-center  items-center lg:items-start  mt-8 lg:mt-0">
-      <div className="relative rounded-[18px]  overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50">
         <Image
           src={foto}
           alt="foto alberca"
-          className="w-[90%] lg:w-full xl:w-[500px] h-[200px] lg:h-[350px] object-cover rounded-[18px] drop-shadow-2xl"
+          className="w-[90%] lg:w-full xl:w-[500px] h-[200px] lg:h-[350px] object-cover rounded-[18px] overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50 "
           />
-          </div>
       </div>
           </div>
       <div className=" w-full lg:w-[50%] xl:w-[25%] flex flex-col justify-center ">

@@ -1,9 +1,9 @@
 import Image from "next/image";
 import React from "react";
 import flor from "../../../assets/flor.png";
-import foto1 from "./foto1.png";
-import foto2 from "./foto2.png";
-import foto3 from "./foto3.png";
+import foto1 from "./UNIQUE-SPACES.jpg";
+import foto2 from "./LUXURE-COMFORT.jpg";
+import foto3 from "./GRACIOUS-HOSPITALITY.jpg";
 import sol from "./sol.png";
 import { useState } from "react";
 import Link from "next/link";
@@ -106,10 +106,10 @@ function Accomodation({json}) {
               />
               </div>
           </div>
-          <div className="flex flex-row w-full h-full gap-4 ">
-          <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50">
+          <div className="flex flex-row w-full  gap-4 ">
 
             <div className="bg-white w-full h-[170px] shadow-2xl ">
+            <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50">
               <Image
                 src={foto2}
                 alt="sala"

@@ -59,7 +59,7 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
               <img
                 src={urlFor(producto?.image[0].asset._ref)}
                 alt="Imagen del producto"
-                className="w-[250px] lg:w-full"
+                className="w-[250px] h-[350px] object-contain lg:w-full"
               />
             </div>
             <div className="flex flex-row w-full  justify-center lg:justify-between ">
@@ -71,7 +71,7 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
                   <img
                     src={urlFor(img.asset._ref)}
                     alt={`Imagen del producto ${index + 2}`}
-                    className="w-full overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50"
+                    className="w-[120px]  lg:h-[120px] object-cover overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50"
                   />
                 </div>
               ))}
