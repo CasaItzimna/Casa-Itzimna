@@ -16,15 +16,15 @@ function OurStory({json}) {
   
   return (
     <div className="h-full lg:full w-full relative z-20">
-        <div className="h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
-        <div className="absolute left-0 top-[10%] -z-30">
+{/*         <div className="h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
+ */}        <div className="absolute left-0 top-[10%] -z-30">
             <Image src={cabeza} alt="cabeza" className="w-[300px]" />
         </div>
-      <div className="flex flex-col-reverse lg:flex-row justify-center w-full h-[1000px] lg:h-[700px] ">
-        <div className="w-full lg:w-full xl:w-[25%] h-full md:h-[25%] lg:h-[500px] flex flex-col justify-center md:justify-end lg:justify-start ">
-            <div className="flex flex-col justify-center w-full ">
+      <div className="flex flex-col-reverse lg:flex-row justify-center w-full h-[1000px] lg:h-[700px] lg:gap-4 ">
+        <div className="w-full lg:w-full xl:w-[25%] h-full md:h-[25%] lg:h-full flex flex-col justify-center md:justify-end lg:justify-start ">
+            <div className="h-full flex flex-col justify-center w-full ">
 
-          <h3 className="text-[30px] lg:text-[40px] font-cinzelBold text-center lg:text-left   ">{json.OurStory.title}</h3>
+          <h3 className="text-[30px] lg:text-[40px] font-cinzelBold text-center lg:text-left md:mt-8 lg:mt-0  ">{json.OurStory.title}</h3>
           <div className="w-full flex flex-col items-center ">
 
       <div className="lg:hidden w-[80%] md:w-[440px] h-[50px] flex flex-row  relative mt-3">
@@ -41,7 +41,7 @@ function OurStory({json}) {
           />
       </div>
           </div>
-          <div className="hidden w-[270px]  h-full lg:flex flex-row relative mb-8">
+          <div className="hidden w-[270px]   lg:flex flex-row relative mb-8">
             <div className="bg-[#b4a692] w-[260px] h-[2px]"></div>
             <Image
               src={flor}
@@ -73,14 +73,17 @@ function OurStory({json}) {
           
             </div>
             </div>
-          <div className="flex flex-row justify-center lg:justify-start ">
+            <div className="w-full flex flex-col items-center 2xl:items-start">
+          <div className="flex flex-row justify-center lg:justify-start  text-justify w-[90%]  ">
+
+            
           <p className={`${opcion === "opcion1"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>
               {json.OurStory.text1}
             </p>
             <p className={`${opcion === "opcion2"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>{json.OurStory.text2}</p>
             <p className={`${opcion === "opcion3"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>{json.OurStory.text3}</p>
            
-            
+            </div>
               </div>
           </div>
         </div>

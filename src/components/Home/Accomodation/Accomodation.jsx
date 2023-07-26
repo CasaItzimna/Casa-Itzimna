@@ -19,9 +19,9 @@ function Accomodation({json}) {
         <div className="absolute -z-10 left-0 top-[10%]">
             <Image src={sol} alt="sol" className="w-[300px]" />
         </div>
-      <div className="flex flex-col-reverse lg:flex-row justify-center w-full h-[1000px] lg:h-[600px]">
+      <div className="flex flex-col-reverse lg:flex-row justify-center items-center w-full h-[1000px] lg:h-[600px]">
         <div className="w-full lg:w-1/4 xl:w-1/2 h-full flex flex-row justify-center xl:justify-end items-center ">
-            <div className="flex flex-col justify-center xl:w-[500px] ">
+            <div className="w-[95%] flex flex-col justify-center xl:w-[500px] ">
 
           <h3 className="text-[30px] lg:text-[40px] font-cinzelBold text-center lg:text-left ">{json.Accomodation.title}</h3>
           <div className="w-full flex flex-col items-center">
@@ -53,7 +53,7 @@ function Accomodation({json}) {
 
           <div className="w-full flex flex-row justify-center lg:justify-start">
 
-          <div className="flex flex-row justify-between   w-[90%] md:w-[600px] lg:w-[95%] h-full font-ethereal uppercase text-[10px] ">
+          <div className="flex flex-row justify-between w-[90%] md:w-[600px] lg:w-[95%] h-full font-ethereal uppercase text-[10px] ">
             <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion1')}>{json.Accomodation.option1}</h4>
             <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion2')}>{json.Accomodation.option2}</h4>
             <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion3')}>{json.Accomodation.option3}</h4>
@@ -62,18 +62,18 @@ function Accomodation({json}) {
           </div>
           <div className="lg:w-[95%] h-full flex flex-row relative px-4 lg:px-0  mb-4">
             <div className="bg-[#b4a692] w-full h-[3px]"></div>
-            <div  className={`absolute  bg-[#31302c] w-[30%] h-[3px] ${
+            <div  className={`absolute  bg-[#31302c]  h-[3px] ${
       opcion === 'opcion1'
-        ? 'left-[2.5%] lg:left-0'
+        ? 'left-[2.5%] lg:left-0 w-[20%]  md:w-[30%]'
         : opcion === 'opcion2'
-        ? 'left-[30%]'
+        ? 'left-[30%] md:left-[32%] w-[30%]'
         : opcion === 'opcion3'
-        ? 'right-[2.5%] lg:right-0'
+        ? 'right-[2.5%] lg:right-0 w-[20%]  md:w-[30%]'
         : ''
     }`}></div>
           </div>
           <div className="w-full  flex flex-row justify-center text-center lg:text-left">
-            <div className="w-full flex flex-col justify-center">
+            <div className="w-[90%] flex flex-col justify-center">
               
             <p className={`${opcion === "opcion1"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>
               {json.Accomodation.text1}

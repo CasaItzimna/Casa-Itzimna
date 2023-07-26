@@ -117,7 +117,10 @@ function Rates({ json }) {
                 <h3 className="font-apollo text-3xl">
                   {json.Rates.unforgettableTitle}
                 </h3>
-                <p className="font-apollo text-lg text-justify tracking-[1px]">{json.Rates.unforgettableText}</p>
+                <div className="flex flex-row justify-center lg:justify-start">
+
+                <p className="w-[90%] font-apollo text-lg text-justify tracking-[1px]">{json.Rates.unforgettableText}</p>
+                </div>
                 <div className="flex flex-row justify-center lg:justify-start ">
 
                 <button className="font-Geometrica bg-[#b4a692] w-[150px] h-[35px] rounded-[7px] text-xl px-2 mt-4">

@@ -2,6 +2,9 @@ import Image from "next/image";
 import React from "react";
 import slider1 from "../../../assets/Home/slider1.jpg";
 import hero1 from "../../../assets/Home/hero3.png";
+import hero from "./hero.jpg";
+import hero2 from "./hero2.jpg";
+import hero3 from "./hero3.jpg";
 import { FaUsers } from "react-icons/fa";
 import { BsCalendar3 } from "react-icons/bs";
 import AboutUs from "../AboutUs/AboutUs";
@@ -57,9 +60,9 @@ function Hero({ setShow, json }) {
 
       <div className="flex flex-row justify-center  h-full w-full   text-white absolute z-10">
         <div className="w-full h-[90%] flex flex-col justify-center text-center items-center">
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-8xl xl:text-9xl font-cinzelRegular">
-            <span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[150px] xl:text-[200px]">C</span>asa{" "}
-            <span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[150px] xl:text-[200px]">I</span>tzimná
+          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-8xl xl:text-8xl font-cinzelRegular xl:mt-20">
+            <span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[150px] xl:text-[120px]">C</span>asa{" "}
+            <span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[150px] xl:text-[120px]">I</span>tzimná
           </h1>
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-cinzelRegular">Boutique</h2>
           <button className="w-[50%] lg:w-[30%] bg-black/40 hover:bg-black text-white mt-8 py-4 text-xl font-Geometrica tracking-[2px] "

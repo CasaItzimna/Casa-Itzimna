@@ -2,8 +2,19 @@ import Image from "next/image";
 import React from "react";
 
 import Producto from "./Producto";
+import { AppContext } from "@/context/StateContext";
+import { useEffect } from "react";
 
-function Grid({ json, productos }) {
+function Grid({ json }) {
+
+  const{ productos, getProductos} = AppContext()
+
+  useEffect(() => {
+    getProductos();
+  }, []);
+
+  console.log(productos);
+
   console.log(productos[0]?.image[0].asset._ref);
   return (
     <div className="w-full h-full flex justify-center  relative">
@@ -37,3 +48,4 @@ function Grid({ json, productos }) {
 }
 
 export default Grid;
+ 

@@ -6,21 +6,17 @@ import esJson from '../assets/JSON/es.json';
 import enJson from '../assets/JSON/en.json';
 
 function Boutique() {
-  const {idioma, productos, getProductos } = AppContext();
+  const {idioma, } = AppContext();
 
   const json = idioma === 'espanol' ? esJson : enJson;
 
-  useEffect(() => {
-    getProductos();
-  }, []);
-
-  console.log(productos);
+ 
 
   return (
     <div>
       <Hero />
 
-      <Grid productos = {productos} />
+      <Grid  />
     </div>
   );
 }

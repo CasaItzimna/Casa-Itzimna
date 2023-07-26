@@ -247,6 +247,7 @@ export function StateContextProvider({ children }) {
     const query  = `*[_type == "productos" && slug.current == $productSlug]`
     const params = {productSlug}
     const product = await client.fetch(query, params)
+    console.log(product)
     setProduct(product)
   }
 

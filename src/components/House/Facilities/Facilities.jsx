@@ -126,9 +126,9 @@ function Facilities({json}) {
         <div className=" w-full lg:w-1/2 xl:w-1/2">
 
         <div className="w-full   h-full flex flex-col justify-center lg:justify-start  ">
-          <div className="w-full flex flex-row justify-center xl:justify-start items-center ">
+          <div className=" flex flex-row justify-center xl:justify-center 2xl:justify-start items-center ">
 
-            <div className="w-[90%] xl:w-1/2 flex flex-col justify-center md:justify-end xl:justify-start">
+            <div className="w-[90%] xl:w-3/4 2xl:w-1/2 flex flex-col justify-center md:justify-end xl:justify-start">
 
           <div className=" bg-white h-[350px] w-full mb-2 shadow-2xl ">
             <Image
@@ -155,16 +155,22 @@ function Facilities({json}) {
                 </div>
           </div>
                 </div>
-          <div className="mt-4 w-full lg:w-1/2 flex flex-row justify-center lg:justify-start">
-            <p className="w-[90%] font-PlayfairDisplay font-[700] text-lg tracking-[4px] text-justify">{json.Facilities.exploreText}</p>
-          </div>
+          <div className="mt-4 w-full lg:w-full flex flex-row justify-center lg:justify-start xl:justify-center 2xl:justify-start ">
+            <div className="flex flex-col items-center 2xl:items-start w-[90%]">
+
+            <p className="w-[350px] 2xl:w-[300px] font-PlayfairDisplay font-[700] text-lg tracking-[4px] text-justify">{json.Facilities.exploreText}</p>
           <div className="w-full flex flex-row justify-center xl:justify-start">
+            <div className="w-full flex flex-col items-center 2xl:items-start">
+
 
           <button className="font-Geometrica bg-[#b4a692] w-[150px] h-[35px] rounded-[7px] text-xl px-4 mt-4">
           <Link href="/Spaces">
           {json.Facilities.galleryButton}
           </Link>
           </button>
+            </div>
+          </div>
+            </div>
           </div>
         </div>
         </div>

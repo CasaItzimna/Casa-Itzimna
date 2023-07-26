@@ -19,8 +19,10 @@ function Producto({producto}) {
     const closeModal = () => {
       setModalOpen(false);
       // Restaura la URL original
-      window.history.pushState(null, '', '/'); // Reemplaza "/" por la URL original de tu tienda
+      window.history.pushState(null, '', '/Boutique'); // Reemplaza "/" por la URL original de tu tienda
     };
+
+    
 
   return (
     <div className='bg-[#b4a692] w-[350px] lg:w-[478px] h-[480px] lg:h-[533px] flex flex-col justify-center'>
@@ -44,6 +46,7 @@ function Producto({producto}) {
         producto={producto}
         isOpen={modalOpen}
         onRequestClose={closeModal}
+        setModalOpen={setModalOpen}
       />
                 </div>
             </div>
