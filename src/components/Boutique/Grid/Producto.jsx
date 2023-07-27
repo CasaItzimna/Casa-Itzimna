@@ -26,14 +26,14 @@ function Producto({producto}) {
 
   return (
     
-    <div className='bg-[#b4a692] w-[350px] lg:w-[478px] h-[480px] lg:h-[533px] flex flex-col justify-center overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50'>
+    <div className='bg-[#b4a692] w-[350px] lg:w-[478px] h-[400px] lg:h-[533px] flex flex-col justify-center overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50'>
             <div className='flex flex-row w-full justify-center'>
                 <div className='flex flex-col'>
                     <div className='w-full flex flex-row justify-center'>
                         <div className='flex flex-col mb-4'>
 
-                <img src={urlFor(producto?.image[0].asset._ref)} alt='imagen producto' className='w-[200px] h-[230px] object-contain'   /> 
-                <img src={urlFor(producto?.image[0].asset._ref)} alt='imagen producto' className='w-[200px] h-[90px] rotate-180 blur-xl '   /> 
+                <img src={urlFor(producto?.image[0].asset._ref)} alt='imagen producto' className='w-[100px] h-[100px] md:w-[200px] md:h-[230px]  object-contain'   /> 
+                <img src={urlFor(producto?.image[0].asset._ref)} alt='imagen producto' className='w-[100px] h-[25px] rotate-180 blur-lg '   /> 
                         </div>
                     </div>
             <p className='font-apollo uppercase text-2xl lg:text-4xl tracking-[4px] mb-4'>{producto?.name}</p>

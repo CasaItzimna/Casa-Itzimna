@@ -83,7 +83,7 @@ function Rates({ json }) {
   ]
 
   return (
-    <div className="w-full h-[1200px] md:h-[1350px] lg:h-[1000px] flex flex-col mt-8 xl:mt-0  ">
+    <div className="w-full h-full mb-10 lg:mb-0 md:h-[1350px] lg:h-[1000px] flex flex-col mt-8 xl:mt-0  ">
       <div className="w-full  flex flex-row justify-center items-center">
         <div className="w-full flex flex-col items-center justify-center lg:mt-8">
           <h3 className="text-4xl font-cinzelBold mb-8">{json.Rates.title}</h3>

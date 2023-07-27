@@ -99,7 +99,7 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
               <span className="text-4xl font-apollo tracking-[4px] ">USD</span>
             </p>
             <div className="w-full flex flex-row justify-center lg:justify-start">
-              <div className="flex flex-row  justify-between w-[90%] h-full font-ethereal uppercase text-[11px] ">
+              <div className="flex flex-row  justify-between w-full h-full font-ethereal uppercase text-[11px] ">
                 <h4
                   className="cursor-pointer"
                   onClick={() => setOpcion("opcion1")}
@@ -124,7 +124,7 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
               </div>
             </div>
             <div className="w-full flex flex-row justify-center lg:justify-start">
-              <div className="w-[90%] h-full flex flex-row relative mb-4">
+              <div className="w-full h-full flex flex-row relative mb-4">
                 <div className="bg-[#b4a692] w-full h-[3px]"></div>
                 <div
                   className={`absolute bg-[#31302c] w-[30%] h-[3px] ${
@@ -139,11 +139,13 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
                 ></div>
               </div>
             </div>
+            <div className="h-[150px] text-justify">
             <p className={`${opcion === "opcion1"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>
               {producto.description}
             </p>
             <p className={`${opcion === "opcion2"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>{producto.details}</p>
             <p className={`${opcion === "opcion3"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>{producto.shipping}</p>
+            </div>
             <div className="flex flex-col items-center lg:items-start">
             <button className="w-[210px] tracking-[4px] mt-8 py-2 text-xl text-white bg-black"
             onClick={()=>addProductCart(producto)}

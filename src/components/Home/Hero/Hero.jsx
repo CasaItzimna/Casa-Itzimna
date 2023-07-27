@@ -58,7 +58,7 @@ function Hero({ setShow, json }) {
       className="absolute w-full h-full md:h-full object-cover"
     />
 
-      <div className="flex flex-row justify-center  h-full md:full w-full   text-white absolute z-10">
+      <div className="flex flex-row justify-center  h-full  w-full   text-white absolute z-10">
         <div className="w-full h-[85%] md:h-full flex flex-col justify-end md:justify-center text-center items-center">
           <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-8xl xl:text-8xl font-cinzelRegular xl:mt-20">
             <span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[150px] xl:text-[120px]">C</span>asa{" "}

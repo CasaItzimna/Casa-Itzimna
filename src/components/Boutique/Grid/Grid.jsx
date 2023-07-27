@@ -18,7 +18,7 @@ function Grid({ json }) {
   console.log(productos[0]?.image[0].asset._ref);
   return (
     <div className="w-full h-full flex justify-center  relative">
-        <div className="h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
+        <div className="hidden h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
       <div className="flex flex-col justify-center z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3  gap-8">
           {productos.map((producto, index) => (

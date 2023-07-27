@@ -58,6 +58,9 @@ function Why({ json }) {
               className="w-[20px] h-[20px] absolute right-0 -top-2"
             />
           </div>
+          <div className="flex flex-row justify-center w-full">
+            
+          <div className="flex flex-col h-full w-[90%] lg:w-[90%] items-center">
 
           <h3 className="text-xl font-apollo tracking-[3px] flex flex-row  gap-2 items-center  cursor-pointer"
           onClick={()=>{setPregunta1(!pregunta1); setPregunta2(false); setPregunta3(false)}}
@@ -114,7 +117,9 @@ function Why({ json }) {
             {json.Why.answer3}
           </p>
           </div>
+          </div>
         </div>
+          </div>
       </div>
     </div>
   );

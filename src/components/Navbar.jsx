@@ -221,7 +221,7 @@ function Navbar() {
         />
           </div>
           <div className="w-full flex flex-row justify-center gap-12 mt-8 mb-8">
-            <Link href="/Carrito">
+            <Link href="/Carrito" onClick={()=>setActive(false)}>
                 <Image src={carritocafe} alt="carrito de compras icon" className="w-[25px] h-[25px] cursor-pointer"/>
             </Link>
                 <Image src={telefonocafe} alt="telefono icon" className="w-[21px] h-[25px] cursor-pointer"/>

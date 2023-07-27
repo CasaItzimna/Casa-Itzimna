@@ -92,10 +92,10 @@ function Form({json}) {
 
   return (
     <div className='w-full h-full flex flex-row justify-center relative mb-4 lg:mb-0'>
-                      <div className="h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
+                      <div className="hidden h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
 
         <div className='flex flex-col justify-start items-center z-10'>
-        <h3 className="w-[90%] lg:w-full text-5xl font-apollo text-center tracking-[8px] mb-4">
+        <h3 className="w-[90%] lg:w-full text-4xl font-apollo text-center tracking-[4px] mb-4">
                 {json.Contact.Touch}
               </h3>
               <form className="w-[90%] lg:w-full grid grid-cols-2 gap-4"

@@ -9,7 +9,7 @@ function Gallery({json}) {
 
   return (
     <div className='w-full h-full  flex flex-row justify-center relative '>
-                        <div className="h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
+                        <div className="hidden h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
 
         <div className='w-[90%] lg:w-[50%] flex flex-col justify-start z-20 '>
             <div className='grid grid-cols-2 md:grid-cols-3 place-items-center  2xl:grid-cols-6 2xl:place-items-center gap-4 mb-4 lg:mb-8'>

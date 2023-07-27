@@ -364,13 +364,13 @@ const [total, setTotal] = useState(0)
                         >
                           {!inicio ? (
                             <div>
-                              <p className="text-3xl font-Geometrica mt-2 uppercase">
+                              <p className="text-2xl md:text-3xl font-Geometrica mt-2 uppercase">
                                 {monthNames[hoy.getMonth()]}
                               </p>
-                              <p className="text-3xl  font-Geometrica">
+                              <p className="text-2xl md:text-3xl  font-Geometrica">
                                 {hoy.getDate()}, {hoy.getFullYear()}
                               </p>
-                              <p className="text-xl font-Geometrica uppercase mb-2">
+                              <p className="text-md md:text-xl font-Geometrica uppercase mb-2">
                                 {hoyName}
                               </p>
                               <div>
@@ -379,13 +379,13 @@ const [total, setTotal] = useState(0)
                             </div>
                           ) : (
                             <div>
-                              <p className="text-3xl font-Geometrica mt-2 uppercase">
+                              <p className="text-2xl md:text-3xl font-Geometrica mt-2 uppercase">
                                 {monthNames[inicio.getMonth()]}
                               </p>
-                              <p className="text-3xl  font-Geometrica">
+                              <p className="text-2xl md:text-3xl  font-Geometrica">
                                 {inicio.getDate()}, {inicio.getFullYear()}
                               </p>
-                              <p className="text-xl font-Geometrica uppercase mb-2">
+                              <p className="text-md md:text-xl font-Geometrica uppercase mb-2">
                                 {inicioName}
                               </p>
                               <div>
@@ -406,13 +406,13 @@ const [total, setTotal] = useState(0)
                         >
                           {!fin ? (
                             <div>
-                              <p className="text-3xl font-Geometrica mt-2 uppercase">
+                              <p className="text-2xl md:text-3xl font-Geometrica mt-2 uppercase">
                                 {monthNames[despues.getMonth()]}
                               </p>
-                              <p className="text-3xl font-Geometrica">
+                              <p className="text-2xl md:text-3xl font-Geometrica">
                                 {despues.getDate()}, {despues.getFullYear()}
                               </p>
-                              <p className="text-xl font-Geometrica uppercase mb-2">
+                              <p className="text-md md:text-xl font-Geometrica uppercase mb-2">
                                 {despuesName}
                               </p>
 
@@ -550,14 +550,16 @@ const [total, setTotal] = useState(0)
                   <option value="luxury">LUXURY</option>
                   <option value="premier">PREMIER</option>
                 </select>
-                <div className="flex flex-row  gap-4 col-span-2">
+                <div className="flex flex-row justify-center gap-4 col-span-2">
                   <div className="flex flex-col ">
 
-                  <h3 className="uppercase mb-4 lg:mb-2 font-Geometrica ">Experiences:</h3>
-                  <div className="flex flex-col lg:flex-row font-Geometrica gap-4 mb-4">
+                  <div className="flex flex-col items-center lg:flex-row font-Geometrica gap-4 mb-4">
+                  <h3 className="text-[#b4a692] font-Geometrica uppercase tracking-[2px]">
+                        EXPERIENCES
+                      </h3>
                     
                     
-      <label className="block">
+      <label className="">
         <input
           type="checkbox"
           value="cena"
@@ -634,7 +636,7 @@ const [total, setTotal] = useState(0)
     <Image
       src={bookingfoto}
       alt="bookingfoto"
-      className="w-[90%] h-[550px] object-cover  overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50"
+      className="w-[90%] h-[350px] md:h-[550px] object-cover  overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50 mb-2 md:mb-0"
       />
   </div>
       </div>

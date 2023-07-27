@@ -12,7 +12,7 @@ function Experiences({json}) {
     console.log(json.Experiences.Experiences1)
   return (
     <div className='w-full h-full  relative'>
-                <div className="h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
+                <div className="hidden h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
     <div className='flex flex-row justify-center'>
         <div className='w-[53%] md:w-[62%] h-full flex flex-col justify-start z-10'>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 place-items-center gap-4 '>
