@@ -213,7 +213,7 @@ function Navbar() {
           </div>
           <div className="w-full flex flex-row justify-center gap-2 mt-4">
 {/*                 <button className="tracking-[2px] border-[1px] border-[#31302c] font-Geometrica text-[#31302c] px-4 text-lg"><Link href="/Login">LOG IN</Link></button>
- */}                <button className="tracking-[2px] bg-[#30302c] text-white font-Geometrica px-2 text-lg" /* onClick={() => { openModal(); setShowModalCalendar(true); }} */  onClick={()=>setActive(false)}> <Link href="/House#booking">BOOK NOW</Link> </button>
+ */}                <button className="tracking-[2px] py-2  bg-[#30302c] text-white font-Geometrica px-4 text-lg" /* onClick={() => { openModal(); setShowModalCalendar(true); }} */  onClick={()=>setActive(false)}> <Link href="/House#booking">BOOK NOW</Link> </button>
                 <CalendarioModal
         
         isOpen={modalOpen}

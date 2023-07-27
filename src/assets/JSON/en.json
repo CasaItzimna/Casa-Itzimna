@@ -4,7 +4,7 @@
       "option2": "ABOUT US",
       "option3": "HOUSE",
       "option4": "EXPERIENCE",
-      "option5": "SPACES",
+      "option5": "GALLERY",
       "option6": "BOUTIQUE",
       "option7": "CONTACT"
     },
@@ -12,7 +12,7 @@
         "option1": "ABOUT US",
         "option2": "HOUSE",
         "option3": "EXPERIENCE",
-        "option4": "SPACES",
+        "option4": "GALLERY",
         "option5": "BOUTIQUE",
         "option6": "CONTACT"
     },
@@ -40,7 +40,7 @@
       "text1": "Experience the comfort of every corner, infused with the charm of Mérida and contemporary flair. The Boutique House has been designed to offer a haven of luxury and well-being. Discover the warmth and elegance of our spaces.",
       "text2": "Let us Transport You to a World of Delight and Relaxation, Offering a True Oasis of Luxury and Comfort.",
       "text3": "Exceptional Hospitality and Exclusive Services Await to Make Your Stay a Truly Unique and Exquisite Experience. Our exceptional hospitality is what we consider a true art.",
-      "buttonText": "SPACES"
+      "buttonText": "GALLERY"
     },
     "Testimonials":{
         "title": "Testimonials",

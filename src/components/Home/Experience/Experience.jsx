@@ -4,13 +4,15 @@ import spa from "./spa.png";
 import flor from "./flor.png";
 import florder from "../../../assets/flor.png";
 import serpiente from "../../../assets/serpiente.png";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import florizq from "../Testimonials/florizq.png";
 
 function Experience({json}) {
+/*   const [isLargerThanMd, setIsLargerThanMd] = useState(window.innerWidth > 768)
+ */
   return (
-    <div className="w-full h-[800px] lg:h-[400px] flex flex-row justify-center relative  ">
+    <div className="w-full h-[700px] lg:h-[400px] flex flex-row justify-center relative  ">
       <div className="absolute h-full  flex flex-col lg:flex-row justify-center  items-center z-0">
         <div className="lg:w-1/2 flex flex-row justify-center">
 
@@ -56,14 +58,20 @@ function Experience({json}) {
           </div>
           </div>
           <p
-  className="text-center text-xl font-ethereal w-[350px] md:w-[600px] lg:w-[480px] tracking-[4px] lg:text-white"
-  style={{
-    textAlign: 'justify', // Utiliza la sintaxis de JavaScript para establecer el estilo 'text-align'
-    textAlignLast: 'right', // Utiliza la sintaxis de JavaScript para establecer el estilo 'text-align-last'
-  }}
-          >
+      className="text-xl font-ethereal text-center md:text-right w-[350px] md:w-[600px] lg:w-[480px] tracking-[4px] lg:text-white"
+      
+    >
           {json.Experience.text}
-          </p>
+          </p> 
+          {/*<p
+      className="text-xl font-ethereal w-[350px] md:w-[600px] lg:w-[480px] tracking-[4px] lg:text-white"
+      style={{
+        textAlign: 'center', // Justificar al centro por defecto
+        textAlignLast: 'center', // Justificar a la derecha por defecto
+      }}
+    >
+          {json.Experience.text}
+          </p>  */}
           <Link href='/Experience'>
           <button className="rounded-[4px] bg-[#31302c] text-white w-[200px] h-[45px] text-xl tracking-[4px] mt-8 font-apollo ">
             

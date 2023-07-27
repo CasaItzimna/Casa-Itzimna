@@ -73,7 +73,9 @@ function Accomodation({json}) {
     }`}></div>
           </div>
           <div className="w-full  flex flex-row justify-center xl:justify-start  text-center lg:text-left">
-            <div className="w-[90%] flex flex-col justify-center">
+            <div className="flex flex-col items-center h-full w-full">
+
+            <div className="w-[90%] h-[180px] flex flex-col justify-center">
               
             <p className={`${opcion === "opcion1"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>
               {json.Accomodation.text1}
@@ -81,6 +83,7 @@ function Accomodation({json}) {
             <p className={`${opcion === "opcion2"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>{json.Accomodation.text2}</p>
             <p className={`${opcion === "opcion3"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>{json.Accomodation.text3}</p>
            
+            </div>
             <Link href='/Spaces'>
             <button className="rounded-[4px] bg-[#b4a692]  w-[200px] h-[45px] text-xl tracking-[4px] mt-8 font-apollo">
             {json.Accomodation.buttonText}

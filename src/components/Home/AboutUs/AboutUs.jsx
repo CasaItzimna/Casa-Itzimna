@@ -19,13 +19,13 @@ function AboutUs({ json }) {
       <div
         className={
           showModalCalendar === false
-            ? "h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-10 overflow-y-hidden absolute -top-48 "
+            ? "hidden h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-10 overflow-y-hidden absolute -top-48 "
             : "hidden"
         }
       ></div>
-      <div className="absolute w-10/12 h-1/4 md:w-3/4 md:h-1/2 lg:w-1/2 xl:w-2/3 lg:h-full xl:h-[700px] right-0 bottom-[20%] md:bottom-[5%] lg:-bottom-[30%] xl:-bottom-[80%]  ">
+     {/*  <div className="absolute w-10/12 h-1/4 md:w-3/4 md:h-1/2 lg:w-1/2 xl:w-2/3 lg:h-full xl:h-[700px] right-0 top-[20%] md:bottom-[5%] lg:-bottom-[30%] xl:-bottom-[80%]  ">
         <Image src={serpiente} alt="serpiente" className="w-full h-full" />
-      </div>
+      </div> */}
       <div className="w-full h-full max-w-[1920px]  overflow-y-hidden relative ">
         <div className="w-full h-full flex flex-col-reverse lg:flex-row  gap-0 ">
           <div className="w-full h-full flex flex-col justify-start lg:justify-center text-center lg:text-left ">
@@ -68,9 +68,9 @@ function AboutUs({ json }) {
               </div>
             </div>
           </div>
-          <div className="  w-full h-[400px] lg:h-full flex flex-col justify-center items-center">
+          <div className="  w-full h-full lg:h-full flex flex-col justify-start md:justify-center items-center">
             <div className="w-full h-full flex flex-row justify-center lg:justify-start items-center">
-              <div className="w-[350px] md:w-[400px] lg:w-[500px] h-[400px]  relative   ">
+              <div className="w-[350px] h-[380px]  md:w-[400px] lg:w-[500px]  relative   ">
                 <div className="absolute top-0 right-0 bg-white h-[200px] lg:h-[250px] w-[250px] lg:w-[300px]">
                   <div
                     className="relative w-full h-full p-2 overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50"
@@ -96,7 +96,7 @@ function AboutUs({ json }) {
                   />
                   </div>
                 </div>
-                <div className="absolute bottom-[16%] lg:bottom-0 right-4 bg-white w-[230px] lg:w-[280px] h-[150px] lg:h-[200px]">
+                <div className="absolute bottom-[10%] lg:bottom-0 right-4 bg-white w-[230px] lg:w-[280px] h-[150px] lg:h-[200px]">
                 <div
                     className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50"
                   >

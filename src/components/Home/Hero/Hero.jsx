@@ -51,15 +51,15 @@ function Hero({ setShow, json }) {
   ];
 
   return (
-    <div className="w-full  h-[85vh] md:h-[90vh] lg:h-[100vh] flex flex-col relative">
+    <div className="w-full  h-[70vh] md:h-[90vh] lg:h-[100vh] flex flex-col relative">
     <Image
       src={hero1}
       alt="fondo"
-      className="absolute w-full h-full object-cover"
+      className="absolute w-full h-full md:h-full object-cover"
     />
 
-      <div className="flex flex-row justify-center  h-full w-full   text-white absolute z-10">
-        <div className="w-full h-[90%] flex flex-col justify-center text-center items-center">
+      <div className="flex flex-row justify-center  h-full md:full w-full   text-white absolute z-10">
+        <div className="w-full h-[85%] md:h-full flex flex-col justify-end md:justify-center text-center items-center">
           <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-8xl xl:text-8xl font-cinzelRegular xl:mt-20">
             <span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[150px] xl:text-[120px]">C</span>asa{" "}
             <span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[150px] xl:text-[120px]">I</span>tzimná
