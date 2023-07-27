@@ -26,8 +26,8 @@ function Experience({json}) {
         </div>
         <div className="w-full lg:w-1/2 flex flex-row justify-start md:justify-center lg:justify-end">
 
-        <div className="w-full lg:w-1/2 xl:w-[25%] h-full flex flex-col justify-start lg:justify-center items-center lg:items-end mt-4 lg:mt-0 xl:pr-10">
-          <div className="w-full md:w-[600px] lg:w-[500px]  flex flex-col items-center lg:items-end">
+        <div className="w-full  xl:w-[25%] h-full flex flex-col justify-start lg:justify-center items-center lg:items-end lg:mr-4 xl:mr-0 mt-4 lg:mt-0 xl:pr-10">
+          <div className="w-full md:w-[600px] lg:w-full  flex flex-col items-center lg:items-end">
             <h3 className="text-[30px] md:text-[40px]   font-cinzelBold lg:text-white text-center lg:text-right ">
             {json.Experience.title}
             </h3>
@@ -64,9 +64,9 @@ function Experience({json}) {
           {json.Experience.text}
           </p> 
           <p
-      className="text-xl font-ethereal hidden lg:w-[480px] tracking-[4px] lg:text-white"
+      className="text-xl font-ethereal hidden lg:flex w-[480px] tracking-[4px] lg:text-white"
       style={{
-        textAlign: 'center', // Justificar al centro por defecto
+        textAlign: 'right', // Justificar al centro por defecto
         textAlignLast: 'right', // Justificar a la derecha por defecto
       }}
     >

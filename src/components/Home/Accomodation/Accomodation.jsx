@@ -20,7 +20,7 @@ function Accomodation({json}) {
             <Image src={sol} alt="sol" className="w-[300px]" />
         </div>
       <div className="flex flex-col-reverse lg:flex-row justify-center items-center w-full h-[1000px] lg:h-[600px]">
-        <div className="w-full lg:w-1/4 xl:w-1/2 h-full flex flex-row justify-center xl:justify-end items-center ">
+        <div className="w-full lg:w-1/2 xl:w-1/2 h-full flex flex-row justify-center xl:justify-end items-center ">
             <div className="w-[90%] flex flex-col justify-center xl:w-[500px] ">
 
           <h3 className="text-[30px] lg:text-[40px] font-cinzelBold text-center lg:text-left ">{json.Accomodation.title}</h3>
@@ -61,25 +61,25 @@ function Accomodation({json}) {
          
           </div>
           <div className=" lg:w-[95%] h-full flex flex-row relative px-4 lg:px-0  mb-4">
-            <div className="w-full flex flex-row justify-center">
+            <div className="w-full  flex flex-row justify-center">
 
             
             <div className="bg-[#d3cbc0] w-full md:w-[95%] h-[3px]"></div>
             <div  className={`absolute md-[95%] bg-[#31302c]  h-[3px] ${
       opcion === 'opcion1'
-        ? 'left-[2.5%] md:left-[4%] lg:left-0 w-[20%]  lg:w-[30%]'
+        ? 'left-[2.5%] md:left-[4%] lg:left-0 w-[20%]  lg:w-[20%]'
         : opcion === 'opcion2'
-        ? 'left-[30%] md:left-[32%] w-[30%]'
+        ? 'left-[30%] md:left-[32%] lg:left-[30%] w-[30%]'
         : opcion === 'opcion3'
-        ? 'right-[2.5%]  md:right-[4%] lg:right-0 w-[20%]  lg:w-[30%]'
+        ? 'right-[2.5%]  md:right-[4%] lg:right-0 w-[20%]  lg:w-[20%]'
         : ''
     }`}></div>
     </div>
           </div>
           <div className="w-full  flex flex-row justify-center xl:justify-start  text-justify">
-            <div className="flex flex-col items-center h-full w-full">
+            <div className="flex flex-col items-center  h-full w-full">
 
-            <div className="w-[90%] h-[180px] md:h-[100px] md:text-lg flex flex-col justify-center">
+            <div className="w-[90%] lg:w-full h-[180px] md:h-[100px] lg:h-[170px] md:text-lg flex flex-col justify-center">
               
             <p className={`${opcion === "opcion1"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>
               {json.Accomodation.text1}
@@ -88,11 +88,14 @@ function Accomodation({json}) {
             <p className={`${opcion === "opcion3"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>{json.Accomodation.text3}</p>
            
             </div>
+            <div className="flex flex-row justify-center lg:justify-start w-full">
+
             <Link href='/Spaces'>
             <button className="rounded-[4px] bg-[#d3cbc0]  w-[200px] h-[45px] text-xl tracking-[4px] mt-8 font-apollo">
             {json.Accomodation.buttonText}
             </button>
             </Link>
+            </div>
             </div>
               </div>
           </div>

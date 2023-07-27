@@ -90,11 +90,11 @@ function Navbar() {
               </span>
             </div>
             <div className="flex flex-row justify-center">
-              <ul className="flex flex-row text-center gap-20 text-xl">
+              <ul className="flex flex-row text-center gap-20 text-md ">
                 <li className="cursor-pointer hover:text-[#d3cbc0]  tracking-[6px]">
                   <Link href="/">{json.Navbar.option1}</Link>
                 </li>
-                <li className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
+                <li className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px] w-[150px]"
                 onClick={()=>setActive(false)}
                 >
                   <Link href="/AboutUs">{json.Navbar.option2}</Link>
@@ -112,7 +112,7 @@ function Navbar() {
               </ul>
             </div>
             <div className="flex flex-row justify-center">
-              <ul className="flex flex-row text-center gap-20 text-xl mt-2">
+              <ul className="flex flex-row text-center gap-20 text-md  mt-2">
                 <li className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
                 onClick={()=>setActive(false)}
                 >
