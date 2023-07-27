@@ -545,10 +545,10 @@ const [total, setTotal] = useState(0)
                   onChange={(e) => setPlan(e.target.value)}
                   className="border-[1px] py-1 border-[#d3cbc0] font-Geometrica text-gray-500 col-span-2"
                 >
-                  <option value="">CHOOSE A PLAN</option>
-                  <option value="select">SELECT</option>
-                  <option value="luxury">LUXURY</option>
-                  <option value="premier">PREMIER</option>
+                  <option className="text-center" value="">CHOOSE A PLAN</option>
+                  <option className="text-center" value="select">SELECT</option>
+                  <option className="text-center" value="luxury">LUXURY</option>
+                  <option className="text-center" value="premier">PREMIER</option>
                 </select>
                 <div className="flex flex-row justify-center gap-4 col-span-2">
                   <div className="flex flex-col ">
@@ -636,7 +636,7 @@ const [total, setTotal] = useState(0)
     <Image
       src={bookingfoto}
       alt="bookingfoto"
-      className="w-[90%] h-[350px] md:h-[550px] object-cover  overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50 mb-2 md:mb-0"
+      className="w-[90%] h-[350px] md:h-[550px] object-cover md:rounded-[18px] overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50 mb-2 md:mb-0"
       />
   </div>
       </div>

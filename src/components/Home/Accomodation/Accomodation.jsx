@@ -54,9 +54,9 @@ function Accomodation({json}) {
           <div className="w-full flex flex-row justify-center lg:justify-start">
 
           <div className="flex flex-row justify-between w-[90%] md:w-[600px] lg:w-[95%] h-full font-ethereal uppercase text-[10px] ">
-            <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion1')}>{json.Accomodation.option1}</h4>
-            <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion2')}>{json.Accomodation.option2}</h4>
-            <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion3')}>{json.Accomodation.option3}</h4>
+            <h4 className="cursor-pointer md:text-[14px]" onClick={()=> setOpcion('opcion1')}>{json.Accomodation.option1}</h4>
+            <h4 className="cursor-pointer  md:text-[14px]" onClick={()=> setOpcion('opcion2')}>{json.Accomodation.option2}</h4>
+            <h4 className="cursor-pointer  md:text-[14px]" onClick={()=> setOpcion('opcion3')}>{json.Accomodation.option3}</h4>
           </div>
          
           </div>

@@ -6,7 +6,7 @@ import OurBoutique from '@/components/Carrito/OurBoutique'
 function Carrito() {
   return (
     <div>
-      <div className='w-full h-[100px] lg:h-[250px] bg-[#31302c]'>
+      <div className='w-full h-[100px] md:h-[200px] lg:h-[250px] bg-[#31302c]'>
 
       </div>
       <TimeLine/>

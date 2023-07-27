@@ -15,10 +15,10 @@ function Experiences({json}) {
                 <div className="hidden h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
     <div className='flex flex-row justify-center'>
         <div className='w-[53%] md:w-[62%] h-full flex flex-col justify-start z-10'>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 place-items-center gap-4 '>
+            <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 place-items-center gap-4 '>
                 <div className='w-[250px] relative '> 
                 <div className='bg-black/50 absolute top-0 w-full h-full'></div>
-                <Image src={experience1} alt='experience1' className='w-full h-[200px] lg:h-full object-cover'/>
+                <Image src={experience1} alt='experience1' className='w-full h-[200px] lg:h-full object-cover '/>
                 <div>
 
                 <h4 className='absolute text-center lg:text-left text-white text-2xl lg:text-4xl font-apollo tracking-[8px] lg:w-[80px] lg:h-[20px] bottom-[30%] left-[0%] lg:bottom-[50px]  lg:-left-[20px] lg:-rotate-90 '>{json.Experiences.Experiences1}</h4>
@@ -64,7 +64,7 @@ function Experiences({json}) {
                         <p className='w-[90%] md:w-[60%] lg:w-full font-PlayfairDisplay text-justify tracking-[2px] mt-4'>
                             {json.Experiences.CaptivatingText}
                         </p>
-                        <button className='font-Geometrica bg-[#d3cbc0] w-[150px] py-1 rounded-[7px] tracking-[4px] mt-4 mb-8 lg:mb-0'>
+                        <button className='font-Geometrica bg-[#b4a692] w-[150px] py-1 rounded-[7px] tracking-[4px] mt-4 mb-8 lg:mb-0'>
                             <Link href="/Spaces">
                             {json.Experiences.ButtonText}
                             </Link>

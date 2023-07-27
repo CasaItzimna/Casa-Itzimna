@@ -51,25 +51,25 @@ function Facilities({json}) {
                       <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#d3cbc0]">
                       <Image src={pool} alt="pool" className="w-[30px] h-[30px]" />
                       </div>
-                      <span className="flex flex-row w-full justify-center text-center text-[11px]  font-bold">{json.Facilities.facility1}</span>
+                      <span className="flex flex-row w-full justify-center text-center text-[11px] md:text-[15px]  font-bold">{json.Facilities.facility1}</span>
                      </div>
                     <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#d3cbc0] ">
                       <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#d3cbc0]">
                       <Image src={parking} alt="parking lot" className="w-[25px] h-[25px]" />
                       </div>
-                      <span className="flex flex-row w-full justify-center text-center text-[11px] font-bold">{json.Facilities.facility2}</span>
+                      <span className="flex flex-row w-full justify-center text-center text-[11px] md:text-[15px] font-bold">{json.Facilities.facility2}</span>
                      </div>
                     <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#d3cbc0] ">
                       <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#d3cbc0]">
                       <Image src={fridge} alt="fridge" className="w-[15px] h-[25px]" />
                       </div>
-                      <span className="flex flex-row w-full justify-center text-center text-[11px] font-bold">{json.Facilities.facility3}</span>
+                      <span className="flex flex-row w-full justify-center text-center text-[11px] md:text-[15px] font-bold">{json.Facilities.facility3}</span>
                      </div>
                     <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#d3cbc0] ">
                       <div className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#d3cbc0]">
                       <Image src={games} alt="games" className="w-[28px] h-[25px]" />
                       </div>
-                      <span className="flex flex-row w-full justify-center text-center text-[11px] font-bold">{json.Facilities.facility4}</span>
+                      <span className="flex flex-row w-full justify-center text-center text-[11px] md:text-[15px] font-bold">{json.Facilities.facility4}</span>
                      </div>
                 </div>
                 <div className="w-full flex flex-col gap-3">
@@ -77,25 +77,25 @@ function Facilities({json}) {
                       <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#d3cbc0]">
                       <Image src={wifi} alt="wifi" className="w-[30px] h-[22px]" />
                       </div>
-                      <span className="flex flex-row w-full justify-center text-center text-[11px] font-bold">{json.Facilities.facility5}</span>
+                      <span className="flex flex-row w-full justify-center text-center text-[11px] md:text-[15px] font-bold">{json.Facilities.facility5}</span>
                      </div>
                     <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#d3cbc0] ">
                       <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#d3cbc0]">
                       <Image src={tv} alt="tv" className="w-[30px] h-[25px]" />
                       </div>
-                      <span className="flex flex-row w-full justify-center text-center text-[11px] font-bold">{json.Facilities.facility6}</span>
+                      <span className="flex flex-row w-full justify-center text-center text-[11px] md:text-[15px] font-bold">{json.Facilities.facility6}</span>
                      </div>
                     <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#d3cbc0] ">
                       <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#d3cbc0]">
                       <Image src={kitchen} alt="kitchen" className="w-[25px] h-[25px]" />
                       </div>
-                      <span className="flex flex-row w-full justify-center text-center text-[11px] font-bold">{json.Facilities.facility7}</span>
+                      <span className="flex flex-row w-full justify-center text-center text-[11px] md:text-[15px] font-bold">{json.Facilities.facility7}</span>
                      </div>
                     <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#d3cbc0] ">
                       <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#d3cbc0]">
                       <Image src={speakers} alt="speakers" className="w-[15px] h-[22px]" />
                       </div>
-                      <span className="flex flex-row w-full justify-center text-center text-[11px] font-bold">{json.Facilities.facility8}</span>
+                      <span className="flex flex-row w-full justify-center text-center text-[11px] md:text-[15px] font-bold">{json.Facilities.facility8}</span>
                      </div>
                 </div>
             </div>
@@ -122,10 +122,10 @@ function Facilities({json}) {
             </div>
         </div> 
         </div>
-        
-        <div className=" w-full lg:w-1/2 xl:w-1/2">
+         
+        <div className=" w-full flex flex-row justify-center lg:justify-start lg:w-1/2 xl:w-1/2">
 
-        <div className="w-full   h-full flex flex-col justify-center lg:justify-start  ">
+        <div className="w-full md:w-[400px]   h-full flex flex-col justify-center  lg:justify-start  ">
           <div className=" flex flex-row justify-center xl:justify-center 2xl:justify-start items-center ">
 
             <div className="w-full xl:w-3/4 2xl:w-1/2 flex flex-col justify-center md:justify-end xl:justify-start">
@@ -161,7 +161,7 @@ function Facilities({json}) {
                 </div>
           </div>
                 </div>
-          <div className="hidden mt-4 w-full lg:w-full md:flex flex-row justify-center lg:justify-start xl:justify-center 2xl:justify-start ">
+          <div className="hidden mt-4 w-full lg:w-full lg:flex flex-row justify-center lg:justify-start xl:justify-center 2xl:justify-start ">
             <div className="flex flex-col items-center 2xl:items-start w-[90%]">
 
             <p className="w-[350px] 2xl:w-1/2 font-PlayfairDisplay font-[700] text-lg tracking-[4px] text-justify">{json.Facilities.exploreText}</p>

@@ -83,7 +83,7 @@ function Rates({ json }) {
   ]
 
   return (
-    <div className="w-full h-full mb-10 lg:mb-0 md:h-[1350px] lg:h-[1000px] flex flex-col mt-8 xl:mt-0  ">
+    <div className="w-full h-full mb-10 md:mb-0 md:h-[1300px] lg:h-[1000px] flex flex-col mt-8 xl:mt-0  ">
       <div className="w-full  flex flex-row justify-center items-center">
         <div className="w-full flex flex-col items-center justify-center lg:mt-8">
           <h3 className="text-4xl font-cinzelBold mb-8">{json.Rates.title}</h3>
@@ -106,11 +106,11 @@ function Rates({ json }) {
               <div className="w-[15%] hidden lg:flex flex-row justify-center items-center">
                 <Image src={fototo1} alt="persona" className="h-full" />
               </div>
-              <div className="w-full lg:w-[35%] flex flex-row justify-center items-center">
+              <div className="w-full  lg:w-[35%] flex flex-row justify-center items-center">
                 <Image
                   src={fototo2}
-                  alt="persona"
-                  className="w-[90%] h-full object-cover"
+                  alt="persona" 
+                  className="w-[90%] h-full md:rounded-[18px]  object-cover"
                 />
               </div>
               <div className=" w-full lg:w-[25%] h-full flex flex-col justify-center gap-2 text-center lg:text-left tracking-[4px] ">

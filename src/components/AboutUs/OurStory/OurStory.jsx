@@ -53,9 +53,9 @@ function OurStory({json}) {
           <div className="w-full flex flex-row justify-center lg:justify-start">
 
           <div className="flex flex-row  justify-around w-[90%] h-full font-ethereal uppercase text-[11px] ">
-            <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion1')}>{json.OurStory.option1}</h4>
-            <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion2')}>{json.OurStory.option2}</h4>
-            <h4 className="cursor-pointer" onClick={()=> setOpcion('opcion3')}>{json.OurStory.option3}</h4>
+            <h4 className="cursor-pointer md:text-[14px]" onClick={()=> setOpcion('opcion1')}>{json.OurStory.option1}</h4>
+            <h4 className="cursor-pointer md:text-[14px]" onClick={()=> setOpcion('opcion2')}>{json.OurStory.option2}</h4>
+            <h4 className="cursor-pointer md:text-[14px]" onClick={()=> setOpcion('opcion3')}>{json.OurStory.option3}</h4>
           </div>
           </div>
           <div className="w-full flex flex-row justify-center lg:justify-start">
@@ -74,9 +74,9 @@ function OurStory({json}) {
             </div>
             </div>
             <div className="w-full flex flex-col items-center 2xl:items-start">
-          <div className="h-[350px] flex flex-row justify-center lg:justify-start  text-justify w-[90%]  ">
+          <div className="h-[350px] md:h-[200px] flex flex-row justify-center lg:justify-start  text-justify w-[90%]  ">
 
-            
+             
           <p className={`${opcion === "opcion1"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>
               {json.OurStory.text1}
             </p>
