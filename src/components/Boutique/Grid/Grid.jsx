@@ -26,19 +26,19 @@ function Grid({ json }) {
           ))}
         </div>
         <div className="flex flex-row justify-center items-center">
-          <span className="text-4xl text-[#b4a692] font-cinzelBold mr-2">
+          <span className="text-4xl text-[#d3cbc0] font-cinzelBold mr-2">
             {"<"}
           </span>
-          <span className="text-3xl px-4 py-2 border-[1px] rounded-[7px] border-[#b4a692] mr-4 mt-4 mb-4">
+          <span className="text-3xl px-4 py-2 border-[1px] rounded-[7px] border-[#d3cbc0] mr-4 mt-4 mb-4">
             1
           </span>
           <span className="text-3xl px-4 py-2 border-[1px] rounded-[7px] bg-[#31302c] text-white mr-4 mt-4 mb-4">
             2
           </span>
-          <span className="text-3xl px-4 py-2 border-[1px] rounded-[7px] border-[#b4a692] mr-4 mt-4 mb-4">
+          <span className="text-3xl px-4 py-2 border-[1px] rounded-[7px] border-[#d3cbc0] mr-4 mt-4 mb-4">
             3
           </span>
-          <span className="text-4xl text-[#b4a692] font-cinzelBold ml-2">
+          <span className="text-4xl text-[#d3cbc0] font-cinzelBold ml-2">
             {">"}
           </span>
         </div>

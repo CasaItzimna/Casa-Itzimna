@@ -27,7 +27,7 @@ function Why({ json }) {
         <Image
           src={foto}
           alt="foto alberca"
-          className="w-[90%] lg:w-full xl:w-[500px] h-[200px] lg:h-[350px] object-cover rounded-[18px] overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50 "
+          className="w-[90%] lg:w-full xl:w-[500px] h-[200px] lg:h-[350px] object-cover rounded-[18px] overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50 "
           />
       </div>
           </div>
@@ -42,7 +42,7 @@ function Why({ json }) {
           alt="flor"
           className="w-[20px] h-[20px] absolute left-0 -top-2"
           />
-        <div className="bg-[#b4a692] w-[430px] h-[2px]"></div>
+        <div className="bg-[#d3cbc0] w-[430px] h-[2px]"></div>
         <Image
           src={flor}
           alt="flor"
@@ -51,7 +51,7 @@ function Why({ json }) {
       </div>
           </div>
           <div className="hidden w-[380px] h-full lg:flex flex-row relative ">
-            <div className="bg-[#b4a692] w-[370px] h-[2px]"></div>
+            <div className="bg-[#d3cbc0] w-[370px] h-[2px]"></div>
             <Image
               src={flor}
               alt="flor"

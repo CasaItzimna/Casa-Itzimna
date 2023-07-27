@@ -158,12 +158,12 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
       
       <form className="flex flex-col h-full w-full" onSubmit={handleSubmit}>
        
-        <div className="grid grid-cols-2 mt-2 mb-4 px-4 pb-4 pt-2 w-full h-full border-t-[1px] border-b-[1px] border-[#b4a692] gap-4">
-          <div className="flex flex-col items-center border-r-[1px] border-[#b4a692]  ">
-          <p className="text-[#b4a692] font-Geometrica uppercase mb-2 tracking-[2px]">Entrada</p>
+        <div className="grid grid-cols-2 mt-2 mb-4 px-4 pb-4 pt-2 w-full h-full border-t-[1px] border-b-[1px] border-[#d3cbc0] gap-4">
+          <div className="flex flex-col items-center border-r-[1px] border-[#d3cbc0]  ">
+          <p className="text-[#d3cbc0] font-Geometrica uppercase mb-2 tracking-[2px]">Entrada</p>
           
           <div
-            className="w-[70%] bg-[#b4a692] text-black flex flex-col text-center relative cursor-pointer"
+            className="w-[70%] bg-[#d3cbc0] text-black flex flex-col text-center relative cursor-pointer"
             onClick={() => setShow(true)}
           >
             
@@ -193,10 +193,10 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
           </div>
           </div>
           <div className="flex flex-col items-center ">
-          <p className="text-[#b4a692] font-Geometrica uppercase mb-2 tracking-[2px]">Salida</p>
+          <p className="text-[#d3cbc0] font-Geometrica uppercase mb-2 tracking-[2px]">Salida</p>
           
           <div
-            className="w-[70%]  bg-[#b4a692] text-black flex flex-col text-center relative cursor-pointer"
+            className="w-[70%]  bg-[#d3cbc0] text-black flex flex-col text-center relative cursor-pointer"
             onClick={() => setShow(true)}
           >
             {!fin ? (
@@ -237,32 +237,32 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
           />
         </div>
         <div className="flex flex-col items-center">
-      <h3 className="text-[#b4a692] font-Geometrica uppercase tracking-[2px]">GUEST NUMBER</h3>
+      <h3 className="text-[#d3cbc0] font-Geometrica uppercase tracking-[2px]">GUEST NUMBER</h3>
       <div className="flex flex-row justify-center gap-4 text-black mt-2 mb-4">
-      <div onClick={()=>{setSelectedPackage('paquete1'); localStorage.setItem("paquete", "paquete1")}} className={selectedPackage === 'paquete1'?`border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer bg-[#b4a692]`:`border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer`}>
-          <div className={selectedPackage === 'paquete1'?`border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`:`border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#b4a692] `}></div>
+      <div onClick={()=>{setSelectedPackage('paquete1'); localStorage.setItem("paquete", "paquete1")}} className={selectedPackage === 'paquete1'?`border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer bg-[#d3cbc0]`:`border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer`}>
+          <div className={selectedPackage === 'paquete1'?`border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`:`border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#d3cbc0] `}></div>
         </div>
         <label
           htmlFor="paquete1"
-          className={`font-Geometrica ${selectedPackage === 'paquete1' ? 'text-[#b4a692]' : ''}`}
+          className={`font-Geometrica ${selectedPackage === 'paquete1' ? 'text-[#d3cbc0]' : ''}`}
         >
           1-2
         </label>
-        <div onClick={()=>{setSelectedPackage('paquete2'); localStorage.setItem("paquete", "paquete2")}} className={selectedPackage === 'paquete2'?`border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer bg-[#b4a692]`:`border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer`}>
-          <div className={selectedPackage === 'paquete2'?`border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`:`border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#b4a692] `}></div>
+        <div onClick={()=>{setSelectedPackage('paquete2'); localStorage.setItem("paquete", "paquete2")}} className={selectedPackage === 'paquete2'?`border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer bg-[#d3cbc0]`:`border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer`}>
+          <div className={selectedPackage === 'paquete2'?`border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`:`border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#d3cbc0] `}></div>
         </div>
         <label
           htmlFor="paquete2"
-          className={`font-Geometrica ${selectedPackage === 'paquete2' ? 'text-[#b4a692]' : ''}`}
+          className={`font-Geometrica ${selectedPackage === 'paquete2' ? 'text-[#d3cbc0]' : ''}`}
         >
           3-5
         </label>
-        <div onClick={()=>{setSelectedPackage('paquete3'); localStorage.setItem("paquete", "paquete3")}} className={selectedPackage === 'paquete3'?`border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer bg-[#b4a692]`:`border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer`}>
-          <div className={selectedPackage === 'paquete3'?`border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`:`border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#b4a692] `}></div>
+        <div onClick={()=>{setSelectedPackage('paquete3'); localStorage.setItem("paquete", "paquete3")}} className={selectedPackage === 'paquete3'?`border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer bg-[#d3cbc0]`:`border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer`}>
+          <div className={selectedPackage === 'paquete3'?`border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`:`border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#d3cbc0] `}></div>
         </div>
         <label
           htmlFor="paquete3"
-          className={`font-Geometrica ${selectedPackage === 'paquete3' ? 'text-[#b4a692]' : ''}`}
+          className={`font-Geometrica ${selectedPackage === 'paquete3' ? 'text-[#d3cbc0]' : ''}`}
         >
           6-8
         </label>

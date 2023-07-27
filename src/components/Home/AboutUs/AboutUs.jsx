@@ -27,15 +27,15 @@ function AboutUs({ json }) {
         <Image src={serpiente} alt="serpiente" className="w-full h-full" />
       </div> */}
       <div className="w-full h-full max-w-[1920px]  overflow-y-hidden relative ">
-        <div className="w-full h-full flex flex-col-reverse lg:flex-row  gap-0 ">
+        <div className="w-full h-full flex flex-col-reverse lg:flex-row  gap-0 md:gap-14 lg:gap-0 ">
           <div className="w-full h-full flex flex-col justify-start lg:justify-center text-center lg:text-left ">
             <div className="w-full flex flex-row justify-center lg:justify-end">
-              <div className="w-full md:w-[600px] lg:w-[500px] ">
+              <div className="w-full  lg:w-[500px] ">
                 <h3 className="text-[30px] md:text-[40px]  font-cinzelBold text-[#31302c]  ">
                   {json.About.title}
                 </h3>
                 <div className="w-[220px] hidden lg:flex flex-row relative mb-8">
-                  <div className="bg-[#b4a692] w-[200px] h-[2px]"></div>
+                  <div className="bg-[#d3cbc0] w-[200px] h-[2px]"></div>
                   <Image
                     src={flor}
                     alt="flor"
@@ -49,7 +49,7 @@ function AboutUs({ json }) {
                       alt="flor"
                       className="w-[20px] h-[20px] absolute left-0 -top-2"
                     />
-                    <div className="bg-[#b4a692] w-[430px] h-[2px]"></div>
+                    <div className="bg-[#d3cbc0] w-[430px] h-[2px]"></div>
                     <Image
                       src={flor}
                       alt="flor"
@@ -57,11 +57,14 @@ function AboutUs({ json }) {
                     />
                   </div>
                 </div>
-                <p className=" text-center lg:text-justify font-ethereal text-xl px-8 lg:px-0 lg:w-[480px] text-[#31302c] tracking-[4px]">
+                <div className="w-full flex flex-row justify-center">
+
+                <p className=" text-justify font-ethereal text-xl px-8 md:px-0 lg:px-0 md:w-[600px] lg:w-[480px] text-[#31302c] tracking-[4px]">
                   {json.About.text}
                 </p>
+                </div>
                 <Link href="/AboutUs">
-                  <button className="rounded-[4px] bg-[#b4a692] w-[200px] h-[45px] mt-8 font-apollo text-xl tracking-[4px] ">
+                  <button className="rounded-[4px] bg-[#d3cbc0] w-[200px] h-[45px] mt-8 font-apollo text-xl tracking-[4px] ">
                     {json.About.buttonText}
                   </button>
                 </Link>
@@ -70,10 +73,10 @@ function AboutUs({ json }) {
           </div>
           <div className="  w-full h-full lg:h-full flex flex-col justify-start md:justify-center items-center">
             <div className="w-full h-full flex flex-row justify-center lg:justify-start items-center">
-              <div className="w-[350px] h-[380px]  md:w-[400px] lg:w-[500px]  relative   ">
-                <div className="absolute top-0 right-0 bg-white h-[200px] lg:h-[250px] w-[250px] lg:w-[300px]">
+              <div className="w-[350px] h-[380px]  md:w-[500px]  relative   ">
+                <div className="absolute top-0 right-0 bg-white h-[200px] md:h-[250px] w-[250px] md:w-[300px]">
                   <div
-                    className="relative w-full h-full p-2 overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50"
+                    className="relative w-full h-full p-2 overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50"
                     
                   >
                     
@@ -85,9 +88,9 @@ function AboutUs({ json }) {
                   </div>
                 </div>
 
-                <div className="absolute top-[15%] left-0 bg-white h-[250px] lg:h-[300px] w-[200px] lg:w-[250px]">
+                <div className="absolute top-[15%] left-0 bg-white h-[250px] md:h-[300px] w-[200px] md:w-[250px]">
                 <div
-                    className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50"
+                    className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50"
                   >
                   <Image
                     src={foto2}
@@ -96,9 +99,9 @@ function AboutUs({ json }) {
                   />
                   </div>
                 </div>
-                <div className="absolute bottom-[10%] lg:bottom-0 right-4 bg-white w-[230px] lg:w-[280px] h-[150px] lg:h-[200px]">
+                <div className="absolute bottom-[10%] md:-bottom-10 right-4 bg-white w-[230px] md:w-[280px] h-[150px] md:h-[200px]">
                 <div
-                    className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50"
+                    className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50"
                   >
                   <Image
                     src={foto3}

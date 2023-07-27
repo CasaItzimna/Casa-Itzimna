@@ -51,7 +51,7 @@ function Hero({ setShow, json }) {
   ];
 
   return (
-    <div className="w-full  h-[70vh] md:h-[90vh] lg:h-[100vh] flex flex-col relative">
+    <div className="w-full  h-[70vh]  lg:h-[100vh] flex flex-col relative">
     <Image
       src={hero1}
       alt="fondo"
@@ -59,7 +59,7 @@ function Hero({ setShow, json }) {
     />
 
       <div className="flex flex-row justify-center  h-full  w-full   text-white absolute z-10">
-        <div className="w-full h-[85%] md:h-full flex flex-col justify-end md:justify-center text-center items-center">
+        <div className="w-full h-[85%] md:h-[85%] flex flex-col justify-end lg:justify-center text-center items-center">
           <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-8xl xl:text-8xl font-cinzelRegular xl:mt-20">
             <span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[150px] xl:text-[120px]">C</span>asa{" "}
             <span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[150px] xl:text-[120px]">I</span>tzimná
@@ -95,7 +95,7 @@ function Hero({ setShow, json }) {
                     }, ${inicio.getFullYear()}`
                   : `${json.Home.calendarioInicio}`}
 
-                <BsCalendar3 className="mt-[4px] text-[#b4a692]" />
+                <BsCalendar3 className="mt-[4px] text-[#d3cbc0]" />
               </span>
             </div>
             <div className="w-[22%] h-[40px] bg-white ml-4 rounded-md cursor-pointer ">
@@ -105,16 +105,16 @@ function Hero({ setShow, json }) {
                       monthNames[fin.getMonth()]
                     }, ${fin.getFullYear()}`
                   : `${json.Home.calendarioFin}`}
-                <BsCalendar3 className="mt-[4px] text-[#b4a692]" />
+                <BsCalendar3 className="mt-[4px] text-[#d3cbc0]" />
               </span>
             </div>
             <div className="w-[18%] h-[40px] bg-white ml-4 rounded-md cursor-pointer ">
               <span className="text-[#736e6a] font-apollo md:text-sm xl:text-xl flex flex-row justify-center gap-2 py-2">
                 {json.Home.calendarioPersonas}{" "}
-                <FaUsers className="mt-[4px] text-[#b4a692]" />
+                <FaUsers className="mt-[4px] text-[#d3cbc0]" />
               </span>
             </div>
-            <button className="w-[22%] h-[40px] bg-[#b4a692] ml-4 font-apollo  rounded-md cursor-pointer text-black md:text-sm xl:text-xl">
+            <button className="w-[22%] h-[40px] bg-[#d3cbc0] ml-4 font-apollo  rounded-md cursor-pointer text-black md:text-sm xl:text-xl">
               CHECK NOW
             </button>
           </div> */}

@@ -108,7 +108,7 @@ function Form({json}) {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder={json.Contact.Input1}
-                  className="placeholder:text-center placeholder:font-Geometrica w-full   border-[1px] py-1 border-[#b4a692]"
+                  className="placeholder:text-center placeholder:font-Geometrica w-full   border-[1px] py-1 border-[#d3cbc0]"
                 />
                 <input
                   type="text"
@@ -117,7 +117,7 @@ function Form({json}) {
                   value={formData.lastName}
                   onChange={handleChange}
                   placeholder={json.Contact.Input2}
-                  className="placeholder:text-center placeholder:font-Geometrica w-full   border-[1px] py-1 border-[#b4a692]"
+                  className="placeholder:text-center placeholder:font-Geometrica w-full   border-[1px] py-1 border-[#d3cbc0]"
                 />
                 <input
                   type="email"
@@ -126,7 +126,7 @@ function Form({json}) {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder={json.Contact.Input3}
-                  className="placeholder:text-center placeholder:font-Geometrica border-[1px] py-1 border-[#b4a692]"
+                  className="placeholder:text-center placeholder:font-Geometrica border-[1px] py-1 border-[#d3cbc0]"
                 />
                 <input
                   type="tel"
@@ -135,7 +135,7 @@ function Form({json}) {
                   value={formData.tel}
                   onChange={handleChange}
                   placeholder={json.Contact.Input4}
-                  className="placeholder:text-center placeholder:font-Geometrica border-[1px] py-1 border-[#b4a692]"
+                  className="placeholder:text-center placeholder:font-Geometrica border-[1px] py-1 border-[#d3cbc0]"
                 />
                 <textarea
                   type="text"
@@ -144,12 +144,12 @@ function Form({json}) {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder={json.Contact.Input5}
-                  className="h-full flex items-center text-center placeholder:font-Geometrica  border-[1px] py-4 col-span-2 border-[#b4a692]"
+                  className="h-full flex items-center text-center placeholder:font-Geometrica  border-[1px] py-4 col-span-2 border-[#d3cbc0]"
                 />
 
               </form>
                 <p className="w-[90%] lg:w-full col-span-2 font-PlayfairDisplay text-sm mt-2">
-                {json.Contact.consent}<span className="text-[#b4a692] ml-2">{json.Contact.privacy}</span>
+                {json.Contact.consent}<span className="text-[#d3cbc0] ml-2">{json.Contact.privacy}</span>
               </p>
               <div className='wfull flex flex-row justify-center'>
                 <div className='flex flex-col items-center'>

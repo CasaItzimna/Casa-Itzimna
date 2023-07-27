@@ -6,7 +6,7 @@ import React from "react";
 
 function History({ json }) {
   return (
-    <div className="w-full h-full lg:h-[500px] flex flex-col text-center bg-[#b4a692]">
+    <div className="w-full h-full lg:h-[500px] flex flex-col text-center bg-[#d3cbc0]">
       <h3 className="font-apollo text-[15px] lg:text-[25px] text-white mt-9 tracking-[4px]">
         {json.History.subtitle}
       </h3>

@@ -64,7 +64,7 @@ function Experiences({json}) {
                         <p className='w-[90%] md:w-[60%] lg:w-full font-PlayfairDisplay text-justify tracking-[2px] mt-4'>
                             {json.Experiences.CaptivatingText}
                         </p>
-                        <button className='font-Geometrica bg-[#b4a692] w-[150px] py-1 rounded-[7px] tracking-[4px] mt-4 mb-8 lg:mb-0'>
+                        <button className='font-Geometrica bg-[#d3cbc0] w-[150px] py-1 rounded-[7px] tracking-[4px] mt-4 mb-8 lg:mb-0'>
                             <Link href="/Spaces">
                             {json.Experiences.ButtonText}
                             </Link>

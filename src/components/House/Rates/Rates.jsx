@@ -123,7 +123,7 @@ function Rates({ json }) {
                 </div>
                 <div className="flex flex-row justify-center lg:justify-start ">
 
-                <button className="font-Geometrica bg-[#b4a692] w-[150px] h-[35px] rounded-[7px] text-xl px-2 mt-4">
+                <button className="font-Geometrica bg-[#d3cbc0] w-[150px] h-[35px] rounded-[7px] text-xl px-2 mt-4">
                 <Link href="/Experience">
                   {json.Rates.experiencesButton}
                   </Link>

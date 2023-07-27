@@ -5,7 +5,7 @@ function Reservacion({rsv}) {
   console.log(rsv)
   return (
     <div>
-       <h3 className='text-center font-apollo tracking-[4px] text-xl text-[#b4a692] uppercase'>Booking Data</h3>
+       <h3 className='text-center font-apollo tracking-[4px] text-xl text-[#d3cbc0] uppercase'>Booking Data</h3>
       <p className="font-apollo tracking-[2px] uppercase">{rsv.name}</p>
       <p className="font-apollo tracking-[2px] uppercase">{rsv.tel}</p>
       <p className="font-apollo tracking-[2px] uppercase">

@@ -64,12 +64,12 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow }) {
         className={`mb-2 mt-4 relative
         ${
           i > today.getDate()
-            ? "cursor-pointer lg:hover:bg-[#b4a692] lg:hover:mx-7 lg:hover:rounded-full"
+            ? "cursor-pointer lg:hover:bg-[#d3cbc0] lg:hover:mx-7 lg:hover:rounded-full"
             : "text-gray-200"
         }
           ${
             i === today.getDate()
-              ? " text-white bg-[#b4a692]  rounded-full mx-0 lg:mx-7 "
+              ? " text-white bg-[#d3cbc0]  rounded-full mx-0 lg:mx-7 "
               : "text-black"
           } 
         ${
@@ -138,7 +138,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow }) {
     nextMonthDays.push(
       <div
         key={new Date(currentYear, today.getMonth(), i)}
-        className={`mb-2 mt-4 relative cursor-pointer lg:hover:bg-[#b4a692] lg:hover:mx-7 lg:hover:rounded-full
+        className={`mb-2 mt-4 relative cursor-pointer lg:hover:bg-[#d3cbc0] lg:hover:mx-7 lg:hover:rounded-full
        
         ${
           i === inicio?.getDate() && inicio?.getMonth() === today.getMonth() + 1

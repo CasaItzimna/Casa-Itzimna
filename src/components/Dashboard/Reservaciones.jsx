@@ -293,13 +293,13 @@ const Reservaciones = () => {
               </div>
               <div className="flex flex-row justify-between">
                 <button
-                  className="mt-4 bg-[#b4a692] hover:bg-[#4a443c] text-white font-bold py-2 px-4 rounded"
+                  className="mt-4 bg-[#d3cbc0] hover:bg-[#4a443c] text-white font-bold py-2 px-4 rounded"
                   onClick={handleSubmit}
                 >
                   Guardar
                 </button>
                 <button
-                  className="mt-4 bg-[#b4a692] hover:bg-[#4a443c] text-white font-bold py-2 px-4 rounded"
+                  className="mt-4 bg-[#d3cbc0] hover:bg-[#4a443c] text-white font-bold py-2 px-4 rounded"
                   onClick={handleCloseModal}
                 >
                   Cancelar

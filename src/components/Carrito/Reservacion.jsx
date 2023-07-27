@@ -59,7 +59,7 @@ function Reservacion({reservacion, deleteExp, deleteReservation}) {
                 name="guest"
                 value={plan}
                 onChange={(e) => setPlan(e.target.value)}
-                className="border-[1px] w-[50%] py-1 border-[#b4a692] font-apollo text-gray-500 uppercase tracking-[2px]"
+                className="border-[1px] w-[50%] py-1 border-[#d3cbc0] font-apollo text-gray-500 uppercase tracking-[2px]"
               >
                 <option value="" className="font-apollo ">
                   CHOOSE A PLAN
@@ -74,14 +74,14 @@ function Reservacion({reservacion, deleteExp, deleteReservation}) {
                   PREMIER
                 </option>
               </select> */}
-              <div className='border-[1px] w-[50%] py-1 border-[#b4a692] font-apollo text-gray-500 uppercase tracking-[2px]'>
+              <div className='border-[1px] w-[50%] py-1 border-[#d3cbc0] font-apollo text-gray-500 uppercase tracking-[2px]'>
                 {reservacion?.plan}
               </div>
               <div className="w-[50%] h-full flex flex-row gap-1 mt-4 font-apollo ">
-                <div className="w-1/2 border-[1px] h-[30px] border-[#b4a692] text-center text-sm tracking-[2px] flex flex-col items-center justify-center">
+                <div className="w-1/2 border-[1px] h-[30px] border-[#d3cbc0] text-center text-sm tracking-[2px] flex flex-col items-center justify-center">
                   {checkin}
                 </div>
-                <div className="w-1/2 border-[1px] h-[30px] border-[#b4a692] text-center text-sm tracking-[2px] flex flex-col items-center justify-center">
+                <div className="w-1/2 border-[1px] h-[30px] border-[#d3cbc0] text-center text-sm tracking-[2px] flex flex-col items-center justify-center">
                   {checkout}
                 </div>
               </div>
@@ -107,9 +107,9 @@ function Reservacion({reservacion, deleteExp, deleteReservation}) {
                 >
                 <div
                   
-                  className="w-full flex flex-col mt-4 mb-2 border-b-[2px] border-b-[#b4a692]"
+                  className="w-full flex flex-col mt-4 mb-2 border-b-[2px] border-b-[#d3cbc0]"
                 >
-                  <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#b4a692]">
+                  <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#d3cbc0]">
                     {exp}
                   </h2>
                   <div className="w-full flex flex-row justify-between">

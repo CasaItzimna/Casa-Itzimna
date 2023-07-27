@@ -95,7 +95,7 @@ const Dashboard = () => {
         <FaBars
           src={menu}
           alt="menu movil"
-          className={!active ? "flex text-5xl mr-4 mt-8 cursor-pointer text-[#b4a692] z-20" : "hidden"}
+          className={!active ? "flex text-5xl mr-4 mt-8 cursor-pointer text-[#d3cbc0] z-20" : "hidden"}
           onClick={()=>setActive(true)}
         />
       </div>
@@ -123,7 +123,7 @@ const Dashboard = () => {
         <div>
           <ul className="flex flex-col text-center gap-3 text-xl font-Geometrica">
             <li
-              className="cursor-pointer hover:text-[#b4a692] tracking-[3px]"
+              className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
               onClick={() => setActive(false)}
             >
               <span>
@@ -132,7 +132,7 @@ const Dashboard = () => {
               Dashboard
             </li>
             <li
-              className="cursor-pointer hover:text-[#b4a692] tracking-[3px]"
+              className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
               onClick={() => {
                 setActive(false);
                 handleSidebarClick("Reservaciones");
@@ -144,7 +144,7 @@ const Dashboard = () => {
               Reservaciones
             </li>
             <li
-              className="cursor-pointer hover:text-[#b4a692] tracking-[3px]"
+              className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
               onClick={() => setActive(false)}
             >
               <span>
@@ -175,7 +175,7 @@ const Dashboard = () => {
                 <p className="text-4xl">{user?.name}</p>
               </div>
               <div className="flex flex-col">
-                <p className="flex flex-row gap-4 mt-9 items-center cursor-pointer hover:text-[#b4a692]">
+                <p className="flex flex-row gap-4 mt-9 items-center cursor-pointer hover:text-[#d3cbc0]">
                   <span>
                     <AiFillHome className="text-2xl text-white " />
                   </span>
@@ -183,7 +183,7 @@ const Dashboard = () => {
                     Dashboard
                   </span>
                 </p>
-                <p className="flex flex-row gap-4 mt-9 items-center cursor-pointer hover:text-[#b4a692]">
+                <p className="flex flex-row gap-4 mt-9 items-center cursor-pointer hover:text-[#d3cbc0]">
                   <span>
                     <FaSuitcase className="text-2xl text-white" />
                   </span>
@@ -194,7 +194,7 @@ const Dashboard = () => {
                     Reservaciones
                   </span>
                 </p>
-                <p className="flex flex-row gap-4 mt-9 items-center cursor-pointer hover:text-[#b4a692]">
+                <p className="flex flex-row gap-4 mt-9 items-center cursor-pointer hover:text-[#d3cbc0]">
                   <span>
                     <FaReceipt className="text-2xl text-white" />
                   </span>
@@ -209,7 +209,7 @@ const Dashboard = () => {
             </div>
             <div>
               <p
-                className="flex flex-row gap-4 mb-8 items-center cursor-pointer hover:text-[#b4a692]"
+                className="flex flex-row gap-4 mb-8 items-center cursor-pointer hover:text-[#d3cbc0]"
                 onClick={() => logout()}
               >
                 <span>

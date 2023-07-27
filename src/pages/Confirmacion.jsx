@@ -11,7 +11,7 @@ function Confirmacion() {
   const json = idioma === 'espanol' ? esJson : enJson;
   return (
     <div>
-      <div className='w-full h-[100px] lg:h-[250px] bg-[#b4a692] '></div>
+      <div className='w-full h-[100px] lg:h-[250px] bg-[#d3cbc0] '></div>
       <TimeLine json={json}/>
       <Order json={json}/>
     </div>

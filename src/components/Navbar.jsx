@@ -73,7 +73,7 @@ function Navbar() {
                   idioma === "espanol"
                     ? "border-[1px] rounded-full px-2 py-1"
                     : ""
-                } cursor-pointer hover:text-[#b4a692]`}
+                } cursor-pointer hover:text-[#d3cbc0]`}
                 onClick={() => setIdioma("espanol")}
               >
                 ES
@@ -83,7 +83,7 @@ function Navbar() {
                   idioma === "ingles"
                     ? "border-[1px] rounded-full px-2 py-1"
                     : ""
-                } cursor-pointer hover:text-[#b4a692]`}
+                } cursor-pointer hover:text-[#d3cbc0]`}
                 onClick={() => setIdioma("ingles")}
               >
                 EN
@@ -91,20 +91,20 @@ function Navbar() {
             </div>
             <div className="flex flex-row justify-center">
               <ul className="flex flex-row text-center gap-20 text-xl">
-                <li className="cursor-pointer hover:text-[#b4a692]  tracking-[6px]">
+                <li className="cursor-pointer hover:text-[#d3cbc0]  tracking-[6px]">
                   <Link href="/">{json.Navbar.option1}</Link>
                 </li>
-                <li className="cursor-pointer hover:text-[#b4a692] tracking-[3px]"
+                <li className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
                 onClick={()=>setActive(false)}
                 >
                   <Link href="/AboutUs">{json.Navbar.option2}</Link>
                 </li>
-                <li className="cursor-pointer hover:text-[#b4a692] tracking-[3px]"
+                <li className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
                 onClick={()=>setActive(false)}
                 >
                   <Link href="/House">{json.Navbar.option3}</Link>
                 </li>
-                <li className="cursor-pointer hover:text-[#b4a692] tracking-[3px]"
+                <li className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
                 onClick={()=>setActive(false)}
                 >
                   <Link href="/Experience">{json.Navbar.option4}</Link>
@@ -113,17 +113,17 @@ function Navbar() {
             </div>
             <div className="flex flex-row justify-center">
               <ul className="flex flex-row text-center gap-20 text-xl mt-2">
-                <li className="cursor-pointer hover:text-[#b4a692] tracking-[3px]"
+                <li className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
                 onClick={()=>setActive(false)}
                 >
                   <Link href="/Spaces">{json.Navbar.option5}</Link>
                 </li>
-                <li className="cursor-pointer hover:text-[#b4a692] tracking-[3px]"
+                <li className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
                 onClick={()=>setActive(false)}
                 >
                   <Link href="/Boutique">{json.Navbar.option6}</Link>
                 </li>
-                <li className="cursor-pointer hover:text-[#b4a692] tracking-[3px]"
+                <li className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
                 onClick={()=>setActive(false)}
                 >
                   <Link href="/Contact">{json.Navbar.option7}</Link>
@@ -140,25 +140,25 @@ function Navbar() {
                 <Image src={carrito} alt="carrito de compras icon" className="w-[25px] h-[25px] cursor-pointer"/>
             </Link>
             </div>
-            <button className="bg-[#b4a692] rounded-md text-black w-[120px] h-[30px] mt-2 text-xl">
+            <button className="bg-[#d3cbc0] rounded-md text-black w-[120px] h-[30px] mt-2 text-xl">
             <Link href="/House#booking">BOOK NOW</Link>
             </button>
           </div>
         </div>
       </div>
 
-      <div className={showModalCalendar === false ?"lg:hidden flex flex-row justify-between absolute top-10  z-20 w-full text-white ": "hidden"}>
+      <div className={showModalCalendar === false ?"lg:hidden flex flex-row justify-between absolute top-10 md:top-20  z-20 w-full text-white ": "hidden"}>
       <Link href="/Carrito">
         <Image
           src={carrito}
           alt="menu movil"
-          className={!active ? "flex w-[40px] ml-4 cursor-pointer" : "hidden"}
+          className={!active ? "flex w-[40px] ml-4 md:ml-8 cursor-pointer" : "hidden"}
         />
         </Link>
         <Image
           src={menu}
           alt="menu movil"
-          className={!active ? "flex w-[40px] mr-4 cursor-pointer" : "hidden"}
+          className={!active ? "flex w-[40px] mr-4 md:mr-8 cursor-pointer" : "hidden"}
           onClick={()=>setActive(true)}
         />
       </div>
@@ -173,38 +173,38 @@ function Navbar() {
           </div>
           <div>
           <ul className="flex flex-col text-center gap-3 text-xl font-Geometrica">
-                <li className="cursor-pointer hover:text-[#b4a692] tracking-[3px]"
+                <li className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
                 onClick={()=>setActive(false)}
                 >
                   <Link href="/">{json.Navbar.option1}</Link>
                 </li>
-                <li className="cursor-pointer hover:text-[#b4a692] tracking-[3px]"
+                <li className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
                 onClick={()=>setActive(false)}
                 >
                   <Link href="/AboutUs">{json.Navbar.option2}</Link>
                 </li>
-                <li className="cursor-pointer hover:text-[#b4a692] tracking-[3px]"
+                <li className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
                 onClick={()=>setActive(false)}
                 >
                   <Link href="/House">{json.Navbar.option3}</Link>
                 </li>
-                <li className="cursor-pointer hover:text-[#b4a692] tracking-[3px]"
+                <li className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
                 onClick={()=>setActive(false)}
                 >
                   <Link href="/Experience">{json.Navbar.option4}</Link>
                 </li>
                
-                <li className="cursor-pointer hover:text-[#b4a692] tracking-[3px]"
+                <li className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
                 onClick={()=>setActive(false)}
                 >
                   <Link href="/Spaces">{json.Navbar.option5}</Link>
                 </li>
-                <li className="cursor-pointer hover:text-[#b4a692] tracking-[3px]"
+                <li className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
                 onClick={()=>setActive(false)}
                 >
                   <Link href="/Boutique">{json.Navbar.option6}</Link>
                 </li>
-                <li className="cursor-pointer hover:text-[#b4a692] tracking-[3px]"
+                <li className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
                 onClick={()=>setActive(false)}
                 >
                   <Link href="/Contact">{json.Navbar.option7}</Link>

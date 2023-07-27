@@ -85,7 +85,7 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
               {producto[0]?.name}
             </h2>
             <p className="font-PlayfairDisplay">Categoria</p>
-            <p className="font-PlayfairDisplay font-semibold text-[#b4a692]">
+            <p className="font-PlayfairDisplay font-semibold text-[#d3cbc0]">
               {producto[0]?.artist}
             </p>
             <p className="mt-4 mb-4">
@@ -122,7 +122,7 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
             </div>
             <div className="w-full flex flex-row justify-center lg:justify-start">
               <div className="w-[90%] h-full flex flex-row relative mb-4">
-                <div className="bg-[#b4a692] w-full h-[3px]"></div>
+                <div className="bg-[#d3cbc0] w-full h-[3px]"></div>
                 <div
                   className={`absolute bg-[#31302c] w-[30%] h-[3px] ${
                     opcion === "opcion1"

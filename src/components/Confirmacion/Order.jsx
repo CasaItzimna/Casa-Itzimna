@@ -68,13 +68,13 @@ function Order({json}) {
   }, []);
 
   return (
-    <div className='w-full flex flex-row justify-center bg-[#b4a692] '>
+    <div className='w-full flex flex-row justify-center bg-[#d3cbc0] '>
         <div className='w-[90%]  h-full flex flex-col items-center bg-white mb-8'>
             <div className='w-[90%] flex flex-col '>
                 <div className='w-full flex flex-col items-center'>
 
                 <h2 className='text-center font-apollo tracking-[4px] text-xl mt-8'>{json.Confirmation.titulo}</h2>
-                <h3 className='text-center font-apollo tracking-[4px] text-xl text-[#b4a692]'>{json.Confirmation.thanks}</h3>
+                <h3 className='text-center font-apollo tracking-[4px] text-xl text-[#d3cbc0]'>{json.Confirmation.thanks}</h3>
                 <p className='text-center font-apollo tracking-[2px]'>{json.Confirmation.delighted}</p>
                 <p className='text-center font-apollo tracking-[2px]'>{json.Confirmation.recipt}.</p>
                 </div>
@@ -102,8 +102,8 @@ function Order({json}) {
                 <div className='w-full flex flex-col items-center mt-8'>
 
                 <p className='uppercase text-center font-apollo tracking-[2px]'>{json.Confirmation.recommend}</p>
-                <p className='uppercase text-center font-apollo tracking-[2px]'>{json.Confirmation.questions} <span className='text-[#b4a692]'>CONTACTO@CASAITZIMNA.COM</span>.</p>
-                <p className='uppercase text-center font-apollo tracking-[2px]'>{json.Confirmation.forward} <span className='text-[#b4a692]'>CASA ITZIMNÁ BOUTIQUE</span>.</p>
+                <p className='uppercase text-center font-apollo tracking-[2px]'>{json.Confirmation.questions} <span className='text-[#d3cbc0]'>CONTACTO@CASAITZIMNA.COM</span>.</p>
+                <p className='uppercase text-center font-apollo tracking-[2px]'>{json.Confirmation.forward} <span className='text-[#d3cbc0]'>CASA ITZIMNÁ BOUTIQUE</span>.</p>
                 <p className='text-center font-apollo tracking-[2px] mt-4'>{json.Confirmation.regards} </p>
                 <p className='text-center font-apollo tracking-[2px] mb-8'>CASA ITZIMNÁ </p>
                 

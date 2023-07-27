@@ -47,59 +47,59 @@ function Facilities({json}) {
             </div>
             <div className="w-full flex flex-row gap-8 mt-6 mb-8 ">
                 <div className="w-full flex flex-col gap-3">
-                    <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#b4a692] ">
-                      <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#b4a692]">
+                    <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#d3cbc0] ">
+                      <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#d3cbc0]">
                       <Image src={pool} alt="pool" className="w-[30px] h-[30px]" />
                       </div>
                       <span className="flex flex-row w-full justify-center text-center text-[11px]  font-bold">{json.Facilities.facility1}</span>
                      </div>
-                    <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#b4a692] ">
-                      <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#b4a692]">
+                    <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#d3cbc0] ">
+                      <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#d3cbc0]">
                       <Image src={parking} alt="parking lot" className="w-[25px] h-[25px]" />
                       </div>
                       <span className="flex flex-row w-full justify-center text-center text-[11px] font-bold">{json.Facilities.facility2}</span>
                      </div>
-                    <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#b4a692] ">
-                      <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#b4a692]">
+                    <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#d3cbc0] ">
+                      <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#d3cbc0]">
                       <Image src={fridge} alt="fridge" className="w-[15px] h-[25px]" />
                       </div>
                       <span className="flex flex-row w-full justify-center text-center text-[11px] font-bold">{json.Facilities.facility3}</span>
                      </div>
-                    <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#b4a692] ">
-                      <div className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#b4a692]">
+                    <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#d3cbc0] ">
+                      <div className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#d3cbc0]">
                       <Image src={games} alt="games" className="w-[28px] h-[25px]" />
                       </div>
                       <span className="flex flex-row w-full justify-center text-center text-[11px] font-bold">{json.Facilities.facility4}</span>
                      </div>
                 </div>
                 <div className="w-full flex flex-col gap-3">
-                    <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#b4a692] ">
-                      <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#b4a692]">
+                    <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#d3cbc0] ">
+                      <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#d3cbc0]">
                       <Image src={wifi} alt="wifi" className="w-[30px] h-[22px]" />
                       </div>
                       <span className="flex flex-row w-full justify-center text-center text-[11px] font-bold">{json.Facilities.facility5}</span>
                      </div>
-                    <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#b4a692] ">
-                      <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#b4a692]">
+                    <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#d3cbc0] ">
+                      <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#d3cbc0]">
                       <Image src={tv} alt="tv" className="w-[30px] h-[25px]" />
                       </div>
                       <span className="flex flex-row w-full justify-center text-center text-[11px] font-bold">{json.Facilities.facility6}</span>
                      </div>
-                    <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#b4a692] ">
-                      <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#b4a692]">
+                    <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#d3cbc0] ">
+                      <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#d3cbc0]">
                       <Image src={kitchen} alt="kitchen" className="w-[25px] h-[25px]" />
                       </div>
                       <span className="flex flex-row w-full justify-center text-center text-[11px] font-bold">{json.Facilities.facility7}</span>
                      </div>
-                    <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#b4a692] ">
-                      <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#b4a692]">
+                    <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#d3cbc0] ">
+                      <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#d3cbc0]">
                       <Image src={speakers} alt="speakers" className="w-[15px] h-[22px]" />
                       </div>
                       <span className="flex flex-row w-full justify-center text-center text-[11px] font-bold">{json.Facilities.facility8}</span>
                      </div>
                 </div>
             </div>
-            <div className="w-full flex flex-row justify-center h-full border-[1px] border-[#b4a692] rounded-[7px] cursor-pointer">
+            <div className="w-full flex flex-row justify-center h-full border-[1px] border-[#d3cbc0] rounded-[7px] cursor-pointer">
                 <h3 className="text-lg tracking-[1px] px-4 py-1">{json.Facilities.termstitle}</h3>
             </div>
             <div>
@@ -131,7 +131,7 @@ function Facilities({json}) {
             <div className="w-full xl:w-3/4 2xl:w-1/2 flex flex-col justify-center md:justify-end xl:justify-start">
 
           <div className=" bg-white h-[350px] w-full mb-2 shadow-2xl ">
-          <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50">
+          <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50">
             <Image
               alt="1"
               src={foto1}
@@ -141,7 +141,7 @@ function Facilities({json}) {
           </div>
           <div className="flex flex-row w-full h-full gap-4 ">
             <div className="bg-white w-full h-[170px] shadow-2xl ">
-            <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50">
+            <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50">
               <Image
                 src={foto2}
                 alt="sala"
@@ -150,7 +150,7 @@ function Facilities({json}) {
                 </div>
             </div>
             <div className="bg-white w-full h-[170px] shadow-2xl">
-            <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50">
+            <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50">
               <Image
                 src={foto3}
                 alt="desayuno"
@@ -169,7 +169,7 @@ function Facilities({json}) {
             <div className="w-full flex flex-col items-center 2xl:items-start">
 
 
-          <button className="font-Geometrica bg-[#b4a692] w-[150px] h-[35px] rounded-[7px] text-xl px-4 mt-4">
+          <button className="font-Geometrica bg-[#d3cbc0] w-[150px] h-[35px] rounded-[7px] text-xl px-4 mt-4">
           <Link href="/Spaces">
           {json.Facilities.galleryButton}
           </Link>

@@ -33,7 +33,7 @@ function OurStory({json}) {
           alt="flor"
           className="w-[20px] h-[20px] absolute left-0 -top-2"
           />
-        <div className="bg-[#b4a692] w-[430px] h-[2px]"></div>
+        <div className="bg-[#d3cbc0] w-[430px] h-[2px]"></div>
         <Image
           src={flor}
           alt="flor"
@@ -42,7 +42,7 @@ function OurStory({json}) {
       </div>
           </div>
           <div className="hidden w-[270px]   lg:flex flex-row relative mb-8">
-            <div className="bg-[#b4a692] w-[260px] h-[2px]"></div>
+            <div className="bg-[#d3cbc0] w-[260px] h-[2px]"></div>
             <Image
               src={flor}
               alt="flor"
@@ -60,7 +60,7 @@ function OurStory({json}) {
           </div>
           <div className="w-full flex flex-row justify-center lg:justify-start">
           <div className="w-[90%] h-full flex flex-row relative mb-4">
-            <div className="bg-[#b4a692] w-full h-[3px]"></div>
+            <div className="bg-[#d3cbc0] w-full h-[3px]"></div>
             <div  className={`absolute bg-[#31302c] w-[30%] h-[3px] ${
               opcion === 'opcion1'
               ? 'left-0'
@@ -93,7 +93,7 @@ function OurStory({json}) {
             <div className="w-full flex flex-col justify-center md:justify-end ">
 
           <div className=" bg-white h-[350px] w-full mb-2 shadow-2xl ">
-          <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50">
+          <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50">
             <Image
               alt="1"
               src={foto1}
@@ -103,7 +103,7 @@ function OurStory({json}) {
           </div>
           <div className="flex flex-row w-full gap-4 ">
             <div className="bg-white w-full h-[170px] shadow-2xl ">
-            <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50">
+            <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50">
               <Image
                 src={foto2}
                 alt="sala"
@@ -112,7 +112,7 @@ function OurStory({json}) {
                 </div>
             </div>
             <div className="bg-white w-full h-[170px] shadow-2xl">
-            <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50">
+            <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50">
               <Image
                 src={foto3}
                 alt="desayuno"

@@ -239,17 +239,19 @@ carritoProductos.forEach((producto) => {
 }
 
   return (
-    <div className="w-full h-full flex flex-row justify-center bg-[#b4a692] ">
+    <div className="w-full h-full flex flex-row justify-center bg-[#d3cbc0] ">
       {carritoReservaciones || carritoProductos ? (
         <div className="w-[80%] xl:w-[60%] h-full grid grid-cols-1 lg:grid-cols-2 lg:gap-9 mb-8  ">
           {/*Cart*/}
           <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#9b9696]">
           <div className="w-full h-full  flex flex-col bg-white items-center    ">
-            <div className="w-[90%] flex flex-col mb-2 border-b-[2px]  border-b-[#b4a692] ">
+            <div className="w-[90%] flex flex-col mb-2 border-b-[2px]  border-b-[#d3cbc0] ">
+              <div className="flex flex-row justify-center">
               <h1 className="font-apollo text-3xl tracking-[4px] mt-8 mb-4">
                 CART
               </h1>
-              <h2 className="font-apollo text-xl tracking-[4px] mb-2 text-[#b4a692]">
+              </div>
+              <h2 className="font-apollo text-xl tracking-[4px] mb-2 text-[#d3cbc0]">
                 BOOKING DATA
               </h2>
               {console.log(carritoReservaciones)}
@@ -266,7 +268,7 @@ carritoProductos.forEach((producto) => {
                 <div className="w-full flex flex-row justify-center">
 
                 <div className="w-[90%] flex flex-col items-center mb-2">
-                  <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#b4a692]">
+                  <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#d3cbc0]">
                     NO HAY RESERVACIONES AGREGADAS
                   </h2>
                 </div>
@@ -279,9 +281,9 @@ carritoProductos.forEach((producto) => {
               carritoProductos.map((producto, index) => (
                 <div
                   key={index}
-                  className="w-[90%] flex flex-col mb-2 mt-4 border-b-[2px] border-b-[#b4a692] "
+                  className="w-[90%] flex flex-col mb-2 mt-4 border-b-[2px] border-b-[#d3cbc0] "
                 >
-                  <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#b4a692]">
+                  <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#d3cbc0]">
                     {producto?.name}
                   </h2>
                   <div className="w-full flex flex-row justify-between">
@@ -318,7 +320,7 @@ carritoProductos.forEach((producto) => {
               ))
             ) : (
               <div className="w-[90%] flex flex-col items-center mb-2">
-                <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#b4a692]">
+                <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#d3cbc0]">
                   NO HAY PRODUCTOS AGREGADOS
                 </h2>
               </div>
@@ -334,7 +336,7 @@ carritoProductos.forEach((producto) => {
                     Summary
                   </h1>
                   <div className="w-full flex flex-col items-center">
-                    <div className="w-full h-full flex flex-row  justify-between border-b-[2px] border-[#b4a692] ">
+                    <div className="w-full h-full flex flex-row  justify-between border-b-[2px] border-[#d3cbc0] ">
                       <div className="h-full flex flex-col justify-between">
                         <p className="font-apollo text-[#31302c]/40 text-lg tracking-[2px]">
                           SUBTOTAL
@@ -438,15 +440,15 @@ carritoProductos.forEach((producto) => {
                   className="w-full h-[250px] object-cover"
                 />
                 <div className="w-[90%] h-full flex flex-col items-center">
-                  <h3 className="text-left uppercase font-apollo tracking-[4px] mt-4 text-2xl">
+                  <h3 className="text-center lg:text-left uppercase font-apollo tracking-[4px] mt-4 text-2xl">
                     unforgettable experiences await
                   </h3>
                   <p className="text-justify font-PlayfairDisplay tracking-[2px] mt-4">
                     Make your visit an unparelleled journey by adding an
                     experience to your cart.
                   </p>
-                  <div className="w-full flex flex-row justify-start mt-4 mb-8">
-                    <button className="uppercase w-[170px] bg-[#b4a692] rounded-[7px] text-xl py-1 font-Geometrica tracking-[2px]">
+                  <div className="w-full flex flex-row justify-center lg:justify-start mt-4 mb-8">
+                    <button className="uppercase w-[170px] bg-[#d3cbc0] rounded-[7px] text-xl py-1 font-Geometrica tracking-[2px]">
                       <Link href="Experience">experiences</Link>
                     </button>
                   </div>

@@ -166,7 +166,7 @@ function Reservacion({ reservacion }) {
             <div>
               <button
                 onClick={handleDeleteClick}
-                className="font-Geometrica tracking-[2px] bg-[#b4a692] px-4 py-1 rounded-[7px]"
+                className="font-Geometrica tracking-[2px] bg-[#d3cbc0] px-4 py-1 rounded-[7px]"
               >
                 MAILING
               </button>
@@ -349,13 +349,13 @@ function Reservacion({ reservacion }) {
               </div>
               <div className="flex flex-row justify-between">
                 <button
-                  className="mt-4 bg-[#b4a692] hover:bg-[#4a443c] text-white font-bold py-2 px-4 rounded"
+                  className="mt-4 bg-[#d3cbc0] hover:bg-[#4a443c] text-white font-bold py-2 px-4 rounded"
                   onClick={handleSubmit}
                 >
                   Guardar
                 </button>
                 <button
-                  className="mt-4 bg-[#b4a692] hover:bg-[#4a443c] text-white font-bold py-2 px-4 rounded"
+                  className="mt-4 bg-[#d3cbc0] hover:bg-[#4a443c] text-white font-bold py-2 px-4 rounded"
                   onClick={handleCloseModal}
                 >
                   Cancelar

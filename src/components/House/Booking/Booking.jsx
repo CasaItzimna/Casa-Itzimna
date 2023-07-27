@@ -332,7 +332,7 @@ const [total, setTotal] = useState(0)
                   onChange={handleInputChange}
                   value={formData.name}
                   placeholder="NAME"
-                  className="placeholder:text-center placeholder:font-Geometrica w-full  col-span-2 border-[1px] py-1 border-[#b4a692]"
+                  className="placeholder:text-center placeholder:font-Geometrica w-full  col-span-2 border-[1px] py-1 border-[#d3cbc0]"
                 />
                 <input
                   type="tel"
@@ -340,7 +340,7 @@ const [total, setTotal] = useState(0)
                   onChange={handleInputChange}
                   value={formData.tel}
                   placeholder="PHONE NUMBER"
-                  className="placeholder:text-center placeholder:font-Geometrica col-span-2 border-[1px] py-1 border-[#b4a692]"
+                  className="placeholder:text-center placeholder:font-Geometrica col-span-2 border-[1px] py-1 border-[#d3cbc0]"
                 />
                 <input
                   type="email"
@@ -348,18 +348,18 @@ const [total, setTotal] = useState(0)
                   onChange={handleInputChange}
                   value={formData.email}
                   placeholder="EMAIL"
-                  className="placeholder:text-center placeholder:font-Geometrica col-span-2 border-[1px] py-1 border-[#b4a692]"
+                  className="placeholder:text-center placeholder:font-Geometrica col-span-2 border-[1px] py-1 border-[#d3cbc0]"
                 />
                 <div className="flex flex-col h-full w-full col-span-2">
                   <div className="flex flex-col h-full w-full ">
-                    <div className="grid grid-cols-2 mt-2 mb-4 px-4 pb-4 pt-2 w-full h-full border-t-[1px] border-b-[1px] border-[#b4a692] gap-4">
-                      <div className="flex flex-col items-center border-r-[1px] border-[#b4a692]  ">
-                        <p className="text-[#b4a692] font-Geometrica uppercase mb-2 tracking-[2px]">
+                    <div className="grid grid-cols-2 mt-2 mb-4 px-4 pb-4 pt-2 w-full h-full border-t-[1px] border-b-[1px] border-[#d3cbc0] gap-4">
+                      <div className="flex flex-col items-center border-r-[1px] border-[#d3cbc0]  ">
+                        <p className="text-[#d3cbc0] font-Geometrica uppercase mb-2 tracking-[2px]">
                           Entrada
                         </p>
 
                         <div
-                          className="w-[80%] bg-[#b4a692] text-black flex flex-col text-center relative cursor-pointer"
+                          className="w-[80%] bg-[#d3cbc0] text-black flex flex-col text-center relative cursor-pointer"
                           onClick={() => setShow(true)}
                         >
                           {!inicio ? (
@@ -396,12 +396,12 @@ const [total, setTotal] = useState(0)
                         </div>
                       </div>
                       <div className="flex flex-col items-center ">
-                        <p className="text-[#b4a692] font-Geometrica uppercase mb-2 tracking-[2px]">
+                        <p className="text-[#d3cbc0] font-Geometrica uppercase mb-2 tracking-[2px]">
                           Salida
                         </p>
 
                         <div
-                          className="w-[80%]  bg-[#b4a692] text-black flex flex-col text-center relative cursor-pointer"
+                          className="w-[80%]  bg-[#d3cbc0] text-black flex flex-col text-center relative cursor-pointer"
                           onClick={() => setShow(true)}
                         >
                           {!fin ? (
@@ -450,7 +450,7 @@ const [total, setTotal] = useState(0)
                       />
                     </div>
                     <div className="flex flex-col items-center">
-                      <h3 className="text-[#b4a692] font-Geometrica uppercase tracking-[2px]">
+                      <h3 className="text-[#d3cbc0] font-Geometrica uppercase tracking-[2px]">
                         GUEST NUMBER
                       </h3>
                       <div className="flex flex-row justify-center gap-4 text-black mt-2 mb-4">
@@ -461,22 +461,22 @@ const [total, setTotal] = useState(0)
                           }}
                           className={
                             selectedGuests === "1-2"
-                              ? `border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer bg-[#b4a692]`
-                              : `border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer`
+                              ? `border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer bg-[#d3cbc0]`
+                              : `border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer`
                           }
                         >
                           <div
                             className={
                               selectedGuests === "1-2"
                                 ? `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`
-                                : `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#b4a692] `
+                                : `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#d3cbc0] `
                             }
                           ></div>
                         </div>
                         <label
                           htmlFor="1-2"
                           className={`font-Geometrica ${
-                            selectedGuests === "1-2" ? "text-[#b4a692]" : ""
+                            selectedGuests === "1-2" ? "text-[#d3cbc0]" : ""
                           }`}
                         >
                           1-2
@@ -488,22 +488,22 @@ const [total, setTotal] = useState(0)
                           }}
                           className={
                             selectedGuests === "3-5"
-                              ? `border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer bg-[#b4a692]`
-                              : `border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer`
+                              ? `border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer bg-[#d3cbc0]`
+                              : `border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer`
                           }
                         >
                           <div
                             className={
                               selectedGuests === "3-5"
                                 ? `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`
-                                : `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#b4a692] `
+                                : `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#d3cbc0] `
                             }
                           ></div>
                         </div>
                         <label
                           htmlFor="3-5"
                           className={`font-Geometrica ${
-                            selectedGuests === "3-5" ? "text-[#b4a692]" : ""
+                            selectedGuests === "3-5" ? "text-[#d3cbc0]" : ""
                           }`}
                         >
                           3-5
@@ -515,22 +515,22 @@ const [total, setTotal] = useState(0)
                           }}
                           className={
                             selectedGuests === "6-8"
-                              ? `border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer bg-[#b4a692]`
-                              : `border-[2px] border-[#b4a692] w-[25px] rounded-full relative cursor-pointer`
+                              ? `border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer bg-[#d3cbc0]`
+                              : `border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer`
                           }
                         >
                           <div
                             className={
                               selectedGuests === "6-8"
                                 ? `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`
-                                : `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#b4a692] `
+                                : `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#d3cbc0] `
                             }
                           ></div>
                         </div>
                         <label
                           htmlFor="6-8"
                           className={`font-Geometrica ${
-                            selectedGuests === "6-8" ? "text-[#b4a692]" : ""
+                            selectedGuests === "6-8" ? "text-[#d3cbc0]" : ""
                           }`}
                         >
                           6-8
@@ -543,7 +543,7 @@ const [total, setTotal] = useState(0)
                   name="plan"
                   value={plan}
                   onChange={(e) => setPlan(e.target.value)}
-                  className="border-[1px] py-1 border-[#b4a692] font-Geometrica text-gray-500 col-span-2"
+                  className="border-[1px] py-1 border-[#d3cbc0] font-Geometrica text-gray-500 col-span-2"
                 >
                   <option value="">CHOOSE A PLAN</option>
                   <option value="select">SELECT</option>
@@ -554,7 +554,7 @@ const [total, setTotal] = useState(0)
                   <div className="flex flex-col ">
 
                   <div className="flex flex-col items-center lg:flex-row font-Geometrica gap-4 mb-4">
-                  <h3 className="text-[#b4a692] font-Geometrica uppercase tracking-[2px]">
+                  <h3 className="text-[#d3cbc0] font-Geometrica uppercase tracking-[2px]">
                         EXPERIENCES
                       </h3>
                     
@@ -621,7 +621,7 @@ const [total, setTotal] = useState(0)
 
                 <p className="col-span-2 font-PlayfairDisplay text-sm">
                   {json.Booking.consent}
-                  <span className="text-[#b4a692] ml-2">
+                  <span className="text-[#d3cbc0] ml-2">
                     {json.Booking.privacy}
                   </span>
                 </p>
@@ -636,7 +636,7 @@ const [total, setTotal] = useState(0)
     <Image
       src={bookingfoto}
       alt="bookingfoto"
-      className="w-[90%] h-[350px] md:h-[550px] object-cover  overflow-hidden shadow-[12.0px_12.0px_8.0px_#b4a692] shadow-[#b4a692]/50 mb-2 md:mb-0"
+      className="w-[90%] h-[350px] md:h-[550px] object-cover  overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50 mb-2 md:mb-0"
       />
   </div>
       </div>
