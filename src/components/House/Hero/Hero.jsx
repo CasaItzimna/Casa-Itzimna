@@ -2,18 +2,20 @@ import Image from 'next/image';
 import React from 'react'
 import hero1 from './herohouse.png'
 import hero from './hero.jpg'
+import hero2 from './hero2.jpg'
+import hero3 from './hero3.jpg'
  
 function Hero({json}) {
   return (
     <div className="w-full h-[70vh] lg:h-[90vh] flex flex-col relative">
           <Image
-            src={hero}
+            src={hero3}
             alt="fondo"
             className="absolute w-full h-full object-cover"
           />
     
           <div className="flex flex-row justify-center  h-full w-full   text-white absolute z-10"> 
-            <div className="w-full h-[85%] flex flex-col justify-end lg:justify-center text-center items-center">
+            <div className="w-full h-[85%] flex flex-col justify-end lg:pb-20 xl:pb-0 xl:justify-center text-center items-center">
               <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-8xl font-cinzelRegular lg:mt-8">
                 <span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[150px]">H</span>ouse{" "}
               </h1>
@@ -22,7 +24,7 @@ function Hero({json}) {
      
             </div>
           </div>
-        </div>
+        </div> 
   )
     {/* <div className="w-full h-[700px] lg:h-full flex flex-col relative">
       <Image

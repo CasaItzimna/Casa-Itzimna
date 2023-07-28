@@ -26,11 +26,11 @@ function Facilities({json}) {
                       <div className="hidden h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
 
         <div className="w-full flex flex-row justify-center z-20 ">
-      <div className=" w-[90%] lg:w-full h-full flex flex-col-reverse lg:flex-row  gap-8   ">
+      <div className=" w-[90%] lg:w-full h-full flex flex-col-reverse lg:flex-row  gap-8 lg:gap-0  ">
         <div className="w-full lg:w-1/2 flex flex-row justify-center xl:justify-end ">
 
         
-        <div className="w-[90%] xl:w-[500px] h-full flex flex-col  ">
+        <div className="w-[80%] xl:w-[500px] h-full flex flex-col  ">
             <div className="font-PlayfairDisplay text-[16px] text-justify tracking-wider">
                 {json.Facilities.texto1}
             </div>
@@ -123,9 +123,9 @@ function Facilities({json}) {
         </div> 
         </div>
          
-        <div className=" w-full flex flex-row justify-center lg:justify-start lg:w-1/2 xl:w-1/2">
+        <div className=" w-full flex flex-row justify-center lg:justify-center lg:w-1/2 xl:w-1/2">
 
-        <div className="w-full md:w-[400px]   h-full flex flex-col justify-center  lg:justify-start  ">
+        <div className="w-full md:w-[400px] lg:w-[90%]   h-full flex flex-col justify-center  lg:justify-start  ">
           <div className=" flex flex-row justify-center xl:justify-center 2xl:justify-start items-center ">
 
             <div className="w-full xl:w-3/4 2xl:w-1/2 flex flex-col justify-center md:justify-end xl:justify-start">
@@ -162,11 +162,11 @@ function Facilities({json}) {
           </div>
                 </div>
           <div className="hidden mt-4 w-full lg:w-full lg:flex flex-row justify-center lg:justify-start xl:justify-center 2xl:justify-start ">
-            <div className="flex flex-col items-center 2xl:items-start w-[90%]">
+            <div className="flex flex-col items-center 2xl:items-start w-[90%] lg:w-full">
 
-            <p className="w-[350px] 2xl:w-1/2 font-PlayfairDisplay font-[700] text-lg tracking-[4px] text-justify">{json.Facilities.exploreText}</p>
+            <p className="w-[350px] lg:w-full 2xl:w-1/2 font-PlayfairDisplay font-[700] text-lg tracking-[4px] text-justify">{json.Facilities.exploreText}</p>
           <div className="w-full flex flex-row justify-center xl:justify-start">
-            <div className="w-full flex flex-col items-center 2xl:items-start">
+            <div className="w-full flex flex-col items-center lg:items-start">
 
 
           <button className="font-Geometrica bg-[#d3cbc0] w-[150px] h-[35px] rounded-[7px] text-xl px-4 mt-4">

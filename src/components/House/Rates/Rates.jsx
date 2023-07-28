@@ -88,7 +88,7 @@ function Rates({ json }) {
         <div className="w-full flex flex-col items-center justify-center lg:mt-8">
           <h3 className="text-4xl font-cinzelBold mb-8">{json.Rates.title}</h3>
           <div id={"slider"} className="w-full h-full mb-8 lg:mb-0 mx-4 lg:mx-0  flex flex-row justify-center">
-            <div className="w-[90%] flex flex-row justify-start lg:justify-center items-center gap-8 overflow-x-scroll overflow-y-hidden  scroll-smooth scrollbar-hide ">
+            <div className="w-[90%] flex flex-row justify-start lg:justify-between xl:justify-center items-center gap-8 overflow-x-scroll overflow-y-hidden  scroll-smooth scrollbar-hide ">
 
             {
               ratesElements.map((rate, index) =>(
@@ -98,23 +98,23 @@ function Rates({ json }) {
               </div>
           </div>
 
-          <div className="w-full h-full lg:h-[300px] flex flex-col mt-14 ">
+          <div className="w-full h-full lg:h-[400px] xl:h-[300px] flex flex-col mt-14 ">
             <div className="w-full  h-full  flex flex-row justify-center">
-              <div className="wfull  lg:w-[1300px]  flex flex-col lg:flex-row gap-8 justify-center">
+              <div className="w-full  lg:w-[90%]  flex flex-col lg:flex-row gap-8 lg:gap-1 justify-center lg:justify-between">
 
               
-              <div className="w-[15%] hidden lg:flex flex-row justify-center items-center">
-                <Image src={fototo1} alt="persona" className="h-full" />
+              <div className="w-[15%] lg:w-[40%] hidden lg:flex flex-row justify-center items-center">
+                <Image src={fototo1} alt="persona" className="h-full object-cover " />
               </div>
-              <div className="w-full  lg:w-[35%] flex flex-row justify-center items-center">
+              <div className="w-full  xl:w-[35%] flex flex-row justify-center items-center">
                 <Image
                   src={fototo2}
                   alt="persona" 
-                  className="w-[90%] h-full md:rounded-[18px]  object-cover"
+                  className="w-[90%] h-full md:rounded-[18px] lg:rounded-none  object-cover"
                 />
               </div>
-              <div className=" w-full lg:w-[25%] h-full flex flex-col justify-center gap-2 text-center lg:text-left tracking-[4px] ">
-                <h3 className="font-apollo text-3xl">
+              <div className=" w-full lg:w-[30%] h-full flex flex-col justify-center lg:justify-between gap-2 text-center lg:text-left tracking-[4px] ">
+                <h3 className="lg:w-full font-apollo text-3xl ">
                   {json.Rates.unforgettableTitle}
                 </h3>
                 <div className="flex flex-row justify-center lg:justify-start">

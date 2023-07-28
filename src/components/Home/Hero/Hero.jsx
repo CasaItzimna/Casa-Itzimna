@@ -5,6 +5,12 @@ import hero1 from "../../../assets/Home/hero3.png";
 import hero from "./hero.jpg";
 import hero2 from "./hero2.jpg";
 import hero3 from "./hero3.jpg";
+import hero4 from "./hero4.jpg";
+import hero5 from "./hero5.jpg";
+import hero6 from "./hero6.jpg";
+import hero7 from "./hero7.jpg";
+import hero8 from "./hero8.jpg";
+import hero9 from "./hero9.jpg";
 import { FaUsers } from "react-icons/fa";
 import { BsCalendar3 } from "react-icons/bs";
 import AboutUs from "../AboutUs/AboutUs";
@@ -14,7 +20,7 @@ import { useEffect } from "react";
 import { AppContext } from "@/context/StateContext";
 import CalendarioModal from '../Modal/CalendarioModal';
 import Link from "next/link";
-
+ 
 function Hero({ setShow, json }) {
 
   const {setShowModalCalendar} = AppContext()
@@ -53,7 +59,7 @@ function Hero({ setShow, json }) {
   return (
     <div className="w-full  h-[70vh]  lg:h-[90vh] flex flex-col relative">
     <Image
-      src={hero1}
+      src={hero9}
       alt="fondo"
       className="absolute w-full h-full md:h-full object-cover"
     />

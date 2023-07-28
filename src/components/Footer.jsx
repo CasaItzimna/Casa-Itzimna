@@ -35,7 +35,7 @@ function Footer() {
       <div className=" flex flex-col-reverse lg:flex-row  justify-center  ">
        
        
-        <div className="h-full flex flex-col mb-4 lg:mb-0  lg:w-1/4  text-center lg:text-start   ">
+        <div className="h-full flex flex-col mb-4 lg:mb-0  xl:w-1/4  text-center lg:text-start   ">
           <h3 className="font-cinzelBold text-2xl text-[#d3cbc0] mb-2 lg:mb-4">
             CONTACT
           </h3>

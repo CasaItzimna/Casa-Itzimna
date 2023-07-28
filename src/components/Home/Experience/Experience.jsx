@@ -13,20 +13,20 @@ function Experience({json}) {
  */
   return (
     <div className="w-full h-[700px] lg:h-[400px] flex flex-row justify-center relative  ">
-      <div className="absolute h-full  flex flex-col lg:flex-row justify-center  items-center z-0">
+      <div className="absolute h-full w-full  flex flex-col lg:flex-row justify-center  items-center z-0">
         <div className="lg:w-1/2 flex flex-row justify-center">
 
         
         <div className="sm-w-[500px] lg:w-[500px] xl:w-[550px]  flex flex-col justify-center  ">
           
 
-          <Image src={spa} alt="spa" className="w-full h-full " />
+          <Image src={spa} alt="spa" className="w-full h-full object-cover " />
           
         </div>
         </div>
-        <div className="w-full lg:w-1/2 flex flex-row justify-start md:justify-center lg:justify-end">
+        <div className="w-full lg:w-1/2 flex flex-row justify-start md:justify-center lg:justify-start">
 
-        <div className="w-full  xl:w-[25%] h-full flex flex-col justify-start lg:justify-center items-center lg:items-end lg:mr-4 xl:mr-0 mt-4 lg:mt-0 xl:pr-10">
+        <div className="w-full lg:w-[90%]  xl:w-[25%] h-full flex flex-col justify-start lg:justify-center items-center lg:items-end lg:mr-4 xl:mr-0 mt-4 lg:mt-0 xl:pr-10">
           <div className="w-full md:w-[600px] lg:w-full  flex flex-col items-center lg:items-end">
             <h3 className="text-[30px] md:text-[40px]   font-cinzelBold lg:text-white text-center lg:text-right ">
             {json.Experience.title}

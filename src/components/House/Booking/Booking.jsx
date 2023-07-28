@@ -314,9 +314,9 @@ const [total, setTotal] = useState(0)
   };
 
   return (
-    <div className="w-full h-full flex flex-col justify-center items-center pb-10">
-      <div className="w-full lg:w-[1300px] h-full flex flex-col-reverse lg:flex-row justify-center gap-4">
-        <div className="w-full lg:w-[40%] h-full flex flex-col ">
+    <div className="w-full h-full flex flex-col justify-center items-center pb-10 lg:mt-10">
+      <div className="w-full  xl:w-[1300px] h-full flex flex-col-reverse lg:flex-row justify-center gap-4">
+        <div className="w-full lg:w-[50%] h-full flex flex-col ">
           <div className="w-full h-full flex flex-row justify-center">
             <div className="w-full h-full flex flex-col items-center" id="booking">
               <h3 className=" text-5xl font-cinzelBold tracking-[2px] mb-4">

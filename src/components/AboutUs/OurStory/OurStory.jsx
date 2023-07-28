@@ -20,9 +20,12 @@ function OurStory({json}) {
       <div className="absolute left-0 top-[10%] -z-30">
             <Image src={cabeza} alt="cabeza" className="w-[300px]" />
         </div>
-      <div className="flex flex-col-reverse lg:flex-row justify-center w-full h-full lg:h-[700px] lg:gap-4 ">
-        <div className="w-full lg:w-full xl:w-[25%] h-full md:h-[25%] lg:h-full flex flex-col justify-center md:justify-end lg:justify-start ">
-            <div className="h-full flex flex-col justify-center w-full ">
+      <div className="flex flex-col-reverse lg:flex-row justify-center w-full h-full xl:h-[700px]  ">
+        <div className="w-full lg:w-[90%] xl:w-[25%] h-full md:h-[25%] lg:h-full flex flex-col justify-center md:justify-end lg:justify-center ">
+          <div className="flex flex-row justify-center">
+
+          
+            <div className="h-full flex flex-col justify-center w-full lg:w-[80%] ">
 
           <h3 className="text-[30px] lg:text-[40px] font-cinzelBold text-center lg:text-left mt-8 lg:mt-0  ">{json.OurStory.title}</h3>
           <div className="w-full flex flex-col items-center ">
@@ -36,7 +39,7 @@ function OurStory({json}) {
         <div className="bg-[#d3cbc0] w-[430px] h-[2px]"></div>
         <Image
           src={flor}
-          alt="flor"
+          alt="flor" 
           className="w-[20px] h-[20px] absolute right-0 -top-2"
           />
       </div>
@@ -74,7 +77,7 @@ function OurStory({json}) {
             </div>
             </div>
             <div className="w-full flex flex-col items-center 2xl:items-start">
-          <div className="h-[350px] md:h-[200px] flex flex-row justify-center lg:justify-start  text-justify w-[90%]  ">
+          <div className="h-[350px] md:h-[200px] flex flex-row justify-center lg:justify-start  text-justify w-[90%] lg:w-full  ">
 
              
           <p className={`${opcion === "opcion1"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>
@@ -85,12 +88,13 @@ function OurStory({json}) {
            
             </div>
               </div>
+              </div>
           </div>
         </div>
         <div className=" flex flex-row justify-center ">
           
-        <div className="w-[350px] md:w-[400px] lg:w-[500px] h-full flex flex-col justify-center lg:justify-center  ">
-            <div className="w-full flex flex-col justify-center md:justify-end ">
+        <div className="w-[350px] md:w-[400px] lg:w-[500px] lg:px-4 h-full flex flex-col justify-center lg:justify-center  ">
+            <div className="w-full flex flex-col justify-center md:justify-end  ">
 
           <div className=" bg-white h-[350px] w-full mb-2 shadow-2xl ">
           <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50">
