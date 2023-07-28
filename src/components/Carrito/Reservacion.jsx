@@ -78,10 +78,10 @@ function Reservacion({reservacion, deleteExp, deleteReservation}) {
                 {reservacion?.plan}
               </div>
               <div className="w-[50%] h-full flex flex-row gap-1 mt-4 font-apollo ">
-                <div className="w-1/2 border-[1px] h-[30px] border-[#d3cbc0] text-center text-sm tracking-[2px] flex flex-col items-center justify-center">
+                <div className="w-1/2 border-[1px] h-[30px] border-[#d3cbc0] text-center text-[10px] md:text-[13px]  tracking-[2px] flex flex-col items-center justify-center">
                   {checkin}
                 </div>
-                <div className="w-1/2 border-[1px] h-[30px] border-[#d3cbc0] text-center text-sm tracking-[2px] flex flex-col items-center justify-center">
+                <div className="w-1/2 border-[1px] h-[30px] border-[#d3cbc0] text-center text-[10px] md:text-[13px] tracking-[2px] flex flex-col items-center justify-center">
                   {checkout}
                 </div>
               </div>
