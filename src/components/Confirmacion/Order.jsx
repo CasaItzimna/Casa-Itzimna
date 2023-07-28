@@ -69,7 +69,7 @@ function Order({json}) {
 
   return (
     <div className='w-full flex flex-row justify-center bg-[#d3cbc0] '>
-        <div className='w-[90%]  h-full flex flex-col items-center bg-white mb-8'>
+        <div className='w-[90%] xl:w-[80%]  h-full flex flex-col items-center bg-white mb-8'>
             <div className='w-[90%] flex flex-col '>
                 <div className='w-full flex flex-col items-center'>
 
@@ -78,8 +78,8 @@ function Order({json}) {
                 <p className='text-center font-apollo tracking-[2px]'>{json.Confirmation.delighted}</p>
                 <p className='text-center font-apollo tracking-[2px]'>{json.Confirmation.recipt}.</p>
                 </div>
-                <div className='w-full flex flex-col items-start'>
-                    <p className='text-center font-apollo tracking-[2px] mt-8'>{json.Confirmation.review}</p>
+                <div className='w-full flex flex-col items-center lg:items-start'>
+                    <p className='text-center lg:text-left font-apollo tracking-[2px] mt-8'>{json.Confirmation.review}</p>
                    
                     {
                         reservacionesCarrito.map((rsv, index) =>(

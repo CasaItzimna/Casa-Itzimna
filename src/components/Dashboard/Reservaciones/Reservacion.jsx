@@ -124,7 +124,7 @@ function Reservacion({ reservacion }) {
   console.log(reservacion);
 
   return (
-    <div className="w-[350px] h-[235px] rounded-[7px] border-[2px]">
+    <div className="w-[350px] h-[235px] rounded-[7px] border-[2px] bg-white">
       <div className="w-full flex flex-row justify-center">
         <div className="w-[90%] flex flex-col gap-1">
           <div className="flex flex-row justify-between">
@@ -173,8 +173,8 @@ function Reservacion({ reservacion }) {
             </div>
           </div>
 
-          <Modal show={showModal} onClose={handleCloseModal}>
-            <div className="p-6">
+          <Modal show={showModal} onClose={handleCloseModal} className="">
+            <div className="p-6  ">
               <h2 className="text-xl mb-4">
                 Editar reservacion de {reservacion.name}
               </h2>

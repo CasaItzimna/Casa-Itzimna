@@ -3,7 +3,7 @@ import React from 'react'
 export default function TimeLine() {
   return (
     <div className='w-full h-[100px] flex flex-row justify-center bg-[#d3cbc0]'>
-        <div className='h-full w-[80%] lg:w-[60%] flex flex-col justify-center '>
+        <div className='h-full w-[80%] lg:w-[80%] 2xl:w-[1140px] flex flex-col justify-center '>
             <div className='h-[2px] bg-gradient-to-r from-black from-15% to-[#282828]/40 to-85% relative'>
                 <div className='w-full absolute -top-[25px] md:-top-[35px]'>
                     <div className='w-full flex flex-row justify-around relative'>

@@ -131,7 +131,7 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
                     opcion === "opcion1"
                       ? "left-0"
                       : opcion === "opcion2"
-                      ? "left-[33%]"
+                      ? "left-[38%]"
                       : opcion === "opcion3"
                       ? "right-0"
                       : ""

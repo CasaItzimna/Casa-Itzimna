@@ -31,8 +31,8 @@ function Footer() {
     !isDashboardPage && !isDashboardComponentPage?
   
 
-    <div className="w-full h-full lg:h-[500px]  flex flex-col justify-center bg-[#31302c] ">
-      <div className=" flex flex-col-reverse lg:flex-row  justify-center  ">
+    <div className="w-full h-full  lg:h-[500px]  flex flex-col items-center justify-center bg-[#31302c] ">
+      <div className="w-full lg:w-[90%] xl:w-[80%] max-w-[1920px]  flex flex-col-reverse lg:flex-row  justify-center xl:justify-between  ">
        
        
         <div className="h-full flex flex-col mb-4 lg:mb-0  xl:w-1/4  text-center lg:text-start   ">
@@ -54,8 +54,8 @@ function Footer() {
             <li className="flex flex-row  text-md lg:text-lg justify-center lg:justify-start cursor-pointer hover:text-[#d3cbc0] "><HiOutlineMail className="hidden lg:flex text-[#d3cbc0]"/> &nbsp;CONTACTO@CASAITZIMNA.COM</li>
             </a>
           </ul>
-          <div className="hidden lg:flex w-full h-[2px] bg-[#d3cbc0] mb-4" />
-          <div className="uppercase hidden lg:flex flex-col w-full font-apollo text-white ">
+{/*           <div className="hidden lg:flex w-full h-[2px] bg-[#d3cbc0] mb-4" />
+ */}          <div className="uppercase hidden lg:flex flex-col w-full font-apollo text-white lg:mt-4">
           copyright all rights reserved - casa itzimná hotel boutique
         </div>
         </div>
@@ -75,8 +75,8 @@ function Footer() {
             <li className="cursor-pointer  hover:text-[#d3cbc0]"><Link href='/Boutique'>{json.Footer.option5}</Link></li>
             <li className="cursor-pointer  hover:text-[#d3cbc0]"><Link href='/Contact'>{json.Footer.option6}</Link></li>
           </ul>
-          <div className="hidden lg:flex w-full h-[2px] bg-[#d3cbc0]" />
-        </div>
+{/*           <div className="hidden lg:flex w-full h-[2px] bg-[#d3cbc0]" />
+ */}        </div>
         </div>
         
         <div className=" flex flex-col text-center lg:text-right mt-4 lg:mt-0 ">
@@ -90,11 +90,11 @@ function Footer() {
             <li className="flex flex-row cursor-pointer text-lg hover:text-[#d3cbc0]"><span className="hidden lg:flex">CASA ITZIMNÁ BOUTIQUE &nbsp;</span> <FaFacebookF className="text-[#d3cbc0] mt-1 text-4xl lg:text-sm"/></li>
             <li className="flex flex-row cursor-pointer text-lg hover:text-[#d3cbc0] "><span className="hidden lg:flex">CASAITZIMNÁ_BOUTIQUE &nbsp;</span> <AiOutlineInstagram className="text-[#d3cbc0] mt-1 text-5xl lg:text-sm"/></li>
           </ul>
-          <div className="hidden lg:flex w-full h-[2px] bg-[#d3cbc0] mb-4" />
-          <div className="uppercase hidden lg:flex flex-row w-full font-apollo text-white  ">
+{/*           <div className="hidden lg:flex w-full h-[2px] bg-[#d3cbc0] mb-4" />
+ */}          <div className="uppercase hidden lg:flex flex-row w-full font-apollo text-white lg:mt-4  ">
           Made by &nbsp; 
           <a href='https://www.jaizmora.com'  target="_blank">
-          <span className="text-[#d3cbc0] cursor-pointer hover:text-white">jaizmora digital media</span>
+          <span className="text-[#d3cbc0] cursor-pointer hover:text-white ">jaizmora digital media</span>
           </a>
           </div>
         </div>

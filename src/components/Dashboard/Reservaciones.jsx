@@ -5,6 +5,7 @@ import triangulo from '../../assets/Icons/triangulo.png'
 import Image from "next/image";
 import Modal from "./Modal/Modal";
 import { useState } from "react";
+import fondo from './img/fondo.jpg'
 
 const Reservaciones = () => {
 
@@ -89,20 +90,21 @@ const Reservaciones = () => {
   
 
   return (
-     <div className="h-full flex flex-row justify-center ">
-      <div className="h-full flex flex-col justify-center">
+     <div className="h-full flex flex-row justify-center relative ">
+        <Image src={fondo} alt="fondo img" className="absolute hidden lg:flex object-cover top-0 h-full w-full left-0 z-10" />
+      <div className="h-full flex flex-col justify-center z-20">
       
       <div className="  flex flex-col lg:flex-row justify-between lg:mt-8">
 
-    <h2 className="text-2xl font-apollo tracking-[2px] mb-8">Reservaciones</h2>
+    <h2 className="text-2xl lg:text-4xl  font-apollo tracking-[2px] mb-8 lg:text-white">Reservaciones</h2>
     <div className="h-full flex flex-row gap-4">
-      <div className="border-[2px] rounded-[7px] px-4 py-2 h-[40px] font-Geometrica tracking-[1px] text-sm cursor-pointer flex flex-row items-center gap-2">STATUS <Image src={triangulo} alt="triangulo icon" className="w-[9px] h-[7px] "/> </div>
-      <div className="border-[2px] rounded-[7px] px-4 py-2 h-[40px] font-Geometrica tracking-[1px] text-sm cursor-pointer"
+      <div className="border-[2px] rounded-[7px] px-4 py-2 h-[40px] font-Geometrica tracking-[1px] text-sm cursor-pointer flex flex-row items-center gap-2 bg-white">STATUS <Image src={triangulo} alt="triangulo icon" className="w-[9px] h-[7px] "/> </div>
+      <div className="border-[2px] rounded-[7px] px-4 py-2 h-[40px] font-Geometrica tracking-[1px] text-sm cursor-pointer bg-white"
       onClick={()=>setShowModal(true)}
       >+ AGREGAR </div>
     </div>
       </div>
-    <div className="h-full grid grid-cols-1 md:grid-cols-2 mt-8 lg:mt-0 gap-4 lg:overflow-y-scroll">
+    <div className="h-full  grid grid-cols-1 md:grid-cols-2  mt-8 lg:mt-0 gap-4 lg:overflow-y-scroll">
 
     
     {isLoading ? (
@@ -121,7 +123,7 @@ const Reservaciones = () => {
 </div>
   </div>
   <Modal show={showModal} onClose={handleCloseModal}>
-            <div className="p-6">
+            <div className="p-6 ">
               <h2 className="text-xl mb-4">
                 Crear Reservacion
               </h2>

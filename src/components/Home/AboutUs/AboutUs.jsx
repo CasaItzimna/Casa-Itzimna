@@ -15,7 +15,7 @@ function AboutUs({ json }) {
 
   return (
     /* TO-DO: arreglar el iphone SE */
-    <div className="h-full  w-full  flex flex-col items-center  relative z-0 lg:mb-8 ">
+    <div className="h-full  w-full  flex flex-col items-center  relative z-0 lg:mb-20 ">
       <div
         className={
           showModalCalendar === false
@@ -30,7 +30,7 @@ function AboutUs({ json }) {
         <div className="w-full h-full flex flex-col-reverse lg:flex-row  gap-0 md:gap-14 lg:gap-5 ">
           <div className="w-full h-full flex flex-col justify-start lg:justify-center text-center lg:text-left ">
             <div className="w-full flex flex-row justify-center lg:justify-end">
-              <div className="w-full lg:w-[90%] xl:w-[500px] ">
+              <div className="w-full lg:w-[90%] xl:w-[80%]  2xl:xl:w-[570px] ">
                 <h3 className="text-[30px] md:text-[40px]  font-cinzelBold text-[#31302c]  ">
                   {json.About.title}
                 </h3>
@@ -57,7 +57,7 @@ function AboutUs({ json }) {
                     />
                   </div>
                 </div>
-                <div className="w-full flex flex-row justify-center">
+                <div className="w-full flex flex-row justify-center xl:justify-start">
 
                 <p className=" text-justify font-ethereal text-xl px-8 md:px-0 lg:px-0 md:w-[600px] lg:w-[480px] text-[#31302c] tracking-[4px]">
                   {json.About.text}
@@ -72,8 +72,8 @@ function AboutUs({ json }) {
             </div>
           </div>
           <div className="  w-full h-full lg:h-full flex flex-col justify-start md:justify-center items-center">
-            <div className="w-full h-full flex flex-row justify-center lg:justify-start items-center">
-              <div className="w-[350px] h-[380px]  md:w-[500px] lg:w-[90%] relative   ">
+            <div className="w-full h-full flex flex-row justify-center lg:justify-start  items-center">
+              <div className="w-[350px] h-[380px]   md:w-[500px] lg:w-[90%] xl:w-[80%] 2xl:w-[60%]  relative   ">
                 <div className="absolute top-0 right-0 bg-white h-[200px] md:h-[250px] w-[250px] md:w-[300px]">
                   <div
                     className="relative w-full h-full p-2 overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50"
@@ -88,7 +88,7 @@ function AboutUs({ json }) {
                   </div>
                 </div>
 
-                <div className="absolute top-[15%] left-0 bg-white h-[250px] md:h-[300px] w-[200px] md:w-[250px]">
+                <div className="absolute top-[15%] left-0 bg-white h-[250px] md:h-[300px] w-[200px] md:w-[250px] xl:left-20">
                 <div
                     className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50"
                   >

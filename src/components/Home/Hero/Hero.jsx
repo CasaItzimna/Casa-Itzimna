@@ -65,13 +65,13 @@ function Hero({ setShow, json }) {
     />
 
       <div className="flex flex-row justify-center  h-full  w-full   text-white absolute z-10">
-        <div className="w-full h-[85%] md:h-[85%] lg:h-[90%] flex flex-col justify-end xl:justify-center text-center items-center">
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-8xl xl:text-8xl font-cinzelRegular xl:mt-20">
-            <span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[150px] xl:text-[120px]">C</span>asa{" "}
-            <span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[150px] xl:text-[120px]">I</span>tzimná
+        <div className="w-full h-[85%] md:h-[85%] lg:h-[90%] 2xl:h-full  flex flex-col justify-end xl:pb-10 2xl:justify-center text-center items-center">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-8xl xl:text-8xl 2xl:text-9xl font-cinzelRegular xl:mt-20">
+            <span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[150px] xl:text-[120px] 2xl:text-[150px]">C</span>asa{" "}
+            <span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[150px] xl:text-[120px] 2xl:text-[150px]">I</span>tzimná
           </h1>
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-cinzelRegular">Boutique</h2>
-          <button className="w-[50%] lg:w-[30%] bg-black/40 hover:bg-black text-white mt-8 py-4 text-xl font-Geometrica tracking-[2px] "
+          <h2 className="text-3xl sm:text-5xl md:text-6xl 2xl:text-6xl  font-cinzelRegular">Boutique</h2>
+          <button className="w-[50%] lg:w-[30%] bg-black/40 hover:bg-black text-white mt-8 py-4 text-xl 2xl:text-3xl font-Geometrica tracking-[2px] "
           /* onClick={() => { openModal(); setShowModalCalendar(true); }} */
           >
             <Link href="/House#booking">

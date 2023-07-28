@@ -145,7 +145,10 @@ const Dashboard = () => {
             </li>
             <li
               className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
-              onClick={() => setActive(false)}
+              onClick={() => {
+                setActive(false);
+                handleSidebarClick("Facturas");
+              }}
             >
               <span>
                 <FaReceipt className="text-2xl text-white" />

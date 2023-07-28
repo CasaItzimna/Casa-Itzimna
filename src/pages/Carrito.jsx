@@ -5,7 +5,7 @@ import OurBoutique from '@/components/Carrito/OurBoutique'
 
 function Carrito() {
   return (
-    <div>
+    <div className='bg-[#d3cbc0]'>
       <div className='w-full h-[100px] md:h-[200px] lg:h-[250px] bg-[#31302c]'>
 
       </div>

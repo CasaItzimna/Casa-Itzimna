@@ -619,9 +619,9 @@ const [total, setTotal] = useState(0)
                   BOOK NOW
                 </button>
 
-                <p className="col-span-2 font-PlayfairDisplay text-sm">
+                <p className="w-full col-span-2 font-PlayfairDisplay text-sm text-justify">
                   {json.Booking.consent}
-                  <span className="text-[#d3cbc0] ml-2">
+                  <span className="w-full text-[#d3cbc0] ml-2">
                     {json.Booking.privacy}
                   </span>
                 </p>
@@ -629,7 +629,7 @@ const [total, setTotal] = useState(0)
             </div>
           </div>
         </div>
-          <div className="lg:w-[40%] flex flex-col ">
+          <div className="lg:w-[40%] 2xl:w-[570px]  flex flex-col ">
         <div className="w-full  h-full flex flex-row justify-center lg:justify-start">
 
   <div className="w-full h-full flex flex-col justify-center items-center ">

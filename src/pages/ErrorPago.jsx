@@ -12,7 +12,7 @@ function ErrorPago() {
 
   return (
     <div className=''>
-       <div className='w-full h-[100px] lg:h-[250px] bg-[#d3cbc0] '></div>
+        <div className='w-full h-[100px] md:h-[200px] lg:h-[250px] bg-[#31302c]'/>
       <TimeLine/>
       <Error json={json}/>
     </div>

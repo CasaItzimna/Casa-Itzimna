@@ -32,7 +32,7 @@ function Login() {
   };
 
   return (
-    <div className="w-full h-screen flex flex-row justify-center  relative">
+    <div className="w-full h-screen lg:h-[1000px] flex flex-row justify-center  relative ">
       <div className="absolute top-0 h-screen lg:h-full w-full z-0">
         <Image
           src={login}
@@ -40,15 +40,15 @@ function Login() {
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="w-full h-full flex flex-col justify-center lg:justify-end items-center ">
-      <div className=" w-[90%] lg:w-[50%] h-[65vh] lg:h-[65%] bg-[#282828]/20 border-2 rounded-xl mt-10 xl:mb-[20px] 2xl:mb-[100px] z-10 ">
+      <div className="w-full h-full flex flex-col justify-center 2xl:mt-20 items-center  ">
+      <div className=" w-[90%] lg:w-[50%] h-[65vh] lg:h-[50%] bg-[#282828]/20 border-2 rounded-xl mt-10 xl:mb-[20px] 2xl:mb-[100px] z-10 ">
         <div className="h-full w-full flex flex-col justify-center items-center text-center">
-          <h1 className="  text-white text-4xl sm:text-7xl md:text-6xl lg:text-8xl xl:text-7xl font-cinzelRegular">
-            <span className="text-white text-[60px] sm:text-[100px] md:text-[100px] lg:text-[150px] xl:text-[100px]">
+          <h1 className="  text-white text-4xl sm:text-7xl md:text-6xl lg:text-6xl xl:text-7xl font-cinzelRegular">
+            <span className="text-white text-[60px] sm:text-[100px] md:text-[100px] lg:text-[100px] xl:text-[100px]">
               C
             </span>
             asa{" "}
-            <span className="text-white text-[60px] sm:text-[100px] md:text-[100px] lg:text-[150px] xl:text-[100px]">
+            <span className="text-white text-[60px] sm:text-[100px] md:text-[100px] lg:text-[100px] xl:text-[100px]">
               I
             </span>
             tzimná
@@ -58,7 +58,7 @@ function Login() {
           </h2>
           {error && <p>{error}</p>}
           <form
-            className="w-[80%] flex flex-col text-left mt-8"
+            className="w-[80%] flex flex-col md:items-center text-left mt-8"
             onSubmit={handleSubmit}
           >
             <label
@@ -69,7 +69,7 @@ function Login() {
             </label>
             <input
               type="email"
-              className="border-2 border-[#d3cbc0] bg-white/70  "
+              className="border-2 border-[#d3cbc0] bg-white/70 md:w-3/4  "
               name="email"
               id="email"
               onChange={handleChange}
@@ -82,12 +82,12 @@ function Login() {
             </label>
             <input
               type="password"
-              className="border-2 border-[#d3cbc0] bg-white/70 "
+              className="border-2 border-[#d3cbc0] bg-white/70 md:w-3/4 "
               id="password"
               name="password"
               onChange={handleChange}
             />
-            <div className="flex flex-col justify-center items-center">
+            <div className="flex flex-col justify-center items-center md:w-3/4">
               <button className="bg-black/50 hover:bg-black text-white px-4 py-2 mt-4 mb-4 w-full font-Geometrica tracking-[2px]">
                 SIGN IN
               </button>

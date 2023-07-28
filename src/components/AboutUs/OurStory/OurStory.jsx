@@ -15,14 +15,14 @@ function OurStory({json}) {
   console.log(opcion)
   
   return (
-    <div className="h-full lg:full w-full relative z-20">
+    <div className="h-full lg:full w-full relative lg:mb-20 2xl:mb-0 z-20">
         <div className="hidden h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
       <div className="absolute left-0 top-[10%] -z-30">
             <Image src={cabeza} alt="cabeza" className="w-[300px]" />
         </div>
-      <div className="flex flex-col-reverse lg:flex-row justify-center w-full h-full xl:h-[700px]  ">
-        <div className="w-full lg:w-[90%] xl:w-[25%] h-full md:h-[25%] lg:h-full flex flex-col justify-center md:justify-end lg:justify-center ">
-          <div className="flex flex-row justify-center">
+      <div className="flex flex-col-reverse lg:flex-row justify-center w-full h-full 2xl:h-[700px]  ">
+        <div className="w-full lg:w-[90%] xl:w-[40%] 2xl:w-[570px] h-full md:h-[25%] lg:h-full flex flex-col justify-center md:justify-end lg:justify-center xl:justify-start ">
+          <div className="flex flex-row justify-center xl:justify-start 2xl:justify-end">
 
           
             <div className="h-full flex flex-col justify-center w-full lg:w-[80%] ">
@@ -91,9 +91,9 @@ function OurStory({json}) {
               </div>
           </div>
         </div>
-        <div className=" flex flex-row justify-center ">
+        <div className="xl:w-[40%] flex flex-row justify-center ">
           
-        <div className="w-[350px] md:w-[400px] lg:w-[500px] lg:px-4 h-full flex flex-col justify-center lg:justify-center  ">
+        <div className="w-[350px] md:w-[400px] lg:w-[500px] xl:w-full 2xl:w-[570px] lg:px-4 h-full flex flex-col justify-center lg:justify-center xl:justify-start  ">
             <div className="w-full flex flex-col justify-center md:justify-end  ">
 
           <div className=" bg-white h-[350px] w-full mb-2 shadow-2xl ">

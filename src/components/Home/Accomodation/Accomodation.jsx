@@ -19,9 +19,9 @@ function Accomodation({json}) {
         <div className="absolute -z-10 left-0 top-[10%]">
             <Image src={sol} alt="sol" className="w-[300px]" />
         </div>
-      <div className="flex flex-col-reverse lg:flex-row justify-center items-center w-full h-[1000px] lg:h-[600px]">
-        <div className="w-full lg:w-1/2 xl:w-1/2 h-full flex flex-row justify-center xl:justify-end items-center ">
-            <div className="w-[90%] flex flex-col justify-center xl:w-[500px] ">
+      <div className="flex flex-col-reverse lg:flex-row justify-center items-center w-full h-[1000px] lg:h-[600px] xl:gap-4 2xl:gap-0">
+        <div className="w-full lg:w-1/2 xl:w-[40%] 2xl:w-full h-full flex flex-row justify-center xl:justify-start 2xl:justify-end items-center ">
+            <div className="w-[90%] 2xl:w-[570px] flex flex-col justify-center xl:w-[500px] ">
 
           <h3 className="text-[30px] lg:text-[40px] font-cinzelBold text-center lg:text-left ">{json.Accomodation.title}</h3>
           <div className="w-full flex flex-col items-center">
@@ -77,9 +77,9 @@ function Accomodation({json}) {
     </div>
           </div>
           <div className="w-full  flex flex-row justify-center xl:justify-start  text-justify">
-            <div className="flex flex-col items-center  h-full w-full">
+            <div className="flex flex-col items-center 2xl:items-start  h-full w-full">
 
-            <div className="w-[90%] lg:w-full h-[180px] md:h-[100px] lg:h-[170px] md:text-lg flex flex-col justify-center">
+            <div className="w-[90%] 2xl:w-[90%]  lg:w-full h-[180px] md:h-[100px] lg:h-[170px] md:text-lg flex flex-col justify-center">
               
             <p className={`${opcion === "opcion1"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>
               {json.Accomodation.text1}
@@ -102,8 +102,8 @@ function Accomodation({json}) {
         </div>
 
         
-        <div className="xl:w-1/2 flex flex-row justify-center xl:justify-start  ">
-        <div className="w-full px-4 sm:w-[500px]  h-full flex flex-col justify-center  ">
+        <div className="xl:w-[40%] 2xl:w-full flex flex-row justify-center xl:justify-end 2xl:justify-start ">
+        <div className="w-full px-4 xl:px-0 sm:w-[500px] xl:w-full 2xl:w-[560px]  h-full flex flex-col justify-center xl:justify-end   ">
            
 
           <div className=" bg-white h-[350px] w-full mb-2 shadow-2xl ">

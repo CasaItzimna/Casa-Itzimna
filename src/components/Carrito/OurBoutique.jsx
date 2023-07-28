@@ -24,7 +24,7 @@ function OurBoutique() {
     <div className="w-full flex flex-row justify-start md:justify-center bg-[#d3cbc0]">
             <div className='w-full flex flex-col items-center'>
               <h3 className='text-2xl font-apollo tracking-[4px] mb-2'>OUR BOUTIQUE</h3>
-          <div className=" w-full lg:w-[80%] xl:w-[60%] relative flex flex-row justify-center items-center group">
+          <div className=" w-full lg:w-[80%] 2xl:w-[1140px]  relative flex flex-row justify-center items-center group">
 
             
 

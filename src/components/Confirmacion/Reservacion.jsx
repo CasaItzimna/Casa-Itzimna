@@ -5,15 +5,15 @@ function Reservacion({rsv}) {
   console.log(rsv)
   return (
     <div>
-       <h3 className='text-center font-apollo tracking-[4px] text-xl text-[#d3cbc0] uppercase'>Booking Data</h3>
-      <p className="font-apollo tracking-[2px] uppercase">{rsv.name}</p>
-      <p className="font-apollo tracking-[2px] uppercase">{rsv.tel}</p>
-      <p className="font-apollo tracking-[2px] uppercase">
+       <h3 className='text-center lg:text-left font-apollo tracking-[4px] text-xl text-[#d3cbc0] uppercase'>Booking Data</h3>
+      <p className="text-center lg:text-left font-apollo tracking-[2px] uppercase">{rsv.name}</p>
+      <p className="text-center lg:text-left font-apollo tracking-[2px] uppercase">{rsv.tel}</p>
+      <p className="text-center lg:text-left font-apollo tracking-[2px] uppercase">
         {rsv.email}
       </p>
-      <p className="font-apollo tracking-[2px] uppercase">{rsv.guests} guest</p>
-      <p className="font-apollo tracking-[2px] uppercase">{rsv.plan} rate</p>
-      <p className="font-apollo tracking-[2px] uppercase">
+      <p className="text-center lg:text-left font-apollo tracking-[2px] uppercase">{rsv.guests} guest</p>
+      <p className="text-center lg:text-left font-apollo tracking-[2px] uppercase">{rsv.plan} rate</p>
+      <p className="text-center lg:text-left font-apollo tracking-[2px] uppercase">
         <span>Check in:</span> {rsv.checkin.substring(0, 10)}
       </p>
       <p className="font-apollo tracking-[2px] uppercase">
@@ -22,7 +22,7 @@ function Reservacion({rsv}) {
       <p className="font-apollo tracking-[2px] uppercase">Experiences: 
 
       {rsv.experience.map((exp,index) =>(
-        <span key={index} className=""> {exp} </span>
+        <span key={index} className="text-center lg:text-left "> {exp} </span>
         ))}
         </p>
     

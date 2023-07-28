@@ -31,10 +31,9 @@ function AR() {
 
   return (
     <div>
-    <div className='w-full h-[100px] lg:h-[250px] bg-[#31302c]'>
+    <div className='w-full h-[100px] md:h-[150px] lg:h-[250px] bg-[#31302c]'/>
 
-    </div>
-    <div className="flex flex-col justify-start lg:justify-center w-full h-screen relative">
+    <div className="flex flex-col justify-start lg:justify-center w-full h-screen  relative">
       
       <div className="flex flex-row justify-center">
         

@@ -241,7 +241,7 @@ carritoProductos.forEach((producto) => {
   return (
     <div className="w-full h-full flex flex-row justify-center bg-[#d3cbc0] ">
       {carritoReservaciones || carritoProductos ? (
-        <div className="w-[80%] xl:w-[60%] h-full grid grid-cols-1 lg:grid-cols-2 lg:gap-9 mb-8  ">
+        <div className="w-[80%] 2xl:w-[1140px]  h-full grid grid-cols-1 lg:grid-cols-2 lg:gap-9 mb-8  ">
           {/*Cart*/}
           <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#9b9696]">
           <div className="w-full h-full  flex flex-col bg-white items-center    ">
@@ -267,8 +267,8 @@ carritoProductos.forEach((producto) => {
               ) : (
                 <div className="w-full flex flex-row justify-center">
 
-                <div className="w-[90%] flex flex-col items-center mb-2">
-                  <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#d3cbc0]">
+                <div className="w-[90%] lg:w-full flex flex-col items-center  mb-2">
+                  <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#d3cbc0] ">
                     NO HAY RESERVACIONES AGREGADAS
                   </h2>
                 </div>

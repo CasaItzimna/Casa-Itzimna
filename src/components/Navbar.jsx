@@ -90,7 +90,7 @@ function Navbar() {
               </span>
             </div>
             <div className="flex flex-row justify-center">
-              <ul className="flex flex-row text-center gap-20 text-md ">
+              <ul className="flex flex-row text-center gap-20 text-md 2xl:text-2xl ">
                 <li className="cursor-pointer hover:text-[#d3cbc0]  tracking-[6px]">
                   <Link href="/">{json.Navbar.option1}</Link>
                 </li>
@@ -112,7 +112,7 @@ function Navbar() {
               </ul>
             </div>
             <div className="flex flex-row justify-center">
-              <ul className="flex flex-row text-center gap-20 text-md  mt-2">
+              <ul className="flex flex-row text-center gap-20 text-md 2xl:text-2xl  mt-2">
                 <li className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
                 onClick={()=>setActive(false)}
                 >

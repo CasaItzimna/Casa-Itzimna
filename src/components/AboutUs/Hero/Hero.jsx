@@ -21,7 +21,7 @@ function Hero({json}) {
           />
     
           <div className="flex flex-row justify-center  h-full w-full   text-white absolute z-10"> 
-            <div className="w-full h-[85%]  flex flex-col justify-end lg:pb-20 xl:pb-0 xl:justify-center text-center items-center">
+            <div className="w-full h-[85%]  flex flex-col justify-end lg:pb-20 2xl:pb-0 2xl:justify-center text-center items-center">
               <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-8xl lg:mt-8 font-cinzelRegular">
                 <span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[170px]">A</span>Bout{" "}
                 <span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[170px] ">U</span>s{" "}

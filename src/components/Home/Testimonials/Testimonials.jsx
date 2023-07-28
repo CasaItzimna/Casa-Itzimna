@@ -204,7 +204,7 @@ function Testimonials({json}) {
           </div>
 
           <div className="w-full flex flex-row justify-start md:justify-center">
-          <div className=" w-full lg:w-[90%] xl:w-[80%] 2xl:w-[45%] relative flex flex-row justify-center items-center group">
+          <div className=" w-full lg:w-[90%] xl:w-[80%] 2xl:w-[1140px] relative flex flex-row justify-center items-center group">
 
           <MdChevronLeft
           onClick={slideLeft}

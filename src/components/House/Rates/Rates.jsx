@@ -11,7 +11,7 @@ import Link from "next/link";
 function Rates({ json }) {
 
   const ratesElements = [
-    <div key={1} className="w-[300px] xl:w-[300px] 2xl:w-[330px] h-full flex flex-col ">
+    <div key={1} className="w-[300px] xl:w-[280px] 2xl:w-[380px]  h-full flex flex-col ">
               <Image
                 src={foto1}
                 alt="plan1"
@@ -34,7 +34,7 @@ function Rates({ json }) {
                 </div>
               </div>
             </div>,
-            <div key={2} className="w-[300px] xl:w-[300px] 2xl:w-[330px] h-full  flex flex-col ">
+            <div key={2} className="w-[300px] xl:w-[280px] 2xl:w-[380px] 3xl:w-[330px] h-full  flex flex-col ">
               <Image
                 src={foto2}
                 alt="plan2"
@@ -57,7 +57,7 @@ function Rates({ json }) {
                 </div>
               </div>
             </div>,
-            <div key={3} className="w-[300px] xl:w-[300px] 2xl:w-[330px] h-full  flex flex-col ">
+            <div key={3} className="w-[300px] xl:w-[280px] 2xl:w-[380px] 3xl:w-[330px] h-full  flex flex-col ">
               <Image
                 src={foto3}
                 alt="plan3"
@@ -84,13 +84,13 @@ function Rates({ json }) {
 
   return (
     <div className="w-full h-full mb-10 md:mb-0 md:h-[1300px] lg:h-[1000px] flex flex-col mt-8 xl:mt-0  ">
-      <div className="w-full  flex flex-row justify-center items-center">
-        <div className="w-full flex flex-col items-center justify-center lg:mt-8">
+      <div className="w-full   flex flex-row justify-center items-center">
+        <div className="w-full  flex flex-col items-center justify-center lg:mt-8">
           <h3 className="text-4xl font-cinzelBold mb-8">{json.Rates.title}</h3>
-          <div id={"slider"} className="w-full h-full mb-8 lg:mb-0 mx-4 lg:mx-0  flex flex-row justify-center">
-            <div className="w-[90%] flex flex-row justify-start lg:justify-between xl:justify-center items-center gap-8 overflow-x-scroll overflow-y-hidden  scroll-smooth scrollbar-hide ">
+          <div id={"slider"} className="w-full h-full xl:w-[80%]  mb-8 lg:mb-0 mx-4 lg:mx-0  flex flex-row justify-center ">
+            <div className="w-[90%]   flex flex-row justify-start lg:justify-between 2xl:justify-center items-center gap-8 overflow-x-scroll overflow-y-hidden  scroll-smooth scrollbar-hide ">
 
-            {
+            { 
               ratesElements.map((rate, index) =>(
                 <div key={index}>{rate}</div>
                 ))
@@ -98,7 +98,7 @@ function Rates({ json }) {
               </div>
           </div>
 
-          <div className="w-full h-full lg:h-[400px] xl:h-[300px] flex flex-col mt-14 ">
+          <div className="w-full h-full lg:h-[400px] xl:h-[300px] xl:w-[80%] 2xl:w-[1350px] flex flex-col mt-14 ">
             <div className="w-full  h-full  flex flex-row justify-center">
               <div className="w-full  lg:w-[90%]  flex flex-col lg:flex-row gap-8 lg:gap-1 justify-center lg:justify-between">
 
@@ -119,7 +119,7 @@ function Rates({ json }) {
                 </h3>
                 <div className="flex flex-row justify-center lg:justify-start">
 
-                <p className="w-[90%] font-apollo text-lg text-justify tracking-[1px]">{json.Rates.unforgettableText}</p>
+                <p className="w-[90%] lg:w-full font-apollo text-lg text-justify tracking-[1px]">{json.Rates.unforgettableText}</p>
                 </div>
                 <div className="flex flex-row justify-center lg:justify-start ">
 

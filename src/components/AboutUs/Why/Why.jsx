@@ -20,18 +20,18 @@ function Why({ json }) {
   }
 
   return (
-    <div className="w-full h-full lg:h-[700px] flex flex-col lg:flex-row justify-start xl:justify-center  gap-8">
-      <div className="w-full lg:w-[50%] xl:w-[500px] flex flex-row lg:justify-center xl:justify-start">
+    <div className="w-full h-full lg:h-[700px] flex flex-col lg:flex-row justify-start xl:justify-center  gap-8 ">
+      <div className="w-full lg:w-[50%] xl:w-[40%] 2xl:w-[570px] flex flex-row lg:justify-center xl:justify-start">
 
-      <div className="w-full lg:w-[80%] h-full flex flex-col justify-center  items-center lg:items-start  mt-8 lg:mt-0">
+      <div className="w-full lg:w-[80%] xl:w-full h-full flex flex-col justify-center  items-center lg:items-start  mt-8 lg:mt-0">
         <Image
           src={foto}
           alt="foto alberca"
-          className="w-[90%] lg:w-full xl:w-[500px] h-[200px] md:h-[350px] object-cover rounded-[18px] overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50 "
+          className="w-[90%] lg:w-full 2xl:w-[500px] h-[200px] md:h-[350px] object-cover rounded-[18px] overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50 "
           />
       </div>
           </div>
-      <div className=" w-full lg:w-[50%] xl:w-[25%] flex flex-col justify-center ">
+      <div className=" w-full lg:w-[50%] xl:w-[40%] 2xl:w-[25%] flex flex-col justify-center ">
         <div className="flex flex-col w-full ">
           <h3 className="text-[30px] lg:text-[40px] font-cinzelBold text-center lg:text-start mt-4 lg:mt-0 ">{json.Why.title}</h3>
           <div className="w-full flex flex-col items-center">
@@ -60,7 +60,7 @@ function Why({ json }) {
           </div>
           <div className="flex flex-row justify-center lg:justify-start  w-full">
             
-          <div className="flex flex-col h-full w-[90%] lg:w-[90%] items-center md:items-start md:mb-8 lg:mt-8">
+          <div className="flex flex-col h-full w-[90%] lg:w-[90%] 2xl:w-full items-center md:items-start md:mb-8 lg:mt-8">
 
           <h3 className="text-xl md:text-3xl  font-apollo tracking-[3px] flex flex-row  gap-2 md:gap-4 items-center  cursor-pointer"
           onClick={()=>{setPregunta1(!pregunta1); setPregunta2(false); setPregunta3(false)}}
@@ -78,7 +78,7 @@ function Why({ json }) {
           <div className={`${pregunta1 == true? 'hidden': null } h-[2px]  w-full bg-[#aea08c] mt-5 mb-4`}></div>
           <div className="w-full flex flex-row justify-center items-center mb-4 lg:mb-0">
 
-          <p className={`w-[90%] md:w-full font-ethereal text-lg tracking-[2px] text-justify mt-4 lg:mt-2  ${pregunta1 == false? 'hidden': null }`}>
+          <p className={`w-[90%]  md:w-full font-ethereal text-lg tracking-[2px] text-justify mt-4 lg:mt-2  ${pregunta1 == false? 'hidden': null }`}>
             {json.Why.answer1}
           </p>
           </div>

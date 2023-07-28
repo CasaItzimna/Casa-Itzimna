@@ -100,13 +100,13 @@ function Factura({ factura, index  }) {
 
   return (
     <>
-     <tr key={factura.id} className={`${index % 2 === 0 ? 'bg-[#e7e4df] ' : 'bg-[#dad9d9]'} `}>
+     <tr key={factura.id} className={`${index % 2 === 0 ? 'bg-[#e7e4df] ' : 'bg-white'} `}>
   <td className="text-left font-apollo uppercase tracking-[2px] text-sm pl-2">{factura.name}</td>
-  <td className="font-apollo uppercase tracking-[2px] text-sm  hidden lg:table-cell">{factura.phone}</td>
+  <td className="font-apollo uppercase tracking-[2px] text-sm  hidden xl:table-cell">{factura.phone}</td>
 {/*   <td className="font-apollo uppercase tracking-[2px] text-sm hidden lg:table-cell ">{factura.email}</td>
- */}  <td className="font-apollo uppercase tracking-[2px] text-sm hidden lg:table-cell ">{factura.rfc}</td>
-  <td className="font-apollo uppercase tracking-[2px] text-sm hidden lg:table-cell ">{factura.date}</td>
-  <td className="font-apollo uppercase tracking-[2px] text-sm hidden lg:table-cell">{factura.state ? "pendiente" : "enviada"}</td>
+ */}  <td className="font-apollo uppercase tracking-[2px] text-sm hidden xl:table-cell ">{factura.rfc}</td>
+  <td className="font-apollo uppercase tracking-[2px] text-sm hidden xl:table-cell ">{factura.date}</td>
+  <td className="font-apollo uppercase tracking-[2px] text-sm hidden md:table-cell">{factura.state ? "pendiente" : "enviada"}</td>
   <td className="font-apollo uppercase tracking-[2px] text-sm  "><button className="py-2 px-2 cursor-pointer" onClick={()=>setShowModal(true)}>Ver Detalle</button></td>
 
  
