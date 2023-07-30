@@ -191,7 +191,9 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
       </button>
       </div>
       :
-      null
+      <div>
+        No Hay Producto
+      </div>
       }
       
     </Modal>
