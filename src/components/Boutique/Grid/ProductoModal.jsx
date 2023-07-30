@@ -69,7 +69,7 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
               <div className="w-[80%] lg:w-full flex flex-row gap-4">
 
               
-              {producto?.image.slice(1, 4).map((img, index) => (
+              {producto?.image?.slice(1, 4).map((img, index) => (
                 <div key={index} className="w-1/3">
                   <img
                     src={urlFor(img.asset._ref)}
