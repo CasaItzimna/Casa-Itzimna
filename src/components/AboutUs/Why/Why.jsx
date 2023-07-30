@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import foto from "./Why-choose-1.jpg";
+import foto from "./why.jpg"; 
 import flor from "./flor.png";
 import cafe from './cafe.png'
 import blanca from './blanca.png'
