@@ -60,7 +60,7 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
           <div className="flex flex-col lg:w-[500px] p-4">
             <div className="flex flex-row justify-center mb-4">
               <img
-                src={urlFor(producto?.image[0].asset._ref)}
+                src={urlFor(producto?.image[0]?.asset._ref)}
                 alt="Imagen del producto"
                 className="w-[250px] h-[350px] object-contain lg:w-full"
               />
