@@ -69,7 +69,7 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
               <div className="w-[80%] lg:w-full flex flex-row gap-4">
 
               
-              {producto.image.slice(1, 4).map((img, index) => (
+              {producto?.image.slice(1, 4).map((img, index) => (
                 <div key={index} className="w-1/3">
                   <img
                     src={urlFor(img.asset._ref)}
@@ -85,15 +85,15 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
           {/* Columna derecha */}
           <div className="w-[90%] lg:w-1/2 p-4 flex flex-col justify-start">
             <h2 className="text-xl lg:text-7xl mb-2 lg:mb-4 font-apollo uppercase tracking-[10px]">
-              {producto.name}
+              {producto?.name}
             </h2>
             <p className="font-PlayfairDisplay">Categoria</p>
             <p className="font-PlayfairDisplay font-semibold text-[#d3cbc0]">
-              {producto.artist}
+              {producto?.artist}
             </p>
             <p className="mt-4 mb-4">
               <span className="text-4xl font-apollo  tracking-[4px] ">
-                {producto.price}
+                {producto?.price}
               </span>
               &nbsp;&nbsp;
               <span className="text-4xl font-apollo tracking-[4px] ">USD</span>
@@ -141,10 +141,10 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
             </div>
             <div className="h-[150px] text-justify">
             <p className={`${opcion === "opcion1"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>
-              {producto.description}
+              {producto?.description}
             </p>
-            <p className={`${opcion === "opcion2"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>{producto.details}</p>
-            <p className={`${opcion === "opcion3"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>{producto.shipping}</p>
+            <p className={`${opcion === "opcion2"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>{producto?.details}</p>
+            <p className={`${opcion === "opcion3"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>{producto?.shipping}</p>
             </div>
             <div className="flex flex-col items-center lg:items-start">
             <button className="w-[210px] tracking-[4px] mt-8 py-2 text-xl text-white bg-black"
@@ -153,7 +153,7 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
               ADD TO CART
             </button>
             <Link
-            href={`AR/${producto.slug.current}`}
+            href={`AR/${producto?.slug.current}`}
             >
             <button className="w-[210px] tracking-[4px] py-1 text-md mt-3 border-[1px] border-black ">
               <div className="flex flex-row  justify-center gap-2">
