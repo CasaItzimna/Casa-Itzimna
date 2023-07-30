@@ -11,7 +11,6 @@ import { AppContext } from "@/context/StateContext";
 import { useRouter } from "next/router";
 
 function ProductoModal({ producto, isOpen, onRequestClose }) {
-  console.log(producto);
   const [opcion, setOpcion] = useState("opcion1");
   console.log(opcion);
   const {carritoProductos, setCarritoProductos} = AppContext()
