@@ -47,14 +47,17 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
   };
 
   return (
+    
     <Modal
       show={isOpen}
       onClose={onRequestClose}
       className="modal-overlay"
       overlayClassName="modal-overlay"
     >
-      
-      <div className="w-full h-full flex flex-col justify-center">
+      {
+        producto &&
+        <div>
+           <div className="w-full h-full flex flex-col justify-center">
         <div className="flex flex-col place-items-center lg:place-content-start lg:flex-row">
           {/* Columna izquierda */}
           <div className="flex flex-col lg:w-[500px] p-4">
@@ -187,6 +190,10 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
         <Image src={cerrar} alt="cerrar boton " className="w-[80%] lg:w-[30px] h-[80%] lg:h-[30px]" />
         </div>
       </button>
+        </div>
+      }
+      
+     
     </Modal>
   );
 }
