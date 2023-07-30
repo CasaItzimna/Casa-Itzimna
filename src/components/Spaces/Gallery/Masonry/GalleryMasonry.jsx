@@ -40,11 +40,11 @@ import terrace8 from './img/TERRACE/terrace_8.jpg'
 import terrace9 from './img/TERRACE/terrace_9.jpg'
 import terrace10 from './img/TERRACE/terrace_10.jpg'
 
-import Kitchen1 from './Img/Kitchen2/1.jpg'
+/* import Kitchen1 from './Img/Kitchen2/1.jpg'
 import Kitchen2 from './Img/Kitchen2/2.jpg'
 import Kitchen3 from './Img/Kitchen2/3.jpg'
 import Kitchen4 from './Img/Kitchen2/4.jpg'
-import Kitchen5 from './Img/Kitchen2/5.jpg'
+import Kitchen5 from './Img/Kitchen2/5.jpg' */
 import Kitchen6 from './img/Kitchen/Kitchen-6.jpg'
 import Kitchen7 from './img/Kitchen/Kitchen-7.jpg'
 import Kitchen8 from './img/Kitchen/Kitchen-8.jpg'
