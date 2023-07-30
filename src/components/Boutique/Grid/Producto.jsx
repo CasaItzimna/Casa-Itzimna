@@ -42,13 +42,19 @@ function Producto({producto}) {
             >
                 VIEW DETAILS
             </button>
-            
-      <ProductoModal
+            {
+              producto?
+              <ProductoModal
         producto={producto}
         isOpen={modalOpen}
         onRequestClose={closeModal}
         setModalOpen={setModalOpen}
       />
+      :
+      null
+            }
+            
+      
                 </div>
             </div>
             </div>
