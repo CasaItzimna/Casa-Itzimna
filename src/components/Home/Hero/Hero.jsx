@@ -1,15 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import slider1 from "../../../assets/Home/slider1.jpg";
-import hero1 from "../../../assets/Home/hero3.png";
-import hero from "./hero.jpg";
-import hero2 from "./hero2.jpg";
-import hero3 from "./hero3.jpg";
-import hero4 from "./hero4.jpg";
-import hero5 from "./hero5.jpg";
-import hero6 from "./hero6.jpg";
-import hero7 from "./hero7.jpg";
-import hero8 from "./hero8.jpg";
+
 import hero9 from "./hero9.jpg";
 import { FaUsers } from "react-icons/fa";
 import { BsCalendar3 } from "react-icons/bs";

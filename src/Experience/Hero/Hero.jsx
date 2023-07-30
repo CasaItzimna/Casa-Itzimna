@@ -1,10 +1,5 @@
 import Image from 'next/image';
 import React from 'react'
-import hero1 from './hero.png'
-import hero from './hero.jpg'
-import hero2 from './hero2.jpg'
-import hero3 from './hero3.jpg'
-import hero4 from './hero4.jpg'
 import hero5 from './hero5.jpg'
 
 
