@@ -14,7 +14,7 @@ function Grid({ json }) {
   }, []);
 
 
-  if (!productos || !Array.isArray(productos) || productos.length === 0) {
+  if (!productos ) {
     // Renderizar un mensaje de carga o un mensaje de "No hay productos disponibles" si el array está vacío.
     return <div>Cargando productos o no hay productos disponibles.</div>;
   }
