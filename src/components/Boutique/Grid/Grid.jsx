@@ -12,10 +12,13 @@ function Grid({ json }) {
   useEffect(() => {
     getProductos();
   }, []);
+  
+  if (!productos) {
+    // Renderizar un mensaje de carga mientras se obtienen los datos
+    return <div>Cargando productos...</div>;
+  }
 
-  console.log(productos);
 
-  console.log(productos[0]?.image[0].asset._ref);
   return (
     <div className="w-full h-full flex justify-center  relative">
         <div className="hidden h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
