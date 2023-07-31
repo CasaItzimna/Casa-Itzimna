@@ -21,6 +21,10 @@ function Producto({producto}) {
       // Restaura la URL original
       window.history.pushState(null, '', '/Boutique'); // Reemplaza "/" por la URL original de tu tienda
     };
+    
+    if (!producto) {
+      return <div>Cargando...</div>; // Muestra un mensaje de carga si producto es null o undefined
+    }
 
     
 
