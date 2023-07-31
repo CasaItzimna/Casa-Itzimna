@@ -46,6 +46,10 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
     router.push('/Carrito');
   };
 
+  if (!producto) {
+    return <div>Cargando...</div>; // Muestra un mensaje de carga si producto es null o undefined
+  }
+
   return (
     
     <Modal
