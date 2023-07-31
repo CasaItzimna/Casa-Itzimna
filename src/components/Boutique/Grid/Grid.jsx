@@ -12,10 +12,11 @@ function Grid({ json }) {
   useEffect(() => {
     getProductos();
   }, []);
-  
-  if (!productos) {
-    // Renderizar un mensaje de carga mientras se obtienen los datos
-    return <div>Cargando productos...</div>;
+
+
+  if (!productos || !Array.isArray(productos) || productos.length === 0) {
+    // Renderizar un mensaje de carga o un mensaje de "No hay productos disponibles" si el array está vacío.
+    return <div>Cargando productos o no hay productos disponibles.</div>;
   }
 
 
