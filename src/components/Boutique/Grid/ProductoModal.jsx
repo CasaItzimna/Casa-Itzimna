@@ -58,8 +58,7 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
       className="modal-overlay"
       overlayClassName="modal-overlay"
     >
-      {
-        producto &&
+      
         <div>
            <div className="w-full h-full flex flex-col justify-center">
         <div className="flex flex-col place-items-center lg:place-content-start lg:flex-row">
@@ -195,7 +194,7 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
         </div>
       </button>
         </div>
-      }
+      
       
      
     </Modal>
