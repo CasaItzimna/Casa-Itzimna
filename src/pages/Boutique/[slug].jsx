@@ -9,7 +9,7 @@ import ProductoModal from './ProductoModal';
 function Product() {
   const router = useRouter();
   const { slug } = router.query;
-  const [modalOpen, setModalOpen] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
   const { product, getProduct } = AppContext();
 
   useEffect(() => {
@@ -17,12 +17,20 @@ function Product() {
       getProduct(slug)
     }
   }, [slug]);
-  console.log(product)
+
+  useEffect(() => {
+    // Abrir el modal una vez que el producto se haya cargado exitosamente
+    if (product) {
+      setModalOpen(true);
+    }
+  }, [product]);
+
+  console.log(product) 
 
   return (
     <div>
       <Boutique />
-      {product &&
+       {product && modalOpen && (
         <ProductoModal
           producto={product}
           isOpen={modalOpen}
@@ -31,7 +39,7 @@ function Product() {
             router.push('/Boutique');
           }}
         />
-      }
+      )}
     </div>
   );
 }
