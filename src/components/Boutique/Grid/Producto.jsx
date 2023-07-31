@@ -43,15 +43,13 @@ function Producto({producto}) {
                 VIEW DETAILS
             </button>
             {
-              producto?
+              producto &&
               <ProductoModal
         producto={producto}
         isOpen={modalOpen}
         onRequestClose={closeModal}
         setModalOpen={setModalOpen}
       />
-      :
-      null
             }
             
       
