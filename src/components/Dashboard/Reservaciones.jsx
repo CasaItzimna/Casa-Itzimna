@@ -6,6 +6,7 @@ import Image from "next/image";
 import Modal from "./Modal/Modal";
 import { useState } from "react";
 import fondo from './img/fondo.jpg'
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const Reservaciones = () => {
 
@@ -22,9 +23,17 @@ const Reservaciones = () => {
 
   useEffect(() => {
     getReservaciones()
-    reservaciones.sort(compararPorCheckin)
-    setReservacionesCheckin(reservaciones)
+   
+   
   }, [])
+
+  useEffect(() => {
+    if(reservaciones){
+      reservaciones.sort(compararPorCheckin)
+      setReservacionesCheckin(reservaciones)
+    }
+  }, [reservaciones])
+  
 
   const [experiences, setExperiences] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -84,6 +93,21 @@ const Reservaciones = () => {
     setAddFormData({ ...addFormData, [name]: value });
   };
 
+  const [currentPage, setCurrentPage] = useState(1)
+
+  const reservacionesPerPage = 5
+  const indexOfLastReservacion = currentPage * reservacionesPerPage
+  const indexOfFirstReservacion  = indexOfLastReservacion - reservacionesPerPage
+  const currentReservaciones = reservacionesCheckin?.slice(indexOfFirstReservacion, indexOfLastReservacion )
+
+  const handlePrevPage = () => {
+    setCurrentPage((prevPage) => prevPage - 1);
+  };
+
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
+
   
   
  
@@ -91,8 +115,8 @@ const Reservaciones = () => {
 
   return (
      <div className="h-full flex flex-row justify-center relative ">
-        <Image src={fondo} alt="fondo img" className="absolute hidden lg:flex object-cover top-0 h-full w-full left-0 z-10" />
-      <div className="h-full flex flex-col justify-center z-20">
+        <Image src={fondo} alt="fondo img" className="absolute hidden lg:flex object-cover top-0 h-full w-full left-0 z-0" />
+      <div className="h-full flex flex-col justify-center z-10">
       
       <div className="  flex flex-col lg:flex-row justify-between lg:mt-8">
 
@@ -104,22 +128,35 @@ const Reservaciones = () => {
       >+ AGREGAR </div>
     </div>
       </div>
-    <div className="h-full  grid grid-cols-1 md:grid-cols-2  mt-8 lg:mt-0 gap-4 lg:overflow-y-scroll">
+    <div className="  grid grid-cols-1 md:grid-cols-2  mt-8 lg:mt-0 gap-4 lg:overflow-y-scroll 2xl:overflow-y-hidden">
 
     
     {isLoading ? (
   <p>Cargando Reservaciones...</p>
 ) : (
  
-  reservacionesCheckin && reservacionesCheckin.length > 0 ? (
-    reservacionesCheckin.map((reservacion) => (
+  currentReservaciones && currentReservaciones.length > 0 ? (
+    currentReservaciones.map((reservacion) => (
       <Reservacion key={reservacion._id} reservacion={reservacion} />
     ))
     
+    
+    
   ) : (
-    <span>No hay reservaciones</span>
+    <div className="w-[350px] h-[350px]">
+    <span className="lg:text-white">No hay reservaciones</span>
+      </div>
   )
 )}
+</div>
+<div  className="flex flex-row justify-center gap-8 mt-8 mb-8">
+
+<button onClick={handlePrevPage} >
+        <FaArrowLeft className={currentPage == 1? "hidden":"text-[#d3cbc0] lg:text-white text-3xl"}/>
+      </button>
+      <button onClick={handleNextPage} >
+        <FaArrowRight className={currentReservaciones.length < reservacionesPerPage? "hidden": "text-[#d3cbc0] lg:text-white text-3xl "}/>
+      </button>
 </div>
   </div>
   <Modal show={showModal} onClose={handleCloseModal}>

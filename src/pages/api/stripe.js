@@ -36,6 +36,7 @@ export default async function handler(req, res) {
                     /* Puedes incluir más objetos para agregar más productos a la sesión de pago */
                 success_url: `${req.headers.origin}/Confirmacion?session_id={CHECKOUT_SESSION_ID}`,
                 cancel_url: `${req.headers.origin}/ErrorPago`,
+                
             }
 
             // Create Checkout Sessions from body params.

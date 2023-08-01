@@ -7,6 +7,7 @@ import Image from "next/image";
 import triangulo from '../../assets/Icons/triangulo.png'
 import Modal from "./Modal/Modal";
 import fondo from './img/fondo.jpg'
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 
 const Facturas = () => {
@@ -15,6 +16,23 @@ const Facturas = () => {
   useEffect(() => {
     getFacturas();
   }, []);
+  console.log(facturas)
+
+  const [facturasCheckin, setFacturasCheckin] = useState([])
+
+
+  function compararPorCheckin(a, b) {
+    const fechaCheckinA = new Date(a._createdAt);
+    const fechaCheckinB = new Date(b._createdAt);
+    return fechaCheckinA - fechaCheckinB;
+  }
+
+  useEffect(() => {
+    if(facturas){
+      facturas.sort(compararPorCheckin)
+      setFacturasCheckin(facturas)
+    }
+  }, [facturas])
 
   const [showModal, setShowModal] = useState(false);
 
@@ -55,6 +73,21 @@ const Facturas = () => {
     setAddFormData({ ...addFormData, [name]: value });
   };
 
+  const [currentPage, setCurrentPage] = useState(1)
+
+  const facturasPerPage = 10
+  const indexOfLastFactura = currentPage * facturasPerPage
+  const indexOfFirstFactura  = indexOfLastFactura - facturasPerPage
+  const currentFacturas = facturasCheckin?.slice(indexOfFirstFactura, indexOfLastFactura )
+
+  const handlePrevPage = () => {
+    setCurrentPage((prevPage) => prevPage - 1);
+  };
+
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  };
+
   return (
     <>
     <div className="h-full w-full flex flex-row justify-center  relative ">
@@ -75,7 +108,7 @@ const Facturas = () => {
         <div className="w-full border-[2px] rounded-[7px] px-8 py-8 bg-white">
           {isLoading ? (
             <p>Cargando facturas...</p>
-          ) : facturas && facturas.length > 0 ? (
+          ) : currentFacturas && currentFacturas.length > 0 ? (
             <table className="w-full text-center ">
               <thead>
                 <tr>
@@ -88,14 +121,26 @@ const Facturas = () => {
                 </tr>
               </thead>
               <tbody>
-                {facturas.map((factura, index) => (
+                {currentFacturas.map((factura, index) => (
                   <Factura index={index} key={factura._id} factura={factura} />
                 ))}
               </tbody>
             </table>
+
           ) : (
-            <span>No hay facturas</span>
+            <div className="w-[350px] h-[350px]">
+            <span className="lg:text-white">No hay facturas</span>
+              </div>
           )}
+          <div  className="flex flex-row justify-center gap-8 mt-8">
+
+<button onClick={handlePrevPage} >
+        <FaArrowLeft className={currentPage == 1? "hidden":"text-[#d3cbc0] text-3xl"}/>
+      </button>
+      <button onClick={handleNextPage} >
+        <FaArrowRight className={currentFacturas.length < facturasPerPage? "hidden": "text-[#d3cbc0] text-3xl "}/>
+      </button>
+</div>
         </div>
       </div>
     </div>

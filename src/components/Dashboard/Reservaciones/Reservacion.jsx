@@ -6,6 +6,10 @@ import bote from "../../../assets/Icons/bote.png";
 import editar from "../../../assets/Icons/editar.png";
 import Image from "next/image";
 
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+
 function Reservacion({ reservacion }) {
   const { updateReservacion, deleteReservacion } = AppContext();
 
@@ -82,15 +86,34 @@ function Reservacion({ reservacion }) {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleDeleteClick = async () => {
-    try {
+ const handleDeleteClick = async () => {
+  try {
+    const result = await Swal.fire({
+      title: '¿Estás seguro?',
+      text: 'Esta acción eliminará la reservación. ¡Esta acción no se puede deshacer!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'Cancelar',
+    });
+
+    if (result.isConfirmed) {
+      // Aquí realizar la eliminación de la reservación
       await deleteReservacion(reservacion._id);
-      console.log("Reservacion eliminada");
+      console.log('Reservacion eliminada');
       getReservaciones();
-    } catch (error) {
-      console.error("Error al eliminar reservacion:", error);
+
+      Swal.fire('Eliminada', 'La reservación ha sido eliminada', 'success');
+    } else if (result.dismiss === Swal.DismissReason.cancel) {
+      // El usuario ha cancelado la eliminación
+      Swal.fire('Cancelado', 'La eliminación ha sido cancelada', 'error');
     }
-  };
+  } catch (error) {
+    console.error('Error al eliminar reservacion:', error);
+    Swal.fire('Error', 'Ha ocurrido un error al eliminar la reservación', 'error');
+  }
+};
+
 
   const handleSwitchChange = (event) => {
     setIsSwitchChecked(event.target.checked);
@@ -101,23 +124,43 @@ function Reservacion({ reservacion }) {
     const updatedFormData = {
       ...formData,
     };
-    updatedFormData.experience = experiences
+    updatedFormData.experience = experiences;
     console.log(updatedFormData);
-    try {
-      console.log(reservacion._id);
-      const respuesta = await updateReservacion(
-        reservacion._id,
-        updatedFormData
-      );
-      console.log("la respuesta fue", respuesta);
-
-      setShowModal(false);
-    } catch (error) {
-      console.log(error);
+  
+    // Mostrar una alerta de confirmación antes de enviar los datos actualizados
+    const confirmationResult = await Swal.fire({
+      title: '¿Estás seguro?',
+      text: '¿Deseas actualizar la reservación?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, actualizar',
+      cancelButtonText: 'Cancelar',
+    });
+  
+    if (confirmationResult.isConfirmed) {
+      try {
+        console.log(reservacion._id);
+        const respuesta = await updateReservacion(reservacion._id, updatedFormData);
+        console.log('la respuesta fue', respuesta);
+  
+        setShowModal(false);
+  
+        // Mostrar una alerta de éxito si la actualización fue exitosa
+        Swal.fire('Actualizada', 'La reservación ha sido actualizada correctamente', 'success');
+      } catch (error) {
+        console.log(error);
+  
+        // Mostrar una alerta de error si la actualización falló
+        Swal.fire('Error', 'Ha ocurrido un error al actualizar la reservación', 'error');
+      }
+    } else {
+      // El usuario ha cancelado la actualización
+      Swal.fire('Cancelada', 'La actualización ha sido cancelada', 'info');
     }
-
+  
     await getReservaciones();
   };
+  
 
   
 

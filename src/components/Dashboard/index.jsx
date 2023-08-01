@@ -155,6 +155,18 @@ const Dashboard = () => {
               </span>{" "}
               Facturas
             </li>
+            <li
+              className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
+              onClick={() => {
+                setActive(false);
+                logout()
+              }}
+            >
+              <span>
+                <FaReceipt className="text-2xl text-white" />
+              </span>{" "}
+               Cerrar Sesión
+            </li>
           </ul>
         </div>
       </div>

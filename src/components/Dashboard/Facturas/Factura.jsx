@@ -4,6 +4,10 @@ import { AppContext } from "@/context/StateContext";
 import Image from "next/image";
 import bote from '../../../assets/Icons/bote.png'
 
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+
 
 
 function Factura({ factura, index  }) {
@@ -55,12 +59,29 @@ function Factura({ factura, index  }) {
 
   const handleDeleteClick = async () => {
     try {
-      
-      await deleteFactura(factura._id);
-      console.log("Factura eliminada");
-      getFacturas()
+      const result = await Swal.fire({
+        title: '¿Estás seguro?',
+        text: 'Esta acción eliminará la factura. ¡Esta acción no se puede deshacer!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Sí, eliminar',
+        cancelButtonText: 'Cancelar',
+      });
+  
+      if (result.isConfirmed) {
+        // Aquí realizar la eliminación de la factura
+        await deleteFactura(factura._id);
+        console.log('factura eliminada');
+        getFacturas();
+  
+        Swal.fire('Eliminada', 'La factura ha sido eliminada', 'success');
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        // El usuario ha cancelado la eliminación
+        Swal.fire('Cancelado', 'La eliminación ha sido cancelada', 'error');
+      }
     } catch (error) {
-      console.error("Error al eliminar factura:", error);
+      console.error('Error al eliminar factura:', error);
+      Swal.fire('Error', 'Ha ocurrido un error al eliminar la factura', 'error');
     }
   };
   
@@ -78,19 +99,38 @@ function Factura({ factura, index  }) {
       state: isSwitchChecked,
     };
     console.log(updatedFormData);
-    try {
-      const respuesta = await updateFactura(factura._id, updatedFormData);
-      console.log('la respuesta fue', respuesta)
-      
-      setShowModal(false);
-      
-      
-    } catch (error) {
-      console.log(error)
+  
+    // Mostrar una alerta de confirmación antes de enviar los datos actualizados
+    const confirmationResult = await Swal.fire({
+      title: '¿Estás seguro?',
+      text: '¿Deseas actualizar la factura?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sí, actualizar',
+      cancelButtonText: 'Cancelar',
+    });
+  
+    if (confirmationResult.isConfirmed) {
+      try {
+        const respuesta = await updateFactura(factura._id, updatedFormData);
+        console.log('la respuesta fue', respuesta);
+  
+        setShowModal(false);
+  
+        // Mostrar una alerta de éxito si la actualización fue exitosa
+        Swal.fire('Actualizada', 'La factura ha sido actualizada correctamente', 'success');
+      } catch (error) {
+        console.log(error);
+  
+        // Mostrar una alerta de error si la actualización falló
+        Swal.fire('Error', 'Ha ocurrido un error al actualizar la factura', 'error');
+      }
+    } else {
+      // El usuario ha cancelado la actualización
+      Swal.fire('Cancelada', 'La actualización ha sido cancelada', 'info');
     }
-
-    await getFacturas()
-   
+  
+    await getFacturas();
   };
 
 
