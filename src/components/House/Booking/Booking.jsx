@@ -222,6 +222,7 @@ const [total, setTotal] = useState(0)
   const handleSubmit = async () => {
     event.preventDefault();
     console.log(formData);
+    
     formData.checkin = inicio;
     formData.checkout = fin;
     formData.guests = selectedGuests;
@@ -231,9 +232,14 @@ const [total, setTotal] = useState(0)
     formData.tipo = "reservacion"
     formData.price = precio
     console.log(formData);
+    if(!inicio && !fin){
+      formData.checkin = hoy
+      formData.checkout = despues
+    }
     if (
       formData.name &&
       formData.tel &&
+      formData.plan&&
       formData.email &&
       formData.guests &&
       formData.checkin &&
@@ -352,6 +358,105 @@ const [total, setTotal] = useState(0)
                 />
                 <div className="flex flex-col h-full w-full col-span-2">
                   <div className="flex flex-col h-full w-full ">
+                  <div className="flex flex-col items-center">
+                      <h3 className="text-[#d3cbc0] font-Geometrica uppercase tracking-[2px]">
+                        GUEST NUMBER
+                      </h3>
+                      <div className="flex flex-row justify-center gap-4 text-black mt-2 mb-4">
+                        <div
+                          onClick={() => {
+                            setSelectedGuests("1-2");
+                            localStorage.setItem("guests", "1-2");
+                          }}
+                          className={
+                            selectedGuests === "1-2"
+                              ? `border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer bg-[#d3cbc0]`
+                              : `border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer`
+                          }
+                        >
+                          <div
+                            className={
+                              selectedGuests === "1-2"
+                                ? `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`
+                                : `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#d3cbc0] `
+                            }
+                          ></div>
+                        </div>
+                        <label
+                          htmlFor="1-2"
+                          className={`font-Geometrica ${
+                            selectedGuests === "1-2" ? "text-[#d3cbc0]" : ""
+                          }`}
+                        >
+                          1-2
+                        </label>
+                        <div
+                          onClick={() => {
+                            setSelectedGuests("3-5");
+                            localStorage.setItem("guests", "3-5");
+                          }}
+                          className={
+                            selectedGuests === "3-5"
+                              ? `border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer bg-[#d3cbc0]`
+                              : `border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer`
+                          }
+                        >
+                          <div
+                            className={
+                              selectedGuests === "3-5"
+                                ? `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`
+                                : `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#d3cbc0] `
+                            }
+                          ></div>
+                        </div>
+                        <label
+                          htmlFor="3-5"
+                          className={`font-Geometrica ${
+                            selectedGuests === "3-5" ? "text-[#d3cbc0]" : ""
+                          }`}
+                        >
+                          3-5
+                        </label>
+                        <div
+                          onClick={() => {
+                            setSelectedGuests("6-8");
+                            localStorage.setItem("guests", "6-8");
+                          }}
+                          className={
+                            selectedGuests === "6-8"
+                              ? `border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer bg-[#d3cbc0]`
+                              : `border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer`
+                          }
+                        >
+                          <div
+                            className={
+                              selectedGuests === "6-8"
+                                ? `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`
+                                : `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#d3cbc0] `
+                            }
+                          ></div>
+                        </div>
+                        <label
+                          htmlFor="6-8"
+                          className={`font-Geometrica ${
+                            selectedGuests === "6-8" ? "text-[#d3cbc0]" : ""
+                          }`}
+                        >
+                          6-8
+                        </label>
+                      </div>
+                    </div>
+                    <select
+                  name="plan"
+                  value={plan}
+                  onChange={(e) => setPlan(e.target.value)}
+                  className="border-[1px] py-1 border-[#d3cbc0] font-Geometrica text-gray-500 col-span-2"
+                >
+                  <option className="text-center" value="">CHOOSE A PLAN</option>
+                  <option className="text-center" value="select">SELECT</option>
+                  <option className="text-center" value="luxury">LUXURY</option>
+                  <option className="text-center" value="premier">PREMIER</option>
+                </select>
                     <div className="grid grid-cols-2 mt-2 mb-4 px-4 pb-4 pt-2 w-full h-full border-t-[1px] border-b-[1px] border-[#d3cbc0] gap-4">
                       <div className="flex flex-col items-center border-r-[1px] border-[#d3cbc0]  ">
                         <p className="text-[#d3cbc0] font-Geometrica uppercase mb-2 tracking-[2px]">
@@ -442,6 +547,9 @@ const [total, setTotal] = useState(0)
 
                     <div className={`mt-4 mb-8 ${!show ? "hidden" : "block"}`}>
                       <Calendario
+                      plan = {plan}
+                      planPrecio = {planPrecio}
+                      guestsPrecio={guestsPrecio}
                         inicio={inicio}
                         fin={fin}
                         setInicio={setInicio}
@@ -449,107 +557,10 @@ const [total, setTotal] = useState(0)
                         setShow={setShow}
                       />
                     </div>
-                    <div className="flex flex-col items-center">
-                      <h3 className="text-[#d3cbc0] font-Geometrica uppercase tracking-[2px]">
-                        GUEST NUMBER
-                      </h3>
-                      <div className="flex flex-row justify-center gap-4 text-black mt-2 mb-4">
-                        <div
-                          onClick={() => {
-                            setSelectedGuests("1-2");
-                            localStorage.setItem("guests", "1-2");
-                          }}
-                          className={
-                            selectedGuests === "1-2"
-                              ? `border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer bg-[#d3cbc0]`
-                              : `border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer`
-                          }
-                        >
-                          <div
-                            className={
-                              selectedGuests === "1-2"
-                                ? `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`
-                                : `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#d3cbc0] `
-                            }
-                          ></div>
-                        </div>
-                        <label
-                          htmlFor="1-2"
-                          className={`font-Geometrica ${
-                            selectedGuests === "1-2" ? "text-[#d3cbc0]" : ""
-                          }`}
-                        >
-                          1-2
-                        </label>
-                        <div
-                          onClick={() => {
-                            setSelectedGuests("3-5");
-                            localStorage.setItem("guests", "3-5");
-                          }}
-                          className={
-                            selectedGuests === "3-5"
-                              ? `border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer bg-[#d3cbc0]`
-                              : `border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer`
-                          }
-                        >
-                          <div
-                            className={
-                              selectedGuests === "3-5"
-                                ? `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`
-                                : `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#d3cbc0] `
-                            }
-                          ></div>
-                        </div>
-                        <label
-                          htmlFor="3-5"
-                          className={`font-Geometrica ${
-                            selectedGuests === "3-5" ? "text-[#d3cbc0]" : ""
-                          }`}
-                        >
-                          3-5
-                        </label>
-                        <div
-                          onClick={() => {
-                            setSelectedGuests("6-8");
-                            localStorage.setItem("guests", "6-8");
-                          }}
-                          className={
-                            selectedGuests === "6-8"
-                              ? `border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer bg-[#d3cbc0]`
-                              : `border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer`
-                          }
-                        >
-                          <div
-                            className={
-                              selectedGuests === "6-8"
-                                ? `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`
-                                : `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#d3cbc0] `
-                            }
-                          ></div>
-                        </div>
-                        <label
-                          htmlFor="6-8"
-                          className={`font-Geometrica ${
-                            selectedGuests === "6-8" ? "text-[#d3cbc0]" : ""
-                          }`}
-                        >
-                          6-8
-                        </label>
-                      </div>
-                    </div>
+                    
                   </div>
                 </div>
-                <select
-                  name="plan"
-                  value={plan}
-                  onChange={(e) => setPlan(e.target.value)}
-                  className="border-[1px] py-1 border-[#d3cbc0] font-Geometrica text-gray-500 col-span-2"
-                >
-                  <option className="text-center" value="">CHOOSE A PLAN</option>
-                  <option className="text-center" value="select">SELECT</option>
-                  <option className="text-center" value="luxury">LUXURY</option>
-                  <option className="text-center" value="premier">PREMIER</option>
-                </select>
+                
                 <div className="flex flex-row justify-center gap-4 col-span-2">
                   <div className="flex flex-col ">
 

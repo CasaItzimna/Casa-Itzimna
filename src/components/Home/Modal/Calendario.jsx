@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { RxCross2 } from "react-icons/rx";
 
-function Calendario({ inicio, fin, setInicio, setFin, setShow }) {
+function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio, guestsPrecio }) {
+  console.log(plan, planPrecio)
+  console.log(guestsPrecio)
   const [actualMonth, setActualMonth] = useState(1);
 
   const monthNames = [
@@ -59,6 +61,8 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow }) {
   const days = [];
   for (let i = 1; i <= daysInMonth; i++) {
     days.push(
+      
+      
       <div
         key={new Date(currentYear, today.getMonth(), i)}
         className={`mb-2 mt-4 relative
@@ -106,7 +110,10 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow }) {
           }
         }}
       >
+        <div className="flex flex-col">
+        <span className="text-[10px]">${planPrecio + guestsPrecio}</span>
         {i}
+      </div>
       </div>
     );
   }
@@ -174,7 +181,10 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow }) {
           handleDayClick(new Date(currentYear, today.getMonth() + 1, i))
         }
       >
+        <div className="flex flex-col">
+        <span className="text-[10px]">${planPrecio + guestsPrecio}</span>
         {i}
+        </div>
       </div>
     );
   }
