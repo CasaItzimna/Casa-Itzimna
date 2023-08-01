@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { RxCross2 } from "react-icons/rx";
+import {FaAngleLeft, FaAngleRight} from 'react-icons/fa'
 
 function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio, guestsPrecio }) {
   console.log(plan, planPrecio)
   console.log(guestsPrecio)
   const [actualMonth, setActualMonth] = useState(1);
+  const [sumMonth, setSumMonth] = useState(1)
+
 
   const monthNames = [
     "Ene",
@@ -22,22 +25,21 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
     "Dic",
   ];
   const today = new Date();
-  console.log(today);
-  console.log(today.getDay());
-  console.log(today.getMonth());
-  console.log(today.getDate());
-  const currentMonthName = monthNames[today.getMonth()];
+  function getTodayMonth(date) {
+    return new Date(date.getFullYear(), date.getMonth()+sumMonth-1, 1);
+  }
+  const todayMonth = getTodayMonth(today)
+  const currentMonthName = monthNames[todayMonth.getMonth()];
   console.log(currentMonthName);
-  const currentYear = today.getFullYear();
-  console.log(currentYear);
-  const firstDayOfMonth = new Date(currentYear, today.getMonth(), 1).getDay();
-  console.log(firstDayOfMonth);
+  const currentYear = todayMonth.getFullYear();
+  const firstDayOfMonth = new Date(currentYear, today.getMonth()+sumMonth-1, 1).getDay();
   const daysInMonth = new Date(
     currentYear,
-    today.getMonth() + actualMonth,
+    today.getMonth() + sumMonth ,
     0
   ).getDate();
   console.log(daysInMonth);
+
 
   function handleDayClick(day) {
     console.log(day);
@@ -67,22 +69,32 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
         key={new Date(currentYear, today.getMonth(), i)}
         className={`mb-2 mt-4 relative
         ${
-          i > today.getDate()
-            ? "cursor-pointer lg:hover:bg-[#d3cbc0] lg:hover:mx-2 lg:hover:rounded-full"
-            : "text-gray-200"
+          i > today.getDate() &&
+             "cursor-pointer lg:hover:bg-[#d3cbc0] lg:hover:mx-2 lg:hover:rounded-full"
+            
+        }
+        ${
+          today.getMonth() == today.getMonth()+sumMonth-1 &&
+          i < today.getDate() &&
+           "text-gray-200"
+        }
+        ${
+          today.getMonth() != today.getMonth()+sumMonth-1 &&
+          "cursor-pointer  lg:hover:bg-[#d3cbc0] lg:hover:mx-2 lg:hover:rounded-full"
         }
           ${
+            today.getMonth() == today?.getMonth() +sumMonth -1 &&
             i === today.getDate()
               ? " text-white bg-[#d3cbc0]  rounded-full mx-0 lg:mx-2 "
               : "text-black"
           } 
         ${
-          i === inicio?.getDate() && inicio?.getMonth() === today.getMonth()
+          i === inicio?.getDate() && inicio?.getMonth() === today.getMonth() + sumMonth -1
             ? "bg-[#d3cbc0] rounded-l-full"
             : null
         } 
         ${
-          i === fin?.getDate() && fin?.getMonth() === today.getMonth()
+          i === fin?.getDate() && fin?.getMonth() === today.getMonth() + sumMonth -1
             ? "bg-[#d3cbc0] rounded-r-full"
             : null
         } 
@@ -91,7 +103,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
         fin?.getDate() &&
         i > inicio?.getDate() &&
         i < fin?.getDate() &&
-        inicio?.getMonth() === today.getMonth()
+        inicio?.getMonth() === today.getMonth()  + sumMonth-1
           ? "bg-[#c7c1b8]"
           : null
       }
@@ -99,14 +111,54 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
           inicio?.getDate() &&
           fin?.getDate() &&
           inicio?.getMonth() != fin?.getMonth() &&
+          inicio?.getMonth() === today?.getMonth() +sumMonth-1 &&
           i > inicio?.getDate()
             ? "bg-[#c7c1b8]"
             : null
         }
+        ${
+          inicio?.getMonth() &&
+          fin?.getMonth() &&
+          inicio?.getMonth() != fin?.getMonth() &&
+          today.getMonth() == inicio?.getMonth()&&
+          i> inicio?.getDate() &&
+          "bg-[#c7c1b8]"
+        }
+        ${
+          inicio?.getMonth() &&
+          fin?.getMonth() &&
+          inicio?.getMonth() != fin?.getMonth() &&
+          today.getMonth()+sumMonth-1 == fin?.getMonth()&&
+          i< fin?.getDate() &&
+          "bg-[#c7c1b8]"
+        }
+       
         `}
+
+        //TO DO
+     /*  Problema cuando reservo la casa por mas de 2 meses 
+      Problema cuando reservo el siguiente año 
+      Que No se vean las fechas ya reservadas
+      */
+
+       /*  ${
+          inicio?.getMonth() &&
+          fin?.getMonth() &&
+          inicio?.getMonth() != fin?.getMonth() &&
+          today.getMonth()+sumMonth-1<fin.getMonth()   &&
+          today.getMonth()+sumMonth-1> inicio.getMonth()&&
+           
+          "bg-[#c7c1b8]"
+        }  */
         onClick={() => {
-          if (i > today.getDate()) {
-            handleDayClick(new Date(currentYear, today.getMonth(), i));
+          if (today.getMonth() == today.getMonth()+sumMonth-1) {
+            if( i > today.getDate()){
+              handleDayClick(new Date(currentYear, today.getMonth()+sumMonth-1, i));
+            }
+            
+          }
+          else{
+            handleDayClick(new Date(currentYear, today.getMonth()+sumMonth-1, i));
           }
         }}
       >
@@ -123,7 +175,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
   }
 
   function getNextMonth(date) {
-    return new Date(date.getFullYear(), date.getMonth() + 1, 1);
+    return new Date(date.getFullYear(), date.getMonth() + sumMonth, 1);
   }
 
   const nextMonth = getNextMonth(today);
@@ -144,16 +196,16 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
   for (let i = 1; i <= nextMonthDaysInMonth; i++) {
     nextMonthDays.push(
       <div
-        key={new Date(currentYear, today.getMonth(), i)}
+        key={new Date(currentYear, today.getMonth()+ sumMonth, i)}
         className={`mb-2 mt-4 relative cursor-pointer lg:hover:bg-[#d3cbc0] lg:hover:mx-2 lg:hover:rounded-full
        
         ${
-          i === inicio?.getDate() && inicio?.getMonth() === today.getMonth() + 1
+          i === inicio?.getDate() && inicio?.getMonth() === today.getMonth() + sumMonth
             ? "bg-[#d3cbc0] rounded-l-full"
             : null
         } 
         ${
-          i === fin?.getDate() && fin?.getMonth() === today.getMonth() + 1
+          i === fin?.getDate() && fin?.getMonth() === today.getMonth() + sumMonth
             ? "bg-[#d3cbc0] rounded-r-full"
             : null
         } 
@@ -162,7 +214,17 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
         fin?.getDate() &&
         i > inicio?.getDate() &&
         i < fin?.getDate() &&
-        fin?.getMonth() === today.getMonth() + 1
+        fin?.getMonth() === today.getMonth() + sumMonth
+          ? "bg-[#c7c1b8]"
+          : null
+      }
+      
+      ${
+        inicio?.getDate() &&
+        fin?.getDate() &&
+        inicio?.getMonth() != fin?.getMonth() &&
+        fin?.getMonth() === today?.getMonth() + sumMonth &&
+        i < fin?.getDate()
           ? "bg-[#c7c1b8]"
           : null
       }
@@ -170,15 +232,17 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
         inicio?.getDate() &&
         fin?.getDate() &&
         inicio?.getMonth() != fin?.getMonth() &&
-        i < fin?.getDate()
+        inicio?.getMonth() === today?.getMonth() + sumMonth &&
+        i > inicio?.getDate()
           ? "bg-[#c7c1b8]"
           : null
       }
+      
              
              
              `}
         onClick={() =>
-          handleDayClick(new Date(currentYear, today.getMonth() + 1, i))
+          handleDayClick(new Date(currentYear, today.getMonth() + sumMonth, i))
         }
       >
         <div className="flex flex-col">
@@ -208,8 +272,8 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
               />
             </div>
             <div className="flex flex-row justify-center mb-4">
-              <div className="text-xl font-bold text-black">
-                {currentMonthName} {currentYear}
+              <div className="text-xl font-bold text-black flex flex-row justify-center items-center gap-4">
+               <FaAngleLeft className={sumMonth-1 == 0? "hidden":"cursor-pointer z-10"} onClick={()=>setSumMonth(sumMonth-1)}  /><span>{currentMonthName} {currentYear}</span> 
               </div>
             </div>
             <div className="grid grid-cols-7 text-center text-black font-bold">
@@ -235,8 +299,8 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
             </div>
             <div className="flex flex-row justify-center mb-4">
               <div> </div>
-              <div className="text-xl font-bold text-black">
-                {nextMonthName} {nextMonthYear}
+              <div className="text-xl font-bold text-black flex flex-row justify-center items-center gap-4">
+                {nextMonthName} {nextMonthYear}<FaAngleRight className="cursor-pointer z-10" onClick={()=>setSumMonth(sumMonth+1)} />
               </div>
             </div>
             <div className="grid grid-cols-7 text-center font-bold text-black">
