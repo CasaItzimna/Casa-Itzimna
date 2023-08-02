@@ -2,12 +2,23 @@ import React, { useState } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { RxCross2 } from "react-icons/rx";
 import {FaAngleLeft, FaAngleRight} from 'react-icons/fa'
+import { AppContext } from "@/context/StateContext";
+import { useEffect } from "react";
 
 function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio, guestsPrecio }) {
   console.log(plan, planPrecio)
   console.log(guestsPrecio)
   const [actualMonth, setActualMonth] = useState(1);
   const [sumMonth, setSumMonth] = useState(1)
+
+  const {getReservaciones, reservaciones} = AppContext()
+
+  useEffect(() => {
+    getReservaciones()
+  }, [])
+
+  console.log(reservaciones)
+  
 
 
   const monthNames = [

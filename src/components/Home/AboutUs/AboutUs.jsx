@@ -59,7 +59,7 @@ function AboutUs({ json }) {
                 </div>
                 <div className="w-full flex flex-row justify-center xl:justify-start">
 
-                <p className=" text-justify font-ethereal text-xl px-8 md:px-0 lg:px-0 md:w-[600px] lg:w-[480px] text-[#31302c] tracking-[4px]">
+                <p className=" text-justify  font-ethereal text-xl px-8 md:px-0 lg:px-0 md:w-[600px] lg:w-[480px] text-[#31302c] tracking-[4px]">
                   {json.About.text}
                 </p>
                 </div>
