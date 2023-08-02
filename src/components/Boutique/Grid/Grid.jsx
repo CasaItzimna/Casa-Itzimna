@@ -1,9 +1,10 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 
 import Producto from "./Producto";
 import { AppContext } from "@/context/StateContext";
 import { useEffect } from "react";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 function Grid({ json }) {
 
@@ -12,6 +13,21 @@ function Grid({ json }) {
   useEffect(() => {
     getProductos();
   }, []);
+
+  const [currentPage, setCurrentPage] = useState(1)
+
+  const productosPerPage = 6
+  const indexOfLastProducto = currentPage * productosPerPage
+  const indexOfFirstProducto  = indexOfLastProducto - productosPerPage
+  const currentProductos = productos?.slice(indexOfFirstProducto, indexOfLastProducto )
+
+  const handlePrevPage = () => {
+    setCurrentPage((prevPage) => prevPage - 1);
+  };
+
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => prevPage + 1);
+  }; 
 
 
   if (!productos ) {
@@ -25,10 +41,19 @@ function Grid({ json }) {
         <div className="hidden h-[200px] w-full  bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
       <div className="flex flex-col justify-center mb-8 z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3  gap-8">
-          {productos?.map((producto, index) => (
+          {currentProductos?.map((producto, index) => (
             <Producto key={index} producto={producto} />
           ))}
         </div>
+        <div  className="flex flex-row justify-center gap-8 mt-8">
+
+<button onClick={handlePrevPage} >
+        <FaArrowLeft className={currentPage == 1? "hidden":"text-[#d3cbc0] text-3xl"}/>
+      </button>
+      <button onClick={handleNextPage} >
+        <FaArrowRight className={currentProductos.length < productosPerPage? "hidden": "text-[#d3cbc0] text-3xl "}/>
+      </button>
+</div>
       {/*   <div className="flex flex-row justify-center items-center">
           <span className="text-4xl text-[#d3cbc0] font-cinzelBold mr-2">
             {"<"}

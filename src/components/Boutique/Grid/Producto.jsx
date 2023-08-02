@@ -3,6 +3,7 @@ import { client, urlFor } from "../../../lib/client";
 import ProductoModal from './ProductoModal';
 
 function Producto({producto}) {
+  console.log(producto)
 
     const [modalOpen, setModalOpen] = useState(false);
     const [slug, setSlug] = useState('');
@@ -24,6 +25,9 @@ function Producto({producto}) {
 
     if (!producto) {
       return <div>Cargando...</div>; // Muestra un mensaje de carga si producto es null o undefined
+    }
+    if(producto?.cantidad <= 0){
+      return
     }
 
     

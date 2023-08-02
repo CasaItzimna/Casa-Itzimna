@@ -86,7 +86,7 @@ const Facturas = () => {
 
   const handleNextPage = () => {
     setCurrentPage((prevPage) => prevPage + 1);
-  };
+  }; 
 
   return (
     <>
