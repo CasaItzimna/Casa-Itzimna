@@ -4,7 +4,7 @@ import {updateReservacion} from '../../context/StateContext'
 export default async function handler(req, res) {
     if (req.method === 'POST') {
         console.log(req.body)
-        console.log(req.body.items[0].name)
+        console.log(req.body.items[0].price)
         try {
           
             const params = {

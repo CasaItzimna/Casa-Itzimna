@@ -150,6 +150,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
      /*  Problema cuando reservo la casa por mas de 2 meses 
       Problema cuando reservo el siguiente año 
       Que No se vean las fechas ya reservadas
+      Idea: cuando este seleccionado inicio y fin desaparecer cambio de mes
       */
 
        /*  ${
