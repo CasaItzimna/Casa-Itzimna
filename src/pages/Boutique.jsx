@@ -16,7 +16,9 @@ function Boutique() {
     <div>
       <Hero />
 
-      <Grid  />
+      <Grid 
+      json={json}
+      />
     </div>
   );
 }

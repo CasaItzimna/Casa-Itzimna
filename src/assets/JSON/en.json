@@ -5,8 +5,9 @@
       "option3": "HOUSE",
       "option4": "EXPERIENCE",
       "option5": "GALLERY",
-      "option6": "BOUTIQUE",
-      "option7": "CONTACT"
+      "option6": "BOUTIQUE", 
+      "option7": "CONTACT",
+      "bookButton" : "BOOK NOW"
     },
     "Footer": {
         "option1": "ABOUT US",
@@ -123,13 +124,15 @@
   "title": "Booking",
   "name": "NAME",
   "phone": "PHONE NUMBER",
+  "email": "EMAIL",
   "checkin": "CHECK IN",
   "checkout": "CHECK OUT",
-  "guests": "GUESTS",
+  "guests": "GUESTS NUMBER",
   "plan": "CHOOSE A PLAN",
   "planOption1": "SELECT",
   "planOption2": "LUXURY",
   "planOption3": "PREMIER",
+  "experiences": "EXPERIENCES",
   "addExperience" : "ADD AN EXPERIENCE",
   "bookbutton": "BOOK NOW",
   "consent": "By clicking this button, you consent to the processing of personal data and agree with the",
@@ -153,6 +156,15 @@
   "button5":"LOUNGES",
   "button6":"EXPERIENCE"
 },
+"Boutique":{
+"viewDetails" :" VIEW DETAILS",
+"description": "DESCRIPTION",
+"details": "DETAILS",
+"shipping": "SHIPPING",
+"add": "ADD TO CARRT",
+"ar": "AR VIEW",
+"share": "SHARE"
+},
 
   "Contact":{
     "Touch": "GET IN TOUCH",
@@ -171,6 +183,22 @@
     "Social": "SOCIAL MEDIA",
     "Address":"ADDRESS"
   
+},
+"Cart":{
+  "cart": "CART",
+  "payment": "PAYMENT",
+  "confirmation": "CONFIRMATION",
+  "booking" :"BOOKING DATA",
+  "summary": "SUMMARY",
+  "proceed": "PROCEED TO PAY",
+  "unforgettable": "UNFORGETTABLE EXPERIENCES AWAIT",
+  "make": "Make your visit an unparelleled journey by adding an experience to your cart.",
+  "experiences": "EXPERIENCES",
+  "our" : "OUR BOUTIQUE",
+  "price" : "PRICE FOR",
+  "arriving" : "*AT YOUR ARRIVING, PLEASE CONFIRM THE DATE OF THE SERVICE",
+  "shipping" : "*SET SHIPING AT PAYMENT",
+  "description": "EXPERIENCE DESCRIPTION"
 },
 "Confirmation":{
   "titulo": "ORDER CONFIRMATION",

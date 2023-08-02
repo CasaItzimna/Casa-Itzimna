@@ -26,7 +26,7 @@ function Find({json}) {
                 </div>
                 <div className='flex flex-col text-center'>
                     <h4 className='text-xl font-apollo text-center tracking-[4px] uppercase mb-4'>{json.Contact.Social}</h4>
-                    <div className='flex flex-row lg:flex-col justify-center lg:justify-normal gap-4'>
+                    <div className='flex flex-row lg:flex-col justify-center lg:justify-normal '>
 
                     <a href="https://www.facebook.com/CasaItzimnaboutique" target="_blank">
                     <p className='flex flex-row gap-2 justify-center font-apollo tracking-[2px]'><FaFacebookF className="text-[#d3cbc0] mt-1 text-4xl lg:text-sm"/><span className='hidden lg:flex'>CASA ITZIMNÁ BOUTIQUE</span></p>

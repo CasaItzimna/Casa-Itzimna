@@ -20,6 +20,18 @@ function Facilities({json}) {
 
   const [opcion, setOpcion] = useState('opcion1')
   console.log(opcion)
+
+  var arrfotos = [foto1,foto2,foto3]
+
+  if(opcion == "opcion1"){
+    arrfotos = [foto1,foto2,foto3]
+  }
+  if(opcion == "opcion2"){
+    arrfotos = [foto2,foto1,foto3]
+  }
+  if(opcion == "opcion3"){
+    arrfotos = [foto3,foto2,foto1]
+  }
   
   return (
     <div className="h-full  w-full  flex flex-col items-center  relative z-20 ">
@@ -134,8 +146,9 @@ function Facilities({json}) {
           <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50">
             <Image
               alt="1"
-              src={foto1}
-              className="p-2 w-full h-full object-cover "
+              src={arrfotos[0]}
+              className="p-2 w-full h-full object-cover  cursor-pointer"
+              onClick={()=>setOpcion("opcion1")}
               />
               </div>
           </div>
@@ -143,18 +156,20 @@ function Facilities({json}) {
             <div className="bg-white w-full h-[170px] shadow-2xl ">
             <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50">
               <Image
-                src={foto2}
+                src={arrfotos[1]}
                 alt="sala"
-                className="w-full h-full p-2 object-cover "
+                className="w-full h-full p-2 object-cover cursor-pointer "
+                onClick={()=>setOpcion("opcion2")}
                 />
                 </div>
             </div>
             <div className="bg-white w-full h-[170px] shadow-2xl">
             <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50">
               <Image
-                src={foto3}
+                src={arrfotos[2]}
                 alt="desayuno"
-                className="w-full h-full p-2 object-cover "
+                className="w-full h-full p-2 object-cover cursor-pointer "
+                onClick={()=>setOpcion("opcion3")}
                 />
                 </div>
             </div>
@@ -164,7 +179,7 @@ function Facilities({json}) {
           <div className="hidden mt-4 w-full lg:w-full lg:flex flex-row justify-center lg:justify-start   ">
             <div className="flex flex-col items-center 2xl:items-start w-[90%] lg:w-full xl:w-[80%]">
 
-            <p className="w-[350px] lg:w-full 2xl:w-1/2 font-PlayfairDisplay font-[700] text-lg tracking-[4px] text-justify">{json.Facilities.exploreText}</p>
+            <p className="w-[350px] lg:w-full 2xl:w-[570px] font-PlayfairDisplay font-[700] text-lg tracking-[4px] text-justify">{json.Facilities.exploreText}</p>
           <div className="w-full flex flex-row justify-center xl:justify-start">
             <div className="w-full flex flex-col items-center lg:items-start">
 

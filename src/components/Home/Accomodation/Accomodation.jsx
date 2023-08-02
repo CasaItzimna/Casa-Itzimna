@@ -111,7 +111,14 @@ function Accomodation({json}) {
 
             <Image
               alt="1"
-              src={foto1}
+              src={opcion == "opcion1"?
+              foto1:
+              opcion == "opcion2"?
+              foto2:
+              opcion == "opcion3"?
+              foto3:
+              null
+              }
               className="p-2 w-full h-full object-cover "
               />
               </div>
@@ -121,7 +128,14 @@ function Accomodation({json}) {
             <div className="bg-white w-full h-[170px] shadow-2xl ">
             <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50">
               <Image
-                src={foto2}
+                 src={opcion == "opcion1"?
+                 foto2:
+                 opcion == "opcion2"?
+                 foto1:
+                 opcion == "opcion3"?
+                 foto2:
+                 null
+                 }
                 alt="sala"
                 className="w-full h-full p-2 object-cover "
                 />
@@ -131,7 +145,14 @@ function Accomodation({json}) {
             <div className="relative w-full h-full  overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50">
 
               <Image
-                src={foto3}
+                src={opcion == "opcion1"?
+                foto3:
+                opcion == "opcion2"?
+                foto3:
+                opcion == "opcion3"?
+                foto1:
+                null
+                }
                 alt="desayuno"
                 className="w-full h-full p-2 object-cover "
                 />

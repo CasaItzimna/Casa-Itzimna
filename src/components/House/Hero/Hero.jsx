@@ -4,8 +4,12 @@ import hero1 from './herohouse.png'
 import hero from './hero.jpg'
 import hero2 from './hero2.jpg'
 import hero3 from './hero3.jpg'
+import { AppContext } from '@/context/StateContext';
  
 function Hero({json}) {
+
+  const{idioma} = AppContext()
+
   return (
     <div className="w-full h-[70vh] lg:h-[90vh] flex flex-col relative">
           <Image
@@ -16,9 +20,17 @@ function Hero({json}) {
     
           <div className="flex flex-row justify-center  h-full w-full   text-white absolute z-10"> 
             <div className="w-full h-[85%] flex flex-col justify-end lg:pb-20  2xl:justify-center text-center items-center">
-              <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-8xl font-cinzelRegular lg:mt-8">
+              {
+                idioma == "ingles"?
+                <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-8xl font-cinzelRegular lg:mt-8">
                 <span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[150px]">H</span>ouse{" "}
               </h1>
+              :
+              <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-8xl font-cinzelRegular lg:mt-8">
+                <span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[150px]">C</span>asa{" "}
+              </h1>
+              }
+              
               <div className='flex lg:hidden h-[100px]'/>
                 
      

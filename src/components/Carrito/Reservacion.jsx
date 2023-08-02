@@ -6,7 +6,7 @@ import bote from "./icons/bote.png";
 import experience from "./img/experiencefoto.png";
 import { differenceInDays, isValid } from "date-fns";
 
-function Reservacion({reservacion, deleteExp, deleteReservation}) {
+function Reservacion({reservacion, deleteExp, deleteReservation, json}) {
     const [plan, setPlan] = useState(null);
     const [checkin, setCheckin] = useState("");
   const [checkout, setCheckout] = useState("");
@@ -85,7 +85,7 @@ function Reservacion({reservacion, deleteExp, deleteReservation}) {
                   {checkout}
                 </div>
               </div>
-               <p className='text-right font-apollo mt-4'>PRICE FOR { differenceInDays(new Date(reservacion.checkout), new Date(reservacion.checkin))} NIGHTS - <span className='uppercase'>{reservacion.plan}</span></p> 
+               <p className='text-right font-apollo mt-4'>{json.Cart.price} { differenceInDays(new Date(reservacion.checkout), new Date(reservacion.checkin))} {json.Cart.nights} - <span className='uppercase'>{reservacion.plan}</span></p> 
                <div className='flex flex-row w-full justify-between'>
                <div className="flex flex-col justify-end mb-4 ">
                     <Image
@@ -105,9 +105,10 @@ function Reservacion({reservacion, deleteExp, deleteReservation}) {
                 <div key={index}
                 className='flex flex-row justify-center '
                 >
+                  {console.log(index, reservacion.experience.length)}
                 <div
                   
-                  className="w-full flex flex-col mt-4 mb-2 border-b-[2px] border-b-[#d3cbc0]"
+                  className={ index == reservacion?.experience?.length-1 ? "w-full flex flex-col mt-4 mb-2 " : "w-full flex flex-col mt-4 mb-2 border-b-[2px] border-b-[#d3cbc0]"}
                 >
                   <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#d3cbc0]">
                     {exp}
@@ -119,8 +120,7 @@ function Reservacion({reservacion, deleteExp, deleteReservation}) {
                           Descripcion experiencia
                         </h3>
                         <p className="text-[#31302c] mt-2  font-apollo w-[90%] tracking-[2px]">
-                          *AT YOUR ARRIVING, PLEASE CONFIRM THE DATE OF THE
-                          SERVICE
+                         {json.Cart.arriving}
                         </p>
                       </div>
                       <div className="flex flex-row mt-2 justify-start">

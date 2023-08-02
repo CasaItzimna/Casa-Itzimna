@@ -12,7 +12,7 @@ import Reservacion from "./Reservacion";
 import { differenceInDays, isValid } from "date-fns";
 import getStripe from '../../lib/getStripe'
 
-function CarritoInfo() {
+function CarritoInfo({json}) {
   const [carrito, setCarrito] = useState([])
   const [plan, setPlan] = useState(null);
   const {
@@ -248,16 +248,17 @@ carritoProductos.forEach((producto) => {
             <div className="w-[90%] flex flex-col mb-2 border-b-[2px]  border-b-[#d3cbc0] ">
               <div className="flex flex-row justify-center">
               <h1 className="font-apollo text-3xl tracking-[4px] mt-8 mb-4">
-                CART
+                {json.Cart.cart}
               </h1>
               </div>
               <h2 className="font-apollo text-xl tracking-[4px] mb-2 text-[#d3cbc0]">
-                BOOKING DATA
+                {json.Cart.booking}
               </h2>
               {console.log(carritoReservaciones)}
               {carritoReservaciones.length > 0 ? (
                 carritoReservaciones.map((reservacion, index) => (
                   <Reservacion
+                  json={json}
                     key={index}
                     reservacion={reservacion}
                     deleteExp={deleteExp}
@@ -281,7 +282,7 @@ carritoProductos.forEach((producto) => {
               carritoProductos.map((producto, index) => (
                 <div
                   key={index}
-                  className="w-[90%] flex flex-col mb-2 mt-4 border-b-[2px] border-b-[#d3cbc0] "
+                  className={index == carritoProductos?.length-1 ? "w-[90%] flex flex-col mb-2 mt-4  " : "w-[90%] flex flex-col mb-2 mt-4 border-b-[2px] border-b-[#d3cbc0] "}
                 >
                   <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#d3cbc0]">
                     {producto?.name}
@@ -293,7 +294,7 @@ carritoProductos.forEach((producto) => {
                           {producto?.description.substring(0, 70) + " ..."}
                         </h3>
                         <p className="text-[#31302c] mt-2  font-apollo w-full tracking-[2px]">
-                          *SET SHIPING AT PAYMENT
+                          {json.Cart.shipping}
                         </p>
                       </div>
                       <div className="flex flex-row mt-2 justify-start ">
@@ -333,7 +334,7 @@ carritoProductos.forEach((producto) => {
               <div className=" w-full flex flex-col items-center bg-white mt-8 lg:mt-0  overflow-hidden shadow-[12.0px_12.0px_8.0px_#9b9696]">
                 <div className="w-[90%] h-full flex flex-col   ">
                   <h1 className="font-apollo text-3xl tracking-[4px] mt-8 mb-4 uppercase text-center">
-                    Summary
+                    {json.Cart.summary}
                   </h1>
                   <div className="w-full flex flex-col items-center">
                     <div className="w-full h-full flex flex-row  justify-between border-b-[2px] border-[#d3cbc0] ">
@@ -425,7 +426,7 @@ carritoProductos.forEach((producto) => {
                     <button className="bg-black text-white uppercase w-full py-4 mt-4 font-Geometrica text-xl mb-4"
                     onClick={handleCheckOut}
                     >
-                      Proceed to pay
+                     {json.Cart.proceed}
                     </button>
                   </div>
                 </div>
@@ -441,15 +442,14 @@ carritoProductos.forEach((producto) => {
                 />
                 <div className="w-[90%] h-full flex flex-col items-center">
                   <h3 className="text-center lg:text-left uppercase font-apollo tracking-[4px] mt-4 text-2xl">
-                    unforgettable experiences await
+                  {json.Cart.unforgettable}
                   </h3>
                   <p className="text-justify font-PlayfairDisplay tracking-[2px] mt-4">
-                    Make your visit an unparelleled journey by adding an
-                    experience to your cart.
+                  {json.Cart.make}
                   </p>
                   <div className="w-full flex flex-row justify-center lg:justify-start mt-4 mb-8">
                     <button className="uppercase w-[170px] bg-[#d3cbc0] rounded-[7px] text-xl py-1 font-Geometrica tracking-[2px]">
-                      <Link href="Experience">experiences</Link>
+                      <Link href="Experience">{json.Cart.experiences}</Link>
                     </button>
                   </div>
                 </div>

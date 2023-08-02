@@ -24,7 +24,7 @@ import room10 from './img/ROOMS/Rooms-10.jpg'
 import room11 from './img/ROOMS/Rooms-11.jpg'
 import room12 from './img/ROOMS/Rooms-12.jpg'
 import room13 from './img/ROOMS/Rooms-13.jpg'
-import room14 from './img/ROOMS/Rooms-14.jpg'
+/* import from './img/ROOMS/Rooms-14.jpg'*/
 import room15 from './img/ROOMS/Rooms-15.jpg'
 import room16 from './img/ROOMS/Rooms-16.jpg'
 
@@ -102,14 +102,15 @@ import Img from './Img';
 const GalleryMasonry = ({opcion}) => {
 
   const garden = [garden9,garden2,garden8,garden4,garden5,garden6,garden7,garden3,garden1]
-  const rooms = [room9,room2,room8,room4,room5,room6,room7,room3,room1,room10,room11,room12,room13,room14,room15,room16]
-  const kitchen = [Kitchen9,Kitchen2,Kitchen8,Kitchen4,Kitchen5,Kitchen6,Kitchen7,Kitchen3,Kitchen1,Kitchen10,Kitchen11,Kitchen12]
+  const rooms = [room9,room2,room8,room4,room5,room6,room7,room3,room1,room10,room11,room12,room13,room15,room16]
+  const kitchen = [Kitchen10,Kitchen11,Kitchen12,Kitchen9,Kitchen2,Kitchen8,Kitchen4,Kitchen5,Kitchen6,Kitchen7,Kitchen3,Kitchen1]
   const terrace = [terrace9,terrace2,terrace8,terrace4,terrace5,terrace6,terrace7,terrace3,terrace1,terrace10]
-  const lounges = [Lounges1,Lounges2,Lounges3,Lounges4,Lounges5,Lounges6,Lounges7,Lounges8,Lounges9]
+  const lounges = [Lounges1,Lounges2,Lounges3,Lounges4,Lounges5,Lounges6,Lounges9,Lounges7,Lounges8]
   const experience = [
 
      Experience1,
      Experience2,
+     Experience29,
      Experience3,
      Experience4,
      Experience5,
@@ -136,7 +137,7 @@ const GalleryMasonry = ({opcion}) => {
      Experience26,
      Experience27,
      Experience28,
-     Experience29,
+     
 
   ]
 

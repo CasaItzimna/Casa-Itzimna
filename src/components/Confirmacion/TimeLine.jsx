@@ -1,6 +1,6 @@
 import React from 'react'
 
-function TimeLine() {
+function TimeLine({json}) {
   return (
     <div><div className='w-full h-[100px] flex flex-row justify-center bg-[#d3cbc0]'>
     <div className='h-full w-[90%] xl:w-[80%] flex flex-col justify-center '>
@@ -10,15 +10,15 @@ function TimeLine() {
                     
                     
                 <div className='w-1/3 flex flex-col items-center'>
-                    <p className='text-sm font-Geometrica'>CART</p>
+                    <p className='text-sm font-Geometrica'>{json.Cart.cart}</p>
                 <div className='w-[15px] h-[15px] rounded-full bg-[#282828]'></div>
                 </div>
                 <div className='w-1/3 flex flex-col items-center'>
-                    <p className='text-sm font-Geometrica'>PAYMENT</p>
+                    <p className='text-sm font-Geometrica'>{json.Cart.payment}</p>
                 <div className='w-[15px] h-[15px] rounded-full bg-[#282828] '></div>
                 </div>
                 <div className='w-1/3 flex flex-col items-center'>
-                    <p className='text-sm font-Geometrica'>CONFIRMATION</p>
+                    <p className='text-sm font-Geometrica'>{json.Cart.confirmation}</p>
                 <div className='w-[15px] h-[15px] rounded-full bg-[#282828] '></div>
                 </div>
             </div>

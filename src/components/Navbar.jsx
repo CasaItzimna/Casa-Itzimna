@@ -141,7 +141,7 @@ function Navbar() {
             </Link>
             </div>
             <button className="bg-[#d3cbc0] rounded-md text-black w-[120px] h-[30px] mt-2 text-xl">
-            <Link href="/House#booking">BOOK NOW</Link>
+            <Link href="/House#booking">{json.Navbar.bookButton}</Link>
             </button>
           </div>
         </div>

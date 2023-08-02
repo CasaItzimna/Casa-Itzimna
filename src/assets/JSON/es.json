@@ -4,9 +4,11 @@
       "option2": "ACERCA",
       "option3": "CASA",
       "option4": "EXPERIENCIA",
-      "option5": "ESCPACIOS",
+      "option5": "ESPACIOS",
       "option6": "BOUTIQUE",
-      "option7": "CONTACTO"
+      "option7": "CONTACTO",
+      "bookButton" : "RESERVAR"
+
     },
     "Footer": {
         "option1": "ACERCA",
@@ -34,9 +36,9 @@
     },
     "Accomodation":{
         "title": "Alojamiento",
-        "opcion1": "ESPACIOS UNICOS",
-        "opcion2": "LUJO Y COMODIDAD",
-        "opcion3": "HOSPITALIDAD",
+        "option1": "ESPACIOS UNICOS",
+        "option2": "LUJO Y COMODIDAD",
+        "option3": "HOSPITALIDAD",
       "text1": "Conoce la comodidad de cada rincón impregnado con el encanto de Mérida y lo contemporáneo. La Casa Boutique ha sido diseñada con el fin de ofrecer un refugio de lujo y bienestar. Descubre la calidez y elegancia de nuestros espacios.",
       "text2": "Sofisticación y bienestar sin igual, pensamos y cuidamos cada detallede manera cuidadosa para envolverte en una sensación de elegancia y satisfacción. Permítenos transportarte a un mundo de deleite y relajación para ofrecerte un verdadero oasis de lujo y confort.",
       "text3": "La hospitalidad excepcional y nuestros servicios exclusivos te esperan para hacer de tu estancia una experiencia verdaderamente única y exquisita. Nuestra excepcional hospitalidad, es lo que consideramos un verdadero arte.",
@@ -107,12 +109,12 @@
   },
   "Rates":{
   "title": "TARIFAS",
-  "option1": "SELECCIONAR",
+  "option1": "SELECT",
   "option1price": "1,054 USD",
-  "option2": "LUJO",
-  "option3price": "1,288 USD",
-  "option4": "PREMIER",
-  "option4price": "1,464 USD",
+  "option2": "LUXURY",
+  "option2price": "1,288 USD",
+  "option3": "PREMIER",
+  "option3price": "1,464 USD",
   "additional": "(6 a 8 personas tienen cargos adicionales)",
   "detailsButton": "VER DETALLES",
   "unforgettableTitle": "EXPERIENCIAS INOLVIDABLES TE ESPERAN",
@@ -121,18 +123,21 @@
   },
   
   "Booking":{
+    "title": "Booking",
   "name": "NOMBRE",
   "phone": "NÚMERO DE TELÉFONO",
+  "email": "EMAIL",
   "checkin": "CHECK IN",
   "checkout": "CHECK OUT",
-  "guests": "HUÉSPEDES",
+  "guests": "NÚMERO DE HUÉSPEDES",
   "plan": "ELIGE UN PLAN",
-  "planOption1": "SELECCIONAR",
-  "planOption2": "LUJO",
+  "planOption1": "SELECT",
+  "planOption2": "LUXURY",
   "planOption3": "PREMIER",
+  "experiences": "EXPERIENCIAS",
   "addExperience" : "AGREGAR UNA EXPERIENCIA",
   "bookbutton": "RESERVAR AHORA",
-  "consent": "Haz que tu estadía sea realmente memorable eligiendo algunas de nuestras experiencias exclusivas. Crea recuerdos inolvidables durante tu estancia con nosotros.",
+  "consent": "Al hacer clic en este botón, das tu consentimiento para el procesamiento de datos personales y estás de acuerdo con ello.",
   "privacy": "política de privacidad"
   },
   "Experiences":{
@@ -152,6 +157,15 @@
 "button5":"SALONES",
 "button6":"EXPERIENCIA"
   },
+  "Boutique": {
+    "viewDetails": "VER DETALLES",
+    "description": "DESCRIPCIÓN",
+    "details": "DETALLES",
+    "shipping": "ENVÍO",
+    "add": "AGREGAR AL CARRITO",
+    "ar": "VER EN AR",
+    "share": "COMPARTIR"
+    },
   "Contact": {
     "Touch": "CONTÁCTANOS",
     "Input1": "NOMBRE",
@@ -169,6 +183,24 @@
     "Social": "REDES SOCIALES",
     "Address":"DIRECCIÓN"
     },
+    "Cart": {
+      "cart": "CARRITO",
+      "payment": "PAGO",
+      "confirmation": "CONFIRMACIÓN",
+      "booking": "DATOS DE RESERVA",
+      "summary": "RESUMEN",
+      "proceed": "PAGAR",
+      "unforgettable": "EXPERIENCIAS INOLVIDABLES TE ESPERAN",
+      "make": "Haz que tu visita sea un viaje incomparable añadiendo una experiencia a tu carrito.",
+      "experiences": "EXPERIENCIAS",
+      "our": "NUESTRA BOUTIQUE",
+      "price" : "PRECIO POR",
+  "nights": "NOCHES",
+  "arriving": "*AL LLEGAR, POR FAVOR CONFIRMA LA FECHA DEL SERVICIO",
+"shipping": "*INGRESA LA DIRECCIÓN DE ENVÍO AL REALIZAR EL PAGO",
+"description": "DESCRIPCION DE EXPERIENCIA"
+
+      },
     "Confirmation":{
       "titulo": "CONFIRMACIÓN DE ORDEN",
       "thanks": "GRACIAS POR ELEGIR CASA ITZIMNÁ",

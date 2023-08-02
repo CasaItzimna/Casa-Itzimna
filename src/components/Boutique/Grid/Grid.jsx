@@ -42,7 +42,7 @@ function Grid({ json }) {
       <div className="flex flex-col justify-center mb-8 z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3  gap-8">
           {currentProductos?.map((producto, index) => (
-            <Producto key={index} producto={producto} />
+            <Producto key={index} producto={producto} json={json} />
           ))}
         </div>
         <div  className="flex flex-row justify-center gap-8 mt-8">

@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import { client, urlFor } from "../../../lib/client";
 import ProductoModal from './ProductoModal';
 
-function Producto({producto}) {
+function Producto({producto, json}) {
   console.log(producto)
+  console.log(json)
 
     const [modalOpen, setModalOpen] = useState(false);
     const [slug, setSlug] = useState('');
@@ -48,11 +49,12 @@ function Producto({producto}) {
             <button className='border-[1px] border-[#31302c] tracking-[4px] font-apollo text-2xl py-1 mt-4'
             onClick={openModal}
             >
-                VIEW DETAILS
+                {json.Boutique.viewDetails}
             </button>
             {
               producto &&
               <ProductoModal
+              json={json}
         producto={producto}
         isOpen={modalOpen}
         onRequestClose={closeModal}

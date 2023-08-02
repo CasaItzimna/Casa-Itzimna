@@ -337,7 +337,7 @@ const [total, setTotal] = useState(0)
                   name="name"
                   onChange={handleInputChange}
                   value={formData.name}
-                  placeholder="NAME"
+                  placeholder={json.Booking.name}
                   className="placeholder:text-center placeholder:font-Geometrica w-full  col-span-2 border-[1px] py-1 border-[#d3cbc0]"
                 />
                 <input
@@ -345,7 +345,7 @@ const [total, setTotal] = useState(0)
                   name="tel"
                   onChange={handleInputChange}
                   value={formData.tel}
-                  placeholder="PHONE NUMBER"
+                  placeholder={json.Booking.phone}
                   className="placeholder:text-center placeholder:font-Geometrica col-span-2 border-[1px] py-1 border-[#d3cbc0]"
                 />
                 <input
@@ -353,14 +353,14 @@ const [total, setTotal] = useState(0)
                   name="email"
                   onChange={handleInputChange}
                   value={formData.email}
-                  placeholder="EMAIL"
+                  placeholder={json.Booking.email}
                   className="placeholder:text-center placeholder:font-Geometrica col-span-2 border-[1px] py-1 border-[#d3cbc0]"
                 />
                 <div className="flex flex-col h-full w-full col-span-2">
                   <div className="flex flex-col h-full w-full ">
                   <div className="flex flex-col items-center">
                       <h3 className="text-[#d3cbc0] font-Geometrica uppercase tracking-[2px]">
-                        GUEST NUMBER
+                      {json.Booking.guests}
                       </h3>
                       <div className="flex flex-row justify-center gap-4 text-black mt-2 mb-4">
                         <div
@@ -452,15 +452,15 @@ const [total, setTotal] = useState(0)
                   onChange={(e) => setPlan(e.target.value)}
                   className="border-[1px] py-1 border-[#d3cbc0] font-Geometrica text-gray-500 col-span-2"
                 >
-                  <option className="text-center" value="">CHOOSE A PLAN</option>
-                  <option className="text-center" value="select">SELECT</option>
-                  <option className="text-center" value="luxury">LUXURY</option>
-                  <option className="text-center" value="premier">PREMIER</option>
+                  <option className="text-center" value="">{json.Booking.plan}</option>
+                  <option className="text-center" value="select">{json.Booking.planOption1}</option>
+                  <option className="text-center" value="luxury">{json.Booking.planOption2}</option>
+                  <option className="text-center" value="premier">{json.Booking.planOption3}</option>
                 </select>
                     <div className="grid grid-cols-2 mt-2 mb-4 px-4 pb-4 pt-2 w-full h-full border-t-[1px] border-b-[1px] border-[#d3cbc0] gap-4">
                       <div className="flex flex-col items-center border-r-[1px] border-[#d3cbc0]  ">
                         <p className="text-[#d3cbc0] font-Geometrica uppercase mb-2 tracking-[2px]">
-                          Entrada
+                        {json.Booking.checkin}
                         </p>
 
                         <div
@@ -502,7 +502,7 @@ const [total, setTotal] = useState(0)
                       </div>
                       <div className="flex flex-col items-center ">
                         <p className="text-[#d3cbc0] font-Geometrica uppercase mb-2 tracking-[2px]">
-                          Salida
+                        {json.Booking.checkout}
                         </p>
 
                         <div
@@ -566,7 +566,7 @@ const [total, setTotal] = useState(0)
 
                   <div className="flex flex-col items-center lg:flex-row font-Geometrica gap-4 mb-4">
                   <h3 className="text-[#d3cbc0] font-Geometrica uppercase tracking-[2px]">
-                        EXPERIENCES
+                  {json.Booking.experiences}
                       </h3>
                     
                     
@@ -578,7 +578,7 @@ const [total, setTotal] = useState(0)
           onChange={handleExperienceChange}
           className=""
         />
-        CENA ROMANTICA
+        {json.Experiences.Experiences1}
       </label>
       <label className="block">
         <input
@@ -588,7 +588,7 @@ const [total, setTotal] = useState(0)
           onChange={handleExperienceChange}
           className="uppercase"
         />
-        RECORRIDO
+        {json.Experiences.Experiences2}
       </label>
       <label className="block">
         <input
@@ -598,7 +598,7 @@ const [total, setTotal] = useState(0)
           onChange={handleExperienceChange}
           className="uppercase"
         />
-        SPA
+        {json.Experiences.Experiences3}
       </label>
       <label className="block">
         <input
@@ -608,7 +608,7 @@ const [total, setTotal] = useState(0)
           onChange={handleExperienceChange}
           className="uppercase"
         />
-        COMIDAS
+        {json.Experiences.Experiences4}
       </label>
      
       
@@ -627,7 +627,7 @@ const [total, setTotal] = useState(0)
                   onClick={handleSubmit}
                 >
                   {/*  <Link href="/Carrito"> BOOK NOW </Link> */}
-                  BOOK NOW
+                  {json.Booking.bookbutton}
                 </button>
 
                 <p className="w-full col-span-2 font-PlayfairDisplay text-sm text-justify">

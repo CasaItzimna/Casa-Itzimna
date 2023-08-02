@@ -10,7 +10,7 @@ import Link from "next/link";
 import { AppContext } from "@/context/StateContext";
 import { useRouter } from "next/router";
 
-function ProductoModal({ producto, isOpen, onRequestClose }) {
+function ProductoModal({ producto, isOpen, onRequestClose, json }) {
   const [opcion, setOpcion] = useState("opcion1");
   console.log(opcion);
   const {carritoProductos, setCarritoProductos} = AppContext()
@@ -111,21 +111,21 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
                   onClick={() => setOpcion("opcion1")}
                 >
                   {" "}
-                  DESCRIPTION{" "}
+                  {json.Boutique.description}{" "}
                 </h4>
                 <h4
                   className="cursor-pointer"
                   onClick={() => setOpcion("opcion2")}
                 >
                   {" "}
-                  DETAILS{" "}
+                  {json.Boutique.details}{" "}
                 </h4>
                 <h4
                   className="cursor-pointer"
                   onClick={() => setOpcion("opcion3")}
                 >
                   {" "}
-                  SHIPPING{" "}
+                  {json.Boutique.shipping}{" "}
                 </h4>
               </div>
             </div>
@@ -156,7 +156,7 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
             <button className="w-[210px] tracking-[4px] mt-8 py-2 text-xl text-white bg-black"
             onClick={()=>addProductCart(producto)}
             >
-              ADD TO CART
+              {json.Boutique.add}
             </button>
             <Link
             href={`AR/${producto?.slug.current}`}
@@ -164,7 +164,7 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
             <button className="w-[210px] tracking-[4px] py-1 text-md mt-3 border-[1px] border-black ">
               <div className="flex flex-row  justify-center gap-2">
                 <Image src={ar} alt="ar logo" className="h-[25px] w-[25px] " />
-                <span>AR VIEW</span>
+                <span>{json.Boutique.ar}</span>
               </div>
             </button>
             </Link>
@@ -175,7 +175,7 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
                   alt="ar logo"
                   className="h-[18px] w-[16px] "
                 />
-                <span>SHARE</span>
+                <span>{json.Boutique.share}</span>
               </div>
             </button>
             </div>

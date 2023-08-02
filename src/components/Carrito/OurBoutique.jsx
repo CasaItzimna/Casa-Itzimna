@@ -5,7 +5,7 @@ import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import { client, urlFor } from "../../lib/client";
 import Link from "next/link";
 
-function OurBoutique() {
+function OurBoutique({json}) {
   const { getProductos, productos } = AppContext();
   useEffect(() => {
     getProductos();
@@ -25,7 +25,7 @@ function OurBoutique() {
     <div className="w-full flex flex-row justify-start md:justify-center bg-[#d3cbc0]">
       <div className="w-full flex flex-col items-center">
         <h3 className="text-2xl font-apollo tracking-[4px] mb-2">
-          OUR BOUTIQUE
+        {json.Cart.our}
         </h3>
         <div className=" w-full lg:w-[80%] 2xl:w-[1140px]  relative flex flex-row justify-center items-center group">
           <MdChevronLeft
