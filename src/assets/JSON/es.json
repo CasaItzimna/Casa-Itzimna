@@ -138,7 +138,9 @@
   "addExperience" : "AGREGAR UNA EXPERIENCIA",
   "bookbutton": "RESERVAR AHORA",
   "consent": "Al hacer clic en este botón, das tu consentimiento para el procesamiento de datos personales y estás de acuerdo con ello.",
-  "privacy": "política de privacidad"
+  "privacy": "política de privacidad",
+  "success": "Agregando tu reservación...",
+  "error": "Completa todos los campos"
   },
   "Experiences":{
   "Experiences1":"NOCHE ENCANTADORA",
@@ -198,7 +200,9 @@
   "nights": "NOCHES",
   "arriving": "*AL LLEGAR, POR FAVOR CONFIRMA LA FECHA DEL SERVICIO",
 "shipping": "*INGRESA LA DIRECCIÓN DE ENVÍO AL REALIZAR EL PAGO",
-"description": "DESCRIPCION DE EXPERIENCIA"
+"description": "DESCRIPCION DE EXPERIENCIA",
+"noproducts": "NO HAY PRODUCTOS AGREGADOS",
+"noreservations": "NO HAY RESERVACIONES AGREGADAS"
 
       },
     "Confirmation":{

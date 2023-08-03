@@ -41,7 +41,7 @@ function Order({json}) {
             console.log(rsv)
           rsv.status = 'aprobada';
           console.log(rsv)
-          updateReservacion(rsv.id, rsv);
+          updateReservacion(rsv.id, rsv); 
         });
         localStorage.removeItem('reservacion')
         // eliminar localstorage

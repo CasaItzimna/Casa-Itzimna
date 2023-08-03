@@ -136,7 +136,9 @@
   "addExperience" : "ADD AN EXPERIENCE",
   "bookbutton": "BOOK NOW",
   "consent": "By clicking this button, you consent to the processing of personal data and agree with the",
-  "privacy": "privacy policy"
+  "privacy": "privacy policy",
+  "success": "Adding your reservation...",
+  "error": "Complete all the fields"
 },
 "Experiences":{
   "Experiences1":"ENCHANTING EVENING",
@@ -196,9 +198,12 @@
   "experiences": "EXPERIENCES",
   "our" : "OUR BOUTIQUE",
   "price" : "PRICE FOR",
+  "nights": "NIGHTS",
   "arriving" : "*AT YOUR ARRIVING, PLEASE CONFIRM THE DATE OF THE SERVICE",
   "shipping" : "*SET SHIPING AT PAYMENT",
-  "description": "EXPERIENCE DESCRIPTION"
+  "description": "EXPERIENCE DESCRIPTION" ,
+  "noproducts": "NO PRODUCTS ADDED",
+"noreservations": "NO RESERVATIONS ADDED"
 },
 "Confirmation":{
   "titulo": "ORDER CONFIRMATION",

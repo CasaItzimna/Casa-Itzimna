@@ -270,7 +270,7 @@ carritoProductos.forEach((producto) => {
 
                 <div className="w-[90%] lg:w-full flex flex-col items-center  mb-2">
                   <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#d3cbc0] ">
-                    NO HAY RESERVACIONES AGREGADAS
+                    {json.Cart.noreservations}
                   </h2>
                 </div>
                 </div>
@@ -322,7 +322,7 @@ carritoProductos.forEach((producto) => {
             ) : (
               <div className="w-[90%] flex flex-col items-center mb-2">
                 <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#d3cbc0]">
-                  NO HAY PRODUCTOS AGREGADOS
+                {json.Cart.noproducts}
                 </h2>
               </div>
             )}

@@ -88,10 +88,13 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
 
   function isDateReserved(date) {
     for (const reserva of reservaciones) {
-      const checkinDate = new Date(reserva.checkin);
-      const checkoutDate = new Date(reserva.checkout);
-      if (isDateBetween(date, checkinDate, checkoutDate)) {
-        return true;
+      if(reserva.status == "aprobada"){
+
+        const checkinDate = new Date(reserva.checkin);
+        const checkoutDate = new Date(reserva.checkout);
+        if (isDateBetween(date, checkinDate, checkoutDate)) {
+          return true;
+        }
       }
     }
     return false;
@@ -115,33 +118,30 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
         ${
           //Hace seleccionables los dias despues de hoy
           i > today.getDate() && isReserved ?
-             "text-gray-200"
+             "text-gray-200 "
              : ""
-        }
-        ${
-          console.log(today.getMonth(), todayMonth.getMonth())
         }
         ${
           //Pinta de gris los dias antes de hoy
           today.getMonth() == todayMonth.getMonth() &&
+           !isReserved &&
           i < today.getDate() &&
            "text-gray-200"
         }
         ${
           //Hace seleccionables todos los dias que no sean de este mes 
           today.getMonth() != todayMonth.getMonth() &&
+          !isReserved &&
           "cursor-pointer  lg:hover:bg-[#d3cbc0] lg:hover:mx-2 lg:hover:rounded-full"
         }
           ${
             //Pinta de color HOY y si no el texto es negro
             today.getMonth() == todayMonth.getMonth() &&
+            !isReserved &&
             i === today.getDate()
               ? " text-white bg-[#d3cbc0]  rounded-full mx-0 lg:mx-2 "
               : "text-black"
           } 
-          ${
-            console.log( inicio?.getMonth(),todayMonth.getMonth(), inicio?.getFullYear()  )
-          }
         ${
           //Pinta de media luna izq la fecha seleccionada 
           i === inicio?.getDate() && inicio?.getMonth() === todayMonth.getMonth() 

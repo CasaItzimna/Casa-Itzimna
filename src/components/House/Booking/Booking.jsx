@@ -81,6 +81,19 @@ function Booking({ json }) {
   });
   const [precio, setPrecio] = useState(0);
   const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false)
+
+  useEffect(() => {
+    if (success) {
+      // Mostrar el mensaje durante 5 segundos
+      const timeout = setTimeout(() => {
+        setSuccess(false);
+      }, 5000);
+
+      // Limpiar el timeout cuando el componente se desmonte
+      return () => clearTimeout(timeout);
+    }
+  }, [success]);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -144,10 +157,10 @@ const [total, setTotal] = useState(0)
 
   useEffect(() => {
     if (inicio) {
-      formData.begin = inicio;
+      formData.checkin = inicio;
     }
     if (fin) {
-      formData.end = fin;
+      formData.checkout = fin;
     }
     if (inicio && fin) {
       formData.total = parseInt(total);
@@ -223,8 +236,6 @@ const [total, setTotal] = useState(0)
     event.preventDefault();
     console.log(formData);
     
-    formData.checkin = inicio;
-    formData.checkout = fin;
     formData.guests = selectedGuests;
     formData.experience = experiences;
     formData.plan = plan;
@@ -248,7 +259,6 @@ const [total, setTotal] = useState(0)
     ) {
       console.log("entre en el if", formData);
       setCarritoReservaciones([...carritoReservaciones, formData])
-      const reservacionId = await postReservacion(formData);
       try {
         const reservacionId = await postReservacion(formData);
         console.log("ID de la nueva reservacion:", reservacionId);
@@ -302,6 +312,7 @@ const [total, setTotal] = useState(0)
       .catch((error) => {
         console.error("Error al enviar el correo electrónico:", error);
       });
+      setSuccess(true)
 
 
       setFormData({
@@ -619,9 +630,14 @@ const [total, setTotal] = useState(0)
                 <p className="font-Geometrica text-right">${total}mxn</p>
                 {error ? (
                   <div className="col-span-2 w-full flex flex-row justify-center text-red-500 font-Geometrica uppercase">
-                    <p>Completa todos los campos</p>
+                    <p>{json.Booking.error}</p> 
                   </div>
                 ) : null}
+                 {success && (
+        <div className="col-span-2 w-full flex flex-row justify-center mt-4 text-black tracking-[2px] font-Geometrica uppercase">
+          <p>{json.Booking.success}</p>
+        </div>
+      )}
                 <button
                   className="col-span-2  bg-black text-white text-2xl tracking-[4px] font-Geometrica py-3 mt-2"
                   onClick={handleSubmit}
