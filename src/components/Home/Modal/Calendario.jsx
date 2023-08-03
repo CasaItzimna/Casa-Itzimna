@@ -82,19 +82,44 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
     }
   }
 
+  function isDateBetween(date, startDate, endDate) {
+    return date >= startDate && date <= endDate;
+  }
+
+  function isDateReserved(date) {
+    for (const reserva of reservaciones) {
+      const checkinDate = new Date(reserva.checkin);
+      const checkoutDate = new Date(reserva.checkout);
+      if (isDateBetween(date, checkinDate, checkoutDate)) {
+        return true;
+      }
+    }
+    return false;
+  }
+  console.log(reservaciones)
+
   const days = [];
   for (let i = 1; i <= daysInMonth; i++) {
+    const currentDate = new Date (currentYear, todayMonth.getMonth(), i)
+    const isReserved = isDateReserved(currentDate)
     days.push(
-      
-      
       <div
         key={new Date(currentYear, today.getMonth(), i)}
         className={`mb-2 mt-4 relative
         ${
           //Hace seleccionables los dias despues de hoy
-          i > today.getDate() &&
+          i > today.getDate() && !isReserved ?
              "cursor-pointer lg:hover:bg-[#d3cbc0] lg:hover:mx-2 lg:hover:rounded-full"
-            
+             : ""
+        }
+        ${
+          //Hace seleccionables los dias despues de hoy
+          i > today.getDate() && isReserved ?
+             "text-gray-200"
+             : ""
+        }
+        ${
+          console.log(today.getMonth(), todayMonth.getMonth())
         }
         ${
           //Pinta de gris los dias antes de hoy
@@ -120,6 +145,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
         ${
           //Pinta de media luna izq la fecha seleccionada 
           i === inicio?.getDate() && inicio?.getMonth() === todayMonth.getMonth() 
+          && !isReserved
           && inicio?.getFullYear() == currentYear
             ? "bg-[#d3cbc0] rounded-l-full"
             : null
@@ -127,6 +153,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
         ${
           ////Pinta de media luna der la fecha seleccionada 
           i === fin?.getDate() && fin?.getMonth() === todayMonth.getMonth()
+          && !isReserved
             ? "bg-[#d3cbc0] rounded-r-full"
             : null
         } 
@@ -137,6 +164,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
         i > inicio?.getDate() &&
         i < fin?.getDate() &&
         inicio?.getMonth() === todayMonth.getMonth()
+        && !isReserved
           ? "bg-[#c7c1b8]"
           : null
       }
@@ -146,7 +174,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
           fin?.getDate() &&
           inicio?.getMonth() != fin?.getMonth() &&
           inicio?.getMonth() === todayMonth.getMonth() &&
-          
+           !isReserved &&
           i > inicio?.getDate()
             ? "bg-[#c7c1b8]"
             : null
@@ -159,7 +187,9 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
           fin?.getMonth() &&
           inicio?.getMonth() != fin?.getMonth() &&
           today.getMonth()+sumMonth-1 == fin?.getMonth()&&
+          !isReserved &&
           i< fin?.getDate() &&
+          
           "bg-[#c7c1b8]"
         }
        
@@ -171,20 +201,15 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
 
         onClick={() => {
           console.log(inicio); 
-          if (today.getMonth() ==  todayMonth.getMonth()) {
-            if( i > today.getDate()){
+          
+            if( i > today.getDate() && !isReserved){
               console.log('entre')
               console.log(currentYear, todayMonth.getMonth(), i)
               handleDayClick(new Date(currentYear, todayMonth.getMonth(), i));
               
             }
             
-          }
-          else{
-            console.log('entre2')
-            console.log(currentYear, currentMonthName, i)
-            handleDayClick(new Date(currentYear, todayMonth.getMonth(), i));
-          }
+        
         }}
       >
         <div className="flex flex-col">
@@ -219,19 +244,34 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
 
   const nextMonthDays = [];
   for (let i = 1; i <= nextMonthDaysInMonth; i++) {
+     const nextCurrentDate = new Date (nextMonthYear, nextMonth.getMonth(), i)
+    const isReserved = isDateReserved(nextCurrentDate)
     nextMonthDays.push(
       <div
         key={new Date(currentYear, today.getMonth()+ sumMonth, i)}
-        className={`mb-2 mt-4 relative cursor-pointer lg:hover:bg-[#d3cbc0] lg:hover:mx-2 lg:hover:rounded-full
-       
+        className={`mb-2 mt-4 relative 
+        ${
+          //Hace seleccionables los dias despues de hoy
+          i > today.getDate() && !isReserved ?
+             "cursor-pointer lg:hover:bg-[#d3cbc0] lg:hover:mx-2 lg:hover:rounded-full"
+             : ""
+        }
+        ${
+          //Hace seleccionables los dias despues de hoy
+          i > today.getDate() && isReserved ?
+             "text-gray-200"
+             : ""
+        }
         ${
           i === inicio?.getDate() && inicio?.getMonth() === nextMonth.getMonth()
-            ? "bg-[#d3cbc0] rounded-l-full"
+          && !isReserved  
+          ? "bg-[#d3cbc0] rounded-l-full"
             : null
         } 
         ${
           i === fin?.getDate() && fin?.getMonth() === nextMonth.getMonth()
-            ? "bg-[#d3cbc0] rounded-r-full"
+          && !isReserved 
+          ? "bg-[#d3cbc0] rounded-r-full"
             : null
         } 
       ${
@@ -240,6 +280,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
         i > inicio?.getDate() &&
         i < fin?.getDate() &&
         fin?.getMonth() === nextMonth.getMonth()
+        && !isReserved
           ? "bg-[#c7c1b8]"
           : null
       }
@@ -250,6 +291,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
         inicio?.getMonth() != fin?.getMonth() &&
         fin?.getMonth() === nextMonth.getMonth() &&
         i < fin?.getDate()
+        && !isReserved
           ? "bg-[#c7c1b8]"
           : null
       }
@@ -259,6 +301,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
         inicio?.getMonth() != fin?.getMonth() &&
         inicio?.getMonth() === nextMonth.getMonth() &&
         i > inicio?.getDate()
+        && !isReserved
           ? "bg-[#c7c1b8]"
           : null
       }
@@ -267,9 +310,9 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
              
              `}
         onClick={() =>{
-          console.log('entre')
-          console.log(nextMonthYear, nextMonth.getMonth(), i)
-          handleDayClick(new Date(nextMonthYear, nextMonth.getMonth(), i));
+          if( i > today.getDate() && !isReserved){
+         handleDayClick(new Date(nextMonthYear, nextMonth.getMonth(), i));
+          }
         }
         }
       >
