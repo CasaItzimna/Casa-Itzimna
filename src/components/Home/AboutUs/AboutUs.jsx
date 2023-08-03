@@ -10,7 +10,7 @@ import florizq from "../Testimonials/florizq.png";
 import { AppContext } from "@/context/StateContext";
 
 function AboutUs({ json }) {
-  const { showModalCalendar } = AppContext();
+  const { showModalCalendar, idioma } = AppContext();
   console.log(showModalCalendar);
 
   return (
@@ -34,7 +34,9 @@ function AboutUs({ json }) {
                 <h3 className="text-[30px] md:text-[40px]  font-cinzelBold text-[#31302c]  ">
                   {json.About.title}
                 </h3>
-                <div className="w-[220px] hidden lg:flex flex-row relative mb-8">
+                {
+                  idioma == "ingles"?
+                  <div className="w-[220px] hidden lg:flex flex-row relative mb-8">
                   <div className="bg-[#d3cbc0] w-[200px] h-[2px]"></div>
                   <Image
                     src={flor}
@@ -42,6 +44,18 @@ function AboutUs({ json }) {
                     className="w-[20px] h-[20px] absolute right-0 -top-2"
                   />
                 </div>
+                :
+                <div className="w-[250px] hidden lg:flex flex-row relative mb-8">
+                  <div className="bg-[#d3cbc0] w-[240px] h-[2px]"></div>
+                  <Image
+                    src={flor}
+                    alt="flor"
+                    className="w-[20px] h-[20px] absolute right-0 -top-2"
+                  />
+                </div>
+
+                }
+                
                 <div className="w-full flex flex-col items-center">
                   <div className="lg:hidden w-[80%] md:w-[440px] h-[50px] flex flex-row  relative mt-3">
                     <Image

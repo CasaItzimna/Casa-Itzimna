@@ -17,6 +17,15 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
     getReservaciones()
   }, [])
 
+
+  useEffect(() => {
+    if(sumMonth == 12){
+      console.log("es mayor")
+      setSumMonth(1)
+    }
+  }, [sumMonth])
+  
+
   console.log(reservaciones)
   
 
@@ -41,9 +50,11 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
   }
   const todayMonth = getTodayMonth(today)
   const currentMonthName = monthNames[todayMonth.getMonth()];
+  console.log(today.getMonth()+sumMonth-1)
   console.log(currentMonthName);
   const currentYear = todayMonth.getFullYear();
-  const firstDayOfMonth = new Date(currentYear, today.getMonth()+sumMonth-1, 1).getDay();
+  console.log(currentYear)
+  const firstDayOfMonth = new Date(currentYear, todayMonth.getMonth(), 1).getDay();
   const daysInMonth = new Date(
     currentYear,
     today.getMonth() + sumMonth ,
@@ -80,62 +91,70 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
         key={new Date(currentYear, today.getMonth(), i)}
         className={`mb-2 mt-4 relative
         ${
+          //Hace seleccionables los dias despues de hoy
           i > today.getDate() &&
              "cursor-pointer lg:hover:bg-[#d3cbc0] lg:hover:mx-2 lg:hover:rounded-full"
             
         }
         ${
-          today.getMonth() == today.getMonth()+sumMonth-1 &&
+          //Pinta de gris los dias antes de hoy
+          today.getMonth() == todayMonth.getMonth() &&
           i < today.getDate() &&
            "text-gray-200"
         }
         ${
-          today.getMonth() != today.getMonth()+sumMonth-1 &&
+          //Hace seleccionables todos los dias que no sean de este mes 
+          today.getMonth() != todayMonth.getMonth() &&
           "cursor-pointer  lg:hover:bg-[#d3cbc0] lg:hover:mx-2 lg:hover:rounded-full"
         }
           ${
-            today.getMonth() == today?.getMonth() +sumMonth -1 &&
+            //Pinta de color HOY y si no el texto es negro
+            today.getMonth() == todayMonth.getMonth() &&
             i === today.getDate()
               ? " text-white bg-[#d3cbc0]  rounded-full mx-0 lg:mx-2 "
               : "text-black"
           } 
+          ${
+            console.log( inicio?.getMonth(),todayMonth.getMonth(), inicio?.getFullYear()  )
+          }
         ${
-          i === inicio?.getDate() && inicio?.getMonth() === today.getMonth() + sumMonth -1
+          //Pinta de media luna izq la fecha seleccionada 
+          i === inicio?.getDate() && inicio?.getMonth() === todayMonth.getMonth() 
+          && inicio?.getFullYear() == currentYear
             ? "bg-[#d3cbc0] rounded-l-full"
             : null
         } 
         ${
-          i === fin?.getDate() && fin?.getMonth() === today.getMonth() + sumMonth -1
+          ////Pinta de media luna der la fecha seleccionada 
+          i === fin?.getDate() && fin?.getMonth() === todayMonth.getMonth()
             ? "bg-[#d3cbc0] rounded-r-full"
             : null
         } 
       ${
+        //Pinta los dias que estan entre el inicio y fin
         inicio?.getDate() &&
         fin?.getDate() &&
         i > inicio?.getDate() &&
         i < fin?.getDate() &&
-        inicio?.getMonth() === today.getMonth()  + sumMonth-1
+        inicio?.getMonth() === todayMonth.getMonth()
           ? "bg-[#c7c1b8]"
           : null
       }
         ${
+          //Pinta los dias de meses diferentes acorde al mes posicionado
           inicio?.getDate() &&
           fin?.getDate() &&
           inicio?.getMonth() != fin?.getMonth() &&
-          inicio?.getMonth() === today?.getMonth() +sumMonth-1 &&
+          inicio?.getMonth() === todayMonth.getMonth() &&
+          
           i > inicio?.getDate()
             ? "bg-[#c7c1b8]"
             : null
         }
+        
         ${
-          inicio?.getMonth() &&
-          fin?.getMonth() &&
-          inicio?.getMonth() != fin?.getMonth() &&
-          today.getMonth() == inicio?.getMonth()&&
-          i> inicio?.getDate() &&
-          "bg-[#c7c1b8]"
-        }
-        ${
+
+          //pinta los dias del mes final en el mes posicionado
           inicio?.getMonth() &&
           fin?.getMonth() &&
           inicio?.getMonth() != fin?.getMonth() &&
@@ -146,31 +165,25 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
        
         `}
 
-        //TO DO
-     /*  Problema cuando reservo la casa por mas de 2 meses 
-      Problema cuando reservo el siguiente año 
-      Que No se vean las fechas ya reservadas
-      Idea: cuando este seleccionado inicio y fin desaparecer cambio de mes
-      */
 
-       /*  ${
-          inicio?.getMonth() &&
-          fin?.getMonth() &&
-          inicio?.getMonth() != fin?.getMonth() &&
-          today.getMonth()+sumMonth-1<fin.getMonth()   &&
-          today.getMonth()+sumMonth-1> inicio.getMonth()&&
-           
-          "bg-[#c7c1b8]"
-        }  */
+        //TO DO
+     /*  Que No se vean las fechas ya reservadas */
+
         onClick={() => {
-          if (today.getMonth() == today.getMonth()+sumMonth-1) {
+          console.log(inicio); 
+          if (today.getMonth() ==  todayMonth.getMonth()) {
             if( i > today.getDate()){
-              handleDayClick(new Date(currentYear, today.getMonth()+sumMonth-1, i));
+              console.log('entre')
+              console.log(currentYear, todayMonth.getMonth(), i)
+              handleDayClick(new Date(currentYear, todayMonth.getMonth(), i));
+              
             }
             
           }
           else{
-            handleDayClick(new Date(currentYear, today.getMonth()+sumMonth-1, i));
+            console.log('entre2')
+            console.log(currentYear, currentMonthName, i)
+            handleDayClick(new Date(currentYear, todayMonth.getMonth(), i));
           }
         }}
       >
@@ -212,12 +225,12 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
         className={`mb-2 mt-4 relative cursor-pointer lg:hover:bg-[#d3cbc0] lg:hover:mx-2 lg:hover:rounded-full
        
         ${
-          i === inicio?.getDate() && inicio?.getMonth() === today.getMonth() + sumMonth
+          i === inicio?.getDate() && inicio?.getMonth() === nextMonth.getMonth()
             ? "bg-[#d3cbc0] rounded-l-full"
             : null
         } 
         ${
-          i === fin?.getDate() && fin?.getMonth() === today.getMonth() + sumMonth
+          i === fin?.getDate() && fin?.getMonth() === nextMonth.getMonth()
             ? "bg-[#d3cbc0] rounded-r-full"
             : null
         } 
@@ -226,7 +239,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
         fin?.getDate() &&
         i > inicio?.getDate() &&
         i < fin?.getDate() &&
-        fin?.getMonth() === today.getMonth() + sumMonth
+        fin?.getMonth() === nextMonth.getMonth()
           ? "bg-[#c7c1b8]"
           : null
       }
@@ -235,7 +248,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
         inicio?.getDate() &&
         fin?.getDate() &&
         inicio?.getMonth() != fin?.getMonth() &&
-        fin?.getMonth() === today?.getMonth() + sumMonth &&
+        fin?.getMonth() === nextMonth.getMonth() &&
         i < fin?.getDate()
           ? "bg-[#c7c1b8]"
           : null
@@ -244,7 +257,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
         inicio?.getDate() &&
         fin?.getDate() &&
         inicio?.getMonth() != fin?.getMonth() &&
-        inicio?.getMonth() === today?.getMonth() + sumMonth &&
+        inicio?.getMonth() === nextMonth.getMonth() &&
         i > inicio?.getDate()
           ? "bg-[#c7c1b8]"
           : null
@@ -253,8 +266,11 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
              
              
              `}
-        onClick={() =>
-          handleDayClick(new Date(currentYear, today.getMonth() + sumMonth, i))
+        onClick={() =>{
+          console.log('entre')
+          console.log(nextMonthYear, nextMonth.getMonth(), i)
+          handleDayClick(new Date(nextMonthYear, nextMonth.getMonth(), i));
+        }
         }
       >
         <div className="flex flex-col">
@@ -285,7 +301,12 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
             </div>
             <div className="flex flex-row justify-center mb-4">
               <div className="text-xl font-bold text-black flex flex-row justify-center items-center gap-4">
-               <FaAngleLeft className={sumMonth-1 == 0? "hidden":"cursor-pointer z-10"} onClick={()=>setSumMonth(sumMonth-1)}  /><span>{currentMonthName} {currentYear}</span> 
+                {
+                  !inicio && !fin&&
+                  <FaAngleLeft className={sumMonth-1 == 0? "hidden":"cursor-pointer z-10"} onClick={()=>setSumMonth(sumMonth-1)}  />
+                }
+                {console.log(currentYear)}
+               <span>{currentMonthName} {currentYear}</span> 
               </div>
             </div>
             <div className="grid grid-cols-7 text-center text-black font-bold">
@@ -312,7 +333,11 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
             <div className="flex flex-row justify-center mb-4">
               <div> </div>
               <div className="text-xl font-bold text-black flex flex-row justify-center items-center gap-4">
-                {nextMonthName} {nextMonthYear}<FaAngleRight className="cursor-pointer z-10" onClick={()=>setSumMonth(sumMonth+1)} />
+                {nextMonthName} {nextMonthYear}
+                {
+                  !inicio && !fin &&
+                  <FaAngleRight className="cursor-pointer z-10" onClick={()=>setSumMonth(sumMonth+1)} />
+                }
               </div>
             </div>
             <div className="grid grid-cols-7 text-center font-bold text-black">

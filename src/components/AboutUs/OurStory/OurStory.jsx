@@ -8,11 +8,14 @@ import cabeza from "./cabeza.png";
 import florizq from "../../Home/Testimonials/florizq.png";
 import { useState } from "react";
 import Link from "next/link"; 
+import { AppContext } from "@/context/StateContext";
 
 function OurStory({json}) {
 
   const [opcion, setOpcion] = useState('opcion1')
   console.log(opcion)
+
+  const {idioma} = AppContext()
   
   return (
     <div className="h-full lg:full w-full relative lg:mb-20 2xl:mb-0 z-20">
@@ -44,7 +47,9 @@ function OurStory({json}) {
           />
       </div>
           </div>
-          <div className="hidden w-[270px]   lg:flex flex-row relative mb-8">
+{
+  idioma == "ingles"?
+<div className="hidden w-[270px]   lg:flex flex-row relative mb-8">
             <div className="bg-[#d3cbc0] w-[260px] h-[2px]"></div>
             <Image
               src={flor}
@@ -52,6 +57,18 @@ function OurStory({json}) {
               className="w-[20px] h-[20px] absolute right-0 -top-2"
               />
           </div>
+          :
+          <div className="hidden w-[420px]   lg:flex flex-row relative mb-8">
+            <div className="bg-[#d3cbc0] w-[410px] h-[2px]"></div>
+            <Image
+              src={flor}
+              alt="flor"
+              className="w-[20px] h-[20px] absolute right-0 -top-2"
+              />
+          </div>
+}
+
+          
           
           <div className="w-full flex flex-row justify-center lg:justify-start">
 

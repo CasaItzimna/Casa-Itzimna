@@ -7,8 +7,11 @@ import blanca from './blanca.png'
 import { AiFillDownCircle, AiFillRightCircle } from "react-icons/ai";
 import { useState } from "react";
 import florizq from "../../Home/Testimonials/florizq.png";
+import { AppContext } from "@/context/StateContext";
 
 function Why({ json }) {
+
+  const {idioma} = AppContext()
 
   const [pregunta1, setPregunta1] = useState(true)
   const [pregunta2, setPregunta2] = useState(false)
@@ -50,7 +53,9 @@ function Why({ json }) {
           />
       </div>
           </div>
-          <div className="hidden w-[380px] h-full lg:flex flex-row relative ">
+          {
+            idioma == "ingles"?
+            <div className="hidden w-[380px] h-full lg:flex flex-row relative ">
             <div className="bg-[#d3cbc0] w-[370px] h-[2px]"></div>
             <Image
               src={flor} 
@@ -58,6 +63,16 @@ function Why({ json }) {
               className="w-[20px] h-[20px] absolute right-0 -top-2"
             />
           </div>
+          :
+          <div className="hidden w-[510px] h-full lg:flex flex-row relative ">
+            <div className="bg-[#d3cbc0] w-[500px] h-[2px]"></div>
+            <Image
+              src={flor} 
+              alt="flor"
+              className="w-[20px] h-[20px] absolute right-0 -top-2"
+            />
+          </div>
+          }
           <div className="flex flex-row justify-center lg:justify-start  w-full">
             
           <div className="flex flex-col h-full w-[90%] lg:w-[90%] 2xl:w-full items-center md:items-start md:mb-8 lg:mt-8">

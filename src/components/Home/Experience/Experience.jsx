@@ -7,10 +7,13 @@ import serpiente from "../../../assets/serpiente.png";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import florizq from "../Testimonials/florizq.png";
+import { AppContext } from "@/context/StateContext";
 
 function Experience({json}) {
 /*   const [isLargerThanMd, setIsLargerThanMd] = useState(window.innerWidth > 768)
  */
+
+const {idioma} = AppContext()
   return (
     <div className="w-full h-[700px] lg:h-[400px] flex flex-row justify-center relative   ">
       <div className="absolute h-full w-full  flex flex-col lg:flex-row justify-center  items-center  z-0">
@@ -32,8 +35,9 @@ function Experience({json}) {
             <h3 className="text-[30px] md:text-[40px]   font-cinzelBold lg:text-white text-center lg:text-right ">
             {json.Experience.title}
             </h3>
-            
-            <div className="w-[260px] h-[20px] hidden lg:flex flex-row relative  ">
+            {
+              idioma == 'ingles'?
+              <div className="w-[260px] h-[20px] hidden lg:flex flex-row relative  ">
               <Image
                 src={flor}
                 alt="flor"
@@ -41,6 +45,19 @@ function Experience({json}) {
               />
               <div className="bg-[#31302c] w-[250px] h-[2px] absolute right-0"></div>
             </div>
+            :
+            <div className="w-[300px] h-[20px] hidden lg:flex flex-row relative  ">
+            <Image
+              src={flor}
+              alt="flor"
+              className="w-[20px] h-[20px] absolute  -top-[9px] "
+            />
+            <div className="bg-[#31302c] w-[290px] h-[2px] absolute right-0"></div>
+          </div>
+            }
+            
+           
+
             <div className="w-full flex flex-col items-center">
 
       <div className="lg:hidden w-[80%] md:w-[440px] h-[50px] flex flex-row  relative mt-3">

@@ -8,11 +8,14 @@ import sol from "./sol.png";
 import { useState } from "react";
 import Link from "next/link";
 import florizq from "../Testimonials/florizq.png";
+import { AppContext } from "@/context/StateContext";
 
 function Accomodation({json}) {
 
   const [opcion, setOpcion] = useState('opcion1')
   console.log(opcion)
+
+  const {idioma} = AppContext()
   
   return (
     <div className="h-full w-full  relative mt-8">
@@ -40,7 +43,9 @@ function Accomodation({json}) {
           />
       </div>
           </div>
-          <div className="w-[350px] h-full hidden lg:flex flex-row relative mb-8">
+          {
+            idioma == "ingles"?
+<div className="w-[350px] h-full hidden lg:flex flex-row relative mb-8">
             <div className="bg-[#d3cbc0] w-[340px] h-[2px]"></div>
             <Image
               src={flor}
@@ -48,6 +53,17 @@ function Accomodation({json}) {
               className="w-[20px] h-[20px] absolute  right-0 -top-2"
               />
           </div>
+          :
+          <div className="w-[300px] h-full hidden lg:flex flex-row relative mb-8">
+            <div className="bg-[#d3cbc0] w-[340px] h-[2px]"></div>
+            <Image
+              src={flor}
+              alt="flor"
+              className="w-[20px] h-[20px] absolute  right-0 -top-2"
+              />
+          </div>
+          }
+          
           
           
 
