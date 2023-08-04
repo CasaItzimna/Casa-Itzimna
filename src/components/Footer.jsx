@@ -43,15 +43,15 @@ function Footer() {
           <a href='https://goo.gl/maps/GzpqxsC24WFuUFZS9' target="_blank">
             <div className="cursor-pointer py-2 text-md lg:text-lg hover:text-[#d3cbc0]">
 
-            <li className="flex flex-row justify-center lg:justify-start "> <Image src={location} alt="location" className="hidden lg:flex h-[20px] w-[15px] "/> &nbsp; AVENIDA PÉREZ PONCE 120, </li>
-            <li className="flex flex-row justify-center lg:justify-start lg:text-left">COLONIA ITZIMNÁ 07100, MÉRIDA, YUCATÁN</li>
+            <li className="flex flex-row justify-center tracking-[4px] lg:tracking-[0px] lg:justify-start "> <Image src={location} alt="location" className="hidden lg:flex h-[20px] w-[15px] "/> &nbsp; AVENIDA PÉREZ PONCE 120, </li>
+            <li className="flex flex-row justify-center tracking-[4px] lg:tracking-[0px] lg:justify-start lg:text-left">COLONIA ITZIMNÁ 07100, MÉRIDA, YUCATÁN</li>
             </div>
             </a>
             <a href='tel:+525528794515'>
-            <li className="flex flex-row lg:py-0  text-lg justify-center lg:justify-start cursor-pointer hover:text-[#d3cbc0]"><BsTelephoneFill className="hidden lg:flex text-[#d3cbc0]"/> &nbsp;+52 55 2879 4515</li>
+            <li className="flex flex-row tracking-[4px] lg:tracking-[0px] lg:py-0  text-lg justify-center lg:justify-start cursor-pointer hover:text-[#d3cbc0]"><BsTelephoneFill className="hidden lg:flex text-[#d3cbc0]"/> &nbsp;+52 55 2879 4515</li>
             </a>
             <a href='mailto:CASAITZIMNA@HOTELBOUTIQUE.COM'>
-            <li className="flex flex-row  text-md lg:text-lg justify-center lg:justify-start cursor-pointer hover:text-[#d3cbc0] "><HiOutlineMail className="hidden lg:flex text-[#d3cbc0]"/> &nbsp;CONTACTO@CASAITZIMNA.COM</li>
+            <li className="flex flex-row tracking-[4px] lg:tracking-[0px]  text-md lg:text-lg justify-center lg:justify-start cursor-pointer hover:text-[#d3cbc0] "><HiOutlineMail className="hidden lg:flex text-[#d3cbc0]"/> &nbsp;CONTACTO@CASAITZIMNA.COM</li>
             </a>
           </ul>
 {/*           <div className="hidden lg:flex w-full h-[2px] bg-[#d3cbc0] mb-4" />

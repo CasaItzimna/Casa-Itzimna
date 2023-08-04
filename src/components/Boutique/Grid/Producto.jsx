@@ -41,8 +41,8 @@ function Producto({producto, json}) {
                     <div className='w-full flex flex-row justify-center'>
                         <div className='flex flex-col mb-4'>
 
-                <img src={urlFor(producto?.image[0]?.asset._ref)} alt='imagen producto' className='w-[100px] h-[100px] md:w-[200px] md:h-[230px]  object-contain'   /> 
-                <img src={urlFor(producto?.image[0]?.asset._ref)} alt='imagen producto' className='w-[100px] h-[25px] rotate-180 blur-lg '   /> 
+                <img src={urlFor(producto?.image[0]?.asset._ref)} alt='imagen producto' className='w-[150px] h-[150px] md:w-[200px] md:h-[230px]  object-contain'   /> 
+                <img src={urlFor(producto?.image[0]?.asset._ref)} alt='imagen producto' className='w-[150px] h-[25px] rotate-180 blur-lg '   /> 
                         </div>
                     </div>
             <p className='font-apollo uppercase text-2xl lg:text-4xl tracking-[4px] mb-4'>{producto?.name}</p>

@@ -77,11 +77,14 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
               
               {producto?.image?.slice(1, 4)?.map((img, index) => (
                 <div key={index} className="w-1/3">
+                  <div>
+
                   <img
                     src={urlFor(img.asset._ref)}
                     alt={`Imagen del producto ${index + 2}`}
                     className="w-[120px]  lg:h-[120px] object-cover overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50"
-                  />
+                    />
+                    </div>
                 </div>
               ))}
             </div>
