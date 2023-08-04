@@ -5,6 +5,7 @@ import axios from "axios";
 import Image from "next/image";
 import login from "../assets/Login/img/login.png";
 import logoblanco from "../assets/Login/img/logoblanco.png";
+import Head from "next/head";
 
 function Login() {
   const { loginUser } = AppContext();
@@ -33,6 +34,10 @@ function Login() {
 
   return (
     <div className="w-full h-screen lg:h-[1000px] flex flex-row justify-center  relative ">
+       <Head>
+ <title>Casa Itzimná Boutique</title>
+ </Head>
+
       <div className="absolute top-0 h-screen lg:h-full w-full z-0">
         <Image
           src={login}

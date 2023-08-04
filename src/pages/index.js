@@ -32,7 +32,9 @@ export default function Home() {
 
   return (
     <div>
-
+ <Head>
+ <title>Casa Itzimná Boutique</title>
+ </Head>
                 
      
 

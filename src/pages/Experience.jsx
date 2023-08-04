@@ -6,6 +6,7 @@ import React from 'react'
 import esJson from '../assets/JSON/es.json';
 import enJson from '../assets/JSON/en.json';
 import { AppContext } from '@/context/StateContext';
+import Head from 'next/head';
 
 function Experience() {
 
@@ -16,6 +17,10 @@ function Experience() {
 
   return (
     <div>
+       <Head>
+ <title>Casa Itzimná Boutique</title>
+ </Head>
+
     <Hero />
     <Experiences json={json}/>
 

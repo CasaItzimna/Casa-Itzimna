@@ -4,6 +4,7 @@ import { AppContext } from '@/context/StateContext';
 import esJson from '../assets/JSON/es.json';
 import enJson from '../assets/JSON/en.json';
 import React from 'react'
+import Head from 'next/head';
 
 function Confirmacion() {
   const {idioma } = AppContext();
@@ -11,6 +12,10 @@ function Confirmacion() {
   const json = idioma === 'espanol' ? esJson : enJson;
   return (
     <div>
+       <Head>
+ <title>Casa Itzimná Boutique</title>
+ </Head>
+ 
       <div className='w-full h-[100px] md:h-[200px] lg:h-[250px] bg-[#31302c]'/>
 
       <TimeLine json={json}/>

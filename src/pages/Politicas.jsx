@@ -1,8 +1,14 @@
+import Head from 'next/head'
 import React from 'react'
 
 function Politicas() {
   return (
-    <div>Politicas</div>
+    <div>
+       <Head>
+ <title>Casa Itzimná Boutique</title>
+ </Head>
+
+      Politicas</div>
   )
 }
 

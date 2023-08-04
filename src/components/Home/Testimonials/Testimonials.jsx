@@ -104,7 +104,7 @@ function Testimonials({json}) {
           {json.Testimonials.titleText}
         </h3>
         <p className="font-apollo text-justify px-4 text-lg">
-          {json.Testimonials.text1}
+          {json.Testimonials.text4}
         </p>
       </div>
     </div>,
@@ -126,7 +126,7 @@ function Testimonials({json}) {
           {json.Testimonials.titleText}
         </h3>
         <p className="font-apollo text-justify px-4 text-lg">
-          {json.Testimonials.text2}
+          {json.Testimonials.text5}
         </p>
       </div>
     </div>,
@@ -148,7 +148,7 @@ function Testimonials({json}) {
           {json.Testimonials.titleText}
         </h3>
         <p className="font-apollo text-justify px-4 text-lg">
-          {json.Testimonials.text3}
+          {json.Testimonials.text6}
         </p>
       </div>
     </div>,
@@ -169,7 +169,7 @@ function Testimonials({json}) {
           {json.Testimonials.titleText}
         </h3>
         <p className="font-apollo text-justify px-4 text-lg">
-          {json.Testimonials.text1}
+          {json.Testimonials.text7}
         </p>
       </div>
     </div>,

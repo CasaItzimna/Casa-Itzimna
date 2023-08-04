@@ -1,8 +1,13 @@
+import Head from 'next/head'
 import React from 'react'
 
 function AvisoPrivacidad() {
   return (
-    <div>AvisoPrivacidad</div>
+    <div>
+       <Head>
+ <title>Casa Itzimná Boutique</title>
+ </Head>
+      AvisoPrivacidad</div>
   )
 }
 

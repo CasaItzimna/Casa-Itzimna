@@ -1,8 +1,13 @@
+import Head from 'next/head'
 import React from 'react'
 
 function Error404() {
   return (
-    <div>Error404</div>
+    <div>
+       <Head>
+ <title>Casa Itzimná Boutique</title>
+ </Head>
+      Error404</div>
   )
 }
 

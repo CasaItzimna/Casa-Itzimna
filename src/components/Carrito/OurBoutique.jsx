@@ -45,11 +45,14 @@ function OurBoutique({json}) {
                     key={index}
                     href={`/Boutique/${producto?.slug?.current}`}
                   >
+                    <div className="w-[150px] h-[150px]">
+
                     <img
                       src={urlFor(producto?.image[0].asset._ref)}
                       alt="products"
-                      className="w-[150px] h-[150px] object-contain bg-white cursor-pointer"
+                      className="w-full h-full object-contain bg-white cursor-pointer"
                     />
+                    </div>
                   </Link>
                 )
             )}

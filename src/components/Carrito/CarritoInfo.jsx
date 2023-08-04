@@ -3,7 +3,7 @@ import { useState } from "react";
 import bote from "./icons/bote.png";
 import experience from "./img/experiencefoto.png";
 import producto from "./img/productoCarrito.png";
-import masaje from "./img/masaje.png";
+import masaje from "./img/carrito-2.jpg";
 import Image from "next/image";
 import { AppContext } from "@/context/StateContext";
 import Link from "next/link";
@@ -434,7 +434,7 @@ carritoProductos.forEach((producto) => {
             </div>
 
             <div className="w-full flex flex-row justify-center">
-              <div className="w-full  bg-white flex flex-col items-center  overflow-hidden shadow-[12.0px_12.0px_8.0px_#9b9696]">
+              <div className="w-full   bg-white flex flex-col items-center  overflow-hidden shadow-[12.0px_12.0px_8.0px_#9b9696]">
                 <Image
                   src={masaje}
                   alt="masaje"

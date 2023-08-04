@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { AiOutlineCaretDown } from "react-icons/ai";
 import Calendario from "@/components/Reservacion/Calendario";
 import { differenceInDays, isValid } from "date-fns";
+import Head from "next/head";
 
 function Reservacion() {
   const { postReservacion } = AppContext();
@@ -99,6 +100,10 @@ function Reservacion() {
 
   return (
     <div className="flex flex-col h-full w-full">
+       <Head>
+ <title>Casa Itzimná Boutique</title>
+ </Head>
+
       <form className="flex flex-col h-full w-full" onSubmit={handleSubmit}>
         <label
           htmlFor="name"

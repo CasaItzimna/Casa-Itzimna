@@ -155,10 +155,32 @@ function Navbar() {
           className={!active ? "flex w-[40px] ml-4 md:ml-8 cursor-pointer" : "hidden"}
         />
         </Link>
+        <div className="flex flex-row justify-center text-2xl text-center items-center mb-2">
+              <span
+                className={`mr-4 ${
+                  idioma === "espanol"
+                    ? "border-[1px] rounded-full px-2 py-1"
+                    : ""
+                } cursor-pointer hover:text-[#d3cbc0]`}
+                onClick={() => setIdioma("espanol")}
+              >
+                ES
+              </span>
+              <span
+                className={`mr-4  ${
+                  idioma === "ingles"
+                    ? "border-[1px] rounded-full px-2 py-1"
+                    : ""
+                } cursor-pointer hover:text-[#d3cbc0]`}
+                onClick={() => setIdioma("ingles")}
+              >
+                EN
+              </span>
+            </div>
         <Image
           src={menu}
           alt="menu movil"
-          className={!active ? "flex w-[40px] mr-4 md:mr-8 cursor-pointer" : "hidden"}
+          className={!active ? "flex w-[40px] h-full mr-4 md:mr-8 cursor-pointer" : "hidden"}
           onClick={()=>setActive(true)}
         />
       </div>
@@ -219,15 +241,23 @@ function Navbar() {
         isOpen={modalOpen}
         onRequestClose={closeModal}
         />
-          </div>
+          </div> 
           <div className="w-full flex flex-row justify-center gap-12 mt-8 mb-8">
             <Link href="/Carrito" onClick={()=>setActive(false)}>
                 <Image src={carritocafe} alt="carrito de compras icon" className="w-[25px] h-[25px] cursor-pointer"/>
             </Link>
+            <a href='tel:+525528794515'>
                 <Image src={telefonocafe} alt="telefono icon" className="w-[21px] h-[25px] cursor-pointer"/>
+                </a>
+                <a href='mailto:CASAITZIMNA@HOTELBOUTIQUE.COM'>
                 <Image src={emailcafe} alt="email icon" className="w-[30px] h-[25px] cursor-pointer"/>
+                </a>
+                <a href="https://www.facebook.com/CasaItzimnaboutique" target="_blank">
                 <Image src={fbcafe} alt="fb icon" className="w-[15px] h-[25px] cursor-pointer"/>
+                </a>
+                <a href="https://www.instagram.com/CasaItzimnaboutique" target="_blank">
                 <Image src={igcafe} alt="ig icon" className="w-[25px] h-[25px] cursor-pointer"/>
+                </a>
           </div>
       </div>
     </Fragment>

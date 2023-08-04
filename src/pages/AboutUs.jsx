@@ -6,6 +6,7 @@ import enJson from '../assets/JSON/en.json';
 import OurStory from '@/components/AboutUs/OurStory/OurStory';
 import History from '@/components/AboutUs/History/History';
 import Why from '@/components/AboutUs/Why/Why';
+import Head from 'next/head';
 
 function AboutUs() {
   const{idioma} = AppContext()
@@ -15,6 +16,9 @@ function AboutUs() {
 
   return (
     <div>
+       <Head>
+ <title>Casa Itzimná Boutique</title>
+ </Head>
 
     <Hero json = {json}/>
     <OurStory json = {json}/>

@@ -6,6 +6,7 @@ import enJson from '../assets/JSON/en.json';
 import Facilities from '@/components/House/Facilities/Facilities';
 import Rates from '@/components/House/Rates/Rates';
 import Booking from '@/components/House/Booking/Booking';
+import Head from 'next/head';
 
 function House() {
   const{idioma} = AppContext()
@@ -15,10 +16,9 @@ function House() {
 
   return (
     <div>
-
-    
-     
-
+       <Head>
+ <title>Casa Itzimná Boutique</title>
+ </Head>
     <Hero json = {json}/>
     <Facilities json = {json}/>
     

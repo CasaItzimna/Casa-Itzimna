@@ -1,4 +1,5 @@
 import { AppContext } from "@/context/StateContext";
+import Head from "next/head";
 import React, { useState } from "react";
 
 function Facturacion() {
@@ -34,6 +35,10 @@ function Facturacion() {
 
   return (
     <div className="flex flex-col h-full w-full">
+       <Head>
+ <title>Casa Itzimná Boutique</title>
+ </Head>
+
       <form className="flex flex-col h-full w-full" onSubmit={handleSubmit}>
       <input
         type="text"

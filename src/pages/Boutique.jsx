@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Grid from "../components/Boutique/Grid/Grid";
 import esJson from '../assets/JSON/es.json';
 import enJson from '../assets/JSON/en.json';
+import Head from "next/head";
 
 function Boutique() {
   const {idioma, } = AppContext();
@@ -14,6 +15,9 @@ function Boutique() {
 
   return (
     <div>
+       <Head>
+ <title>Casa Itzimná Boutique</title>
+ </Head>
       <Hero />
 
       <Grid 

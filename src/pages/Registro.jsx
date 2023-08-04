@@ -2,6 +2,7 @@ import { AppContext } from '@/context/StateContext';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react'
 import bcrypt from 'bcryptjs';
+import Head from 'next/head';
 
 function Registro() {
 
@@ -30,6 +31,10 @@ function Registro() {
 
   return (
     <div className='w-full h-full grid grid-cols-1 place-items-center'>
+       <Head>
+ <title>Casa Itzimná Boutique</title>
+ </Head>
+
       <div className='flex flex-col w-[350px] h-full border-2 rounded-xl'>
         <h3 className='text-center'>Crear Usuario</h3>
         {error && <p>{error}</p>}
