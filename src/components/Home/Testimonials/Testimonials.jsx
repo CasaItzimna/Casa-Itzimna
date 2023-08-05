@@ -36,7 +36,7 @@ function Testimonials({json}) {
       </div>
       <div className=" absolute top-20 md:top-24 flex flex-col w-full h-full">
         <h3 className="text-[#31302c] text-xl md:text-2xl text-center px-8 font-apollo">
-          {json.Testimonials.titleText}
+          {json.Testimonials.titleText1}
         </h3>
         <p className="font-apollo text-justify px-4 text-lg">
           {json.Testimonials.text1}
@@ -57,7 +57,7 @@ function Testimonials({json}) {
       </div>
       <div className=" absolute top-24 flex flex-col w-full h-full">
         <h3 className="text-[#d3cbc0] text-xl md:text-2xl text-center px-8 font-apollo">
-          {json.Testimonials.titleText}
+          {json.Testimonials.titleText2}
         </h3>
         <p className="font-apollo text-justify px-4 text-lg">
           {json.Testimonials.text2}
@@ -78,7 +78,7 @@ function Testimonials({json}) {
       </div>
       <div className=" absolute top-20 md:top-24 flex flex-col w-full h-full">
         <h3 className="text-[#31302c] text-xl md:text-2xl text-center px-8 font-apollo">
-          {json.Testimonials.titleText}
+          {json.Testimonials.titleText3}
         </h3>
         <p className="font-apollo text-justify px-4 text-lg">
           {json.Testimonials.text3}
@@ -101,7 +101,7 @@ function Testimonials({json}) {
       </div>
       <div className=" absolute top-24 flex flex-col w-full h-full">
         <h3 className="text-[#d3cbc0] text-xl md:text-2xl text-center px-8 font-apollo">
-          {json.Testimonials.titleText}
+          {json.Testimonials.titleText4}
         </h3>
         <p className="font-apollo text-justify px-4 text-lg">
           {json.Testimonials.text4}
@@ -123,7 +123,7 @@ function Testimonials({json}) {
       </div>
       <div className=" absolute top-20 md:top-24 flex flex-col w-full h-full">
         <h3 className="text-[#31302c] text-xl md:text-2xl text-center px-8 font-apollo">
-          {json.Testimonials.titleText}
+          {json.Testimonials.titleText5}
         </h3>
         <p className="font-apollo text-justify px-4 text-lg">
           {json.Testimonials.text5}
@@ -145,7 +145,7 @@ function Testimonials({json}) {
       </div>
       <div className=" absolute top-24 flex flex-col w-full h-full">
         <h3 className="text-[#d3cbc0] text-xl md:text-2xl text-center px-8 font-apollo">
-          {json.Testimonials.titleText}
+          {json.Testimonials.titleText6}
         </h3>
         <p className="font-apollo text-justify px-4 text-lg">
           {json.Testimonials.text6}
@@ -166,7 +166,7 @@ function Testimonials({json}) {
       </div>
       <div className=" absolute top-20 md:top-24 flex flex-col w-full h-full">
         <h3 className="text-[#31302c] text-xl md:text-2xl text-center px-8 font-apollo">
-          {json.Testimonials.titleText}
+          {json.Testimonials.titleText7}
         </h3>
         <p className="font-apollo text-justify px-4 text-lg">
           {json.Testimonials.text7}
