@@ -51,8 +51,8 @@ function AR() {
           shadow-softness="0.97"
           auto-rotate
           camera-target="0m 0m 0m"
-          min-camera-orbit="auto 0deg auto"
-          max-camera-orbit="auto 98deg auto"
+          min-camera-orbit="auto 87deg auto"
+          max-camera-orbit="auto 101deg auto"
         >
           {" "}
         </model-viewer>
