@@ -20,9 +20,9 @@ export default async function handler(req, res) {
                     { shipping_rate: 'shr_1NW72tH0fQs7emygSPggidLu' },
                 ],
                 
-               /*  tax_id_collection: {
+                tax_id_collection: {
                   enabled: true,
-                }, */
+                },
                 line_items:  req.body.items.map((item, index) =>{
                  return{   
                       price_data: {

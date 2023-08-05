@@ -21,6 +21,38 @@ export function StateContextProvider({ children }) {
   const [carritoReservaciones, setCarritoReservaciones] = useState([])
   const [carritoProductos, setCarritoProductos] = useState([])
   const [reservacion, setReservacion] = useState(null)
+  const [moneda, setMoneda] = useState('MXN'); 
+  const [usdRate, setUsdRate] = useState(0)
+  const [eurRate, setEurRate] = useState(0)
+
+
+
+//Obtener tipo de cambio
+const baseCurrency = 'MXN';
+const apiUrl = `https://v6.exchangerate-api.com/v6/${process.env.NEXT_PUBLIC_EXCHANGE}/latest/${baseCurrency}`;
+
+useEffect(() => {
+  fetch(apiUrl)
+  .then((response) => response.json())
+  .then((data) => {
+    if (data.result === 'success') {
+      const rates = data.conversion_rates;
+      setUsdRate(rates.USD) // Tasa de cambio para USD
+      setEurRate(rates.EUR) // Tasa de cambio para EUR
+    } else {
+      console.error('Error al obtener las tasas de cambio');
+    }
+  })
+  .catch((error) => console.error('Error en la solicitud:', error))
+}, [])
+
+
+useEffect(() => {
+  console.log(eurRate);
+}, [eurRate]);
+
+
+
 
   //Facturas
 
@@ -379,6 +411,10 @@ export function StateContextProvider({ children }) {
         setReservacion,
         setCarritoProductos,
         setCarritoReservaciones,
+        setMoneda,
+        eurRate,
+        usdRate,
+        moneda,
         carritoProductos,
         carritoReservaciones,
         reservacion,

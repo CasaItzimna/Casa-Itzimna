@@ -23,7 +23,7 @@ import {motion} from 'framer-motion'
 
 function Navbar() {
 
-  const {setShowModalCalendar, showModalCalendar} = AppContext()
+  const {setShowModalCalendar, showModalCalendar, setMoneda, moneda} = AppContext()
 
   const [modalOpen, setModalOpen] = useState(false);
     const [slug, setSlug] = useState('');
@@ -44,6 +44,10 @@ function Navbar() {
   const router = useRouter();
   const isDashboardPage = router.pathname === '/Dashboard';
   const isDashboardComponentPage = router.pathname === '/Dashboard/[_component]';
+
+  const handleMonedaChange = (selectedMoneda) => {
+    setMoneda(selectedMoneda);
+  };
 
  
 
@@ -89,6 +93,16 @@ function Navbar() {
               >
                 EN
               </span>
+              <select
+              value={moneda}
+              onChange={(e) => handleMonedaChange(e.target.value)}
+              className="cursor-pointer bg-transparent border-none hover:text-[#d3cbc0] focus:outline-none"
+            >
+              <option value="MXN" className="text-black">MXN</option>
+              <option value="USD" className="text-black">USD</option>
+              <option value="EUR" className="text-black">EUR</option>
+              {/* Agrega otras opciones de moneda según tus necesidades */}
+            </select>
             </div>
             <div className="flex flex-row justify-center">
               <ul className="flex flex-row text-center gap-20 text-md 2xl:text-2xl ">

@@ -22,6 +22,7 @@ function CarritoInfo({json}) {
     setCarritoProductos,
     reservacion,
     setReservacion,
+    moneda
   } = AppContext();
   const [checkin, setCheckin] = useState("");
   const [checkout, setCheckout] = useState("");
@@ -313,7 +314,7 @@ carritoProductos.forEach((producto) => {
                         className="w-[50%]"
                       />
                       <p className="text-right font-apollo text-3xl mt-4 tracking-[2px]">
-                        ${producto?.price} MXN
+                        ${producto?.price} {moneda}
                       </p>
                     </div>
                   </div>
@@ -420,7 +421,7 @@ carritoProductos.forEach((producto) => {
                         TOTAL
                       </p>
                       <p className="font-apollo text-[#282828] tracking-[2px] text-xl">
-                        ${sumReservaciones + sumExperiences + sumProductos} MXN
+                        ${sumReservaciones + sumExperiences + sumProductos} {moneda}
                       </p>
                     </div>
                     <button className="bg-black text-white uppercase w-full py-4 mt-4 font-Geometrica text-xl mb-4"

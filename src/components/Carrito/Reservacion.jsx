@@ -5,11 +5,15 @@ import { useEffect } from 'react';
 import bote from "./icons/bote.png";
 import experience from "./img/experiencefoto.png";
 import { differenceInDays, isValid } from "date-fns";
+import { AppContext } from '@/context/StateContext';
 
 function Reservacion({reservacion, deleteExp, deleteReservation, json}) {
     const [plan, setPlan] = useState(null);
     const [checkin, setCheckin] = useState("");
   const [checkout, setCheckout] = useState("");
+
+  const  {moneda, eurRate, usdRate} = AppContext()
+
   console.log(reservacion)
     useEffect(() => {
         if (reservacion) {
@@ -55,25 +59,6 @@ function Reservacion({reservacion, deleteExp, deleteReservation, json}) {
               <p className="font-apollo mb-1 uppercase tracking-[2px]">
                 {reservacion?.email}
               </p>
-              {/* <select
-                name="guest"
-                value={plan}
-                onChange={(e) => setPlan(e.target.value)}
-                className="border-[1px] w-[50%] py-1 border-[#d3cbc0] font-apollo text-gray-500 uppercase tracking-[2px]"
-              >
-                <option value="" className="font-apollo ">
-                  CHOOSE A PLAN
-                </option>
-                <option value="select" className="font-apollo">
-                  SELECT
-                </option>
-                <option value="luxury" className="font-apollo">
-                  LUXURY
-                </option>
-                <option value="premier" className="font-apollo">
-                  PREMIER
-                </option>
-              </select> */}
               <div className='border-[1px] w-[50%] py-1 border-[#d3cbc0] font-apollo text-gray-500 uppercase tracking-[2px]'>
                 {reservacion?.plan}
               </div>
@@ -96,7 +81,18 @@ function Reservacion({reservacion, deleteExp, deleteReservation, json}) {
                     />
                   </div>
               <p className="text-right font-apollo text-3xl mt-8 mb-4 tracking-[2px] ">
-                ${reservacion?.total} MXN
+                {
+                  moneda == "MXN"&&
+                  `$ ${reservacion?.total} ${moneda}`
+                }
+                {
+                  moneda == "USD"&&
+                  `$ ${reservacion?.total*usdRate} ${moneda}`
+                }
+                {
+                  moneda == "EUR"&&
+                  `€ ${reservacion?.total*eurRate} ${moneda}`
+                }
               </p>
                </div>
               </div>
@@ -139,7 +135,18 @@ function Reservacion({reservacion, deleteExp, deleteReservation, json}) {
                         className="rounded-[2px]"
                       />
                       <p className="text-right font-apollo text-3xl mt-4  mb-2 tracking-[2px]">
-                        ${getPriceByExperience(exp)}MXN
+                      {
+                  moneda == "MXN"&&
+                  `$ ${getPriceByExperience(exp)} ${moneda}`
+                }
+                {
+                  moneda == "USD"&&
+                  `$ ${getPriceByExperience(exp)*usdRate} ${moneda}`
+                }
+                {
+                  moneda == "EUR"&&
+                  `€ ${getPriceByExperience(exp)*eurRate} ${moneda}`
+                }
                       </p>
                     </div>
                   </div>
