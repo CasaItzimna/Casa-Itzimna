@@ -4,7 +4,7 @@ const Modal = ({ show, onClose, children }) => {
   // Si la propiedad "show" es falsa, no renderiza el modal
   if (!show) {
     return null;
-  }
+  } 
 
   return (
     // El contenedor del modal tiene posición fija y cubre toda la pantalla

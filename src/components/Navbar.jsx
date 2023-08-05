@@ -17,6 +17,8 @@ import telefonocafe from '../assets/Icons/telefonocafe.png'
 import { useEffect } from "react";
 import CalendarioModal from './Home/Modal/CalendarioModal';
 import { useRouter } from 'next/router';
+import {motion} from 'framer-motion'
+
 
 
 function Navbar() {
@@ -37,17 +39,12 @@ function Navbar() {
     };
     
   const [active, setActive] = useState(false);
-  console.log(active)
-
   const { idioma, setIdioma } = AppContext();
-  console.log(idioma);
   const json = idioma === "espanol" ? esJson : enJson;
-
   const router = useRouter();
-  console.log(router.pathname)
   const isDashboardPage = router.pathname === '/Dashboard';
   const isDashboardComponentPage = router.pathname === '/Dashboard/[_component]';
-  console.log(isDashboardComponentPage)
+
  
 
 
@@ -56,7 +53,11 @@ function Navbar() {
     !isDashboardPage && !isDashboardComponentPage?
     <Fragment>
       <div className="w-full h-full hidden lg:flex flex-col items-center">
-        <div className="h-[150px] max-w-[1920px] w-full absolute top-20 z-20 flex flex-row justify-around  font-apollo">
+        <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 4 }} 
+        className="h-[150px] max-w-[1920px] w-full absolute top-20 z-20 flex flex-row justify-around  font-apollo">
           <div className="flex flex-col">
             <Link href="/">
               <Image
@@ -144,10 +145,13 @@ function Navbar() {
             <Link href="/House#booking">{json.Navbar.bookButton}</Link>
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      <div className={showModalCalendar === false ?"lg:hidden flex flex-row justify-between absolute top-10 md:top-20  z-20 w-full text-white ": "hidden"}>
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 4 }}  className={showModalCalendar === false ?"lg:hidden flex flex-row justify-between absolute top-10 md:top-20  z-20 w-full text-white ": "hidden"}>
       <Link href="/Carrito">
         <Image
           src={carrito}
@@ -183,7 +187,7 @@ function Navbar() {
           className={!active ? "flex w-[40px] h-full mr-4 md:mr-8 cursor-pointer" : "hidden"}
           onClick={()=>setActive(true)}
         />
-      </div>
+      </motion.div>
       <div className={active ? "flex flex-col w-full  absolute top-0 bg-white z-30 " : "hidden"}>
           <div className="w-full h-[180px] flex flex-row justify-center relative">
             <Image src={close} alt="close menu movil"
