@@ -1,30 +1,52 @@
 import Image from 'next/image';
-import React from 'react'
-import hero2 from './hero2.jpg'
-
-
+import React from 'react';
+import hero2 from './hero2.jpg';
+import { motion } from 'framer-motion';
 
 function Hero() {
-    return (
-        <div className="w-full h-[70vh] lg:h-[90vh] flex flex-col relative">
-          <Image
-            src={hero2}
-            alt="fondo"
-            className="absolute w-full h-full object-cover"
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="w-full h-[70vh] lg:h-[90vh] flex flex-col relative"
+    >
+      <motion.div
+        initial={{ scale: 1.2 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1 }}
+        className="absolute w-full h-full object-cover"
+      >
+        <Image src={hero2} alt="fondo" layout="fill" />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="flex flex-row justify-center h-full w-full text-white absolute z-10"
+      >
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="w-full h-[85%] flex flex-col justify-end lg:pb-20 2xl:justify-center text-center items-center"
+        >
+          <motion.h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-cinzelRegular">
+            <motion.span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[200px]">G</motion.span>
+            allery{" "}
+          </motion.h1>
+          {/* Espacio vacío con animación */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+            className="flex lg:hidden h-[100px]"
           />
-    
-          <div className="flex flex-row justify-center  h-full w-full   text-white absolute z-10"> 
-            <div className="w-full h-[85%]  flex flex-col justify-end lg:pb-20 2xl:justify-center text-center items-center">
-              <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-cinzelRegular">
-                <span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[200px]">G</span>allery{" "}
-              </h1>
-              <div className='flex lg:hidden h-[100px]'/>
-                
-    
-            </div>
-          </div>
-        </div>
-      );
+        </motion.div>
+      </motion.div>
+    </motion.div>
+  );
 }
 
-export default Hero
+export default Hero;
