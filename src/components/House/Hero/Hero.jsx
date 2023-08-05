@@ -9,18 +9,21 @@ function Hero({json}) {
   const{idioma} = AppContext()
 
   return (
-    <div className="w-full h-[70vh] lg:h-[90vh] flex flex-col relative">
+    <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 1 }}
+    className="w-full h-[70vh] lg:h-[90vh] flex flex-col relative"
+  >
       <motion.div
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
-        className="absolute w-full h-full"
       >
         <Image
           src={hero3}
           alt="fondo"
-          layout="fill"
-          objectFit="cover"
+          className="absolute w-full h-full object-cover"
         />
       </motion.div>
 
@@ -56,7 +59,7 @@ function Hero({json}) {
           />
         </motion.div>
       </motion.div>
-    </div>
+    </motion.div>
   );
   
   }

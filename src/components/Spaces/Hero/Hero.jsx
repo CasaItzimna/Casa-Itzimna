@@ -12,17 +12,17 @@ function Hero() {
       className="w-full h-[70vh] lg:h-[90vh] flex flex-col relative"
     >
       <motion.div
-        initial={{ scale: 1.2 }}
-        animate={{ scale: 1 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="absolute w-full h-full object-cover"
+        
       >
-        <Image src={hero2} alt="fondo" layout="fill" />
+        <Image src={hero2} alt="fondo" className="absolute w-full h-full object-cover" />
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 20, scale: 0.9 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 1 }}
         className="flex flex-row justify-center h-full w-full text-white absolute z-10"
       >

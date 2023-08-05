@@ -18,9 +18,9 @@ function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="absolute w-full h-full object-cover"
+        
       >
-        <Image src={hero5} alt="fondo" layout="fill" />
+        <Image src={hero5} alt="fondo" className="absolute w-full h-full object-cover" />
       </motion.div>
 
       <motion.div
