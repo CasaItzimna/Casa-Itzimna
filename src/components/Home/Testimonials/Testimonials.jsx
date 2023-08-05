@@ -46,7 +46,7 @@ function Testimonials({json}) {
     <div
     key={2} className="flex relative w-[300px] h-[400px] md:w-[350px] md:h-[400px] border-8 rounded-[7px] border-[#31302c]">
       <div className="absolute top-6 left-4 text-[#31302c] ">
-        <Image src={comillasclaras} alt="comillas" className="w-[60px]" />
+        <Image src={comillasclaras} alt="comillas" className="w-[45px] md:w-[60px]" />
       </div>
       <div className="absolute top-4 right-4 flex flex-row gap-1 ">
         <Image src={starsolid} alt="comillas" className="w-[20px]" />
@@ -90,7 +90,7 @@ function Testimonials({json}) {
     key={4}
     className="flex relative w-[300px] h-[400px] md:w-[350px] md:h-[400px] border-8 rounded-[7px] border-[#31302c]">
       <div className="absolute top-6 left-4 text-[#31302c] ">
-        <Image src={comillasclaras} alt="comillas" className="w-[60px]" />
+        <Image src={comillasclaras} alt="comillas" className="w-[45px] md:w-[60px]" />
       </div>
       <div className="absolute top-4 right-4 flex flex-row gap-1 ">
         <Image src={starsolid} alt="comillas" className="w-[20px]" />
@@ -134,7 +134,7 @@ function Testimonials({json}) {
     key={6}
     className="flex relative w-[300px] h-[400px] md:w-[350px] md:h-[400px] border-8 rounded-[7px] border-[#31302c]">
       <div className="absolute top-6 left-4 text-[#31302c] ">
-        <Image src={comillasclaras} alt="comillas" className="w-[60px]" />
+        <Image src={comillasclaras} alt="comillas" className="w-[45px] md:w-[60px]" />
       </div>
       <div className="absolute top-4 right-4 flex flex-row gap-1 ">
         <Image src={starsolid} alt="comillas" className="w-[20px]" />
