@@ -1,115 +1,29 @@
-import { AppContext } from "@/context/StateContext";
-import Head from "next/head";
-import React, { useState } from "react";
+import Head from 'next/head';
+import React from 'react'
+import Formulario from '../components/Facturacion/Formulario'
+import { AppContext } from '@/context/StateContext';
+
+import esJson from '../assets/JSON/es.json';
+import enJson from '../assets/JSON/en.json';
 
 function Facturacion() {
+  
+  const{idioma} = AppContext()
 
-  const {postFactura} = AppContext()
 
-  const [formData, setFormData] = useState({
-    name: '',
-    phone:'',
-    email:'',
-    date:'',
-    rfc:'',
-    total:''
-  })
-
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = () =>{
-    console.log(formData)
-    postFactura(formData)
-    setFormData({
-      name: '',
-    phone:'',
-    email:'',
-    date:'',
-    rfc:'',
-    total:''
-    })
-  }
-
+  const json = idioma === 'espanol' ? esJson : enJson;
   return (
-    <div className="flex flex-col h-full w-full">
+    <div className='bg-[#d3cbc0]'>
        <Head>
  <title>Casa Itzimná Boutique</title>
  </Head>
 
-      <form className="flex flex-col h-full w-full" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="name"
-        id="name"
-        className="border-2 mt-2"
-        placeholder="name"
-        onChange={handleInputChange}
-        value={formData.name}
-        required
-      />
-      <input
-        type="tel"
-        name="phone"
-        id="phone"
-        className="border-2 mt-2"
-        placeholder="phone"
-        onChange={handleInputChange}
-        value={formData.phone}
-        required
-      />
-      <input
-        type="email"
-        name="email"
-        id="email"
-        className="border-2 mt-2"
-        placeholder="email"
-        onChange={handleInputChange}
-        value={formData.email}
-        required
-      />
-      <input
-        type="date"
-        name="date"
-        id="date"
-        className="border-2 mt-2"
-        placeholder="date"
-        onChange={handleInputChange}
-        value={formData.date}
-        required
-      />
-      <input
-        type="text"
-        name="rfc"
-        id="rfc"
-        className="border-2 mt-2"
-        placeholder="rfc"
-        onChange={handleInputChange}
-        value={formData.rfc}
-        required
-      />
-      <input
-        type="number"
-        name="total"
-        id="total"
-        className="border-2 mt-2"
-        placeholder="total"
-        onChange={handleInputChange}
-        value={formData.total}
-        required
-      />
-      <button
-          className="w-full bg-black text-white text-sm uppercase font-semibold py-4 mt-4"
-          onClick={handleSubmit}
-          type="submit"
-        >
-          continue
-        </button>
-      </form>
+      <div className='w-full h-[100px] md:h-[200px] lg:h-[250px] bg-[#31302c]'>
+
+      </div>
+      <Formulario json={json}/>
     </div>
-  );
+  )
 }
 
-export default Facturacion;
+export default Facturacion

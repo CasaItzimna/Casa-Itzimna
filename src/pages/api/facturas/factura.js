@@ -42,10 +42,13 @@ export default async function handler(req, res) {
               phone: formData.phone,
               email: formData.email,
               date: formData.date,
-              rfc: formData.rfc,
+              id_fiscal: formData.id_fiscal,
               total: parseInt(formData.total),
               state: formData.state,
-              registerDate: new Date(),
+              calle: formData.calle,
+              pais: formData.pais,
+              ciudad: formData.ciudad,
+              codigo_postal: formData.codigo_postal,
             })
             .commit();
           res.status(200).json({ 

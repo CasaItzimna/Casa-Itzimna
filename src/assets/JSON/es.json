@@ -211,6 +211,23 @@
 "noreservations": "NO HAY RESERVACIONES AGREGADAS"
 
       },
+      
+        "Factura": {
+          "titulo": "SOLICITA TU FACTURA",
+          "name": "NOMBRE COMPLETO",
+          "number": "NÚMERO TELEFÓNICO",
+          "email": "EMAIL",
+          "id": "NÚMERO DE IDENTIFICADOR FISCAL",
+          "calle": "CALLE",
+          "pais": "PAÍS",
+          "ciudad": "CIUDAD",
+          "cp": "CÓDIGO POSTAL",
+          "total": "TOTAL",
+          "error": "Completa todos los campos",
+          "success": "Factura solicitada",
+          "boton": "Solicitar Factura"
+        },
+      
     "Confirmation":{
       "titulo": "CONFIRMACIÓN DE ORDEN",
       "thanks": "GRACIAS POR ELEGIR CASA ITZIMNÁ",
@@ -227,4 +244,6 @@
 "apologize": "Pedimos disculpas por las molestias, pero hemos encontrado un error al procesar su pago para su orden.",
 "meantime": "Mientras tanto, le animamos a intentar nuevamente el proceso de pago. Puede regresar a la página de reserva y volver a ingresar su información de pago. Si el problema persiste, por favor, póngase en contacto con nuestro equipo de atención al cliente para obtener ayuda adicional al "
     }
+    
   }
+  

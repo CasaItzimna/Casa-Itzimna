@@ -24,10 +24,30 @@ export default{
             type: 'date'
         },
         {
-            name: 'rfc',
-            title: 'RFC',
+            name: 'id_fiscal',
+            title: 'ID FISCAL',
             type: 'string',
           
+        },
+        {
+            name:"calle",
+            title: "CALLE",
+            type:"string"
+        },
+        {
+            name:"pais",
+            title: "PAIS",
+            type:"string"
+        },
+        {
+            name:"ciudad",
+            title: "CIUDAD",
+            type:"string"
+        },
+        {
+            name:"codigo_postal",
+            title: "CODIGO_POSTAL",
+            type:"string"
         },
         {
             name: 'total',

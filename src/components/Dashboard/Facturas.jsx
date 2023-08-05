@@ -38,12 +38,15 @@ const Facturas = () => {
 
   const [addFormData, setAddFormData] = useState({
     name: "",
-    phone: 0,
+    phone: "",
     email: "",
-    date: null,
-    rfc: "",
-    state: "",
-    total: 0,
+    date: "",
+    total: "",
+    id_fiscal: "",
+    pais: "",
+    calle: "",
+    ciudad: "",
+    codigo_postal: "",
   });
   const handleCloseModal = () => {
     setShowModal(false);
@@ -115,7 +118,7 @@ const Facturas = () => {
                   <th className="text-left pl-2">NOMBRE</th>
                   <th className="hidden xl:table-cell">TELEFONO</th>
 {/*                   <th className="hidden md:table-cell">CORREO</th>
- */}                  <th className="hidden xl:table-cell">RFC</th>
+ */}                  <th className="hidden xl:table-cell">ID_FISCAL</th>
                   <th className="hidden xl:table-cell">FECHA</th>
                   <th className="hidden md:table-cell">STATUS</th>
                 </tr>
@@ -196,12 +199,62 @@ const Facturas = () => {
               />
               <input
                 type="text"
-                name="rfc"
-                id="rfc"
+                name="id_fiscal"
+                id="id_fiscal"
                 className="border-2 mt-2"
-                placeholder="rfc"
+                placeholder="id_fiscal"
                 onChange={handleInputChange}
-                value={addFormData.rfc}
+                value={addFormData.id_fiscal}
+                required
+              />
+               <input
+                type="text"
+                name="id_fiscal"
+                id="id_fiscal"
+                className="border-2 mt-2"
+                placeholder="id_fiscal"
+                onChange={handleInputChange}
+                value={addFormData.id_fiscal}
+                required
+              />
+               <input
+                type="text"
+                name="id_fiscal"
+                id="id_fiscal"
+                className="border-2 mt-2"
+                placeholder="id_fiscal"
+                onChange={handleInputChange}
+                value={addFormData.id_fiscal}
+                required
+              />
+               <input
+                type="text"
+                name="calle"
+                id="calle"
+                className="border-2 mt-2"
+                placeholder="calle"
+                onChange={handleInputChange}
+                value={addFormData.calle}
+                required
+              />
+               <input
+                type="text"
+                name="ciudad"
+                id="ciudad"
+                className="border-2 mt-2"
+                placeholder="ciudad"
+                onChange={handleInputChange}
+                value={addFormData.ciudad}
+                required
+              />
+               <input
+                type="text"
+                name="codigo_postal"
+                id="codigo_postal"
+                className="border-2 mt-2"
+                placeholder="codigo_postal"
+                onChange={handleInputChange}
+                value={addFormData.codigo_postal}
                 required
               />
               <input
@@ -214,20 +267,7 @@ const Facturas = () => {
                 value={addFormData.total}
                 required
               />
-              {/* <label htmlFor="switch">
-                {isSwitchChecked ? "RECIBIDA" : "ENVIADA"}
-              </label>
-              <div className="flex flex-row w-[50px]">
-
-              <input
-                type="checkbox"
-                name="switch"
-                id="switch"
-                className="mr-2"
-                onChange={handleSwitchChange}
-                checked={isSwitchChecked}
-              />
-              </div> */}
+            
             </form>
           </div>
           <div className="flex flex-row justify-between">

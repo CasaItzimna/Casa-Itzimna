@@ -35,7 +35,11 @@ function Factura({ factura, index  }) {
     phone: factura.phone,
     email: factura.email,
     date: factura.date,
-    rfc: factura.rfc,
+    id_fiscal: factura.id_fiscal,
+    pais: factura.pais,
+    calle: factura.calle,
+    ciudad: factura.ciudad,
+    codigo_postal: factura.codigo_postal,
     state: factura.state,
     total: factura.total,
   });
@@ -44,11 +48,16 @@ function Factura({ factura, index  }) {
   useEffect(() => {
     setFormData({
       name: factura.name,
-      phone: factura.phone,
-      email: factura.email,
-      date: factura.date,
-      rfc: factura.rfc,
-      total: factura.total,
+    phone: factura.phone,
+    email: factura.email,
+    date: factura.date,
+    id_fiscal: factura.id_fiscal,
+    pais: factura.pais,
+    calle: factura.calle,
+    ciudad: factura.ciudad,
+    codigo_postal: factura.codigo_postal,
+    state: factura.state,
+    total: factura.total,
     });
   }, [factura]);
 
@@ -144,7 +153,7 @@ function Factura({ factura, index  }) {
   <td className="text-left font-apollo uppercase tracking-[2px] text-sm pl-2">{factura.name}</td>
   <td className="font-apollo uppercase tracking-[2px] text-sm  hidden xl:table-cell">{factura.phone}</td>
 {/*   <td className="font-apollo uppercase tracking-[2px] text-sm hidden lg:table-cell ">{factura.email}</td>
- */}  <td className="font-apollo uppercase tracking-[2px] text-sm hidden xl:table-cell ">{factura.rfc}</td>
+ */}  <td className="font-apollo uppercase tracking-[2px] text-sm hidden xl:table-cell ">{factura.id_fiscal}</td>
   <td className="font-apollo uppercase tracking-[2px] text-sm hidden xl:table-cell ">{factura.date}</td>
   <td className="font-apollo uppercase tracking-[2px] text-sm hidden md:table-cell">{factura.state ? "pendiente" : "enviada"}</td>
   <td className="font-apollo uppercase tracking-[2px] text-sm  "><button className="py-2 px-2 cursor-pointer" onClick={()=>setShowModal(true)}>Ver Detalle</button></td>
@@ -202,14 +211,59 @@ function Factura({ factura, index  }) {
               />
               <input
                 type="text"
-                name="rfc"
-                id="rfc"
+                name="id_fiscal"
+                id="id_fiscal"
                 className="border-2 mt-2"
-                placeholder="rfc"
+                placeholder="id_fiscal"
                 onChange={handleInputChange}
-                value={formData.rfc}
+                value={formData.id_fiscal}
                 required
               />
+              <input
+          type="text"
+          name="calle"
+          id="calle"
+          className="placeholder:text-center placeholder:font-Geometrica w-full col-span-2  border-[1px] py-1 border-[#d3cbc0]"
+          placeholder= "calle"
+          onChange={handleInputChange}
+          value={formData.calle}
+          required
+        />
+           <input
+          type="text"
+          name="ciudad"
+          id="ciudad"
+          className="placeholder:text-center placeholder:font-Geometrica w-full col-span-2   border-[1px] py-1 border-[#d3cbc0]"
+          placeholder= "ciudad"
+          onChange={handleInputChange}
+          value={formData.ciudad}
+          required
+        />
+      
+
+        <input
+          type="text"
+          name="pais"
+          id="pais"
+          className="placeholder:text-center placeholder:font-Geometrica w-full   border-[1px] py-1 border-[#d3cbc0]"
+          placeholder= "pais"
+          onChange={handleInputChange}
+          value={formData.pais}
+          required
+        />
+
+     
+
+        <input
+          type="text"
+          name="codigo_postal"
+          id="codigo_postal"
+          className="placeholder:text-center placeholder:font-Geometrica w-full   border-[1px] py-1 border-[#d3cbc0]"
+          placeholder= "codigo postal"
+          onChange={handleInputChange}
+          value={formData.codigo_postal}
+          required
+        />
               <input
                 type="number"
                 name="total"

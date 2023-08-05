@@ -228,6 +228,21 @@
   "apologize": "We apologize for the inconvenience, but we encountered an error while processing your payment for your order.",
   "meantime": "In the meantime, we encourage you to try the payment process again. You can return to the booking page and re-enter your payment information. If the issue persists, please contact our customer support team for further assistance at "
 
-}
+},
+"Factura": {
+  "titulo": "REQUEST YOUR INVOICE",
+  "name": "FULL NAME",
+  "number": "PHONE NUMBER",
+  "email": "EMAIL",
+  "id": "TAX IDENTIFICATION NUMBER",
+  "calle": "STREET",
+  "pais": "COUNTRY",
+  "ciudad": "CITY",
+  "cp": "POSTAL CODE",
+  "total": "TOTAL",
+  "error": "Please complete all fields",
+"success": "Invoice requested",
+"boton": "Request Invoice"
+  }
   
   }

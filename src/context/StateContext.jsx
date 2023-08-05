@@ -32,9 +32,13 @@ export function StateContextProvider({ children }) {
       phone: formData.phone,
       email: formData.email,
       date: formData.date,
-      rfc: formData.rfc,
+      id_fiscal: formData.id_fiscal,
       total: parseInt(formData.total),
       state: true,
+      calle: formData.calle,
+      pais: formData.pais,
+      ciudad: formData.ciudad,
+      codigo_postal: formData.codigo_postal,
       registerDate: new Date(),
     });
   }
