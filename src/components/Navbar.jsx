@@ -194,6 +194,16 @@ function Navbar() {
               >
                 EN
               </span>
+              <select
+              value={moneda}
+              onChange={(e) => handleMonedaChange(e.target.value)}
+              className="cursor-pointer bg-transparent border-none hover:text-[#d3cbc0] focus:outline-none"
+            >
+              <option value="MXN" className="text-black">MXN</option>
+              <option value="USD" className="text-black">USD</option>
+              <option value="EUR" className="text-black">EUR</option>
+              {/* Agrega otras opciones de moneda según tus necesidades */}
+            </select>
             </div>
         <Image
           src={menu}
