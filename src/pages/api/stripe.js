@@ -8,6 +8,19 @@ export default async function handler(req, res) {
         console.log(req.body.moneda)
         try {
           const {moneda} = req.body
+
+          // Verificar si hay algún artículo con la propiedad "producto"
+          const hasProduct = req.body.items.some((item) => item.tipo == "producto");
+          console.log(hasProduct)
+
+          const shippingAddressCollection = hasProduct
+          ? {
+              shipping_address_collection: {
+                  allowed_countries: ['US', 'CA', 'MX'],
+              },
+          }
+          : {};
+
             const params = {
                 submit_type: 'pay',
                 mode: 'payment',
@@ -16,13 +29,11 @@ export default async function handler(req, res) {
                 },
                 payment_method_types: ['card'],
                 billing_address_collection: 'required',
-                shipping_address_collection: {
-                    allowed_countries: ['US', 'CA', 'MX'],
-                },/* 
+                ...shippingAddressCollection,/* 
                 shipping_options: [
                     { shipping_rate: 'shr_1NW71mH0fQs7emygxtUXa48C' },
                     { shipping_rate: 'shr_1NW72tH0fQs7emygSPggidLu' },
-                ], */
+                ], 
                /*  
                 tax_id_collection: {
                   enabled: true,
