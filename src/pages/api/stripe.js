@@ -1,32 +1,37 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-import {updateReservacion} from '../../context/StateContext'
+
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
         console.log(req.body)
         console.log(req.body.items[0].price)
+        console.log(req.body.moneda)
         try {
-          
+          const {moneda} = req.body
             const params = {
                 submit_type: 'pay',
                 mode: 'payment',
+                invoice_creation: {
+                  enabled: true,
+                },
                 payment_method_types: ['card'],
                 billing_address_collection: 'required',
                 shipping_address_collection: {
                     allowed_countries: ['US', 'CA', 'MX'],
-                },
+                },/* 
                 shipping_options: [
                     { shipping_rate: 'shr_1NW71mH0fQs7emygxtUXa48C' },
                     { shipping_rate: 'shr_1NW72tH0fQs7emygSPggidLu' },
-                ],
-                
+                ], */
+               /*  
                 tax_id_collection: {
                   enabled: true,
-                },
+                }, */
                 line_items:  req.body.items.map((item, index) =>{
+                  console.log(req.body.moneda)
                  return{   
                       price_data: {
-                        currency: 'mxn',
+                        currency: moneda,
                         product_data: {
                           name: item.name,
                           description: item.tipo

@@ -15,6 +15,7 @@ import getStripe from '../../lib/getStripe'
 function CarritoInfo({json}) {
   const [carrito, setCarrito] = useState([])
   const [plan, setPlan] = useState(null);
+  
   const {
     carritoReservaciones,
     setCarritoReservaciones,
@@ -22,8 +23,30 @@ function CarritoInfo({json}) {
     setCarritoProductos,
     reservacion,
     setReservacion,
-    moneda
+    moneda,
+    usdRate,
+    eurRate
   } = AppContext();
+
+  console.log(usdRate)
+  console.log(eurRate)
+
+  const determinarMoneda = () => {
+    switch(moneda){
+    
+      case "USD":
+        return usdRate
+        break;
+      case "EUR":
+        return eurRate
+        break;
+        default:
+          return 1
+    }
+  }
+
+  
+
   const [checkin, setCheckin] = useState("");
   const [checkout, setCheckout] = useState("");
   const [reservacionEnCarrito, setReservacionEnCarrito] = useState([]);
@@ -189,30 +212,25 @@ const handleCheckOut = async () =>{
   console.log('Esto es un ejemplo')
  // Recorremos carritoReservaciones para guardar cada reservación y experiencia en el arreglo carrito
 carritoReservaciones.forEach((reservacion) => {
+
+  reservacion.price = (reservacion.price* determinarMoneda()).toFixed(2)
+  
   carrito.push(reservacion); // Guardamos la reservación completa en el arreglo carrito
 
   // Recorremos el arreglo experience dentro de cada reservación
   if (reservacion.experience && Array.isArray(reservacion.experience)) {
     reservacion.experience.forEach((exp) => {
       const precioExperiencia = obtenerPrecioExperiencia(exp);
-      carrito.push({ name: exp, price: precioExperiencia, tipo: "experiencia" }); // Guardamos la experiencia con su precio en el arreglo carrito
+      carrito.push({ name: exp, price: (precioExperiencia* determinarMoneda()).toFixed(2), tipo: "experiencia" }); // Guardamos la experiencia con su precio en el arreglo carrito
     });
   }
 });
 
 // Recorremos carritoProductos para guardar cada producto en el arreglo carrito
 carritoProductos.forEach((producto) => {
+  producto.price = (producto.price* determinarMoneda()).toFixed(2)
   carrito.push(producto); // Guardamos cada producto en el arreglo carrito
-});
-  
-  console.log('esto es lo que vamos a enviar:', carrito)
-  const carrito2 = [
-    { tipo: 'reservacion', name: 'Ismael', price: 1080 },
-    { tipo: 'reservacion', price: 2360, name: 'spa' },
-    { tipo: 'reservacion', price: 2500, name: 'cena' },
-    { tipo: 'producto', name: 'blabla', price: 4800 }
-  ];
-  
+}); 
   const stripe = await getStripe();
   
   const response = await fetch('/api/stripe', {
@@ -221,7 +239,8 @@ carritoProductos.forEach((producto) => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      items: carrito
+      items: carrito,
+      moneda: moneda
     }),
   });
   
@@ -314,7 +333,7 @@ carritoProductos.forEach((producto) => {
                         className="w-[50%]"
                       />
                       <p className="text-right font-apollo text-3xl mt-4 tracking-[2px]">
-                        ${producto?.price} {moneda}
+                        ${((producto?.price)* determinarMoneda()).toFixed(2)} {moneda}
                       </p>
                     </div>
                   </div>
@@ -359,20 +378,21 @@ carritoProductos.forEach((producto) => {
                                 new Date(rsv.checkout),
                                 new Date(rsv.checkin)
                               ) *
-                                (rsv.plan === "select"
-                                  ? 18000
+                                (((rsv.plan === "select"
+                                  ? 18000 
                                   : rsv.plan === "luxury"
                                   ? 22000
                                   : rsv.plan === "premier"
-                                  ? 25000
-                                  : 0) +
+                                  ? 25000 
+                                  : 0) * determinarMoneda()).toFixed(2))  +
                                 (rsv.guests === "6-8"
-                                  ? 2000
+                                  ? 2000 
                                   : rsv.guests === "1-2"
-                                  ? 0
+                                  ? 0 
                                   : rsv.guests === "3-5"
                                   ? 0
-                                  : 0)}
+                                  : 0)* determinarMoneda()
+                                  } {moneda}
                             </p>
                           ))}
                             {carritoReservaciones.map((rsv, index) => (
@@ -383,15 +403,15 @@ carritoProductos.forEach((producto) => {
                                   className="font-apollo text-[#31302c]/40 tracking-[2px] text-lg"
                                 >$
                                   {exp == "cena"
-                                  ? 3000
+                                  ? (3000 * determinarMoneda()).toFixed(2)
                                   : exp == "recorrido"
-                                  ? 2500
+                                  ? (2500 * determinarMoneda()).toFixed(2)
                                   : exp == "spa"
-                                  ? 5000
+                                  ? (5000 * determinarMoneda()).toFixed(2)
                                   : exp == "comidas"
-                                  ? 6000
+                                  ? (6000 * determinarMoneda()).toFixed(2)
                                   : 0
-                                }
+                                } {moneda}
                                 
                                 
                                 </p>
@@ -403,17 +423,12 @@ carritoProductos.forEach((producto) => {
                                   carritoProductos.map((product,index) => (
                                   <p key={index}
                                   className="font-apollo text-[#31302c]/40 tracking-[2px] text-lg"
-                                  >$
-                                    {product.price}
+                                  >
+                                     ${((product?.price)* determinarMoneda()).toFixed(2)} {moneda}
                                     </p>
                                   ))
                                 }
                         </div>
-                       {/*  <div className="h-full flex flex-col justify-end">
-                          <p className="font-apollo text-[#282828] tracking-[2px] text-lg ">
-                            $120 MXN
-                          </p>
-                        </div> */}
                       </div>
                     </div>
                     <div className="w-full flex flex-row justify-between mt-4">
@@ -421,7 +436,7 @@ carritoProductos.forEach((producto) => {
                         TOTAL
                       </p>
                       <p className="font-apollo text-[#282828] tracking-[2px] text-xl">
-                        ${sumReservaciones + sumExperiences + sumProductos} {moneda}
+                        ${((sumReservaciones + sumExperiences + sumProductos)* determinarMoneda()).toFixed(2)}  {moneda}
                       </p>
                     </div>
                     <button className="bg-black text-white uppercase w-full py-4 mt-4 font-Geometrica text-xl mb-4"

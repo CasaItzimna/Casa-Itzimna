@@ -15,6 +15,21 @@ function ProductoModal({ producto, isOpen, onRequestClose, json }) {
   console.log(opcion);
   const {carritoProductos, setCarritoProductos} = AppContext()
 
+  const {moneda, eurRate,usdRate} = AppContext()
+
+   const determinarMoneda = () => {
+    switch(moneda){
+    
+      case "USD":
+        return usdRate
+        break;
+      case "EUR":
+        return eurRate
+        break;
+        default:
+          return 1
+    }
+  }
 
   const router = useRouter()
 
@@ -102,10 +117,10 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
             </p>
             <p className="mt-4 mb-4">
               <span className="text-4xl font-apollo  tracking-[4px] ">
-                {producto?.price}
+                {(producto?.price * determinarMoneda()).toFixed(2)}
               </span>
               &nbsp;&nbsp;
-              <span className="text-4xl font-apollo tracking-[4px] ">USD</span>
+              <span className="text-4xl font-apollo tracking-[4px] ">{moneda}</span>
             </p>
             <div className="w-full flex flex-row justify-center lg:justify-start">
               <div className="flex flex-row  justify-between w-full h-full font-ethereal uppercase text-[11px] ">

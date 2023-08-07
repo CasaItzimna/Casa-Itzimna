@@ -83,15 +83,15 @@ function Reservacion({reservacion, deleteExp, deleteReservation, json}) {
               <p className="text-right font-apollo text-3xl mt-8 mb-4 tracking-[2px] ">
                 {
                   moneda == "MXN"&&
-                  `$ ${reservacion?.total} ${moneda}`
+                  `$ ${(reservacion?.total).toFixed(2)} ${moneda}`
                 }
                 {
                   moneda == "USD"&&
-                  `$ ${reservacion?.total*usdRate} ${moneda}`
+                  `$ ${(reservacion?.total*usdRate).toFixed(2)} ${moneda}`
                 }
                 {
                   moneda == "EUR"&&
-                  `€ ${reservacion?.total*eurRate} ${moneda}`
+                  `€ ${(reservacion?.total*eurRate).toFixed(2)} ${moneda}`
                 }
               </p>
                </div>
@@ -137,15 +137,15 @@ function Reservacion({reservacion, deleteExp, deleteReservation, json}) {
                       <p className="text-right font-apollo text-3xl mt-4  mb-2 tracking-[2px]">
                       {
                   moneda == "MXN"&&
-                  `$ ${getPriceByExperience(exp)} ${moneda}`
+                  `$ ${(getPriceByExperience(exp)).toFixed(2)} ${moneda}`
                 }
                 {
                   moneda == "USD"&&
-                  `$ ${getPriceByExperience(exp)*usdRate} ${moneda}`
+                  `$ ${(getPriceByExperience(exp)*usdRate).toFixed(2)} ${moneda}`
                 }
                 {
                   moneda == "EUR"&&
-                  `€ ${getPriceByExperience(exp)*eurRate} ${moneda}`
+                  `€ ${(getPriceByExperience(exp)*eurRate).toFixed(2)} ${moneda}`
                 }
                       </p>
                     </div>
@@ -154,8 +154,6 @@ function Reservacion({reservacion, deleteExp, deleteReservation, json}) {
                 </div>
               ))
 }
-                  
-              
                   </div>
   )
   
