@@ -15,7 +15,7 @@ function ProductoModal({ producto, isOpen, onRequestClose, json }) {
   console.log(opcion);
   const {carritoProductos, setCarritoProductos} = AppContext()
 
-  const {moneda, eurRate,usdRate} = AppContext()
+  const {moneda, eurRate,usdRate, idioma} = AppContext()
 
    const determinarMoneda = () => {
     switch(moneda){
@@ -165,10 +165,21 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
             </div>
             <div className="h-[150px] text-justify">
             <p className={`${opcion === "opcion1"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>
-              {producto?.description}
+              {
+                idioma == "espanol"?
+                producto?.description:
+                producto?.descriptionENG
+              }
             </p>
-            <p className={`${opcion === "opcion2"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>{producto?.details}</p>
-            <p className={`${opcion === "opcion3"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>{producto?.shipping}</p>
+            <p className={`${opcion === "opcion2"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>{
+                idioma == "espanol"?
+                producto?.details:
+                producto?.detailsENG
+              }</p>
+            <p className={`${opcion === "opcion3"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>{
+             idioma == "espanol"?
+             producto?.shipping:
+             producto?.shippingENG}</p>
             </div>
             <div className="flex flex-col items-center lg:items-start">
             <button className="w-[210px] tracking-[4px] mt-8 py-2 text-xl text-white bg-black"

@@ -25,16 +25,36 @@ export default {
       }
     },
 
-    {
-      name: 'details',
-      title: 'Details',
-      type: 'string'
-    },
-    {
-      name: 'description',
-      title: 'Description',
-      type: 'string'
-    },
+      {
+        name: 'details',
+        title: 'Details',
+        type: 'string'
+      },
+      {
+        name: 'detailsENG',
+        title: 'DetailsENG',
+        type: 'string'
+      },
+      {
+        name: 'description',
+        title: 'Description',
+        type: 'string'
+      },
+      {
+        name: 'descriptionENG',
+        title: 'DescriptionENG',
+        type: 'string'
+      },
+      {
+        name: 'shipping',
+        title: 'Shipping',
+        type: 'string'
+      },
+      {
+        name: 'shippingENG',
+        title: 'ShippingENG',
+        type: 'string'
+      },
     {
       name: 'category',
       title: 'Category',

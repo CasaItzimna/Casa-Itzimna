@@ -23,7 +23,8 @@ function OurStory({json}) {
       <div className="absolute left-0 top-[10%] -z-30">
             <Image src={cabeza} alt="cabeza" className="w-[300px]" />
         </div>
-      <div className="flex flex-col-reverse lg:flex-row justify-center w-full h-full 2xl:h-[700px]  ">
+      <div className="flex flex-col-reverse lg:flex-row justify-center w-full h-full 2xl:h-[700px]   ">
+       
         <div className="w-full lg:w-[90%] xl:w-[40%] 2xl:w-[570px] h-full md:h-[25%] lg:h-full flex flex-col justify-center md:justify-end lg:justify-center xl:justify-start ">
           <div className="flex flex-row justify-center xl:justify-start 2xl:justify-end">
 
