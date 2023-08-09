@@ -95,7 +95,7 @@ function OurStory({json}) {
             </div>
             </div>
             <div className="w-full flex flex-col items-center 2xl:items-start">
-          <div className="h-[350px] md:h-[200px] flex flex-row justify-center lg:justify-start  text-justify w-[90%] lg:w-full  ">
+          <div className="h-[300px] md:h-[200px] flex flex-row justify-center lg:justify-start  text-justify w-[90%] lg:w-full  ">
 
              
           <p className={`${opcion === "opcion1"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>
