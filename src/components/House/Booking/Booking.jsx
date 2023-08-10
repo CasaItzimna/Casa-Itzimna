@@ -639,7 +639,7 @@ const [total, setTotal] = useState(0)
         </div>
       )}
                 <button
-                  className="col-span-2  bg-black text-white text-2xl tracking-[4px] font-Geometrica py-3 mt-2"
+                  className="col-span-2  bg-black text-white hover:bg-[#a59f98] text-2xl tracking-[4px] font-Geometrica py-3 mt-2"
                   onClick={handleSubmit}
                 >
                   {/*  <Link href="/Carrito"> BOOK NOW </Link> */}
@@ -648,7 +648,7 @@ const [total, setTotal] = useState(0)
 
                 <p className="w-full col-span-2 font-PlayfairDisplay text-sm text-justify">
                   {json.Booking.consent}
-                  <span className="w-full text-[#d3cbc0] ml-2">
+                  <span className="w-full text-[#d3cbc0] hover:text-[#a59f98] ml-2">
                     {json.Booking.privacy}
                   </span>
                 </p>
