@@ -116,8 +116,8 @@ function Ventas() {
 <p>Cargando Ventas...</p>
 ) : (
 
-ventas.length > 0 ? (
-ventas.map((venta,index) => (
+currentVentas.length > 0 ? (
+currentVentas.map((venta,index) => (
   <Venta key={index} venta={venta} />
 ))
 
