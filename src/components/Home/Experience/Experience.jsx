@@ -91,7 +91,7 @@ const {idioma} = AppContext()
           {json.Experience.text}
           </p>  
           <Link href='/Experience'>
-          <button className="rounded-[4px] bg-[#31302c] text-white w-[200px] h-[45px] text-xl tracking-[4px] mt-8 font-apollo ">
+          <button className="rounded-[4px] bg-[#31302c] text-white hover:text-[#d3cbc0] w-[200px] h-[45px] text-xl tracking-[4px] mt-8 font-apollo ">
             
           {json.Experience.buttonText}
          

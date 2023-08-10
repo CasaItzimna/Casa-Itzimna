@@ -18,6 +18,8 @@ import { useEffect } from "react";
 import CalendarioModal from './Home/Modal/CalendarioModal';
 import { useRouter } from 'next/router';
 import {motion} from 'framer-motion'
+import { FaFacebookF } from "react-icons/fa";
+import { AiOutlineInstagram } from "react-icons/ai";
 
 
 
@@ -151,11 +153,20 @@ function Navbar() {
               <Link href="/Login">LOG IN</Link>
             </button> */}
             <div className="flex flex-row justify-center mb-4">
+              <div className="flex flex-row justify-center items-center gap-4">
+
             <Link href="/Carrito">
                 <Image src={carrito} alt="carrito de compras icon" className="w-[25px] h-[25px] cursor-pointer"/>
             </Link>
+            <a href="https://www.facebook.com/CasaItzimnaboutique" target="_blank">
+            <FaFacebookF className="text-[#d3cbc0] mt-1 text-[25px] cursor-pointer"/>
+            </a>
+            <a href="https://www.instagram.com/CasaItzimnaboutique" target="_blank">
+            <AiOutlineInstagram className="text-[#d3cbc0] mt-1 text-[30px] cursor-pointer"/>
+            </a>
+              </div>
             </div>
-            <button className="bg-[#d3cbc0] rounded-md text-black w-[120px] h-[30px] mt-2 text-xl">
+            <button className="bg-[#d3cbc0] hover:bg-[#a59f98] rounded-md text-black w-[120px] h-[30px] mt-2 text-xl">
             <Link href="/House#booking">{json.Navbar.bookButton}</Link>
             </button>
           </div>

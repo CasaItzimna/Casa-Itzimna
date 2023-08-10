@@ -51,6 +51,8 @@ function Hero({json}) {
             ) : (
               <motion.span>
                 <motion.span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[170px]">A</motion.span>cerca{" "}
+                <motion.span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[170px] ">D</motion.span>e{" "}
+
               </motion.span>
             )}
           </motion.h1>

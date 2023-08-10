@@ -107,10 +107,10 @@ function History({ json }) {
 
   return (
     <div className="w-full h-full pb-12 flex flex-col text-center bg-[#d3cbc0] relative">
-      <div className="absolute flex flex-row justify-center w-full -bottom-0  lg:-bottom-16 left-0 ">
+      <div className="absolute flex flex-row justify-center w-full -bottom-0  xl:-bottom-4 2xl:-bottom-16 left-0 ">
         <div className="w-[95%] h-[40px] lg:h-[70px] flex flex-row justify-center rounded-l-full rounded-r-full bg-white  shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50">
           <div className="w-[95%] h-full flex flex-row justify-around items-center">
-            <span className="font-Geometrica underline text-[#aea08c] cursor-pointer" onClick={handlePrevClick}>
+            <span className={currentIndex-1>-1?"font-Geometrica underline text-[#aea08c] cursor-pointer":"hidden"} onClick={handlePrevClick}>
               prev
             </span>
             <div className="w-full h-full flex flex-row justify-around items-center gap-20">
@@ -128,7 +128,7 @@ function History({ json }) {
     ))}
 </div>
 
-            <span className="font-Geometrica underline text-[#aea08c] cursor-pointer"
+            <span className={currentIndex+1<historia.length-2?"font-Geometrica underline text-[#aea08c] cursor-pointer": "hidden"}
             onClick={handleNextClick}
             >
               next

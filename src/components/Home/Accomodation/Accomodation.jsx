@@ -107,7 +107,7 @@ function Accomodation({json}) {
             <div className="flex flex-row justify-center lg:justify-start w-full">
 
             <Link href='/Spaces'>
-            <button className="rounded-[4px] bg-[#d3cbc0]  w-[200px] h-[45px] text-xl tracking-[4px] mt-8 font-apollo">
+            <button className="rounded-[4px] bg-[#d3cbc0] hover:bg-[#a59f98]  w-[200px] h-[45px] text-xl tracking-[4px] mt-8 font-apollo">
             {json.Accomodation.buttonText}
             </button>
             </Link>
@@ -135,7 +135,8 @@ function Accomodation({json}) {
               foto3:
               null
               }
-              className="p-2 w-full h-full object-cover "
+              onClick={()=>setOpcion("opcion1")}
+              className="p-2 w-full h-full object-cover cursor-pointer "
               />
               </div>
           </div>
@@ -152,8 +153,9 @@ function Accomodation({json}) {
                  foto2:
                  null
                  }
+                 onClick={()=>setOpcion("opcion2")}
                 alt="sala"
-                className="w-full h-full p-2 object-cover "
+                className="w-full h-full p-2 object-cover cursor-pointer "
                 />
             </div>
             </div>
@@ -169,8 +171,9 @@ function Accomodation({json}) {
                 foto1:
                 null
                 }
+                onClick={()=>setOpcion("opcion3")}
                 alt="desayuno"
-                className="w-full h-full p-2 object-cover "
+                className="w-full h-full p-2 object-cover cursor-pointer "
                 />
            
                 </div>

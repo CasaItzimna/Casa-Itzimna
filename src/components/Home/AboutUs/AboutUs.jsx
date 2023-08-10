@@ -78,7 +78,7 @@ function AboutUs({ json }) {
                 </p>
                 </div>
                 <Link href="/AboutUs">
-                  <button className="rounded-[4px] bg-[#d3cbc0] w-[200px] h-[45px] mt-8 font-apollo text-xl tracking-[4px] ">
+                  <button className="rounded-[4px] bg-[#d3cbc0] hover:bg-[#a59f98] w-[200px] h-[45px] mt-8 font-apollo text-xl tracking-[4px] ">
                     {json.About.buttonText}
                   </button>
                 </Link>
@@ -86,7 +86,7 @@ function AboutUs({ json }) {
             </div>
           </div>
           <div className="  w-full h-full lg:h-full flex flex-col justify-start md:justify-center items-center">
-            <div className="w-full h-full flex flex-row justify-center lg:justify-start  items-center">
+            <div className="w-full h-full lg:mb-16 flex flex-row justify-center lg:justify-start  items-center">
               <div className="w-[350px] h-[380px]   md:w-[500px] lg:w-[90%] xl:w-[80%] 2xl:w-[60%]  relative   ">
                 <div className="absolute top-0 right-0 bg-white h-[200px] md:h-[250px] w-[250px] md:w-[300px]">
                   <div

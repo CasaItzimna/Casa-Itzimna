@@ -43,20 +43,19 @@ function Footer() {
           <a href='https://goo.gl/maps/GzpqxsC24WFuUFZS9' target="_blank">
             <div className="cursor-pointer py-2 text-md lg:text-lg hover:text-[#d3cbc0]">
 
-            <li className="flex flex-row justify-center tracking-[4px] lg:tracking-[0px] lg:justify-start "> <Image src={location} alt="location" className="hidden lg:flex h-[20px] w-[15px] "/> &nbsp; AVENIDA PÉREZ PONCE 120, </li>
-            <li className="flex flex-row justify-center tracking-[4px] lg:tracking-[0px] lg:justify-start lg:text-left">COLONIA ITZIMNÁ 07100, MÉRIDA, YUCATÁN</li>
+            <li className="flex flex-row justify-center tracking-[4px] lg:tracking-[0px] xl:tacking-[2px] lg:justify-start "> <Image src={location} alt="location" className="hidden lg:flex h-[20px] w-[15px] "/> &nbsp; AVENIDA PÉREZ PONCE 120, </li>
+            <li className="flex flex-row justify-center tracking-[4px]  lg:justify-start lg:text-left">COLONIA ITZIMNÁ 07100, MÉRIDA, YUCATÁN</li>
             </div>
             </a>
             <a href='tel:+525528794515'>
-            <li className="flex flex-row tracking-[4px] lg:tracking-[0px] lg:py-0  text-lg justify-center lg:justify-start cursor-pointer hover:text-[#d3cbc0]"><BsTelephoneFill className="hidden lg:flex text-[#d3cbc0]"/> &nbsp;+52 55 2879 4515</li>
+            <li className="flex flex-row tracking-[4px]  lg:py-0  text-lg justify-center lg:justify-start cursor-pointer hover:text-[#d3cbc0]"><BsTelephoneFill className="hidden lg:flex text-[#d3cbc0]"/> &nbsp;+52 55 2879 4515</li>
             </a>
             <a href='mailto:CASAITZIMNA@HOTELBOUTIQUE.COM'>
-            <li className="flex flex-row tracking-[4px] lg:tracking-[0px]  text-md lg:text-lg justify-center lg:justify-start cursor-pointer hover:text-[#d3cbc0] "><HiOutlineMail className="hidden lg:flex text-[#d3cbc0]"/> &nbsp;CONTACTO@CASAITZIMNA.COM</li>
+            <li className="flex flex-row tracking-[4px]   text-md lg:text-lg justify-center lg:justify-start cursor-pointer hover:text-[#d3cbc0] "><HiOutlineMail className="hidden lg:flex text-[#d3cbc0]"/> &nbsp;CONTACTO@CASAITZIMNA.COM</li>
             </a>
           </ul>
-{/*           <div className="hidden lg:flex w-full h-[2px] bg-[#d3cbc0] mb-4" />
- */}          <div className="uppercase hidden lg:flex flex-col w-full font-apollo text-white lg:mt-4">
-          copyright all rights reserved - casa itzimná hotel boutique
+        <div className="uppercase hidden lg:flex flex-col w-full font-apollo text-white lg:mt-4">
+         <p> copyright all rights reserved - casa itzimná hotel boutique</p>
         </div>
         </div>
        
@@ -68,12 +67,12 @@ function Footer() {
             PAGES
           </h3>
           <ul className="font-apollo text-white text-sm text-center lg:w-1/4 lg:text-start h-[150px]">
-            <li className="cursor-pointer  hover:text-[#d3cbc0]"> <Link href='/AboutUs'>{json.Footer.option1}</Link></li>
-            <li className="cursor-pointer  hover:text-[#d3cbc0]"><Link href='/House'>{json.Footer.option2}</Link></li>
-            <li className="cursor-pointer  hover:text-[#d3cbc0]"><Link href='/Experience'>{json.Footer.option3}</Link></li>
-            <li className="cursor-pointer  hover:text-[#d3cbc0]"><Link href='/Spaces'>{json.Footer.option4}</Link></li>
-            <li className="cursor-pointer  hover:text-[#d3cbc0]"><Link href='/Boutique'>{json.Footer.option5}</Link></li>
-            <li className="cursor-pointer  hover:text-[#d3cbc0]"><Link href='/Contact'>{json.Footer.option6}</Link></li>
+            <li className="cursor-pointer tracking-[4px]  hover:text-[#d3cbc0]"> <Link href='/AboutUs'>{json.Footer.option1}</Link></li>
+            <li className="cursor-pointer tracking-[4px]  hover:text-[#d3cbc0]"><Link href='/House'>{json.Footer.option2}</Link></li>
+            <li className="cursor-pointer tracking-[4px]  hover:text-[#d3cbc0]"><Link href='/Experience'>{json.Footer.option3}</Link></li>
+            <li className="cursor-pointer tracking-[4px]  hover:text-[#d3cbc0]"><Link href='/Spaces'>{json.Footer.option4}</Link></li>
+            <li className="cursor-pointer tracking-[4px]  hover:text-[#d3cbc0]"><Link href='/Boutique'>{json.Footer.option5}</Link></li>
+            <li className="cursor-pointer tracking-[4px]  hover:text-[#d3cbc0]"><Link href='/Contact'>{json.Footer.option6}</Link></li>
           </ul>
 {/*           <div className="hidden lg:flex w-full h-[2px] bg-[#d3cbc0]" />
  */}        </div>
@@ -87,14 +86,14 @@ function Footer() {
             GET SOCIAL
           </h3>
           <ul className="font-apollo text-white text-sm h-[50px] flex flex-row justify-center gap-4 lg:gap-0 lg:flex-col lg:justify-normal items-center lg:items-end mb-2 ">
-            <li className="flex flex-row cursor-pointer text-lg hover:text-[#d3cbc0]"><span className="hidden lg:flex">CASA ITZIMNÁ BOUTIQUE &nbsp;</span> <FaFacebookF className="text-[#d3cbc0] mt-1 text-4xl lg:text-sm"/></li>
-            <li className="flex flex-row cursor-pointer text-lg hover:text-[#d3cbc0] "><span className="hidden lg:flex">CASAITZIMNÁ_BOUTIQUE &nbsp;</span> <AiOutlineInstagram className="text-[#d3cbc0] mt-1 text-5xl lg:text-sm"/></li>
+            <li className="flex flex-row cursor-pointer text-lg tracking-[4px]  hover:text-[#d3cbc0]"><span className="hidden lg:flex">CASA ITZIMNÁ BOUTIQUE &nbsp;</span> <FaFacebookF className="text-[#d3cbc0] mt-1 text-4xl lg:text-sm"/></li>
+            <li className="flex flex-row cursor-pointer text-lg tracking-[4px]  hover:text-[#d3cbc0] "><span className="hidden lg:flex">CASAITZIMNÁ_BOUTIQUE &nbsp;</span> <AiOutlineInstagram className="text-[#d3cbc0] mt-1 text-5xl lg:text-sm"/></li>
           </ul>
 {/*           <div className="hidden lg:flex w-full h-[2px] bg-[#d3cbc0] mb-4" />
- */}          <div className="uppercase hidden lg:flex flex-row w-full font-apollo text-white lg:mt-4  ">
+ */}          <div className="uppercase hidden lg:flex flex-row justify-end w-full font-apollo  text-white lg:mt-4  ">
           Made by &nbsp; 
           <a href='https://www.jaizmora.com'  target="_blank">
-          <span className="text-[#d3cbc0] cursor-pointer hover:text-white ">jaizmora digital media</span>
+          <span className="text-[#d3cbc0]  cursor-pointer hover:text-white ">jaizmora digital media</span>
           </a>
           </div>
         </div>

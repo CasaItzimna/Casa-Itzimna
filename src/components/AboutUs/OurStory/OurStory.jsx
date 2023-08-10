@@ -73,14 +73,14 @@ function OurStory({json}) {
           
           <div className="w-full flex flex-row justify-center lg:justify-start">
 
-          <div className="flex flex-row  justify-around w-[90%] h-full font-ethereal uppercase text-[11px] ">
+          <div className="flex flex-row  justify-around w-[90%] lg:w-full h-full font-ethereal uppercase text-[11px] ">
             <h4 className="cursor-pointer md:text-[14px]" onClick={()=> setOpcion('opcion1')}>{json.OurStory.option1}</h4>
             <h4 className="cursor-pointer md:text-[14px]" onClick={()=> setOpcion('opcion2')}>{json.OurStory.option2}</h4>
             <h4 className="cursor-pointer md:text-[14px]" onClick={()=> setOpcion('opcion3')}>{json.OurStory.option3}</h4>
           </div>
           </div>
           <div className="w-full flex flex-row justify-center lg:justify-start">
-          <div className="w-[90%] h-full flex flex-row relative mb-4">
+          <div className="w-[90%] lg:w-full h-full flex flex-row relative mb-4">
             <div className="bg-[#d3cbc0] w-full h-[3px]"></div>
             <div  className={`absolute bg-[#31302c] w-[30%] h-[3px] ${
               opcion === 'opcion1'
@@ -126,6 +126,7 @@ function OurStory({json}) {
               foto3:
               null
               }
+              onClick={()=>setOpcion("opcion1")}
               className="p-2 w-full h-full object-cover "
               />
               </div>
@@ -142,6 +143,7 @@ function OurStory({json}) {
                  foto2:
                  null
                  }
+                 onClick={()=>setOpcion("opcion2")}
                 alt="sala"
                 className="w-full h-full p-2 object-cover "
                 />
@@ -158,6 +160,7 @@ function OurStory({json}) {
                 foto1:
                 null}
                 alt="desayuno"
+                onClick={()=>setOpcion("opcion3")}
                 className="w-full h-full p-2 object-cover "
                 />
                 </div>
