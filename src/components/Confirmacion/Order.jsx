@@ -14,7 +14,7 @@ function Order({json}) {
     const [error, setError] = useState(null);
     const [productosCarrito, setproductosCarrito] = useState([])
     const [reservacionesCarrito, setreservacionesCarrito] = useState([])
-    const {updateReservacion, updateProducto} = AppContext()
+    const {updateReservacion, updateProducto, postVenta} = AppContext()
     const sessionIdRef = useRef(null);
 
     const router = useRouter();
@@ -57,7 +57,8 @@ function Order({json}) {
           item.cantidad = item.cantidad - 1
           console.log(item)
           updateProducto(item._id, item);
-
+          const formData = { producto: item };
+          postVenta(formData)
         });
         localStorage.removeItem('producto')
       }

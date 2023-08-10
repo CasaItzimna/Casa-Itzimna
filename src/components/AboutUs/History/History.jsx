@@ -177,7 +177,7 @@ function History({ json }) {
     {historia
       .slice(currentIndex, currentIndex + numToShow) // Mostrar 1 suceso si el ancho de ventana es menor a lg, 3 sucesos si es lg o mayor
       .map((suceso, index) => (
-        <div key={index} className="w-[350px] h-[220px] lg:h-[300px] flex flex-col justify-center text-center bg-[#ad9f8b]">
+        <div key={index} className="w-[350px] md:w-[500px] lg:w-[350px] h-[220px] lg:h-[300px] flex flex-col justify-center text-center bg-[#ad9f8b]">
           <h4 className="font-apollo text-xl tracking-[4px] mb-4 lg:h-[40px]">
             {suceso.titulo}
           </h4>

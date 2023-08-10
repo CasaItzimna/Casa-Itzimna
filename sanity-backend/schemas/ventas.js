@@ -1,8 +1,8 @@
 // schemas/venta.js
 
 export default {
-    name: 'venta',
-    title: 'Venta',
+    name: 'ventas',
+    title: 'Ventas',
     type: 'document',
     fields: [
         {
@@ -10,23 +10,39 @@ export default {
             title: 'Register Date',
             type: 'datetime'
           },
-      {
-        name: 'reservaciones',
-        title: 'Reservaciones',
-        type: 'array',
-        of: [{ type: 'reference', to: [{ type: 'reservacion' }] }],
-      },
+     
       {
         name: 'productos',
         title: 'Productos',
         type: 'array',
-        of: [{ type: 'reference', to: [{ type: 'producto' }] }],
+        of: [{ type: 'reference', to: [{ type: 'productos' }] }],
       },
       {
-        name:'total',
-        title:'Total',
-        type: 'number'
-      }
+        name: "nombre",
+        title: "Nombre",
+        type:"string"
+      },
+      {
+        name: "correo",
+        title: "Correo",
+        type:"string"
+      },
+      {
+        name: "telefono",
+        title: "Telefono",
+        type:"string"
+      },
+      {
+        name: "estado",
+        title: "Estado",
+        initialValue: 'pendiente',
+        type:"string"
+      },
+      {
+        name: "comentarios",
+        title: "Comentarios",
+        type:"string"
+      },
       // Otros campos relacionados con la venta (p. ej., total, cliente, etc.)
     ],
   };

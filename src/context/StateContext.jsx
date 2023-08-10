@@ -12,6 +12,7 @@ export function StateContextProvider({ children }) {
   const [reservaciones, setReservaciones] = useState([]);
   const [product, setProduct] = useState(null);
   const [productos, setProductos] = useState([]);
+  const [ventas, setVentas] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [idioma, setIdioma] = useState('ingles')
   const [inicio, setInicio] = useState(null);
@@ -271,6 +272,97 @@ useEffect(() => {
       });
   }
 
+  async function getVentas() {
+    const query = '*[_type == "ventas"]';
+    const resultado = await client.fetch(query);
+    setVentas(resultado);
+  }
+
+  async function getVenta(ref) {
+    console.log(ref)
+    try {
+      const query = `*[ _id == "${ref}"]`;
+      const resultado = await client.fetch(query);
+      if (resultado.length > 0) {
+        console.log(resultado[0])
+        return resultado[0]
+      } else {
+        return null;
+      }
+    } catch (error) {
+      console.error("Error al obtener la venta:", error);
+      throw error; 
+    }
+  }
+
+  async function postVenta(formData) {
+    console.log(formData);
+    try {
+      const createdVenta = await client.create({
+        _type: "ventas",
+        productos: [
+          {
+            _key: formData.producto._id,
+            _type: "reference",
+            _ref: formData.producto._id,
+          },
+        ],
+        registerDate: new Date(),
+        nombre: formData.nombre,
+        correo: formData.correo,
+        telefono: formData.telefono,
+        estado: "pendiente",
+        comentarios: formData.comentarios,
+      });
+  
+      // Obtenemos el ID generado por Sanity para la nueva venta
+      const ventaId = createdVenta._id;
+      // Retornamos el ventaId
+      return ventaId;
+    } catch (error) {
+      console.error("Error al crear la venta:", error);
+      throw error; // Lanzamos el error para que pueda ser capturado en el catch del componente
+    }
+  }
+
+  
+
+  //TODO: updateReservacion
+  function updateVenta(ventaId, formData) {
+    console.log(ventaId,formData);
+    client
+      .patch(ventaId)
+      .set({
+        nombre: formData.nombre,
+        telefono: formData.telefono,
+        correo: formData.correo,
+        comentarios: formData.comentarios,
+        estado: formData.estado,
+      })
+      
+      .commit()
+      .then((updatedVenta) => {
+        console.log("Venta actualizada:", updatedVenta);
+        getVentas()
+      })
+      .catch((error) => {
+        console.error("Error al actualizar la venta:", error);
+      });
+  }
+
+  function deleteVenta(id) {
+    client
+      .delete(id)
+      .then((deletedVenta) => {
+        console.log("Venta eliminada:", deletedVenta);
+        getVentas()
+      })
+      .catch((error) => {
+        console.error("Error al eliminar la venta:", error);
+      });
+  }
+
+
   //Productos
   async function getProductos() {
     const query = '*[_type == "productos"]';
@@ -412,6 +504,13 @@ useEffect(() => {
         setCarritoProductos,
         setCarritoReservaciones,
         setMoneda,
+        getVentas,
+        getVenta,
+        updateVenta,
+        postVenta,
+        deleteVenta,
+        
+        ventas,
         eurRate,
         usdRate,
         moneda,

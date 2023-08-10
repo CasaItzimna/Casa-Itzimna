@@ -5,6 +5,7 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 
 import Facturas from "./Facturas";
+import Ventas from "./Ventas";
 import Reservaciones from "./Reservaciones";
 import { AppContext } from "@/context/StateContext";
 import Image from "next/image";
@@ -21,6 +22,7 @@ import {
   FaReceipt,
   FaRightFromBracket,
   FaRightToBracket,
+  FaDollarSign,
   FaBars
 } from "react-icons/fa";
 
@@ -61,6 +63,8 @@ const Dashboard = () => {
     switch (activeComponent) {
       case "Facturas":
         return <Facturas />;
+        case "Ventas":
+          return <Ventas/>
       case "Reservaciones":
       default:
         return <Reservaciones />;
@@ -159,6 +163,18 @@ const Dashboard = () => {
               className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
               onClick={() => {
                 setActive(false);
+                handleSidebarClick("Ventas");
+              }}
+            >
+              <span>
+                <FaReceipt className="text-2xl text-white" />
+              </span>{" "}
+              Ventas
+            </li>
+            <li
+              className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
+              onClick={() => {
+                setActive(false);
                 logout()
               }}
             >
@@ -218,6 +234,17 @@ const Dashboard = () => {
                     onClick={() => handleSidebarClick("Facturas")}
                   >
                     Facturación
+                  </span>
+                </p>
+                <p className="flex flex-row gap-4 mt-9 items-center cursor-pointer hover:text-[#d3cbc0]">
+                  <span>
+                    <FaDollarSign className="text-2xl text-white" />
+                  </span>
+                  <span
+                    className="text-xl text-white font-apollo tracking-[2px]"
+                    onClick={() => handleSidebarClick("Ventas")}
+                  >
+                    Ventas
                   </span>
                 </p>
               </div>
