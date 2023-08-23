@@ -33,6 +33,8 @@ function ProductoModal({ producto, isOpen, onRequestClose, json }) {
 
   const router = useRouter()
 
+  
+
 
   const addProductCart = (producto) => {
     console.log(producto);
@@ -64,6 +66,21 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
   if (!producto) {
     return <div>Cargando...</div>; // Muestra un mensaje de carga si producto es null o undefined
   }
+
+  const handleShareClick = async ()  =>{
+    console.log("entre")
+    try {
+      await navigator.share({
+        title: producto?.name,
+        text: producto?.description,
+        url: window.location.href, // URL que deseas compartir
+      });
+    } catch (error) {
+      console.error('Error al compartir:', error);
+    }
+  }
+
+  
 
   return (
     
@@ -197,7 +214,9 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
               </div>
             </button>
             </Link>
-            <button className="w-[210px] tracking-[4px] py-1 text-md mt-3 border-[1px] border-black ">
+            <button className="w-[210px] tracking-[4px] py-1 text-md mt-3 border-[1px] border-black "
+            onClick={handleShareClick}
+            >
               <div className="flex flex-row  justify-center items-center gap-2">
                 <Image
                   src={share}
@@ -215,11 +234,13 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
       </div>
       <button
         className="absolute top-0 right-0 lg:-top-5 lg:-right-5 w-[30px] h-[30px] lg:w-[55px] lg:h-[55px] bg-[#31302c] rounded-[7px] "
-        onClick={onRequestClose}
+        
       >
         <div className="flex flex-row justify-center">
 
-        <Image src={cerrar} alt="cerrar boton " className="w-[80%] lg:w-[30px] h-[80%] lg:h-[30px]" />
+        <Image src={cerrar} alt="cerrar boton " className="w-[80%] lg:w-[30px] h-[80%] lg:h-[30px]"
+        onClick={()=> onRequestClose(true)}
+        />
         </div>
       </button>
         </div>

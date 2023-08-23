@@ -165,7 +165,7 @@ function Form({json}) {
           <p>En breve nos comunicaremos contigo...</p>
         </div>
       )}
-              <button className=" w-[250px] bg-black text-white text-2xl tracking-[4px] font-Geometrica py-2 mt-4"
+              <button className=" w-[250px] bg-black hover:bg-[#a59f98] text-white text-2xl tracking-[4px] font-Geometrica py-2 mt-4"
               onClick={handleSubmit}>
                 {json.Contact.button}
                 </button>

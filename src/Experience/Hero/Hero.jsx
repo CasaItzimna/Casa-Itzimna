@@ -33,7 +33,7 @@ function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="w-full h-[85%] flex flex-col justify-end lg:pb-24 xl:pb-28 2xl:justify-center text-center items-center lg:mt-8 2xl:mt-0"
+          className="w-full h-[85%] flex flex-col justify-end lg:pb-20 2xl:pb-0 2xl:justify-center text-center items-center"
         >
           {idioma === "ingles" ? (
             <motion.h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-8xl 2xl:9xl font-cinzelRegular">

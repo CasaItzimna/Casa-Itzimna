@@ -439,7 +439,7 @@ carritoProductos.forEach((producto) => {
                         ${((sumReservaciones + sumExperiences + sumProductos)* determinarMoneda()).toFixed(2)}  {moneda}
                       </p>
                     </div>
-                    <button className="bg-black text-white uppercase w-full py-4 mt-4 font-Geometrica text-xl mb-4"
+                    <button className="bg-black hover:bg-[#a59f98]  text-white uppercase w-full py-4 mt-4 font-Geometrica text-xl mb-4"
                     onClick={handleCheckOut}
                     >
                      {json.Cart.proceed}
@@ -464,7 +464,7 @@ carritoProductos.forEach((producto) => {
                   {json.Cart.make}
                   </p>
                   <div className="w-full flex flex-row justify-center lg:justify-start mt-4 mb-8">
-                    <button className="uppercase w-[170px] bg-[#d3cbc0] rounded-[7px] text-xl py-1 font-Geometrica tracking-[2px]">
+                    <button className="uppercase w-[170px] bg-[#d3cbc0] hover:bg-[#a59f98] rounded-[7px] text-xl py-1 font-Geometrica tracking-[2px]">
                       <Link href="Experience">{json.Cart.experiences}</Link>
                     </button>
                   </div>

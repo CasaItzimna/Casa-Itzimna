@@ -36,8 +36,8 @@ import { motion } from 'framer-motion';
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="w-full h-[85%] flex flex-col justify-end lg:pb-20 2xl:justify-center text-center items-center"
-          >
+            className="w-full h-[85%] flex flex-col justify-end lg:pb-20 2xl:pb-0 2xl:justify-center text-center items-center"
+            >
             {idioma === "ingles" ? (
               <motion.h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-8xl font-cinzelRegular lg:mt-8">
                 <motion.span className="text-[60px] sm:text-[100px] md:text-[150px] lg:text-[150px]">H</motion.span>
