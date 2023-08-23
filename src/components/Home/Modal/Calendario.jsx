@@ -124,7 +124,6 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
         ${
           //Pinta de gris los dias antes de hoy
           today.getMonth() == todayMonth.getMonth() &&
-           !isReserved &&
           i < today.getDate() &&
            "text-gray-200"
         }
