@@ -202,7 +202,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
         onClick={() => {
           console.log(inicio); 
           
-            if( i > today.getDate() && !isReserved){
+            if(  !isReserved){
               console.log('entre')
               console.log(currentYear, todayMonth.getMonth(), i)
               handleDayClick(new Date(currentYear, todayMonth.getMonth(), i));
@@ -252,13 +252,13 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
         className={`mb-2 mt-4 relative 
         ${
           //Hace seleccionables los dias despues de hoy
-          i > today.getDate() && !isReserved ?
+          !isReserved ?
              "cursor-pointer lg:hover:bg-[#d3cbc0] lg:hover:mx-2 lg:hover:rounded-full"
              : ""
         }
         ${
           //Hace seleccionables los dias despues de hoy
-          i > today.getDate() && isReserved ?
+           isReserved ?
              "text-gray-200"
              : ""
         }
@@ -310,7 +310,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
              
              `}
         onClick={() =>{
-          if( i > today.getDate() && !isReserved){
+          if(  !isReserved){
          handleDayClick(new Date(nextMonthYear, nextMonth.getMonth(), i));
           }
         }
