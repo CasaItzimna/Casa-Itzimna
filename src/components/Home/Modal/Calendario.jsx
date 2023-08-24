@@ -11,7 +11,25 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
   const [actualMonth, setActualMonth] = useState(1);
   const [sumMonth, setSumMonth] = useState(1)
 
-  const {getReservaciones, reservaciones} = AppContext()
+  const {getReservaciones, reservaciones,  moneda,
+    usdRate,
+    eurRate} = AppContext()
+
+
+  const determinarMoneda = () => {
+    switch(moneda){
+    
+      case "USD":
+        return usdRate
+        break;
+      case "EUR":
+        return eurRate
+        break;
+        default:
+          return 1
+    }
+  }
+
 
   useEffect(() => {
     getReservaciones()
@@ -212,7 +230,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
         }}
       >
         <div className="flex flex-col">
-        <span className="text-[10px]">${planPrecio + guestsPrecio}</span>
+        <span className="text-[10px]">${((planPrecio + guestsPrecio)*determinarMoneda()).toFixed(2)} {moneda}</span>
         {i}
       </div>
       </div>
@@ -316,7 +334,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
         }
       >
         <div className="flex flex-col">
-        <span className="text-[10px]">${planPrecio + guestsPrecio}</span>
+        <span className="text-[10px]">{((planPrecio + guestsPrecio)*determinarMoneda()).toFixed(2)} {moneda}</span>
         {i}
         </div>
       </div>

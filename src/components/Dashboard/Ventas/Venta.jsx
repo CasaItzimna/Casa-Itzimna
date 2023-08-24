@@ -190,7 +190,7 @@ const [ventaUnica, setVentaUnica] = useState(null)
           </div>
           </div>
           <div className="flex flex-row justify-between mb-4">
-            <div>
+            <div className='flex '>
               <button onClick={handleDeleteClick} className="mt-2">
                 <Image src={bote} alt="editar button" className="w-[15px] " />
               </button>
@@ -207,6 +207,7 @@ const [ventaUnica, setVentaUnica] = useState(null)
         <option className='uppercase' value="confirmado">Confirmado</option>
         <option className='uppercase' value="cancelado">Cancelado</option>
         <option className='uppercase' value="enviado">Enviado</option>
+        <option className='uppercase' value="finalizado">Finalizado</option>
       </select>
       
     </div>
@@ -277,6 +278,7 @@ const [ventaUnica, setVentaUnica] = useState(null)
         <option className='uppercase' value="confirmado">Confirmado</option>
         <option className='uppercase' value="cancelado">Cancelado</option>
         <option className='uppercase' value="enviado">Enviado</option>
+        <option className='uppercase' value="finalizado">Finalizado</option>
 </select>
                 </form>
               </div>

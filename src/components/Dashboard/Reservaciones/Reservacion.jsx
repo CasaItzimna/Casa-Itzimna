@@ -15,6 +15,8 @@ function Reservacion({ reservacion }) {
 
   const [showModal, setShowModal] = useState(false);
   const [experiences, setExperiences] = useState([]);
+    const [selectedOption, setSelectedOption] = useState("pendiente")
+
 
 
 
@@ -160,6 +162,18 @@ function Reservacion({ reservacion }) {
   
     await getReservaciones();
   };
+
+    const handleSelectChange = (event) => {
+    setSelectedOption(event.target.value);
+    const newEstado = event.target.value;
+
+    // Actualizar el campo estado en el formData
+    const updatedFormData = { ...formData, estado: newEstado };
+  
+    // Llamar a la función para actualizar la venta
+    updateVenta(venta._id, updatedFormData);
+  };
+
   
 
   
@@ -200,19 +214,23 @@ function Reservacion({ reservacion }) {
             e-mail: {reservacion.email}{" "}
           </p>
           <div className="flex flex-row justify-between mb-4">
-            <div>
+            <div className="flex ">
               <button onClick={handleDeleteClick} className="mt-2">
                 <Image src={bote} alt="editar button" className="w-[15px] " />
               </button>
             </div>
 
             <div>
-              <button
-                onClick={handleDeleteClick}
-                className="font-Geometrica tracking-[2px] bg-[#d3cbc0] px-4 py-1 rounded-[7px]"
-              >
-                MAILING
-              </button>
+            <select
+        value={selectedOption}
+        onChange={handleSelectChange}
+        className="mt-2  border bg-[#d3cbc0] text-center py-1 rounded uppercase"
+      >
+        <option className='uppercase' value="">Seleccionar opción</option>
+        <option className='uppercase' value="confirmado">Confirmado</option>
+        <option className='uppercase' value="cancelado">Cancelado</option>
+        <option className='uppercase' value="finalizado">Finalizado</option>
+      </select>
             </div>
           </div>
 
