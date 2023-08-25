@@ -25,6 +25,7 @@ export function StateContextProvider({ children }) {
   const [moneda, setMoneda] = useState('MXN'); 
   const [usdRate, setUsdRate] = useState(0)
   const [eurRate, setEurRate] = useState(0)
+  const [categories, setCategories] = useState([])
 
 
 
@@ -378,6 +379,52 @@ useEffect(() => {
     console.log(product)
     setProduct(product)
   }
+  // TODO: postProducto
+function postProducto(formData) {
+  console.log(formData)
+  client
+    .create({
+      _type: 'productos', // Asegúrate de que el tipo sea correcto según tu esquema
+      name: formData.name,
+      artist: formData.artist,
+      slug: formData.slug,
+      details: formData.details,
+      detailsENG: formData.detailsENG,
+      description: formData.description,
+      descriptionENG: formData.descriptionENG,
+      shipping: formData.shipping,
+      shippingENG: formData.shippingENG,
+      category: {
+        _type: 'reference',
+        _ref: formData.category // Reemplaza con el ID correcto de la categoría
+      },
+      price: formData.price,
+      cantidad: formData.cantidad,
+      file: formData.file,
+      image: formData.image 
+    })
+    .then((newProducto) => {
+      console.log("Nuevo producto creado:", newProducto);
+      // Aquí podrías realizar alguna acción después de crear el producto, como actualizar la lista de productos
+      getProductos(); // Asegúrate de que esta función exista y actualice la lista
+    })
+    .catch((error) => {
+      console.error("Error al crear el producto:", error);
+    });
+}
+
+// TODO: getCategories
+function getCategories() {
+  return client
+    .fetch('*[_type == "category"]') // Ajusta el tipo según tu esquema
+    .then((categories) => {
+      setCategories(categories)
+    })
+    .catch((error) => {
+      console.error("Error al obtener las categorías:", error);
+      return [];
+    });
+}
 
    //TODO: updateReservacion
    function updateProducto(productoId, formData) {
@@ -386,16 +433,21 @@ useEffect(() => {
       .patch(productoId)
       .set({
         name: formData.name,
-        artist: formData.artist,
-        slug: formData.slug,
-        details: formData.details,
-        description: formData.description,
-        category: formData.category,
-        price: formData.price,
-        cantidad: formData.cantidad,
+    artist: formData.artist,
+    slug: formData.slug,
+    details: formData.details,
+    detailsENG: formData.detailsENG,
+    description: formData.description,
+    descriptionENG: formData.descriptionENG,
+    Shipping: formData.shipping,
+    ShippingENG: formData.shippingENG,
+    category: formData.cateogry,
+    price: formData.price,
+    cantidad: formData.cantidad,
         // Si el formData incluye un objeto 'file', se actualiza el campo 'file'.
         // Si no, se omite el campo y no se modifica.
-        ...(formData.file ? { file: formData.file } : {})
+        ...(formData.file ? { file: formData.file } : {}),
+        ...(formData.image ? { image: formData.image } : {})
       })
       
       .commit()
@@ -492,6 +544,8 @@ useEffect(() => {
         deleteReservacion,
         getProductos,
         getProduct,
+        postProducto,
+        getCategories,
         updateProducto,
         loginUser,
         postUser,
@@ -509,7 +563,7 @@ useEffect(() => {
         updateVenta,
         postVenta,
         deleteVenta,
-        
+        categories,
         ventas,
         eurRate,
         usdRate,

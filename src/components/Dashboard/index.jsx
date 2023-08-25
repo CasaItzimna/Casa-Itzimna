@@ -68,12 +68,6 @@ const Dashboard = () => {
         return <Facturas />;
         case "Ventas":
           return <Ventas/>
-        case "Productos":
-          return <Productos/>
-        case "Fechas":
-          return <Fechas/>
-        case "Experiencias":
-          return <Experiencias/>
       case "Reservaciones":
       default:
         return <Reservaciones />;
@@ -260,34 +254,49 @@ const Dashboard = () => {
                   <span>
                     <FaDollarSign className="text-2xl text-white" />
                   </span>
-                  <span
-                    className="text-xl text-white font-apollo tracking-[2px]"
-                    onClick={() => handleSidebarClick("Productos")}
-                  >
-                    Productos
-                  </span>
+                  <a
+      href="https://casaitzimna.sanity.studio/desk/productos"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span className="text-xl text-white font-apollo tracking-[2px]">
+        Productos
+      </span>
+    </a>
                 </p>
                 <p className="flex flex-row gap-4 mt-9 items-center cursor-pointer hover:text-[#d3cbc0]">
                   <span>
                     <FaDollarSign className="text-2xl text-white" />
                   </span>
+                  <a
+      href="https://casaitzimna.sanity.studio/desk/experiencias"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
                   <span
                     className="text-xl text-white font-apollo tracking-[2px]"
-                    onClick={() => handleSidebarClick("Experiencias")}
+                    
                   >
                     Experiencias
                   </span>
+                  </a>
                 </p>
                 <p className="flex flex-row gap-4 mt-9 items-center cursor-pointer hover:text-[#d3cbc0]">
                   <span>
                     <FaDollarSign className="text-2xl text-white" />
                   </span>
+                  <a
+      href="https://casaitzimna.sanity.studio/desk/fechas"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
                   <span
                     className="text-xl text-white font-apollo tracking-[2px]"
-                    onClick={() => handleSidebarClick("Fechas")}
+                   
                   >
                     Fechas Especiales
                   </span>
+                  </a>
                 </p>
               </div>
             </div>
