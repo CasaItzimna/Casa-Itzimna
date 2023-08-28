@@ -9,6 +9,7 @@ import { AppContext } from "@/context/StateContext";
 import { differenceInDays, isValid } from "date-fns";
 import { useRouter } from "next/router";
 import emailjs from '@emailjs/browser';
+import Experiencias from "./Experiencias";
 
 function Booking({ json }) {
   const [name, setName] = useState("");
@@ -49,16 +50,19 @@ function Booking({ json }) {
     setPlan(event.target.value);
   };
 
-  const handleExperienceChange = (e) => {
-    const selectedValue = e.target.value;
-    if (e.target.checked) {
+  const handleExperienceChange = experiencia => {
+    console.log(experiencia)
+    const experienceIndex = experiences.findIndex((exp) => exp._id === experiencia._id);
+
+    if (experienceIndex === -1) {
       // Agregar experiencia seleccionada
-      setExperiences([...experiences, selectedValue]);
+      setExperiences([...experiences, experiencia]);
     } else {
-      // Eliminar experiencia deseleccionada
-      setExperiences(experiences.filter((experience) => experience !== selectedValue));
+      const updatedExperiences = experiences.filter((exp) => exp._id !== experiencia._id);
+      setExperiences(updatedExperiences);
     }
   };
+  console.log(experiences)
 
   /* const handleSubmit = (event) => {
     event.preventDefault();
@@ -194,19 +198,10 @@ const [total, setTotal] = useState(0)
     if(experiences.length>0){
       console.log(experiences)
       for(var i = 0; i<= experiences.length; i++){
-        if(experiences[i] == "cena"){
-         totalExperiencesPrecio += 3000
+        console.log(experiences[i]?.precio)
+        if(experiences[i]?.precio){
+          totalExperiencesPrecio +=experiences[i]?.precio
         }
-        if(experiences[i] == "recorrido"){
-          totalExperiencesPrecio += 2500
-         }
-         if(experiences[i] == "spa"){
-          totalExperiencesPrecio += 5000
-         }
-         if(experiences[i] == "comidas"){
-          totalExperiencesPrecio += 6000
-         }
-        
       }
       setExperiencesPrecio(totalExperiencesPrecio);
   }
@@ -572,60 +567,12 @@ const [total, setTotal] = useState(0)
                   </div>
                 </div>
                 
-                <div className="flex flex-row justify-center gap-4 col-span-2">
-                  <div className="flex flex-col ">
+          <Experiencias
+          json={json}
+          handleExperienceChange = {handleExperienceChange}
+          experiences = {experiences}
 
-                  <div className="flex flex-col items-center lg:flex-row font-Geometrica gap-4 mb-4">
-                  <h3 className="text-[#d3cbc0] font-Geometrica uppercase tracking-[2px]">
-                  {json.Booking.experiences}
-                      </h3>
-                    
-                    
-      <label className="">
-        <input
-          type="checkbox"
-          value="cena"
-          checked={experiences.includes("cena")}
-          onChange={handleExperienceChange}
-          className=""
-        />
-        {json.Experiences.Experiences1}
-      </label>
-      <label className="block">
-        <input
-          type="checkbox"
-          value="recorrido"
-          checked={experiences.includes("recorrido")}
-          onChange={handleExperienceChange}
-          className="uppercase"
-        />
-        {json.Experiences.Experiences2}
-      </label>
-      <label className="block">
-        <input
-          type="checkbox"
-          value="spa"
-          checked={experiences.includes("spa")}
-          onChange={handleExperienceChange}
-          className="uppercase"
-        />
-        {json.Experiences.Experiences3}
-      </label>
-      <label className="block">
-        <input
-          type="checkbox"
-          value="comidas"
-          checked={experiences.includes("comidas")}
-          onChange={handleExperienceChange}
-          className="uppercase"
-        />
-        {json.Experiences.Experiences4}
-      </label>
-     
-      
-      </div>
-      </div>
-    </div>
+          />
                 <p className="font-Geometrica">TOTAL:</p>
                 <p className="font-Geometrica text-right">${total}mxn</p>
                 {error ? (

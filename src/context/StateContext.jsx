@@ -12,6 +12,7 @@ export function StateContextProvider({ children }) {
   const [reservaciones, setReservaciones] = useState([]);
   const [product, setProduct] = useState(null);
   const [productos, setProductos] = useState([]);
+  const [experiencias, setExperiencias] = useState([]);
   const [ventas, setVentas] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [idioma, setIdioma] = useState('ingles')
@@ -426,6 +427,18 @@ function getCategories() {
     });
 }
 
+function getExperiencias() {
+  return client
+    .fetch('*[_type == "experiencias"]') // Ajusta el tipo según tu esquema
+    .then((experiencias) => {
+      setExperiencias(experiencias)
+    })
+    .catch((error) => {
+      console.error("Error al obtener las experiencias:", error);
+      return [];
+    });
+}
+
    //TODO: updateReservacion
    function updateProducto(productoId, formData) {
     console.log(formData);
@@ -563,6 +576,8 @@ function getCategories() {
         updateVenta,
         postVenta,
         deleteVenta,
+        getExperiencias,
+        experiencias,
         categories,
         ventas,
         eurRate,
