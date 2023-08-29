@@ -24,7 +24,7 @@ function Booking({ json }) {
   const [experiences, setExperiences] = useState([]);
   const [experiencesPrecio, setExperiencesPrecio] = useState(0);
   
-  const {carritoReservaciones, setCarritoReservaciones} = AppContext();
+  const {carritoReservaciones, setCarritoReservaciones, getFechas, fechas} = AppContext();
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -154,7 +154,14 @@ const [total, setTotal] = useState(0)
   ];
 
   useEffect(() => {
+   getFechas()
+  }, [])
+  
+
+  useEffect(() => {
     if (inicio && fin) {
+      const fechasEnRango = fechas.filter(fecha => fecha >= inicio && fecha <= fin);
+      console.log(fechasEnRango)
       setTotalDiasInicio(differenceInDays(fin, inicio))
     }
   }, [inicio, fin]);
@@ -167,6 +174,7 @@ const [total, setTotal] = useState(0)
       formData.checkout = fin;
     }
     if (inicio && fin) {
+
       formData.total = parseInt(total);
     }
   }, [inicio, fin, total]);

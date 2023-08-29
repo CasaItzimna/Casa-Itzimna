@@ -11,9 +11,14 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
   const [actualMonth, setActualMonth] = useState(1);
   const [sumMonth, setSumMonth] = useState(1)
 
-  const {getReservaciones, reservaciones,  moneda,
+  const {getReservaciones,
+    getFechas,
+     reservaciones,
+       moneda,
     usdRate,
-    eurRate} = AppContext()
+    eurRate,
+  fechas
+  } = AppContext()
 
 
   const determinarMoneda = () => {
@@ -34,6 +39,12 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
   useEffect(() => {
     getReservaciones()
   }, [])
+  useEffect(() => {
+   getFechas()
+  }, [])
+
+  console.log(fechas)
+  
 
 
   useEffect(() => {
@@ -68,17 +79,13 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
   }
   const todayMonth = getTodayMonth(today)
   const currentMonthName = monthNames[todayMonth.getMonth()];
-  console.log(today.getMonth()+sumMonth-1)
-  console.log(currentMonthName);
   const currentYear = todayMonth.getFullYear();
-  console.log(currentYear)
   const firstDayOfMonth = new Date(currentYear, todayMonth.getMonth(), 1).getDay();
   const daysInMonth = new Date(
     currentYear,
     today.getMonth() + sumMonth ,
     0
   ).getDate();
-  console.log(daysInMonth);
 
 
   function handleDayClick(day) {
@@ -139,6 +146,8 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
              "text-gray-200 "
              : ""
         }
+       
+        
         ${
           //Pinta de gris los dias antes de hoy
           today.getMonth() == todayMonth.getMonth() &&
@@ -222,15 +231,77 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
             if(  !isReserved){
               console.log('entre')
               console.log(currentYear, todayMonth.getMonth(), i)
-              handleDayClick(new Date(currentYear, todayMonth.getMonth(), i));
-              
+              handleDayClick(new Date(currentYear, todayMonth.getMonth(), i) ); 
             }
-            
-        
         }}
       >
         <div className="flex flex-col">
-        <span className="text-[10px]">${((planPrecio + guestsPrecio)*determinarMoneda()).toFixed(2)} {moneda}</span>
+          {
+             fechas.map((fecha, index) => {
+              console.log(fecha)
+              console.log(plan)
+              const dateObj = new Date(fecha?.fecha); 
+              if (
+                today.getMonth() === dateObj.getMonth() &&
+                i === dateObj.getDate()+1 &&
+                plan == ""
+              ) {
+                return (
+                  <span key={index} className="text-[10px]">
+                   ${((fecha.precioSelect)*determinarMoneda()).toFixed(2)} ${moneda}
+                  </span>
+                )
+              } else if(
+                today.getMonth() === dateObj.getMonth() &&
+                i === dateObj.getDate()+1 &&
+                plan == "select"
+              ){
+                return (
+                  <span key={index} className="text-[10px]">
+                   ${((fecha.precioSelect)*determinarMoneda()).toFixed(2)} ${moneda}
+                  </span>
+                )
+              }
+              
+              else if(
+                today.getMonth() === dateObj.getMonth() &&
+                i === dateObj.getDate()+1 &&
+                plan == "luxury"
+              ){
+                return (
+                  <span key={index} className="text-[10px]">
+                   ${((fecha.precioLuxury)*determinarMoneda()).toFixed(2)} ${moneda}
+                  </span>
+                )
+              }else if(
+                today.getMonth() === dateObj.getMonth() &&
+                i === dateObj.getDate()+1 &&
+                plan == "premier"
+              ){
+                return (
+                  <span key={index} className="text-[10px]">
+                   ${((fecha.precioPremier)*determinarMoneda()).toFixed(2)} ${moneda}
+                  </span>
+                )
+              }
+            })
+          }
+          {
+             fechas.map((fecha, index) => {
+              const dateObj = new Date(fecha?.fecha); 
+              if (
+                today.getMonth() === dateObj.getMonth() &&
+                i !== dateObj.getDate()+1)
+                {
+                  return (
+                    <span key={index} className="text-[10px]">
+                    ${((planPrecio + guestsPrecio)*determinarMoneda()).toFixed(2)} {moneda}
+                    </span>
+                  )
+                }
+              })
+          }
+      
         {i}
       </div>
       </div>
@@ -279,6 +350,9 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
              "text-gray-200"
              : ""
         }
+
+       
+
         ${
           i === inicio?.getDate() && inicio?.getMonth() === nextMonth.getMonth()
           && !isReserved  
@@ -334,7 +408,69 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
         }
       >
         <div className="flex flex-col">
-        <span className="text-[10px]">{((planPrecio + guestsPrecio)*determinarMoneda()).toFixed(2)} {moneda}</span>
+         {
+             fechas.map((fecha, index) => {
+              console.log(fecha)
+              console.log(plan)
+              const dateObj = new Date(fecha?.fecha); 
+             if (
+                nextMonth.getMonth() === dateObj.getMonth() &&
+                i === dateObj.getDate()+1 &&
+                plan == ""
+              ) {
+                return (
+                  <span key={index} className="text-[10px]">
+                   ${((fecha.precioSelect)*determinarMoneda()).toFixed(2)} {moneda}
+                  </span>
+                )
+              } else if(
+                nextMonth.getMonth() === dateObj.getMonth() &&
+                i === dateObj.getDate()+1 &&
+                plan == "select"
+              ){
+                return (
+                  <span key={index} className="text-[10px]">
+                   ${((fecha.precioSelect)*determinarMoneda()).toFixed(2)} {moneda}
+                  </span>
+                )
+              } else if(
+                nextMonth.getMonth() === dateObj.getMonth() &&
+                i === dateObj.getDate()+1 &&
+                plan == "luxury"
+              ){
+                return (
+                  <span key={index} className="text-[10px]">
+                   ${((fecha.precioLuxury)*determinarMoneda()).toFixed(2)} {moneda}
+                  </span>
+                )
+              }else if(
+                nextMonth.getMonth() === dateObj.getMonth() &&
+                i === dateObj.getDate()+1 &&
+                plan == "premier"
+              ){
+                return (
+                  <span key={index} className="text-[10px]">
+                   ${((fecha.precioPremier)*determinarMoneda()).toFixed(2)} ${moneda}
+                  </span>
+                )
+              }
+            })
+          }
+          {
+             fechas.map((fecha, index) => {
+              const dateObj = new Date(fecha?.fecha); 
+              if (
+                nextMonth.getMonth() === dateObj.getMonth() &&
+                i !== dateObj.getDate()+1)
+                {
+                  return (
+                    <span key={index} className="text-[10px]">
+                    ${((planPrecio + guestsPrecio)*determinarMoneda()).toFixed(2)} {moneda}
+                    </span>
+                  )
+                }
+              })
+          }
         {i}
         </div>
       </div>
