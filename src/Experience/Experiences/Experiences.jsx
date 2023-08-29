@@ -1,53 +1,70 @@
 import Image from 'next/image'
-import React from 'react'
-import experience1 from './Enchanting-Evening.jpg'
-import experience2 from './Unveiling-Wonders.jpg'
-import experience3 from './Spaserenity.jpg'
-import experience4 from './Culinary-Delights.jpg'
+import React, { useEffect } from 'react'
 import 	captivating from './captivating-1.jpg'
 import 	lobby from './captivating-2.jpg'
 import Link from 'next/link'
+import { AppContext } from '@/context/StateContext'
+import { client, urlFor } from "../../lib/client";
+import { useState } from 'react'
+import ExperienceModal from './ExperienceModal'
 
 function Experiences({json}) {
     console.log(json.Experiences.Experiences1)
+
+    const {getExperiencias, experiencias, idioma} = AppContext()
+    console.log(idioma)
+
+    useEffect(() => {
+      getExperiencias()
+    }, [])
+
+    console.log(experiencias)
+
+    const [modalOpen, setModalOpen] = useState(false);
+    const [seleccionarExperiencia, setSeleccionarExperiencia] = useState(null)
+    const openModal = () => {
+      setModalOpen(true);
+    };
+    const closeModal = () => {
+        setModalOpen(false);
+       };
+    
+
   return (
     <div className='w-full h-full  relative'>
                 <div className="hidden h-[200px] w-full   bg-gradient-to-t from-white via-white to-transparent z-0 overflow-y-hidden absolute -top-48 "></div>
     <div className='flex flex-row justify-center'>
-        <div className='w-[53%] md:w-[62%] lg:w-[90%] 2xl:w-[1140px] h-full flex flex-col justify-start 2xl:items-center z-10'>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:justify-between gap-4 '>
-                <div className='w-[250px] relative '> 
-                <div className='bg-black/50 absolute top-0 w-full h-full'></div>
-                <Image src={experience1} alt='experience1' className='w-full h-[200px] lg:h-full object-cover '/>
-                <div>
+        <div className='w-[90%] md:w-[62%] lg:w-[90%] 2xl:w-[1140px] h-full flex flex-col justify-start 2xl:items-center z-10'>
+            <div className='grid grid-cols-2 lg:grid-cols-4 lg:justify-between gap-4 '>
+                {
+                   experiencias.map((experiencia, index) => (
+                    console.log(experiencia),
+                    <div key={index} className='w-full relative cursor-pointer' onClick={() => {setSeleccionarExperiencia(experiencia); openModal() }}> 
+                <div className='bg-black/50 hover:bg-black/70 absolute top-0 w-full h-full'></div>
+               <img src={urlFor(experiencia?.image[0].asset._ref)} alt='foto de experiencia' className='w-full h-[200px] lg:h-[500px] object-cover '/>
+               <div>
+                {
+                    idioma == "ingles"?
+                    <h4 className='absolute text-center uppercase lg:text-left text-white text-md md:text-2xl lg:text-4xl font-apollo tracking-[8px] lg:w-[80px] lg:h-[20px] bottom-[30%] left-[0%] lg:bottom-[50px]  lg:-left-[20px] lg:-rotate-90 '>{experiencia.nombreENG}</h4>
+                    :
+                    <h4 className='absolute text-center uppercase lg:text-left text-white text-[10px] md:text-2xl lg:text-4xl font-apollo tracking-[8px] lg:w-[80px] lg:h-[20px] bottom-[30%] left-[0%] lg:bottom-[50px]  lg:-left-[20px] lg:-rotate-90 '>{experiencia.nombre}</h4>
 
-                <h4 className='absolute text-center lg:text-left text-white text-2xl lg:text-4xl font-apollo tracking-[8px] lg:w-[80px] lg:h-[20px] bottom-[30%] left-[0%] lg:bottom-[50px]  lg:-left-[20px] lg:-rotate-90 '>{json.Experiences.Experiences1}</h4>
+                }
                 </div>
                 </div>
-                <div className='w-[250px] relative'> 
-                <div className='bg-black/50 absolute top-0 w-full h-full'></div>
-                <Image src={experience2} alt='experience1' className='w-full h-[200px] lg:h-full object-cover'/>
-                <div>
+                   ))
+                }
+                 {
+              seleccionarExperiencia &&
+              <ExperienceModal
+        experiencia={seleccionarExperiencia}
+        isOpen={modalOpen}
+        onRequestClose={closeModal}
+        setModalOpen={setModalOpen}
+      />
+            }
 
-                <h4 className='absolute text-center lg:text-left text-white text-2xl lg:text-4xl font-apollo tracking-[8px] lg:w-[80px] lg:h-[20px] bottom-[30%] left-[0%] lg:bottom-[50px]  lg:-left-[20px] lg:-rotate-90 '>{json.Experiences.Experiences2}</h4>
-                </div>
-                </div>
-                <div className='w-[250px] relative'> 
-                <div className='bg-black/50 absolute top-0 w-full h-full'></div>
-                <Image src={experience3} alt='experience1' className='w-full h-[200px] lg:h-full object-cover'/>
-                <div>
-
-                <h4 className='absolute text-center lg:text-left text-white text-2xl lg:text-4xl font-apollo tracking-[8px] lg:w-[80px] lg:h-[20px] bottom-[40%] left-[5%] lg:bottom-[50px]  lg:-left-[20px] lg:-rotate-90 '>{json.Experiences.Experiences3}</h4>
-                </div>
-                </div>
-                <div className='w-[250px] relative'> 
-                <div className='bg-black/50 absolute top-0 w-full h-full'></div>
-                <Image src={experience4} alt='experience1' className='w-full h-[200px] lg:h-full object-cover'/>
-                <div>
-
-                <h4 className='absolute text-center lg:text-left text-white text-2xl lg:text-4xl font-apollo tracking-[8px] lg:w-[80px] lg:h-[20px] bottom-[30%] left-[0%] lg:bottom-[50px]  lg:-left-[20px] lg:-rotate-90 '>{json.Experiences.Experiences4}</h4>
-                </div>
-                </div>
+               
             </div>
            
         </div>
