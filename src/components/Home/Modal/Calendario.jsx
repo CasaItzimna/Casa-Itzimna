@@ -239,6 +239,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
           {
              fechas.map((fecha, index) => {
               console.log(fecha)
+              console.log( currentYear+"-"+today.getMonth() + 1+"-"+i)
               console.log(plan)
               const dateObj = new Date(fecha?.fecha); 
               if (
@@ -289,25 +290,15 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
               
             })
           }
+         {
+  !fechas.find(fecha => fecha.fecha === `${currentYear}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`) && (
+    <span className="text-[10px]">
+      ${((planPrecio + guestsPrecio) * determinarMoneda()).toFixed(2)} {moneda}
+    </span>
+  )
+}
          
-          {
-             fechas.map((fecha, index) => {
-              const dateObj = new Date(fecha?.fecha); 
-            
-              if (
-                today.getMonth() === dateObj.getMonth() &&
-                today.getYear() === dateObj.getYear() &&
-                i !== dateObj.getDate()+1)
-                {
-                  return (
-                    
-                    <span key={index} className="text-[10px]">
-                    ${((planPrecio + guestsPrecio)*determinarMoneda()).toFixed(2)} {moneda}
-                    </span>
-                  )
-                }
-              })
-          }
+     
       
         {i}
       </div>
@@ -463,21 +454,13 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
               }
             })
           }
-          {
-             fechas.map((fecha, index) => {
-              const dateObj = new Date(fecha?.fecha); 
-              if (
-                nextMonth.getMonth() === dateObj.getMonth() &&
-                i !== dateObj.getDate()+1)
-                {
-                  return (
-                    <span key={index} className="text-[10px]">
-                    ${((planPrecio + guestsPrecio)*determinarMoneda()).toFixed(2)} {moneda}
-                    </span>
-                  )
-                }
-              })
-          }
+           {
+  !fechas.find(fecha => fecha.fecha === `${currentYear}-${String(nextMonth.getMonth() + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`) && (
+    <span className="text-[10px]">
+      ${((planPrecio + guestsPrecio) * determinarMoneda()).toFixed(2)} {moneda}
+    </span>
+  )
+}
         {i}
         </div>
       </div>
