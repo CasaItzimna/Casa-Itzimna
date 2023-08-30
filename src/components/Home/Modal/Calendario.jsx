@@ -247,11 +247,13 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
                 plan == ""
               ) {
                 return (
+                  console.log(i,dateObj.getDate()+1),
                   <span key={index} className="text-[10px]">
                    ${((fecha.precioSelect)*determinarMoneda()).toFixed(2)} ${moneda}
                   </span>
                 )
-              } else if(
+              } 
+              if(
                 today.getMonth() === dateObj.getMonth() &&
                 i === dateObj.getDate()+1 &&
                 plan == "select"
@@ -263,7 +265,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
                 )
               }
               
-              else if(
+             if(
                 today.getMonth() === dateObj.getMonth() &&
                 i === dateObj.getDate()+1 &&
                 plan == "luxury"
@@ -273,7 +275,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
                    ${((fecha.precioLuxury)*determinarMoneda()).toFixed(2)} ${moneda}
                   </span>
                 )
-              }else if(
+              } if(
                 today.getMonth() === dateObj.getMonth() &&
                 i === dateObj.getDate()+1 &&
                 plan == "premier"
@@ -284,16 +286,21 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
                   </span>
                 )
               }
+              
             })
           }
+         
           {
              fechas.map((fecha, index) => {
               const dateObj = new Date(fecha?.fecha); 
+            
               if (
                 today.getMonth() === dateObj.getMonth() &&
+                today.getYear() === dateObj.getYear() &&
                 i !== dateObj.getDate()+1)
                 {
                   return (
+                    
                     <span key={index} className="text-[10px]">
                     ${((planPrecio + guestsPrecio)*determinarMoneda()).toFixed(2)} {moneda}
                     </span>

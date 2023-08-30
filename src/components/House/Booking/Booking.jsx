@@ -218,18 +218,63 @@ const [total, setTotal] = useState(0)
   }
     
   }, [experiences, selectedGuests, plan])
+
+  const [fechasImportantes, setFechasImportantes] = useState([])
   
+  const calculoFechasImportantes = (inicio, fin) => {
+    const fechasEnRango = fechas.filter(fecha => {
+      const fechaString = fecha.fecha.substr(0, 10);
+      return fechaString >= inicio.toISOString().substr(0, 10) && fechaString <= fin.toISOString().substr(0, 10);
+    });
+  
+    fechasEnRango.forEach(fechaImportante => {
+      if (!fechasImportantes.some(fecha => fecha.nombre === fechaImportante.nombre)) {
+        console.log(fechaImportante.nombre);
+        fechasImportantes.push(fechaImportante);
+      }
+    });
+  }
+  
+
   
   useEffect(() => {
    if(inicio && fin){
-    setTotal(((totalDiasInicio*planPrecio)+guestsPrecio)+experiencesPrecio)
-    setPrecio((totalDiasInicio*planPrecio)+guestsPrecio)
+
+      calculoFechasImportantes(inicio, fin)
+   
+      var totalFechasImportantes = 0
+
+
+      for(var i = 0; i<= fechasImportantes.length-1; i++){
+        if(plan == ""){
+          totalFechasImportantes += fechasImportantes[i]?.precioSelect
+          console.log(totalFechasImportantes)
+        }
+        if(plan == "select"){
+          totalFechasImportantes += fechasImportantes[i]?.precioSelect
+        }
+        if(plan == "luxury"){
+          totalFechasImportantes += fechasImportantes[i]?.precioLuxury
+        }
+        if(plan == "premier"){
+          totalFechasImportantes += fechasImportantes[i]?.precioPremier
+        }
+      }
+      console.log(totalFechasImportantes)
+
+      setTotal((((totalDiasInicio-fechasImportantes.length)*planPrecio)+guestsPrecio)+experiencesPrecio + totalFechasImportantes)
+      setPrecio((totalDiasInicio*planPrecio)+guestsPrecio)
    }
    else{
+    console.log("entre aca")
+    totalFechasImportantes = 0
+    setFechasImportantes([])
       setTotal(((totalDiasHoy*planPrecio)+guestsPrecio)+experiencesPrecio)
       setPrecio((totalDiasHoy*planPrecio)+guestsPrecio)
    }
   }, [experiencesPrecio,guestsPrecio, planPrecio,totalDiasHoy, totalDiasInicio,fin, inicio])
+
+
   
 
   
