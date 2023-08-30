@@ -243,7 +243,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
               console.log(plan)
               const dateObj = new Date(fecha?.fecha); 
               if (
-                today.getMonth() === dateObj.getMonth() &&
+                todayMonth.getMonth() === dateObj.getMonth() &&
                 i === dateObj.getDate()+1 &&
                 plan == ""
               ) {
@@ -255,7 +255,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
                 )
               } 
               if(
-                today.getMonth() === dateObj.getMonth() &&
+                todayMonth.getMonth() === dateObj.getMonth() &&
                 i === dateObj.getDate()+1 &&
                 plan == "select"
               ){
@@ -267,7 +267,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
               }
               
              if(
-                today.getMonth() === dateObj.getMonth() &&
+                todayMonth.getMonth() === dateObj.getMonth() &&
                 i === dateObj.getDate()+1 &&
                 plan == "luxury"
               ){
@@ -277,7 +277,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
                   </span>
                 )
               } if(
-                today.getMonth() === dateObj.getMonth() &&
+                todayMonth.getMonth() === dateObj.getMonth() &&
                 i === dateObj.getDate()+1 &&
                 plan == "premier"
               ){
@@ -290,8 +290,9 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
               
             })
           }
+          
          {
-  !fechas.find(fecha => fecha.fecha === `${currentYear}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`) && (
+  !fechas.find(fecha => fecha.fecha === `${currentYear}-${String(todayMonth.getMonth() + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`) && (
     <span className="text-[10px]">
       ${((planPrecio + guestsPrecio) * determinarMoneda()).toFixed(2)} {moneda}
     </span>
