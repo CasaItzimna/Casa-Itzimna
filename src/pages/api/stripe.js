@@ -41,14 +41,16 @@ export default async function handler(req, res) {
                 }, */
                 line_items:  req.body.items.map((item, index) =>{
                   console.log(req.body.moneda)
+                  console.log(item)
+                  console.log(item.name.nombre)
                  return{   
                       price_data: {
                         currency: moneda,
                         product_data: {
-                          name: item.name,
+                          name: item.tipo == "experiencia" ?item.name.nombre : item.name,
                           description: item.tipo
                         },
-                        unit_amount: item.price*100, // El precio del producto en centavos (1000 representa $10.00 MXN)
+                        unit_amount: item.price*100 // El precio del producto en centavos (1000 representa $10.00 MXN)
                       },
                       quantity: 1, // Cantidad de este producto que se agregará a la sesión de pago
                     

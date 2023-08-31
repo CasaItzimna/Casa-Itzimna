@@ -103,6 +103,7 @@ function CarritoInfo({json}) {
           // Eliminamos el elemento del arreglo 'experience' usando splice()
           updatedExperience.splice(index, 1);
           // Actualizamos la propiedad 'experience' del objeto reservacion
+          console.log(updatedExperience)
           rsv.experience = updatedExperience;
           rsv.total = rsv.total- exp.precio;
         }
@@ -365,7 +366,7 @@ carritoProductos.forEach((producto) => {
                         {
                           console.log(sumReservaciones , sumExperiences , sumProductos)
                         }
-                        ${((sumReservaciones + sumExperiences + sumProductos)* determinarMoneda()).toFixed(2)}  {moneda}
+                        ${((sumReservaciones + sumProductos)* determinarMoneda()).toFixed(2)}  {moneda}
                       </p>
                     </div>
                     <button className="bg-black hover:bg-[#a59f98]  text-white uppercase w-full py-4 mt-4 font-Geometrica text-xl mb-4"

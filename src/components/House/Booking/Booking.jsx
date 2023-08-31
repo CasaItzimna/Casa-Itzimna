@@ -263,7 +263,7 @@ const [total, setTotal] = useState(0)
       console.log(totalFechasImportantes)
 
       setTotal((((totalDiasInicio-fechasImportantes.length)*planPrecio)+guestsPrecio)+experiencesPrecio + totalFechasImportantes)
-      setPrecio((totalDiasInicio*planPrecio)+guestsPrecio)
+      setPrecio(((totalDiasInicio-fechasImportantes.length)*planPrecio)+guestsPrecio+ totalFechasImportantes)
    }
    else{
     console.log("entre aca")
