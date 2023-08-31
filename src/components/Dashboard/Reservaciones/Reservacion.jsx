@@ -163,34 +163,48 @@ function Reservacion({ reservacion }) {
     await getReservaciones();
   };
 
-  const handleSelectChange = (event) => {
+  const handleSelectChange = async (event) => {
     setSelectedOption(event.target.value);
     const newEstado = event.target.value;
 
     // Actualizar el campo estado en el formData
-    const updatedFormData = { ...formData, estado: newEstado };
-  
-    // Si el nuevo estado es "confirmacion", mostrar la alerta de confirmación
-    if (newEstado === "confirmado") {
-        Swal.fire({
-            title: '¿Estás seguro?',
-            text: `¿Deseas cambiar el estado de la venta a ${newEstado} ?`,
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'Sí, confirmar',
-            cancelButtonText: 'Cancelar',
-        }).then((result) => {
-            if (result.isConfirmed) {
-                
-                updateVenta(venta._id, updatedFormData);
-                Swal.fire('Confirmado', 'El estado de la venta ha sido cambiado a "confirmación"', 'success');     
-                updateVenta(venta._id, updatedFormData);
-            }
-        });
+    const updatedFormData = { ...formData, status: newEstado };
+
+    // Mostrar alerta de confirmación antes de actualizar la venta
+    const result = await Swal.fire({
+        title: 'Confirmar Cambio de Estado',
+        text: `¿Estás seguro de cambiar el estado de la reservacion a "${newEstado}"?`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Confirmar',
+        cancelButtonText: 'Cancelar',
+    });
+
+    if (result.isConfirmed) {
+        try {
+            // Llamar a la función para actualizar la venta
+            await updateReservacion(reservacion._id, updatedFormData);
+            Swal.fire({
+                title: 'Estado Actualizado',
+                text: `El estado de la reservacion ha sido cambiado a "${newEstado}"`,
+                icon: 'success',
+            });
+        } catch (error) {
+            console.error('Error al actualizar la reservacion:', error);
+            Swal.fire({
+                title: 'Error',
+                text: 'Ha ocurrido un error al actualizar la reservacion',
+                icon: 'error',
+            });
+            // Restaurar el valor seleccionado anteriormente
+            setSelectedOption(formData.status);
+        }
     } else {
-        
+        // Restaurar el valor seleccionado anteriormente
+        setSelectedOption(formData.status);
     }
 };
+
 
   
 
@@ -243,12 +257,16 @@ function Reservacion({ reservacion }) {
             </div>
 
             <div>
+              {
+                console.log(reservacion.status)
+              }
             <select
-        value={selectedOption}
+        value={reservacion.status}
         onChange={handleSelectChange}
         className="mt-2  border bg-[#d3cbc0] text-center py-1 rounded uppercase"
       >
         <option className='uppercase' value="">Seleccionar opción</option>
+        <option className='uppercase' value="pendiente">Pendiente</option>
         <option className='uppercase' value="confirmado">Confirmado</option>
         <option className='uppercase' value="cancelado">Cancelado</option>
         <option className='uppercase' value="finalizado">Finalizado</option>
