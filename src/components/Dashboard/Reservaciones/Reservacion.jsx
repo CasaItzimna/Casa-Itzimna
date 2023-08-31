@@ -163,16 +163,34 @@ function Reservacion({ reservacion }) {
     await getReservaciones();
   };
 
-    const handleSelectChange = (event) => {
+  const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
     const newEstado = event.target.value;
 
     // Actualizar el campo estado en el formData
     const updatedFormData = { ...formData, estado: newEstado };
   
-    // Llamar a la función para actualizar la venta
-    updateVenta(venta._id, updatedFormData);
-  };
+    // Si el nuevo estado es "confirmacion", mostrar la alerta de confirmación
+    if (newEstado === "confirmado") {
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: `¿Deseas cambiar el estado de la venta a ${newEstado} ?`,
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Sí, confirmar',
+            cancelButtonText: 'Cancelar',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                
+                updateVenta(venta._id, updatedFormData);
+                Swal.fire('Confirmado', 'El estado de la venta ha sido cambiado a "confirmación"', 'success');     
+                updateVenta(venta._id, updatedFormData);
+            }
+        });
+    } else {
+        
+    }
+};
 
   
 
@@ -181,7 +199,7 @@ function Reservacion({ reservacion }) {
   console.log(reservacion);
 
   return (
-    <div className="w-[350px] h-[235px] rounded-[7px] border-[2px] bg-white">
+    <div className="w-[350px] h-[280px] rounded-[7px] border-[2px] bg-white">
       <div className="w-full flex flex-row justify-center">
         <div className="w-[90%] flex flex-col gap-1">
           <div className="flex flex-row justify-between">
@@ -204,7 +222,7 @@ function Reservacion({ reservacion }) {
           {console.log(reservacion.experience)}
           <p className="font-apollo uppercase text-sm">
             EXTRA: {experiences.map((exp,index)=>(
-              <span key={index} className="mr-2">{exp}</span>
+              <span key={index} className="mr-2">{exp.nombre}</span>
             ))}
           </p>
           <p className="font-apollo uppercase text-sm">
@@ -212,6 +230,10 @@ function Reservacion({ reservacion }) {
           </p>
           <p className="font-apollo uppercase text-sm">
             e-mail: {reservacion.email}{" "}
+          </p>
+          {console.log(reservacion)}
+          <p className="font-apollo uppercase text-sm">
+            estado: {reservacion.status}{" "}
           </p>
           <div className="flex flex-row justify-between mb-4">
             <div className="flex ">

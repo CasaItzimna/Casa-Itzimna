@@ -328,7 +328,7 @@ const [total, setTotal] = useState(0)
       } else {
         // Si no hay reservaciones en el localStorage, crea un arreglo con formData y guárdalo
         const newReservaciones = [formData];
-        localStorage.setItem("reservacion", JSON.stringify(newReservaciones));
+        localStorage.setItem("reservacion", JSON.stringify(newReservaciones)); 
       }
             /* 
       var formDataJSON = JSON.stringify(formData);

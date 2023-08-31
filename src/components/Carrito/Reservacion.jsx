@@ -107,7 +107,7 @@ function Reservacion({reservacion, deleteExp, deleteReservation, json}) {
                   className={ index == reservacion?.experience?.length-1 ? "w-full flex flex-col mt-4 mb-2 " : "w-full flex flex-col mt-4 mb-2 border-b-[2px] border-b-[#d3cbc0]"}
                 >
                   <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#d3cbc0]">
-                    {exp}
+                    {exp.nombre}
                   </h2>
                   <div className="w-full flex flex-row justify-between">
                     <div className="flex flex-col justify-between">
@@ -115,8 +115,8 @@ function Reservacion({reservacion, deleteExp, deleteReservation, json}) {
                         <h3 className="w-[90%] font-apollo uppercase tracking-[2px]">
                           Descripcion experiencia
                         </h3>
-                        <p className="text-[#31302c] mt-2  font-apollo w-[90%] tracking-[2px]">
-                         {json.Cart.arriving}
+                        <p className="text-[#31302c] mt-2  font-apollo w-[75%] tracking-[2px]">
+                         {exp.descripcion}
                         </p>
                       </div>
                       <div className="flex flex-row mt-2 justify-start">
@@ -135,17 +135,20 @@ function Reservacion({reservacion, deleteExp, deleteReservation, json}) {
                         className="rounded-[2px]"
                       />
                       <p className="text-right font-apollo text-3xl mt-4  mb-2 tracking-[2px]">
+                        {
+                          console.log(exp.precio)
+                        }
                       {
                   moneda == "MXN"&&
-                  `$ ${(getPriceByExperience(exp)).toFixed(2)} ${moneda}`
+                  `$ ${(exp?.precio).toFixed(2)} ${moneda}`
                 }
                 {
                   moneda == "USD"&&
-                  `$ ${(getPriceByExperience(exp)*usdRate).toFixed(2)} ${moneda}`
+                  `$ ${(exp?.precio*usdRate).toFixed(2)} ${moneda}`
                 }
                 {
                   moneda == "EUR"&&
-                  `€ ${(getPriceByExperience(exp)*eurRate).toFixed(2)} ${moneda}`
+                  `€ ${(exp?.precio*eurRate).toFixed(2)} ${moneda}`
                 }
                       </p>
                     </div>

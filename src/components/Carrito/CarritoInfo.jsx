@@ -90,21 +90,6 @@ function CarritoInfo({json}) {
     JSON.stringify(localStorage.setItem("producto", JSON.stringify(updatedCart)));
   };
 
-  const getPriceByExperience = (exp) => {
-    switch (exp) {
-      case "spa":
-        return 5000;
-      case "cena":
-        return 3000;
-      case "recorrido":
-        return 2500;
-      case "comidas":
-        return 6000;
-      default:
-        return 0; // Precio predeterminado si no se encuentra la experiencia
-    }
-  };
-  
   const deleteExp = (reservacion, exp) => {
     console.log(exp);
     const updatedCart = carritoReservaciones.map((rsv) => {
@@ -119,7 +104,7 @@ function CarritoInfo({json}) {
           updatedExperience.splice(index, 1);
           // Actualizamos la propiedad 'experience' del objeto reservacion
           rsv.experience = updatedExperience;
-          rsv.total = rsv.total- getPriceByExperience(exp);
+          rsv.total = rsv.total- exp.precio;
         }
       }
       return rsv; // Devuelve el objeto modificado o sin cambios
@@ -157,36 +142,14 @@ let sumProductos = 0;
 
 // Calcula la suma de las reservaciones
 carritoReservaciones.forEach((rsv) => {
-  sumReservaciones +=
-    differenceInDays(new Date(rsv.checkout), new Date(rsv.checkin)) *
-      (rsv.plan === "select"
-        ? 18000
-        : rsv.plan === "luxury"
-        ? 22000
-        : rsv.plan === "premier"
-        ? 25000
-        : 0) +
-    (rsv.guests === "6-8"
-      ? 2000
-      : rsv.guests === "1-2"
-      ? 0
-      : rsv.guests === "3-5"
-      ? 0
-      : 0);
+  console.log(rsv),
+  sumReservaciones += rsv.total 
 });
 // Calcula la suma de las experiencias
 carritoReservaciones.forEach((rsv) => {
   rsv.experience.forEach((exp) => {
-    sumExperiences +=
-      exp === "cena"
-        ? 3000
-        : exp === "recorrido"
-        ? 2500
-        : exp === "spa"
-        ? 5000
-        : exp === "comidas"
-        ? 6000
-        : 0;
+    sumExperiences += exp.precio
+     
   });
 });
 
@@ -195,17 +158,7 @@ carritoProductos.forEach((product) => {
   sumProductos += product.price;
 });
 
-const obtenerPrecioExperiencia = (exp) => {
-  return exp === "cena"
-    ? 3000
-    : exp === "recorrido"
-    ? 2500
-    : exp === "spa"
-    ? 5000
-    : exp === "comidas"
-    ? 6000
-    : 0;
-};
+
 
 const handleCheckOut = async () =>{
 
@@ -220,7 +173,7 @@ carritoReservaciones.forEach((reservacion) => {
   // Recorremos el arreglo experience dentro de cada reservación
   if (reservacion.experience && Array.isArray(reservacion.experience)) {
     reservacion.experience.forEach((exp) => {
-      const precioExperiencia = obtenerPrecioExperiencia(exp);
+      const precioExperiencia = exp.precio;
       carrito.push({ name: exp, price: (precioExperiencia* determinarMoneda()).toFixed(2), tipo: "experiencia" }); // Guardamos la experiencia con su precio en el arreglo carrito
     });
   }
@@ -362,55 +315,28 @@ carritoProductos.forEach((producto) => {
                         <p className="font-apollo text-[#31302c]/40 text-lg tracking-[2px]">
                           SUBTOTAL
                         </p>
-                        {/* <p className="font-apollo text-[#31302c]/40 text-lg tracking-[2px]">
-                          TAX
-                        </p> */}
+                      
                       </div>
                       <div className="h-full flex flex-col justify-between text-right ">
                         <div className="h-full flex flex-col">
-                          {}
+                          
                           {carritoReservaciones.map((rsv, index) => (
                             <p
                               key={index}
                               className="font-apollo text-[#31302c]/40 tracking-[2px] text-lg"
                             >$
-                              {differenceInDays(
-                                new Date(rsv.checkout),
-                                new Date(rsv.checkin)
-                              ) *
-                                (((rsv.plan === "select"
-                                  ? 18000 
-                                  : rsv.plan === "luxury"
-                                  ? 22000
-                                  : rsv.plan === "premier"
-                                  ? 25000 
-                                  : 0) * determinarMoneda()).toFixed(2))  +
-                                (rsv.guests === "6-8"
-                                  ? 2000 
-                                  : rsv.guests === "1-2"
-                                  ? 0 
-                                  : rsv.guests === "3-5"
-                                  ? 0
-                                  : 0)* determinarMoneda()
-                                  } {moneda}
+                              {sumReservaciones-sumExperiences} {moneda}
                             </p>
                           ))}
                             {carritoReservaciones.map((rsv, index) => (
+                              console.log(rsv),
                             <div key={index+10}>
                               {rsv.experience.map((exp, i) => (
                                 <p
                                   key={i}
                                   className="font-apollo text-[#31302c]/40 tracking-[2px] text-lg"
                                 >$
-                                  {exp == "cena"
-                                  ? (3000 * determinarMoneda()).toFixed(2)
-                                  : exp == "recorrido"
-                                  ? (2500 * determinarMoneda()).toFixed(2)
-                                  : exp == "spa"
-                                  ? (5000 * determinarMoneda()).toFixed(2)
-                                  : exp == "comidas"
-                                  ? (6000 * determinarMoneda()).toFixed(2)
-                                  : 0
+                                  {(exp.precio * determinarMoneda()).toFixed(2)
                                 } {moneda}
                                 
                                 
@@ -436,6 +362,9 @@ carritoProductos.forEach((producto) => {
                         TOTAL
                       </p>
                       <p className="font-apollo text-[#282828] tracking-[2px] text-xl">
+                        {
+                          console.log(sumReservaciones , sumExperiences , sumProductos)
+                        }
                         ${((sumReservaciones + sumExperiences + sumProductos)* determinarMoneda()).toFixed(2)}  {moneda}
                       </p>
                     </div>
