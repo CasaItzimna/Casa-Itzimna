@@ -61,16 +61,48 @@ const [ventaUnica, setVentaUnica] = useState(null)
   }, [venta]);
 
   
-  const handleSelectChange = (event) => {
+  const handleSelectChange = async (event) => {
     setSelectedOption(event.target.value);
     const newEstado = event.target.value;
 
     // Actualizar el campo estado en el formData
     const updatedFormData = { ...formData, estado: newEstado };
-  
-    // Llamar a la función para actualizar la venta
-    updateVenta(venta._id, updatedFormData);
-  };
+
+    // Mostrar alerta de confirmación antes de actualizar la venta
+    const result = await Swal.fire({
+        title: 'Confirmar Cambio de Estado',
+        text: `¿Estás seguro de cambiar el estado de la venta a "${newEstado}"?`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Confirmar',
+        cancelButtonText: 'Cancelar',
+    });
+
+    if (result.isConfirmed) {
+        try {
+            // Llamar a la función para actualizar la venta
+            await updateVenta(venta._id, updatedFormData);
+            Swal.fire({
+                title: 'Estado Actualizado',
+                text: `El estado de la venta ha sido cambiado a "${newEstado}"`,
+                icon: 'success',
+            });
+        } catch (error) {
+            console.error('Error al actualizar la venta:', error);
+            Swal.fire({
+                title: 'Error',
+                text: 'Ha ocurrido un error al actualizar la venta',
+                icon: 'error',
+            });
+            // Restaurar el valor seleccionado anteriormente
+            setSelectedOption(formData.estado);
+        }
+    } else {
+        // Restaurar el valor seleccionado anteriormente
+        setSelectedOption(formData.estado);
+    }
+};
+
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -198,7 +230,7 @@ const [ventaUnica, setVentaUnica] = useState(null)
 
             <div>
       <select
-        value={selectedOption}
+        value={venta.estado}
         onChange={handleSelectChange}
         className="mt-2 border bg-[#d3cbc0] text-center py-1 rounded uppercase"
       >
