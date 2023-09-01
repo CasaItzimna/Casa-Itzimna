@@ -14,6 +14,8 @@ function Login() {
     email: "",
     password: "",
   });
+
+
   const handleChange = (e) => {
     setCredentials({
       ...credentials,
@@ -26,9 +28,23 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await axios.post("/api/auth/login", credentials);
-    if (response.status === 200) {
-      router.push("/Dashboard");
+    try {
+      const response = await axios.post("/api/auth/login", credentials);
+      if (response.status === 200) {
+        router.push("/Dashboard");
+      }
+    } catch (error) {
+      if (error.response) {
+        if (error.response.status === 401) {
+          setError("El correo electrónico no existe");
+        } else if (error.response.status === 402) {
+          setError("Contraseña incorrecta");
+        } else {
+          setError("Error al iniciar sesión. Por favor, intenta nuevamente más tarde.");
+        }
+      } else {
+        setError("Error al conectarse al servidor. Por favor, verifica tu conexión.");
+      }
     }
   };
 
@@ -61,7 +77,7 @@ function Login() {
           <h2 className="text-white text-3xl sm:text-5xl md:text-5xl font-cinzelRegular">
             Boutique
           </h2>
-          {error && <p>{error}</p>}
+          
           <form
             className="w-[80%] flex flex-col md:items-center text-left mt-8"
             onSubmit={handleSubmit}
@@ -93,6 +109,11 @@ function Login() {
               onChange={handleChange}
             />
             <div className="flex flex-col justify-center items-center md:w-3/4">
+            {error ? (
+                  <div className="col-span-2 w-full flex flex-row justify-center mt-4 text-red-500 font-Geometrica uppercase">
+                    <p>{error}</p>
+                  </div>
+                ) : null}
               <button className="bg-black/50 hover:bg-black text-white px-4 py-2 mt-4 mb-4 w-full font-Geometrica tracking-[2px]">
                 SIGN IN
               </button>
