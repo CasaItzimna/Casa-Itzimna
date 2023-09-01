@@ -44,12 +44,17 @@ function Form({json}) {
 
     // Parámetros para enviar el correo electrónico
     const params = {
-      from_name: formData.name,
-      from_lastName: formData.lastName,
-      phone: formData.tel,
-      email: formData.email,
-      message: formData.message,
-      idioma: idioma
+      texto1CONTACTO:"CONTACTO",
+      texto2CONTACTO:"FAVOR DE RESPONDER LA SOLICITUD DE CONTACTO",
+      from_name_contacto: formData.name,
+      from_lastName_contacto: formData.lastName,
+      phone_contacto: formData.tel,
+      email_contacto: formData.email,
+      message_contacto: formData.message,
+      idioma_contacto: idioma,
+      from_email: "boutiquecasaitzimna@gmail.com",
+      email_cc: "",
+      subject: "QUIERE HACER CONTACTO"
     };
 
     // Envía el correo electrónico
