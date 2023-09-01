@@ -250,8 +250,8 @@ const Dashboard = () => {
                 </h2>
               </div>
               <div className="text-white font-apollo mt-4">
-                <p className="text-lg">Bienvenido,</p>
-                <p className="text-4xl">{user?.name}</p>
+                <p className="text-lg tracking-[2px]">Bienvenido,</p>
+                <p className="text-4xl tracking-[2px]">{user?.name}</p>
               </div>
               <div className="flex flex-col">
                 <p className="flex flex-row gap-4 mt-9 items-center cursor-pointer hover:text-[#d3cbc0]">
