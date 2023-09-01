@@ -128,7 +128,7 @@ const Reservaciones = () => {
       >+ AGREGAR </div>
     </div>
       </div>
-    <div className="  grid grid-cols-1 md:grid-cols-2  mt-8 lg:mt-0 gap-4 lg:overflow-y-scroll 2xl:overflow-y-hidden">
+    <div className="  grid grid-cols-1 md:grid-cols-2  mt-8 lg:mt-0 gap-4 lg:overflow-y-scroll ">
 
     
     {isLoading ? (

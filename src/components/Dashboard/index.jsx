@@ -23,7 +23,10 @@ import {
   FaRightFromBracket,
   FaRightToBracket,
   FaDollarSign,
-  FaBars
+  FaBars,
+  FaRegCalendarAlt,
+  FaGlassCheers,
+  FaStar
 } from "react-icons/fa";
 import Productos from "./Productos";
 import Fechas from "./Fechas";
@@ -174,6 +177,48 @@ const Dashboard = () => {
               </span>{" "}
               Ventas
             </li>
+            <a
+            href="https://casaitzimna.sanity.studio/desk/fechas"
+            target="_blank"
+            rel="noopener noreferrer"
+             className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
+             onClick={() => {
+               setActive(false)
+             }}
+            >
+              <span>
+                <FaReceipt className="text-2xl text-white" />
+              </span>{" "}
+              Productos
+            </a>
+            <a
+              href="https://casaitzimna.sanity.studio/desk/fechas"
+              target="_blank"
+              rel="noopener noreferrer"
+               className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
+               onClick={() => {
+                 setActive(false)
+               }}
+            >
+              <span>
+                <FaReceipt className="text-2xl text-white" />
+              </span>{" "}
+              Experiencias
+            </a>
+            <a
+             href="https://casaitzimna.sanity.studio/desk/fechas"
+             target="_blank"
+             rel="noopener noreferrer"
+              className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
+              onClick={() => {
+                setActive(false)
+              }}
+            >
+              <span>
+                <FaReceipt className="text-2xl text-white" />
+              </span>{" "}
+              Fechas Especiales
+            </a>
             <li
               className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
               onClick={() => {
@@ -252,7 +297,7 @@ const Dashboard = () => {
                 </p>
                 <p className="flex flex-row gap-4 mt-9 items-center cursor-pointer hover:text-[#d3cbc0]">
                   <span>
-                    <FaDollarSign className="text-2xl text-white" />
+                    <FaStar className="text-2xl text-white" />
                   </span>
                   <a
       href="https://casaitzimna.sanity.studio/desk/productos"
@@ -266,7 +311,7 @@ const Dashboard = () => {
                 </p>
                 <p className="flex flex-row gap-4 mt-9 items-center cursor-pointer hover:text-[#d3cbc0]">
                   <span>
-                    <FaDollarSign className="text-2xl text-white" />
+                    <FaGlassCheers className="text-2xl text-white" />
                   </span>
                   <a
       href="https://casaitzimna.sanity.studio/desk/experiencias"
@@ -283,7 +328,7 @@ const Dashboard = () => {
                 </p>
                 <p className="flex flex-row gap-4 mt-9 items-center cursor-pointer hover:text-[#d3cbc0]">
                   <span>
-                    <FaDollarSign className="text-2xl text-white" />
+                    <FaRegCalendarAlt className="text-2xl text-white" />
                   </span>
                   <a
       href="https://casaitzimna.sanity.studio/desk/fechas"
