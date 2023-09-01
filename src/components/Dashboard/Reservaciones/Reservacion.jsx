@@ -8,6 +8,7 @@ import Image from "next/image";
 
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
+import emailjs from '@emailjs/browser';
 
 
 function Reservacion({ reservacion }) {
@@ -182,8 +183,70 @@ function Reservacion({ reservacion }) {
 
     if (result.isConfirmed) {
         try {
-            // Llamar a la función para actualizar la venta
-            await updateReservacion(reservacion._id, updatedFormData);
+          await updateReservacion(reservacion._id, updatedFormData);
+          emailjs.init("F9ctTSenSvQgRvd69");
+          console.log(reservacion)
+          if(newEstado == "confirmado"){
+            const params = {
+              texto1confirmed:"CONFIRMED RESERVATION",
+              texto2confirmed:"THANK YOU FOR CHOOSING CASA ITZIMNÁ",
+              texto3confirmed: "WE ARE DELIGHTED TO CONFIRM YOUR RESERVATION FROM ",
+              from_name_confirmed: reservacion.name,
+              checkin_confirmed: reservacion.checkin,
+              checkout_confirmed: reservacion.checkout,
+              from_email: reservacion.email,
+              email_cc: "boutiquecasaitzimna@gmail.com",
+              subject: "CONFIRMED RESERVATION"
+              
+            };
+            emailjs
+            .send("service_d5x4xeq", "template_15qv37j", params)
+            .then((response) => {
+              console.log("Correo electrónico enviado exitosamente:", response);
+            })
+            .catch((error) => {
+              console.error("Error al enviar el correo electrónico:", error);
+            });
+          }  
+          if(newEstado == "cancelado"){
+            const params = {
+              texto1canceled:"RESERVATION CANCELED",
+              texto2canceled:"THANK YOU FOR CHOOSING CASA ITZIMNÁ",
+              texto3canceled: "UNFORTUNATELY, WE HAD TO CANCEL YOUR RESERVATION. PLEASE GET IN TOUCH WITH US. ",
+              from_name_canceled: reservacion.name,
+              from_email: reservacion.email,
+              email_cc: "boutiquecasaitzimna@gmail.com",
+              subject: "RESERVATION CANCELED"
+              
+            };
+            emailjs
+            .send("service_d5x4xeq", "template_15qv37j", params)
+            .then((response) => {
+              console.log("Correo electrónico enviado exitosamente:", response);
+            })
+            .catch((error) => {
+              console.error("Error al enviar el correo electrónico:", error);
+            });
+          }  
+          if(newEstado == "finalizado"){
+            const params = {
+              texto1finished:"RESERVATION COMPLETED",
+              texto2finished:"THANK YOU FOR CHOOSING CASA ITZIMNÁ",
+              texto3finished: "YOUR RESERVACTION HAS BEEN COMPLETED. WE APPRECIATE YOUR PREFERENCE.",
+              from_email: reservacion.email,
+              email_cc: "boutiquecasaitzimna@gmail.com",
+              subject: "THANK YOU FOR CHOOSING CASA ITZIMNÁ"
+              
+            };
+            emailjs
+            .send("service_d5x4xeq", "template_15qv37j", params)
+            .then((response) => {
+              console.log("Correo electrónico enviado exitosamente:", response);
+            })
+            .catch((error) => {
+              console.error("Error al enviar el correo electrónico:", error);
+            });
+          }  
             Swal.fire({
                 title: 'Estado Actualizado',
                 text: `El estado de la reservacion ha sido cambiado a "${newEstado}"`,

@@ -1,0 +1,38 @@
+<style>
+    /* Estilos generales */
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    /* Estilos para el encabezado */
+    h2 {
+        color: #b4a692;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    /* Estilos para la información del remitente */
+    p {
+        margin-bottom: 10px;
+    }
+
+    strong {
+        font-weight: bold;
+    }
+
+    /* Estilos para el mensaje */
+    .message {
+        margin-bottom: 10px;
+        padding-left: 20px;
+        border-left: 2px solid #0080ff;
+    }
+</style>
+<h2>Contacto de {{{from_name}}}</h2>
+<p><strong>Nombre:</strong> {{{from_name}}} {{{from_lastName}}}</p>
+<p><strong>Email:</strong> {{{email}}}</p>
+<p><strong>Tel&eacute;fono:</strong> {{{phone}}}</p>
+<p><strong>Idioma:</strong> {{{idioma}}}</p>
+<p><strong>Mensaje:</strong></p>
+<p class="message">{{{message}}}</p>

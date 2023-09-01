@@ -10,6 +10,7 @@ import Swal from 'sweetalert2'
 
 import bote from "../../../assets/Icons/bote.png";
 import editar from "../../../assets/Icons/editar.png";
+import emailjs from '@emailjs/browser';
 
 function Venta({venta}) {
   console.log(venta)
@@ -79,9 +80,87 @@ const [ventaUnica, setVentaUnica] = useState(null)
     });
 
     if (result.isConfirmed) {
-        try {
-            // Llamar a la función para actualizar la venta
-            await updateVenta(venta._id, updatedFormData);
+      try {
+        await updateVenta(venta._id, updatedFormData);
+        emailjs.init("F9ctTSenSvQgRvd69");
+        console.log(venta)
+        if(newEstado == "confirmado"){
+          const params = {
+            texto1ventaConfirmed:"ORDER CONFIRMATION",
+            texto2ventaConfirmed:"THANK YOU FOR CHOOSING CASA ITZIMNÁ",
+            texto3ventaConfirmed: "WE ARE DELIGHTED TO CONFIRM YOUR ORDER.",
+            from_email: venta.correo,
+            email_cc: "boutiquecasaitzimna@gmail.com",
+            subject: "ORDER CONFIRMATION"
+            
+          };
+          emailjs
+          .send("service_d5x4xeq", "template_15qv37j", params)
+          .then((response) => {
+            console.log("Correo electrónico enviado exitosamente:", response);
+          })
+          .catch((error) => {
+            console.error("Error al enviar el correo electrónico:", error);
+          });
+        }  
+        if(newEstado == "cancelado"){
+          const params = {
+            texto1ventaCanceled:"ORDER CANCELED",
+            texto2ventaCanceled:"THANK YOU FOR CHOOSING CASA ITZIMNÁ",
+            texto3ventaCanceled: "UNFORTUNATELY, WE HAD TO CANCEL YOUR ORDER. PLEASE GET IN TOUCH WITH US.",
+            from_email: venta.correo,
+            email_cc: "boutiquecasaitzimna@gmail.com",
+            subject: "ORDER CANCELED"
+            
+          };
+          emailjs
+          .send("service_d5x4xeq", "template_15qv37j", params)
+          .then((response) => {
+            console.log("Correo electrónico enviado exitosamente:", response);
+          })
+          .catch((error) => {
+            console.error("Error al enviar el correo electrónico:", error);
+          });
+        }  
+        if(newEstado == "enviado"){
+          const params = {
+            texto1ventaShipped:"ORDER SHIPPED",
+            texto2ventaShipped:"THANK YOU FOR CHOOSING CASA ITZIMNÁ",
+            texto3ventaShipped: "YOUR ORDER HAS BEEN SHIPPED. BELOW YOU WILL FIND THE TRACKING NUMBER:",
+            tracking: venta?.comentarios,
+            from_email: venta.correo,
+            email_cc: "boutiquecasaitzimna@gmail.com",
+            subject: "ORDER SHIPPED"
+            
+          };
+          emailjs
+          .send("service_d5x4xeq", "template_15qv37j", params)
+          .then((response) => {
+            console.log("Correo electrónico enviado exitosamente:", response);
+          })
+          .catch((error) => {
+            console.error("Error al enviar el correo electrónico:", error);
+          });
+        }  
+        if(newEstado == "finalizado"){
+          const params = {
+            texto1ventaFinished:"ORDER COMPLETED",
+            texto2ventaFinished:"THANK YOU FOR CHOOSING CASA ITZIMNÁ",
+            texto3ventaFinished: "YOUR ORDER HAS BEEN DELIVERED. WE APPRECIATE YOUR PREFERENCE.",
+            from_email: venta.correo,
+            email_cc: "boutiquecasaitzimna@gmail.com",
+            subject: "THANK YOU FOR CHOOSING CASA ITZIMNÁ"
+            
+          };
+          emailjs
+          .send("service_d5x4xeq", "template_15qv37j", params)
+          .then((response) => {
+            console.log("Correo electrónico enviado exitosamente:", response);
+          })
+          .catch((error) => {
+            console.error("Error al enviar el correo electrónico:", error);
+          });
+        }  
             Swal.fire({
                 title: 'Estado Actualizado',
                 text: `El estado de la venta ha sido cambiado a "${newEstado}"`,

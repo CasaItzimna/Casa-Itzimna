@@ -79,11 +79,44 @@
             src="https://casa-itzimna.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogomenumov.db66bba5.png&amp;w=1920&amp;q=75"
             alt="Casa Itzimn&aacute; Logo"
           />
-          
-<h2>ORDER SHIPPED</h2>
-          <h3>THANK YOU FOR CHOOSING CASA ITZIMN&Aacute;</h3>       
-<span>YOUR ORDER HAS BEEN SHIPPED. BELOW YOU WILL FIND THE TRACKING NUMBER:</span>
-<a href={{tracking}}>{{tracking}}</a>
+          <div id="confirmedReservation">
+          <h2>{{texto1confirmed}}</h2>
+          <h3>{{texto2confirmed}}</h3>
+          <p>{{texto3confirmed}}</p>
+          <p><span>{{checkin_confirmed}} {{checkout_confirmed}}</span></p>
+        </div>
+          <div id="canceledReservation">
+          <h2>{{texto1canceled}}</h2>
+          <h3>{{texto2canceled}}</h3>
+          <p>{{texto3canceled}}</p>
+        </div>
+          <div id="finishedReservation">
+          <h2>{{texto1finished}}</h2>
+          <h3>{{texto2finished}}</h3>
+          <p>{{texto3finished}}</p>
+        </div>
+          <div id="orderConfirmation">
+            <h2>{{texto1ventaConfirmed}}</h2>
+            <h3>{{texto2ventaConfirmed}}</h3>
+            <p>{{texto3ventaConfirmed}}</p>
+        </div>
+          <div id="orderCanceled">
+            <h2>{{texto1ventaCanceled}}</h2>
+            <h3>{{texto2ventaCanceled}}</h3>
+            <p>{{texto3ventaCanceled}}</p>
+        </div>
+          <div id="orderShipped">
+            <h2>{{texto1ventaShipped}}</h2>
+            <h3>{{texto2ventaShipped}}</h3>
+            <p>{{texto3ventaShipped}}</p>
+            <a href={{tracking}}>{{tracking}}</a>
+        </div>
+          <div id="orderFinished">
+            <h2>{{texto1ventaFinished}}</h2>
+            <h3>{{texto2ventaFinished}}</h3>
+            <p>{{texto3ventaFinished}}</p>
+        </div>
+
           <p class="contact-info">
             If you have any questions or need assistance, please contact us:<br />Phone:
             <a href="tel:+52 55 2879 4515">+52 55 2879 4515</a><br />Email:
@@ -114,6 +147,7 @@
               >View on Google Maps</a
             >
           </p>
+        
         </div>
       </td>
     </tr>
