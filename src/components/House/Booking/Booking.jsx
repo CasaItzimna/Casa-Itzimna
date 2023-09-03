@@ -24,7 +24,8 @@ function Booking({ json }) {
   const [experiences, setExperiences] = useState([]);
   const [experiencesPrecio, setExperiencesPrecio] = useState(0);
   
-  const {carritoReservaciones, setCarritoReservaciones, getFechas, fechas} = AppContext();
+  const {carritoReservaciones, setCarritoReservaciones, getFechas, fechas, moneda, usdRate,
+    eurRate,} = AppContext();
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -378,6 +379,20 @@ const [total, setTotal] = useState(0)
     }
   };
 
+  const determinarMoneda = () => {
+    switch(moneda){
+    
+      case "USD":
+        return usdRate
+        break;
+      case "EUR":
+        return eurRate
+        break;
+        default:
+          return 1
+    }
+  }
+
   return (
     <div className="w-full h-full flex flex-col justify-center items-center pb-10 lg:mt-10">
       <div className="w-full  xl:w-[1300px] h-full flex flex-col-reverse lg:flex-row justify-center gap-4">
@@ -627,7 +642,8 @@ const [total, setTotal] = useState(0)
 
           />
                 <p className="font-Geometrica">TOTAL:</p>
-                <p className="font-Geometrica text-right">${total}mxn</p>
+                <p className="font-Geometrica text-right">${((total)*determinarMoneda()).toFixed(2)} {moneda}</p> 
+                
                 {error ? (
                   <div className="col-span-2 w-full flex flex-row justify-center text-red-500 font-Geometrica uppercase">
                     <p>{json.Booking.error}</p> 
