@@ -100,7 +100,7 @@ const Facturas = () => {
         <div className="flex flex-col md:flex-row justify-between mb-8 md:mb-0">
           <h2 className="text-2xl lg:text-4xl font-apollo tracking-[2px] mb-8 lg:text-white">Facturación</h2>
           <div className="flex flex-row gap-4">
-            <div className="border-[2px] rounded-[7px] px-4 py-2 h-[40px] font-Geometrica tracking-[1px] text-sm cursor-pointer flex flex-row items-center gap-2 bg-white"  >
+            <div className="hidden border-[2px] rounded-[7px] px-4 py-2 h-[40px] font-Geometrica tracking-[1px] text-sm cursor-pointer flex flex-row items-center gap-2 bg-white"  >
               STATUS <Image src={triangulo} alt="triangulo icon" className="w-[9px] h-[7px] " />
             </div>
             <div className="border-[2px] bg-white rounded-[7px] px-4 py-2 h-[40px] font-Geometrica tracking-[1px] text-sm cursor-pointer"

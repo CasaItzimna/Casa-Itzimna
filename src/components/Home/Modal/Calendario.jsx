@@ -113,7 +113,7 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow, plan, planPrecio,
 
   function isDateReserved(date) {
     for (const reserva of reservaciones) {
-      if(reserva.status == "aprobada"){
+      if(reserva.status != "pendiente" || ""){
 
         const checkinDate = new Date(reserva.checkin);
         const checkoutDate = new Date(reserva.checkout);

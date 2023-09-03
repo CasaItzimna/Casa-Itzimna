@@ -44,8 +44,8 @@ function Form({json}) {
 
     // Parámetros para enviar el correo electrónico
     const params = {
-      texto1CONTACTO:"CONTACTO",
-      texto2CONTACTO:"FAVOR DE RESPONDER LA SOLICITUD DE CONTACTO",
+      texto1contacto:"CONTACTO",
+      texto2contacto:"FAVOR DE RESPONDER LA SOLICITUD DE CONTACTO",
       from_name_contacto: formData.name,
       from_lastName_contacto: formData.lastName,
       phone_contacto: formData.tel,

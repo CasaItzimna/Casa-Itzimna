@@ -35,9 +35,9 @@ function Ventas() {
     const [showModal, setShowModal] = useState(false);
 
     function compararPorCheckin(a, b) {
-        const fechaCheckinA = new Date(a._creatredAt);
-        const fechaCheckinB = new Date(b._createdAt);
-        return fechaCheckinA - fechaCheckinB;
+        const fechaCheckinA = new Date(a._updatedAt);
+        const fechaCheckinB = new Date(b._updatedAt);
+        return fechaCheckinB - fechaCheckinA;
       }
 
     
@@ -91,6 +91,8 @@ function Ventas() {
       const ventasPerPage = 5
       const indexOfLastVenta = currentPage * ventasPerPage
       const indexOfFirstVenta  = indexOfLastVenta - ventasPerPage
+
+      console.log(ventasFecha)
 
       const currentVentas = ventasFecha?.slice(indexOfFirstVenta, indexOfLastVenta )
     
