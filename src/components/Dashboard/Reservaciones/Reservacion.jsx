@@ -212,7 +212,7 @@ function Reservacion({ reservacion }) {
             const params = {
               texto1canceled:"RESERVATION CANCELED",
               texto2canceled:"THANK YOU FOR CHOOSING CASA ITZIMNÁ",
-              texto3canceled: "UNFORTUNATELY, WE HAD TO CANCEL YOUR RESERVATION. PLEASE GET IN TOUCH WITH US. ",
+              texto3canceled: "UNFORTUNATELY, WE HAD TO CANCEL YOUR RESERVATION. PLEASE GET IN TOUCH WITH US FOR YOUR REFOUND. ",
               from_name_canceled: reservacion.name,
               from_email: reservacion.email,
               email_cc: "boutiquecasaitzimna@gmail.com",

@@ -22,7 +22,7 @@ function Reservacion({rsv}) {
       <p className="font-apollo tracking-[2px] uppercase">Experiences: 
 
       {rsv.experience.map((exp,index) =>(
-        <span key={index} className="text-center lg:text-left "> {exp} </span>
+        <span key={index} className="text-center lg:text-left "> {exp.nombreENG} </span>
         ))}
         </p>
     

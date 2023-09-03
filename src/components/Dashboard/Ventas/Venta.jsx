@@ -107,7 +107,7 @@ const [ventaUnica, setVentaUnica] = useState(null)
           const params = {
             texto1ventaCanceled:"ORDER CANCELED",
             texto2ventaCanceled:"THANK YOU FOR CHOOSING CASA ITZIMNÁ",
-            texto3ventaCanceled: "UNFORTUNATELY, WE HAD TO CANCEL YOUR ORDER. PLEASE GET IN TOUCH WITH US.",
+            texto3ventaCanceled: "UNFORTUNATELY, WE HAD TO CANCEL YOUR ORDER. PLEASE GET IN TOUCH WITH US FOR YOUR REFOUND.",
             from_email: venta.correo,
             email_cc: "boutiquecasaitzimna@gmail.com",
             subject: "ORDER CANCELED"

@@ -6,6 +6,8 @@ import bote from "./icons/bote.png";
 import experience from "./img/experiencefoto.png";
 import { differenceInDays, isValid } from "date-fns";
 import { AppContext } from '@/context/StateContext';
+import { client, urlFor } from "../../lib/client";
+
 
 function Reservacion({reservacion, deleteExp, deleteReservation, json}) {
     const [plan, setPlan] = useState(null);
@@ -129,10 +131,9 @@ function Reservacion({reservacion, deleteExp, deleteReservation, json}) {
                       </div>
                     </div>
                     <div className="flex flex-col justify-center">
-                      <Image
-                        src={experience}
+                      <img src={urlFor(exp?.image[0].asset._ref)}
                         alt=""
-                        className="rounded-[2px]"
+                        className="rounded-[2px] w-[250px] h-[150px] object-cover"
                       />
                       <p className="text-right font-apollo text-3xl mt-4  mb-2 tracking-[2px]">
                         {
