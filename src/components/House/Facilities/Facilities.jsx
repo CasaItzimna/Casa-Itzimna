@@ -112,7 +112,9 @@ function Facilities({json}) {
                 </div>
             </div>
             <div className="w-full flex flex-row justify-center h-full border-[1px] border-[#d3cbc0] rounded-[7px] cursor-pointer">
+              <Link href="/TermsAndConditions">
                 <h3 className="text-lg tracking-[1px] px-4 py-1">{json.Facilities.termstitle}</h3>
+              </Link>
             </div>
             <div>
               <div className="w-full flex flex-row justify-center lg:justify-start">
@@ -120,12 +122,11 @@ function Facilities({json}) {
               </div>
                 <ul className="flex flex-col items-center lg:items-start">
                 <li className="flex flex-row text-[16px] tracking-[2px]  font-PlayfairDisplay"><Image src={check} alt="check" className=" w-[23px] h-[15px] mr-4 "/>{json.Facilities.checkinText1}</li>
-                <li className="flex flex-row text-[16px] tracking-[2px] mt-4 font-PlayfairDisplay"><Image src={check} alt="check" className=" w-[23px] h-[15px] mr-4 "/>{json.Facilities.checkinText2}</li>
                 </ul>
             </div>
             <div>
             <div className="w-full flex flex-row justify-center lg:justify-start ">
-                <h3 className="text-3xl font-apollo mt-8 mb-4 tracking-[8px]">{json.Facilities.checkout}</h3>
+                <h3 className="text-3xl font-apollo mt-8 mb-4 tracking-[8px]">{json.Facilities.checkout}</h3> 
                 </div>
                 <ul className="flex flex-col items-center lg:items-start">
                     <li className="flex flex-row text-[16px] tracking-[2px] mt-4 font-PlayfairDisplay"><Image src={check} alt="check" className=" w-[23px] h-[15px] mr-4 "/>{json.Facilities.checkoutText1}</li>
