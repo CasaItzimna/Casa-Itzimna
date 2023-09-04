@@ -15,7 +15,9 @@
         "option3": "EXPERIENCE",
         "option4": "GALLERY",
         "option5": "BOUTIQUE",
-        "option6": "CONTACT"
+        "option6": "CONTACT",
+        "option7": "TERMS & CONDITIONS",
+        "option8": "PRIVACY POLICY"
     },
     "Home": {
       "calendarioInicio": "CHECK IN",
