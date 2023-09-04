@@ -73,8 +73,8 @@ function Footer() {
             <li className="cursor-pointer tracking-[4px]  hover:text-[#d3cbc0]"><Link href='/Spaces'>{json.Footer.option4}</Link></li>
             <li className="cursor-pointer tracking-[4px]  hover:text-[#d3cbc0]"><Link href='/Boutique'>{json.Footer.option5}</Link></li>
             <li className="cursor-pointer tracking-[4px]  hover:text-[#d3cbc0]"><Link href='/Contact'>{json.Footer.option6}</Link></li> 
-            <li className="cursor-pointer tracking-[4px]  hover:text-[#d3cbc0]"><Link href='/Contact'>{json.Footer.option7}</Link></li> 
-            <li className="cursor-pointer tracking-[4px]  hover:text-[#d3cbc0]"><Link href='/Contact'>{json.Footer.option8}</Link></li> 
+            <li className="cursor-pointer tracking-[4px]  hover:text-[#d3cbc0]"><Link href='/TermsAndConditions'>{json.Footer.option7}</Link></li> 
+            <li className="cursor-pointer tracking-[4px]  hover:text-[#d3cbc0]"><Link href='/PrivacyPolicy'>{json.Footer.option8}</Link></li> 
           </ul>
 {/*           <div className="hidden lg:flex w-full h-[2px] bg-[#d3cbc0]" />
  */}        </div>
