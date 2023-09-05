@@ -1,5 +1,6 @@
 import Image from "next/image";
 import spa from "./spa.png";
+import spa2 from "./HomeExperience.jpg";
 
 import flor from "./flor.png";
 import florder from "../../../assets/flor.png";
@@ -23,7 +24,7 @@ const {idioma} = AppContext()
         <div className="sm-w-[500px] lg:w-[500px] xl:w-full xl:h-[400px] 2xl:w-[600px]  flex flex-col justify-center  ">
           
 
-          <Image src={spa} alt="spa" className="w-full h-full xl:w-[90%] xl:h-[90%] 2xl:w-full object-cover " />
+          <Image src={spa2} alt="spa" className="w-full h-full xl:w-[90%] xl:h-[90%] 2xl:w-full object-cover " />
           
         </div>
         </div>

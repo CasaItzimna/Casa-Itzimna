@@ -3,8 +3,10 @@ import florder from "./florder.png";
 import Image from "next/image";
 import flor from "../../../assets/flor.png";
 import React, { useEffect, useState } from "react";
+import { AppContext } from "@/context/StateContext";
 
 function History({ json }) {
+  const {idioma} = AppContext();
   const historia = [
     {
       fecha: "Época Prehispánica",
@@ -108,13 +110,14 @@ function History({ json }) {
   return (
     <div className="w-full h-full pb-12 flex flex-col text-center bg-[#d3cbc0] relative">
       <div className="absolute flex flex-row justify-center w-full -bottom-0  xl:-bottom-4 2xl:-bottom-16 left-0 ">
-        <div className="w-[95%] h-[40px] lg:h-[70px] flex flex-row justify-center rounded-l-full rounded-r-full bg-white  shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50">
+        <div className="w-[90%] lg:w-[95%] xl:w-[95%] 2xl:w-[1400px] h-[40px] lg:h-[70px] flex flex-row justify-center rounded-l-full rounded-r-full bg-white  shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50">
           <div className="w-[95%] h-full flex flex-row justify-around items-center">
             <span className={currentIndex-1>-1?"font-Geometrica underline text-[#aea08c] cursor-pointer":"hidden"} onClick={handlePrevClick}>
               prev
             </span>
             <div className="w-full h-full flex flex-row justify-around items-center gap-20">
-  {historia
+            {idioma == 'ingles'
+  ? history
     .slice(currentIndex, currentIndex + numToShow)
     .map((suceso, index) => (
       <div key={index} className="w-full flex flex-col items-center relative">
@@ -125,6 +128,20 @@ function History({ json }) {
           </span>
         </div>
       </div>
+      
+    ))
+    : historia
+    .slice(currentIndex, currentIndex + numToShow)
+    .map((suceso, index) => (
+      <div key={index} className="w-full flex flex-col items-center relative">
+        <div className="bg-white h-[30px] w-[30px] lg:h-[40px] lg:w-[40px] rotate-45 absolute -top-3 lg:-top-7 z-10"></div>
+        <div className="w-full flex flex-row justify-around text-center">
+          <span className="font-cinzelBold text-center text-xl z-20">
+            {suceso.fecha}
+          </span>
+        </div>
+      </div>
+      
     ))}
 </div>
 
@@ -172,10 +189,23 @@ function History({ json }) {
         </div>
       </div>
 
-      <div className="flex flex-row justify-center">
-  <div className="grid grid-cols-1 lg:grid-cols-3 w-full lg:w-[90%] place-items-center gap-4">
-    {historia
-      .slice(currentIndex, currentIndex + numToShow) // Mostrar 1 suceso si el ancho de ventana es menor a lg, 3 sucesos si es lg o mayor
+      <div className=" flex flex-row justify-center">
+  <div className=" grid grid-cols-1 lg:grid-cols-3 w-[90%] lg:w-[95%] xl:w-[95%] 2xl:w-[1400px] place-items-center gap-4">
+  {idioma == 'ingles'
+  ? history
+      .slice(currentIndex, currentIndex + numToShow)
+      .map((suceso, index) => (
+        <div key={index} className="w-[350px] md:w-[500px] lg:w-[350px] h-[220px] lg:h-[300px] flex flex-col justify-center text-center bg-[#ad9f8b]">
+          <h4 className="font-apollo text-xl tracking-[4px] mb-4 lg:h-[40px]">
+            {suceso.titulo}
+          </h4>
+          <p className="text-white font-ethereal text-justify px-8 text-lg 2xl:tracking-[4px] lg:h-[200px]">
+            {suceso.texto}
+          </p>
+        </div>
+      ))
+  : historia
+      .slice(currentIndex, currentIndex + numToShow)
       .map((suceso, index) => (
         <div key={index} className="w-[350px] md:w-[500px] lg:w-[350px] h-[220px] lg:h-[300px] flex flex-col justify-center text-center bg-[#ad9f8b]">
           <h4 className="font-apollo text-xl tracking-[4px] mb-4 lg:h-[40px]">
