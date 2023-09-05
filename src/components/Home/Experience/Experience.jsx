@@ -21,7 +21,7 @@ const {idioma} = AppContext()
         <div className="lg:w-1/2 xl:w-[40%] 2xl:w-full  flex flex-row justify-center xl:justify-start 2xl:justify-end ">
 
         
-        <div className="sm-w-[500px] lg:w-[500px] xl:w-full xl:h-[400px] 2xl:w-[600px]  flex flex-col justify-center  ">
+        <div className="mt-4 lg:mt-0 sm-w-[500px] lg:w-[500px] xl:w-full xl:h-[400px] 2xl:w-[600px]  flex flex-col justify-center  ">
           
 
           <Image src={spa2} alt="spa" className="w-full h-full xl:w-[90%] xl:h-[90%] 2xl:w-full object-cover " />
