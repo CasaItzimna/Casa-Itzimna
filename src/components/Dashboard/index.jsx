@@ -132,7 +132,7 @@ const Dashboard = () => {
         </div>
         <div>
           <ul className="flex flex-col text-center gap-3 text-xl font-Geometrica">
-            <li
+            {/* <li
               className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
               onClick={() => setActive(false)}
             >
@@ -140,7 +140,7 @@ const Dashboard = () => {
                 <AiFillHome className="text-2xl text-white " />
               </span>{" "}
               Dashboard
-            </li>
+            </li> */}
             <li
               className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
               onClick={() => {
@@ -254,14 +254,14 @@ const Dashboard = () => {
                 <p className="text-4xl tracking-[2px]">{user?.name}</p>
               </div>
               <div className="flex flex-col">
-                <p className="flex flex-row gap-4 mt-9 items-center cursor-pointer hover:text-[#d3cbc0]">
+                {/* <p className="flex flex-row gap-4 mt-9 items-center cursor-pointer hover:text-[#d3cbc0]">
                   <span>
                     <AiFillHome className="text-2xl text-white " />
                   </span>
                   <span className="text-xl text-white font-apollo tracking-[2px]">
                     Dashboard
                   </span>
-                </p>
+                </p> */}
                 <p className="flex flex-row gap-4 mt-9 items-center cursor-pointer hover:text-[#d3cbc0]">
                   <span>
                     <FaSuitcase className="text-2xl text-white" />

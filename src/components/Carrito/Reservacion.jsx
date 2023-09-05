@@ -135,7 +135,7 @@ function Reservacion({reservacion, deleteExp, deleteReservation, json}) {
                         alt=""
                         className="rounded-[2px] w-[250px] h-[150px] object-cover"
                       />
-                      <p className="text-right font-apollo text-3xl mt-4  mb-2 tracking-[2px]">
+                      <p className="text-right w-[150px] font-apollo text-3xl mt-4  mb-2 tracking-[2px]">
                         {
                           console.log(exp.precio)
                         }
