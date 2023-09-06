@@ -34,6 +34,7 @@ function Registro() {
        <Head>
  <title>Casa Itzimná Boutique</title>
  </Head>
+ <div className='w-full h-[100px] md:h-[200px] lg:h-[250px] bg-[#31302c]'/>
 
       <div className='flex flex-col w-[350px] h-full border-2 rounded-xl'>
         <h3 className='text-center'>Crear Usuario</h3>
