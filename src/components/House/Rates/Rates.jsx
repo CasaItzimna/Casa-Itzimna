@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import foto1 from "./Select.jpg";
 import foto2 from "./Luxury.jpg";
 import foto3 from "./Premium.jpg";
@@ -9,6 +9,7 @@ import Link from "next/link";
 
 
 function Rates({ json }) {
+  const [option, setOption] = useState("")
 
   const ratesElements = [
     <div key={1} className="w-[300px] xl:w-[280px] 2xl:w-[380px]  h-full flex flex-col ">
@@ -23,14 +24,40 @@ function Rates({ json }) {
                 </h3>
                 <h4 className="text-xl font-apollo tracking-[2px]">
                   {json.Rates.option1price}
-                </h4>
+                </h4> 
+                {
+                  option == "opcion1" &&
+                
+                <ul >
+                  <li className="uppercase">{json.Rates.optiondetail1}</li>
+                  <li className="uppercase">{json.Rates.optiondetail2}</li>
+                  <li className="uppercase">{json.Rates.optiondetail3}</li>
+                  <li className="uppercase">{json.Rates.optiondetail4}</li>
+                  <li className="uppercase">{json.Rates.optiondetail5}</li>
+                  <li className="uppercase">{json.Rates.optiondetail6}</li>
+                  <li className="uppercase">{json.Rates.optiondetail7}</li>
+                </ul>
+}
                 <p className="font-PlayfairDisplay text-sm">
                   {json.Rates.additional}
                 </p>
                 <div className="flex flex-row justify-center">
-                  <button className="border-2 cursos-pointer hover:bg-[#a59f98] w-[150px] font-apollo text-md mb-4 mt-2">
+                {option == "opcion1"?
+                  <button className="border-2 uppercase cursos-pointer hover:bg-[#a59f98] w-[150px] font-apollo text-md mb-4 mt-2"
+                  onClick={()=> setOption("")}
+                  >
+                    
+                    {json.Rates.optionclose}
+                  </button>
+                    :
+                    <button className="border-2 cursos-pointer hover:bg-[#a59f98] w-[150px] font-apollo text-md mb-4 mt-2"
+                  onClick={()=> setOption("opcion1")}
+                  >
+                    
                     {json.Rates.detailsButton}
                   </button>
+                   
+                    }
                 </div>
               </div>
             </div>,
@@ -50,10 +77,36 @@ function Rates({ json }) {
                 <p className="font-PlayfairDisplay text-sm">
                   {json.Rates.additional}
                 </p>
+                {
+                  option == "opcion2" &&
+                <ul >
+                  <li className="uppercase">{json.Rates.optiondetail1}</li>
+                  <li className="uppercase">{json.Rates.optiondetail2}</li>
+                  <li className="uppercase">{json.Rates.optiondetail3}</li>
+                  <li className="uppercase">{json.Rates.optiondetail4}</li>
+                  <li className="uppercase">{json.Rates.optiondetail5}</li>
+                  <li className="uppercase">{json.Rates.optiondetail6}</li>
+                  <li className="uppercase">{json.Rates.optiondetail7}</li>
+                  <li className="uppercase">{json.Rates.optiondetailluxury}</li>
+                </ul>
+}
                 <div className="flex flex-row justify-center">
-                  <button className="border-2 cursos-pointer hover:bg-[#a59f98] w-[150px] font-apollo text-md mb-4 mt-2">
+                {option == "opcion2"?
+                  <button className="border-2 uppercase cursos-pointer hover:bg-[#a59f98] w-[150px] font-apollo text-md mb-4 mt-2"
+                  onClick={()=> setOption("")}
+                  >
+                    
+                    {json.Rates.optionclose}
+                  </button>
+                    :
+                    <button className="border-2 cursos-pointer hover:bg-[#a59f98] w-[150px] font-apollo text-md mb-4 mt-2"
+                  onClick={()=> setOption("opcion2")}
+                  >
+                    
                     {json.Rates.detailsButton}
                   </button>
+                   
+                    }
                 </div>
               </div>
             </div>,
@@ -73,17 +126,44 @@ function Rates({ json }) {
                 <p className="font-PlayfairDisplay text-sm">
                   {json.Rates.additional}
                 </p>
+                {
+                  option == "opcion3" &&
+                <ul >
+                  <li className="uppercase">{json.Rates.optiondetail1}</li>
+                  <li className="uppercase">{json.Rates.optiondetail2}</li>
+                  <li className="uppercase">{json.Rates.optiondetail3}</li>
+                  <li className="uppercase">{json.Rates.optiondetail4}</li>
+                  <li className="uppercase">{json.Rates.optiondetail5}</li>
+                  <li className="uppercase">{json.Rates.optiondetail6}</li>
+                  <li className="uppercase">{json.Rates.optiondetail7}</li>
+                  <li className="uppercase">{json.Rates.optiondetailluxury}</li>
+                  <li className="uppercase">{json.Rates.optiondetailPremier}</li>
+                </ul>
+}
                 <div className="flex flex-row justify-center">
-                  <button className="border-2 cursos-pointer hover:bg-[#a59f98] w-[150px] font-apollo text-md mb-4 mt-2">
+                {option == "opcion3"?
+                  <button className="border-2 uppercase cursos-pointer hover:bg-[#a59f98] w-[150px] font-apollo text-md mb-4 mt-2"
+                  onClick={()=> setOption("")}
+                  >
+                    
+                    {json.Rates.optionclose}
+                  </button>
+                    :
+                    <button className="border-2  cursos-pointer hover:bg-[#a59f98] w-[150px] font-apollo text-md mb-4 mt-2"
+                  onClick={()=> setOption("opcion3")}
+                  >
+                    
                     {json.Rates.detailsButton}
                   </button>
+                   
+                    }
                 </div>
               </div>
             </div>
   ]
 
   return (
-    <div className="w-full h-full mb-10 md:mb-0 md:h-[1300px] lg:h-[1000px] flex flex-col mt-8 xl:mt-0  ">
+<div className={`w-full h-full mb-10 md:mb-0 ${option !== "" ? (option === "lg" ? "h-[1300px]" : "h-[1000px]") : ""} flex flex-col mt-8 xl:mt-0`}>
       <div className="w-full   flex flex-row justify-center items-center">
         <div className="w-full  flex flex-col items-center justify-center lg:mt-8">
           <h3 className="text-4xl font-cinzelBold mb-8">{json.Rates.title}</h3>
