@@ -5,26 +5,69 @@ import spa2 from "./HomeExperience.jpg";
 import flor from "./flor.png";
 import florder from "../../../assets/flor.png";
 import serpiente from "../../../assets/serpiente.png";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import florizq from "../Testimonials/florizq.png";
 import { AppContext } from "@/context/StateContext";
+import Itzimna480 from '../../../assets/Videos/Home/itzimna_480p.mp4'
+import Itzimna240 from '../../../assets/Videos/Home/itzimna_240p.mp4'
+import Itzimna720 from '../../../assets/Videos/Home/itzimna_720p.mp4'
+
 
 function Experience({json}) {
-/*   const [isLargerThanMd, setIsLargerThanMd] = useState(window.innerWidth > 768)
- */
 
-const {idioma} = AppContext()
+const { idioma } = AppContext();
+const [selectedQuality, setSelectedQuality] = useState("240p");
+
+  const videoSources = {
+    "240p": Itzimna240,
+    "480p": Itzimna480,
+    "720p": Itzimna720,
+  };
+  const handleChangeQuality = (quality) => {
+    setSelectedQuality(quality);
+  };
+
+
+
+
   return (
     <div className="w-full h-[700px] lg:h-[400px] flex flex-row justify-center relative   ">
       <div className="absolute h-full w-full  flex flex-col lg:flex-row justify-center  items-center  z-0">
         <div className="lg:w-1/2 xl:w-[40%] 2xl:w-full  flex flex-row justify-center xl:justify-start 2xl:justify-end ">
 
         
-        <div className="mt-4 lg:mt-0 sm-w-[500px] lg:w-[500px] xl:w-full xl:h-[400px] 2xl:w-[600px]  flex flex-col justify-center  ">
-          
+        <div className="mt-4 lg:mt-0 sm-w-[500px] lg:w-[500px] xl:w-full xl:h-[400px] 2xl:w-[600px]   flex flex-col justify-center  ">
+          {/* 
 
-          <Image src={spa2} alt="spa" className="w-full h-full xl:w-[90%] xl:h-[90%] 2xl:w-full object-cover " />
+          <Image src={spa2} alt="spa" className="w-full h-full xl:w-[90%] xl:h-[90%] 2xl:w-full object-cover " /> */}
+      
+      <div className="relative">
+        <video
+          controls
+          className="w-full h-full xl:w-[90%]  2xl:w-full object-cover " 
+          src={videoSources[selectedQuality]}
+          poster="./HomeExperience.jpg"
+        >
+          Tu navegador no soporta la reproducción de video.
+        </video>
+        <div className="absolute top-0 right-0 p-2 bg-gray-900 text-white rounded-md">
+          <label htmlFor="quality">Calidad:</label>
+          <select
+            id="quality"
+            className="ml-2 p-1 bg-gray-800 text-white rounded-md"
+            value={selectedQuality}
+            onChange={(e) => handleChangeQuality(e.target.value)}
+          >
+            {Object.keys(videoSources).map((quality) => (
+              <option key={quality} value={quality}>
+                {quality}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+   
           
         </div>
         </div>
