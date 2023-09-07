@@ -6,10 +6,27 @@ import foto3 from "./Premium.jpg";
 import fototo1 from "./unforgettable-1.jpg";
 import fototo2 from "./Unforgettable-2.jpg";
 import Link from "next/link";
+import { AppContext } from "@/context/StateContext";
 
 
 function Rates({ json }) {
   const [option, setOption] = useState("")
+  const {moneda} = AppContext()
+
+
+  const determinarMoneda = () => {
+    switch(moneda){
+    
+      case "USD":
+        return usdRate
+        break;
+      case "EUR":
+        return eurRate
+        break;
+        default:
+          return 1
+    }
+  }
 
   const ratesElements = [
     <div key={1} className="w-[300px] xl:w-[280px] 2xl:w-[380px]  h-full flex flex-col ">
@@ -23,7 +40,7 @@ function Rates({ json }) {
                   {json.Rates.option1}
                 </h3>
                 <h4 className="text-xl font-apollo tracking-[2px]">
-                  {json.Rates.option1price}
+                  ${((json.Rates.option1price)*determinarMoneda()).toFixed(2)} {moneda}
                 </h4> 
                 {
                   option == "opcion1" &&
@@ -72,7 +89,7 @@ function Rates({ json }) {
                   {json.Rates.option2}
                 </h3>
                 <h4 className="text-xl font-apollo tracking-[2px]">
-                  {json.Rates.option2price}
+                ${((json.Rates.option2price)*determinarMoneda()).toFixed(2)} {moneda}
                 </h4>
                 <p className="font-PlayfairDisplay text-sm">
                   {json.Rates.additional}
@@ -121,7 +138,7 @@ function Rates({ json }) {
                   {json.Rates.option3}
                 </h3>
                 <h4 className="text-xl font-apollo tracking-[2px]">
-                  {json.Rates.option3price}
+                ${((json.Rates.option3price)*determinarMoneda()).toFixed(2)} {moneda}
                 </h4>
                 <p className="font-PlayfairDisplay text-sm">
                   {json.Rates.additional}

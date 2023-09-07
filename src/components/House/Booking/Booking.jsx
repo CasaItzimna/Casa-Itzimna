@@ -20,7 +20,7 @@ function Booking({ json }) {
   const [guests, setGuests] = useState("");
   const [guestsPrecio, setGuestsPrecio] = useState(0);
   const [plan, setPlan] = useState("");
-  const [planPrecio, setPlanPrecio] = useState(18000);
+  const [planPrecio, setPlanPrecio] = useState(14100);
   const [experiences, setExperiences] = useState([]);
   const [experiencesPrecio, setExperiencesPrecio] = useState(0);
   
@@ -119,12 +119,8 @@ function Booking({ json }) {
   const [despues, setDespues] = useState(dateAfterThreeDays);
   const despuesName = despues?.toLocaleDateString("en-US", options);
   const [totalDiasHoy, setTotalDiasHoy] = useState(differenceInDays(despues, hoy) );
-  console.log(totalDiasHoy)
-  console.log(hoy, despues)
-  console.log(fin,inicio)
   const [totalDiasInicio, setTotalDiasInicio] = useState(differenceInDays(fin, inicio) );
-  console.log(totalDiasInicio)
-/*   const [total, setTotal] = useState(differenceInDays(despues, hoy) * precio);
+  /*   const [total, setTotal] = useState(differenceInDays(despues, hoy) * precio);
  */
 const [total, setTotal] = useState(0)
 
@@ -186,13 +182,13 @@ const [total, setTotal] = useState(0)
 
   useEffect(() => {
     if(plan == "select"){
-      setPlanPrecio(18000)
+      setPlanPrecio(14100)
     }
     if(plan == "luxury"){
-      setPlanPrecio(22000)
+      setPlanPrecio(17900)
     }
     if(plan == "premier"){
-      setPlanPrecio(25000)
+      setPlanPrecio(20900)
     }
     if(selectedGuests == "6-8"){
       setGuestsPrecio(2000)
