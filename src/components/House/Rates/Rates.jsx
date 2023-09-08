@@ -11,7 +11,7 @@ import { AppContext } from "@/context/StateContext";
 
 function Rates({ json }) {
   const [option, setOption] = useState("")
-  const {moneda} = AppContext()
+  const {moneda, usdRate, eurRate} = AppContext()
 
 
   const determinarMoneda = () => {
