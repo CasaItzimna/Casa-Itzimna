@@ -1,6 +1,8 @@
 import { AppContext } from "@/context/StateContext";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
+import { FaArrowLeft } from "react-icons/fa";
 
 function AR() {
   const router = useRouter();
@@ -39,7 +41,7 @@ function AR() {
         
         
         <model-viewer
-        className="center-block"
+        className="center-block relative"
         style={{ width: "100vh", height: "80vh" }}
           src={newAR}
           ar
@@ -54,7 +56,17 @@ function AR() {
           min-camera-orbit="auto 87deg auto"
           max-camera-orbit="auto 101deg auto"
         >
-          {" "}
+          <div className="absolute top-5 left-5">
+            <Link href="/Boutique">
+            <FaArrowLeft className="cursor-pointer w-[40px] h-[40px] xl:w-[50px] xl:h-[50px] text-[#d3cbc0]"/>
+            </Link>
+          </div>
+         
+          <button slot="ar-button" className="absolute bottom-[10%] left-[25%] md:left-[35%] xl:hidden xl:bottom-[15%] xl:left-[45%] "  >
+            <span  className="rounded-[4px] bg-[#31302c] text-white hover:text-[#d3cbc0] w-[200px] h-[45px] text-xl tracking-[4px] mt-8 font-apollo flex flex-col justify-center">
+       Activate AR
+            </span>
+  </button>
         </model-viewer>
       </div>
     </div>
