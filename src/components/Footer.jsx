@@ -88,9 +88,13 @@ function Footer() {
             GET SOCIAL
           </h3>
           <ul className="font-apollo text-white text-sm h-[50px] flex flex-row justify-center gap-4 lg:gap-0 lg:flex-col lg:justify-normal items-center lg:items-end mb-2 ">
+          <a href="https://www.facebook.com/CasaItzimnaboutique" target="_blank">
             <li className="flex flex-row cursor-pointer text-lg tracking-[4px]  hover:text-[#d3cbc0]"><span className="hidden lg:flex">CASA ITZIMNÁ BOUTIQUE &nbsp;</span> <FaFacebookF className="text-[#d3cbc0] mt-1 text-4xl lg:text-sm"/></li>
+            </a>
+            <a href="https://www.instagram.com/CasaItzimnaboutique" target="_blank">
             <li className="flex flex-row cursor-pointer text-lg tracking-[4px]  hover:text-[#d3cbc0] "><span className="hidden lg:flex">CASAITZIMNÁ_BOUTIQUE &nbsp;</span> <AiOutlineInstagram className="text-[#d3cbc0] mt-1 text-5xl lg:text-sm"/></li>
-          </ul>
+         </a>
+          </ul> 
 {/*           <div className="hidden lg:flex w-full h-[2px] bg-[#d3cbc0] mb-4" />
  */}          <div className="uppercase hidden lg:flex flex-row justify-end w-full font-apollo  text-white lg:mt-4  ">
           Made by &nbsp; 
