@@ -53,10 +53,12 @@ function Footer() {
             <a href='mailto:CASAITZIMNA@HOTELBOUTIQUE.COM'>
             <li className="flex flex-row tracking-[4px]   text-md lg:text-lg justify-center lg:justify-start cursor-pointer hover:text-[#d3cbc0] "><HiOutlineMail className="hidden lg:flex text-[#d3cbc0]"/> &nbsp;CONTACTO@CASAITZIMNA.COM</li>
             </a>
-          </ul>
-        <div className="uppercase hidden lg:flex flex-col w-full font-apollo text-white lg:mt-4">
-         <p> copyright all rights reserved - casa itzimná hotel boutique</p>
+            <div className="uppercase hidden lg:flex flex-col w-full text-left font-apollo text-white lg:mt-4">
+         <p> copyright all rights reserved</p>
+         <p> casa itzimná boutique</p>
         </div>
+          </ul>
+       
         </div>
        
         <div className="w-full lg:w-1/5 flex flex-row justify-center lg:justify-start">
