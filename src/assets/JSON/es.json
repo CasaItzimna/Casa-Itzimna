@@ -227,7 +227,8 @@
 "shipping": "*INGRESA LA DIRECCIÓN DE ENVÍO AL REALIZAR EL PAGO",
 "description": "DESCRIPCION DE EXPERIENCIA",
 "noproducts": "NO HAY PRODUCTOS AGREGADOS",
-"noreservations": "NO HAY RESERVACIONES AGREGADAS"
+"noreservations": "NO HAY RESERVACIONES AGREGADAS",
+"Loading": "Cargando..."
 
       },
       

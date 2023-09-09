@@ -228,7 +228,8 @@
   "shipping" : "*SET SHIPING AT PAYMENT",
   "description": "EXPERIENCE DESCRIPTION" ,
   "noproducts": "NO PRODUCTS ADDED",
-"noreservations": "NO RESERVATIONS ADDED"
+"noreservations": "NO RESERVATIONS ADDED",
+"loading": "Loading..."
 },
 "Confirmation":{
   "titulo": "ORDER CONFIRMATION",

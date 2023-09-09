@@ -160,8 +160,9 @@ carritoProductos.forEach((product) => {
 });
 
 
-
+const [isLoading, setIsLoading] = useState(false);
 const handleCheckOut = async () =>{
+  setIsLoading(true); 
 
   console.log('Esto es un ejemplo')
  // Recorremos carritoReservaciones para guardar cada reservación y experiencia en el arreglo carrito
@@ -371,8 +372,12 @@ carritoProductos.forEach((producto) => {
                     </div>
                     <button className="bg-black hover:bg-[#a59f98]  text-white uppercase w-full py-4 mt-4 font-Geometrica text-xl mb-4"
                     onClick={handleCheckOut}
-                    >
-                     {json.Cart.proceed}
+                    >{
+                      isLoading? (
+                        <span>{json.Cart.loading}</span>
+                      ):
+                     json.Cart.proceed
+                    }
                     </button>
                   </div>
                 </div>

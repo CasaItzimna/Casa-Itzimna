@@ -30,23 +30,6 @@ function Reservacion({reservacion, deleteExp, deleteReservation, json}) {
           }
       }, [reservacion]);
 
-      const getPriceByExperience = (exp) => {
-        switch (exp) {
-          case "spa":
-            return 5000;
-          case "cena":
-            return 3000;
-          case "recorrido":
-            return 2500;
-          case "comidas":
-            return 6000;
-          default:
-            return 0; // Precio predeterminado si no se encuentra la experiencia
-        }
-      };
-
-      
-
   return (
     <div className='w-full flex flex-col'>
 
@@ -83,19 +66,25 @@ function Reservacion({reservacion, deleteExp, deleteReservation, json}) {
                     />
                   </div>
               <p className="text-right font-apollo text-3xl mt-8 mb-4 tracking-[2px] ">
-                {
-                  moneda == "MXN"&&
-                  `$ ${(reservacion?.total).toFixed(2)} ${moneda}`
-                }
-                {
-                  moneda == "USD"&&
-                  `$ ${(reservacion?.total*usdRate).toFixed(2)} ${moneda}`
-                }
-                {
-                  moneda == "EUR"&&
-                  `€ ${(reservacion?.total*eurRate).toFixed(2)} ${moneda}`
-                }
-              </p>
+  {moneda === "MXN" &&
+    `$ ${(reservacion?.total).toLocaleString('en-US', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+    })} ${moneda}`
+  }
+  {moneda === "USD" &&
+    `$ ${(reservacion?.total * usdRate).toLocaleString('en-US', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+    })} ${moneda}`
+  }
+  {moneda === "EUR" &&
+    `€ ${(reservacion?.total * eurRate).toLocaleString('en-US', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+    })} ${moneda}`
+  }
+</p>
                </div>
               </div>
               {
@@ -135,23 +124,26 @@ function Reservacion({reservacion, deleteExp, deleteReservation, json}) {
                         alt=""
                         className="rounded-[2px] w-[250px] h-[150px] object-cover"
                       />
-                      <p className="text-right w-[150px] font-apollo text-3xl mt-4  mb-2 tracking-[2px]">
-                        {
-                          console.log(exp.precio)
-                        }
-                      {
-                  moneda == "MXN"&&
-                  `$ ${(exp?.precio).toFixed(2)} ${moneda}`
-                }
-                {
-                  moneda == "USD"&&
-                  `$ ${(exp?.precio*usdRate).toFixed(2)} ${moneda}`
-                }
-                {
-                  moneda == "EUR"&&
-                  `€ ${(exp?.precio*eurRate).toFixed(2)} ${moneda}`
-                }
-                      </p>
+                     <p className="text-right w-[150px] font-apollo text-3xl mt-4 mb-2 tracking-[2px]">
+  {moneda === "MXN" &&
+    `$ ${(exp?.precio).toLocaleString('en-US', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+    })} ${moneda}`
+  }
+  {moneda === "USD" &&
+    `$ ${(exp?.precio * usdRate).toLocaleString('en-US', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+    })} ${moneda}`
+  }
+  {moneda === "EUR" &&
+    `€ ${(exp?.precio * eurRate).toLocaleString('en-US', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+    })} ${moneda}`
+  }
+</p>
                     </div>
                   </div>
                 </div>
