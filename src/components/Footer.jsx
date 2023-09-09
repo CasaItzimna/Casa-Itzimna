@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BsFacebook, BsInstagram, BsWhatsapp } from "react-icons/bs";
 import { useRouter } from 'next/router';
 
@@ -6,7 +6,7 @@ import Image from "next/image";
 import logo from "../assets/Logo/LOGOBLANCO.png";
 import {BsTelephoneFill} from 'react-icons/bs'
 import { HiOutlineMail } from "react-icons/hi";
-import { FaFacebookF, FaLocationDot } from "react-icons/fa";
+import { FaFacebookF, FaLocationDot, FaLongArrowAltUp } from "react-icons/fa";
 import { AiOutlineInstagram } from "react-icons/ai";
 import location from '../assets/location.png'
 import Link from "next/link";
@@ -24,6 +24,36 @@ function Footer() {
   const isDashboardComponentPage = router.pathname === '/Dashboard/[_component]';
   console.log(isDashboardComponentPage)
 
+
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0, // Hacer scroll hasta la parte superior de la página
+      behavior: 'smooth', // Animación de desplazamiento suave
+    });
+  };
+
+  // Agrega un efecto de efecto secundario para controlar el comportamiento de desplazamiento
+  useEffect(() => {
+    const handleScroll = () => {
+      // Muestra u oculta el botón de "volver arriba" según la posición del scroll
+      const scrollButton = document.getElementById('scrollToTopButton');
+      if (scrollButton) {
+        if (window.scrollY > 200) {
+          scrollButton.style.display = 'block';
+        } else {
+          scrollButton.style.display = 'none';
+        }
+      }
+    };
+
+    // Agrega un evento de escucha de desplazamiento cuando se monta el componente
+    window.addEventListener('scroll', handleScroll);
+
+    // Elimina el evento de escucha de desplazamiento cuando se desmonta el componente
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
   
@@ -53,6 +83,9 @@ function Footer() {
             <a href='mailto:CASAITZIMNA@HOTELBOUTIQUE.COM'>
             <li className="flex flex-row tracking-[4px]   text-md lg:text-lg justify-center lg:justify-start cursor-pointer hover:text-[#d3cbc0] "><HiOutlineMail className="hidden lg:flex text-[#d3cbc0]"/> &nbsp;CONTACTO@CASAITZIMNA.COM</li>
             </a>
+            <div className="h-[200px] bg-[#31302c] flex flex-col justify-center items-center">
+              <li><FaLongArrowAltUp className="text-[#d3cbc0] text-[50px]" onClick={handleScrollToTop}/></li>
+            </div>
             <div className="uppercase hidden lg:flex flex-col w-full text-left font-apollo text-white lg:mt-4">
          <p> copyright all rights reserved</p>
          <p> casa itzimná boutique</p>

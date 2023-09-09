@@ -176,7 +176,7 @@ function Navbar() {
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 4 }}  className={showModalCalendar === false ?"lg:hidden flex flex-row justify-between absolute top-10 md:top-20  z-20 w-full text-white ": "hidden"}>
+        transition={{ duration: 4 }}  className={showModalCalendar === false ?"lg:hidden flex flex-row justify-between absolute top-10 md:top-20 z-20 w-full text-white ": "hidden"}>
       <Link href="/Carrito">
         <Image
           src={carrito}

@@ -9,9 +9,10 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import florizq from "../Testimonials/florizq.png";
 import { AppContext } from "@/context/StateContext";
-import Itzimna480 from '../../../assets/Videos/Home/itzimna_480p.mp4'
-import Itzimna240 from '../../../assets/Videos/Home/itzimna_240p.mp4'
-import Itzimna720 from '../../../assets/Videos/Home/itzimna_720p.mp4'
+import Itzimna480 from '../../../assets/Videos/Home/480p.mp4'
+import Itzimna240 from '../../../assets/Videos/Home/240p.mp4'
+import Itzimna720 from '../../../assets/Videos/Home/720p.mp4'
+import Itzimnafull_hd from '../../../assets/Videos/Home/full_hd.mp4'
 
 
 function Experience({json}) {
@@ -23,6 +24,7 @@ const [selectedQuality, setSelectedQuality] = useState("240p");
     "240p": Itzimna240,
     "480p": Itzimna480,
     "720p": Itzimna720,
+    "FullHD": Itzimnafull_hd,
   };
   const handleChangeQuality = (quality) => {
     setSelectedQuality(quality);
