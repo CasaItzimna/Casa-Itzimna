@@ -83,7 +83,7 @@ function Footer() {
             <a href='mailto:CASAITZIMNA@HOTELBOUTIQUE.COM'>
             <li className="flex flex-row tracking-[4px]   text-md lg:text-lg justify-center lg:justify-start cursor-pointer hover:text-[#d3cbc0] "><HiOutlineMail className="hidden lg:flex text-[#d3cbc0]"/> &nbsp;CONTACTO@CASAITZIMNA.COM</li>
             </a>
-            <div className="h-[200px] bg-[#31302c] flex flex-col justify-center items-center">
+            <div className="h-[200px] bg-[#31302c] lg:hidden flex flex-col justify-center items-center">
               <li><FaLongArrowAltUp className="text-[#d3cbc0] text-[50px]" onClick={handleScrollToTop}/></li>
             </div>
             <div className="uppercase hidden lg:flex flex-col w-full text-left font-apollo text-white lg:mt-4">

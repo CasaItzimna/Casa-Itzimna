@@ -241,7 +241,7 @@ function Calendario({
               plan == ""
             ) {
               return (
-                <span key={index} className="text-[9px]">
+                <span key={index} className=" text-[10px] lg:text-[7px] 2xl:text-[9px] ">
                   $
                   {(fecha.precioSelect * determinarMoneda()).toLocaleString(
                     "en-US",
@@ -260,7 +260,7 @@ function Calendario({
               plan == "select"
             ) {
               return (
-                <span key={index} className="text-[9px]">
+                <span key={index} className="text-[10px] lg:text-[7px] 2xl:text-[9px]">
                   $
                   {(fecha.precioSelect * determinarMoneda()).toLocaleString(
                     "en-US",
@@ -280,7 +280,7 @@ function Calendario({
               plan == "luxury"
             ) {
               return (
-                <span key={index} className="text-[9px]">
+                <span key={index} className="text-[10px] lg:text-[7px] 2xl:text-[9px]">
                   ${(fecha.precioLuxury * determinarMoneda()).toLocaleString(
                     "en-US",
                     {
@@ -298,7 +298,7 @@ function Calendario({
               plan == "premier"
             ) {
               return (
-                <span key={index} className="text-[9px]">
+                <span key={index} className="text-[10px] lg:text-[7px] 2xl:text-[9px]">
                   ${(fecha.precioPremier * determinarMoneda()).toLocaleString(
                     "en-US",
                     {
@@ -320,7 +320,7 @@ function Calendario({
                 "0"
               )}-${String(i).padStart(2, "0")}`
           ) && (
-            <span className="text-[9px]">
+            <span className="text-[10px] lg:text-[7px] 2xl:text-[9px]">
             ${((planPrecio + guestsPrecio) * determinarMoneda()).toLocaleString('en-US', {
               minimumFractionDigits: 2,
               maximumFractionDigits: 2,
@@ -441,7 +441,7 @@ function Calendario({
               plan == ""
             ) {
               return (
-                <span key={index} className="text-[9px]">
+                <span key={index} className="text-[10px] lg:text-[7px] 2xl:text-[9px]">
                   ${(fecha.precioSelect * determinarMoneda()).toLocaleString(
                     "en-US",
                     {
@@ -459,7 +459,7 @@ function Calendario({
               plan == "select"
             ) {
               return (
-                <span key={index} className="text-[9px]">
+                <span key={index} className="text-[10px] lg:text-[7px] 2xl:text-[9px]">
                 ${(fecha.precioSelect * determinarMoneda()).toLocaleString(
                   "en-US",
                   {
@@ -477,7 +477,7 @@ function Calendario({
               plan == "luxury"
             ) {
               return (
-                <span key={index} className="text-[9px]">
+                <span key={index} className="text-[10px] lg:text-[7px] 2xl:text-[9px]">
                   ${(fecha.precioLuxury * determinarMoneda()).toLocaleString(
                     "en-US",
                     {
@@ -496,7 +496,7 @@ function Calendario({
             ) {
               return (
                
-<span key={index} className="text-[9px]">
+<span key={index} className="text-[10px] lg:text-[7px] 2xl:text-[9px]">
                   ${(fecha.precioPremier * determinarMoneda()).toLocaleString(
                     "en-US",
                     {
@@ -518,7 +518,7 @@ function Calendario({
                 "0"
               )}-${String(i).padStart(2, "0")}`
           ) && (
-            <span className="text-[9px]">
+            <span className="text-[10px] lg:text-[7px] 2xl:text-[9px]">
   ${((planPrecio + guestsPrecio) * determinarMoneda()).toLocaleString('en-US', {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
