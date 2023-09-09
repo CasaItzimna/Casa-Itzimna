@@ -293,10 +293,12 @@ const [ventaUnica, setVentaUnica] = useState(null)
             Estado: {venta?.estado}
           </p>
           <p className="font-apollo uppercase text-sm">
-            Nombre: {venta?.nombre}
+            Nombre: {venta.nombre?
+            "✔":""}
           </p>
           <p className="font-apollo uppercase text-sm">
-            Correo: {venta?.correo}
+            Correo: {venta?.correo?
+            "✔":""}
           </p>
           </div>
           </div>

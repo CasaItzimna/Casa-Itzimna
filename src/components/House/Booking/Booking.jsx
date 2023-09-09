@@ -275,7 +275,7 @@ const [total, setTotal] = useState(0)
   
 
   
-  
+console.log(experiences)  
 
   const handleSubmit = async () => {
     event.preventDefault();
