@@ -638,7 +638,13 @@ console.log(experiences)
 
           />
                 <p className="font-Geometrica">TOTAL:</p>
-                <p className="font-Geometrica text-right">${((total)*determinarMoneda()).toFixed(2)} {moneda}</p> 
+                <p className="font-Geometrica text-right">${((total)*determinarMoneda()).toLocaleString(
+                    "en-US",
+                    {
+                      minimumFractionDigits: 2,
+                      maximumFractionDigits: 2,
+                    }
+                  )} {moneda}</p> 
                 
                 {error ? (
                   <div className="col-span-2 w-full flex flex-row justify-center text-red-500 font-Geometrica uppercase">
