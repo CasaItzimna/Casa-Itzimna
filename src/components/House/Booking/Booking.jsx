@@ -190,13 +190,13 @@ const [total, setTotal] = useState(0)
     if(plan == "premier"){
       setPlanPrecio(20900)
     }
-    if(selectedGuests == "6-8"){
+    if(selectedGuests == "7-+"){
       setGuestsPrecio(2000)
     }
     if(selectedGuests == "1-2"){
       setGuestsPrecio(0)
     }
-    if(selectedGuests == "3-5"){
+    if(selectedGuests == "3-6"){
       setGuestsPrecio(0)
     }
     let totalExperiencesPrecio = 0;
@@ -333,7 +333,7 @@ console.log(experiences)
 
       
       emailjs.init("F9ctTSenSvQgRvd69");
-
+      console.log(formData)
     // Parámetros para enviar el correo electrónico
     const params = {
       from_name: formData.name,
@@ -344,9 +344,13 @@ console.log(experiences)
       checkin: formData.checkin,
       checkout: formData.checkout,
       precio: formData.precio,
-      experiences: formData.experience,
+      experience1: formData.experience[0]?.nombre,
+      experience2: formData.experience[1]?.nombre,
+      experience3: formData.experience[2]?.nombre,
+      experience4: formData.experience[3]?.nombre, 
       total: formData.total
     };
+    
 
     // Envía el correo electrónico
     emailjs
@@ -462,57 +466,57 @@ console.log(experiences)
                         </label>
                         <div
                           onClick={() => {
-                            setSelectedGuests("3-5");
-                            localStorage.setItem("guests", "3-5");
+                            setSelectedGuests("3-6");
+                            localStorage.setItem("guests", "3-6");
                           }}
                           className={
-                            selectedGuests === "3-5"
+                            selectedGuests === "3-6"
                               ? `border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer bg-[#d3cbc0]`
                               : `border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer`
                           }
                         >
                           <div
                             className={
-                              selectedGuests === "3-5"
+                              selectedGuests === "3-6"
                                 ? `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`
                                 : `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#d3cbc0] `
                             }
                           ></div>
                         </div>
                         <label
-                          htmlFor="3-5"
+                          htmlFor="3-6"
                           className={`font-Geometrica ${
-                            selectedGuests === "3-5" ? "text-[#d3cbc0]" : ""
+                            selectedGuests === "3-6" ? "text-[#d3cbc0]" : ""
                           }`}
                         >
-                          3-5
+                          3-6
                         </label>
                         <div
                           onClick={() => {
-                            setSelectedGuests("6-8");
+                            setSelectedGuests("7-+");
                             localStorage.setItem("guests", "6-8");
                           }}
                           className={
-                            selectedGuests === "6-8"
+                            selectedGuests === "7-+"
                               ? `border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer bg-[#d3cbc0]`
                               : `border-[2px] border-[#d3cbc0] w-[25px] rounded-full relative cursor-pointer`
                           }
                         >
                           <div
                             className={
-                              selectedGuests === "6-8"
+                              selectedGuests === "7-+"
                                 ? `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-white`
                                 : `border-[1px] w-[10px] h-[10px] rounded-full absolute top-[25%] left-[25%] bg-[#d3cbc0] `
                             }
                           ></div>
                         </div>
                         <label
-                          htmlFor="6-8"
+                          htmlFor="7-+"
                           className={`font-Geometrica ${
-                            selectedGuests === "6-8" ? "text-[#d3cbc0]" : ""
+                            selectedGuests === "7-+" ? "text-[#d3cbc0]" : ""
                           }`}
                         >
-                          6-8
+                          7-+
                         </label>
                       </div>
                     </div>
