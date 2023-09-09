@@ -288,8 +288,11 @@ carritoProductos.forEach((producto) => {
                         className="w-[50%]"
                       />
                       <p className="text-right font-apollo text-3xl mt-4 tracking-[2px]">
-                        ${((producto?.price)* determinarMoneda()).toFixed(2)} {moneda}
-                      </p>
+  ${(producto?.price * determinarMoneda()).toLocaleString('en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })} {moneda}
+</p>
                     </div>
                   </div>
                 </div>
