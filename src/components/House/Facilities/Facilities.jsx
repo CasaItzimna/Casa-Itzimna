@@ -101,7 +101,7 @@ function Facilities({json}) {
                       <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#d3cbc0]">
                       <Image src={kitchen} alt="kitchen" className="w-[25px] h-[25px]" />
                       </div>
-                      <span className="flex flex-row w-full justify-center text-center text-[11px] md:text-[15px] lg:text-[12px] font-bold">{json.Facilities.facility7}</span>
+                      <span className="flex flex-row w-full justify-center text-center text-[7px] md:text-[15px] lg:text-[12px] font-bold">{json.Facilities.facility7}</span>
                      </div>
                     <div className=" w-full flex flex-row font-Geometrica h-[35px] items-center border-[1px] border-[#d3cbc0] ">
                       <div  className="w-[50px] h-full grid grid-cols-1 place-items-center bg-[#d3cbc0]">

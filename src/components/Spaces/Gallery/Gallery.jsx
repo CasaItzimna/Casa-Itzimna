@@ -18,7 +18,7 @@ function Gallery({json}) {
                 >
                     {json.Gallery.button1}
                 </button>
-                <button className={`font-Geometrica ${active == "rooms"? "bg-[#d3cbc0]" : "bg-[#31302c]"} w-[120px] text-white text-md tracking-[2px] `}
+                <button className={`font-Geometrica text-[14px] h-[25px] ${active == "rooms"? "bg-[#d3cbc0]" : "bg-[#31302c]"} w-[120px] text-white text-md tracking-[2px] `}
                 onClick={()=>setActive("rooms")}
                 >
                 {json.Gallery.button2}

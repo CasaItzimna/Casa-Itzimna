@@ -660,8 +660,10 @@ const [total, setTotal] = useState(0)
 
                 <p className="w-full col-span-2 font-PlayfairDisplay text-sm text-justify">
                   {json.Booking.consent}
-                  <span className="w-full text-[#d3cbc0] hover:text-[#a59f98] ml-2">
+                  <span className="w-full text-[#d3cbc0] hover:text-[#a59f98] ml-2 cursor-pointer">
+                  <Link href="/PrivacyPolicy">
                     {json.Booking.privacy}
+                  </Link>
                   </span>
                 </p>
               </form>

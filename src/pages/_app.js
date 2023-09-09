@@ -24,6 +24,8 @@ export default function App({ Component, pageProps }) {
       <meta name="twitter:card" content="summary_large_image" />
       <meta property="og:site_name" content="Casa Itzimná Boutique" />
 
+      <meta name="google" content="notranslate"/>
+
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet" />

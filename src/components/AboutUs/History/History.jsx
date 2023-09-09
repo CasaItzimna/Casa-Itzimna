@@ -30,7 +30,7 @@ function History({ json }) {
       fecha: "Varios años",
       titulo: "UNA HISTORIA VIVA",
       texto:
-        "La casona es ocupada como casa habitación por familias locales de Mérida y también como sede de Oficinas Gubernamentales.",
+        "La casona fue ocupada como casa habitación por familias locales de Mérida y también como sede de Oficinas Gubernamentales.",
     },
     {
       fecha: "Años recientes",
@@ -68,7 +68,7 @@ function History({ json }) {
       fecha: "Several years",
       titulo: "UNA HISTORIA VIVA",
       texto:
-        "The mansion serves as a residence for local Mérida families and as a governmental office.",
+        "The mansion served as a residence for local Mérida families and as a governmental office.",
     },
     {
       fecha: "Recent Years",

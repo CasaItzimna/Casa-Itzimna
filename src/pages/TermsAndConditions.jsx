@@ -11,7 +11,6 @@ function TermsAndConditions() {
       {idioma === "ingles" ? (
         <div>
           <h1 className="text-3xl font-semibold mb-4">Terms and Conditions</h1>
-          <h2 className="text-xl font-semibold mt-4 mb-2">Frequently Asked Questions</h2>
           <h3 className="text-lg font-semibold mt-2">Reservations</h3>
           <p>
             - Have I completed the reservation process, what should I do now?
@@ -178,7 +177,6 @@ function TermsAndConditions() {
       ) : (
         <div>
           <h1 className="text-3xl font-semibold mb-4">Términos y Condiciones</h1>
-          <h2 className="text-xl font-semibold mt-4 mb-2">Preguntas Frecuentes</h2>
           <h3 className="text-lg font-semibold mt-2">Reservaciones</h3>
           <p>
             - ¿He finalizado el proceso de reservación, ¿qué debo hacer ahora?
