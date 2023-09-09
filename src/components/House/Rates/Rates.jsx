@@ -40,7 +40,10 @@ function Rates({ json }) {
                   {json.Rates.option1}
                 </h3>
                 <h4 className="text-xl font-apollo tracking-[2px]">
-                  ${((parseInt(json.Rates.option1price))*determinarMoneda()).toFixed(2)} {moneda}
+                  ${((parseInt(json.Rates.option1price))*determinarMoneda()).toLocaleString('en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })} {moneda}
                 </h4> 
                 {
                   option == "opcion1" &&
@@ -89,7 +92,10 @@ function Rates({ json }) {
                   {json.Rates.option2}
                 </h3>
                 <h4 className="text-xl font-apollo tracking-[2px]">
-                ${((parseInt(json.Rates.option2price))*determinarMoneda()).toFixed(2)} {moneda}
+                ${((parseInt(json.Rates.option2price))*determinarMoneda()).toLocaleString('en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })} {moneda}
                 </h4>
                 <p className="font-PlayfairDisplay text-sm">
                   {json.Rates.additional}
@@ -138,7 +144,10 @@ function Rates({ json }) {
                   {json.Rates.option3}
                 </h3>
                 <h4 className="text-xl font-apollo tracking-[2px]">
-                ${((parseInt(json.Rates.option3price))*determinarMoneda()).toFixed(2)} {moneda}
+                ${((parseInt(json.Rates.option3price))*determinarMoneda()).toLocaleString('en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })} {moneda}
                 </h4>
                 <p className="font-PlayfairDisplay text-sm">
                   {json.Rates.additional}

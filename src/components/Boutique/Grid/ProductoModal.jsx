@@ -134,7 +134,10 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
             </p>
             <p className="mt-4 mb-4">
               <span className="text-4xl font-apollo  tracking-[4px] ">
-                {(producto?.price * determinarMoneda()).toFixed(2)}
+                {(producto?.price * determinarMoneda()).toLocaleString('en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })}
               </span>
               &nbsp;&nbsp;
               <span className="text-4xl font-apollo tracking-[4px] ">{moneda}</span>

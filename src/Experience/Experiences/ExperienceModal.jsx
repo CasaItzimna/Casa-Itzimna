@@ -74,7 +74,10 @@ function ExperienceModal({ experiencia, isOpen, onRequestClose, json }) {
             </p>
             <p className="mt-4 mb-4 flex flex-row justify-end">
               <span className="text-3xl font-apollo  tracking-[4px] ">
-               ${(experiencia?.precio * determinarMoneda()).toFixed(2)}
+               ${(experiencia?.precio * determinarMoneda()).toLocaleString('en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })}
               </span>
               &nbsp;&nbsp;
               <span className="text-3xl font-apollo tracking-[4px] ">{moneda}</span>
