@@ -63,6 +63,19 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
     return <div>Cargando...</div>; // Muestra un mensaje de carga si producto es null o undefined
   }
 
+  const handleShareClick = async ()  =>{
+    console.log("entre")
+    try {
+      await navigator.share({
+        title: producto[0]?.name,
+        text: producto[0]?.description,
+        url: window.location.href, // URL que deseas compartir
+      });
+    } catch (error) {
+      console.error('Error al compartir:', error);
+    }
+  }
+
 
   return (
     <Modal
@@ -79,7 +92,7 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
               <img
                 src={urlFor(producto[0]?.image[0].asset._ref)}
                 alt="Imagen del producto"
-                className="w-[250px] lg:w-full"
+                className="w-[250px] h-[350px] object-contain lg:w-full"
               />
             </div>
             <div className="flex flex-row w-full  justify-center lg:justify-between ">
@@ -91,7 +104,7 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
                   <img
                     src={urlFor(img.asset._ref)}
                     alt={`Imagen del producto ${index + 2}`}
-                    className="w-full"
+                    className="w-[120px]  lg:h-[120px] object-cover overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50"
                   />
                 </div>
               ))}
@@ -151,7 +164,7 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
                     opcion === "opcion1"
                       ? "left-0"
                       : opcion === "opcion2"
-                      ? "left-[33%]"
+                      ? "left-[38%]"
                       : opcion === "opcion3"
                       ? "right-0"
                       : ""
@@ -159,11 +172,24 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
                 ></div>
               </div>
             </div>
+            <div className="h-[150px] text-sm md:text-md text-justify">
             <p className={`${opcion === "opcion1"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>
-              {producto[0]?.description}
+              {
+                idioma == "espanol"?
+                producto[0]?.description:
+                producto[0]?.descriptionENG
+              }
             </p>
-            <p className={`${opcion === "opcion2"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>{producto[0]?.details}</p>
-            <p className={`${opcion === "opcion3"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>{producto[0]?.shipping}</p>
+            <p className={`${opcion === "opcion2"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>{
+                idioma == "espanol"?
+                producto[0]?.details:
+                producto[0]?.detailsENG
+              }</p>
+            <p className={`${opcion === "opcion3"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>{
+             idioma == "espanol"?
+             producto[0]?.shipping:
+             producto[0]?.shippingENG}</p>
+            </div>
             <div className="flex flex-col items-center lg:items-start">
             <button className="w-[210px] tracking-[4px] mt-8 py-2 text-xl text-white bg-black"
             onClick={()=>addProductCart(producto[0])}
@@ -180,7 +206,9 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
               </div>
             </button>
             </Link>
-            <button className="w-[210px] tracking-[4px] py-1 text-md mt-3 border-[1px] border-black ">
+            <button className="w-[210px] tracking-[4px] py-1 text-md mt-3 border-[1px] border-black "
+            onClick={handleShareClick}
+            >
               <div className="flex flex-row  justify-center items-center gap-2">
                 <Image
                   src={share}
