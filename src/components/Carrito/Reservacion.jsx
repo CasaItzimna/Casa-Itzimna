@@ -100,31 +100,27 @@ function Reservacion({reservacion, deleteExp, deleteReservation, json}) {
                   <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#d3cbc0]">
                     {exp.nombre}
                   </h2>
-                  <div className="w-full flex flex-row justify-between">
+                  <div className="w-full flex flex-col-reverse  justify-between">
                     <div className="flex flex-col justify-between">
                       <div>
                         <h3 className="w-[90%] font-apollo uppercase tracking-[2px]">
                           Descripcion experiencia
                         </h3>
-                        <p className="text-[#31302c] mt-2  font-apollo w-[75%] tracking-[2px]">
+                        <p className="text-[#31302c] mt-2 text-justify font-apollo w-full  tracking-[1px]">
                          {exp.descripcion}
                         </p>
                       </div>
-                      <div className="flex flex-row mt-2 justify-start">
+                      <div className="flex flex-row mt-2 justify-between">
+                        <div className='flex flex-col h-full justify-center'>
+
                         <Image
                           src={bote}
                           alt="basura"
-                          className=" cursor-pointer mb-4"
+                          className=" cursor-pointer  object-contain"
                           onClick={() => deleteExp(reservacion,exp)}
                         />
-                      </div>
-                    </div>
-                    <div className="flex flex-col justify-center">
-                      <img src={urlFor(exp?.image[0].asset._ref)}
-                        alt=""
-                        className="rounded-[2px] w-[250px] h-[150px] object-cover"
-                      />
-                     <p className="text-right w-[150px] font-apollo text-3xl mt-4 mb-2 tracking-[2px]">
+                        </div>
+                        <p className="text-right w-full font-apollo text-3xl mt-4 mb-2 tracking-[2px]">
   {moneda === "MXN" &&
     `$ ${(exp?.precio).toLocaleString('en-US', {
         minimumFractionDigits: 2,
@@ -144,6 +140,14 @@ function Reservacion({reservacion, deleteExp, deleteReservation, json}) {
     })} ${moneda}`
   }
 </p>
+                      </div>
+                    </div>
+                    <div className="flex flex-col justify-center items-center">
+                      <img src={urlFor(exp?.image[0].asset._ref)}
+                        alt=""
+                        className="rounded-[2px] mb-4 w-[250px] md:w-full h-[150px] object-cover"
+                      />
+                     
                     </div>
                   </div>
                 </div>

@@ -122,7 +122,7 @@ const [selectedQuality, setSelectedQuality] = useState("240p");
           </div>
           </div>
           <p
-      className="text-xl font-ethereal text-justify lg:hidden w-[350px] md:w-[600px] lg:w-[480px] tracking-[4px] lg:text-white"
+      className="text-xl font-ethereal text-justify lg:hidden w-[350px] md:w-[600px] lg:w-[480px] tracking-[1px] lg:text-white"
       
     >
           {json.Experience.text}

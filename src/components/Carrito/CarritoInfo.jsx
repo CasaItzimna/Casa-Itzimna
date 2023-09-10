@@ -265,32 +265,27 @@ function CarritoInfo({ json }) {
                     <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#d3cbc0]">
                       {producto?.name}
                     </h2>
-                    <div className="w-full flex flex-row justify-between">
+                    <div className="w-full flex flex-col-reverse  justify-between">
                       <div className="w-full flex flex-col justify-between">
                         <div>
-                          <h3 className=" font-apollo uppercase tracking-[2px]">
+                          <h3 className=" font-apollo uppercase text-justify tracking-[2px]">
                             {producto?.description.substring(0, 70) + " ..."}
                           </h3>
-                          <p className="text-[#31302c] mt-2  font-apollo w-full tracking-[2px]">
+                          <p className="text-[#31302c] mt-2 text-justify  font-apollo w-full tracking-[1px]">
                             {json.Cart.shipping}
                           </p>
                         </div>
-                        <div className="flex flex-row mt-2 justify-start ">
+                        <div className="flex flex-row mt-2 justify-between ">
+                          <div className="flex flex-col h-full justify-center">
+
                           <Image
                             src={bote}
                             alt="basura"
-                            className=" cursor-pointer mb-4"
+                            className=" cursor-pointer object-contain"
                             onClick={() => deleteProduct(producto)}
                           />
-                        </div>
-                      </div>
-                      <div className="flex flex-col justify-center items-end w-full">
-                        <img
-                          src={urlFor(producto.image[0].asset._ref)}
-                          alt="producto foto"
-                          className="w-[50%]"
-                        />
-                        <p className="text-right font-apollo text-3xl mt-4 tracking-[2px]">
+                          </div>
+                          <p className="text-right mb-2 lg:mb-0 w-full font-apollo text-3xl mt-4 tracking-[2px]">
                           $
                           {(
                             producto?.price * determinarMoneda()
@@ -300,6 +295,15 @@ function CarritoInfo({ json }) {
                           })}{" "}
                           {moneda}
                         </p>
+                        </div>
+                      </div>
+                      <div className="flex flex-col justify-center items-center  w-full">
+                        <img
+                          src={urlFor(producto.image[0].asset._ref)}
+                          alt="producto foto"
+                          className="w-[50%]"
+                        />
+                        
                       </div>
                     </div>
                   </div>

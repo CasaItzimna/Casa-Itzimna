@@ -225,7 +225,7 @@ function Rates({ json }) {
                 </h3>
                 <div className="flex flex-row justify-center lg:justify-start">
 
-                <p className="w-[90%] lg:w-full font-apollo text-lg text-justify tracking-[1px]">{json.Rates.unforgettableText}</p>
+                <p className="w-[90%] lg:w-full font-apollo text-lg text-justify tracking-[3px]">{json.Rates.unforgettableText}</p>
                 </div>
                 <div className="flex flex-row justify-center lg:justify-start ">
 

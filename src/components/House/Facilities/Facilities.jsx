@@ -42,7 +42,7 @@ function Facilities({json}) {
         <div className="w-full lg:w-1/2 2xl:w-full flex flex-row justify-center xl:justify-end ">
 
         
-        <div className="w-[80%] 2xl:w-[570px] h-full flex flex-col  ">
+        <div className="w-[95%] 2xl:w-[570px] h-full flex flex-col  ">
             <div className="font-PlayfairDisplay text-[16px] text-justify tracking-wider">
                 {json.Facilities.texto1}
             </div>
@@ -128,7 +128,7 @@ function Facilities({json}) {
             <div className="w-full flex flex-row justify-center lg:justify-start ">
                 <h3 className="text-3xl font-apollo mt-8 mb-4 tracking-[8px]">{json.Facilities.checkout}</h3> 
                 </div>
-                <ul className="flex flex-col items-center lg:items-start">
+                <ul className="flex flex-col items-start lg:items-start">
                     <li className="flex flex-row text-[16px] tracking-[2px] mt-4 font-PlayfairDisplay"><Image src={check} alt="check" className=" w-[23px] h-[15px] mr-4 "/>{json.Facilities.checkoutText1}</li>
                     <li className="flex flex-row text-[16px] tracking-[2px] mt-4 font-PlayfairDisplay"><Image src={check} alt="check" className=" w-[23px] h-[15px] mr-4 "/>{json.Facilities.checkoutText2}</li>
                 </ul>

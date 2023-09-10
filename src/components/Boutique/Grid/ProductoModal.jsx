@@ -184,19 +184,19 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
               </div>
             </div>
             <div className="h-[150px] text-justify">
-            <p className={`${opcion === "opcion1"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>
+            <p className={`${opcion === "opcion1"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[0px]`}>
               {
                 idioma == "espanol"?
                 producto?.description:
                 producto?.descriptionENG
               }
             </p>
-            <p className={`${opcion === "opcion2"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>{
+            <p className={`${opcion === "opcion2"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[0px]`}>{
                 idioma == "espanol"?
                 producto?.details:
                 producto?.detailsENG
               }</p>
-            <p className={`${opcion === "opcion3"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[2px]`}>{
+            <p className={`${opcion === "opcion3"? "flex" : "hidden"}  font-PlayfairDisplay tracking-[0px]`}>{
              idioma == "espanol"?
              producto?.shipping:
              producto?.shippingENG}</p>

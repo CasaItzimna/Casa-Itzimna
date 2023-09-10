@@ -93,7 +93,7 @@ function Why({ json }) {
           <div className={`${pregunta1 == true? 'hidden': null } h-[2px]  w-full bg-[#aea08c] mt-5 mb-4`}></div>
           <div className="w-full flex flex-row justify-center items-center mb-4 lg:mb-0">
 
-          <p className={`w-[90%]  md:w-full font-ethereal text-lg tracking-[2px] text-justify mt-4 lg:mt-2  ${pregunta1 == false? 'hidden': null }`}>
+          <p className={`w-[90%]  md:w-full font-ethereal text-lg tracking-[1px] text-justify mt-4 lg:mt-2  ${pregunta1 == false? 'hidden': null }`}>
             {json.Why.answer1}
           </p>
           </div>
@@ -111,7 +111,7 @@ function Why({ json }) {
           </h3>
           <div className={`${pregunta2 == true? 'hidden': null } h-[2px]  w-full bg-[#aea08c] mt-5 mb-4`}></div>
           <div className="w-full flex flex-row justify-center items-center mb-4 lg:mb-0 lg:mt-2">
-          <p className={`w-[90%] md:w-full font-ethereal text-lg tracking-[2px] text-justify mt-4 xl:mt-0 ${pregunta2 == false? 'hidden': null }`}>
+          <p className={`w-[90%] md:w-full font-ethereal text-lg tracking-[1px] text-justify mt-4 xl:mt-0 ${pregunta2 == false? 'hidden': null }`}>
             {json.Why.answer2}
           </p>
           </div>
@@ -128,7 +128,7 @@ function Why({ json }) {
             {json.Why.question3}
           </h3>
           <div className="w-full flex flex-row justify-center  items-center mb-4 lg:mb-0 lg:mt-2">
-          <p className={`w-[90%] md:w-full font-ethereal text-lg tracking-[2px] text-justify mt-4 xl:mt-0  ${pregunta3 == false? 'hidden': null }`}>
+          <p className={`w-[90%] md:w-full font-ethereal text-lg tracking-[1px] text-justify mt-4 xl:mt-0  ${pregunta3 == false? 'hidden': null }`}>
             {json.Why.answer3}
           </p>
           </div>
