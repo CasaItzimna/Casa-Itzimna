@@ -80,7 +80,6 @@ function Factura({ factura, index  }) {
       if (result.isConfirmed) {
         // Aquí realizar la eliminación de la factura
         await deleteFactura(factura._id);
-        console.log('factura eliminada');
         getFacturas();
   
         Swal.fire('Eliminada', 'La factura ha sido eliminada', 'success');
@@ -107,7 +106,6 @@ function Factura({ factura, index  }) {
       ...formData,
       state: isSwitchChecked,
     };
-    console.log(updatedFormData);
   
     // Mostrar una alerta de confirmación antes de enviar los datos actualizados
     const confirmationResult = await Swal.fire({
@@ -122,7 +120,6 @@ function Factura({ factura, index  }) {
     if (confirmationResult.isConfirmed) {
       try {
         const respuesta = await updateFactura(factura._id, updatedFormData);
-        console.log('la respuesta fue', respuesta);
   
         setShowModal(false);
   
@@ -145,7 +142,6 @@ function Factura({ factura, index  }) {
 
  
 
-  console.log(factura)
 
   return (
     <>

@@ -16,7 +16,6 @@ const Facturas = () => {
   useEffect(() => {
     getFacturas();
   }, []);
-  console.log(facturas)
 
   const [facturasCheckin, setFacturasCheckin] = useState([])
 
@@ -53,11 +52,9 @@ const Facturas = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("esto es lo que vamos a mandar" + addFormData)
     
     try {
       const respuesta = await postFactura(addFormData);
-      console.log('la respuesta fue', respuesta)
       
       getFacturas()
       setShowModal(false);
@@ -65,7 +62,6 @@ const Facturas = () => {
      
       
     } catch (error) {
-      console.log(error)
     }
 
    

@@ -16,7 +16,6 @@ function Reservacion({reservacion, deleteExp, deleteReservation, json}) {
 
   const  {moneda, eurRate, usdRate} = AppContext()
 
-  console.log(reservacion)
     useEffect(() => {
         if (reservacion) {
             // Convertir las fechas de cadena de texto a objetos Date
@@ -92,7 +91,6 @@ function Reservacion({reservacion, deleteExp, deleteReservation, json}) {
                 <div key={index}
                 className='flex flex-row justify-center '
                 >
-                  {console.log(index, reservacion.experience.length)}
                 <div
                   
                   className={ index == reservacion?.experience?.length-1 ? "w-full flex flex-col mt-4 mb-2 " : "w-full flex flex-col mt-4 mb-2 border-b-[2px] border-b-[#d3cbc0]"}

@@ -11,7 +11,6 @@ import { AppContext } from "@/context/StateContext";
 
 function AboutUs({ json }) {
   const { showModalCalendar, idioma } = AppContext();
-  console.log(showModalCalendar);
 
   return (
     /* TO-DO: arreglar el iphone SE */

@@ -11,9 +11,7 @@ import { AppContext } from "@/context/StateContext";
 import { useRouter } from "next/router";
 
 function ProductoModal({ producto, isOpen, onRequestClose }) {
-  console.log(producto);
   const [opcion, setOpcion] = useState("opcion1");
-  console.log(opcion);
   const {carritoProductos, setCarritoProductos} = AppContext()
 
   const {moneda, eurRate,usdRate, idioma} = AppContext()
@@ -34,7 +32,6 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
 
   const router = useRouter() 
   const addProductCart = (producto) => {
-    console.log(producto);
   
     // Agregar la propiedad 'tipo' al objeto producto
     const productoConTipo = { ...producto, tipo: "producto" };
@@ -64,7 +61,6 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
   }
 
   const handleShareClick = async ()  =>{
-    console.log("entre")
     try {
       await navigator.share({
         title: producto[0]?.name,

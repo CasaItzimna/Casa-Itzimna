@@ -3,15 +3,11 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
-        console.log(req.body)
-        console.log(req.body.items[0].price)
-        console.log(req.body.moneda)
         try {
           const {moneda} = req.body
 
           // Verificar si hay algún artículo con la propiedad "producto"
           const hasProduct = req.body.items.some((item) => item.tipo == "producto");
-          console.log(hasProduct)
 
           const shippingAddressCollection = hasProduct
           ? {
@@ -40,9 +36,6 @@ export default async function handler(req, res) {
                   enabled: true,
                 }, */
                 line_items:  req.body.items.map((item, index) =>{
-                  console.log(req.body.moneda)
-                  console.log(item)
-                  console.log(item.name.nombre)
                  return{   
                       price_data: {
                         currency: moneda,

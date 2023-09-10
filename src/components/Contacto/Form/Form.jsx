@@ -27,7 +27,6 @@ function Form({json}) {
   const {idioma} = AppContext()
 
   const handleSubmit = (e) => {
-    console.log("entre")
     e.preventDefault();
     
     if(
@@ -37,7 +36,6 @@ function Form({json}) {
       formData.email&&
       formData.message
     ){
-      console.log(formData)
       setError(false)
     // Configura tus credenciales de EmailJS
     emailjs.init("F9ctTSenSvQgRvd69");

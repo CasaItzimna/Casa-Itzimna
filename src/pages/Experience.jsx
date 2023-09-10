@@ -13,7 +13,6 @@ function Experience() {
   const {idioma } = AppContext();
 
   const json = idioma === 'espanol' ? esJson : enJson;
-  console.log(json)
 
   return (
     <div>

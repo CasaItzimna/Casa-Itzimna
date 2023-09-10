@@ -16,7 +16,6 @@ function Why({ json }) {
   const [pregunta1, setPregunta1] = useState(true)
   const [pregunta2, setPregunta2] = useState(false)
   const [pregunta3, setPregunta3] = useState(false)
-  console.log(pregunta1)
 
   const handleClickButton1 = () => {
 

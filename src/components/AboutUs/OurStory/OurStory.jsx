@@ -13,7 +13,6 @@ import { AppContext } from "@/context/StateContext";
 function OurStory({json}) {
 
   const [opcion, setOpcion] = useState('opcion1')
-  console.log(opcion)
 
   const {idioma} = AppContext()
   

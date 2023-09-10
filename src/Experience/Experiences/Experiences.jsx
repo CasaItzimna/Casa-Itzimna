@@ -9,16 +9,13 @@ import { useState } from 'react'
 import ExperienceModal from './ExperienceModal'
 
 function Experiences({json}) {
-    console.log(json.Experiences.Experiences1)
 
     const {getExperiencias, experiencias, idioma} = AppContext()
-    console.log(idioma)
 
     useEffect(() => {
       getExperiencias()
     }, [])
 
-    console.log(experiencias)
 
     const [modalOpen, setModalOpen] = useState(false);
     const [seleccionarExperiencia, setSeleccionarExperiencia] = useState(null)
@@ -38,7 +35,6 @@ function Experiences({json}) {
             <div className='grid grid-cols-2 lg:grid-cols-4 lg:justify-between gap-4 '>
                 {
                    experiencias.map((experiencia, index) => (
-                    console.log(experiencia),
                     <div key={index} className='w-full relative cursor-pointer' onClick={() => {setSeleccionarExperiencia(experiencia); openModal() }}> 
                 <div className='bg-black/50 hover:bg-black/70 absolute top-0 w-full h-full'></div>
                <img src={urlFor(experiencia?.image[0].asset._ref)} alt='foto de experiencia' className='w-full h-[200px] lg:h-[500px] object-cover '/>

@@ -9,7 +9,6 @@ function Experiencias({json, handleExperienceChange, experiences}) {
     useEffect(() => {
       getExperiencias()
     }, [])
-    console.log(experiences)
     
 
   return (

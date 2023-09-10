@@ -29,18 +29,14 @@ function Order({json}) {
       
 
       // Ahora puedes utilizar el valor de 'sessionId' en tu código
-      console.log(sessionId);
     }
 
     if (sessionIdRef.current) {
       if (localStorage.getItem('reservacion')  ) {
-        console.log("entre")
         const reservaciones = JSON.parse(localStorage.getItem('reservacion'));
         setreservacionesCarrito(reservaciones)
         reservaciones.map((rsv) => {
-            console.log(rsv)
           rsv.status = 'aprobada';
-          console.log(rsv)
           updateReservacion(rsv.id, rsv); 
         });
         localStorage.removeItem('reservacion')
@@ -49,13 +45,10 @@ function Order({json}) {
       } 
 
       if(localStorage.getItem('producto')){
-        console.log("entre")
         const productos = JSON.parse(localStorage.getItem('producto'));
         setproductosCarrito(productos)
         productos.map((item) => {
-            console.log(item)
           item.cantidad = item.cantidad - 1
-          console.log(item)
           updateProducto(item._id, item);
           const formData = { producto: item };
           postVenta(formData)

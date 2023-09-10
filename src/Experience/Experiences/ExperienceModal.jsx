@@ -9,7 +9,6 @@ import { AppContext } from "@/context/StateContext";
 import { useRouter } from "next/router";
 
 function ExperienceModal({ experiencia, isOpen, onRequestClose, json }) {
-    console.log(experiencia)
 
   const {moneda, eurRate,usdRate, idioma} = AppContext()
 

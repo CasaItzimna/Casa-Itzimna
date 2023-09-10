@@ -65,7 +65,6 @@ const Dashboard = () => {
   const [activeComponent, setActiveComponent] = useState("Reservaciones");
 
   const renderActiveComponent = () => {
-    console.log(activeComponent);
     switch (activeComponent) {
       case "Facturas":
         return <Facturas />;

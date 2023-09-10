@@ -1,7 +1,6 @@
 import React from "react";
 
 function Producto({item}) {
-    console.log(item)
   return (
     <div className="w-full lg:w-[20%]">
       <h3 className="uppercase text-left font-apollo tracking-[4px] text-xl text-[#d3cbc0]">

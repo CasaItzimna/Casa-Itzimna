@@ -19,7 +19,6 @@ import check from './icons/check.png'
 function Facilities({json}) {
 
   const [opcion, setOpcion] = useState('opcion1')
-  console.log(opcion)
 
   var arrfotos = [foto1,foto2,foto3]
 

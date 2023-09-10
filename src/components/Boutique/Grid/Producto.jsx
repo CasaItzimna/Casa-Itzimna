@@ -3,14 +3,12 @@ import { client, urlFor } from "../../../lib/client";
 import ProductoModal from './ProductoModal';
 
 function Producto({producto, json}) {
-  console.log(producto)
-  console.log(json)
-
+ 
     const [modalOpen, setModalOpen] = useState(false);
     const [slug, setSlug] = useState('');
   
     const openModal = () => {
-        console.log(producto)
+        
       setModalOpen(true);
       // Genera la URL con el slug
       const productSlug = producto?.slug.current; // Asegúrate de tener el slug del producto en tu objeto producto

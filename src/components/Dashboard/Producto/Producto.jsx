@@ -12,7 +12,6 @@ import bote from "../../../assets/Icons/bote.png";
 import editar from "../../../assets/Icons/editar.png";
 
 function Producto({ producto }) {
-  console.log(producto);
 
   const { getProductos, updateProducto, deleteProducto } = AppContext();
 
@@ -26,7 +25,6 @@ function Producto({ producto }) {
   const handleCloseModal = () => {
     setShowModal(false);
   };
-  console.log(producto);
 
   const [formData, setFormData] = useState({
     name: producto?.name,
@@ -147,7 +145,6 @@ function Producto({ producto }) {
     const updatedFormData = {
       ...formData,
     };
-    console.log(updatedFormData);
 
     // Mostrar una alerta de confirmación antes de enviar los datos actualizados
     const confirmationResult = await Swal.fire({
@@ -161,9 +158,7 @@ function Producto({ producto }) {
 
     if (confirmationResult.isConfirmed) {
       try {
-        console.log(producto._id);
         const respuesta = await updateProducto(producto._id, updatedFormData);
-        console.log("la respuesta fue", respuesta);
 
         setShowModal(false);
 
@@ -193,11 +188,9 @@ function Producto({ producto }) {
 
   useEffect(() => {
     client.fetch(`*[_id == "${producto?.category._ref}"]`).then((category) => {
-      console.log(category[0]);
       setCategory(category[0]);
     });
   }, [producto.category._ref]);
-  console.log(category);
 
   return (
     <div className="w-[350px] h-[280px] md:h-[350px] rounded-[7px] border-[2px] bg-white">
@@ -273,7 +266,6 @@ function Producto({ producto }) {
                       value={formData.artist}
                       required
                     />
-                    {console.log(producto.slug)}
                     <input
                       type="text"
                       name="slug"
@@ -385,9 +377,7 @@ function Producto({ producto }) {
         +
       </button>
     </div>
-    {
-      console.log(producto)
-    }
+  
 
     <label htmlFor="image" className="mt-2">
   Imagen:

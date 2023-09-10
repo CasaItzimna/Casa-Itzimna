@@ -9,7 +9,6 @@ function AR() {
   const { productSlug } = router.query;
   const { product, getProduct } = AppContext();
 
-  console.log(productSlug);
 
   useEffect(() => {
     if (productSlug) {
@@ -17,19 +16,16 @@ function AR() {
     }
   }, [productSlug]);
 
-  console.log(product);
 
   if (!product || product.length === 0) {
     return <div>Loading...</div>;
   }
 
-  console.log(product);
 
   const ar = product[0].file.asset._ref;
   const newAR = ar
     .replace("file-", "https://cdn.sanity.io/files/kr6xz9vc/production/")
     .replace("-glb", ".glb");
-  console.log("AR", newAR);
 
   return (
     <div>

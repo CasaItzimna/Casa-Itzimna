@@ -10,7 +10,6 @@ function OurBoutique({json}) {
   useEffect(() => {
     getProductos();
   }, []);
-  console.log(productos);
 
   const slideLeft = () => {
     var slider = document.getElementById("slider");

@@ -30,7 +30,6 @@ function Reservacion({ reservacion }) {
   const handleCloseModal = () => {
     setShowModal(false);
   };
-  console.log(reservacion)
 
   const [formData, setFormData] = useState({
     name: reservacion.name,
@@ -128,7 +127,6 @@ function Reservacion({ reservacion }) {
       ...formData,
     };
     updatedFormData.experience = experiences;
-    console.log(updatedFormData);
   
     // Mostrar una alerta de confirmación antes de enviar los datos actualizados
     const confirmationResult = await Swal.fire({
@@ -142,9 +140,7 @@ function Reservacion({ reservacion }) {
   
     if (confirmationResult.isConfirmed) {
       try {
-        console.log(reservacion._id);
         const respuesta = await updateReservacion(reservacion._id, updatedFormData);
-        console.log('la respuesta fue', respuesta);
   
         setShowModal(false);
   
@@ -185,7 +181,6 @@ function Reservacion({ reservacion }) {
         try {
           await updateReservacion(reservacion._id, updatedFormData);
           emailjs.init("F9ctTSenSvQgRvd69");
-          console.log(reservacion)
           if(newEstado == "confirmado"){
             const params = {
               texto1confirmed:"CONFIRMED RESERVATION",
@@ -273,7 +268,6 @@ function Reservacion({ reservacion }) {
 
   
 
-  console.log(reservacion);
 
   return (
     <div className="w-[350px] h-[280px] rounded-[7px] border-[2px] bg-white">
@@ -296,7 +290,6 @@ function Reservacion({ reservacion }) {
           <p className="font-apollo uppercase text-sm">
             PLAN: {reservacion.plan}
           </p>
-          {console.log(reservacion.experience)}
           <p className="font-apollo uppercase text-sm">
             EXTRA: {experiences.map((exp,index)=>(
               <span key={index} className="mr-2">{exp.nombre}</span>
@@ -308,7 +301,6 @@ function Reservacion({ reservacion }) {
           <p className="font-apollo uppercase text-sm">
             e-mail: {reservacion.email}{" "}
           </p>
-          {console.log(reservacion)}
           <p className="font-apollo uppercase text-sm">
             estado: {reservacion.status}{" "}
           </p>
@@ -320,9 +312,7 @@ function Reservacion({ reservacion }) {
             </div>
 
             <div>
-              {
-                console.log(reservacion.status)
-              }
+             
             <select
         value={reservacion.status}
         onChange={handleSelectChange}
@@ -430,7 +420,6 @@ function Reservacion({ reservacion }) {
                     
                   
       <label className="block">
-        {console.log(experiences)}
         <input
           type="checkbox"
           value="cena"

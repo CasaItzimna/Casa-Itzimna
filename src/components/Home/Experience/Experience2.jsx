@@ -50,7 +50,6 @@ const videoRef = useRef(null);
 
 useEffect(() => {
   // Verificar si videoRef.current es un elemento válido antes de usarlo
-  console.log(videoRef)
   if (videoRef.current) {
     const videoPlayer = videojs(videoRef.current, {
       responsive: true,
@@ -91,7 +90,6 @@ useEffect(() => {
 
     return () => {
       if (videoPlayer) {
-        console.log(videoPlayer)
         videoPlayer.dispose();
       }
     };
@@ -108,16 +106,13 @@ useEffect(() => {
           {/* 
 
           <Image src={spa2} alt="spa" className="w-full h-full xl:w-[90%] xl:h-[90%] 2xl:w-full object-cover " /> */}
-          {
-            console.log(videoRef)
-          }
+         
         <video
               ref={videoRef}
               className="video-js vjs-default-skin"
               controls
               poster={spa2}
               onLoadedMetadata={() => {
-                console.log('Video loaded successfully');
               }}
             ></video>
           

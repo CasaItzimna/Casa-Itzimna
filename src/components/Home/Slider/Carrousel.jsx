@@ -3,7 +3,6 @@ import React from "react";
 import { motion } from "framer-motion";
 
 function Carrousel({ slider, index, handleSlider }) {
-  console.log(index);
   
   return (
     <motion.div

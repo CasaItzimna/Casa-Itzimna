@@ -57,7 +57,6 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
 
 
   const [show, setShow] = useState(false);
-  console.log(show);
 
   const [selectedPackage, setSelectedPackage] = useState('paquete1');
 
@@ -82,7 +81,6 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
 
   useEffect(() => {
     if (inicio && fin) {
-      console.log('aqui anndo', inicio, fin)
       setTotal(differenceInDays(fin, inicio) * precio);
       
     }
@@ -107,9 +105,7 @@ function ProductoModal({ producto, isOpen, onRequestClose }) {
 
   const handleSubmit = () => {
     event.preventDefault();
-    console.log(formData);
     if (formData.name && formData.phone && formData.email && formData.people && formData.begin && formData.end && formData.comments && formData.total) {
-      console.log('entre en el if',formData);
 
       postReservacion(formData);
       setFormData({

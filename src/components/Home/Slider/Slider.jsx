@@ -17,16 +17,12 @@ function Slider() {
   ]);
   const [selected, setSelected] = useState(photoArray[0]);
   const [sliderIndex, setSliderIndex] = useState(null);
-  console.log(selected);
   const [animationKey, setAnimationKey] = useState(0); // Añadir esta línea
 
   
 
   const handleSlider = (slider, index) => {
-    console.log(slider)
-    console.log(selected)
     const photoArrayCopy = [...photoArray];
-    console.log(selected);
     const selectedIndex = photoArrayCopy.indexOf(selected);
     const sliderIndexAux = photoArrayCopy.indexOf(slider);
     setSliderIndex(sliderIndexAux)

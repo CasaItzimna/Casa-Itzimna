@@ -2,7 +2,6 @@ import React from "react";
 import { differenceInDays, isValid } from "date-fns";
 
 function Reservacion({rsv}) {
-  console.log(rsv)
   return (
     <div>
        <h3 className='text-center lg:text-left font-apollo tracking-[4px] text-xl text-[#d3cbc0] uppercase'>Booking Data</h3>

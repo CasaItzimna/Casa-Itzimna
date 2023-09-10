@@ -69,12 +69,10 @@ const Reservaciones = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("esto es lo que vamos a mandar" + addFormData)
     addFormData.experience = experiences
 
     try {
       const respuesta = await postReservacion(addFormData);
-      console.log('la respuesta fue', respuesta)
      
       getReservaciones()
       setShowModal(false);
@@ -82,7 +80,6 @@ const Reservaciones = () => {
      
       
     } catch (error) {
-      console.log(error)
     }
 
    

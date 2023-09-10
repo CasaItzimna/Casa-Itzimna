@@ -15,8 +15,6 @@ function Calendario({
   planPrecio,
   guestsPrecio,
 }) {
-  console.log(plan, planPrecio);
-  console.log(guestsPrecio);
   const [actualMonth, setActualMonth] = useState(1);
   const [sumMonth, setSumMonth] = useState(1);
 
@@ -50,16 +48,13 @@ function Calendario({
     getFechas();
   }, []);
 
-  console.log(fechas);
 
   useEffect(() => {
     if (sumMonth == 12) {
-      console.log("es mayor");
       setSumMonth(1);
     }
   }, [sumMonth]);
 
-  console.log(reservaciones);
 
   const monthNames = [
     "Ene",
@@ -94,7 +89,6 @@ function Calendario({
   ).getDate();
 
   function handleDayClick(day) {
-    console.log(day);
     if (!inicio) {
       // Si no hay día de inicio seleccionado, establecerlo
       setInicio(day);
@@ -128,7 +122,6 @@ function Calendario({
     }
     return false;
   }
-  console.log(reservaciones);
 
   const days = [];
   for (let i = 1; i <= daysInMonth; i++) {
@@ -223,12 +216,9 @@ function Calendario({
        
         `}
         onClick={() => {
-          console.log(inicio);
 
           if (!isReserved) {
-            console.log("entre");
-            console.log(currentYear, todayMonth.getMonth(), i);
-            handleDayClick(new Date(currentYear, todayMonth.getMonth(), i));
+           handleDayClick(new Date(currentYear, todayMonth.getMonth(), i));
           }
         }}
       >
@@ -561,7 +551,6 @@ function Calendario({
                     onClick={() => setSumMonth(sumMonth - 1)}
                   />
                 )}
-                {console.log(currentYear)}
                 <span>
                   {currentMonthName} {currentYear}
                 </span>

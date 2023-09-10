@@ -10,7 +10,6 @@ function Spaces() {
   const {idioma } = AppContext();
 
   const json = idioma === 'espanol' ? esJson : enJson;
-  console.log(json)
 
   return (
     <div className='h-full w-full'>

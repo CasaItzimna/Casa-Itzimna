@@ -40,7 +40,6 @@ function Reservacion() {
 
 
   const [show, setShow] = useState(false);
-  console.log(show);
 
   const monthNames = [
     "Ene",
@@ -59,7 +58,6 @@ function Reservacion() {
 
   useEffect(() => {
     if (inicio && fin) {
-      console.log('aqui anndo', inicio, fin)
       setTotal(differenceInDays(fin, inicio) * precio);
       
     }
@@ -79,9 +77,7 @@ function Reservacion() {
 
   const handleSubmit = () => {
     event.preventDefault();
-    console.log(formData);
     if (formData.name && formData.phone && formData.email && formData.people && formData.begin && formData.end && formData.comments && formData.total) {
-      console.log('entre en el if',formData);
 
       postReservacion(formData);
       setFormData({

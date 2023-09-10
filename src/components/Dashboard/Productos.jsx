@@ -22,7 +22,6 @@ function Productos() {
     getProductos();
   }, []);
 
-  console.log(productos);
 
   const [addFormData, setAddFormData] = useState({
     name: "",
@@ -101,22 +100,18 @@ function Productos() {
           asset: selectedFile,
         }
       : null;
-      console.log(imagesWithKeys)
   
     // Actualizar addFormData con las imágenes y el archivo con _key
     addFormData.image = imagesWithKeys;
     addFormData.file = selectedFile;
  
-    console.log("esto es lo que vamos a mandar" +addFormData);
     
     try {
       const respuesta = await postProducto(addFormData);
-      console.log("la respuesta fue", respuesta);
 
       getProductos();
       setShowModal(false);
     } catch (error) {
-      console.log(error);
     }
   };
 
@@ -220,7 +215,6 @@ function Productos() {
           </div>
         </div>
         <div className="  grid grid-cols-1 md:grid-cols-2  mt-8 lg:mt-0 gap-4 lg:overflow-y-scroll ">
-          {console.log(productos)}
           {isLoading ? (
             <p>Cargando productos...</p>
           ) : currentProductos.length > 0 ? (

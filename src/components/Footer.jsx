@@ -19,10 +19,8 @@ function Footer() {
   const json = idioma === 'espanol' ? esJson : enJson;
 
   const router = useRouter();
-  console.log(router.pathname)
   const isDashboardPage = router.pathname === '/Dashboard';
   const isDashboardComponentPage = router.pathname === '/Dashboard/[_component]';
-  console.log(isDashboardComponentPage)
 
 
   const handleScrollToTop = () => {

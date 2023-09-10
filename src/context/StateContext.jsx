@@ -61,7 +61,6 @@ useEffect(() => {
   //Facturas
 
   function postFactura(formData) {
-    console.log(formData);
     client.create({
       _type: "facturas",
       name: formData.name,
@@ -94,7 +93,6 @@ useEffect(() => {
       if (response.ok) {
         const data = await response.json();
         setFacturas(data); // Actualiza la lista de facturas con los datos obtenidos de la API
-        console.log('getFacturas respuesta', data);
       } else {
         console.error('Error al obtener facturas:', response.statusText);
       }
@@ -108,7 +106,6 @@ useEffect(() => {
 
   //updateFactura
   const updateFactura = async (facturaId, formData) => {
-    console.log('entre' ,formData)
     try {
       const response = await fetch('/api/facturas/factura', {
         method: 'PUT',
@@ -124,7 +121,6 @@ useEffect(() => {
   
       if (response.ok) {
         const data = await response.json();
-        console.log(data);
       } else {
         console.error('Error actualizando factura:', response.statusText);
       }
@@ -156,7 +152,6 @@ useEffect(() => {
       return response
   
       if (response.ok) {
-        
         console.log('Factura eliminada con éxito');
        
       } else {
@@ -170,8 +165,6 @@ useEffect(() => {
  
   //Reservaciones
   function isLongDate(dateString) {
-    console.log(dateString)
-    console.log(dateString.toString() )
     return dateString.toString().length > 10; // Verifica si la fecha es más larga que 'yyyy-mm-dd'
   }
   
@@ -232,7 +225,6 @@ useEffect(() => {
 
   //TODO: updateReservacion
   function updateReservacion(reservacionId, formData) {
-    console.log(formData);
     client
       .patch(reservacionId)
       .set({
@@ -282,12 +274,10 @@ useEffect(() => {
   }
 
   async function getVenta(ref) {
-    console.log(ref)
     try {
       const query = `*[ _id == "${ref}"]`;
       const resultado = await client.fetch(query);
       if (resultado.length > 0) {
-        console.log(resultado[0])
         return resultado[0]
       } else {
         return null;
@@ -299,7 +289,6 @@ useEffect(() => {
   }
 
   async function postVenta(formData) {
-    console.log(formData);
     try {
       const createdVenta = await client.create({
         _type: "ventas",
@@ -332,7 +321,6 @@ useEffect(() => {
 
   //TODO: updateReservacion
   function updateVenta(ventaId, formData) {
-    console.log(ventaId,formData);
     client
       .patch(ventaId)
       .set({
@@ -374,16 +362,13 @@ useEffect(() => {
   }
 
   async function getProduct(productSlug) {
-    console.log(productSlug)
     const query  = `*[_type == "productos" && slug.current == $productSlug]`
     const params = {productSlug}
     const product = await client.fetch(query, params)
-    console.log(product)
     setProduct(product)
   }
   // TODO: postProducto
 function postProducto(formData) {
-  console.log(formData)
   client
     .create({
       _type: 'productos', // Asegúrate de que el tipo sea correcto según tu esquema
@@ -454,7 +439,6 @@ function getFechas() {
 
    //TODO: updateReservacion
    function updateProducto(productoId, formData) {
-    console.log(formData);
     client
       .patch(productoId)
       .set({
@@ -493,7 +477,6 @@ function getFechas() {
 
   //loginUser
   async function loginUser(email, password) {
-    console.log("loginuser", email, password);
     const query = `*[_type == "usuarios" && email == $email] `;
 
     const params = { email };
@@ -519,7 +502,6 @@ function getFechas() {
       email: user.email,
     };
 
-    console.log(process.env.NEXT_PUBLIC_JWT_SECRET);
     const jwtSecret = process.env.NEXT_PUBLIC_JWT_SECRET;
 
     try {
@@ -543,7 +525,6 @@ function getFechas() {
   //postUser
 
   async function postUser(name, email, password) {
-    console.log(name, email, password);
     client.create({
       _type: "usuarios",
       name: name,

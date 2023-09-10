@@ -5,7 +5,6 @@ import Masonry from './Masonry/GalleryMasonry'
 function Gallery({json}) {
 
     const [active, setActive] = useState("garden")
-    console.log(active)
 
   return (
     <div className='w-full h-full  flex flex-row justify-center relative '>

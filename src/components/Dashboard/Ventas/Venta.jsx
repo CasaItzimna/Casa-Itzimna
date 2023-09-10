@@ -13,7 +13,6 @@ import editar from "../../../assets/Icons/editar.png";
 import emailjs from '@emailjs/browser';
 
 function Venta({venta}) {
-  console.log(venta)
 
   const {getVenta, updateVenta, deleteVenta} = AppContext();
   
@@ -29,7 +28,6 @@ const [ventaUnica, setVentaUnica] = useState(null)
   const handleCloseModal = () => {
     setShowModal(false);
   };
-  console.log(venta)
 
   useEffect(() => {
     const obtenerVentaUnica = async () => {
@@ -83,7 +81,6 @@ const [ventaUnica, setVentaUnica] = useState(null)
       try {
         await updateVenta(venta._id, updatedFormData);
         emailjs.init("F9ctTSenSvQgRvd69");
-        console.log(venta)
         if(newEstado == "confirmado"){
           const params = {
             texto1ventaConfirmed:"ORDER CONFIRMATION",
@@ -241,9 +238,7 @@ const [ventaUnica, setVentaUnica] = useState(null)
   
     if (confirmationResult.isConfirmed) {
       try {
-        console.log(venta._id);
         const respuesta = await updateVenta(venta._id, updatedFormData);
-        console.log('la respuesta fue', respuesta);
   
         setShowModal(false);
   

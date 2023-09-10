@@ -28,8 +28,6 @@ function CarritoInfo({ json }) {
     eurRate,
   } = AppContext();
 
-  console.log(usdRate);
-  console.log(eurRate);
 
   const determinarMoneda = () => {
     switch (moneda) {
@@ -51,7 +49,7 @@ function CarritoInfo({ json }) {
 
   useEffect(() => {
     if (carritoProductos.length === 0) {
-      console.log(carritoProductos);
+      
 
       // Verifica si hay datos en el localStorage
       if (JSON.parse(localStorage.getItem("producto"))) {
@@ -64,22 +62,15 @@ function CarritoInfo({ json }) {
   useEffect(() => {
     if (!carritoReservaciones?.length > 0) {
       if (JSON.parse(localStorage.getItem("reservacion"))) {
-        console.log(JSON.parse(localStorage.getItem("reservacion")));
         setCarritoReservaciones(
           JSON.parse(localStorage.getItem("reservacion"))
         );
       }
     }
   }, []);
-  console.log(carritoProductos[0]);
-  console.log(carritoReservaciones);
-
   const deleteProduct = (producto) => {
-    console.log(producto);
     const updatedCart = [...carritoProductos]; // Copia el objeto carrito
-    console.log(updatedCart);
     const index = updatedCart.findIndex((item) => item === producto);
-    console.log(index);
     if (index !== -1) {
       updatedCart.splice(index, 1); // Elimina el elemento del arreglo
     }
@@ -92,19 +83,16 @@ function CarritoInfo({ json }) {
   };
 
   const deleteExp = (reservacion, exp) => {
-    console.log(exp);
     const updatedCart = carritoReservaciones.map((rsv) => {
       // Si rsv es la misma reservacion que la que queremos modificar
       if (rsv === reservacion && Array.isArray(rsv.experience)) {
         const index = rsv.experience.findIndex((item) => item === exp);
-        console.log(index);
         if (index !== -1) {
           // Creamos una copia de la propiedad 'experience' usando slice()
           const updatedExperience = [...rsv.experience];
           // Eliminamos el elemento del arreglo 'experience' usando splice()
           updatedExperience.splice(index, 1);
           // Actualizamos la propiedad 'experience' del objeto reservacion
-          console.log(updatedExperience);
           rsv.experience = updatedExperience;
           rsv.total = rsv.total - exp.precio;
         }
@@ -119,11 +107,8 @@ function CarritoInfo({ json }) {
   };
 
   const deleteReservation = (reservacion) => {
-    console.log(reservacion);
     const updatedCart = [...carritoReservaciones]; // Copia el objeto carrito
-    console.log(updatedCart);
     const index = updatedCart.findIndex((item) => item === reservacion);
-    console.log(index);
     if (index !== -1) {
       updatedCart.splice(index, 1); // Elimina el elemento del arreglo
     }
@@ -135,7 +120,6 @@ function CarritoInfo({ json }) {
     );
   };
 
-  console.log(carritoProductos);
 
   // Variables para almacenar la suma de cada sección
   let sumReservaciones = 0;
@@ -144,7 +128,6 @@ function CarritoInfo({ json }) {
 
   // Calcula la suma de las reservaciones
   carritoReservaciones.forEach((rsv) => {
-    console.log(rsv), (sumReservaciones += rsv.total);
   });
   // Calcula la suma de las experiencias
   carritoReservaciones.forEach((rsv) => {
@@ -162,7 +145,6 @@ function CarritoInfo({ json }) {
   const handleCheckOut = async () => {
     setIsLoading(true);
 
-    console.log("Esto es un ejemplo");
     // Recorremos carritoReservaciones para guardar cada reservación y experiencia en el arreglo carrito
     carritoReservaciones.forEach((reservacion) => {
       reservacion.price = (reservacion.price * determinarMoneda()).toFixed(2);
@@ -229,7 +211,6 @@ function CarritoInfo({ json }) {
                 <h2 className="font-apollo text-xl tracking-[4px] mb-2 text-[#d3cbc0]">
                   {json.Cart.booking}
                 </h2>
-                {console.log(carritoReservaciones)}
                 {carritoReservaciones.length > 0 ? (
                   carritoReservaciones.map((reservacion, index) => (
                     <Reservacion
@@ -251,7 +232,6 @@ function CarritoInfo({ json }) {
                 )}
               </div>
 
-              {console.log(carritoProductos)}
               {carritoProductos.length > 0 ? (
                 carritoProductos.map((producto, index) => (
                   <div
@@ -344,7 +324,6 @@ function CarritoInfo({ json }) {
                           ))}
                           {carritoReservaciones.map(
                             (rsv, index) => (
-                              console.log(rsv),
                               (
                                 <div key={index + 10}>
                                   {rsv.experience.map((exp, i) => (

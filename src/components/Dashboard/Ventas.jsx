@@ -14,7 +14,6 @@ function Ventas() {
         getVentas()
       }, [])
 
-    console.log(ventas)
 
     const [addFormData, setAddFormData] = useState({
         name: '',
@@ -47,12 +46,10 @@ function Ventas() {
       };
       const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("esto es lo que vamos a mandar" + addFormData)
       
     
         try {
           const respuesta = await postVenta(addFormData);
-          console.log('la respuesta fue', respuesta)
          
           getVentas()
           setShowModal(false);
@@ -60,7 +57,6 @@ function Ventas() {
          
           
         } catch (error) {
-          console.log(error)
         }
     
        
@@ -92,7 +88,6 @@ function Ventas() {
       const indexOfLastVenta = currentPage * ventasPerPage
       const indexOfFirstVenta  = indexOfLastVenta - ventasPerPage
 
-      console.log(ventasFecha)
 
       const currentVentas = ventasFecha?.slice(indexOfFirstVenta, indexOfLastVenta )
     
@@ -113,7 +108,6 @@ function Ventas() {
 </div>
   </div>
 <div className="  grid grid-cols-1 md:grid-cols-2  mt-8 lg:mt-0 gap-4 lg:overflow-y-scroll ">
-{console.log(ventas)}
 {isLoading ? (
 <p>Cargando Ventas...</p>
 ) : (

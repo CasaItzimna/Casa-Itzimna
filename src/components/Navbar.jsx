@@ -31,7 +31,6 @@ function Navbar() {
     const [slug, setSlug] = useState('');
   
     const openModal = () => {
-        console.log('entre')
       setModalOpen(true);
       
     };

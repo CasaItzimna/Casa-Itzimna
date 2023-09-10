@@ -25,7 +25,6 @@ function Product() {
     }
   }, [product]);
 
-  console.log(product) 
 
   return (
     <div>

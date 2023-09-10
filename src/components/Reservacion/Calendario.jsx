@@ -20,25 +20,16 @@ function Calendario({ inicio, fin, setInicio, setFin, setShow }) {
     "Dic",
   ];
   const today = new Date();
-  console.log(today);
-  console.log(today.getDay());
-  console.log(today.getMonth());
-  console.log(today.getDate());
   const currentMonthName = monthNames[today.getMonth()];
-  console.log(currentMonthName);
   const currentYear = today.getFullYear();
-  console.log(currentYear);
   const firstDayOfMonth = new Date(currentYear, today.getMonth(), 1).getDay();
-  console.log(firstDayOfMonth);
   const daysInMonth = new Date(
     currentYear,
     today.getMonth() + actualMonth,
     0
   ).getDate();
-  console.log(daysInMonth);
 
   function handleDayClick(day) {
-    console.log(day);
     if (!inicio) {
       // Si no hay día de inicio seleccionado, establecerlo
       setInicio(day);

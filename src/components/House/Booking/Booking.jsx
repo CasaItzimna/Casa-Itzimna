@@ -52,7 +52,6 @@ function Booking({ json }) {
   };
 
   const handleExperienceChange = experiencia => {
-    console.log(experiencia)
     const experienceIndex = experiences.findIndex((exp) => exp._id === experiencia._id);
 
     if (experienceIndex === -1) {
@@ -63,7 +62,6 @@ function Booking({ json }) {
       setExperiences(updatedExperiences);
     }
   };
-  console.log(experiences)
 
   /* const handleSubmit = (event) => {
     event.preventDefault();
@@ -127,7 +125,6 @@ const [total, setTotal] = useState(0)
 
 
   const [show, setShow] = useState(false);
-  console.log(show);
 
   const [selectedGuests, setSelectedGuests] = useState("1-2");
 
@@ -158,7 +155,6 @@ const [total, setTotal] = useState(0)
   useEffect(() => {
     if (inicio && fin) {
       const fechasEnRango = fechas.filter(fecha => fecha >= inicio && fecha <= fin);
-      console.log(fechasEnRango)
       setTotalDiasInicio(differenceInDays(fin, inicio))
     }
   }, [inicio, fin]);
@@ -201,9 +197,7 @@ const [total, setTotal] = useState(0)
     }
     let totalExperiencesPrecio = 0;
     if(experiences.length>0){
-      console.log(experiences)
       for(var i = 0; i<= experiences.length; i++){
-        console.log(experiences[i]?.precio)
         if(experiences[i]?.precio){
           totalExperiencesPrecio +=experiences[i]?.precio
         }
@@ -226,7 +220,6 @@ const [total, setTotal] = useState(0)
   
     fechasEnRango.forEach(fechaImportante => {
       if (!fechasImportantes.some(fecha => fecha.nombre === fechaImportante.nombre)) {
-        console.log(fechaImportante.nombre);
         fechasImportantes.push(fechaImportante);
       }
     });
@@ -245,7 +238,6 @@ const [total, setTotal] = useState(0)
       for(var i = 0; i<= fechasImportantes.length-1; i++){
         if(plan == ""){
           totalFechasImportantes += fechasImportantes[i]?.precioSelect
-          console.log(totalFechasImportantes)
         }
         if(plan == "select"){
           totalFechasImportantes += fechasImportantes[i]?.precioSelect
@@ -257,13 +249,11 @@ const [total, setTotal] = useState(0)
           totalFechasImportantes += fechasImportantes[i]?.precioPremier
         }
       }
-      console.log(totalFechasImportantes)
 
       setTotal((((totalDiasInicio-fechasImportantes.length)*planPrecio)+guestsPrecio)+experiencesPrecio + totalFechasImportantes)
       setPrecio(((totalDiasInicio-fechasImportantes.length)*planPrecio)+guestsPrecio+ totalFechasImportantes)
    }
    else{
-    console.log("entre aca")
     totalFechasImportantes = 0
     setFechasImportantes([])
       setTotal(((totalDiasHoy*planPrecio)+guestsPrecio)+experiencesPrecio)
@@ -275,11 +265,9 @@ const [total, setTotal] = useState(0)
   
 
   
-console.log(experiences)  
 
   const handleSubmit = async () => {
     event.preventDefault();
-    console.log(formData);
     
     formData.guests = selectedGuests;
     formData.experience = experiences;
@@ -287,7 +275,6 @@ console.log(experiences)
     formData.total = total
     formData.tipo = "reservacion"
     formData.price = precio
-    console.log(formData);
     if(!inicio && !fin){
       formData.checkin = hoy
       formData.checkout = despues
@@ -302,11 +289,9 @@ console.log(experiences)
       formData.checkout &&
       formData.total
     ) {
-      console.log("entre en el if", formData);
       setCarritoReservaciones([...carritoReservaciones, formData])
       try {
         const reservacionId = await postReservacion(formData);
-        console.log("ID de la nueva reservacion:", reservacionId);
         formData.id = reservacionId;
       } catch (error) {
         console.error("Error al crear la reservación:", error);
@@ -333,7 +318,6 @@ console.log(experiences)
 
       
       emailjs.init("F9ctTSenSvQgRvd69");
-      console.log(formData)
     // Parámetros para enviar el correo electrónico
     const params = {
       from_name: formData.name,
