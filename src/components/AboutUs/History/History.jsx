@@ -199,7 +199,7 @@ function History({ json }) {
           <h4 className="font-apollo text-xl tracking-[4px] mb-4 lg:h-[40px]">
             {suceso.titulo}
           </h4>
-          <p className="text-white font-ethereal text-justify px-8 text-lg 2xl:tracking-[4px] lg:h-[200px]">
+          <p className="text-white font-ethereal text-justify px-8 text-lg 2xl:tracking-[1px] lg:h-[200px]">
             {suceso.texto}
           </p>
         </div>
@@ -211,7 +211,7 @@ function History({ json }) {
           <h4 className="font-apollo text-xl tracking-[4px] mb-4 lg:h-[40px]">
             {suceso.titulo}
           </h4>
-          <p className="text-white font-ethereal text-justify px-8 text-lg 2xl:tracking-[4px] lg:h-[200px]">
+          <p className="text-white font-ethereal text-justify px-8 text-lg 2xl:tracking-[2px] lg:h-[200px]">
             {suceso.texto}
           </p>
         </div>
