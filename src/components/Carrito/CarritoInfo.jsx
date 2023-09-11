@@ -128,6 +128,7 @@ function CarritoInfo({ json }) {
 
   // Calcula la suma de las reservaciones
   carritoReservaciones.forEach((rsv) => {
+    (sumReservaciones += rsv.total);
   });
   // Calcula la suma de las experiencias
   carritoReservaciones.forEach((rsv) => {
@@ -138,8 +139,10 @@ function CarritoInfo({ json }) {
 
   // Calcula la suma de los productos
   carritoProductos.forEach((product) => {
-    sumProductos += product.price;
+    sumProductos += parseInt(product.price);
+    console.log(product.price)
   });
+  console.log(sumProductos)
 
   const [isLoading, setIsLoading] = useState(false);
   const handleCheckOut = async () => {
@@ -319,7 +322,11 @@ function CarritoInfo({ json }) {
                               key={index}
                               className="font-apollo text-[#31302c]/40 tracking-[2px] text-lg"
                             >
-                              ${sumReservaciones - sumExperiences} {moneda}
+                              
+                              ${((sumReservaciones - sumExperiences)* determinarMoneda()).toLocaleString("en-US", {
+                                        minimumFractionDigits: 2,
+                                        maximumFractionDigits: 2,
+                                      })} {moneda}
                             </p>
                           ))}
                           {carritoReservaciones.map(
@@ -371,13 +378,14 @@ function CarritoInfo({ json }) {
                       <p className="font-apollo text-[#282828] tracking-[2px] text-xl">
                         $
                         {(
-                          (sumReservaciones + sumProductos) *
+                          (parseInt(sumReservaciones) + parseInt(sumProductos)) *
                           determinarMoneda()
                         ).toLocaleString("en-US", {
                           minimumFractionDigits: 2,
                           maximumFractionDigits: 2,
                         })}{" "}
                         {moneda}
+                        {console.log(sumProductos)}
                       </p>
                     </div>
                     <button
