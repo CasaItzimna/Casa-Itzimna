@@ -43,7 +43,7 @@ export default async function handler(req, res) {
                           name: item.tipo == "experiencia" ?item.name.nombre : item.name,
                           description: item.tipo
                         },
-                        unit_amount: item.price*100 // El precio del producto en centavos (1000 representa $10.00 MXN)
+                        unit_amount: parseInt(item.price*100) // El precio del producto en centavos (1000 representa $10.00 MXN)
                       },
                       quantity: 1, // Cantidad de este producto que se agregará a la sesión de pago
                     

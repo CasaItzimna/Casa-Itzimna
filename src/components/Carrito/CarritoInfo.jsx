@@ -140,9 +140,7 @@ function CarritoInfo({ json }) {
   // Calcula la suma de los productos
   carritoProductos.forEach((product) => {
     sumProductos += parseInt(product.price);
-    console.log(product.price)
   });
-  console.log(sumProductos)
 
   const [isLoading, setIsLoading] = useState(false);
   const handleCheckOut = async () => {
@@ -169,7 +167,9 @@ function CarritoInfo({ json }) {
 
     // Recorremos carritoProductos para guardar cada producto en el arreglo carrito
     carritoProductos.forEach((producto) => {
-      producto.price = (producto.price * determinarMoneda()).toFixed(2);
+      console.log(parseInt(producto.price))
+      producto.price = (parseInt(producto.price) * determinarMoneda()).toFixed(2);
+      console.log(producto.price)
       carrito.push(producto); // Guardamos cada producto en el arreglo carrito
     });
     const stripe = await getStripe();
@@ -271,7 +271,7 @@ function CarritoInfo({ json }) {
                           <p className="text-right mb-2 lg:mb-0 w-full font-apollo text-3xl mt-4 tracking-[2px]">
                           $
                           {(
-                            producto?.price * determinarMoneda()
+                            parseInt(producto?.price) * determinarMoneda()
                           ).toLocaleString("en-US", {
                             minimumFractionDigits: 2,
                             maximumFractionDigits: 2,
@@ -360,12 +360,13 @@ function CarritoInfo({ json }) {
                             >
                               $
                               {(
-                                product?.price * determinarMoneda()
+                                parseInt(product?.price) * determinarMoneda()
                               ).toLocaleString("en-US", {
                                 minimumFractionDigits: 2,
                                 maximumFractionDigits: 2,
                               })}{" "}
                               {moneda}{" "}
+                              {console.log(product.price)}
                             </p>
                           ))}
                         </div>
