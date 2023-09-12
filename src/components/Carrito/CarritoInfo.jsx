@@ -11,6 +11,7 @@ import { client, urlFor } from "../../lib/client";
 import Reservacion from "./Reservacion";
 import { differenceInDays, isValid } from "date-fns";
 import getStripe from "../../lib/getStripe";
+import Producto from "./Producto";
 
 function CarritoInfo({ json }) {
   const [carrito, setCarrito] = useState([]);
@@ -139,7 +140,7 @@ function CarritoInfo({ json }) {
 
   // Calcula la suma de los productos
   carritoProductos.forEach((product) => {
-    sumProductos += parseInt(product.price);
+    sumProductos += parseFloat(product.price);
   });
 
   const [isLoading, setIsLoading] = useState(false);
@@ -148,6 +149,7 @@ function CarritoInfo({ json }) {
 
     // Recorremos carritoReservaciones para guardar cada reservación y experiencia en el arreglo carrito
     carritoReservaciones.forEach((reservacion) => {
+      console.log(reservacion)
       reservacion.price = (reservacion.price * determinarMoneda()).toFixed(2);
 
       carrito.push(reservacion); // Guardamos la reservación completa en el arreglo carrito
@@ -167,9 +169,9 @@ function CarritoInfo({ json }) {
 
     // Recorremos carritoProductos para guardar cada producto en el arreglo carrito
     carritoProductos.forEach((producto) => {
-      console.log(parseInt(producto.price))
-      producto.price = (parseInt(producto.price) * determinarMoneda()).toFixed(2);
-      console.log(producto.price)
+      console.log(parseFloat(producto.price))
+      producto.price = (parseFloat(producto.price) * determinarMoneda()).toFixed(2);
+      console.log(parseFloat(producto.price))
       carrito.push(producto); // Guardamos cada producto en el arreglo carrito
     });
     const stripe = await getStripe();
@@ -234,62 +236,11 @@ function CarritoInfo({ json }) {
                   </div>
                 )}
               </div>
+              {console.log(eurRate,usdRate)}
 
               {carritoProductos.length > 0 ? (
                 carritoProductos.map((producto, index) => (
-                  <div
-                    key={index}
-                    className={
-                      index == carritoProductos?.length - 1
-                        ? "w-[90%] flex flex-col mb-2 mt-4  "
-                        : "w-[90%] flex flex-col mb-2 mt-4 border-b-[2px] border-b-[#d3cbc0] "
-                    }
-                  >
-                    <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#d3cbc0]">
-                      {producto?.name}
-                    </h2>
-                    <div className="w-full flex flex-col-reverse  justify-between">
-                      <div className="w-full flex flex-col justify-between">
-                        <div>
-                          <h3 className=" font-apollo uppercase text-justify tracking-[2px]">
-                            {producto?.description.substring(0, 70) + " ..."}
-                          </h3>
-                          <p className="text-[#31302c] mt-2 text-justify  font-apollo w-full tracking-[1px]">
-                            {json.Cart.shipping}
-                          </p>
-                        </div>
-                        <div className="flex flex-row mt-2 justify-between ">
-                          <div className="flex flex-col h-full justify-center">
-
-                          <Image
-                            src={bote}
-                            alt="basura"
-                            className=" cursor-pointer object-contain"
-                            onClick={() => deleteProduct(producto)}
-                          />
-                          </div>
-                          <p className="text-right mb-2 lg:mb-0 w-full font-apollo text-3xl mt-4 tracking-[2px]">
-                          $
-                          {(
-                            parseInt(producto?.price) * determinarMoneda()
-                          ).toLocaleString("en-US", {
-                            minimumFractionDigits: 2,
-                            maximumFractionDigits: 2,
-                          })}{" "}
-                          {moneda}
-                        </p>
-                        </div>
-                      </div>
-                      <div className="flex flex-col justify-center items-center  w-full">
-                        <img
-                          src={urlFor(producto.image[0].asset._ref)}
-                          alt="producto foto"
-                          className="w-[50%]"
-                        />
-                        
-                      </div>
-                    </div>
-                  </div>
+                  <Producto key={index} index={index} producto = {producto} carritoProductos={carritoProductos} json={json} determinarMoneda={determinarMoneda} moneda={moneda}/>
                 ))
               ) : (
                 <div className="w-[90%] flex flex-col items-center mb-2">
@@ -360,13 +311,13 @@ function CarritoInfo({ json }) {
                             >
                               $
                               {(
-                                parseInt(product?.price) * determinarMoneda()
+                                parseFloat(product?.price) * determinarMoneda()
                               ).toLocaleString("en-US", {
                                 minimumFractionDigits: 2,
                                 maximumFractionDigits: 2,
                               })}{" "}
                               {moneda}{" "}
-                              {console.log(product.price)}
+                              {console.log(parseFloat(product.price))}
                             </p>
                           ))}
                         </div>
@@ -379,7 +330,7 @@ function CarritoInfo({ json }) {
                       <p className="font-apollo text-[#282828] tracking-[2px] text-xl">
                         $
                         {(
-                          (parseInt(sumReservaciones) + parseInt(sumProductos)) *
+                          (parseFloat(sumReservaciones) + parseFloat(sumProductos)) *
                           determinarMoneda()
                         ).toLocaleString("en-US", {
                           minimumFractionDigits: 2,

@@ -10,6 +10,7 @@ import { client, urlFor } from "../../lib/client";
 
 
 function Reservacion({reservacion, deleteExp, deleteReservation, json}) {
+  console.log(reservacion.total)
     const [plan, setPlan] = useState(null);
     const [checkin, setCheckin] = useState("");
   const [checkout, setCheckout] = useState("");
@@ -63,7 +64,7 @@ function Reservacion({reservacion, deleteExp, deleteReservation, json}) {
                       className=" cursor-pointer w-[18px] h-[21px]"
                       onClick={() => deleteReservation(reservacion)}
                     />
-                  </div>
+                  </div> 
               <p className="text-right font-apollo text-3xl mt-8 mb-4 tracking-[2px] ">
   {moneda === "MXN" &&
     `$ ${(reservacion?.total).toLocaleString('en-US', {
