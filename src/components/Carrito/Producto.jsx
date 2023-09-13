@@ -5,12 +5,12 @@ import { client, urlFor } from "../../lib/client";
 import { AppContext } from '@/context/StateContext';
 
 
-function Producto({index, producto, carritoProductos, json, determinarMoneda}) {
+function Producto({index, producto, carritoProductosCopia, carritoProductos, json, determinarMoneda, deleteProduct}) {
   const  {moneda, eurRate, usdRate} = AppContext()
   return (
     <div
     className={
-      index == carritoProductos?.length - 1
+      index == carritoProductosCopia?.length - 1 || index == carritoProductos?.length - 1
         ? "w-[90%] flex flex-col mb-2 mt-4  "
         : "w-[90%] flex flex-col mb-2 mt-4 border-b-[2px] border-b-[#d3cbc0] "
     }
@@ -40,24 +40,27 @@ function Producto({index, producto, carritoProductos, json, determinarMoneda}) {
           </div>
           <p className="text-right mb-2 lg:mb-0 w-full font-apollo text-3xl mt-4 tracking-[2px]">
           
-  {moneda === "MXN" &&
-    `$ ${(parseFloat(producto?.price)).toLocaleString('en-US', {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
+          {
+  carritoProductosCopia?.length > 0 ? (
+    // Si carritoProductosCopia tiene elementos, muestra el precio sin formato
+    moneda === "EUR"?
+    `€ ${producto?.price} ${moneda}`
+    :
+    `$ ${producto?.price} ${moneda}`
+  ) : (
+    // Si carritoProductosCopia está vacío, muestra el precio formateado
+    moneda === "EUR"?
+    `€ ${(producto?.price * determinarMoneda()).toLocaleString("en-US", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
     })} ${moneda}`
-  }
-  {moneda === "USD" &&
-    `$ ${(parseFloat(producto?.price) * usdRate).toLocaleString('en-US', {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
+    :
+    `$ ${(producto?.price * determinarMoneda()).toLocaleString("en-US", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
     })} ${moneda}`
-  }
-  {moneda === "EUR" &&
-    `€ ${(parseFloat(producto?.price) * eurRate).toLocaleString('en-US', {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-    })} ${moneda}`
-  }
+  )
+}
           {console.log(producto.price)}
         </p>
         </div>

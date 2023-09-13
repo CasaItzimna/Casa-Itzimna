@@ -29,7 +29,6 @@ function CarritoInfo({ json }) {
     eurRate,
   } = AppContext();
 
-
   const determinarMoneda = () => {
     switch (moneda) {
       case "USD":
@@ -47,11 +46,10 @@ function CarritoInfo({ json }) {
   const [checkout, setCheckout] = useState("");
   const [reservacionEnCarrito, setReservacionEnCarrito] = useState([]);
   const [productosEnCarrito, setProductosEnCarrito] = useState([]);
+  const [carritoProductosCopia, setCarritoProductosCopia] = useState([]);
 
   useEffect(() => {
     if (carritoProductos.length === 0) {
-      
-
       // Verifica si hay datos en el localStorage
       if (JSON.parse(localStorage.getItem("producto"))) {
         // Parsea los datos del localStorage y guárdalos en el estado carritoProductos
@@ -121,7 +119,6 @@ function CarritoInfo({ json }) {
     );
   };
 
-
   // Variables para almacenar la suma de cada sección
   let sumReservaciones = 0;
   let sumExperiences = 0;
@@ -129,7 +126,7 @@ function CarritoInfo({ json }) {
 
   // Calcula la suma de las reservaciones
   carritoReservaciones.forEach((rsv) => {
-    (sumReservaciones += rsv.total);
+    sumReservaciones += rsv.total;
   });
   // Calcula la suma de las experiencias
   carritoReservaciones.forEach((rsv) => {
@@ -147,9 +144,11 @@ function CarritoInfo({ json }) {
   const handleCheckOut = async () => {
     setIsLoading(true);
 
+    setCarritoProductosCopia([...carritoProductos]);
+
     // Recorremos carritoReservaciones para guardar cada reservación y experiencia en el arreglo carrito
     carritoReservaciones.forEach((reservacion) => {
-      console.log(reservacion)
+      console.log(reservacion);
       reservacion.price = (reservacion.price * determinarMoneda()).toFixed(2);
 
       carrito.push(reservacion); // Guardamos la reservación completa en el arreglo carrito
@@ -169,9 +168,9 @@ function CarritoInfo({ json }) {
 
     // Recorremos carritoProductos para guardar cada producto en el arreglo carrito
     carritoProductos.forEach((producto) => {
-      console.log(parseFloat(producto.price))
-      producto.price = (parseFloat(producto.price) * determinarMoneda()).toFixed(2);
-      console.log(parseFloat(producto.price))
+      console.log(parseFloat(producto.price));
+      producto.price = (producto.price * determinarMoneda()).toFixed(2);
+      console.log(parseFloat(producto.price));
       carrito.push(producto); // Guardamos cada producto en el arreglo carrito
     });
     const stripe = await getStripe();
@@ -199,6 +198,8 @@ function CarritoInfo({ json }) {
       console.error(error);
     }
   };
+
+  console.log(carritoProductosCopia);
 
   return (
     <div className="w-full h-full flex flex-row justify-center bg-[#d3cbc0] ">
@@ -236,13 +237,37 @@ function CarritoInfo({ json }) {
                   </div>
                 )}
               </div>
-              {console.log(eurRate,usdRate)}
+              {console.log(eurRate, usdRate)}
 
-              {carritoProductos.length > 0 ? (
-                carritoProductos.map((producto, index) => (
-                  <Producto key={index} index={index} producto = {producto} carritoProductos={carritoProductos} json={json} determinarMoneda={determinarMoneda} moneda={moneda}/>
+              {carritoProductosCopia.length > 0 ? (
+                carritoProductosCopia.map((producto, index) => (
+                  <Producto
+                    key={index}
+                    index={index}
+                    producto={producto}
+                    carritoProductosCopia={carritoProductosCopia}
+                    json={json}
+                    determinarMoneda={determinarMoneda}
+                    deleteProduct={deleteProduct}
+                    moneda={moneda}
+                  />
                 ))
-              ) : (
+              ) :
+              carritoProductos.length > 0 ? (
+                carritoProductos.map((producto, index) => (
+                  <Producto
+                    key={index}
+                    index={index}
+                    producto={producto}
+                    carritoProductos={carritoProductos}
+                    json={json}
+                    determinarMoneda={determinarMoneda}
+                    deleteProduct={deleteProduct}
+                    moneda={moneda}
+                  />
+                ))
+              ) :
+               (
                 <div className="w-[90%] flex flex-col items-center mb-2">
                   <h2 className="font-apollo text-xl tracking-[4px] mb-2 uppercase text-[#d3cbc0]">
                     {json.Cart.noproducts}
@@ -273,53 +298,61 @@ function CarritoInfo({ json }) {
                               key={index}
                               className="font-apollo text-[#31302c]/40 tracking-[2px] text-lg"
                             >
-                              
-                              ${((sumReservaciones - sumExperiences)* determinarMoneda()).toLocaleString("en-US", {
-                                        minimumFractionDigits: 2,
-                                        maximumFractionDigits: 2,
-                                      })} {moneda}
-                            </p>
-                          ))}
-                          {carritoReservaciones.map(
-                            (rsv, index) => (
-                              (
-                                <div key={index + 10}>
-                                  {rsv.experience.map((exp, i) => (
-                                    <p
-                                      key={i}
-                                      className="font-apollo text-[#31302c]/40 tracking-[2px] text-lg"
-                                    >
-                                      $
-                                      {(
-                                        exp.precio * determinarMoneda()
-                                      ).toLocaleString("en-US", {
-                                        minimumFractionDigits: 2,
-                                        maximumFractionDigits: 2,
-                                      })}{" "}
-                                      {moneda}
-                                    </p>
-                                  ))}
-                                </div>
-                              )
-                            )
-                          )}
-
-                          {carritoProductos.map((product, index) => (
-                            <p
-                              key={index}
-                              className="font-apollo text-[#31302c]/40 tracking-[2px] text-lg"
-                            >
                               $
                               {(
-                                parseFloat(product?.price) * determinarMoneda()
+                                (sumReservaciones - sumExperiences) *
+                                determinarMoneda()
                               ).toLocaleString("en-US", {
                                 minimumFractionDigits: 2,
                                 maximumFractionDigits: 2,
                               })}{" "}
-                              {moneda}{" "}
-                              {console.log(parseFloat(product.price))}
+                              {moneda}
                             </p>
                           ))}
+                          {carritoReservaciones.map((rsv, index) => (
+                            <div key={index + 10}>
+                              {rsv.experience.map((exp, i) => (
+                                <p
+                                  key={i}
+                                  className="font-apollo text-[#31302c]/40 tracking-[2px] text-lg"
+                                >
+                                  $
+                                  {(
+                                    exp.precio * determinarMoneda()
+                                  ).toLocaleString("en-US", {
+                                    minimumFractionDigits: 2,
+                                    maximumFractionDigits: 2,
+                                  })}{" "}
+                                  {moneda}
+                                </p>
+                              ))}
+                            </div>
+                          ))}
+
+                          {carritoProductosCopia.length>0?
+                           carritoProductosCopia.map((product, index) => (
+                                <p
+                                  key={index}
+                                  className="font-apollo text-[#31302c]/40 tracking-[2px] text-lg"
+                                > 
+                                ${product?.price} {moneda} 
+                                </p>
+                              ))
+                            : carritoProductos.map((product, index) => (
+                                <p
+                                  key={index}
+                                  className="font-apollo text-[#31302c]/40 tracking-[2px] text-lg"
+                                >
+                                  $
+                                  {(
+                                    product?.price * determinarMoneda()
+                                  ).toLocaleString("en-US", {
+                                    minimumFractionDigits: 2,
+                                    maximumFractionDigits: 2,
+                                  })}{" "}
+                                  {moneda} {console.log(product.price)}
+                                </p>
+                              ))}
                         </div>
                       </div>
                     </div>
@@ -330,7 +363,8 @@ function CarritoInfo({ json }) {
                       <p className="font-apollo text-[#282828] tracking-[2px] text-xl">
                         $
                         {(
-                          (parseFloat(sumReservaciones) + parseFloat(sumProductos)) *
+                          (parseFloat(sumReservaciones) +
+                            parseFloat(sumProductos)) *
                           determinarMoneda()
                         ).toLocaleString("en-US", {
                           minimumFractionDigits: 2,
