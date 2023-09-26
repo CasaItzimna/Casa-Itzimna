@@ -45,6 +45,9 @@ function Rates({ json }) {
     maximumFractionDigits: 2,
   })} {moneda}
                 </h4> 
+                <p className="font-PlayfairDisplay text-sm">
+                  {json.Rates.additional}
+                </p>
                 {
                   option == "opcion1" &&
                 
@@ -58,9 +61,7 @@ function Rates({ json }) {
                   <li className="uppercase">{json.Rates.optiondetail7}</li>
                 </ul>
 }
-                <p className="font-PlayfairDisplay text-sm">
-                  {json.Rates.additional}
-                </p>
+               
                 <div className="flex flex-row justify-center">
                 {option == "opcion1"?
                   <button className="border-2 uppercase cursos-pointer hover:bg-[#a59f98] w-[150px] font-apollo text-md mb-4 mt-2"

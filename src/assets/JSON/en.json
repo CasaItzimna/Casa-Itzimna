@@ -10,14 +10,14 @@
       "bookButton" : "BOOK NOW"
     },
     "Footer": {
-        "option1": "ABOUT US",
+        "option1": "ABOUT",
         "option2": "HOUSE",
         "option3": "EXPERIENCE",
         "option4": "GALLERY",
         "option5": "BOUTIQUE",
         "option6": "CONTACT",
-        "option7": "TERMS & CONDITIONS",
-        "option8": "PRIVACY POLICY"
+        "option7": "TERMS ",
+        "option8": "POLICYS"
     },
     "Home": {
       "calendarioInicio": "CHECK IN",
@@ -41,8 +41,8 @@
         "option2": "LUXURE & COMFORT",
         "option3": "GRACIOUS HOSPITALITY",
       "text1": "Experience the comfort of every corner, infused with the charm of Mérida and contemporary flair. The Boutique House has been designed to offer a haven of luxury and well-being. Discover the warmth and elegance of our spaces.",
-      "text2": "Let us Transport You to a World of Delight and Relaxation, Offering a True Oasis of Luxury and Comfort.",
-      "text3": "Exceptional Hospitality and Exclusive Services Await to Make Your Stay a Truly Unique and Exquisite Experience. Our exceptional hospitality is what we consider a true art.",
+      "text2": "Let us transport you to a world of delight and relaxation, offering a true oasis of luxury and comfort.",
+      "text3": "Exceptional hospitality and exclusive services await to make your stay a truly unique and exquisite experience. our exceptional hospitality is what we consider a true art.",
       "buttonText": "GALLERY"
     },
     "Testimonials":{
@@ -151,7 +151,7 @@
   "title": "Booking",
   "name": "NAME",
   "phone": "PHONE NUMBER",
-  "email": "EMAIL",
+  "email": "E-MAIL",
   "checkin": "CHECK IN",
   "checkout": "CHECK OUT",
   "guests": "GUESTS NUMBER",

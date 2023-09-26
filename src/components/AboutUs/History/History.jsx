@@ -42,7 +42,7 @@ function History({ json }) {
       fecha: "2022",
       titulo: "CASA ITZIMNÁ BOUTIQUE",
       texto:
-        "La Casona Renace como Una Casa Boutique de Lujo y Estilo Contemporáneo, una Experiencia Única de Encanto Colonial y Comodidades Modernas.",
+        "La Casona Renace como una Casa Boutique de lujo y estilo contemporáneo, una experiencia única de encanto colonial y comodidades modernas.",
     },
   ];
   
@@ -57,7 +57,7 @@ function History({ json }) {
       fecha: "1572",
       titulo: "A SANCTUARY OF FAITH IN TIMES OF CHANGE",
       texto:
-        "After the destruction of the pre-Hispanic temple, a small chapel is built, honoring the Christ of Esquipulas and San Miguel Archangel.",
+        "After the destruction of the Pre-Hispanic temple, a small chapel is built, honoring the Christ of Esquipulas and San Miguel Archangel.",
     },
     {
       fecha: "1961",
@@ -81,7 +81,7 @@ function History({ json }) {
       fecha: "2022",
       titulo: "CASA ITZIMNÁ BOUTIQUE",
       texto:
-        "The Mansion Revives as a Luxury Boutique, a Unique Blend of Colonial Charm and Contemporary Comforts.",
+        "The mansion revives as a luxury boutique, a unique blend of colonial charm and contemporary comforts.",
     },
   ];
   

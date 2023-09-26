@@ -17,8 +17,8 @@
       "option4": "GALERÍA",
       "option5": "BOUTIQUE",
       "option6": "CONTACTO",
-      "option7": "TERMINOS CONDICIONES",
-      "option8": "POLITICA  PRIVACIDAD"
+      "option7": "TÉRMINOS",
+      "option8": "POLÍTICAS"
     },
     "Home": {
       "calendarioInicio": "INICIO",
@@ -42,7 +42,7 @@
         "option2": "LUJO Y COMODIDAD",
         "option3": "HOSPITALIDAD",
       "text1": "Conoce la comodidad de cada rincón impregnado con el encanto de Mérida y lo contemporáneo. La Casa Boutique ha sido diseñada con el fin de ofrecer un refugio de lujo y bienestar. Descubre la calidez y elegancia de nuestros espacios.",
-      "text2": "Sofisticación y bienestar sin igual, pensamos y cuidamos cada detallede manera cuidadosa para envolverte en una sensación de elegancia y satisfacción. Permítenos transportarte a un mundo de deleite y relajación para ofrecerte un verdadero oasis de lujo y confort.",
+      "text2": "Sofisticación y bienestar sin igual, pensamos y cuidamos cada detalle de manera cuidadosa para envolverte en una sensación de elegancia y satisfacción. Permítenos transportarte a un mundo de deleite y relajación para ofrecerte un verdadero oasis de lujo y confort.",
       "text3": "La hospitalidad excepcional y nuestros servicios exclusivos te esperan para hacer de tu estancia una experiencia verdaderamente única y exquisita. Nuestra excepcional hospitalidad, es lo que consideramos un verdadero arte.",
       "buttonText": "GALERÍA"
     },
@@ -72,7 +72,7 @@
     "OurStory":{
       "title": "Nuestra Historia",
       "option1": "ACERCA",
-      "option2": "MISION",
+      "option2": "MISIÓN",
       "option3": "Visión",
     "text1": "Ubicada en el corazón de la antigua Colonia de Itzimná, se encuentra nuestra casona de estilo colonial construída en 1961, convirtiéndola en un verdadero tesoro histórico que ha sido hogar de familias locales y testigo de la evolución de Mérida. Hoy, restaurada con esmero y delicadeza, combina la elegancia de antaño con servicios contemporáneos, ofreciendo a nuestros huéspedes una experiencia única y llena de encanto colonial.",
     "text2": "Nuestra misión es preservar y compartir la rica historia y encanto colonial de nuestra casona construida en 1961. A través de una meticulosa restauración y la incorporación de servicios contemporáneos, brindamos a nuestros huéspedes una experiencia única, llena de comodidad y autenticidad. Nos esforzamos por ser un oasis de lujo y bienestar, donde cada rincón evoca la esencia de Mérida y su pasado prehispánico.",
@@ -151,7 +151,7 @@
     "title": "Booking",
   "name": "NOMBRE",
   "phone": "NÚMERO DE TELÉFONO",
-  "email": "EMAIL",
+  "email": "E-MAIL",
   "checkin": "CHECK IN",
   "checkout": "CHECK OUT",
   "guests": "NÚMERO DE HUÉSPEDES",
