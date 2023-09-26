@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BsFacebook, BsInstagram, BsWhatsapp } from "react-icons/bs";
+import { BsFacebook, BsFillEnvelopeFill, BsInstagram, BsWhatsapp } from "react-icons/bs";
 import { useRouter } from 'next/router';
 
 import Image from "next/image";
@@ -63,24 +63,25 @@ function Footer() {
       <div className="w-full lg:w-[90%] xl:w-[80%] max-w-[1920px]  flex flex-col-reverse lg:flex-row  justify-center xl:justify-between  ">
        
        
-        <div className="h-full flex flex-col mb-4 lg:mb-0  xl:w-1/4  text-center lg:text-start   ">
+        <div className="h-full flex flex-col mb-4 lg:mb-0  lg:w-1/4 lg:mr-10  text-center lg:text-start   ">
           <h3 className="font-cinzelBold text-2xl text-[#d3cbc0] mb-2 lg:mb-4">
             CONTACT
           </h3>
           <ul className="font-apollo text-white text-center text-sm h-[150px]">
           <a href='https://goo.gl/maps/GzpqxsC24WFuUFZS9' target="_blank">
-            <div className="cursor-pointer py-2 text-md lg:text-lg hover:text-[#d3cbc0]">
+            <div className="cursor-pointer py-2 text-md lg:text-lg hover:text-[#d3cbc0] xl:w-[400px]">
 
-            <li className="flex flex-row justify-center tracking-[4px] lg:tracking-[0px] xl:tacking-[2px] lg:justify-start "> <Image src={location} alt="location" className="hidden lg:flex h-[20px] w-[15px] "/> &nbsp; AVENIDA PÉREZ PONCE 120, </li>
-            <li className="flex flex-row justify-center tracking-[4px]  lg:justify-start lg:text-left">COLONIA ITZIMNÁ 07100, MÉRIDA, YUCATÁN</li>
+            <li className="flex flex-row justify-center tracking-[4px] lg:tracking-[0px] xl:tracking-[2px] lg:justify-start lg:text-left"> <Image src={location} alt="location" className="hidden lg:flex h-[20px] w-[15px] "/> &nbsp; AVENIDA PÉREZ PONCE 120,  </li>
+            <li className="flex flex-row justify-center tracking-[4px]  lg:tracking-[0px] xl:tracking-[2px] lg:justify-start lg:text-left">COLONIA ITZIMNÁ, 07100, MÉRIDA, YUCATÁN</li>
             </div>
             </a>
             <a href='tel:+525528794515'>
             <li className="flex flex-row tracking-[4px]  lg:py-0  text-lg justify-center lg:justify-start cursor-pointer hover:text-[#d3cbc0]"><BsTelephoneFill className="hidden lg:flex text-[#d3cbc0]"/> &nbsp;+52 55 2879 4515</li>
             </a>
             <a href='mailto:CASAITZIMNA@HOTELBOUTIQUE.COM'>
-            <li className="flex flex-row tracking-[4px]   text-md lg:text-lg justify-center lg:justify-start cursor-pointer hover:text-[#d3cbc0] "><HiOutlineMail className="hidden lg:flex text-[#d3cbc0]"/> &nbsp;CONTACTO@CASAITZIMNA.COM</li>
+            <li className="flex flex-row text-lg justify-center tracking-[4px]  lg:tracking-[0px] xl:tracking-[2px] lg:justify-start lg:text-left] hover:text-[#d3cbc0]"><BsFillEnvelopeFill  className="hidden lg:flex text-[#d3cbc0]"/> &nbsp;CONTACTO@CASAITZIMNA.COM</li>
             </a>
+            
             <div className="h-[200px] bg-[#31302c] lg:hidden flex flex-col justify-center items-center">
               <li><FaLongArrowAltUp className="text-[#d3cbc0] text-[50px]" onClick={handleScrollToTop}/></li>
             </div>
