@@ -79,7 +79,7 @@
   },
   "History":{
     "title": "Our History",
-    "subtitle": "DISCOVER THE LEGACY OG HOSPITALITY AND ELEGANCE",
+    "subtitle": "DISCOVER THE LEGACY OF HOSPITALITY AND ELEGANCE",
     "titleText1": "ITZIMNÁ COLONY",
     "titleText2": "THE SANCTUARY",
     "titleText3": "ESTABLISHMENT",
@@ -92,9 +92,11 @@
   "question1":"UNPARALLED LUXURY AND COMFORT",
   "question2":"EXQUISITE DINING EXPERIENCES",
   "question3":"IMPECCABLE SERVICE AND ATTENTION",
+
   "answer1": "At Casa Itzimná Boutique, an extraordinary experience awaits you, where sophistication and well-being come together to make your stay truly exceptional.",
-  "answer2": "Exquisite Culinary Experiences: Let yourself be captivated by our unique flavors and delight your senses with the exceptional gastronomy we offer at Casa Itzimná Boutique.",
-  "answer3": "Impeccable Service and Exceptional Attention: Our team is devoted to providing unparalleled hospitality, ensuring that every moment of your stay is perfect and memorable."
+  "answer2": "Let yourself be captivated by our unique flavors and delight your senses with the exceptional gastronomy we offer at Casa Itzimná Boutique.",
+  "answer3": "Our team is devoted to providing unparalleled hospitality, ensuring that every moment of your stay is perfect and memorable."
+
 },
 "Facilities":{
   "texto1": "House located in Itzimná neighborhood, close to Paseo Montejo and Monumento a la Patria, just 3 km from downtown Mérida. It features gardens, kitchen with island and bar area, guest bathroom, 3 bedrooms with en-suite bathrooms, laundry area with washer and dryer, screens in each bedroom, terrace with cable TV, parking for 5 cars, and more. An oasis of luxury and well-being!",
@@ -117,7 +119,7 @@
   "checkout": "CHECK OUT",
   "checkoutText1": "Check-out time is at 12:00 PM",
   "checkoutText2": "Late checkouts may incur an additional charge, subject to availability.",
-  "exploreText": "Explore the luxury & beauty of Casa Itzimná in our gallery. Dive into our hotel's stunning spaces.",
+  "exploreText": "Explore the luxury & beauty of Casa Itzimná in our gallery. Dive into our casa's stunning spaces.",
   "galleryButton": "GALLERY"
 },
 "Rates":{

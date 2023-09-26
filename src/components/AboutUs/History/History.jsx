@@ -36,7 +36,7 @@ function History({ json }) {
       fecha: "Años recientes",
       titulo: "RESTAURACIÓN Y CONSERVACIÓN",
       texto:
-        "Empiezan las restauraciones, manteniendo y rescatando elementos originales",
+        "Empiezan las restauraciones, manteniendo y rescatando elementos originales.",
     },
     {
       fecha: "2022",
@@ -45,34 +45,35 @@ function History({ json }) {
         "La Casona Renace como Una Casa Boutique de Lujo y Estilo Contemporáneo, una Experiencia Única de Encanto Colonial y Comodidades Modernas.",
     },
   ];
+  
   const history = [
     {
       fecha: "Pre-Hispanic Era",
-      titulo: "ITZIMNÁ COBRA VIDA",
+      titulo: "ITZIMNÁ COMES TO LIFE",
       texto:
         "The Itzimná Colony belongs to the Ceh Pech cacicazgo, housing a temple dedicated to the deity Itzamná and considered a Pre-Hispanic Legacy of the Colony.",
     },
     {
       fecha: "1572",
-      titulo: "UN SANTUARIO DE FE EN TIEMPOS DE CAMBIO",
+      titulo: "A SANCTUARY OF FAITH IN TIMES OF CHANGE",
       texto:
         "After the destruction of the pre-Hispanic temple, a small chapel is built, honoring the Christ of Esquipulas and San Miguel Archangel.",
     },
     {
       fecha: "1961",
-      titulo: "ESTABLECIMIENTO",
+      titulo: "ESTABLISHMENT",
       texto:
         "Construction of the colonial-style mansion in the ancient Itzimná Colony.",
     },
     {
       fecha: "Several years",
-      titulo: "UNA HISTORIA VIVA",
+      titulo: "A LIVING HISTORY",
       texto:
         "The mansion served as a residence for local Mérida families and as a governmental office.",
     },
     {
       fecha: "Recent Years",
-      titulo: "RESTAURACIÓN Y CONSERVACIÓN",
+      titulo: "RESTORATION AND CONSERVATION",
       texto:
         "The mansion undergoes interventions and restorations, preserving and rescuing original elements, transformed into a luxury boutique with modern amenities while conserving its colonial charm.",
     },
@@ -83,6 +84,7 @@ function History({ json }) {
         "The Mansion Revives as a Luxury Boutique, a Unique Blend of Colonial Charm and Contemporary Comforts.",
     },
   ];
+  
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
