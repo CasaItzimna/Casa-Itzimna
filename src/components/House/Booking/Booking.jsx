@@ -619,12 +619,12 @@ const [total, setTotal] = useState(0)
                   </div>
                 </div>
                 
-          <Experiencias
+          {/* <Experiencias
           json={json}
           handleExperienceChange = {handleExperienceChange}
           experiences = {experiences}
 
-          />
+          /> */}
                 <p className="font-Geometrica">TOTAL:</p>
                 <p className="font-Geometrica text-right">${((total)*determinarMoneda()).toLocaleString(
                     "en-US",
