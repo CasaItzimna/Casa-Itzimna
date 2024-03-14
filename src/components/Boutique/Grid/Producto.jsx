@@ -11,7 +11,7 @@ function Producto({producto, json}) {
         
       setModalOpen(true);
       // Genera la URL con el slug
-      const productSlug = producto?.slug.current; // Asegúrate de tener el slug del producto en tu objeto producto
+      const productSlug = producto?.slug?.current; // Asegúrate de tener el slug del producto en tu objeto producto
       const newUrl = `/Boutique/${productSlug}`; // Personaliza la ruta según tus necesidades
       window.history.pushState(null, '', newUrl); // Actualiza la URL sin recargar la página
     };

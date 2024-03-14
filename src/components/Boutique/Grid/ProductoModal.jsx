@@ -109,7 +109,7 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
                   <div>
 
                   <img
-                    src={urlFor(img.asset._ref)}
+                    src={urlFor(img?.asset?._ref)}
                     alt={`Imagen del producto ${index + 2}`}
                     className="w-[120px]  lg:h-[120px] object-cover overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50"
                     />
@@ -205,7 +205,7 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
               {json.Boutique.add}
             </button>
             <Link
-            href={`AR/${producto?.slug.current}`}
+            href={`AR/${producto?.slug?.current}`}
             >
             <button className="w-[210px] tracking-[4px] py-1 text-md mt-3 border-[1px] border-black ">
               <div className="flex flex-row  justify-center gap-2">
