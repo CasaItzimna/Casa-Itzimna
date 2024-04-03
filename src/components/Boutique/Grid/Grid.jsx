@@ -16,7 +16,7 @@ function Grid({ json }) {
 
   const [currentPage, setCurrentPage] = useState(1)
 
-  const productosPerPage = 7
+  const productosPerPage = 9
   const indexOfLastProducto = currentPage * productosPerPage
   const indexOfFirstProducto  = indexOfLastProducto - productosPerPage
   const currentProductos = productos?.slice(indexOfFirstProducto, indexOfLastProducto )
