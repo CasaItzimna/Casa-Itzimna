@@ -39,16 +39,19 @@ function Producto({producto, json}) {
                     <div className='w-full flex flex-row justify-center'>
                         <div className='flex flex-col mb-4'>
 
-                <img src={urlFor(producto?.image[0]?.asset?._ref)} alt='imagen producto' className='w-[150px] h-[150px] md:w-[200px] md:h-[230px]  object-contain'   /> 
+                <img key={producto?.image[0]?.asset?._ref} src={urlFor(producto?.image[0]?.asset?._ref)} alt='imagen producto' className='w-[150px] h-[150px] md:w-[200px] md:h-[230px]  object-contain'   /> 
                 <img src={urlFor(producto?.image[0]?.asset?._ref)} alt='imagen producto' className='w-[150px] h-[25px] rotate-180 blur-lg '   /> 
                         </div>
                     </div>
-            <p className='font-apollo uppercase text-2xl lg:text-4xl tracking-[4px] mb-4'>{producto?.name}</p>
-            <button className='border-[1px] border-[#31302c] tracking-[4px] font-apollo text-2xl py-1 mt-4'
+            <p className='text-center font-apollo uppercase text-2xl lg:text-4xl tracking-[4px] mb-4'>{producto?.name}</p>
+            <div className='w-full flex flex-row justify-center items-center'>
+
+            <button className='w-[200px] border-[1px] border-[#31302c] tracking-[4px] font-apollo text-2xl py-1 mt-4'
             onClick={openModal}
             >
                 {json.Boutique.viewDetails}
             </button>
+              </div>
             {
               producto &&
               <ProductoModal
