@@ -12,6 +12,9 @@ import { useRouter } from "next/router";
 
 function ProductoModal({ producto, isOpen, onRequestClose, json }) {
   const [opcion, setOpcion] = useState("opcion1");
+  const [imageSelected, setImageSelected] = useState(producto?.image[0]?.asset?._ref)
+  const [auxImageSelected, setAuxImageSelected] = useState(null)
+
   const {carritoProductos, setCarritoProductos} = AppContext()
 
   const {moneda, eurRate,usdRate, idioma} = AppContext()
@@ -77,6 +80,7 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
     }
   }
 
+
   
 
   return (
@@ -95,7 +99,7 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
           <div className="flex flex-col lg:w-[500px] p-4">
             <div className="flex flex-row justify-center mb-4">
               <img
-                src={urlFor(producto?.image[0]?.asset?._ref)}
+                src={urlFor(imageSelected)}
                 alt="Imagen del producto"
                 className="w-[250px] h-[350px] object-contain lg:w-full"
               />
@@ -110,8 +114,14 @@ localStorage.setItem("producto",JSON.stringify([...carritoProductos, productoCon
 
                   <img
                     src={urlFor(img?.asset?._ref)}
+
                     alt={`Imagen del producto ${index + 2}`}
-                    className="w-[120px]  lg:h-[120px] object-cover overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50"
+                    className="w-[120px]  lg:h-[120px] object-cover overflow-hidden shadow-[12.0px_12.0px_8.0px_#d3cbc0] shadow-[#d3cbc0]/50 cursor-pointer"
+                    onClick={() => {
+                      setAuxImageSelected(imageSelected)
+                      setImageSelected(img?.asset?._ref)
+                    }
+                    }
                     />
                     </div>
                 </div>
