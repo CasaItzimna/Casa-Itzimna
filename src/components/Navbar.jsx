@@ -248,11 +248,11 @@ function Navbar() {
                 >
                   <Link href="/House">{json.Navbar.option3}</Link>
                 </li>
-                <li className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
+                {/* <li className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
                 onClick={()=>setActive(false)}
                 >
                   <Link href="/Experience">{json.Navbar.option4}</Link>
-                </li>
+                </li> */}
                
                 <li className="cursor-pointer hover:text-[#d3cbc0] tracking-[3px]"
                 onClick={()=>setActive(false)}
