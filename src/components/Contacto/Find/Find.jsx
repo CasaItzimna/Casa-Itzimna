@@ -17,18 +17,18 @@ function Find({json}) {
                 </div>
                 <div className='flex flex-col text-center'>
                     <h4 className='text-xl font-apollo text-center tracking-[4px] uppercase mb-4'>{json.Contact.OurContact}</h4>
-                    <a href='tel:+525528794515'>
-                    <p className='flex flex-row gap-2 justify-center font-apollo tracking-[2px]'><BsTelephoneFill className="hidden lg:flex text-[#d3cbc0]"/> +52 55 2879 4515</p>
+                    <a href='tel:+529991227293'>
+                    <p className='flex flex-row gap-2 justify-center font-apollo tracking-[2px]'><BsTelephoneFill className="hidden lg:flex text-[#d3cbc0]"/> +52 99 9122 7293</p>
                     </a>
                     <a href='mailto:CASAITZIMNA@HOTELBOUTIQUE.COM'>
-                    <p className='flex flex-row gap-2 justify-center font-apollo tracking-[2px]'><HiOutlineMail className="hidden lg:flex text-[#d3cbc0]"/> CASAITZIMNA@HOTELBOUTIQUE.COM</p>
+                    <p className='flex flex-row gap-2 justify-center font-apollo tracking-[2px]'><HiOutlineMail className="hidden lg:flex text-[#d3cbc0]"/> CASAITZIMNABOUTIQUE@GMAIL.COM</p>
                     </a>
                 </div>
                 <div className='flex flex-col text-center'>
                     <h4 className='text-xl font-apollo text-center tracking-[4px] uppercase mb-4'>{json.Contact.Social}</h4>
                     <div className='flex flex-row lg:flex-col justify-center lg:justify-normal '>
 
-                    <a href="https://www.facebook.com/CasaItzimnaboutique" target="_blank">
+                    <a href="https://www.facebook.com/profile.php?id=61558215447316" target="_blank">
                     <p className='flex flex-row gap-2 justify-center font-apollo tracking-[2px]'><FaFacebookF className="text-[#d3cbc0] mt-1 text-4xl lg:text-sm"/><span className='hidden lg:flex'>CASA ITZIMNÁ BOUTIQUE</span></p>
                     </a>
                     <a href="https://www.instagram.com/CasaItzimnaboutique" target="_blank">

@@ -75,11 +75,11 @@ function Footer() {
             <li className="flex flex-row justify-center tracking-[4px]  lg:tracking-[0px] xl:tracking-[2px] lg:justify-start lg:text-left">COLONIA ITZIMNÁ, 07100, MÉRIDA, YUCATÁN</li>
             </div>
             </a>
-            <a href='tel:+525528794515'>
-            <li className="flex flex-row tracking-[4px]  lg:py-0  text-lg justify-center lg:justify-start cursor-pointer hover:text-[#d3cbc0]"><BsTelephoneFill className="hidden lg:flex text-[#d3cbc0]"/> &nbsp;+52 55 2879 4515</li>
+            <a href='tel:+529991227293'>
+            <li className="flex flex-row tracking-[4px]  lg:py-0  text-lg justify-center lg:justify-start cursor-pointer hover:text-[#d3cbc0]"><BsTelephoneFill className="hidden lg:flex text-[#d3cbc0]"/> &nbsp;+52 99 9122 7293</li>
             </a>
-            <a href='mailto:CASAITZIMNA@HOTELBOUTIQUE.COM'>
-            <li className="flex flex-row text-lg justify-center tracking-[4px]  lg:tracking-[0px] xl:tracking-[2px] lg:justify-start lg:text-left] hover:text-[#d3cbc0]"><BsFillEnvelopeFill  className="hidden lg:flex text-[#d3cbc0]"/> &nbsp;CONTACTO@CASAITZIMNA.COM</li>
+            <a href='mailto:casaitzimnaboutique@gmail.com'>
+            <li className="flex flex-row text-md lg:text-lg justify-center items-center tracking-[4px]  lg:tracking-[0px] xl:tracking-[2px] lg:justify-start lg:text-left] hover:text-[#d3cbc0]"><BsFillEnvelopeFill  className="hidden lg:flex text-[#d3cbc0]"/> &nbsp;CASAITZIMNABOUTIQUE@GMAIL.COM</li>
             </a>
             
             <div className="h-[200px] bg-[#31302c] lg:hidden flex flex-col justify-center items-center">
@@ -122,7 +122,7 @@ function Footer() {
             GET SOCIAL
           </h3>
           <ul className="font-apollo text-white text-sm h-[50px] flex flex-row justify-center gap-4 lg:gap-0 lg:flex-col lg:justify-normal items-center lg:items-end mb-2 ">
-          <a href="https://www.facebook.com/CasaItzimnaboutique" target="_blank">
+          <a href="https://www.facebook.com/profile.php?id=61558215447316" target="_blank">
             <li className="flex flex-row cursor-pointer text-lg tracking-[4px]  hover:text-[#d3cbc0]"><span className="hidden lg:flex">CASA ITZIMNÁ BOUTIQUE &nbsp;</span> <FaFacebookF className="text-[#d3cbc0] mt-1 text-4xl lg:text-sm"/></li>
             </a>
             <a href="https://www.instagram.com/CasaItzimnaboutique" target="_blank">
