@@ -4,8 +4,20 @@ import { StateContextProvider } from '@/context/StateContext'
 import '@/styles/globals.css'
 import "../components/Dashboard/Reservaciones/styles/sweet-alert-custom.css"
 import Head from 'next/head'
+import { useEffect } from 'react'
 
 export default function App({ Component, pageProps }) {
+  useEffect(() => {
+    // Código del plugin de chat de Facebook
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  }, []);
+
   return (<StateContextProvider>
     <Head>
       <meta charset="UTF-8" />
@@ -32,6 +44,11 @@ export default function App({ Component, pageProps }) {
       <link rel="icon" href="/icon-itzimna.jpg" sizes="any" />
       <link rel="apple-touch-icon" href="/apple-touch-icon.png"  />
     </Head>
+    <div id="fb-root"></div>
+    <div class="fb-customerchat"
+      attribution="setup_tool"
+      page_id="300847026434906">
+    </div>
     <Navbar />
     <Component {...pageProps} />
     <Footer />
