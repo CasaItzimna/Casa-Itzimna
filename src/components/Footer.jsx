@@ -72,7 +72,7 @@ function Footer() {
             <div className="cursor-pointer py-2 text-md lg:text-lg hover:text-[#d3cbc0] xl:w-[400px]">
 
             <li className="flex flex-row justify-center tracking-[4px] lg:tracking-[0px] xl:tracking-[2px] lg:justify-start lg:text-left"> <Image src={location} alt="location" className="hidden lg:flex h-[20px] w-[15px] "/> &nbsp; AVENIDA PÉREZ PONCE 120,  </li>
-            <li className="flex flex-row justify-center tracking-[4px]  lg:tracking-[0px] xl:tracking-[2px] lg:justify-start lg:text-left">COLONIA ITZIMNÁ, 07100, MÉRIDA, YUCATÁN</li>
+            <li className="flex flex-row justify-center tracking-[4px]  lg:tracking-[0px] xl:tracking-[2px] lg:justify-start lg:text-left">COLONIA ITZIMNÁ, 97100, MÉRIDA, YUCATÁN</li>
             </div>
             </a>
             <a href='tel:+529991227293'>

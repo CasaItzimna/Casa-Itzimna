@@ -9,7 +9,7 @@ function Address({json}) {
             <a href='https://goo.gl/maps/GzpqxsC24WFuUFZS9' target="_blank">
               <div className='w-full flex flex-row justify-center'>
 
-            <p className='w-[90%] lg:w-full flex flex-row gap-2 justify-center  font-apollo tracking-[2px]'>AVENIDA PÉREZ PONCE 120, COLONIA ITZIMNÁ 07100, MÉRIDA, YUCATÁN</p>
+            <p className='w-[90%] lg:w-full flex flex-row gap-2 justify-center  font-apollo tracking-[2px]'>AVENIDA PÉREZ PONCE 120, COLONIA ITZIMNÁ 97100, MÉRIDA, YUCATÁN</p>
               </div>
             </a>
             <Mapa/>

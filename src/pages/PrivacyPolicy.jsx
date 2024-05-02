@@ -34,7 +34,7 @@ function PrivacyPolicy() {
             <br />
             - Contact Phone: +52 55 2879 4515
             <br />
-            - Physical Address: AVENIDA PÉREZ PONCE 120, COLONIA ITZIMNÁ, 07100, MÉRIDA, YUCATÁN
+            - Physical Address: AVENIDA PÉREZ PONCE 120, COLONIA ITZIMNÁ, 97100, MÉRIDA, YUCATÁN
           </p>
           <h2 className="text-xl font-semibold mt-4 mb-2">Type of Collected Information:</h2>
           <p>
@@ -107,7 +107,7 @@ function PrivacyPolicy() {
             <br />
             - Teléfono de Contacto: +52 55 2879 4515
             <br />
-            - Dirección Física: AVENIDA PÉREZ PONCE 120, COLONIA ITZIMNÁ, 07100, MÉRIDA, YUCATÁN
+            - Dirección Física: AVENIDA PÉREZ PONCE 120, COLONIA ITZIMNÁ, 97100, MÉRIDA, YUCATÁN
           </p>
           <h2 className="text-xl font-semibold mt-4 mb-2">Tipo de Información Recopilada:</h2>
           <p>
