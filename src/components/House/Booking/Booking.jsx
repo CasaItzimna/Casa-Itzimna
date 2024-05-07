@@ -181,10 +181,10 @@ const [total, setTotal] = useState(0)
       setPlanPrecio(14100)
     }
     if(plan == "luxury"){
-      setPlanPrecio(17900)
+      setPlanPrecio(16900)
     }
     if(plan == "premier"){
-      setPlanPrecio(20900)
+      setPlanPrecio(19300)
     }
     if(selectedGuests == "7-+"){
       setGuestsPrecio(2000)
