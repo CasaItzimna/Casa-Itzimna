@@ -20,7 +20,7 @@ function Booking({ json }) {
   const [guests, setGuests] = useState("");
   const [guestsPrecio, setGuestsPrecio] = useState(0);
   const [plan, setPlan] = useState("");
-  const [planPrecio, setPlanPrecio] = useState(14100);
+  const [planPrecio, setPlanPrecio] = useState(10000);
   const [experiences, setExperiences] = useState([]);
   const [experiencesPrecio, setExperiencesPrecio] = useState(0);
   
@@ -178,13 +178,13 @@ const [total, setTotal] = useState(0)
 
   useEffect(() => {
     if(plan == "select"){
-      setPlanPrecio(14100)
+      setPlanPrecio(10000)
     }
     if(plan == "luxury"){
-      setPlanPrecio(16900)
+      setPlanPrecio(13000)
     }
     if(plan == "premier"){
-      setPlanPrecio(19300)
+      setPlanPrecio(16000)
     }
     if(selectedGuests == "7-+"){
       setGuestsPrecio(2000)
